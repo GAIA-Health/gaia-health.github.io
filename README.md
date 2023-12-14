@@ -1,3 +1,1 @@
-# Gaia Health Website
-
-this is a WIP
+# Website for Gaia Health
