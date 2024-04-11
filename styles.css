@@ -1,0 +1,74 @@
+body {
+    color: #323232; /* Grey for main text, enhancing readability on a light background */
+    background-color: #faf0e6; /* Lighter, creamier beige for a soft and inviting background */
+}
+.custom-navbar-bg {
+    background-color: #faf0e6; /* Seamless look with the body background */
+}
+.hero-section {
+    background-color: #faf0e6; /* Unified appearance with the body */
+    color: #323232; /* Clarity and sophistication in text */
+    padding: 50px 0;
+    text-align: center;
+}
+.feature-section {
+    padding: 30px 0;
+    background-color: #faf0e6; /* Cohesion with the primary background color */
+}
+.feature-section .col-md-4 {
+    border: 2px solid #706953; /* Outlined box around each feature */
+    border-radius: 15px; /* Rounded corners for the boxes */
+    padding: 20px; /* Internal spacing */
+    margin: 10px; /* Space between each feature box */
+    background-color: #faf0e6; /* White background for the boxes to stand out */
+}
+.feature-section h2, .feature-section p {
+    color: #323232; /* Readability against the light background */
+}
+.cta-section {
+    background-color: #c29591; /* Dusty Rose for the CTA section for subtle contrast */
+    padding: 30px 0;
+    text-align: center;
+}
+.cta-section h2, .cta-section p {
+    color: #FFFFFF; /* Strong contrast and readability */
+}
+.navbar, .btn-primary, .btn-success {
+    background-color: #706953; /* Updated Muted Green for navigation and button backgrounds */
+    border: none;
+}
+.btn-primary {
+    background-color: #b99478; /* Updated color for primary action buttons */
+    color: #FFFFFF; /* Clarity in text */
+}
+.btn-success {
+    background-color: #703f37; /* Rich, earthy tone for secondary buttons */
+    color: #FFFFFF; /* Text visibility */
+}
+footer {
+    background-color: #faf0e6; /* Consistency with the page's aesthetic */
+    color: #323232; /* Legibility of footer text */
+}
+a, a:hover {
+    color: #706953; /* Updated link color for harmony with the design */
+}
+
+#app-screenshots .carousel-item img {
+    object-fit: contain; /* This ensures the whole image is scaled down to fit */
+    max-width: 100%; /* Ensures the image is not wider than the carousel */
+    height: auto; /* Scales the height automatically based on the width */
+    margin: auto; /* This will help center the image if it's smaller than the container */
+    border-radius: 15px;
+    max-height: 500px; /* Adjust the maximum height as needed */
+    background-color: #EFEEE7;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+background-color: #706953; /* Updated Muted Green for navigation and button backgrounds */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+background-color: #b99478; /* Light Periwinkle for hover effect */
+}
