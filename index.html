@@ -1,63 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>GAIA Health</title>
-
+<html lang="en">
+<head>
+    <title>GAIA Health - Your Wellness Journey Redefined</title>
     <meta charset="UTF-8">
     <meta name="author" content="GAIA Health">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
 
-<body class="vsc-initialized">
-    <header>
-      <nav class="navbar navbar-expand-lg bg-info">
-      <div class="container-fluid">
-      <a class="navbar-brand" href="#">GAIA Health</a>
-      </div>
-      </nav>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="#">GAIA Health</a>
+                <!-- Insert navigation items here if needed -->
+            </div>
+        </nav>
     </header>
 
-    <div class="container-fluid">
-      <p></p>
-      <h3> 
-        Empower Your Health Journey: Personalized Insights, Unified Wellness
-      </h3>
+    <main role="main">
+        <section class="hero-section text-center">
+            <div class="container py-5">
+                <h1 class="display-4 fw-bold">Welcome to GAIA Health Beta</h1>
+                <p class="lead my-3">Embark on an enriched wellness journey with GAIA Health – your personal health ecosystem.</p>
+                <p class="lead my-4">Join our beta program and take the first step in harmonizing your body, mind, and spirit.</p>
+                <a class="btn btn-secondary btn-lg" href="#early-access" role="button">Get Early Access</a>
+            </div>
+        </section>
 
-<p>
-Welcome to Gaia Health, where your path to longevity and wellness is our passion.
-</p>
-<p>
-Our innovative platform transforms your health data from wearables and manual inputs into a symphony of personalized insights.
-</p>
-<p>
-Imagine having a health assistant that not only understands your daily habits but also predicts your needs, guiding you towards optimal wellbeing. 
-</p>
-<p>
-With Gaia Health, you're not just tracking your health; you're actively shaping it. 
-</p>
-<p>
-Join us on a journey to a healthier, happier you, where every step is informed, every decision empowered, and your entire well-being is harmoniously aligned.
-</p>
-      
-      <hr>
-      <a href="https://gaia-43925770.hubspotpagebuilder.com/gaia-waitlist-0-0">
-        Click here to join our mailing list or request early acccess 
-      </a>
-    </div>
-  
-    <footer>
-        <hr>
-        <div class="container-fluid">
-        <p>
-            Get in touch via email: 
-            <a target="_blank" href="mailto:abigailholland22@gmail.com">abigailholland22@gmail.com</a> 
-            or via Twitter: 
-            <a href="https://twitter.com/holland_neuro">https://twitter.com/holland_neuro</a>
-        </p>
+        <section id="features" class="feature-section py-5 bg-light">
+            <div class="container">
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <div class="feature-box col d-flex align-items-start">
+                        <div class="icon-square bg-primary text-light me-3">
+                            <i class="bi bi-graph-up" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h2>Unified Health Data</h2>
+                            <p>Get a complete overview of your health metrics in one place, crafted to empower your lifestyle choices.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box col d-flex align-items-start">
+                        <div class="icon-square bg-primary text-light me-3">
+                            <i class="bi bi-person-bounding-box" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h2>Personalized Health Insights</h2>
+                            <p>Receive custom recommendations based on your data, pushing you towards optimal well-being.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box col d-flex align-items-start">
+                        <div class="icon-square bg-primary text-light me-3">
+                            <i class="bi bi-heart-pulse" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h2>Shape Your Health</h2>
+                            <p>Engage actively with your health data to make informed decisions that nurture your wellness journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="app-screenshots" class="py-5 bg-light">
+          <div class="container">
+            <h2 class="text-center mb-4">App Interface Gallery</h2>
+            <div id="screenshotCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Make sure the first item has the 'active' class -->
+                <div class="carousel-item active">
+                  <img src="Screenshot 2024-04-08 at 10.08.08.png" class="d-block w-100" alt="GAIA Dashboard">
+                </div>
+                <div class="carousel-item">
+                  <img src="Screenshot 2024-04-08 at 10.08.23.png" class="d-block w-100" alt="GAIA Data">
+                </div>
+                <div class="carousel-item">
+                  <img src="Screenshot 2024-04-08 at 10.08.30.png" class="d-block w-100" alt="GAIA Insights">
+                </div>
+                <div class="carousel-item">
+                  <img src="Screenshot 2024-04-08 at 10.09.09.png" class="d-block w-100" alt="GAIA Graph">
+                </div>
+                <!-- Add more items as needed -->
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#screenshotCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#screenshotCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="early-access" class="cta-section text-center py-5">
+            <div class="container">
+                <h2 class="text-white display-6 fw-bold">Be Part of Our Exclusive Beta Testing Group</h2>
+                <p class="text-white lead mb-4">Your feedback can shape the future of personal health management. Get early access and help us make GAIA Health even better.</p>
+                <a class="btn btn-success btn-lg" href="https://gaia-43925770.hubspotpagebuilder.com/gaia-waitlist-0-0" role="button">Join the Beta Program</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <p>Connect with us at <a href="mailto:abigailholland22@gmail.com">abigailholland22@gmail.com</a> or on Twitter <a href="https://twitter.com/holland_neuro">@holland_neuro</a></p>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
