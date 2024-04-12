@@ -4,21 +4,39 @@ body {
 }
 .custom-navbar-bg {
     background-color: #faf0e6; /* Seamless look with the body background */
+    color: #FFFFFF;
 }
+
 .hero-section {
     background-color: #faf0e6; /* Unified appearance with the body */
     color: #323232; /* Clarity and sophistication in text */
     padding: 50px 0;
     text-align: center;
 }
+
+.dynamic-section {
+    background-color: #FFFFFF; /* Changed to pure white for a cleaner look */
+    color: #323232; /* Maintaining the sophisticated dark grey text color */
+    padding: 40px 0;
+    text-align: center;
+    font-size: 50px; /* Increasing the font size for better readability */
+}
+
+.manifesto-section {
+    background-color: #FFFFFF; /* Changed to pure white for a cleaner look */
+    color: #323232; /* Maintaining the sophisticated dark grey text color */
+    padding: 40px 0;
+    font-size: 20px; /* Increasing the font size for better readability */
+}
+
 .feature-section {
-    padding: 30px 0;
+    padding: 40px 0;
     background-color: #faf0e6; /* Cohesion with the primary background color */
 }
 .feature-section .col-md-4 {
     border: 2px solid #706953; /* Outlined box around each feature */
     border-radius: 15px; /* Rounded corners for the boxes */
-    padding: 20px; /* Internal spacing */
+    padding: 40px; /* Internal spacing */
     margin: 10px; /* Space between each feature box */
     background-color: #faf0e6; /* White background for the boxes to stand out */
 }
@@ -72,3 +90,9 @@ background-color: #706953; /* Updated Muted Green for navigation and button back
 .carousel-control-next:hover {
 background-color: #b99478; /* Light Periwinkle for hover effect */
 }
+
+#dynamicWord {
+    font-weight: bold;
+    color: #323232; /* Adjust the color to fit your design */
+}
+
