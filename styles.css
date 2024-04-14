@@ -96,3 +96,15 @@ background-color: #b99478; /* Light Periwinkle for hover effect */
     color: #323232; /* Adjust the color to fit your design */
 }
 
+
+.icon-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Black color for icons */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.icon-square i {
+    font-size: 1.5rem; /* Icon size */
+}
