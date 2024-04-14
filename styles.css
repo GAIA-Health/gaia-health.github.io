@@ -54,7 +54,12 @@ body {
 .navbar, .btn-primary, .btn-success {
     background-color: #706953; /* Updated Muted Green for navigation and button backgrounds */
     border: none;
+    color: #FFFFFF;
 }
+.navbar, .navbar * {
+    color: #FFFFFF; /* Ensures all text in the navbar is white */
+}
+
 .btn-primary {
     background-color: #b99478; /* Updated color for primary action buttons */
     color: #FFFFFF; /* Clarity in text */

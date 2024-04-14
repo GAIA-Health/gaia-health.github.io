@@ -10,15 +10,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg custom-navbar-bg">
-            <div class="container">
-                <a class="navbar-brand" href="#">GAIA Health</a>
-                <!-- Insert navigation items here if needed -->
-            </div>
-        </nav>
-    </header>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg custom-navbar-bg">
+      <div class="container">
+        <a class="navbar-brand" href="#">GAIA Health</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#app-screenshots">Demo</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
     <main role="main">
         <section class="hero-section text-center">
@@ -133,7 +150,7 @@
           </div>
         </section>
 
-        <section class="manifesto-section">
+        <section id='about', class="manifesto-section">
           <div class="container">
               <h2>Make Self Control Sexy Again</h2>
               <p>When I was studying Clinical Neuroscience, it occurred to me that many Neurological Disorders are cureless, but can have a significant reduction in likelihood with appropriate Preventative Health Practices.</p>
@@ -163,10 +180,10 @@
         </section>
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container text-center">
-            <p>Connect with us at <a href="mailto:abigailholland22@gmail.com">abigailholland22@gmail.com</a> or on Twitter <a href="https://twitter.com/holland_neuro">@holland_neuro</a></p>
-        </div>
+    <footer class="footer mt-auto py-3 bg-light" id="contact">
+      <div class="container text-center">
+          <p>Connect with us at <a href="mailto:abigailholland22@gmail.com">abigailholland22@gmail.com</a> or on Twitter <a href="https://twitter.com/holland_neuro">@holland_neuro</a></p>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
