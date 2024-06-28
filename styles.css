@@ -124,3 +124,48 @@ background-color: #b99478; /* Earthy beige for hover effect */
 .icon-square i {
     font-size: 1.5rem; /* Icon size */
 }
+
+
+/* Case Studies Section */
+#case-studies {
+    background-color: #f0ebe3; /* Light tan background for case studies */
+    padding: 60px 0;
+}
+
+#case-studies h2 {
+    margin-bottom: 20px; /* Add padding below the main heading */
+}
+
+#case-studies h5 {
+    margin-bottom: 40px; /* Add padding below the subheading */
+}
+
+#case-studies .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 15px; /* Rounded corners for cards */
+}
+
+#case-studies .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Left align text */
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Set width to move controls away from the text */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(112, 105, 83, 0.3); /* Muted Green for navigation and button backgrounds with 50% transparency */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #b99478; /* Light Periwinkle for hover effect */
+}
