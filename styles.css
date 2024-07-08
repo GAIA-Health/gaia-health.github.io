@@ -1,93 +1,133 @@
+/* General Styles */
 body {
     color: #323232; /* Grey for main text, enhancing readability on a light background */
-    background-color: #faf0e6; /* Lighter, creamier beige for a soft and inviting background */
+    background-color: #F2F4FF; /* Ghost White for a soft, inviting background */
+    font-family: 'Open Sans', sans-serif; /* Use a clean, modern font */
 }
+
 .custom-navbar-bg {
-    background-color: #faf0e6; /* Seamless look with the body background */
-    color: #FFFFFF;
+    background-color: #696EC2; /* Medium Purple for the navbar background */
+    color: #F2F4FF; /* Ghost White for text */
 }
 
-.hero-section {
-    background-color: #dfe7d8; /* Light sage green */
-    color: #323232; /* Clarity and sophistication in text */
-    padding: 50px 0;
-    text-align: center;
+/* Header Styles */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #F2F4FF; /* Ghost White for navbar brand */
 }
 
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    color: #F2F4FF; /* Ghost White for nav links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #A5A8E1; /* Light Purple for nav links on hover */
+}
+
+/* Banner Section */
 .banner-section {
     background-image: url('WhatsApp Image 2024-06-28 at 17.30.21.jpeg'); /* Add your hero image URL here */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #ffffff; /* White text for contrast */
+    color: #F2F4FF; /* Ghost White text for contrast */
     height: 80vh; /* Set height to 80% of viewport height */
     display: flex; /* Use flexbox to center content */
     align-items: center; /* Vertically center content */
     text-align: center;
 }
 
+.banner-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.banner-section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+/* Dynamic Section */
 .dynamic-section {
-    background-color: #f7e8d4; /* Soft beige */
+    background-color: #A5A8E1; /* Light Purple */
     color: #323232; /* Maintaining the sophisticated dark grey text color */
     padding: 40px 0;
     text-align: center;
     font-size: 50px; /* Increasing the font size for better readability */
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Manifesto Section */
 .manifesto-section {
-    background-color: #faf0e6; /* Creamy beige */
+    background-color: #F2F4FF; /* Ghost White */
     color: #323232; /* Maintaining the sophisticated dark grey text color */
     padding: 40px 0;
     font-size: 20px; /* Increasing the font size for better readability */
+    font-family: 'Open Sans', sans-serif;
 }
 
+/* Feature Section */
 .feature-section {
     padding: 40px 0;
-    background-color: #f0ebe3; /* Light tan */
+    background-color: #F2F4FF; /* Light Purple */
 }
 .feature-section .col-md-4 {
-    border: 2px solid #706953; /* Muted green for border */
+    border: 2px solid #120F26; /* Dark Purple for border */
     border-radius: 15px; /* Rounded corners for the boxes */
     padding: 40px; /* Internal spacing */
     margin: 10px; /* Space between each feature box */
-    background-color: #f0ebe3; /* Matching background for the boxes */
+    background-color: #F2F4FF; /* Matching background for the boxes */
 }
 .feature-section h2, .feature-section p {
     color: #323232; /* Readability against the light background */
 }
+
+/* CTA Section */
 .cta-section {
-    background-color: #c29591; /* Dusty Rose for the CTA section for subtle contrast */
+    background-color: #696EC2; /* Medium Purple for the CTA section for subtle contrast */
     padding: 30px 0;
     text-align: center;
 }
+
 .cta-section h2, .cta-section p {
-    color: #FFFFFF; /* Strong contrast and readability */
+    color: #F2F4FF; /* Strong contrast and readability */
+    font-family: 'Montserrat', sans-serif;
 }
+
 .navbar, .btn-primary, .btn-success {
-    background-color: #3A5A40; /* Muted Green for navigation and button backgrounds */
+    background-color: #696EC2; /* Medium Purple for navigation and button backgrounds */
     border: none;
-    color: #FFFFFF;
+    color: #F2F4FF;
 }
+
 .navbar, .navbar * {
-    color: #FFFFFF; /* Ensures all text in the navbar is white */
+    color: #F2F4FF; /* Ensures all text in the navbar is white */
 }
 
 .btn-primary {
-    background-color: #b99478; /* Earthy beige for primary action buttons */
+    background-color: #696EC2; /* Light Purple for primary action buttons */
     color: #FFFFFF; /* Clarity in text */
 }
+
 .btn-success {
-    background-color: #703f37; /* Rich, earthy tone for secondary buttons */
+    background-color: #120F26; /* Dark Purple for secondary buttons */
     color: #FFFFFF; /* Text visibility */
 }
+
 footer {
-    background-color: #faf0e6; /* Consistency with the page's aesthetic */
+    background-color: #F2F4FF; /* Consistency with the page's aesthetic */
     color: #323232; /* Legibility of footer text */
 }
+
 a, a:hover {
-    color: #706953; /* Updated link color for harmony with the design */
+    color: #696EC2; /* Updated link color for harmony with the design */
 }
 
+/* App Screenshots */
 #app-screenshots .carousel-item img {
     object-fit: contain; /* This ensures the whole image is scaled down to fit */
     max-width: 100%; /* Ensures the image is not wider than the carousel */
@@ -98,14 +138,15 @@ a, a:hover {
     background-color: #EFEEE7;
 }
 
+/* Carousel Controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-background-color: #706953; /* Muted Green for navigation and button backgrounds */
+    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-background-color: #b99478; /* Earthy beige for hover effect */
+    background-color: #120F26; /* Dark Purple for hover effect */
 }
 
 #dynamicWord {
@@ -117,7 +158,7 @@ background-color: #b99478; /* Earthy beige for hover effect */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000; /* Black color for icons */
+    color: #120F26; /* Dark Purple color for icons */
     margin-right: 15px; /* Space between icon and text */
 }
 
@@ -125,19 +166,22 @@ background-color: #b99478; /* Earthy beige for hover effect */
     font-size: 1.5rem; /* Icon size */
 }
 
-
 /* Case Studies Section */
 #case-studies {
-    background-color: #f0ebe3; /* Light tan background for case studies */
+    background-color: #A5A8E1; /* Light Purple background for case studies */
     padding: 60px 0;
 }
 
 #case-studies h2 {
     margin-bottom: 20px; /* Add padding below the main heading */
+    text-align: left; /* Align heading to the left */
+    font-family: 'Montserrat', sans-serif;
 }
 
 #case-studies h5 {
     margin-bottom: 40px; /* Add padding below the subheading */
+    text-align: left; /* Align subheading to the left */
+    font-family: 'Open Sans', sans-serif;
 }
 
 #case-studies .card {
@@ -162,10 +206,10 @@ background-color: #b99478; /* Earthy beige for hover effect */
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(112, 105, 83, 0.3); /* Muted Green for navigation and button backgrounds with 50% transparency */
+    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: #b99478; /* Light Periwinkle for hover effect */
+    background-color: #120F26; /* Dark Purple for hover effect */
 }
