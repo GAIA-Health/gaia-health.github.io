@@ -219,24 +219,23 @@ a, a:hover {
 
 /* Add this to styles.css */
 .hero-text {
-    margin-bottom: 30px; /* Adjust the value to create space between hero text and hero image */
-    padding-right: 150px;
-    padding-left: 150px;
+    margin-bottom: 5%; /* Use percentage for bottom margin */
+    padding-right: 5%; /* Use percentage for right padding */
+    padding-left: 5%; /* Use percentage for left padding */
 }
 
 .hero-image {
-    padding-left: 50px;
-
+    padding-right: 5%;
 }
 
 /* Update the testimonial class in styles.css */
 .testimonial {
     font-style: italic; /* Italicize the testimonial text */
     color: #696EC2; /* Change color to match your theme */
-    margin-top: 20px; /* Space above the testimonial */
-    padding: 10px; /* Add padding for better readability */
+    margin-top: 2%; /* Space above the testimonial */
+    padding: 2%; /* Add padding for better readability */
     border-left: 4px solid #120F26; /* Optional: Add a left border for emphasis */
-    max-width: 400px; /* Set a maximum width for the testimonial */
+    max-width: 80%; /* Set a maximum width for the testimonial */
     line-height: 1.5; /* Improve readability with line height */
     word-wrap: break-word; /* Allow long words to break and wrap to the next line */
 }
@@ -244,4 +243,18 @@ a, a:hover {
 .star-rating {
     font-size: 1.5rem; /* Adjust size as needed */
     color: #000000; /* Change star color to black */
+}
+
+/* App Screenshots Carousel */
+#app-screenshots {
+    max-height: 50vh; /* Set a maximum height for the carousel section */
+    overflow: hidden; /* Hide overflow to prevent images from exceeding the height */
+}
+
+#app-screenshots .carousel-item img {
+    max-height: 30vh; /* Set a maximum height for the carousel images */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    margin: auto; /* Center the image if it's smaller than the container */
+    border-radius: 15px; /* Optional: rounded corners for images */
 }
