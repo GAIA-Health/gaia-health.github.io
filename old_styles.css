@@ -1,29 +1,29 @@
 /* General Styles */
 body {
     color: #323232; /* Grey for main text, enhancing readability on a light background */
-    background-color: #F2F4FF; /* Ghost White for a soft, inviting background */
+    background-color: #faf0e6; /* Lighter, creamier beige for a soft and inviting background */
     font-family: 'Open Sans', sans-serif; /* Use a clean, modern font */
 }
 
 .custom-navbar-bg {
-    background-color: #696EC2; /* Medium Purple for the navbar background */
-    color: #F2F4FF; /* Ghost White for text */
+    background-color: #faf0e6; /* Seamless look with the body background */
+    color: #3A5A40;
 }
 
 /* Header Styles */
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #F2F4FF; /* Ghost White for navbar brand */
+    color: #3A5A40;
 }
 
 .navbar-nav .nav-link {
     font-family: 'Montserrat', sans-serif;
-    color: #F2F4FF; /* Ghost White for nav links */
+    color: #faf0e6;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #A5A8E1; /* Light Purple for nav links on hover */
+    color: #faf0e6; /* Hover color for nav links */
 }
 
 /* Banner Section */
@@ -32,7 +32,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #F2F4FF; /* Ghost White text for contrast */
+    color: #ffffff; /* White text for contrast */
     height: 80vh; /* Set height to 80% of viewport height */
     display: flex; /* Use flexbox to center content */
     align-items: center; /* Vertically center content */
@@ -53,7 +53,7 @@ body {
 
 /* Dynamic Section */
 .dynamic-section {
-    background-color: #A5A8E1; /* Light Purple */
+    background-color: #f7e8d4; /* Soft beige */
     color: #323232; /* Maintaining the sophisticated dark grey text color */
     padding: 40px 0;
     text-align: center;
@@ -63,7 +63,7 @@ body {
 
 /* Manifesto Section */
 .manifesto-section {
-    background-color: #F2F4FF; /* Ghost White */
+    background-color: #faf0e6; /* Creamy beige */
     color: #323232; /* Maintaining the sophisticated dark grey text color */
     padding: 40px 0;
     font-size: 20px; /* Increasing the font size for better readability */
@@ -71,16 +71,17 @@ body {
 }
 
 /* Feature Section */
+
 .feature-section {
     padding: 40px 0;
-    background-color: #F2F4FF; /* Light Purple */
+    background-color: #f0ebe3; /* Light tan */
 }
 .feature-section .col-md-4 {
-    border: 2px solid #120F26; /* Dark Purple for border */
+    border: 2px solid #706953; /* Muted green for border */
     border-radius: 15px; /* Rounded corners for the boxes */
     padding: 40px; /* Internal spacing */
     margin: 10px; /* Space between each feature box */
-    background-color: #F2F4FF; /* Matching background for the boxes */
+    background-color: #f0ebe3; /* Matching background for the boxes */
 }
 .feature-section h2, .feature-section p {
     color: #323232; /* Readability against the light background */
@@ -88,68 +89,65 @@ body {
 
 /* CTA Section */
 .cta-section {
-    background-color: #696EC2; /* Medium Purple for the CTA section for subtle contrast */
+    background-color: #c29591; /* Dusty Rose for the CTA section for subtle contrast */
     padding: 30px 0;
     text-align: center;
 }
 
 .cta-section h2, .cta-section p {
-    color: #F2F4FF; /* Strong contrast and readability */
+    color: #FFFFFF; /* Strong contrast and readability */
     font-family: 'Montserrat', sans-serif;
 }
 
 .navbar, .btn-primary, .btn-success {
-    background-color: #696EC2; /* Medium Purple for navigation and button backgrounds */
+    background-color: #3A5A40; /* Muted Green for navigation and button backgrounds */
     border: none;
-    color: #F2F4FF;
+    color: #FFFFFF;
 }
 
 .navbar, .navbar * {
-    color: #F2F4FF; /* Ensures all text in the navbar is white */
+    color: #FFFFFF; /* Ensures all text in the navbar is white */
 }
 
 .btn-primary {
-    background-color: #696EC2; /* Light Purple for primary action buttons */
+    background-color: #b99478; /* Earthy beige for primary action buttons */
     color: #FFFFFF; /* Clarity in text */
 }
 
 .btn-success {
-    background-color: #120F26; /* Dark Purple for secondary buttons */
+    background-color: #703f37; /* Rich, earthy tone for secondary buttons */
     color: #FFFFFF; /* Text visibility */
 }
 
 footer {
-    background-color: #F2F4FF; /* Consistency with the page's aesthetic */
+    background-color: #faf0e6; /* Consistency with the page's aesthetic */
     color: #323232; /* Legibility of footer text */
 }
 
 a, a:hover {
-    color: #696EC2; /* Updated link color for harmony with the design */
+    color: #706953; /* Updated link color for harmony with the design */
 }
 
 /* App Screenshots */
 #app-screenshots .carousel-item img {
-    max-height: 200px; /* Set a maximum height for the carousel images */
-    width: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image if it's smaller than the container */
-    border-radius: 15px; /* Optional: rounded corners for images */
-    display: flex; /* Use flexbox to center the images */
-    justify-content: center; /* Center the images */
-    width: auto; /* Set to auto to fit the content */
-    max-width: 200px; /* Set a maximum width for the carousel */
-    margin: 0 auto; /* Center the carousel */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    object-fit: contain; /* This ensures the whole image is scaled down to fit */
+    max-width: 100%; /* Ensures the image is not wider than the carousel */
+    height: auto; /* Scales the height automatically based on the width */
+    margin: auto; /* This will help center the image if it's smaller than the container */
+    border-radius: 15px;
+    max-height: 500px; /* Adjust the maximum height as needed */
+    background-color: #EFEEE7;
 }
 
 /* Carousel Controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
+    background-color: rgba(112, 105, 83, 0.3); /* Muted Green for navigation and button backgrounds with 30% transparency */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: #120F26; /* Dark Purple for hover effect */
+    background-color: #b99478; /* Earthy beige for hover effect */
 }
 
 #dynamicWord {
@@ -161,7 +159,7 @@ a, a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #120F26; /* Dark Purple color for icons */
+    color: #000; /* Black color for icons */
     margin-right: 15px; /* Space between icon and text */
 }
 
@@ -171,7 +169,7 @@ a, a:hover {
 
 /* Case Studies Section */
 #case-studies {
-    background-color: #A5A8E1; /* Light Purple background for case studies */
+    background-color: #f0ebe3; /* Light tan background for case studies */
     padding: 60px 0;
 }
 
@@ -209,39 +207,10 @@ a, a:hover {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
+    background-color: rgba(112, 105, 83, 0.3); /* Muted Green for navigation and button backgrounds with 30% transparency */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: #120F26; /* Dark Purple for hover effect */
-}
-
-/* Add this to styles.css */
-.hero-text {
-    margin-bottom: 30px; /* Adjust the value to create space between hero text and hero image */
-    padding-right: 150px;
-    padding-left: 150px;
-}
-
-.hero-image {
-    padding-left: 50px;
-
-}
-
-/* Update the testimonial class in styles.css */
-.testimonial {
-    font-style: italic; /* Italicize the testimonial text */
-    color: #696EC2; /* Change color to match your theme */
-    margin-top: 20px; /* Space above the testimonial */
-    padding: 10px; /* Add padding for better readability */
-    border-left: 4px solid #120F26; /* Optional: Add a left border for emphasis */
-    max-width: 400px; /* Set a maximum width for the testimonial */
-    line-height: 1.5; /* Improve readability with line height */
-    word-wrap: break-word; /* Allow long words to break and wrap to the next line */
-}
-
-.star-rating {
-    font-size: 1.5rem; /* Adjust size as needed */
-    color: #000000; /* Change star color to black */
+    background-color: #b99478; /* Light Periwinkle for hover effect */
 }
