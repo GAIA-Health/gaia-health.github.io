@@ -318,3 +318,12 @@ a, a:hover {
     background-color: rgba(255, 255, 255, 0.5); /* Inactive indicator color */
     border-radius: 50%; /* Rounded indicators */
 }
+
+/* Add this to styles.css */
+.image-wrapper {
+    border: 2px solid black; /* Thin black outline */
+    border-radius: 5px; /* Optional: Slightly rounded corners */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
