@@ -61,14 +61,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Manifesto Section */
-.manifesto-section {
-    background-color: #F2F4FF; /* Ghost White */
-    color: #323232; /* Maintaining the sophisticated dark grey text color */
-    padding: 40px 0;
-    font-size: 20px; /* Increasing the font size for better readability */
-    font-family: 'Open Sans', sans-serif;
-}
+
 
 /* Feature Section */
 .feature-section {
@@ -257,4 +250,71 @@ a, a:hover {
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     margin: auto; /* Center the image if it's smaller than the container */
     border-radius: 15px; /* Optional: rounded corners for images */
+}
+
+/* Add this to styles.css */
+.testimonial-bubble {
+    background-color: #343a40; /* Dark background for the bubble */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the bubble */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+    margin: 0 auto; /* Center the bubble */
+    max-width: 600px; /* Set a maximum width for the bubble */
+}
+
+.testimonial-text {
+    font-size: 1.2rem; /* Slightly larger font size for better readability */
+    margin: 0; /* Remove margin for the text */
+}
+
+.blockquote-footer {    
+    font-size: 0.9rem; /* Slightly larger font size for better readability */
+    margin: 0; /* Remove margin for the text */
+    margin-top: 10px; /* Space above the footer */
+}
+
+/* Add this to styles.css */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Increase the width of the controls for easier clicking */
+    color: #ffffff; /* Change arrow color to white */
+    opacity: 0; /* Hide arrows by default */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1; /* Show arrows on hover */
+    pointer-events: auto; /* Allow interaction when visible */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for the arrows */
+    border-radius: 50%; /* Rounded background for the arrows */
+    padding: 10px; /* Padding around the arrows */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+.carousel-indicators {
+    position: absolute; /* Position indicators */
+    bottom: 10px; /* Position from the bottom */
+    left: 50%; /* Center indicators */
+    transform: translateX(-50%); /* Centering adjustment */
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff; /* Active indicator color */
+}
+
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.5); /* Inactive indicator color */
+    border-radius: 50%; /* Rounded indicators */
 }
