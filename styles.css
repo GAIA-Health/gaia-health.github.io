@@ -240,18 +240,16 @@ a, a:hover {
     object-fit: contain; /* Maintain aspect ratio while fitting within the area */
 }
 
-
 /* Update the testimonial class in styles.css */
 .testimonial {
     font-style: italic; /* Italicize the testimonial text */
     color: #696EC2; /* Change color to match your theme */
     margin-top: 2%; /* Space above the testimonial */
-    padding: 2%; /* Add padding for better readability */
+    padding: 5%; /* Add padding for better readability */
     border-left: 4px solid #120F26; /* Optional: Add a left border for emphasis */
     max-width: 80%; /* Set a maximum width for the testimonial */
     line-height: 1.5; /* Improve readability with line height */
     word-wrap: break-word; /* Allow long words to break and wrap to the next line */
-    background-color: #f8f9fa; /* Light background for contrast */
     border-radius: 5px; /* Rounded corners for a softer look */
 }
 
@@ -267,7 +265,7 @@ a, a:hover {
 }
 
 #app-screenshots .carousel-item img {
-    max-height: 30vh; /* Set a maximum height for the carousel images */
+    max-height: 40vh; /* Set a maximum height for the carousel images */
     width: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     margin: auto; /* Center the image if it's smaller than the container */
@@ -290,7 +288,7 @@ a, a:hover {
     margin: 0; /* Remove margin for the text */
 }
 
-.blockquote-footer {
+.blockquote-footer {    
     font-size: 0.9rem; /* Slightly larger font size for better readability */
     margin: 0; /* Remove margin for the text */
     margin-top: 10px; /* Space above the footer */
@@ -358,7 +356,10 @@ a, a:hover {
     }
     
     .hero-image {
-        max-height: 500px; /* 50vhSet a maximum height of 50% of the viewport height on smaller screens */
+        
+        max-width: 500px; /* Iflex: 0 0 100%;ncrease the maximum height for smaller screens */
+        height: auto; /* Allow the height to adjust automatically */
+        padding: 1%;
     }
     .testimonial {
         font-size: 1rem; /* Adjust font size for better readability on small screens */
@@ -374,4 +375,12 @@ a, a:hover {
         padding: 15px; /* Adjust padding for mobile */
         margin: 10px 0; /* Add margin for spacing between testimonials */
     }
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: Set a max width for larger screens */
+    margin: 0 auto; /* Center the container */
 }
