@@ -102,8 +102,21 @@ body {
 }
 
 .btn-primary {
-    background-color: #696EC2; /* Light Purple for primary action buttons */
-    color: #FFFFFF; /* Clarity in text */
+    background-color: #696EC2; /* Your brand color for the button */
+    color: #FFFFFF; /* Text color */
+    border: none; /* Remove border */
+}
+
+.btn-primary:hover {
+    background-color: #4B4E9A; /* Lighter shade for hover effect */
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #4B4E9A; /* Change this to your desired brand color for active state */
+    color: #FFFFFF; /* Ensure text color remains white */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(105, 110, 194, 0.5); /* Optional: Add a shadow for focus */
 }
 
 .btn-success {
