@@ -390,9 +390,11 @@ a, a:hover {
     }
 }
 
-.container {
+
+.hero-container {
     display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: row; /* Ensure items are in a row */
+    align-items: center; /* Center items vertically */
     width: 100%; /* Full width */
     max-width: 1200px; /* Optional: Set a max width for larger screens */
     margin: 0 auto; /* Center the container */
