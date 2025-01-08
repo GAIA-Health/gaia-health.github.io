@@ -212,14 +212,34 @@ a, a:hover {
 
 /* Add this to styles.css */
 .hero-text {
+    flex: 1; /* Allow the text to take available space */
+    padding: 5%; /* Use percentage for padding */
     margin-bottom: 5%; /* Use percentage for bottom margin */
-    padding-right: 5%; /* Use percentage for right padding */
-    padding-left: 5%; /* Use percentage for left padding */
 }
 
 .hero-image {
-    padding-right: 5%;
+    flex: 1; /* Allow the image to take available space */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    
+    width: 40%;
+    height: auto;
+
+    max-height: 400px;
+    object-fit: contain; /* width: 40%;Maintain aspect ratio while fitting within the area */
+
+     /* overflow: hidden; Hide overflow to prevent the image from exceeding the max height */
 }
+
+.hero-image img {
+    height: 80%;
+    width: 80%; /* Allow the height to adjust automatically */
+    max-height: 600px; /* Ensure the image does not exceed the height of its container */
+    
+    object-fit: contain; /* Maintain aspect ratio while fitting within the area */
+}
+
 
 /* Update the testimonial class in styles.css */
 .testimonial {
@@ -231,6 +251,8 @@ a, a:hover {
     max-width: 80%; /* Set a maximum width for the testimonial */
     line-height: 1.5; /* Improve readability with line height */
     word-wrap: break-word; /* Allow long words to break and wrap to the next line */
+    background-color: #f8f9fa; /* Light background for contrast */
+    border-radius: 5px; /* Rounded corners for a softer look */
 }
 
 .star-rating {
@@ -268,10 +290,11 @@ a, a:hover {
     margin: 0; /* Remove margin for the text */
 }
 
-.blockquote-footer {    
+.blockquote-footer {
     font-size: 0.9rem; /* Slightly larger font size for better readability */
     margin: 0; /* Remove margin for the text */
     margin-top: 10px; /* Space above the footer */
+    padding: 5px; /* Add padding for better readability */
 }
 
 /* Add this to styles.css */
@@ -326,4 +349,29 @@ a, a:hover {
     display: flex; /* Use flexbox to center the image */
     justify-content: center; /* Center the image horizontally */
     align-items: center; /* Center the image vertically */
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        flex: 0 0 100%; /* Allow the text to take full width on smaller screens */
+        margin-bottom: 20px; /* Add space below the text */
+    }
+    
+    .hero-image {
+        max-height: 500px; /* 50vhSet a maximum height of 50% of the viewport height on smaller screens */
+    }
+    .testimonial {
+        font-size: 1rem; /* Adjust font size for better readability on small screens */
+        padding: 10px; /* Add more padding for touch targets */
+        border-left: none; /* Remove left border for a cleaner look on mobile */
+        background-color: #f8f9fa; /* Light background for contrast */
+        border-radius: 10px; /* Rounded corners for a softer look */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        margin: 0 auto; /* Center the testimonial */
+    }
+
+    .testimonial-bubble {
+        padding: 15px; /* Adjust padding for mobile */
+        margin: 10px 0; /* Add margin for spacing between testimonials */
+    }
 }
