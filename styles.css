@@ -5,6 +5,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0; /* Ensure no default margin */
+    padding: 0; /* Ensure no default padding */
 }
 
 /* Modern Color Palette */
@@ -26,6 +28,9 @@ body {
     background-color: var(--primary); /* Using the primary color variable */
     box-shadow: 0 2px 10px rgba(123, 104, 238, 0.2); /* Subtle shadow for depth */
     transition: all 0.3s ease;
+    margin-bottom: 0; /* Remove any bottom margin */
+    padding-bottom: 0; /* Remove any bottom padding */
+    border-bottom: none; /* Remove any border */
 }
 
 .navbar-brand {
@@ -86,6 +91,9 @@ body {
     background: linear-gradient(135deg, rgba(250, 250, 254, 0.9) 0%, rgba(242, 240, 255, 0.9) 100%);
     position: relative;
     overflow: hidden;
+    margin-top: 0; /* Remove any top margin */
+    margin-bottom: 0; /* Remove any bottom margin */
+    border-top: none; /* Remove any border */
 }
 
 .hero-container::before {
@@ -193,13 +201,12 @@ body {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: var(--text-light);
     padding: 3rem 0;
+    margin-top: 0; /* Remove any top margin */
     text-align: center;
     font-size: 2.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
 }
 
 .dynamic-section::before {
@@ -1015,4 +1022,36 @@ html {
     border-radius: 10px;
     background-color: var(--primary);
     opacity: 1;
+}
+
+/* Fix for section gaps */
+main section {
+    margin: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+main section.text-center {
+    margin: 0;
+    padding-bottom: 0; /* Remove bottom padding from hero section */
+}
+
+/* Ensure no gaps between sections */
+header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.text-center + .dynamic-section {
+    margin-top: 0 !important;
+    padding-top: 2rem;
+}
+
+.sticky-top {
+    margin-bottom: 0 !important;
 }
