@@ -559,11 +559,20 @@ footer a {
     color: var(--primary);
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 footer a:hover {
     color: var(--primary-dark);
-    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+footer .bi {
+    transition: all 0.3s ease;
+}
+
+footer a:hover .bi {
+    transform: scale(1.2);
 }
 
 /* Carousel Controls */
@@ -818,11 +827,40 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .stat-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(123, 104, 238, 0.15);
+}
+
+/* Popular card styling */
+.popular-card {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(123, 104, 238, 0.2);
+    border: 2px solid var(--primary-light);
+    z-index: 2;
+}
+
+.popular-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(123, 104, 238, 0.25);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(123, 104, 238, 0.3);
+    z-index: 3;
 }
 
 .stat-icon {
@@ -854,6 +892,8 @@ html {
     color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 .early-adopter-cta {
@@ -1063,4 +1103,33 @@ main {
 
 .sticky-top {
     margin-bottom: 0 !important;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    color: var(--text-light);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    color: var(--text-light);
+}
+
+.social-icon i {
+    font-size: 16px;
 }
