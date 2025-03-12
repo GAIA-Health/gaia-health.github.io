@@ -226,6 +226,9 @@ body {
     position: relative;
     display: inline-block;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow for better readability */
+    border-right: 3px solid #FFD3E0; /* Cursor effect */
+    padding-right: 5px; /* Space for cursor */
+    animation: blinkCursor 0.8s step-end infinite;
 }
 
 #dynamicWord::after {
@@ -238,6 +241,12 @@ body {
     background-color: #FFD3E0; /* Matching lighter pink */
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for the underline */
+}
+
+/* Blinking cursor animation */
+@keyframes blinkCursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #FFD3E0; }
 }
 
 /* Feature Section */

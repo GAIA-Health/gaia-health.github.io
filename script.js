@@ -4,25 +4,52 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Dynamic word changing in the hero section
+    // Dynamic word typing animation in the hero section
     const words = ['health', 'cycle', 'mood', 'sleep', 'fitness', 'nutrition', 'body'];
     const dynamicWord = document.getElementById('dynamicWord');
     let currentIndex = 0;
+    let isDeleting = false;
+    let text = '';
+    let typingSpeed = 150; // Speed of typing in milliseconds
+    let deletingSpeed = 75; // Speed of deleting in milliseconds
+    let pauseBeforeDelete = 1500; // Pause before starting to delete
+    let pauseBeforeType = 500; // Pause before typing the next word
     
-    setInterval(() => {
-        dynamicWord.classList.add('animate__animated', 'animate__fadeOut');
+    function typeEffect() {
+        const currentWord = words[currentIndex];
         
-        setTimeout(() => {
+        // If deleting, remove a character, otherwise add a character
+        if (isDeleting) {
+            text = currentWord.substring(0, text.length - 1);
+        } else {
+            text = currentWord.substring(0, text.length + 1);
+        }
+        
+        // Update the text content
+        dynamicWord.textContent = text;
+        
+        // Set typing speed
+        let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
+        
+        // If word is complete
+        if (!isDeleting && text === currentWord) {
+            // Pause before deleting
+            typeSpeed = pauseBeforeDelete;
+            isDeleting = true;
+        } else if (isDeleting && text === '') {
+            // Move to next word when deleted
+            isDeleting = false;
             currentIndex = (currentIndex + 1) % words.length;
-            dynamicWord.textContent = words[currentIndex];
-            dynamicWord.classList.remove('animate__fadeOut');
-            dynamicWord.classList.add('animate__fadeIn');
-            
-            setTimeout(() => {
-                dynamicWord.classList.remove('animate__fadeIn');
-            }, 500);
-        }, 500);
-    }, 3000);
+            // Pause before typing next word
+            typeSpeed = pauseBeforeType;
+        }
+        
+        // Continue the animation
+        setTimeout(typeEffect, typeSpeed);
+    }
+    
+    // Start the typing animation
+    typeEffect();
 
     // Enhanced Carousel Functionality
     const carousel = document.getElementById('screenshotCarousel');
