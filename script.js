@@ -24,6 +24,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }, 3000);
 
+    // Enhanced Carousel Functionality
+    const carousel = document.getElementById('screenshotCarousel');
+    if (carousel) {
+        // Initialize Bootstrap carousel with longer interval
+        const bsCarousel = new bootstrap.Carousel(carousel, {
+            interval: 5000, // Longer interval for better viewing of each slide
+            ride: 'carousel',
+            wrap: true
+        });
+        
+        // Add hover pause functionality
+        carousel.addEventListener('mouseenter', () => {
+            bsCarousel.pause();
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            bsCarousel.cycle();
+        });
+        
+        // Add swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        const handleSwipe = () => {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left, go to next slide
+                bsCarousel.next();
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right, go to previous slide
+                bsCarousel.prev();
+            }
+        };
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (isElementInViewport(carousel)) {
+                if (e.key === 'ArrowLeft') {
+                    bsCarousel.prev();
+                }
+                if (e.key === 'ArrowRight') {
+                    bsCarousel.next();
+                }
+            }
+        });
+        
+        // Preload images for smoother transitions
+        const preloadImages = () => {
+            const slides = carousel.querySelectorAll('.carousel-item img');
+            slides.forEach(img => {
+                const src = img.getAttribute('src');
+                if (src) {
+                    const image = new Image();
+                    image.src = src;
+                }
+            });
+        };
+        
+        // Fix for smoother transitions
+        carousel.addEventListener('slide.bs.carousel', function (e) {
+            // Add a small delay to ensure proper opacity transition
+            const activeItem = carousel.querySelector('.carousel-item.active');
+            const nextItem = e.relatedTarget;
+            
+            // Ensure proper z-index stacking
+            if (activeItem) activeItem.style.zIndex = '0';
+            if (nextItem) nextItem.style.zIndex = '1';
+        });
+        
+        // Run preload
+        preloadImages();
+    }
+
+    // Helper function to check if element is in viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
