@@ -1,401 +1,527 @@
 /* General Styles */
 body {
-    color: #323232; /* Grey for main text, enhancing readability on a light background */
-    background-color: #F2F4FF; /* Ghost White for a soft, inviting background */
-    font-family: 'Open Sans', sans-serif; /* Use a clean, modern font */
+    color: #333; /* Darker text for better readability */
+    background-color: #FAFAFE; /* Lighter background for a clean look */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.custom-navbar-bg {
-    background-color: #696EC2; /* Medium Purple for the navbar background */
-    color: #F2F4FF; /* Ghost White for text */
+/* Modern Color Palette */
+:root {
+    --primary: #7B68EE; /* Medium slate blue - main brand color */
+    --primary-dark: #5D4ED6; /* Darker purple for hover states */
+    --primary-light: #A594F9; /* Lighter purple for accents */
+    --secondary: #F2F0FF; /* Very light purple for backgrounds */
+    --accent: #FF6B98; /* Pink accent for highlights */
+    --text-dark: #333; /* Dark text */
+    --text-light: #FFFFFF; /* Light text */
+    --text-muted: #6c757d; /* Muted text */
+    --gradient-start: #7B68EE; /* Start of gradient */
+    --gradient-end: #A594F9; /* End of gradient */
 }
 
 /* Header Styles */
+.custom-navbar-bg {
+    background-color: var(--primary); /* Using the primary color variable */
+    box-shadow: 0 2px 10px rgba(123, 104, 238, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+}
+
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #F2F4FF; /* Ghost White for navbar brand */
+    font-weight: 700;
+    color: var(--text-light) !important;
+    letter-spacing: 1px;
 }
 
 .navbar-nav .nav-link {
     font-family: 'Montserrat', sans-serif;
-    color: #F2F4FF; /* Ghost White for nav links */
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #A5A8E1; /* Light Purple for nav links on hover */
+.navbar-nav .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-/* Banner Section */
-.banner-section {
-    background-image: url('WhatsApp Image 2024-06-28 at 17.30.21.jpeg'); /* Add your hero image URL here */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #F2F4FF; /* Ghost White text for contrast */
-    height: 80vh; /* Set height to 80% of viewport height */
-    display: flex; /* Use flexbox to center content */
-    align-items: center; /* Vertically center content */
-    text-align: center;
+.navbar-nav .nav-link:hover:after {
+    width: 70%;
 }
 
-.banner-section h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
+.navbar-nav .nav-link.active {
+    color: var(--text-light) !important;
+    font-weight: 700;
 }
 
-.banner-section p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.25rem;
-    margin-bottom: 20px;
+.navbar-nav .nav-link.active:after {
+    width: 70%;
 }
 
-/* Dynamic Section */
-.dynamic-section {
-    background-color: #A5A8E1; /* Light Purple */
-    color: #323232; /* Maintaining the sophisticated dark grey text color */
-    padding: 40px 0;
-    text-align: center;
-    font-size: 50px; /* Increasing the font size for better readability */
-    font-family: 'Montserrat', sans-serif;
-}
-
-
-
-/* Feature Section */
-.feature-section {
-    padding: 40px 0;
-    background-color: #F2F4FF; /* Light Purple */
-}
-.feature-section .col-md-4 {
-    border: 2px solid #120F26; /* Dark Purple for border */
-    border-radius: 15px; /* Rounded corners for the boxes */
-    padding: 40px; /* Internal spacing */
-    margin: 10px; /* Space between each feature box */
-    background-color: #F2F4FF; /* Matching background for the boxes */
-}
-.feature-section h2, .feature-section p {
-    color: #323232; /* Readability against the light background */
-}
-
-/* CTA Section */
-.cta-section {
-    background-color: #696EC2; /* Medium Purple for the CTA section for subtle contrast */
-    padding: 30px 0;
-    text-align: center;
-}
-
-.cta-section h2, .cta-section p {
-    color: #F2F4FF; /* Strong contrast and readability */
-    font-family: 'Montserrat', sans-serif;
-}
-
-.navbar, .btn-primary, .btn-success {
-    background-color: #696EC2; /* Medium Purple for navigation and button backgrounds */
+.navbar-toggler {
     border: none;
-    color: #F2F4FF;
+    padding: 0.25rem 0.5rem;
 }
 
-.navbar, .navbar * {
-    color: #F2F4FF; /* Ensures all text in the navbar is white */
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
 }
 
+/* Hero Section */
+.hero-container {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(250, 250, 254, 0.9) 0%, rgba(242, 240, 255, 0.9) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(123, 104, 238, 0.1);
+    z-index: 0;
+}
+
+.hero-container::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(165, 148, 249, 0.1);
+    z-index: 0;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.hero-text .lead {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.image-wrapper {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(123, 104, 238, 0.2);
+    transition: all 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Button Styles */
 .btn-primary {
-    background-color: #696EC2; /* Your brand color for the button */
-    color: #FFFFFF; /* Text color */
-    border: none; /* Remove border */
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    border: none;
+    border-radius: 30px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #4B4E9A; /* Lighter shade for hover effect */
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(123, 104, 238, 0.4);
 }
 
 .btn-primary:focus,
 .btn-primary:active {
-    background-color: #4B4E9A; /* Change this to your desired brand color for active state */
-    color: #FFFFFF; /* Ensure text color remains white */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 0.2rem rgba(105, 110, 194, 0.5); /* Optional: Add a shadow for focus */
+    background: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
+    outline: none;
 }
 
-.btn-success {
-    background-color: #120F26; /* Dark Purple for secondary buttons */
-    color: #FFFFFF; /* Text visibility */
+/* Dynamic Section */
+.dynamic-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--text-light);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
 }
 
-footer {
-    background-color: #F2F4FF; /* Consistency with the page's aesthetic */
-    color: #323232; /* Legibility of footer text */
-}
-
-a, a:hover {
-    color: #696EC2; /* Updated link color for harmony with the design */
-}
-
-/* App Screenshots */
-#app-screenshots .carousel-item img {
-    max-height: 200px; /* Set a maximum height for the carousel images */
-    width: auto; /* Maintain aspect ratio */
-    margin: auto; /* Center the image if it's smaller than the container */
-    border-radius: 15px; /* Optional: rounded corners for images */
-    display: flex; /* Use flexbox to center the images */
-    justify-content: center; /* Center the images */
-    width: auto; /* Set to auto to fit the content */
-    max-width: 200px; /* Set a maximum width for the carousel */
-    margin: 0 auto; /* Center the carousel */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-}
-
-/* Carousel Controls */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: #120F26; /* Dark Purple for hover effect */
+.dynamic-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.3;
 }
 
 #dynamicWord {
-    font-weight: bold;
-    color: #323232; /* Adjust the color to fit your design */
+    font-weight: 800;
+    color: #FFD3E0; /* Lighter pink for better contrast against purple */
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow for better readability */
+}
+
+#dynamicWord::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FFD3E0; /* Matching lighter pink */
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for the underline */
+}
+
+/* Feature Section */
+.feature-section {
+    padding: 5rem 0;
+    background-color: var(--secondary);
+    position: relative;
+}
+
+.feature-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+.feature-box {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(123, 104, 238, 0.1);
 }
 
 .icon-square {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #120F26; /* Dark Purple color for icons */
-    margin-right: 15px; /* Space between icon and text */
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    color: white;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
 }
 
-.icon-square i {
-    font-size: 1.5rem; /* Icon size */
+.feature-box:hover .icon-square {
+    transform: rotate(5deg) scale(1.05);
 }
 
-/* Case Studies Section */
-#case-studies {
-    background-color: #A5A8E1; /* Light Purple background for case studies */
-    padding: 60px 0;
-}
-
-#case-studies h2 {
-    margin-bottom: 20px; /* Add padding below the main heading */
-    text-align: left; /* Align heading to the left */
+.feature-box h3 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
 }
 
-#case-studies h5 {
-    margin-bottom: 40px; /* Add padding below the subheading */
-    text-align: left; /* Align subheading to the left */
-    font-family: 'Open Sans', sans-serif;
+.feature-box p {
+    color: var(--text-muted);
+    margin-bottom: 0;
 }
 
-#case-studies .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    border-radius: 15px; /* Rounded corners for cards */
+/* Testimonials Section */
+#testimonials {
+    background-color: white;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
-#case-studies .card-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left; /* Left align text */
+#testimonials::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(123, 104, 238, 0.05);
+    z-index: 0;
+}
+
+#testimonials h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+.testimonial-bubble {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-bubble::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 5rem;
+    font-family: 'Georgia', serif;
+    color: rgba(123, 104, 238, 0.1);
+    line-height: 1;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.blockquote-footer {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Star Rating */
+.star-rating {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Early Access Section */
+#early-access {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 5rem 0;
+    color: var(--text-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#early-access::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+#early-access h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#early-access .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 3rem 0;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
 
 /* Carousel Controls */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%; /* Set width to move controls away from the text */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(18, 15, 38, 0.3); /* Dark Purple for navigation and button backgrounds with 30% transparency */
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: #120F26; /* Dark Purple for hover effect */
-}
-
-/* Add this to styles.css */
-.hero-text {
-    flex: 1; /* Allow the text to take available space */
-    padding: 5%; /* Use percentage for padding */
-    margin-bottom: 5%; /* Use percentage for bottom margin */
-}
-
-.hero-image {
-    flex: 1; /* Allow the image to take available space */
-    display: flex; /* Use flexbox to center the image */
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-    
-    width: 40%;
-    height: auto;
-
-    max-height: 400px;
-    object-fit: contain; /* width: 40%;Maintain aspect ratio while fitting within the area */
-
-     /* overflow: hidden; Hide overflow to prevent the image from exceeding the max height */
-}
-
-.hero-image img {
-    height: 80%;
-    width: 80%; /* Allow the height to adjust automatically */
-    max-height: 600px; /* Ensure the image does not exceed the height of its container */
-    
-    object-fit: contain; /* Maintain aspect ratio while fitting within the area */
-}
-
-/* Update the testimonial class in styles.css */
-.testimonial {
-    font-style: italic; /* Italicize the testimonial text */
-    color: #696EC2; /* Change color to match your theme */
-    margin-top: 2%; /* Space above the testimonial */
-    padding: 5%; /* Add padding for better readability */
-    border-left: 4px solid #120F26; /* Optional: Add a left border for emphasis */
-    max-width: 80%; /* Set a maximum width for the testimonial */
-    line-height: 1.5; /* Improve readability with line height */
-    word-wrap: break-word; /* Allow long words to break and wrap to the next line */
-    border-radius: 5px; /* Rounded corners for a softer look */
-}
-
-.star-rating {
-    font-size: 1.5rem; /* Adjust size as needed */
-    color: #000000; /* Change star color to black */
-}
-
-/* App Screenshots Carousel */
-#app-screenshots {
-    max-height: 50vh; /* Set a maximum height for the carousel section */
-    overflow: hidden; /* Hide overflow to prevent images from exceeding the height */
-}
-
-#app-screenshots .carousel-item img {
-    max-height: 40vh; /* Set a maximum height for the carousel images */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    margin: auto; /* Center the image if it's smaller than the container */
-    border-radius: 15px; /* Optional: rounded corners for images */
-}
-
-/* Add this to styles.css */
-.testimonial-bubble {
-    background-color: #343a40; /* Dark background for the bubble */
-    color: #ffffff; /* White text for contrast */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px; /* Padding inside the bubble */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
-    margin: 0 auto; /* Center the bubble */
-    max-width: 600px; /* Set a maximum width for the bubble */
-}
-
-.testimonial-text {
-    font-size: 1.2rem; /* Slightly larger font size for better readability */
-    margin: 0; /* Remove margin for the text */
-}
-
-.blockquote-footer {    
-    font-size: 0.9rem; /* Slightly larger font size for better readability */
-    margin: 0; /* Remove margin for the text */
-    margin-top: 10px; /* Space above the footer */
-    padding: 5px; /* Add padding for better readability */
-}
-
-/* Add this to styles.css */
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%; /* Increase the width of the controls for easier clicking */
-    color: #ffffff; /* Change arrow color to white */
-    opacity: 0; /* Hide arrows by default */
-    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
-    pointer-events: none; /* Prevent interaction when hidden */
+    width: 10%;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .carousel:hover .carousel-control-prev,
 .carousel:hover .carousel-control-next {
-    opacity: 1; /* Show arrows on hover */
-    pointer-events: auto; /* Allow interaction when visible */
+    opacity: 1;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Dark background for the arrows */
-    border-radius: 50%; /* Rounded background for the arrows */
-    padding: 10px; /* Padding around the arrows */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+/* Testimonial */
+.testimonial {
+    background-color: var(--secondary);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.carousel-indicators {
-    position: absolute; /* Position indicators */
-    bottom: 10px; /* Position from the bottom */
-    left: 50%; /* Center indicators */
-    transform: translateX(-50%); /* Centering adjustment */
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(123, 104, 238, 0.1);
 }
 
-.carousel-indicators .active {
-    background-color: #ffffff; /* Active indicator color */
-}
-
-.carousel-indicators li {
-    background-color: rgba(255, 255, 255, 0.5); /* Inactive indicator color */
-    border-radius: 50%; /* Rounded indicators */
-}
-
-/* Add this to styles.css */
-.image-wrapper {
-    border: 2px solid black; /* Thin black outline */
-    border-radius: 5px; /* Optional: Slightly rounded corners */
-    display: flex; /* Use flexbox to center the image */
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+/* Media Queries */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .dynamic-section {
+        font-size: 2rem;
+    }
+    
+    .feature-box {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .hero-container {
+        padding: 2rem 0;
+    }
+    
     .hero-text {
-        flex: 0 0 100%; /* Allow the text to take full width on smaller screens */
-        margin-bottom: 20px; /* Add space below the text */
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
     }
     
     .hero-image {
-        
-        max-width: 500px; /* Iflex: 0 0 100%;ncrease the maximum height for smaller screens */
-        height: auto; /* Allow the height to adjust automatically */
-        padding: 1%;
+        margin-top: 2rem;
+        width: 100%;
     }
-    .testimonial {
-        font-size: 1rem; /* Adjust font size for better readability on small screens */
-        padding: 10px; /* Add more padding for touch targets */
-        border-left: none; /* Remove left border for a cleaner look on mobile */
-        background-color: #f8f9fa; /* Light background for contrast */
-        border-radius: 10px; /* Rounded corners for a softer look */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        margin: 0 auto; /* Center the testimonial */
+    
+    .dynamic-section {
+        font-size: 1.5rem;
+        padding: 2rem 0;
     }
-
+    
     .testimonial-bubble {
-        padding: 15px; /* Adjust padding for mobile */
-        margin: 10px 0; /* Add margin for spacing between testimonials */
+        padding: 1.5rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    
+    .feature-section h2,
+    #testimonials h2,
+    #early-access h2 {
+        font-size: 2rem;
     }
 }
 
+/* Animation for the carousel */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
 
-.hero-container {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Ensure items are in a row */
-    align-items: center; /* Center items vertically */
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Optional: Set a max width for larger screens */
-    margin: 0 auto; /* Center the container */
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
