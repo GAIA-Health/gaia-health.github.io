@@ -1,0 +1,106 @@
+/**
+ * Go Go Gaia - Custom JavaScript
+ * Modern interactive features for the women's health app website
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Dynamic word changing in the hero section
+    const words = ['health', 'cycle', 'mood', 'sleep', 'fitness', 'nutrition', 'body'];
+    const dynamicWord = document.getElementById('dynamicWord');
+    let currentIndex = 0;
+    
+    setInterval(() => {
+        dynamicWord.classList.add('animate__animated', 'animate__fadeOut');
+        
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % words.length;
+            dynamicWord.textContent = words[currentIndex];
+            dynamicWord.classList.remove('animate__fadeOut');
+            dynamicWord.classList.add('animate__fadeIn');
+            
+            setTimeout(() => {
+                dynamicWord.classList.remove('animate__fadeIn');
+            }, 500);
+        }, 500);
+    }, 3000);
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Offset for fixed header
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            }
+        });
+    });
+
+    // Animate elements when they come into view
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.feature-box, .testimonial-bubble, h2');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                if (!element.classList.contains('animate__animated')) {
+                    element.classList.add('animate__animated', 'animate__fadeIn');
+                }
+            }
+        });
+    };
+
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Run once on page load
+    animateOnScroll();
+
+    // Add active class to nav items on scroll
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Add parallax effect to hero section
+    const heroContainer = document.querySelector('.hero-container');
+    
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        if (heroContainer) {
+            heroContainer.style.backgroundPosition = `50% ${scrollPosition * 0.4}px`;
+        }
+    });
+}); 

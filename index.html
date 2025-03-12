@@ -21,10 +21,12 @@
     <meta name="twitter:description" content="Empower your health with Go Go Gaia, the all-in-one women's health app. Track cycles, moods, fitness, and more for a holistic wellness experience." />
     <meta name="twitter:image" content="https://yourwebsite.com/path/to/image.jpg" />
     
+    <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
@@ -64,8 +66,8 @@
           <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
               <li class="nav-item"><a class="nav-link" href="#app-screenshots">Demo</a></li>
-              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
+              <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link" href="#early-access">Download</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -75,22 +77,23 @@
     <main role="main">
         <section class="text-center py-5">
             <div class="hero-container d-flex flex-column flex-md-row align-items-center">
-                <div class="hero-text text-md-start mb-4 mb-md-0">
+                <div class="hero-text text-md-start mb-4 mb-md-0 animate__animated animate__fadeInLeft">
                     <h1 class="display-4 fw-bold">GO GO GAIA</h1>
                     <p class="lead mb-4">Your wellness hub at your fingertip.</p>
                     <p class="lead mb-4">No more guesswork—just empowered choices, clear insights, and confident health decisions.</p>
 
-                    <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" role="button">Download on the App Store</a>
+                    <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" role="button">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
                     
                     <!-- Testimonial Block with Star Rating -->
-                    <div class="testimonial mt-4">
-                        <div class="star-rating">★★★★★</div> <!-- Star rating inside the testimonial -->
+                    <div class="testimonial mt-4 animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="star-rating">★★★★★</div>
                         <p>"Finally, a cycle app that actually considers the whole picture of your health."</p>
                         <p class="blockquote-footer">Sarah, 26</p>
                     </div>
                 </div>
-                <div class="hero-image" style="flex: 1;"> <!-- max-width: 40%; -->
-
+                <div class="hero-image animate__animated animate__fadeInRight">
                     <div id="screenshotCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -135,60 +138,84 @@
 
         <section id="features" class="feature-section py-5">
             <div class="container">
-                <h2>Why Use GAIA?</h2>
-                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-check-circle" style="font-size: 2rem;"></i>
-                        </div>
-                        <div>
-                            <h3>1-Click Logging</h3>
-                            <p>Track diet, fitness, mood, sleep, and more—with one tap.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-calendar" style="font-size: 2rem;"></i>
-                        </div>
-                        <div>
-                            <h3>Cycle Tracking</h3>
-                            <p>Accurate predictions and clear insights for every phase.</p>
+                <h2 class="animate__animated animate__fadeIn">Why Use GAIA?</h2>
+                <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h3>1-Click Logging</h3>
+                                </div>
+                            </div>
+                            <p>Track diet, fitness, mood, sleep, and more—with one tap. Simplify your health tracking experience.</p>
                         </div>
                     </div>
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-baby" style="font-size: 2rem;"></i>
-                        </div>
-                        <div>
-                            <h3>Pregnancy Mode</h3>
-                            <p>Track symptoms, milestones, and changes during pregnancy.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-check-square" style="font-size: 2rem;"></i>
-                        </div>
-                        <div>
-                            <h3>Habits</h3>
-                            <p>Auto-update custom habits for easy, real-time tracking.</p>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-calendar"></i>
+                                </div>
+                                <div>
+                                    <h3>Cycle Tracking</h3>
+                                </div>
+                            </div>
+                            <p>Accurate predictions and clear insights for every phase of your cycle. Plan your life with confidence.</p>
                         </div>
                     </div>
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-graph-up" style="font-size: 2rem;"></i>
-                        </div>
-                        <div>
-                            <h3>Correlation Insights</h3>
-                            <p>See how your sleep, mood, and habits affect each other.</p>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-3s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-heart"></i>
+                                </div>
+                                <div>
+                                    <h3>Pregnancy Mode</h3>
+                                </div>
+                            </div>
+                            <p>Track symptoms, milestones, and changes during pregnancy. Stay informed throughout your journey.</p>
                         </div>
                     </div>
-                    <div class="feature-box col d-flex align-items-start">
-                        <div class="icon-square text-black me-3">
-                            <i class="bi bi-layout-text-sidebar" style="font-size: 2rem;"></i>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-check-square"></i>
+                                </div>
+                                <div>
+                                    <h3>Habits</h3>
+                                </div>
+                            </div>
+                            <p>Auto-update custom habits for easy, real-time tracking. Build a healthier lifestyle one habit at a time.</p>
                         </div>
-                        <div>
-                            <h3>All-in-One Dashboard</h3>
-                            <p>Every detail in one simple, easy-to-read view.</p>
+                    </div>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-graph-up"></i>
+                                </div>
+                                <div>
+                                    <h3>Correlation Insights</h3>
+                                </div>
+                            </div>
+                            <p>See how your sleep, mood, and habits affect each other. Discover patterns for better health decisions.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-3s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-layout-text-sidebar"></i>
+                                </div>
+                                <div>
+                                    <h3>All-in-One Dashboard</h3>
+                                </div>
+                            </div>
+                            <p>Every detail in one simple, easy-to-read view. Get a comprehensive picture of your health at a glance.</p>
                         </div>
                     </div>
                 </div>
@@ -196,27 +223,27 @@
         </section>
 
 
-        <section id="testimonials" class="py-5 bg-light">
+        <section id="testimonials" class="py-5">
           <div class="container text-center">
-              <h2 class="mb-4">What Our Users Say</h2>
+              <h2 class="mb-4 animate__animated animate__fadeIn">What Our Users Say</h2>
               <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
                       <div class="carousel-item active">
-                          <div class="testimonial-bubble">
+                          <div class="testimonial-bubble animate__animated animate__fadeIn">
                               <p class="testimonial-text">"Go Go Gaia has been a game changer! Now, I can easily track my cycle and health metrics all in one place. I now plan my important meetings around my high-energy days, making sure I am bringing my A Game."</p>
-                              <p class="blockquote-footer">Emily, 29</footer>
+                              <p class="blockquote-footer">Emily, 29</p>
                           </div>
                       </div>
                       <div class="carousel-item">
-                          <div class="testimonial-bubble">
-                              <p class="testimonial-text">"I love how Go Go Gaia integrates my fitness and health data! It’s empowering to have everything I need for my wellness journey in one app. Highly recommend it to all women!"</p>
-                              <p class="blockquote-footer">Jessica, 34</footer>
+                          <div class="testimonial-bubble animate__animated animate__fadeIn">
+                              <p class="testimonial-text">"I love how Go Go Gaia integrates my fitness and health data! It's empowering to have everything I need for my wellness journey in one app. Highly recommend it to all women!"</p>
+                              <p class="blockquote-footer">Jessica, 34</p>
                           </div>
                       </div>
                       <div class="carousel-item">
-                          <div class="testimonial-bubble">
+                          <div class="testimonial-bubble animate__animated animate__fadeIn">
                               <p class="testimonial-text">"Finally, an app that understands women's health! Go Go Gaia has made tracking my mood and period so easy. The insights are incredibly helpful for managing my overall well-being!"</p>
-                              <p class="blockquote-footer">Sophie, 27</footer>
+                              <p class="blockquote-footer">Sophie, 27</p>
                           </div>
                       </div>
                   </div>
@@ -228,69 +255,54 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                   </button>
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
               </div>
           </div>
       </section>
 
-        <section id="early-access" class="hero-section text-center py-5">
+        <section id="early-access" class="text-center py-5">
             <div class="container">
-                <h2 class="display-6 fw-bold">Download Now!</h2>
-                <p class="lead mb-4">Download Go Go Gaia now to access the future of personal health management.</p>
-                <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" role="button">Download on the App Store</a>
+                <h2 class="display-6 fw-bold animate__animated animate__fadeIn">Download Now!</h2>
+                <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">Download Go Go Gaia now to access the future of personal health management.</p>
+                <a class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite animate__slower" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" role="button">
+                    <i class="bi bi-apple me-2"></i>Download on the App Store
+                </a>
             </div>
         </section>
     </main>
 
     <footer class="footer mt-auto py-3" id="contact">
-    <div class="container text-center">
-      <p>&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
-      <p>Connect with us at <a href="mailto:support@hollandneurotech.com">support@hollandneurotech.com</a> or on Twitter <a href="https://twitter.com/holland_neuro">@holland_neuro</a></p>
-      <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a> | <a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>GO GO GAIA</h5>
+          <p class="small">Your all-in-one women's health companion</p>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <h5>Connect With Us</h5>
+          <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+          <p><a href="https://twitter.com/holland_neuro"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Legal</h5>
+          <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+          <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+        </div>
+      </div>
     </div>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const words = [
-        "sleep",
-        "eating",
-        "hydration",
-        "breathing",
-        "symptoms",
-        "stress",
-        "workouts",
-        "calories",
-        "heart",
-        "mood",
-        "productivity",
-        "mental state",
-        "blood pressure",
-        "sugar",
-        "meditation",
-        "recovery",
-        "skin",
-        "nutrition",
-        "steps",
-        "goals",
-        "immunity",
-        "cycle",
-        "meds",
-        "energy",
-        "weight",
-        "activity",
-        "sun",
-    ];
-
-    let i = 0;
-    setInterval(() => {
-        document.getElementById('dynamicWord').textContent = words[i];
-        i = (i + 1) % words.length; // Reset to 0 when reaching the last word
-    }, 2000); // Change the word every 2 seconds
-});
-
-    </script>
-
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
