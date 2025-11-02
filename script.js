@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Dynamic word typing animation in the hero section
-    const words = ['health', 'cycle', 'mood', 'sleep', 'fitness', 'nutrition', 'body'];
+    const words = ['baseline', 'normal', 'optimal', 'patterns', 'triggers', 'metrics', 'trends', 'signals', 'markers', 'rhythm', 'correlations', 'ranges', 'anomalies', 'balance', 'why', 'cycle', 'insights'];
     const dynamicWord = document.getElementById('dynamicWord');
     let currentIndex = 0;
     let isDeleting = false;
@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPersonaIndex = 0;
     let personasAutoRotate = null;
     let userInteracted = false;
+    let restartTimeout = null;
 
     function rotatePersonas() {
         if (personasTabs.length === 0) return;
@@ -242,16 +243,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startPersonasRotation() {
+        // Always stop any existing rotation first to prevent duplicates
+        stopPersonasRotation();
+
         // Only start if user hasn't interacted recently
         if (!userInteracted) {
-            personasAutoRotate = setInterval(rotatePersonas, 7000); // Rotate every 7 seconds (gives users time to read)
+            personasAutoRotate = setInterval(rotatePersonas, 7000); // Rotate every 7 seconds
         }
     }
 
     function stopPersonasRotation() {
+        // Clear the interval
         if (personasAutoRotate) {
             clearInterval(personasAutoRotate);
             personasAutoRotate = null;
+        }
+
+        // Clear any pending restart timeout
+        if (restartTimeout) {
+            clearTimeout(restartTimeout);
+            restartTimeout = null;
         }
     }
 
@@ -268,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
             userInteracted = true;
 
             // Resume auto-rotation after 10 seconds of no interaction
-            setTimeout(() => {
+            restartTimeout = setTimeout(() => {
                 userInteracted = false;
                 startPersonasRotation();
             }, 10000);
