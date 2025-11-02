@@ -8,31 +8,37 @@
     </url>
     <url>
         <loc>https://go-go-gaia.com/blog</loc>
-        <lastmod>2024-01-15</lastmod>
+        <lastmod>2025-11-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://go-go-gaia.com/blog/cycle-syncing-guide</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://go-go-gaia.com/blog/period-tracking-guide.html</loc>
+        <lastmod>2025-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://go-go-gaia.com/blog/mood-tracking-benefits</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://go-go-gaia.com/blog/cycle-syncing-guide.html</loc>
+        <lastmod>2025-11-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://go-go-gaia.com/blog/pregnancy-wellness-tips</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://go-go-gaia.com/blog/mood-tracking-benefits.html</loc>
+        <lastmod>2025-11-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://go-go-gaia.com/blog/habit-tracking-success</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://go-go-gaia.com/blog/pregnancy-wellness-tips.html</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://go-go-gaia.com/blog/habit-tracking-success.html</loc>
+        <lastmod>2025-11-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
