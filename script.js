@@ -216,11 +216,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add parallax effect to hero section
     const heroContainer = document.querySelector('.hero-container');
-    
+
     window.addEventListener('scroll', () => {
         const scrollPosition = window.pageYOffset;
         if (heroContainer) {
             heroContainer.style.backgroundPosition = `50% ${scrollPosition * 0.4}px`;
         }
     });
-}); 
+
+    // Auto-rotating Personas Tabs
+    const personasTabs = document.querySelectorAll('#personasTabs button[data-bs-toggle="pill"]');
+    let currentPersonaIndex = 0;
+    let personasAutoRotate = null;
+    let userInteracted = false;
+
+    function rotatePersonas() {
+        if (personasTabs.length === 0) return;
+
+        // Move to next tab
+        currentPersonaIndex = (currentPersonaIndex + 1) % personasTabs.length;
+
+        // Trigger the tab
+        const nextTab = new bootstrap.Tab(personasTabs[currentPersonaIndex]);
+        nextTab.show();
+    }
+
+    function startPersonasRotation() {
+        // Only start if user hasn't interacted recently
+        if (!userInteracted) {
+            personasAutoRotate = setInterval(rotatePersonas, 7000); // Rotate every 7 seconds (gives users time to read)
+        }
+    }
+
+    function stopPersonasRotation() {
+        if (personasAutoRotate) {
+            clearInterval(personasAutoRotate);
+            personasAutoRotate = null;
+        }
+    }
+
+    // Start auto-rotation on page load
+    if (personasTabs.length > 0) {
+        startPersonasRotation();
+    }
+
+    // Pause rotation when user clicks a tab
+    personasTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            stopPersonasRotation();
+            currentPersonaIndex = index;
+            userInteracted = true;
+
+            // Resume auto-rotation after 10 seconds of no interaction
+            setTimeout(() => {
+                userInteracted = false;
+                startPersonasRotation();
+            }, 10000);
+        });
+    });
+
+    // Pause rotation when user hovers over the personas section
+    const personasSection = document.getElementById('personas');
+    if (personasSection) {
+        personasSection.addEventListener('mouseenter', () => {
+            stopPersonasRotation();
+        });
+
+        personasSection.addEventListener('mouseleave', () => {
+            if (!userInteracted) {
+                startPersonasRotation();
+            }
+        });
+    }
+});
