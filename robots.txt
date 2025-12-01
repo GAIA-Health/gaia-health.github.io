@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private/
 Allow: /
 
-Sitemap: https://go-go-gaia.com/sitemap.xml
+Sitemap: https://www.go-go-gaia.com/sitemap.xml
