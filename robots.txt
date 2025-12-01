@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /private/
 Disallow: /cdn-cgi/
+Disallow: /*?s=
 Allow: /
 
 Sitemap: https://www.go-go-gaia.com/sitemap.xml
