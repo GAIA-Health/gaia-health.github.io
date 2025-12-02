@@ -12,13 +12,13 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../Logo1.png">
-    
+
     <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -37,6 +37,214 @@
       }
     }
     </script>
+
+    <style>
+        .featured-post {
+            background: #fff;
+            border: 3px solid #7B68EE;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .featured-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(123, 104, 238, 0.25) !important;
+            border-color: #5D4ED6;
+        }
+        .featured-post .card-body {
+            padding: 2rem;
+        }
+        .featured-post a {
+            color: #333;
+            font-weight: 600;
+        }
+        .featured-post a:hover {
+            color: #7B68EE;
+        }
+        .featured-post .badge {
+            background-color: #7B68EE !important;
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+        }
+        .featured-post .card-text {
+            color: #555;
+        }
+        .featured-post small {
+            color: #666;
+        }
+        .category-header {
+            border-left: 4px solid #7B68EE;
+            padding-left: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+        .category-header h2 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .category-header p {
+            color: #666;
+            margin: 0;
+        }
+        .show-more-btn {
+            margin-top: 1.5rem;
+        }
+        .blog-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-pill {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            background: #fff;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .filter-pill:hover {
+            border-color: #7B68EE;
+            color: #7B68EE;
+            transform: translateY(-2px);
+        }
+
+        .filter-pill.active {
+            background: #7B68EE;
+            border-color: #7B68EE;
+            color: white;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-box input {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #7B68EE;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #7B68EE;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(123, 104, 238, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #5D4ED6;
+            transform: translateY(-5px);
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Tablet and Mobile responsive */
+        @media (max-width: 991px) {
+            .filter-bar {
+                padding: 1.25rem;
+            }
+
+            .filter-pills {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .filter-pills::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .filter-pills::-webkit-scrollbar-thumb {
+                background: #7B68EE;
+                border-radius: 4px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .filter-bar {
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .category-header {
+                margin-top: 2rem !important;
+            }
+
+            .featured-post .card-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="sticky-top">
@@ -65,233 +273,388 @@
 
     <main class="container py-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1 class="display-4 fw-bold text-center mb-5">Health & Wellness Blog</h1>
+            <div class="col-12 col-lg-10 mx-auto">
+                <h1 class="display-4 fw-bold text-center mb-3">Health & Wellness Blog</h1>
                 <p class="lead text-center mb-5">Expert insights, tips, and guidance for your wellness journey</p>
-                
-                <div class="row g-4">
-                    <!-- NEW: Featured Post -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <span class="badge bg-danger mb-2">NEW</span>
-                                <h3 class="h5 card-title">
-                                    <a href="perimenopause-guide.html" class="text-decoration-none">Complete Guide to Perimenopause: Symptoms, Timeline & What to Expect</a>
-                                </h3>
-                                <p class="card-text text-muted">Experiencing irregular periods or hot flashes in your 40s? You're not alone. Learn what perimenopause really is, how long it lasts, and evidence-based strategies to thrive through this transition.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">15 min read</small>
-                                    <span class="badge bg-secondary">Life Stages</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
 
-                    <!-- Blog Posts -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="what-is-luteal-phase.html" class="text-decoration-none">What is the Luteal Phase? Symptoms & Pregnancy</a>
-                                </h3>
-                                <p class="card-text text-muted">Everything you need to know about the second half of your cycle—symptoms, length, and whether you can get pregnant.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">8 min read</small>
-                                    <span class="badge bg-primary">Cycle Health</span>
-                                </div>
-                            </div>
-                        </article>
+                <!-- Featured Posts Section -->
+                <section class="mb-5">
+                    <div class="category-header" style="margin-top: 0;">
+                        <h2>Featured Guides</h2>
+                        <p>Our most comprehensive resources for your health journey</p>
                     </div>
-
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="how-to-choose-period-tracker-app.html" class="text-decoration-none">How to Choose a Period Tracker App</a>
-                                </h3>
-                                <p class="card-text text-muted">Find the perfect period tracker for YOUR needs. Compare Go Go Gaia, Clue, Flo, and more based on what matters most to you.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">12 min read</small>
-                                    <span class="badge bg-info">App Guide</span>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card featured-post h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <span class="badge mb-2">COMPREHENSIVE</span>
+                                    <h3 class="h4 card-title mb-3">
+                                        <a href="perimenopause-guide.html" class="text-decoration-none">Complete Guide to Perimenopause: Symptoms, Timeline & What to Expect</a>
+                                    </h3>
+                                    <p class="card-text mb-4">Experiencing irregular periods or hot flashes in your 40s? You're not alone. Learn what perimenopause really is, how long it lasts, and evidence-based strategies to thrive through this transition.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small>15 min read</small>
+                                        <span class="badge">Life Stages</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card featured-post h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <span class="badge mb-2">COMPREHENSIVE</span>
+                                    <h3 class="h4 card-title mb-3">
+                                        <a href="complete-guide-to-pcos.html" class="text-decoration-none">Complete Guide to PCOS: Symptoms, Diagnosis & Management</a>
+                                    </h3>
+                                    <p class="card-text mb-4">Everything you need to know about polycystic ovary syndrome—from diagnosis to lifestyle management strategies that actually work.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small>18 min read</small>
+                                        <span class="badge">Health Conditions</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="how-to-tell-if-youre-ovulating.html" class="text-decoration-none">How to Tell If You're Ovulating</a>
-                                </h3>
-                                <p class="card-text text-muted">Learn to recognize ovulation signs including cervical mucus, temperature shifts, and physical symptoms.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">10 min read</small>
-                                    <span class="badge bg-primary">Fertility</span>
-                                </div>
+                <!-- Filter Bar -->
+                <div class="filter-bar">
+                    <div class="row align-items-start">
+                        <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+                            <div class="filter-pills">
+                                <button class="filter-pill active" data-category="all">All</button>
+                                <button class="filter-pill" data-category="cycle-tracking">Cycle Tracking</button>
+                                <button class="filter-pill" data-category="pregnancy">Pregnancy & Fertility</button>
+                                <button class="filter-pill" data-category="tools">Choosing Tools</button>
+                                <button class="filter-pill" data-category="life-stages">Life Stages</button>
+                                <button class="filter-pill" data-category="wellness">Wellness</button>
                             </div>
-                        </article>
-                    </div>
-
-                    <!-- NEW POSTS -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="cycle-syncing-app-guide.html" class="text-decoration-none">Best Cycle Syncing App: Complete Guide</a>
-                                </h3>
-                                <p class="card-text text-muted">Why manual cycle syncing fails and how to use technology to optimize your workouts, nutrition, and energy around your menstrual cycle.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">14 min read</small>
-                                    <span class="badge bg-info">App Guide</span>
-                                </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="search-box">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="searchInput" placeholder="Search articles...">
                             </div>
-                        </article>
-                    </div>
-
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="understanding-pms-guide.html" class="text-decoration-none">Understanding PMS: Symptoms, Causes, and Relief</a>
-                                </h3>
-                                <p class="card-text text-muted">What is PMS and why does it happen? Learn about symptoms, science-backed relief strategies, and when to seek help.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">12 min read</small>
-                                    <span class="badge bg-primary">Cycle Health</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="am-i-pregnant-guide.html" class="text-decoration-none">Am I Pregnant? Early Signs and When to Test</a>
-                                </h3>
-                                <p class="card-text text-muted">Learn the early signs of pregnancy, when to take a test for accurate results, and how to tell symptoms apart from PMS.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">11 min read</small>
-                                    <span class="badge bg-warning">Pregnancy</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- More Blog Posts -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="pregnancy-tracking-guide.html" class="text-decoration-none">Complete Guide to Pregnancy Tracking</a>
-                                </h3>
-                                <p class="card-text text-muted">From symptoms to baby kicks, learn what to track each trimester for a confident, empowered pregnancy journey.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">15 min read</small>
-                                    <span class="badge bg-warning">Pregnancy</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 2 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="period-tracking-guide.html" class="text-decoration-none">Complete Guide to Period Tracking</a>
-                                </h3>
-                                <p class="card-text text-muted">Learn what to track during your period, how to spot patterns, and use data to advocate for your health.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">14 min read</small>
-                                    <span class="badge bg-primary">Cycle Health</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 3 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="cycle-syncing-guide.html" class="text-decoration-none">Complete Guide to Cycle Syncing</a>
-                                </h3>
-                                <p class="card-text text-muted">Learn how to align your lifestyle with your menstrual cycle for optimal health and productivity.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">12 min read</small>
-                                    <span class="badge bg-primary">Cycle Health</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 4 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="mood-tracking-benefits.html" class="text-decoration-none">Why Mood Tracking Matters for Women</a>
-                                </h3>
-                                <p class="card-text text-muted">Discover the connection between your mood, hormones, and overall wellbeing.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">4 min read</small>
-                                    <span class="badge bg-success">Mental Health</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 5 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="pregnancy-wellness-tips.html" class="text-decoration-none">Wellness Tips for Each Trimester</a>
-                                </h3>
-                                <p class="card-text text-muted">Essential health tracking and wellness practices for every stage of pregnancy.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">6 min read</small>
-                                    <span class="badge bg-warning">Pregnancy</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 6 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="habit-tracking-success.html" class="text-decoration-none">Building Healthy Habits That Stick</a>
-                                </h3>
-                                <p class="card-text text-muted">Science-backed strategies for creating lasting wellness habits that work with your cycle.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">7 min read</small>
-                                    <span class="badge bg-info">Habits</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Blog Post Preview 7 -->
-                    <div class="col-md-6">
-                        <article class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h3 class="h5 card-title">
-                                    <a href="complete-guide-to-pcos.html" class="text-decoration-none">Complete Guide to PCOS: Symptoms, Diagnosis & Management</a>
-                                </h3>
-                                <p class="card-text text-muted">Everything you need to know about polycystic ovary syndrome—from diagnosis to lifestyle management strategies.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">18 min read</small>
-                                    <span class="badge bg-secondary">Health Conditions</span>
-                                </div>
-                            </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
-                
+
+                <!-- Category: Cycle Tracking & Understanding Your Body -->
+                <section data-category="cycle-tracking">
+                    <div class="category-header">
+                        <h2>Cycle Tracking & Understanding Your Body</h2>
+                        <p>Master your menstrual cycle and decode what your body is telling you</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="period-tracking-guide.html" class="text-decoration-none">Complete Guide to Period Tracking</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Learn what to track during your period, how to spot patterns, and use data to advocate for your health.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">14 min read</small>
+                                        <span class="badge bg-primary">Cycle Health</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="cycle-syncing-guide.html" class="text-decoration-none">Complete Guide to Cycle Syncing</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Learn how to align your lifestyle with your menstrual cycle for optimal health and productivity.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">12 min read</small>
+                                        <span class="badge bg-primary">Cycle Health</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="what-is-luteal-phase.html" class="text-decoration-none">What is the Luteal Phase? Symptoms & Pregnancy</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Everything you need to know about the second half of your cycle—symptoms, length, and whether you can get pregnant.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">8 min read</small>
+                                        <span class="badge bg-primary">Cycle Health</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="understanding-pms-guide.html" class="text-decoration-none">Understanding PMS: Symptoms, Causes, and Relief</a>
+                                    </h3>
+                                    <p class="card-text text-muted">What is PMS and why does it happen? Learn about symptoms, science-backed relief strategies, and when to seek help.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">12 min read</small>
+                                        <span class="badge bg-primary">Cycle Health</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- Hidden posts (shown when "Show More" is clicked) -->
+                        <div class="collapse" id="cycleTrackingMore">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <article class="card blog-card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h3 class="h5 card-title">
+                                                <a href="how-to-tell-if-youre-ovulating.html" class="text-decoration-none">How to Tell If You're Ovulating</a>
+                                            </h3>
+                                            <p class="card-text text-muted">Learn to recognize ovulation signs including cervical mucus, temperature shifts, and physical symptoms.</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">10 min read</small>
+                                                <span class="badge bg-primary">Fertility</span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-6">
+                                    <article class="card blog-card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h3 class="h5 card-title">
+                                                <a href="cycle-syncing-app-guide.html" class="text-decoration-none">Best Cycle Syncing App: Complete Guide</a>
+                                            </h3>
+                                            <p class="card-text text-muted">Why manual cycle syncing fails and how to use technology to optimize your workouts, nutrition, and energy around your menstrual cycle.</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">14 min read</small>
+                                                <span class="badge bg-info">App Guide</span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center show-more-btn">
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cycleTrackingMore" aria-expanded="false" aria-controls="cycleTrackingMore">
+                            <span class="show-more-text">Show More <i class="bi bi-chevron-down"></i></span>
+                            <span class="show-less-text d-none">Show Less <i class="bi bi-chevron-up"></i></span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Category: Pregnancy & Fertility -->
+                <section data-category="pregnancy">
+                    <div class="category-header">
+                        <h2>Pregnancy & Fertility</h2>
+                        <p>From conception to birth—your comprehensive pregnancy companion</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="am-i-pregnant-guide.html" class="text-decoration-none">Am I Pregnant? Early Signs and When to Test</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Learn the early signs of pregnancy, when to take a test for accurate results, and how to tell symptoms apart from PMS.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">11 min read</small>
+                                        <span class="badge bg-warning">Pregnancy</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="pregnancy-tracking-guide.html" class="text-decoration-none">Complete Guide to Pregnancy Tracking</a>
+                                    </h3>
+                                    <p class="card-text text-muted">From symptoms to baby kicks, learn what to track each trimester for a confident, empowered pregnancy journey.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">15 min read</small>
+                                        <span class="badge bg-warning">Pregnancy</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="pregnancy-wellness-tips.html" class="text-decoration-none">Wellness Tips for Each Trimester</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Essential health tracking and wellness practices for every stage of pregnancy.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">6 min read</small>
+                                        <span class="badge bg-warning">Pregnancy</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Category: Choosing Your Tools -->
+                <section data-category="tools">
+                    <div class="category-header">
+                        <h2>Choosing Your Tools</h2>
+                        <p>Find the perfect apps and tools to support your health journey</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="how-to-choose-period-tracker-app.html" class="text-decoration-none">How to Choose a Period Tracker App</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Find the perfect period tracker for YOUR needs. Compare Go Go Gaia, Clue, Flo, and more based on what matters most to you.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">12 min read</small>
+                                        <span class="badge bg-info">App Guide</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="cycle-syncing-app-guide.html" class="text-decoration-none">Best Cycle Syncing App: Complete Guide</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Why manual cycle syncing fails and how to use technology to optimize your workouts, nutrition, and energy around your menstrual cycle.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">14 min read</small>
+                                        <span class="badge bg-info">App Guide</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Category: Life Stages & Health Conditions -->
+                <section data-category="life-stages">
+                    <div class="category-header">
+                        <h2>Life Stages & Health Conditions</h2>
+                        <p>Navigate life transitions and manage health conditions with confidence</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="perimenopause-guide.html" class="text-decoration-none">Complete Guide to Perimenopause: Symptoms, Timeline & What to Expect</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Experiencing irregular periods or hot flashes in your 40s? You're not alone. Learn what perimenopause really is, how long it lasts, and evidence-based strategies to thrive through this transition.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">15 min read</small>
+                                        <span class="badge bg-secondary">Life Stages</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="complete-guide-to-pcos.html" class="text-decoration-none">Complete Guide to PCOS: Symptoms, Diagnosis & Management</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Everything you need to know about polycystic ovary syndrome—from diagnosis to lifestyle management strategies.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">18 min read</small>
+                                        <span class="badge bg-secondary">Health Conditions</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Category: Wellness & Lifestyle -->
+                <section data-category="wellness">
+                    <div class="category-header">
+                        <h2>Wellness & Lifestyle</h2>
+                        <p>Build healthy habits and nurture your mental wellbeing</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <span class="badge bg-danger mb-2">NEW</span>
+                                    <h3 class="h5 card-title">
+                                        <a href="new-year-health-resolutions-2026.html" class="text-decoration-none">New Year's Health Resolutions: 10 Goals You Can Actually Keep in 2026</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Stop setting resolutions you'll abandon by February. These 10 science-backed, cycle-aware health goals are designed for real women with real lives—and they actually work.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">14 min read</small>
+                                        <span class="badge bg-success">Holistic Wellness</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <span class="badge bg-danger mb-2">NEW</span>
+                                    <h3 class="h5 card-title">
+                                        <a href="how-to-track-health-goals-2026.html" class="text-decoration-none">How to Track Your Health Goals in 2026</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Tracking isn't just helpful—it's the #1 predictor of success. Learn the most effective methods, what to track, and how cycle awareness transforms results.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">12 min read</small>
+                                        <span class="badge bg-primary">Goal Setting</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <span class="badge bg-danger mb-2">NEW</span>
+                                    <h3 class="h5 card-title">
+                                        <a href="womens-health-habits-january-2026.html" class="text-decoration-none">Women's Health Habits to Start in January 2026</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Skip generic health advice. These cycle-aware habits are designed specifically for women's bodies—practical, immediately actionable, and sustainable all year long.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">13 min read</small>
+                                        <span class="badge bg-success">Holistic Wellness</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="mood-tracking-benefits.html" class="text-decoration-none">Why Mood Tracking Matters for Women</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Discover the connection between your mood, hormones, and overall wellbeing.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">4 min read</small>
+                                        <span class="badge bg-success">Mental Health</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card blog-card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">
+                                        <a href="habit-tracking-success.html" class="text-decoration-none">Building Healthy Habits That Stick</a>
+                                    </h3>
+                                    <p class="card-text text-muted">Science-backed strategies for creating lasting wellness habits that work with your cycle.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">7 min read</small>
+                                        <span class="badge bg-info">Habits</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
                 <div class="text-center mt-5">
                     <a href="../index.html#early-access" class="btn btn-primary btn-lg">
                         <i class="bi bi-apple me-2"></i>Download Go Go Gaia
@@ -330,6 +693,117 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle button text for "Show More" / "Show Less"
+        document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const showMoreText = this.querySelector('.show-more-text');
+                const showLessText = this.querySelector('.show-less-text');
+
+                if (showMoreText && showLessText) {
+                    showMoreText.classList.toggle('d-none');
+                    showLessText.classList.toggle('d-none');
+                }
+            });
+        });
+
+        // Category Filtering
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const sections = document.querySelectorAll('section[data-category]');
+        const searchInput = document.getElementById('searchInput');
+        let currentFilter = 'all';
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                // Update active state
+                filterPills.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get selected category
+                currentFilter = this.getAttribute('data-category');
+
+                // Apply filter
+                applyFilters();
+            });
+        });
+
+        // Search Functionality
+        searchInput.addEventListener('input', function() {
+            applyFilters();
+        });
+
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            sections.forEach(section => {
+                const category = section.getAttribute('data-category');
+                const articles = section.querySelectorAll('article');
+                let hasVisibleArticles = false;
+
+                // Check category filter
+                const categoryMatch = currentFilter === 'all' || category === currentFilter;
+
+                if (categoryMatch) {
+                    // Apply search filter to individual articles
+                    articles.forEach(article => {
+                        const title = article.querySelector('h3').textContent.toLowerCase();
+                        const description = article.querySelector('.card-text').textContent.toLowerCase();
+                        const searchMatch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm);
+
+                        if (searchMatch) {
+                            article.closest('.col-md-6').classList.remove('hidden');
+                            hasVisibleArticles = true;
+                        } else {
+                            article.closest('.col-md-6').classList.add('hidden');
+                        }
+                    });
+
+                    // Show/hide entire section based on visible articles
+                    if (hasVisibleArticles) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                } else {
+                    // Hide entire section if category doesn't match
+                    section.classList.add('hidden');
+                }
+            });
+
+            // Handle "Show More" buttons visibility
+            document.querySelectorAll('.show-more-btn').forEach(btn => {
+                const parentSection = btn.closest('section');
+                if (parentSection && !parentSection.classList.contains('hidden')) {
+                    btn.style.display = 'block';
+                } else {
+                    btn.style.display = 'none';
+                }
+            });
+        }
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
