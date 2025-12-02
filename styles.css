@@ -1,9 +1,11 @@
 /* General Styles */
 body {
-    color: #333; /* Darker text for better readability */
-    background-color: #FAFAFE; /* Lighter background for a clean look */
+    color: var(--text-dark); /* Darker text for better readability */
+    background-color: var(--purple-tint); /* Lighter background with subtle purple tint */
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+    font-size: 1.15rem; /* Larger, more readable text */
+    font-weight: 300; /* Lighter weight for elegant feel */
+    line-height: 1.7;
     overflow-x: hidden;
     margin: 0; /* Ensure no default margin */
     padding: 0; /* Ensure no default padding */
@@ -11,16 +13,45 @@ body {
 
 /* Modern Color Palette */
 :root {
+    /* Purple - Primary Brand Colors */
     --primary: #7B68EE; /* Medium slate blue - main brand color */
     --primary-dark: #5D4ED6; /* Darker purple for hover states */
     --primary-light: #A594F9; /* Lighter purple for accents */
     --secondary: #F2F0FF; /* Very light purple for backgrounds */
+    --purple-tint: #FAFAFE; /* Almost white with purple tint */
+
+    /* Pink Accent */
     --accent: #FF6B98; /* Pink accent for highlights */
+
+    /* Warm Neutrals (available for future use) */
+    --sand: #F4EFE7; /* Creamy sandy beige background */
+    --sand-dark: #E8DFD4; /* Darker sandy tone for contrast */
+    --cream: #FAF7F2; /* Very light creamy white */
+
+    /* Green Accents */
+    --green: #85AA86; /* Balanced sage green - harmonizes with purple */
+    --green-light: #A5BDA3; /* Soft dusty green */
+    --green-dark: #6B8A68; /* Deeper earthy green */
+    --green-bg: #DAE5D9; /* Light earthy green for backgrounds */
+
+    /* Text Colors */
     --text-dark: #333; /* Dark text */
     --text-light: #FFFFFF; /* Light text */
     --text-muted: #6c757d; /* Muted text */
-    --gradient-start: #7B68EE; /* Start of gradient */
-    --gradient-end: #A594F9; /* End of gradient */
+
+    /* Transparent Variations - Purple */
+    --purple-tint-transparent: rgba(250, 250, 254, 0.9);
+    --secondary-transparent: rgba(242, 240, 255, 0.9);
+    --primary-subtle: rgba(123, 104, 238, 0.1);
+    --primary-light-subtle: rgba(165, 148, 249, 0.1);
+
+    /* Transparent Variations - Sand (available for future use) */
+    --sand-transparent: rgba(244, 239, 231, 0.9);
+    --sand-subtle: rgba(232, 223, 212, 0.3);
+
+    /* Transparent Variations - Green */
+    --green-subtle: rgba(133, 170, 134, 0.12);
+    --green-soft: rgba(133, 170, 134, 0.08);
 }
 
 /* Header Styles */
@@ -110,7 +141,7 @@ body {
 /* Hero Section */
 .hero-container {
     padding: 1rem 0 0 0;
-    background: linear-gradient(135deg, rgba(250, 250, 254, 0.9) 0%, rgba(242, 240, 255, 0.9) 100%);
+    background: linear-gradient(135deg, var(--purple-tint-transparent) 0%, var(--secondary-transparent) 100%);
     position: relative;
     overflow: hidden;
     margin-top: 0; /* Remove any top margin */
@@ -126,7 +157,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: rgba(123, 104, 238, 0.1);
+    background: var(--primary-subtle);
     z-index: 0;
 }
 
@@ -138,7 +169,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: rgba(165, 148, 249, 0.1);
+    background: var(--primary-light-subtle);
     z-index: 0;
 }
 
@@ -331,6 +362,7 @@ body {
 
 .icon-square i {
     font-size: 1.3rem;
+    color: white;
 }
 
 .feature-box:hover .icon-square {
@@ -380,7 +412,7 @@ body {
 }
 
 .testimonial-bubble {
-    background-color: var(--secondary);
+    background-color: var(--green-bg);
     border-radius: 20px;
     padding: 2.5rem;
     margin: 0 auto;
@@ -396,7 +428,7 @@ body {
     left: 20px;
     font-size: 5rem;
     font-family: 'Georgia', serif;
-    color: rgba(123, 104, 238, 0.1);
+    color: var(--green-subtle);
     line-height: 1;
 }
 
@@ -527,7 +559,7 @@ body {
 .benefit-item i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--green-light);
 }
 
 .benefit-item p {
@@ -866,6 +898,27 @@ html {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-muted);
     line-height: 1.7;
+}
+
+.persona-content .blog-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.persona-content .blog-link:hover {
+    color: var(--green-dark);
+    text-decoration: none;
+    transform: translateX(3px);
+}
+
+.persona-content .blog-link i {
+    margin-left: 0.25rem;
+    font-size: 0.8rem;
 }
 
 /* Responsive adjustments for personas tabs */
@@ -1393,9 +1446,9 @@ main {
     background-color: var(--primary-light) !important;
 }
 
-/* Keep success and warning as is, but ensure they complement the purple */
+/* Updated badge colors with brand green */
 .badge.bg-success {
-    background-color: #10b981 !important; /* Softer green */
+    background-color: var(--green) !important; /* Brand sage green */
 }
 
 .badge.bg-warning {
@@ -1522,7 +1575,7 @@ main {
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: var(--primary);
     margin-top: 2rem;
@@ -1548,7 +1601,8 @@ main {
 .blog-content p,
 .blog-content li {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    font-weight: 300;
     line-height: 1.8;
     margin-bottom: 1.25rem;
 }
@@ -1594,11 +1648,116 @@ main {
 
 /* Article header in blog posts */
 article header h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 800;
 }
 
 article header .lead {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+}
+
+/* Reusable Blog Content Boxes & Callouts */
+
+/* Info/Definition Box - Outlined style */
+.blog-info-box {
+    background: #ffffff;
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.blog-info-box h3,
+.blog-info-box h4 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+/* Pull Quote - Large styled quote */
+.blog-quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    border-left: 5px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* CTA Box - Call-to-action outlined style */
+.blog-cta-box {
+    background: #ffffff;
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+/* Schedule Box - Enhanced sample day schedules */
+.blog-schedule-box {
+    background: #ffffff;
+    border: 2px solid rgba(123, 104, 238, 0.3);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.blog-schedule-box p {
+    margin-bottom: 0;
+    line-height: 2;
+}
+
+/* Testimonial Box - User quotes */
+.blog-testimonial {
+    background-color: rgba(133, 170, 134, 0.08);
+    border-left: 4px solid var(--green);
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+/* Wellness & Green Accent Enhancements */
+
+/* Persona tabs - purple labels (readable), icons switch pink to purple */
+.personas-section .nav-pills .nav-link {
+    color: var(--primary) !important; /* Purple text - always readable */
+}
+
+.personas-section .nav-pills .nav-link i {
+    color: var(--accent) !important; /* Pink icons when unselected */
+}
+
+.personas-section .nav-pills .nav-link:hover i {
+    color: var(--primary) !important; /* Purple icons on hover */
+}
+
+.personas-section .nav-pills .nav-link.active i {
+    color: var(--primary) !important; /* Purple icons when active */
+}
+
+/* Feature boxes keep purple - green is hard to see against sand */
+/* Removed green from feature icons for better contrast */
+
+/* Benefits section - add warmth to background decorations */
+.benefits-section::before {
+    background: var(--green-soft);
+}
+
+.benefits-section::after {
+    background: var(--sand-subtle);
+}
+
+/* Add subtle green to checkmarks and success icons */
+.bi-check-circle,
+.bi-check-square {
+    color: var(--green-dark);
+}
+
+/* FAQ section with white background */
+.faq-section {
+    background-color: white;
 }
