@@ -24,7 +24,7 @@ body {
 
     /* Green Accents */
     --green: #85AA86; /* Sage green - main green accent */
-    --green-deep: #46583a; /* Deep herbal green - footer, text */
+    --green-deep: #1E5631; /* True forest green - less brown, better with purple */
     --green-bg: #DAE5D9; /* Light green background - green section */
 
     /* Text Colors */
@@ -251,7 +251,7 @@ body {
 /* Dynamic Section */
 .dynamic-section {
     background-color: var(--primary-medium); /* Medium purple */
-    color: var(--green-deep);
+    color: var(--green-deep); /* Dark green for good contrast */
     padding: 3rem 0;
     margin-top: 0; /* Remove any top margin */
     text-align: center;
