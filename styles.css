@@ -719,13 +719,24 @@ footer a:hover .bi {
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .dynamic-section {
         font-size: 2rem;
     }
-    
+
     .feature-box {
         padding: 1.5rem;
+    }
+
+    /* Ensure proper container padding on tablets */
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* Benefits section adjustments for tablets */
+    .benefits-section .row {
+        --bs-gutter-x: 2.5rem;
     }
 }
 
@@ -763,13 +774,172 @@ footer a:hover .bi {
 
     .feature-section h2,
     #testimonials h2,
-    #early-access h2 {
+    #early-access h2,
+    .personas-section h2,
+    .benefits-section h2,
+    .faq-section h2 {
         font-size: 2rem;
     }
 
     .features-wrapper,
     .cta-wrapper {
         padding: 2rem 1.5rem;
+    }
+
+    /* Intersectional bridge section */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Benefits section responsive improvements */
+    .benefits-section img {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .benefits-section .row {
+        margin-bottom: 3rem !important;
+    }
+
+    .benefits-section h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .benefits-section .col-md-4 {
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Early access section */
+    #early-access {
+        padding: 3rem 0;
+    }
+
+    #early-access h2 {
+        font-size: 1.75rem;
+    }
+
+    /* FAQ section */
+    .faq-section {
+        padding: 3rem 0;
+    }
+
+    .accordion-button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .accordion-body {
+        padding: 1rem;
+    }
+
+    /* Footer responsive improvements */
+    footer {
+        padding: 2rem 0;
+    }
+
+    footer .col-md-4 {
+        text-align: center !important;
+        margin-bottom: 2rem;
+    }
+
+    footer .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Container padding for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Ensure modals fit on mobile screens */
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Extra small devices (phones in portrait, less than 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-text .lead {
+        font-size: 1rem;
+    }
+
+    .dynamic-section {
+        font-size: 1.25rem;
+        padding: 1.5rem 0;
+    }
+
+    .feature-section h2,
+    #testimonials h2,
+    #early-access h2,
+    .personas-section h2,
+    .benefits-section h2,
+    .faq-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .benefits-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .benefit-item {
+        padding: 0.75rem;
+    }
+
+    .benefit-item i {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    .personas-section .nav-pills .nav-link {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .personas-section .nav-pills .nav-link i {
+        font-size: 1.25rem;
+    }
+
+    .persona-content {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .cta-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
+    .features-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Reduce icon sizes for mobile */
+    .icon-square {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-square i {
+        font-size: 1rem;
     }
 }
 
