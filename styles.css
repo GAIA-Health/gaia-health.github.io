@@ -268,30 +268,6 @@ body {
     overflow: hidden;
 }
 
-.intersectional-bridge::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: var(--green-subtle);
-    z-index: 0;
-}
-
-.intersectional-bridge::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: var(--green-deep-subtle);
-    z-index: 0;
-}
-
 .intersectional-bridge .container {
     position: relative;
     z-index: 1;
@@ -1121,13 +1097,13 @@ html {
 .persona-content {
     background-color: transparent;
     padding: 2.5rem 1rem;
-    min-height: 280px;
+    min-height: 260px;
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .personas-section .tab-content {
     position: relative;
-    min-height: 450px;
+    min-height: 380px;
 }
 
 .personas-section .tab-pane {
@@ -1233,11 +1209,11 @@ html {
 
     .persona-content {
         padding: 2rem 1rem;
-        min-height: 250px;
+        min-height: 240px;
     }
 
     .personas-section .tab-content {
-        min-height: 550px;
+        min-height: 500px;
     }
 
     #testimonialCarousel .carousel-inner,
@@ -1296,18 +1272,6 @@ html {
     font-weight: 600;
     font-size: 1.75rem;
     color: var(--primary);
-    position: relative;
-}
-
-.benefits-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary-medium), var(--green));
-    border-radius: 3px;
 }
 
 .benefits-section .lead {
