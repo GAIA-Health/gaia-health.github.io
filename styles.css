@@ -1973,6 +1973,21 @@ article header .lead {
     margin: 1.5rem 0;
 }
 
+/* Hormone Chart Images - Styled with purple border */
+.hormone-chart {
+    border: 3px solid var(--primary);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(130, 89, 220, 0.15);
+    transition: all 0.3s ease;
+}
+
+.hormone-chart:hover {
+    box-shadow: 0 6px 16px rgba(130, 89, 220, 0.25);
+    transform: translateY(-2px);
+}
+
 /* Wellness & Green Accent Enhancements */
 
 /* Persona tabs - purple labels (readable), icons switch green to purple */
