@@ -147,7 +147,36 @@
         </nav>
     </header>
 
-    <main class="container py-5">
+    
+                    <!-- Social Share Buttons - Top -->
+                    <div class="share-buttons-top d-flex justify-content-center gap-2 my-3 pb-3 border-bottom">
+                        <small class="text-muted me-2 align-self-center">Share:</small>
+                        <a href="https://twitter.com/intent/tweet?text=Am%20I%20Pregnant%3F%20Early%20Signs%2C%20Symptoms%20%26%20When%20to%20Test&url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" title="Share on Twitter/X">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" title="Share on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html&media=https://www.go-go-gaia.com/images/cycle/Hormone_Levels_During_Pregnancy.png&description=Early%20pregnancy%20signs%3A%20missed%20period%2C%20nausea%2C%20sore%20breasts%2C%20fatigue.%20Learn%20when%20to%20test%20for%20accurate%20results."
+                           target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" title="Pin on Pinterest">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary" title="Share on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="mailto:?subject=I%20thought%20you%27d%20find%20this%20helpful&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           class="btn btn-sm btn-outline-secondary" title="Share via Email">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html', this)" class="btn btn-sm btn-outline-secondary" title="Copy Link">
+                            <i class="bi bi-link-45deg"></i>
+                        </button>
+                    </div>
+
+                    <main class="container py-5">
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto">
                 <nav aria-label="breadcrumb">
@@ -650,6 +679,38 @@
                     </div>
                 </article>
 
+                <!-- Social Share Buttons - Bottom -->
+                <div class="share-buttons text-center my-5 py-4 border-top border-bottom">
+                    <p class="text-muted mb-3"><small>Found this helpful? Share it with others who might benefit:</small></p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://twitter.com/intent/tweet?text=Am%20I%20Pregnant%3F%20Early%20Signs%2C%20Symptoms%20%26%20When%20to%20Test&url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-twitter-x me-1"></i> Share
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Share
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html&media=https://www.go-go-gaia.com/images/cycle/Hormone_Levels_During_Pregnancy.png&description=Early%20pregnancy%20signs%3A%20missed%20period%2C%20nausea%2C%20sore%20breasts%2C%20fatigue.%20Learn%20when%20to%20test%20for%20accurate%20results."
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-pinterest me-1"></i> Pin
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-linkedin me-1"></i> Share
+                        </a>
+                        <a href="mailto:?subject=I%20thought%20you%27d%20find%20this%20helpful&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html"
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-envelope me-1"></i> Email
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html', this)" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+
+
                 <nav aria-label="Blog post navigation" class="mt-5">
                     <ul class="pagination justify-content-between">
                         <li class="page-item">
@@ -696,5 +757,25 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Copy Link Function -->
+    <script>
+    function copyToClipboard(url, button) {
+        navigator.clipboard.writeText(url).then(function() {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check me-1"></i> Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            setTimeout(function() {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy link. Please try again.');
+        });
+    }
+    </script>
 </body>
 </html>
