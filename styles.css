@@ -1975,9 +1975,9 @@ article header .lead {
 
 /* Hormone Chart Images - Styled with purple border */
 .hormone-chart {
-    border: 3px solid var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 12px;
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(130, 89, 220, 0.15);
     transition: all 0.3s ease;
