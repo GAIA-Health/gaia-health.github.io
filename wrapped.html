@@ -174,68 +174,91 @@
     </script>
 
     <style>
-        /* Use brand colors from main site */
+        /* Clean, minimal color palette */
         :root {
             --primary: #8259DC;
             --primary-dark: #5B23C6;
             --primary-medium: #E5CFFC;
-            --secondary: #EDE7F6;
+            --secondary: #f8f9fa;
             --accent: #FF6B98;
             --green: #5A9B6B;
             --green-deep: #1E5631;
+            --text-dark: #1a1a2e;
+            --text-muted: #6c757d;
+            --border-light: #e9ecef;
+        }
+
+        body {
+            background: #fff;
         }
 
         .wrapped-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-medium) 100%);
-            min-height: 80vh;
+            background: #fff;
+            min-height: 70vh;
             display: flex;
             align-items: center;
-            color: white;
+            color: var(--text-dark);
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .wrapped-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            display: none;
         }
 
         .wrapped-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: var(--primary);
+            line-height: 1.1;
         }
 
         .wrapped-subtitle {
-            font-size: 1.5rem;
-            opacity: 0.95;
+            font-size: 1.25rem;
+            color: var(--text-muted);
             font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Primary CTA button - high contrast */
+        .btn-cta-primary {
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(130, 89, 220, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(130, 89, 220, 0.5);
         }
 
         .stat-card {
-            background: white;
-            border-radius: 20px;
+            background: #fff;
+            border-radius: 16px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(130, 89, 220, 0.15);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid var(--border-light);
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-medium);
-            box-shadow: 0 15px 40px rgba(130, 89, 220, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .stat-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
@@ -247,6 +270,7 @@
 
         .feature-block {
             padding: 4rem 0;
+            background: #fff;
         }
 
         .feature-block:nth-child(even) {
@@ -254,43 +278,48 @@
         }
 
         .wrapped-cta {
-            background: linear-gradient(135deg, var(--primary-medium) 0%, var(--secondary) 100%);
+            background: #fff;
             padding: 5rem 0;
-            color: var(--primary-dark);
+            border-top: 1px solid var(--border-light);
         }
 
         .wrapped-cta h2 {
-            color: var(--primary-dark);
+            color: var(--text-dark);
         }
 
         .wrapped-cta .lead {
-            color: #333;
+            color: var(--text-muted);
         }
 
         .wrapped-cta .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
             color: white;
-            font-weight: 600;
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(130, 89, 220, 0.4);
         }
 
         .wrapped-cta .btn-primary:hover {
-            background-color: var(--accent);
-            border-color: var(--accent);
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(130, 89, 220, 0.5);
         }
 
         .wrapped-cta .small {
-            color: #666;
+            color: var(--text-muted);
         }
 
         .insight-card {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-medium) 100%);
-            border-radius: 15px;
+            background: #fff;
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1rem;
-            border: 1px solid rgba(130, 89, 220, 0.2);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .pulse-animation {
@@ -353,16 +382,25 @@
         }
 
         /* Hero button */
-        .wrapped-hero .btn-light {
-            color: var(--primary);
-            font-weight: 600;
-            border-radius: 30px;
-            padding: 1rem 2rem;
+        .wrapped-hero .btn-cta-primary {
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(130, 89, 220, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .wrapped-hero .btn-light:hover {
-            background-color: var(--accent);
+        .wrapped-hero .btn-cta-primary:hover {
+            background: var(--primary-dark);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(130, 89, 220, 0.5);
         }
 
         /* Step circles */
@@ -371,22 +409,53 @@
         }
 
         /* Screenshot showcase */
+        .screenshot-showcase {
+            background: #fff;
+        }
+
         .screenshot-showcase img {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid var(--primary-medium);
+            border: 1px solid var(--border-light);
         }
 
         .screenshot-showcase img:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(130, 89, 220, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cards - cleaner borders */
+        .card {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Accordion - cleaner */
+        .accordion-button:not(.collapsed) {
+            background-color: #fff;
+            color: var(--primary);
+        }
+
+        /* Section backgrounds override */
+        .py-5[style*="background"] {
+            background: var(--secondary) !important;
         }
 
         @media (max-width: 768px) {
             .wrapped-title {
-                font-size: 2.5rem;
+                font-size: 2.25rem;
             }
             .wrapped-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            .btn-cta-primary {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -428,10 +497,10 @@
         <div class="container text-center position-relative">
             <h1 class="wrapped-title mb-4">Your 2025<br>Health Wrapped</h1>
             <p class="wrapped-subtitle mb-5">A personalized year-in-review for your body and mind.<br>Track your cycles, moods, and habits in Go Go Gaia to unlock yours.</p>
-            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn btn-light btn-lg px-5 py-3 pulse-animation">
+            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn-cta-primary">
                 <i class="bi bi-apple me-2"></i>Start Tracking Free
             </a>
-            <p class="mt-3 small opacity-75">Free on iOS. The more you track, the better your Wrapped.</p>
+            <p class="mt-3 small text-muted">Free on iOS. The more you track, the better your Wrapped.</p>
         </div>
     </section>
 
@@ -458,7 +527,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn btn-primary btn-lg px-4 py-2">
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn-cta-primary">
                     <i class="bi bi-apple me-2"></i>Start Building Yours
                 </a>
             </div>
@@ -466,7 +535,7 @@
     </section>
 
     <!-- Preview Section - What Your Wrapped Could Reveal -->
-    <section class="py-5" style="background: var(--secondary);">
+    <section class="py-5" style="background: #f8f9fa;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -893,10 +962,10 @@
                     </div>
                 </div>
             </div>
-            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn btn-primary btn-lg px-5 py-3">
+            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=wrapped&mt=8" target="_blank" class="btn-cta-primary">
                 <i class="bi bi-apple me-2"></i>Download Go Go Gaia Free
             </a>
-            <p class="mt-4 small">Join thousands of women tracking their health journey</p>
+            <p class="mt-4 small text-muted">Join thousands of women tracking their health journey</p>
         </div>
     </section>
 
