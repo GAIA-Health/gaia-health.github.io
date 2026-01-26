@@ -50,9 +50,14 @@ body {
     box-shadow: 0 2px 10px rgba(130, 89, 220, 0.3);
     transition: all 0.3s ease;
     margin-bottom: 0; /* Remove any bottom margin */
-    padding-top: 1rem; /* Add top padding for more space */
-    padding-bottom: 1rem; /* Add bottom padding for more space */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     border-bottom: none; /* Remove any border */
+}
+
+.custom-navbar-bg .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .navbar-brand {
@@ -70,6 +75,7 @@ body {
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
+    text-align: center;
 }
 
 .navbar-nav .nav-link:after {
@@ -130,7 +136,7 @@ body {
 
 /* Hero Section */
 .hero-container {
-    padding: 1rem 0 0 0;
+    padding: 5rem 0 2rem 0;
     background: linear-gradient(135deg, var(--secondary-transparent) 0%, var(--secondary-transparent) 100%);
     position: relative;
     overflow: hidden;
@@ -139,7 +145,7 @@ body {
     border-top: none; /* Remove any border */
 }
 
-/* Smooth wave shape behind carousel - 30 to 70, more wavy */
+/* Smooth wave shape behind carousel - 45 to 80, pushed right */
 .hero-container::before {
     content: '';
     position: absolute;
@@ -148,8 +154,8 @@ body {
     width: 100%;
     height: 100%;
     background: var(--primary);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 30,0 L 100,0 L 100,100 L 70,100 C 62,88 56,75 52,62 C 48,50 45,38 43,28 C 41,18 37,8 33,3 C 31,1 30,0 30,0 Z' fill='white'/%3E%3C/svg%3E");
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 30,0 L 100,0 L 100,100 L 70,100 C 62,88 56,75 52,62 C 48,50 45,38 43,28 C 41,18 37,8 33,3 C 31,1 30,0 30,0 Z' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 45,0 L 100,0 L 100,100 L 80,100 C 72,88 66,75 62,62 C 58,50 55,38 53,28 C 51,18 49,8 47,3 C 46,1 45,0 45,0 Z' fill='white'/%3E%3C/svg%3E");
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 45,0 L 100,0 L 100,100 L 80,100 C 72,88 66,75 62,62 C 58,50 55,38 53,28 C 51,18 49,8 47,3 C 46,1 45,0 45,0 Z' fill='white'/%3E%3C/svg%3E");
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -173,13 +179,26 @@ body {
     flex: 1;
     padding: 1rem;
     padding-left: 3rem;
+    padding-bottom: 3rem;
+    margin-top: auto;
     position: relative;
     z-index: 1;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
     .hero-text {
         padding-left: 1rem;
+        text-align: center;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .hero-feature {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
@@ -195,6 +214,42 @@ body {
     font-size: 1.25rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
+}
+
+/* Hero Feature Badges */
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-start;
+}
+
+.hero-feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--primary-medium);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero-feature:hover {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.hero-feature i {
+    font-size: 0.9rem;
+    color: var(--accent);
 }
 
 .hero-image {
@@ -248,19 +303,6 @@ body {
     outline: none;
 }
 
-/* Dynamic Section */
-.dynamic-section {
-    background-color: var(--primary-medium); /* Medium purple */
-    color: var(--green-deep); /* Dark green for good contrast */
-    padding: 3rem 0;
-    margin-top: 0; /* Remove any top margin */
-    text-align: center;
-    font-size: 2.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
 /* Intersectional Bridge Section - Enhanced Green Styling */
 .intersectional-bridge {
     background: linear-gradient(135deg, var(--green-bg) 0%, rgba(133, 170, 134, 0.5) 100%) !important;
@@ -284,22 +326,6 @@ body {
 }
 
 /* Removed bubble pattern for cleaner look */
-
-#dynamicWord {
-    font-weight: 800;
-    color: inherit; /* Match parent text color */
-    position: relative;
-    display: inline-block;
-    border-right: 3px solid currentColor; /* Cursor effect matching text color */
-    padding-right: 5px; /* Space for cursor */
-    animation: blinkCursor 0.8s step-end infinite;
-}
-
-/* Blinking cursor animation */
-@keyframes blinkCursor {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--accent); }
-}
 
 /* Feature Section */
 .feature-section {
@@ -789,10 +815,6 @@ footer a:hover .bi {
         font-size: 2.5rem;
     }
 
-    .dynamic-section {
-        font-size: 2rem;
-    }
-
     .feature-box {
         padding: 1.5rem;
     }
@@ -814,9 +836,16 @@ footer a:hover .bi {
         padding: 2rem 0;
     }
 
+    /* On mobile, move wave to bottom half behind the carousel */
+    .hero-container::before {
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 0,50 C 10,45 20,42 30,40 C 50,36 70,38 100,45 L 100,100 L 0,100 Z' fill='white'/%3E%3C/svg%3E");
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 0,50 C 10,45 20,42 30,40 C 50,36 70,38 100,45 L 100,100 L 0,100 Z' fill='white'/%3E%3C/svg%3E");
+    }
+
     .hero-text {
         text-align: center;
         padding: 1rem;
+        margin-top: 0;
     }
 
     .hero-text h1 {
@@ -826,11 +855,6 @@ footer a:hover .bi {
     .hero-image {
         margin-top: 2rem;
         width: 100%;
-    }
-
-    .dynamic-section {
-        font-size: 1.5rem;
-        padding: 2rem 0;
     }
 
     .testimonial-bubble {
@@ -950,9 +974,13 @@ footer a:hover .bi {
         font-size: 1rem;
     }
 
-    .dynamic-section {
-        font-size: 1.25rem;
-        padding: 1.5rem 0;
+    .hero-features {
+        gap: 0.5rem;
+    }
+
+    .hero-feature {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
     }
 
     .feature-section h2,
@@ -1649,11 +1677,6 @@ header {
 main {
     margin-top: 0 !important;
     padding-top: 0 !important;
-}
-
-.text-center + .dynamic-section {
-    margin-top: 0 !important;
-    padding-top: 2rem;
 }
 
 .sticky-top {
