@@ -46,6 +46,30 @@
     gtag('config', 'G-ZEM6KB1QWF');
     </script>
 
+    <!-- FullStory -->
+    <script>
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+    window['_fs_org'] = 'o-249ACS-na1';
+    window['_fs_namespace'] = 'FS';
+    !function(m,n,e,t,l,o,g,y){var s,f,a=function(h){
+    return!(h in m)||(m.console&&m.console.log&&m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'),!1)}(e)
+    ;function p(b){var h,d=[];function j(){h&&(d.forEach((function(b){var d;try{d=b[h[0]]&&b[h[0]](h[1])}catch(h){return void(b[3]&&b[3](h))}
+    d&&d.then?d.then(b[2],b[3]):b[2]&&b[2](d)})),d.length=0)}function r(b){return function(d){h||(h=[b,d],j())}}return b(r(0),r(1)),{
+    then:function(b,h){return p((function(r,i){d.push([b,h,r,i]),j()}))}}}a&&(g=m[e]=function(){var b=function(b,d,j,r){function i(i,c){
+    h(b,d,j,i,c,r)}r=r||2;var c,u=/Async$/;return u.test(b)?(b=b.replace(u,""),"function"==typeof Promise?new Promise(i):p(i)):h(b,d,j,c,c,r)}
+    ;function h(h,d,j,r,i,c){return b._api?b._api(h,d,j,r,i,c):(b.q&&b.q.push([h,d,j,r,i,c]),null)}return b.q=[],b}(),y=function(b){function h(h){
+    "function"==typeof h[4]&&h[4](new Error(b))}var d=g.q;if(d){for(var j=0;j<d.length;j++)h(d[j]);d.length=0,d.push=h}},function(){
+    (o=n.createElement(t)).async=!0,o.crossOrigin="anonymous",o.src="https://"+l,o.onerror=function(){y("Error loading "+l)}
+    ;var b=n.getElementsByTagName(t)[0];b&&b.parentNode?b.parentNode.insertBefore(o,b):n.head.appendChild(o)}(),function(){function b(){}
+    function h(b,h,d){g(b,h,d,1)}function d(b,d,j){h("setProperties",{type:b,properties:d},j)}function j(b,h){d("user",b,h)}function r(b,h,d){j({
+    uid:b},d),h&&j(h,d)}g.identify=r,g.setUserVars=j,g.identifyAccount=b,g.clearUserCookie=b,g.setVars=d,g.event=function(b,d,j){h("trackEvent",{
+    name:b,properties:d},j)},g.anonymize=function(){r(!1)},g.shutdown=function(){h("shutdown")},g.restart=function(){h("restart")},
+    g.log=function(b,d){h("log",{level:b,msg:d})},g.consent=function(b){h("setIdentity",{consent:!arguments.length||b})}}(),s="fetch",
+    f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){return g._w[s].apply(this,arguments)}),g._v="2.0.0")
+    }(window,document,window._fs_namespace,"script",window._fs_script);
+    </script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -54,12 +78,7 @@
         "name": "GO GO GAIA",
         "url": "https://www.go-go-gaia.com",
         "description": "Track and manage your wellness journey effectively with GO GO GAIA.",
-        "logo": "https://www.go-go-gaia.com/Logo1.png",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.go-go-gaia.com/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "logo": "https://www.go-go-gaia.com/Logo1.png"
       }
     </script>
     
@@ -101,13 +120,6 @@
         "priceCurrency": "USD",
         "description": "Free download with premium subscription options"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "50",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "author": {
         "@type": "Organization",
         "name": "Holland Neurotech Inc.",
@@ -126,7 +138,7 @@
       "url": "https://hollandneurotech.com",
       "logo": "https://www.go-go-gaia.com/Logo1.png",
       "sameAs": [
-        "https://twitter.com/holland_neuro",
+        "https://x.com/holland_neuro",
         "https://instagram.com/gogogaia_tracker",
         "https://tiktok.com/@gogogaia_tracker"
       ],
@@ -151,16 +163,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-              <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
-              <li class="nav-item"><a class="nav-link" href="#personas">Who It's For</a></li>
+              <li class="nav-item"><a class="nav-link" href="#how-it-works">How</a></li>
+              <li class="nav-item"><a class="nav-link" href="#trust">Why Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#personas">For Who</a></li>
               <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
               <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
               <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
               <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
           </ul>
           <div class="social-icons ms-md-3 d-none d-md-flex">
-              <a href="https://twitter.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter"></i></a>
+              <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
               <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
               <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
               <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
@@ -171,13 +183,25 @@
   </header>
     <main role="main">
         <section class="text-center py-0">
-            <div class="hero-container d-flex flex-column flex-md-row align-items-center">
+            <div class="hero-container d-flex flex-column flex-md-row align-items-end">
                 <div class="hero-text text-md-start mb-4 mb-md-0 animate__animated animate__fadeInLeft">
-                    <h1 class="display-4 fw-bold">Women's Health<br>made <span style="color: #FF6B98; background: none; -webkit-text-fill-color: #FF6B98; background-clip: unset;">simple</span></h1>
-                    <p class="lead mb-4">We're here for you, through every stage of life.</p>
+                    <h1 class="display-4 fw-bold">Stop wondering why.<br>Start <span style="color: #FF6B98; background: none; -webkit-text-fill-color: #FF6B98; background-clip: unset;">understanding</span>.</h1>
+                    <p class="lead mb-4">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</p>
                     <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" role="button">
                         <i class="bi bi-apple me-2"></i>Download on the App Store
                     </a>
+                    <div class="hero-features mt-4">
+                        <a href="#personas" class="hero-feature" data-tab="cycle-tab"><i class="bi bi-calendar-heart"></i> Cycle Tracking</a>
+                        <a href="#personas" class="hero-feature" data-tab="pcos-tab"><i class="bi bi-heart-pulse"></i> PCOS</a>
+                        <a href="#personas" class="hero-feature" data-tab="fertility-tab"><i class="bi bi-flower1"></i> Fertility</a>
+                        <a href="#personas" class="hero-feature" data-tab="pregnancy-tab"><i class="bi bi-heart"></i> Pregnancy</a>
+                        <a href="#personas" class="hero-feature" data-tab="menopause-tab"><i class="bi bi-moon-stars"></i> Perimenopause</a>
+                        <a href="#personas" class="hero-feature" data-tab="wellness-tab"><i class="bi bi-emoji-smile"></i> Mood</a>
+                        <a href="#personas" class="hero-feature" data-tab="fitness-tab"><i class="bi bi-activity"></i> Fitness</a>
+                        <a href="#personas" class="hero-feature" data-tab="fitness-tab"><i class="bi bi-egg-fried"></i> Nutrition</a>
+                        <a href="#how-it-works" class="hero-feature"><i class="bi bi-clipboard2-pulse"></i> Symptoms</a>
+                        <a href="#how-it-works" class="hero-feature"><i class="bi bi-graph-up"></i> Correlations</a>
+                    </div>
                 </div>
                 <div class="hero-image animate__animated animate__fadeInRight">
                     <div id="screenshotCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -240,49 +264,7 @@
             </div>
         </section>
 
-        <section class="dynamic-section text-center py-4">
-            <div class="container">
-                <p>get to know your <span id="dynamicWord">why</span></p>
-            </div>
-        </section>
-
-        <section id="features" class="feature-section py-5">
-            <div class="container">
-                <h2 class="text-center mb-4 animate__animated animate__fadeIn">What Makes Us Different?</h2>
-                <div class="features-wrapper">
-                    <div class="row g-4 row-cols-1 row-cols-md-2">
-                    <div class="col">
-                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-1s">
-                            <div class="d-flex align-items-start mb-3">
-                                <div class="icon-square">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div>
-                                    <h3>Women-Led & Trustworthy</h3>
-                                </div>
-                            </div>
-                            <p>Built by women who understand women's health challenges because we live them too. We will never sell your personal health data—we earn revenue through premium features, not by exploiting your information.</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-2s">
-                            <div class="d-flex align-items-start mb-3">
-                                <div class="icon-square">
-                                    <i class="bi bi-shield-lock"></i>
-                                </div>
-                                <div>
-                                    <h3>Privacy & Security First</h3>
-                                </div>
-                            </div>
-                            <p>Your health data stays private—only you can access it. You control what's stored, what's shared, and you can delete everything anytime.</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="benefits" class="benefits-section py-5">
+        <section id="how-it-works" class="benefits-section py-5">
             <div class="container">
                 <h2 class="text-center animate__animated animate__fadeIn">How It Works</h2>
                 <p class="text-center lead mb-5">Your path to understanding your health</p>
@@ -345,6 +327,42 @@
                         <h3 class="mb-3">Adapt to Your Stage</h3>
                         <p>Whatever stage you're in, the app adapts. Sync your schedule with your cycle. Time conception during your fertile window. Track pregnancy changes week by week. Navigate postpartum recovery. Manage perimenopause transitions. Make decisions based on your patterns, not generic advice.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust" class="feature-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-4 animate__animated animate__fadeIn">Why Trust Go Go Gaia</h2>
+                <div class="features-wrapper">
+                    <div class="row g-4 row-cols-1 row-cols-md-2">
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div>
+                                    <h3>Women-Led & Trustworthy</h3>
+                                </div>
+                            </div>
+                            <p>Built by women who understand women's health challenges because we live them too. We will never sell your personal health data—we earn revenue through premium features, not by exploiting your information.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="feature-box d-flex flex-column h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="icon-square">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+                                <div>
+                                    <h3>Privacy & Security First</h3>
+                                </div>
+                            </div>
+                            <p>Your health data stays private—only you can access it. You control what's stored, what's shared, and you can delete everything anytime.</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -530,9 +548,8 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <section id="faq" class="faq-section py-5">
+        <section id="faq" class="faq-section py-5">
         <div class="container">
             <h2 class="text-center mb-5 animate__animated animate__fadeIn">Frequently Asked Questions</h2>
             
@@ -646,7 +663,8 @@
                 </div>
             </div>
         </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer mt-auto py-3" id="contact">
     <div class="container">
@@ -658,7 +676,7 @@
         <div class="col-md-4 text-center mb-3 mb-md-0">
           <h5>Connect With Us</h5>
           <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
-          <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+          <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
           <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
           <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
         </div>
@@ -673,7 +691,7 @@
       </div>
       <div class="row mt-4">
         <div class="col text-center">
-          <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+          <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
         </div>
       </div>
     </div>
