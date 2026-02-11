@@ -103,6 +103,27 @@ body {
     width: 70%;
 }
 
+/* Log In button in nav - outline style */
+.navbar-nav .nav-link.nav-login {
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link.nav-login:after {
+    display: none;
+}
+
+.navbar-nav .nav-link.nav-login:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
 /* Download button in nav - button style with dark purple */
 .navbar-nav .nav-link.nav-download {
     color: white !important;
@@ -441,14 +462,14 @@ body {
 }
 
 .testimonial-bubble {
-    background-color: var(--green-bg);
+    background-color: var(--secondary);
     border-radius: 20px;
     padding: 2.5rem;
     margin: 0 auto;
     max-width: 800px;
     position: relative;
-    box-shadow: 0 5px 20px rgba(70, 88, 58, 0.15);
-    border: 2px solid var(--green-deep);
+    box-shadow: 0 5px 20px rgba(130, 89, 220, 0.15);
+    border: 2px solid var(--primary-medium);
     min-height: 280px;
 }
 
@@ -474,7 +495,7 @@ body {
     left: 20px;
     font-size: 5rem;
     font-family: 'Georgia', serif;
-    color: var(--green-subtle);
+    color: var(--primary-subtle);
     line-height: 1;
 }
 
@@ -745,11 +766,11 @@ footer {
     background-color: white;
     padding: 3rem 0;
     color: var(--text-muted);
-    border-top: 3px solid var(--green-deep);
+    border-top: 3px solid var(--primary);
 }
 
 footer a {
-    color: var(--green-deep);
+    color: var(--primary);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
@@ -824,11 +845,6 @@ footer a:hover .bi {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
-
-    /* Benefits section adjustments for tablets */
-    .benefits-section .row {
-        --bs-gutter-x: 2.5rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -869,7 +885,7 @@ footer a:hover .bi {
     #testimonials h2,
     #early-access h2,
     .personas-section h2,
-    .benefits-section h2,
+    .how-it-works-section h2,
     .faq-section h2 {
         font-size: 2rem;
     }
@@ -883,28 +899,6 @@ footer a:hover .bi {
     .py-5 {
         padding-top: 3rem !important;
         padding-bottom: 3rem !important;
-    }
-
-    /* Benefits section responsive improvements */
-    .benefits-section img {
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    .benefits-section .row {
-        margin-bottom: 3rem !important;
-    }
-
-    .benefits-section h3 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .benefits-section .col-md-4 {
-        margin-bottom: 1.5rem;
-        display: flex;
-        justify-content: center;
     }
 
     /* Early access section */
@@ -987,13 +981,9 @@ footer a:hover .bi {
     #testimonials h2,
     #early-access h2,
     .personas-section h2,
-    .benefits-section h2,
+    .how-it-works-section h2,
     .faq-section h2 {
         font-size: 1.5rem;
-    }
-
-    .benefits-section h3 {
-        font-size: 1.25rem;
     }
 
     .benefit-item {
@@ -1191,7 +1181,7 @@ html {
 .persona-content .blog-link {
     display: inline-block;
     margin-top: 0.75rem;
-    color: var(--green-deep);
+    color: var(--primary);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -1254,14 +1244,18 @@ html {
     }
 }
 
-/* Benefits Section */
-.benefits-section {
+/* =============================================
+   HOW IT WORKS - SCROLL-LINKED STORY
+   ============================================= */
+
+.how-it-works-section {
     background-color: white;
+    padding: 6rem 0;
     position: relative;
-    overflow: hidden;
+    /* no overflow hidden/clip here — it breaks position: sticky on the phone */
 }
 
-.benefits-section::before {
+.how-it-works-section::before {
     content: '';
     position: absolute;
     top: -150px;
@@ -1273,7 +1267,7 @@ html {
     z-index: 0;
 }
 
-.benefits-section::after {
+.how-it-works-section::after {
     content: '';
     position: absolute;
     bottom: -150px;
@@ -1285,7 +1279,7 @@ html {
     z-index: 0;
 }
 
-.benefits-section h2 {
+.how-it-works-section h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
@@ -1295,14 +1289,7 @@ html {
     z-index: 1;
 }
 
-.benefits-section h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1.75rem;
-    color: var(--primary);
-}
-
-.benefits-section .lead {
+.how-it-works-section .lead {
     color: var(--text-muted);
     position: relative;
     z-index: 1;
@@ -1311,70 +1298,131 @@ html {
     margin-right: auto;
 }
 
-.benefits-section img {
-    transition: all 0.5s ease;
-    max-width: 80%;
-    display: block;
-}
-
-/* Align images closer to text */
-.benefits-section .row:not(.flex-md-row-reverse) img {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.benefits-section .row.flex-md-row-reverse img {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-.benefits-section img:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-
-.benefits-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 2rem;
-}
-
-.benefits-list li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+/* Two-column scroll layout */
+.scroll-story {
     display: flex;
+    gap: 4rem;
     align-items: flex-start;
-}
-
-.benefits-list li i {
-    color: var(--primary);
-    font-size: 1.25rem;
-    margin-right: 0.75rem;
-    margin-top: 0.25rem;
-}
-
-.benefits-section .fst-italic {
-    color: var(--text-muted);
-    border-left: 3px solid var(--primary-medium);
-    padding-left: 1rem;
-}
-
-.benefits-section .row {
-    margin-bottom: 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
-    --bs-gutter-x: 4rem; /* Generous spacing between image and text */
-    max-width: 1100px; /* Wider to accommodate new layout */
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.benefits-section .row:last-child {
-    margin-bottom: 0;
+/* Left column: sticky phone */
+.scroll-story-phone {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 20vh;
+    align-self: flex-start;
 }
 
+.phone-frame {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.phone-screen {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(130, 89, 220, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phone-screen.active {
+    opacity: 1;
+    position: relative; /* first one takes space */
+}
+
+/* Right column: scrolling content */
+.scroll-story-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.story-step {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    opacity: 0.3;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.story-step.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    color: var(--primary-medium);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.story-step h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.story-step p {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+/* Mobile fallback: no sticky, stacked layout */
 @media (max-width: 768px) {
-    .benefits-section .row {
-        --bs-gutter-x: 2rem;
+    .how-it-works-section {
+        padding: 3rem 0;
+    }
+
+    .scroll-story {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .scroll-story-phone {
+        display: none;
+    }
+
+    .story-step {
+        min-height: auto;
+        padding: 3rem 0;
+        opacity: 1;
+        transform: none;
+        border-bottom: 1px solid rgba(130, 89, 220, 0.1);
+    }
+
+    .story-step:last-child {
+        border-bottom: none;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+    }
+
+    .story-step h3 {
+        font-size: 1.5rem;
+    }
+
+    .story-step p {
         max-width: 100%;
     }
 }
@@ -2033,13 +2081,13 @@ article header .lead {
 /* Feature boxes keep purple - green is hard to see against sand */
 /* Removed green from feature icons for better contrast */
 
-/* Benefits section - add warmth to background decorations */
-.benefits-section::before {
+/* How It Works section - add warmth to background decorations */
+.how-it-works-section::before {
     background: var(--green-soft);
 }
 
-.benefits-section::after {
-    background: var(--sand-subtle);
+.how-it-works-section::after {
+    background: var(--primary-subtle);
 }
 
 /* Add subtle green to checkmarks and success icons */
@@ -2051,4 +2099,216 @@ article header .lead {
 /* FAQ section with white background */
 .faq-section {
     background-color: white;
+}
+
+/* =============================================
+   MODERN SCROLL ANIMATIONS (replaces animate.css)
+   ============================================= */
+
+/* Base reveal state - hidden */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(40px);
+}
+
+/* Revealed state */
+.reveal.revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Stagger delays for cards appearing 1-2-3 */
+.reveal.stagger-1 { transition-delay: 0s; }
+.reveal.stagger-2 { transition-delay: 0.15s; }
+.reveal.stagger-3 { transition-delay: 0.3s; }
+.reveal.stagger-4 { transition-delay: 0.45s; }
+
+/* Hero loads immediately (no scroll trigger needed) */
+.hero-container .reveal {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: heroEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-container .reveal.reveal-left {
+    animation-name: heroFromLeft;
+}
+
+.hero-container .reveal.reveal-right {
+    animation-name: heroFromRight;
+    animation-delay: 0.2s;
+}
+
+@keyframes heroEntrance {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFromLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroFromRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* FAQ accordion smooth open/close */
+.accordion-collapse {
+    transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-button::after {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================
+   INTEGRATIONS BAR
+   ============================================= */
+
+.integrations-bar {
+    background-color: var(--secondary);
+    border-top: 1px solid rgba(130, 89, 220, 0.1);
+    border-bottom: 1px solid rgba(130, 89, 220, 0.1);
+}
+
+.integration-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.integration-logo:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+.integration-logo i {
+    font-size: 1.1rem;
+}
+
+/* =============================================
+   STATS SECTION
+   ============================================= */
+
+.stats-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number::after {
+    content: '+';
+    font-size: 2rem;
+    vertical-align: top;
+    margin-left: 2px;
+}
+
+.stat-label-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    .stat-label-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* =============================================
+   PROFESSIONALS SECTION (distinct styling)
+   ============================================= */
+
+.professionals-section {
+    background-color: var(--secondary);
+    position: relative;
+}
+
+.professionals-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+/* =============================================
+   STICKY MOBILE CTA
+   ============================================= */
+
+.sticky-mobile-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-top: 1px solid rgba(130, 89, 220, 0.15);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.sticky-mobile-cta.visible {
+    transform: translateY(0);
+}
+
+.sticky-mobile-cta .btn {
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Add bottom padding to body on mobile so footer isn't hidden behind sticky CTA */
+@media (max-width: 767px) {
+    footer {
+        padding-bottom: 5rem !important;
+    }
 }
