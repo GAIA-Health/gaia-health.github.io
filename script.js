@@ -4,89 +4,166 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Enhanced Carousel Functionality
+    // =========================================
+    // INTERSECTION OBSERVER - Scroll Animations
+    // =========================================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                // Stop observing once revealed (one-time animation)
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with .reveal class (skip hero - it animates via CSS)
+    document.querySelectorAll('.reveal:not(.hero-container .reveal)').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // =========================================
+    // ANIMATED COUNTERS
+    // =========================================
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+        counterObserver.observe(el);
+    });
+
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const duration = 1500; // ms
+        const start = performance.now();
+
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased);
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    // =========================================
+    // STICKY MOBILE CTA
+    // =========================================
+    const stickyCta = document.querySelector('.sticky-mobile-cta');
+    if (stickyCta) {
+        let lastScrollY = 0;
+        const heroHeight = document.querySelector('.hero-container')?.offsetHeight || 500;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            // Show after scrolling past hero
+            if (scrollY > heroHeight) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+            lastScrollY = scrollY;
+        }, { passive: true });
+    }
+
+    // =========================================
+    // SCROLL-LINKED STORY (How It Works)
+    // =========================================
+    const scrollStory = document.querySelector('.scroll-story');
+    if (scrollStory) {
+        const steps = scrollStory.querySelectorAll('.story-step');
+        const screens = scrollStory.querySelectorAll('.phone-screen');
+
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stepNum = entry.target.getAttribute('data-step');
+
+                    // Activate the content card
+                    steps.forEach(s => s.classList.remove('active'));
+                    entry.target.classList.add('active');
+
+                    // Crossfade to the matching phone screenshot
+                    screens.forEach(s => {
+                        s.classList.remove('active');
+                        s.style.position = 'absolute';
+                    });
+                    const activeScreen = scrollStory.querySelector(
+                        `.phone-screen[data-step="${stepNum}"]`
+                    );
+                    if (activeScreen) {
+                        activeScreen.classList.add('active');
+                        activeScreen.style.position = 'relative';
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-30% 0px -30% 0px',
+            threshold: 0.1
+        });
+
+        steps.forEach(step => stepObserver.observe(step));
+    }
+
+    // =========================================
+    // CAROUSEL - Enhanced Functionality
+    // =========================================
     const carousel = document.getElementById('screenshotCarousel');
     if (carousel) {
-        // Initialize Bootstrap carousel with longer interval
         const bsCarousel = new bootstrap.Carousel(carousel, {
-            interval: 5000, // Longer interval for better viewing of each slide
+            interval: 5000,
             ride: 'carousel',
             wrap: true
         });
-        
-        // Add hover pause functionality
-        carousel.addEventListener('mouseenter', () => {
-            bsCarousel.pause();
-        });
-        
-        carousel.addEventListener('mouseleave', () => {
-            bsCarousel.cycle();
-        });
-        
-        // Add swipe functionality for mobile
+
+        carousel.addEventListener('mouseenter', () => bsCarousel.pause());
+        carousel.addEventListener('mouseleave', () => bsCarousel.cycle());
+
+        // Touch swipe for mobile
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         carousel.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         }, false);
-        
+
         carousel.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
+            if (touchEndX < touchStartX - 50) bsCarousel.next();
+            if (touchEndX > touchStartX + 50) bsCarousel.prev();
         }, false);
-        
-        const handleSwipe = () => {
-            if (touchEndX < touchStartX - 50) {
-                // Swipe left, go to next slide
-                bsCarousel.next();
-            }
-            if (touchEndX > touchStartX + 50) {
-                // Swipe right, go to previous slide
-                bsCarousel.prev();
-            }
-        };
-        
-        // Add keyboard navigation
+
+        // Keyboard navigation when carousel is in viewport
         document.addEventListener('keydown', (e) => {
             if (isElementInViewport(carousel)) {
-                if (e.key === 'ArrowLeft') {
-                    bsCarousel.prev();
-                }
-                if (e.key === 'ArrowRight') {
-                    bsCarousel.next();
-                }
+                if (e.key === 'ArrowLeft') bsCarousel.prev();
+                if (e.key === 'ArrowRight') bsCarousel.next();
             }
         });
-        
-        // Preload images for smoother transitions
-        const preloadImages = () => {
-            const slides = carousel.querySelectorAll('.carousel-item img');
-            slides.forEach(img => {
-                const src = img.getAttribute('src');
-                if (src) {
-                    const image = new Image();
-                    image.src = src;
-                }
-            });
-        };
-        
+
         // Fix for smoother transitions
-        carousel.addEventListener('slide.bs.carousel', function (e) {
-            // Add a small delay to ensure proper opacity transition
+        carousel.addEventListener('slide.bs.carousel', function(e) {
             const activeItem = carousel.querySelector('.carousel-item.active');
             const nextItem = e.relatedTarget;
-            
-            // Ensure proper z-index stacking
             if (activeItem) activeItem.style.zIndex = '0';
             if (nextItem) nextItem.style.zIndex = '1';
         });
-        
-        // Run preload
-        preloadImages();
     }
 
-    // Helper function to check if element is in viewport
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -97,7 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // Smooth scrolling for navigation links
+    // =========================================
+    // SMOOTH SCROLLING + NAV
+    // =========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -108,89 +187,55 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for fixed header
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
 
                 // Close mobile menu if open
-                const navbarToggler = document.querySelector('.navbar-toggler');
                 const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    document.querySelector('.navbar-toggler').click();
                 }
 
-                // If this link has a data-tab attribute, activate that tab
+                // Activate linked tab if applicable
                 const tabId = this.getAttribute('data-tab');
                 if (tabId) {
-                    const tabButton = document.getElementById(tabId);
-                    if (tabButton) {
-                        // Small delay to let scroll complete
-                        setTimeout(() => {
+                    setTimeout(() => {
+                        const tabButton = document.getElementById(tabId);
+                        if (tabButton) {
                             const tab = new bootstrap.Tab(tabButton);
                             tab.show();
-                        }, 400);
-                    }
+                        }
+                    }, 400);
                 }
             }
         });
     });
 
-    // Animate elements when they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-box, .testimonial-bubble, h2');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 100) {
-                if (!element.classList.contains('animate__animated')) {
-                    element.classList.add('animate__animated', 'animate__fadeIn');
-                }
-            }
-        });
-    };
-
-    // Run on scroll
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Run once on page load
-    animateOnScroll();
-
-    // Add active class to nav items on scroll
+    // Active nav item on scroll
     const sections = document.querySelectorAll('section[id]');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
             if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
-        
+
         document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#') && href.substring(1) === current) {
                 link.classList.add('active');
             }
         });
-    });
+    }, { passive: true });
 
-    // Add parallax effect to hero section
-    const heroContainer = document.querySelector('.hero-container');
-
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        if (heroContainer) {
-            heroContainer.style.backgroundPosition = `50% ${scrollPosition * 0.4}px`;
-        }
-    });
-
-    // Auto-rotating Personas Tabs
+    // =========================================
+    // AUTO-ROTATING PERSONA TABS
+    // =========================================
     const personasTabs = document.querySelectorAll('#personasTabs button[data-bs-toggle="pill"]');
     let currentPersonaIndex = 0;
     let personasAutoRotate = null;
@@ -199,52 +244,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function rotatePersonas() {
         if (personasTabs.length === 0) return;
-
-        // Move to next tab
         currentPersonaIndex = (currentPersonaIndex + 1) % personasTabs.length;
-
-        // Trigger the tab
         const nextTab = new bootstrap.Tab(personasTabs[currentPersonaIndex]);
         nextTab.show();
     }
 
     function startPersonasRotation() {
-        // Always stop any existing rotation first to prevent duplicates
         stopPersonasRotation();
-
-        // Only start if user hasn't interacted recently
         if (!userInteracted) {
-            personasAutoRotate = setInterval(rotatePersonas, 7000); // Rotate every 7 seconds
+            personasAutoRotate = setInterval(rotatePersonas, 7000);
         }
     }
 
     function stopPersonasRotation() {
-        // Clear the interval
         if (personasAutoRotate) {
             clearInterval(personasAutoRotate);
             personasAutoRotate = null;
         }
-
-        // Clear any pending restart timeout
         if (restartTimeout) {
             clearTimeout(restartTimeout);
             restartTimeout = null;
         }
     }
 
-    // Start auto-rotation on page load
     if (personasTabs.length > 0) {
         startPersonasRotation();
     }
 
-    // Pause rotation when user clicks a tab
     personasTabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
             stopPersonasRotation();
             currentPersonaIndex = index;
             userInteracted = true;
-
-            // Resume auto-rotation after 10 seconds of no interaction
             restartTimeout = setTimeout(() => {
                 userInteracted = false;
                 startPersonasRotation();
@@ -252,17 +283,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Pause rotation when user hovers over the personas section
     const personasSection = document.getElementById('personas');
     if (personasSection) {
-        personasSection.addEventListener('mouseenter', () => {
-            stopPersonasRotation();
-        });
-
+        personasSection.addEventListener('mouseenter', () => stopPersonasRotation());
         personasSection.addEventListener('mouseleave', () => {
-            if (!userInteracted) {
-                startPersonasRotation();
-            }
+            if (!userInteracted) startPersonasRotation();
         });
     }
 });
