@@ -56,8 +56,9 @@ body {
 }
 
 .custom-navbar-bg .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    max-width: 1400px;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .navbar-brand {
