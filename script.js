@@ -175,6 +175,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =========================================
+    // FAQ SHOW MORE / SHOW LESS TOGGLE
+    // =========================================
+    const moreFaqItems = document.getElementById('moreFaqItems');
+    const faqToggleBtn = document.querySelector('.faq-show-more-btn');
+
+    if (moreFaqItems && faqToggleBtn) {
+        moreFaqItems.addEventListener('shown.bs.collapse', () => {
+            faqToggleBtn.querySelector('.faq-show-more-text').classList.add('d-none');
+            faqToggleBtn.querySelector('.faq-show-less-text').classList.remove('d-none');
+        });
+        moreFaqItems.addEventListener('hidden.bs.collapse', () => {
+            faqToggleBtn.querySelector('.faq-show-more-text').classList.remove('d-none');
+            faqToggleBtn.querySelector('.faq-show-less-text').classList.add('d-none');
+        });
+    }
+
+    // =========================================
     // SMOOTH SCROLLING + NAV
     // =========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
