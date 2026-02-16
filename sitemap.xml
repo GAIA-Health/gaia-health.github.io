@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.go-go-gaia.com/</loc>
-        <lastmod>2024-06-28</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/period-tracking-guide.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -26,13 +26,13 @@
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/cycle-syncing-app-guide.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/mood-tracking-benefits.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -62,13 +62,13 @@
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/how-to-choose-period-tracker-app.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/how-to-tell-if-youre-ovulating.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -116,19 +116,25 @@
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/fitness-tracker-cycle-tracking.html</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/postpartum-recovery-guide.html</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://www.go-go-gaia.com/blog/birth-control-guide.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.go-go-gaia.com/blog/menopause-guide.html</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-02-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
