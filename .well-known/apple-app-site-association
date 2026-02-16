@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "PX2V2B5ZL2.com.hollandneurotech.gogogaia",
-        "paths": ["/challenge/join/*"]
+        "paths": ["/invite/*", "/challenge/join/*"]
       }
     ]
   }
