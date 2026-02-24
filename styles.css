@@ -2,9 +2,9 @@
 body {
     color: var(--text-dark); /* Darker text for better readability */
     background-color: var(--secondary); /* Light lavender background */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.15rem; /* Larger, more readable text */
-    font-weight: 300; /* Lighter weight for elegant feel */
+    font-weight: 400; /* Clean, readable weight */
     line-height: 1.7;
     overflow-x: hidden;
     margin: 0; /* Ensure no default margin */
@@ -44,6 +44,35 @@ body {
     --green-deep-soft: rgba(70, 88, 58, 0.06);
 }
 
+/* =============================================
+   DISPLAY HEADINGS — Quicksand weight hierarchy
+   700 (Bold) for primary, 600 (SemiBold) for secondary
+   ============================================= */
+.hero-text h1,
+.feature-section h2,
+#testimonials h2,
+#early-access h2,
+.cta-wrapper h2,
+.personas-section h2,
+.how-it-works-section h2,
+.faq-section h2,
+.social-proof-section h2,
+.professionals-section h2,
+.blog-content h1,
+article header h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+/* Secondary display headings — SemiBold */
+.persona-content h3,
+.story-step h3,
+.blog-content h2,
+.blog-quote {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
 /* Header Styles */
 .custom-navbar-bg {
     background-color: var(--primary); /* Bright Purple #8259DC */
@@ -62,17 +91,17 @@ body {
 }
 
 .navbar-brand {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-light) !important;
     letter-spacing: 1px;
 }
 
 .navbar-nav .nav-link {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: var(--text-light) !important;
-    font-weight: 500;
+    font-weight: 400;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
@@ -97,7 +126,7 @@ body {
 
 .navbar-nav .nav-link.active {
     color: var(--text-light) !important;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .navbar-nav .nav-link.active:after {
@@ -108,7 +137,7 @@ body {
 .navbar-nav .nav-link.nav-login {
     color: white !important;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    font-weight: 600;
+    font-weight: 500;
     margin-left: 0.5rem;
     padding: 0.5rem 1.25rem !important;
     border-radius: 50px;
@@ -129,7 +158,7 @@ body {
 .navbar-nav .nav-link.nav-download {
     color: white !important;
     background-color: var(--primary-dark); /* Deep purple background */
-    font-weight: 600;
+    font-weight: 500;
     margin-left: 0.5rem;
     padding: 0.5rem 1.25rem !important;
     border-radius: 50px;
@@ -225,8 +254,8 @@ body {
 }
 
 .hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     font-size: 3.5rem;
     margin-bottom: 1rem;
     color: var(--primary); /* Solid purple - no gradient */
@@ -250,9 +279,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--primary);
     background-color: white;
     padding: 0.4rem 0.75rem;
@@ -274,6 +303,73 @@ body {
     color: var(--accent);
 }
 
+/* =============================================
+   HERO ORGANIC BLOBS — morphing background shapes
+   ============================================= */
+.hero-blob {
+    position: absolute;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    opacity: 0.5;
+    z-index: 0;
+    filter: blur(40px);
+    will-change: border-radius, transform;
+}
+
+.hero-blob-1 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, rgba(130, 89, 220, 0.2) 0%, rgba(229, 207, 252, 0.3) 100%);
+    top: -5%;
+    left: 5%;
+    animation: blobMorph1 12s ease-in-out infinite;
+}
+
+.hero-blob-2 {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, rgba(255, 107, 152, 0.15) 0%, rgba(229, 207, 252, 0.2) 100%);
+    bottom: 5%;
+    right: 15%;
+    animation: blobMorph2 10s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.hero-blob-3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(90, 155, 107, 0.12) 0%, rgba(218, 229, 217, 0.2) 100%);
+    top: 40%;
+    left: 35%;
+    animation: blobMorph3 14s ease-in-out infinite;
+    animation-delay: -7s;
+}
+
+@keyframes blobMorph1 {
+    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0) rotate(0deg); }
+    25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; transform: translate(10px, -15px) rotate(5deg); }
+    50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; transform: translate(-5px, 10px) rotate(-3deg); }
+    75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; transform: translate(8px, 5px) rotate(2deg); }
+}
+
+@keyframes blobMorph2 {
+    0%, 100% { border-radius: 40% 60% 55% 45% / 55% 35% 65% 45%; transform: translate(0, 0) scale(1); }
+    33% { border-radius: 70% 30% 45% 55% / 40% 65% 35% 60%; transform: translate(-12px, 8px) scale(1.05); }
+    66% { border-radius: 35% 65% 70% 30% / 65% 40% 60% 35%; transform: translate(6px, -10px) scale(0.97); }
+}
+
+@keyframes blobMorph3 {
+    0%, 100% { border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; transform: translate(0, 0); }
+    50% { border-radius: 60% 40% 35% 65% / 40% 60% 40% 60%; transform: translate(-8px, 12px); }
+}
+
+/* Hide blobs on small screens for performance */
+@media (max-width: 768px) {
+    .hero-blob { display: none; }
+}
+
+/* =============================================
+   FLOATING PHONE — gentle bob animation
+   ============================================= */
 .hero-image {
     flex: 1;
     display: flex;
@@ -281,6 +377,12 @@ body {
     align-items: center;
     position: relative;
     z-index: 1;
+    animation: phoneFloat 6s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
 }
 
 .image-wrapper {
@@ -296,6 +398,11 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Subtle shadow shift that follows the float */
+.hero-image:hover {
+    animation-play-state: paused;
+}
+
 .image-wrapper:hover {
     transform: translateY(-5px);
 }
@@ -306,7 +413,7 @@ body {
     border: none;
     border-radius: 30px;
     padding: 0.75rem 2rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(130, 89, 220, 0.35);
     transition: all 0.3s ease;
@@ -364,7 +471,7 @@ body {
 }
 
 .feature-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     text-align: center;
@@ -410,8 +517,8 @@ body {
 }
 
 .feature-box h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
     font-size: 1.25rem;
     margin-bottom: 1rem;
     color: var(--primary);
@@ -454,7 +561,7 @@ body {
 }
 
 #testimonials h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -511,7 +618,7 @@ body {
 .blockquote-footer {
     font-size: 1rem;
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 500;
     text-align: right;
 }
 
@@ -562,7 +669,7 @@ body {
 }
 
 #early-access h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -663,7 +770,7 @@ body {
 
 .benefit-item p {
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* FAQ Section */
@@ -703,7 +810,7 @@ body {
 }
 
 .faq-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: var(--primary);
@@ -724,8 +831,8 @@ body {
 }
 
 .accordion-button {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
     font-size: 1.1rem;
     color: var(--primary);
     background-color: white;
@@ -1048,7 +1155,7 @@ html {
 }
 
 .personas-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: var(--primary);
@@ -1071,8 +1178,8 @@ html {
 }
 
 .personas-section .nav-pills .nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
     font-size: 0.85rem;
     color: var(--primary);
     background-color: transparent;
@@ -1158,7 +1265,7 @@ html {
 }
 
 .persona-content h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
     color: var(--primary);
@@ -1166,7 +1273,7 @@ html {
 }
 
 .persona-content .lead {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.1rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
@@ -1174,7 +1281,7 @@ html {
 }
 
 .persona-content p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: var(--text-muted);
     line-height: 1.7;
 }
@@ -1281,7 +1388,7 @@ html {
 }
 
 .how-it-works-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -1365,8 +1472,8 @@ html {
 }
 
 .step-number {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     font-size: 4rem;
     color: var(--primary-medium);
     line-height: 1;
@@ -1374,7 +1481,7 @@ html {
 }
 
 .story-step h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     color: var(--primary);
@@ -1437,7 +1544,7 @@ html {
 }
 
 .social-proof-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: var(--primary);
@@ -1513,7 +1620,7 @@ html {
 }
 
 .stat-label {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary);
@@ -1550,7 +1657,7 @@ html {
     border-width: 2px;
     border-radius: 30px;
     padding: 0.75rem 2rem;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -1567,7 +1674,7 @@ html {
 }
 
 .press-logo {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
     color: var(--text-muted);
@@ -1589,6 +1696,13 @@ html {
     position: relative;
     margin-bottom: 20px; /* Space for indicators */
     overflow: hidden;
+    /* Shadow pulses with the float for depth */
+    animation: carouselShadow 6s ease-in-out infinite;
+}
+
+@keyframes carouselShadow {
+    0%, 100% { box-shadow: 0 15px 35px rgba(130, 89, 220, 0.25); }
+    50% { box-shadow: 0 25px 50px rgba(130, 89, 220, 0.18); }
 }
 
 #screenshotCarousel .carousel-inner {
@@ -1815,7 +1929,7 @@ main {
 
 .modal-header .modal-title {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
 
@@ -1836,12 +1950,12 @@ main {
 
 .modal-body {
     padding: 2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .modal-body p,
 .modal-body .lead {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     line-height: 1.7;
 }
 
@@ -1851,7 +1965,7 @@ main {
 }
 
 .modal-body h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
 
@@ -1887,9 +2001,9 @@ main {
     transform: translateY(-2px);
 }
 
-/* Blog Content Styles - Consistent Typography (Open Sans throughout) */
+/* Blog Content Styles - Consistent Typography */
 .blog-content {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: var(--text-dark);
     line-height: 1.8;
 }
@@ -1900,7 +2014,7 @@ main {
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     color: var(--primary);
     margin-top: 2rem;
@@ -1925,45 +2039,45 @@ main {
 
 .blog-content p,
 .blog-content li {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.15rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
     margin-bottom: 1.25rem;
 }
 
 .blog-content .lead {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.25rem;
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .blog-content .alert h4 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     margin-top: 0;
 }
 
 .blog-content .alert p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .blog-content .table {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .blog-content .table th {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 600;
 }
 
 .blog-content .accordion-button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .blog-content .accordion-body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .blog-content strong,
@@ -1973,13 +2087,13 @@ main {
 
 /* Article header in blog posts */
 article header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
 article header .lead {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
 }
 
 /* Reusable Blog Content Boxes & Callouts */
@@ -2103,6 +2217,166 @@ article header .lead {
 }
 
 /* =============================================
+   VISUAL POLISH — TEXTURE, DEPTH & VARIETY
+   ============================================= */
+
+/* Subtle noise grain overlay for organic warmth */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* Richer decorative blobs — more visible, softer */
+#testimonials::before {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(130, 89, 220, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+#early-access::before {
+    background: radial-gradient(circle, rgba(130, 89, 220, 0.07) 0%, transparent 70%);
+}
+
+#early-access::after {
+    background: radial-gradient(circle, rgba(90, 155, 107, 0.07) 0%, transparent 70%);
+}
+
+.faq-section::before {
+    background: radial-gradient(circle, rgba(90, 155, 107, 0.06) 0%, transparent 70%);
+}
+
+.faq-section::after {
+    background: radial-gradient(circle, rgba(130, 89, 220, 0.06) 0%, transparent 70%);
+}
+
+/* Varied hover effects per section type */
+.feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(130, 89, 220, 0.18);
+}
+
+.feature-box:hover .icon-square {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(130, 89, 220, 0.3);
+}
+
+.testimonial-bubble:hover {
+    box-shadow: 0 8px 30px rgba(130, 89, 220, 0.2);
+    border-color: var(--primary);
+}
+
+.accordion-item:hover {
+    box-shadow: 0 5px 20px rgba(130, 89, 220, 0.12);
+    transform: translateY(-1px);
+}
+
+.benefit-item:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* Section divider — subtle gradient line */
+.how-it-works-section,
+.personas-section,
+#testimonials,
+.feature-section,
+.professionals-section,
+.faq-section {
+    border-top: 1px solid rgba(130, 89, 220, 0.06);
+}
+
+/* Testimonial styling — readable italic */
+.testimonial-text {
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.85;
+}
+
+.testimonial-bubble::before {
+    font-family: 'Quicksand', serif;
+    font-size: 6rem;
+    color: rgba(130, 89, 220, 0.08);
+}
+
+/* Feature box h3 — tighter, bolder */
+.feature-box h3 {
+    letter-spacing: -0.02em;
+}
+
+/* Hero headline — dramatic spacing */
+.hero-text h1 {
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+/* Section headings — refined rhythm */
+.feature-section h2,
+#testimonials h2,
+#early-access h2,
+.personas-section h2,
+.how-it-works-section h2,
+.faq-section h2,
+.social-proof-section h2,
+.professionals-section h2 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+/* Stats section — number polish */
+.stat-number {
+    letter-spacing: -0.04em;
+}
+
+/* Step numbers — lighter, larger, more decorative */
+.step-number {
+    font-weight: 200;
+    font-size: 5rem;
+    color: rgba(130, 89, 220, 0.15);
+    letter-spacing: -0.05em;
+}
+
+/* Persona content — warmer serif headings */
+.persona-content h3 {
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+/* Story step headings — bold and tight */
+.story-step h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* CTA wrapper — softer shadow for depth */
+.cta-wrapper {
+    box-shadow: 0 16px 48px rgba(130, 89, 220, 0.25), 0 4px 12px rgba(130, 89, 220, 0.15);
+}
+
+/* Professional section cards — distinct shadow */
+.professionals-section .feature-box {
+    border-left: 3px solid var(--primary-medium);
+    border-radius: 8px 15px 15px 8px;
+}
+
+.professionals-section .feature-box:hover {
+    border-left-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(130, 89, 220, 0.15);
+}
+
+/* =============================================
    MODERN SCROLL ANIMATIONS (replaces animate.css)
    ============================================= */
 
@@ -2134,20 +2408,43 @@ article header .lead {
 .reveal.stagger-3 { transition-delay: 0.3s; }
 .reveal.stagger-4 { transition-delay: 0.45s; }
 
-/* Hero loads immediately (no scroll trigger needed) */
+/* Hero loads immediately — orchestrated entrance */
 .hero-container .reveal {
     opacity: 1;
     transform: translate(0, 0);
-    animation: heroEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-container .reveal.reveal-left {
     animation-name: heroFromLeft;
+    animation-duration: 1s;
 }
 
 .hero-container .reveal.reveal-right {
     animation-name: heroFromRight;
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
+    animation-duration: 1s;
+}
+
+/* Staggered children within hero text */
+.hero-text .text-uppercase {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.hero-text h1 {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-text .lead {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.hero-text .d-flex {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.hero-features {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
 }
 
 @keyframes heroEntrance {
@@ -2156,13 +2453,18 @@ article header .lead {
 }
 
 @keyframes heroFromLeft {
-    from { opacity: 0; transform: translateX(-40px); }
+    from { opacity: 0; transform: translateX(-50px); }
     to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes heroFromRight {
-    from { opacity: 0; transform: translateX(40px); }
-    to { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: translateX(50px) scale(0.97); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* FAQ accordion smooth open/close */
@@ -2185,8 +2487,8 @@ article header .lead {
 }
 
 .integration-logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
     font-size: 0.9rem;
     color: var(--text-muted);
     display: inline-flex;
@@ -2227,8 +2529,8 @@ article header .lead {
 }
 
 .stat-number {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     font-size: 3.5rem;
     color: white;
     line-height: 1;
@@ -2243,7 +2545,7 @@ article header .lead {
 }
 
 .stat-label-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
@@ -2270,7 +2572,7 @@ article header .lead {
 }
 
 .professionals-section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: var(--primary);
@@ -2302,7 +2604,7 @@ article header .lead {
 
 .sticky-mobile-cta .btn {
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
 }
