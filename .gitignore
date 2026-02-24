@@ -58,3 +58,6 @@ npm-debug.log*
 *.bak
 *.tmp
 .cache/
+
+# Dev screenshots (Playwright)
+screenshots/
