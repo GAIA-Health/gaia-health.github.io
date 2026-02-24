@@ -206,30 +206,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = canvas.parentElement;
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-        // Health category nodes — 3 rings: core, body, lifestyle
+        // Health category nodes — 3 rings: life stages, body, lifestyle
         const nodeLabels = [
-            // Inner ring — core health pillars
-            { label: 'Cycle',       color: '#FF6B98', ring: 0 },
-            { label: 'Fertility',   color: '#E84393', ring: 0 },
-            { label: 'Pregnancy',   color: '#FF8FA3', ring: 0 },
-            { label: 'Mood',        color: '#8259DC', ring: 0 },
-            { label: 'Sleep',       color: '#6B5CE7', ring: 0 },
+            // Inner ring — life stages & core pillars
+            { label: 'Cycle',         color: '#FF6B98', ring: 0 },
+            { label: 'Fertility',     color: '#E84393', ring: 0 },
+            { label: 'IVF',           color: '#B07CED', ring: 0 },
+            { label: 'Pregnancy',     color: '#FF8FA3', ring: 0 },
+            { label: 'Postpartum',    color: '#FF6B98', ring: 0 },
+            { label: 'PCOS',          color: '#B07CED', ring: 0 },
+            { label: 'Perimenopause', color: '#A78BFA', ring: 0 },
+            { label: 'Menopause',     color: '#FF8FA3', ring: 0 },
             // Middle ring — body & biometrics
-            { label: 'Hormones',    color: '#B07CED', ring: 1 },
-            { label: 'Symptoms',    color: '#A78BFA', ring: 1 },
-            { label: 'Heart Rate',  color: '#E84393', ring: 1 },
-            { label: 'HRV',         color: '#FF6B98', ring: 1 },
-            { label: 'Temperature', color: '#FF8FA3', ring: 1 },
-            { label: 'Weight',      color: '#8259DC', ring: 1 },
-            { label: 'Blood Tests', color: '#7C4DDB', ring: 1 },
-            { label: 'Urine Strips', color: '#B07CED', ring: 1 },
-            // Outer ring — lifestyle & tracking
-            { label: 'Fitness',     color: '#5A9B6B', ring: 2 },
-            { label: 'Steps',       color: '#5A9B6B', ring: 2 },
-            { label: 'Nutrition',   color: '#E84393', ring: 2 },
-            { label: 'Habits',      color: '#7C4DDB', ring: 2 },
-            { label: 'Medications', color: '#B07CED', ring: 2 },
-            { label: 'Energy',      color: '#5A9B6B', ring: 2 },
+            { label: 'Hormones',      color: '#B07CED', ring: 1 },
+            { label: 'Ovulation',     color: '#E84393', ring: 1 },
+            { label: 'BBT',           color: '#FF8FA3', ring: 1 },
+            { label: 'Mood',          color: '#8259DC', ring: 1 },
+            { label: 'Sleep',         color: '#6B5CE7', ring: 1 },
+            { label: 'Symptoms',      color: '#A78BFA', ring: 1 },
+            { label: 'Cramps',        color: '#E84393', ring: 1 },
+            { label: 'Acne',          color: '#FF6B98', ring: 1 },
+            { label: 'Libido',        color: '#B07CED', ring: 1 },
+            { label: 'Heart Rate',    color: '#E84393', ring: 1 },
+            { label: 'HRV',           color: '#FF6B98', ring: 1 },
+            { label: 'Temperature',   color: '#FF8FA3', ring: 1 },
+            { label: 'Weight',        color: '#8259DC', ring: 1 },
+            { label: 'Blood Tests',   color: '#7C4DDB', ring: 1 },
+            { label: 'Urine Strips',  color: '#B07CED', ring: 1 },
+            // Outer ring — lifestyle & daily tracking
+            { label: 'Workouts',      color: '#5A9B6B', ring: 2 },
+            { label: 'Steps',         color: '#5A9B6B', ring: 2 },
+            { label: 'Macros',        color: '#E84393', ring: 2 },
+            { label: 'Habits',        color: '#7C4DDB', ring: 2 },
+            { label: 'Medications',   color: '#B07CED', ring: 2 },
+            { label: 'Supplements',   color: '#7C4DDB', ring: 2 },
+            { label: 'Energy',        color: '#5A9B6B', ring: 2 },
+            { label: 'Hydration',     color: '#6B5CE7', ring: 2 },
+            { label: 'Stress',        color: '#A78BFA', ring: 2 },
         ];
 
         let nodes = [];
@@ -254,23 +267,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const cx = w / 2;
             const cy = h / 2;
             // Use min dimension so the layout is always a true circle
-            const baseRadius = Math.min(w, h) * 0.42;
+            const baseRadius = Math.min(w, h) * 0.46;
 
             // Group nodes by ring
             const rings = [[], [], []];
             nodeLabels.forEach((info, i) => rings[info.ring].push({ ...info, idx: i }));
 
-            // Evenly spaced circular rings — bouba / soft sphere feel
-            const ringRadii = [0.22, 0.52, 0.86];
+            // Evenly spaced rings for 32 nodes
+            const ringRadii = [0.24, 0.54, 0.84];
 
             nodeLabels.forEach((info, i) => {
                 const ring = rings[info.ring];
                 const idxInRing = ring.findIndex(n => n.idx === i);
                 const countInRing = ring.length;
 
-                // Perfect even spacing around the circle, slight ring offset so they don't align
-                const baseAngle = (idxInRing / countInRing) * Math.PI * 2 + info.ring * 0.55;
-                const r = baseRadius * ringRadii[info.ring];
+                // Even spacing with organic scatter on inner ring
+                const evenAngle = (idxInRing / countInRing) * Math.PI * 2 + info.ring * 0.55;
+                const angleJitter = info.ring === 0 ? (Math.random() - 0.5) * 0.6 : 0;
+                const radiusJitter = info.ring === 0 ? (Math.random() - 0.5) * 0.12 : 0;
+                const baseAngle = evenAngle + angleJitter;
+                const r = baseRadius * (ringRadii[info.ring] + radiusJitter);
 
                 const bx = cx + Math.cos(baseAngle) * r;
                 const by = cy + Math.sin(baseAngle) * r;
@@ -298,26 +314,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
 
-            // Build edges — connect nearby nodes, favor cross-ring connections
+            // Build edges
             edges = [];
-            const maxDist = Math.min(w, h) * 0.55;
+            const edgeSet = new Set(); // track "i-j" to avoid duplicates
+            function addEdge(i, j, dist) {
+                const key = Math.min(i, j) + '-' + Math.max(i, j);
+                if (edgeSet.has(key)) return;
+                edgeSet.add(key);
+                edges.push({
+                    a: i, b: j, dist: dist,
+                    pulsePhase: Math.random() * Math.PI * 2,
+                    pulseSpeed: 0.4 + Math.random() * 0.8,
+                    curveOffset: (Math.random() - 0.5) * 40,
+                });
+            }
+
+            // 1) Guarantee same-ring neighbor connections (forms the circular boundary)
+            [0, 1, 2].forEach(ringIdx => {
+                const ringNodes = [];
+                nodes.forEach((n, i) => { if (n.ring === ringIdx) ringNodes.push(i); });
+                // Sort by angle from center so neighbors are adjacent around the circle
+                ringNodes.sort((a, b) => {
+                    const angA = Math.atan2(nodes[a].baseY - cy, nodes[a].baseX - cx);
+                    const angB = Math.atan2(nodes[b].baseY - cy, nodes[b].baseX - cx);
+                    return angA - angB;
+                });
+                for (let k = 0; k < ringNodes.length; k++) {
+                    const curr = ringNodes[k];
+                    const next = ringNodes[(k + 1) % ringNodes.length];
+                    const dx = nodes[curr].baseX - nodes[next].baseX;
+                    const dy = nodes[curr].baseY - nodes[next].baseY;
+                    addEdge(curr, next, Math.sqrt(dx * dx + dy * dy));
+                }
+            });
+
+            // 2) Distance-based cross-ring connections
+            const maxDist = Math.min(w, h) * 0.5;
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
                     const dx = nodes[i].baseX - nodes[j].baseX;
                     const dy = nodes[i].baseY - nodes[j].baseY;
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     const crossRing = Math.abs(nodes[i].ring - nodes[j].ring) === 1;
-                    const threshold = crossRing ? maxDist * 1.15 : maxDist;
+                    const threshold = crossRing ? maxDist * 1.1 : maxDist;
                     if (dist < threshold) {
-                        edges.push({
-                            a: i,
-                            b: j,
-                            dist: dist,
-                            pulsePhase: Math.random() * Math.PI * 2,
-                            pulseSpeed: 0.4 + Math.random() * 0.8,
-                            // Softer, rounder curves — bouba feel
-                            curveOffset: (Math.random() - 0.5) * 40,
-                        });
+                        addEdge(i, j, dist);
                     }
                 }
             }
@@ -399,10 +440,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 ctx.stroke();
             });
 
-            // --- Draw nodes ---
-            nodes.forEach(n => {
+            // --- Draw nodes — sort so closest to cursor renders on top ---
+            const sortedNodes = nodes.slice().sort((a, b) => {
+                const dA = (a.x - mouseX) * (a.x - mouseX) + (a.y - mouseY) * (a.y - mouseY);
+                const dB = (b.x - mouseX) * (b.x - mouseX) + (b.y - mouseY) * (b.y - mouseY);
+                return dB - dA; // farthest first, closest last (on top)
+            });
+
+            sortedNodes.forEach(n => {
+                // Distance to cursor for proximity boost
+                const dMouse = Math.sqrt((n.x - mouseX) * (n.x - mouseX) + (n.y - mouseY) * (n.y - mouseY));
+                const isNear = !isMobile && dMouse < 100;
+                const proximityScale = isNear ? 1 + (1 - dMouse / 100) * 0.15 : 1;
+
                 // Outer glow
-                const gs = n.radius + 8 + Math.sin(t * n.speed + n.phase) * 2;
+                const gs = (n.radius + 8 + Math.sin(t * n.speed + n.phase) * 2) * proximityScale;
                 const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, gs);
                 glow.addColorStop(0, n.color + '35');
                 glow.addColorStop(1, n.color + '00');
@@ -413,27 +465,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Solid dot
                 ctx.beginPath();
-                ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+                ctx.arc(n.x, n.y, n.radius * proximityScale, 0, Math.PI * 2);
                 ctx.fillStyle = n.color;
                 ctx.fill();
 
                 // Label — pill background for readability
-                const fontSize = n.ring === 0 ? 14 : n.ring === 1 ? 12.5 : 11;
-                const labelAlpha = n.ring === 0 ? 1 : n.ring === 1 ? 0.9 : 0.8;
-                ctx.font = '600 ' + fontSize + 'px Quicksand, sans-serif';
+                const baseFontSize = n.ring === 0 ? 13 : n.ring === 1 ? 11 : 10.5;
+                const fontSize = baseFontSize * proximityScale;
+                const labelAlpha = isNear ? 1 : (n.ring === 0 ? 1 : n.ring === 1 ? 0.9 : 0.8);
+                ctx.font = '600 ' + fontSize.toFixed(1) + 'px Quicksand, sans-serif';
                 ctx.textAlign = 'center';
-                const labelY = n.y - n.radius - 12;
+                const labelY = n.y - n.radius * proximityScale - 12;
                 const textW = ctx.measureText(n.label).width;
                 const padX = 7, padY = 4;
                 const pillW = textW + padX * 2;
                 const pillH = fontSize + padY * 2;
                 const pillX = n.x - pillW / 2;
                 const pillY = labelY - fontSize + 1 - padY;
-                const pillR = pillH / 2; // fully rounded ends
+                const pillR = pillH / 2;
 
-                // Pill background
-                ctx.globalAlpha = labelAlpha * 0.85;
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.88)';
+                // Pill background — more opaque when near cursor
+                const pillAlpha = isNear ? 0.95 : labelAlpha * 0.85;
+                ctx.globalAlpha = pillAlpha;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
                 ctx.beginPath();
                 ctx.roundRect(pillX, pillY, pillW, pillH, pillR);
                 ctx.fill();
