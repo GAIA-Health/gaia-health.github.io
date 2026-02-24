@@ -90,7 +90,7 @@
       "name": "Go Go Gaia",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "iOS",
-      "description": "All-in-one women's health app for tracking cycles, moods, fitness, sleep, and nutrition with AI-powered insights and correlations. Available as iOS app and web app in 5 languages.",
+      "description": "All-in-one women's health app for tracking cycles, moods, fitness, sleep, and nutrition with AI-powered insights and correlations. Available as iOS app and web app with 16 language support.",
       "url": "https://www.go-go-gaia.com",
       "downloadUrl": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
       "screenshot": [
@@ -116,7 +116,7 @@
         "Ask Gaia AI Assistant",
         "Lab Results Analysis",
         "Professional Platform",
-        "5 Language Support"
+        "16 Language Support"
       ],
       "offers": {
         "@type": "Offer",
@@ -189,7 +189,7 @@
           "name": "Is there a cost to use the app?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Go Go Gaia is free to download and use. Core features — period tracking, symptom logging, cycle predictions, habit tracking, the health dashboard, and wearable sync — are all free, forever. Premium unlocks full AI features including Ask Gaia, advanced correlation insights, and personalized recommendations for approximately $12/month (price varies slightly by region). We make money from subscriptions, not your data."
+            "text": "Go Go Gaia is free to download and use. Core features — period tracking, symptom logging, cycle predictions, habit tracking, the health dashboard, and wearable sync — are all free, forever. Premium unlocks full AI features including Ask Gaia, advanced correlation insights, and personalized recommendations for $9.99/month or $49.99/year. We make money from subscriptions, not your data."
           }
         },
         {
@@ -221,7 +221,7 @@
           "name": "What can I actually do with Go Go Gaia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Gaia has 16+ pages of health tracking across cycles, fertility, pregnancy, PCOS, fitness, nutrition, sleep, mood, habits, medications, lab results, and goals. There's a built-in AI assistant (Gaia) that answers questions based on your data. A professional platform lets healthcare providers and coaches manage clients. The sport dashboard supports 22+ activity types. It's available as an iOS app and a web app, and it works in 5 languages."
+            "text": "Gaia has 16+ pages of health tracking across cycles, fertility, pregnancy, PCOS, fitness, nutrition, sleep, mood, habits, medications, lab results, and goals. There's a built-in AI assistant (Gaia) that answers questions based on your data. A professional platform lets healthcare providers and coaches manage clients. The sport dashboard supports 22+ activity types. It's available as an iOS app and a web app, with the web app supporting 16 languages."
           }
         },
         {
@@ -285,7 +285,7 @@
           "name": "What languages does Go Go Gaia support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Go Go Gaia is available in 5 languages: English, Spanish, French, German, and Italian. All app features, AI responses, and tracking categories are fully translated."
+            "text": "The Go Go Gaia web app supports 16 languages including English, Spanish, French, German, Italian, Portuguese, and more. The iOS app is currently available in English, with additional languages coming soon."
           }
         }
       ]
@@ -369,7 +369,7 @@
                             <i class="bi bi-apple me-2"></i>Download on the App Store
                         </a>
                         <a class="btn btn-outline-primary btn-lg" href="https://app.go-go-gaia.com" role="button">
-                            <i class="bi bi-globe me-2"></i>Try the Web App
+                            <i class="bi bi-globe me-2"></i>Try it Online
                         </a>
                     </div>
                     <div class="hero-features mt-4">
@@ -492,14 +492,22 @@
 
         <!-- INTEGRATIONS BAR -->
         <section class="integrations-bar py-4">
-            <div class="container">
-                <p class="text-center text-muted mb-3 small fw-semibold text-uppercase" style="letter-spacing: 0.1em;">Connects with your favorite tools</p>
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 integration-logos reveal">
+            <p class="text-center text-muted mb-3 small fw-semibold text-uppercase" style="letter-spacing: 0.1em;">Connects with your favorite tools</p>
+            <div class="marquee-container">
+                <div class="marquee-track">
                     <span class="integration-logo"><i class="bi bi-watch"></i> Apple Watch</span>
                     <span class="integration-logo"><i class="bi bi-circle"></i> Oura Ring</span>
                     <span class="integration-logo"><i class="bi bi-smartwatch"></i> Garmin</span>
                     <span class="integration-logo"><i class="bi bi-egg-fried"></i> MyFitnessPal</span>
                     <span class="integration-logo"><i class="bi bi-apple"></i> Apple Health</span>
+                    <span class="integration-logo"><i class="bi bi-droplet"></i> Clue</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="integration-logo"><i class="bi bi-watch"></i> Apple Watch</span>
+                    <span class="integration-logo"><i class="bi bi-circle"></i> Oura Ring</span>
+                    <span class="integration-logo"><i class="bi bi-smartwatch"></i> Garmin</span>
+                    <span class="integration-logo"><i class="bi bi-egg-fried"></i> MyFitnessPal</span>
+                    <span class="integration-logo"><i class="bi bi-apple"></i> Apple Health</span>
+                    <span class="integration-logo"><i class="bi bi-droplet"></i> Clue</span>
                 </div>
             </div>
         </section>
@@ -507,26 +515,35 @@
         <!-- STATS -->
         <section class="stats-section py-5">
             <div class="container">
-                <div class="row g-4 justify-content-center text-center">
-                    <div class="col-6 col-md-3 reveal stagger-1">
-                        <div class="stat-number" data-target="200">0</div>
-                        <div class="stat-label-text">Trackable Metrics</div>
+                <div class="stats-hero-grid">
+                    <div class="stat-hero reveal">
+                        <div class="stat-number stat-number-hero" data-target="200">0</div>
+                        <div class="stat-label-text stat-label-hero">Trackable Metrics</div>
                     </div>
-                    <div class="col-6 col-md-3 reveal stagger-2">
-                        <div class="stat-number" data-target="16">0</div>
-                        <div class="stat-label-text">Health Pages</div>
-                    </div>
-                    <div class="col-6 col-md-3 reveal stagger-3">
-                        <div class="stat-number" data-target="22">0</div>
-                        <div class="stat-label-text">Sport Types</div>
-                    </div>
-                    <div class="col-6 col-md-3 reveal stagger-4">
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label-text">Languages</div>
+                    <div class="stat-side-stack">
+                        <div class="stat-side-item reveal stagger-1">
+                            <div class="stat-number" data-target="16">0</div>
+                            <div class="stat-label-text">Health Pages</div>
+                        </div>
+                        <div class="stat-side-item reveal stagger-2">
+                            <div class="stat-number" data-target="22">0</div>
+                            <div class="stat-label-text">Sport Types</div>
+                        </div>
+                        <div class="stat-side-item reveal stagger-3">
+                            <div class="stat-number" data-target="16">0</div>
+                            <div class="stat-label-text">Languages</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- WAVE DIVIDER: Stats → Personas -->
+        <div class="wave-divider wave-stats-personas">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 C240,100 480,0 720,50 C960,100 1200,20 1440,60 L1440,100 L0,100 Z" fill="#ffffff"/>
+            </svg>
+        </div>
 
         <!-- PERSONAS -->
         <section id="personas" class="personas-section py-5">
@@ -679,39 +696,49 @@
             </div>
         </section>
 
+        <!-- WAVE DIVIDER: Testimonials → Trust -->
+        <div class="wave-divider wave-testimonials-trust">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C360,90 720,10 1080,60 C1260,80 1380,30 1440,40 L1440,100 L0,100 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+
         <!-- TRUST (after social proof) -->
-        <section id="trust" class="feature-section py-5">
+        <section id="trust" class="feature-section trust-section py-5">
             <div class="container">
-                <h2 class="text-center mb-4 reveal">Why Trust Go Go Gaia</h2>
-                <div class="features-wrapper">
-                    <div class="row g-4 row-cols-1 row-cols-md-2">
-                    <div class="col reveal stagger-1">
-                        <div class="feature-box d-flex flex-column h-100">
-                            <div class="d-flex align-items-start mb-3">
-                                <div class="icon-square">
-                                    <i class="bi bi-people"></i>
+                <div class="trust-grid">
+                    <div class="trust-text reveal">
+                        <h2>Why Trust Go Go Gaia</h2>
+                        <p>We're a women-led team building the health app we always wanted — one that respects your privacy as much as your time. Your data is yours alone.</p>
+                    </div>
+                    <div class="trust-cards">
+                        <div class="reveal stagger-1">
+                            <div class="feature-box d-flex flex-column h-100">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="icon-square">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Women-Led & Trustworthy</h3>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3>Women-Led & Trustworthy</h3>
-                                </div>
+                                <p>Built by women who understand women's health challenges because we live them too. We will never sell your personal health data. We earn revenue through premium features, not by exploiting your information.</p>
                             </div>
-                            <p>Built by women who understand women's health challenges because we live them too. We will never sell your personal health data. We earn revenue through premium features, not by exploiting your information.</p>
+                        </div>
+                        <div class="reveal stagger-2">
+                            <div class="feature-box d-flex flex-column h-100">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="icon-square">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Privacy & Security First</h3>
+                                    </div>
+                                </div>
+                                <p>Your health data stays private. You decide who can access it. You control what's stored, what's shared, and you can delete everything anytime.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col reveal stagger-2">
-                        <div class="feature-box d-flex flex-column h-100">
-                            <div class="d-flex align-items-start mb-3">
-                                <div class="icon-square">
-                                    <i class="bi bi-shield-lock"></i>
-                                </div>
-                                <div>
-                                    <h3>Privacy & Security First</h3>
-                                </div>
-                            </div>
-                            <p>Your health data stays private. Only you can access it. You control what's stored, what's shared, and you can delete everything anytime.</p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -765,10 +792,10 @@
                             <i class="bi bi-apple me-2"></i>Download on the App Store
                         </a>
                         <a class="btn btn-outline-light btn-lg" href="https://app.go-go-gaia.com" role="button">
-                            <i class="bi bi-globe me-2"></i>Try the Web App
+                            <i class="bi bi-globe me-2"></i>Try it Online
                         </a>
                     </div>
-                    
+
                     <div class="benefits-summary row mt-5">
                         <div class="col-md-3 mb-3 mb-md-0">
                             <div class="benefit-item">
@@ -785,7 +812,7 @@
                         <div class="col-md-3 mb-3 mb-md-0">
                             <div class="benefit-item">
                                 <i class="bi bi-translate"></i>
-                                <p>5 Languages</p>
+                                <p>16 Languages</p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -853,7 +880,7 @@
                             </h3>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    <p>Go Go Gaia is free to download and use. Core features — period tracking, symptom logging, cycle predictions, habit tracking, the health dashboard, and wearable sync — are all free, forever. Premium unlocks full AI features including Ask Gaia, advanced correlation insights, and personalized recommendations for approximately $12/month (price varies slightly by region). We make money from subscriptions, not your data — and you can try premium features with a free trial.</p>
+                                    <p>Go Go Gaia is free to download and use. Core features — period tracking, symptom logging, cycle predictions, habit tracking, the health dashboard, and wearable sync — are all free, forever. Premium unlocks full AI features including Ask Gaia, advanced correlation insights, and personalized recommendations for $9.99/month or $49.99/year. We make money from subscriptions, not your data — and you can try premium features with a free trial.</p>
                                 </div>
                             </div>
                         </div>
@@ -905,7 +932,7 @@
                             </h3>
                             <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    <p>A lot. Gaia has 16+ pages of health tracking across cycles, fertility, pregnancy, PCOS, fitness, nutrition, sleep, mood, habits, medications, lab results, and goals. There's a built-in AI assistant (Gaia) that answers questions based on your data. A professional platform lets healthcare providers and coaches manage clients. The sport dashboard supports 22+ activity types. It's available as an iOS app and a web app, and it works in 5 languages (English, Spanish, French, German, Italian). We ship updates weekly.</p>
+                                    <p>A lot. Gaia has 16+ pages of health tracking across cycles, fertility, pregnancy, PCOS, fitness, nutrition, sleep, mood, habits, medications, lab results, and goals. There's a built-in AI assistant (Gaia) that answers questions based on your data. A professional platform lets healthcare providers and coaches manage clients. The sport dashboard supports 22+ activity types. It's available as an iOS app and a web app, with the web app supporting 16 languages. We ship updates weekly.</p>
                                 </div>
                             </div>
                         </div>
@@ -933,7 +960,7 @@
                                 </h3>
                                 <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p>Yes. Ask Gaia is our built-in AI health assistant that answers questions about your personal health data. Ask things like "Why was my sleep worse last week?" or "How does my cycle affect my energy?" and get answers based on your actual tracked data — not generic advice. Full AI features are available with Go Go Gaia Premium for approximately $12/month.</p>
+                                        <p>Yes. Ask Gaia is our built-in AI health assistant that answers questions about your personal health data. Ask things like "Why was my sleep worse last week?" or "How does my cycle affect my energy?" and get answers based on your actual tracked data — not generic advice. Full AI features are available with Go Go Gaia Premium for $9.99/month or $49.99/year.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1011,7 +1038,7 @@
                                 </h3>
                                 <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p>Go Go Gaia is available in 5 languages: English, Spanish, French, German, and Italian. All app features, AI responses, and tracking categories are fully translated. We're expanding language support based on user demand.</p>
+                                        <p>The Go Go Gaia web app supports 16 languages including English, Spanish, French, German, Italian, Portuguese, and more. The iOS app is currently available in English, with additional languages coming soon.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1067,7 +1094,7 @@
             <i class="bi bi-apple me-1"></i>Get the App
         </a>
         <a class="btn btn-outline-primary btn-sm flex-fill" href="https://app.go-go-gaia.com">
-            <i class="bi bi-globe me-1"></i>Web App
+            <i class="bi bi-globe me-1"></i>Try Online
         </a>
     </div>
 

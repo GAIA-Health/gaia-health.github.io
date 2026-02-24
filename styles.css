@@ -1662,11 +1662,11 @@ html {
 }
 
 .btn-outline-primary:hover {
-    background: linear-gradient(to right, var(--primary), var(--primary-medium));
+    background: var(--primary-dark);
     border-color: transparent;
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(130, 89, 220, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91, 35, 198, 0.5);
 }
 
 .press-mentions {
@@ -2614,4 +2614,321 @@ body::after {
     footer {
         padding-bottom: 5rem !important;
     }
+}
+
+/* =============================================
+   1. INTEGRATIONS MARQUEE
+   ============================================= */
+
+.marquee-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--secondary), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--secondary), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+    padding: 0.5rem 0;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 30px;
+    }
+
+    .marquee-track {
+        gap: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* =============================================
+   2. STATS HERO — ASYMMETRIC LAYOUT
+   ============================================= */
+
+.stats-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.stat-hero {
+    text-align: left;
+    padding: 1rem 0;
+}
+
+.stat-number-hero {
+    font-size: 5rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.stat-number-hero::after {
+    font-size: 3rem !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-label-hero {
+    font-size: 1.2rem !important;
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+}
+
+.stat-side-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat-side-item {
+    text-align: left;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-side-item .stat-number {
+    font-size: 2.2rem;
+}
+
+.stat-side-item .stat-label-text {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .stats-hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .stat-hero {
+        text-align: center;
+    }
+
+    .stat-number-hero {
+        font-size: 4rem !important;
+    }
+
+    .stat-side-stack {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-side-item {
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        flex: 1;
+        min-width: 90px;
+    }
+
+    .stat-side-item .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-number-hero {
+        font-size: 3.5rem !important;
+    }
+
+    .stat-number-hero::after {
+        font-size: 2rem !important;
+    }
+
+    .stat-side-item .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-side-item .stat-label-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* =============================================
+   3. TRUST SECTION — ASYMMETRIC LAYOUT
+   ============================================= */
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.trust-text {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary);
+}
+
+.trust-text h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.trust-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.trust-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .trust-text {
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        border-bottom: 3px solid var(--primary);
+        padding-bottom: 1.5rem;
+    }
+
+    .trust-text h2 {
+        text-align: center;
+    }
+}
+
+/* =============================================
+   4. WAVE SVG DIVIDERS
+   ============================================= */
+
+.wave-divider {
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+
+.wave-stats-personas {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    margin-top: -1px;
+}
+
+.wave-testimonials-trust {
+    background-color: var(--secondary);
+    margin-top: -1px;
+}
+
+/* Give testimonials a tinted background so the wave transition is visible */
+#testimonials {
+    background-color: var(--secondary) !important;
+}
+
+#testimonials .testimonial-bubble {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .wave-divider svg {
+        height: 40px;
+    }
+}
+
+/* =============================================
+   5. CTA-TO-FAQ OVERLAP
+   ============================================= */
+
+#early-access {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -4rem;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+}
+
+#early-access .cta-wrapper {
+    border-radius: 24px;
+    box-shadow: 0 16px 48px rgba(130, 89, 220, 0.35);
+}
+
+.faq-section {
+    padding-top: 7rem !important;
+}
+
+@media (max-width: 768px) {
+    #early-access {
+        margin-bottom: -2rem;
+    }
+
+    .faq-section {
+        padding-top: 5rem !important;
+    }
+}
+
+/* Remove border-top from sections that now have wave dividers above them */
+.personas-section,
+.trust-section {
+    border-top: none !important;
 }
