@@ -221,7 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { label: 'HRV',         color: '#FF6B98', ring: 1 },
             { label: 'Temperature', color: '#FF8FA3', ring: 1 },
             { label: 'Weight',      color: '#8259DC', ring: 1 },
-            { label: 'Labs',        color: '#7C4DDB', ring: 1 },
+            { label: 'Blood Tests', color: '#7C4DDB', ring: 1 },
+            { label: 'Urine Strips', color: '#B07CED', ring: 1 },
             // Outer ring — lifestyle & tracking
             { label: 'Fitness',     color: '#5A9B6B', ring: 2 },
             { label: 'Steps',       color: '#5A9B6B', ring: 2 },
