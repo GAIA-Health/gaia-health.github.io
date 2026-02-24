@@ -373,7 +373,7 @@ article header h1 {
 .hero-web-container {
     flex: 1;
     position: relative;
-    min-height: 550px;
+    min-height: 650px;
     z-index: 1;
     cursor: crosshair;
 }
