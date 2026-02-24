@@ -20,7 +20,7 @@ body {
     --secondary: #EDE7F6; /* Lightest lavender for backgrounds */
 
     /* Pink Accent */
-    --accent: #FF6B98; /* Pink accent for highlights */
+    --accent: #E84393; /* Magenta pink accent — harmonizes with purple palette */
 
     /* Green Accents */
     --green: #5A9B6B; /* Medium green - coordinates with deep green */
@@ -65,7 +65,7 @@ article header h1 {
 }
 
 /* Secondary display headings — SemiBold */
-.persona-content h3,
+.persona-card-body h3,
 .story-step h3,
 .blog-content h2,
 .blog-quote {
@@ -267,7 +267,7 @@ article header h1 {
     margin-bottom: 1rem;
 }
 
-/* Hero Feature Badges */
+/* Hero Feature Badges — Glassmorphism */
 .hero-features {
     display: flex;
     flex-wrap: wrap;
@@ -278,24 +278,29 @@ article header h1 {
 .hero-feature {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
     font-family: 'Quicksand', sans-serif;
     font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--primary);
-    background-color: white;
-    padding: 0.4rem 0.75rem;
-    border-radius: 20px;
-    border: 1px solid var(--primary-medium);
+    font-weight: 600;
+    color: var(--primary-dark);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.45rem 0.85rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 8px rgba(130, 89, 220, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
     text-decoration: none;
     cursor: pointer;
 }
 
 .hero-feature:hover {
-    background-color: var(--secondary);
-    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(130, 89, 220, 0.3);
+    box-shadow: 0 4px 16px rgba(130, 89, 220, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transform: translateY(-2px);
+    color: var(--primary-dark);
 }
 
 .hero-feature i {
@@ -1106,19 +1111,6 @@ footer a:hover .bi {
         font-size: 0.95rem;
     }
 
-    .personas-section .nav-pills .nav-link {
-        font-size: 0.7rem;
-        padding: 0.5rem 0.25rem;
-    }
-
-    .personas-section .nav-pills .nav-link i {
-        font-size: 1.25rem;
-    }
-
-    .persona-content {
-        padding: 1.5rem 0.5rem;
-    }
-
     .cta-wrapper {
         padding: 1.5rem 1rem;
     }
@@ -1161,90 +1153,9 @@ html {
     color: var(--primary);
 }
 
-.personas-tabs-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: var(--secondary); /* Light lavender background */
-    border-radius: 20px;
-    padding: 2rem 2rem 0 2rem;
-    box-shadow: 0 5px 20px rgba(130, 89, 220, 0.15);
-}
+/* Old tab-based personas styles removed — replaced by horizontal scroll cards */
 
-.personas-section .nav-pills {
-    background-color: transparent;
-    border-bottom: 1px solid rgba(130, 89, 220, 0.2);
-    margin-bottom: 0;
-    gap: 0.5rem;
-}
-
-.personas-section .nav-pills .nav-link {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    color: var(--primary);
-    background-color: transparent;
-    border: none;
-    border-bottom: 3px solid transparent;
-    border-radius: 0;
-    padding: 1rem 0.75rem;
-    transition: all 0.4s ease;
-    text-align: center;
-    position: relative;
-}
-
-.personas-section .nav-pills .nav-link i {
-    font-size: 1.75rem;
-    color: var(--primary-medium);
-    transition: all 0.4s ease;
-}
-
-.personas-section .nav-pills .nav-link:hover {
-    background-color: transparent !important;
-    color: var(--primary) !important;
-    border-bottom-color: var(--primary) !important;
-}
-
-.personas-section .nav-pills .nav-link:hover i {
-    color: var(--primary) !important;
-    transform: scale(1.1);
-}
-
-.personas-section .nav-pills .nav-link.active {
-    background-color: transparent !important;
-    border-bottom-color: var(--primary) !important;
-    color: var(--primary) !important;
-}
-
-.personas-section .nav-pills .nav-link.active i {
-    color: var(--primary) !important;
-    transform: scale(1.05);
-}
-
-.persona-content {
-    background-color: transparent;
-    padding: 2.5rem 1rem;
-    min-height: 260px;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.personas-section .tab-content {
-    position: relative;
-    min-height: 380px;
-}
-
-.personas-section .tab-pane {
-    transition: opacity 0.3s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-
-.personas-section .tab-pane.active {
-    position: relative;
-}
-
+/* tab-pane styles kept for FAQ or other Bootstrap tab usage */
 .tab-pane:not(.show) {
     opacity: 0;
     position: absolute;
@@ -1264,91 +1175,10 @@ html {
     display: block;
 }
 
-.persona-content h3 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 1.75rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.persona-content .lead {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.persona-content p {
-    font-family: 'Quicksand', sans-serif;
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-.persona-content .blog-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.persona-content .blog-link:hover {
-    color: var(--accent);
-    text-decoration: none;
-    transform: translateX(3px);
-}
-
-.persona-content .blog-link i {
-    margin-left: 0.25rem;
-    font-size: 0.8rem;
-}
-
-/* Responsive adjustments for personas tabs */
-@media (max-width: 992px) {
-    .personas-section .nav-pills .nav-link {
-        font-size: 0.75rem;
-        padding: 0.75rem 0.5rem;
-    }
-
-    .personas-section .nav-pills .nav-link i {
-        font-size: 1.5rem;
-    }
-
-    .personas-tabs-wrapper {
-        padding: 1.5rem 1.5rem 0 1.5rem;
-    }
-}
-
 @media (max-width: 768px) {
-    .personas-section .nav-pills {
-        flex-wrap: wrap;
-        gap: 0;
-    }
-
-    .personas-section .nav-item {
-        flex: 0 0 50%;
-    }
-
-    .persona-content {
-        padding: 2rem 1rem;
-        min-height: 240px;
-    }
-
-    .personas-section .tab-content {
-        min-height: 500px;
-    }
-
     #testimonialCarousel .carousel-inner,
     #testimonialCarousel .carousel-item {
         min-height: 380px;
-    }
-
-    .personas-tabs-wrapper {
-        padding: 1rem 1rem 0 1rem;
     }
 }
 
@@ -1429,12 +1259,44 @@ html {
     position: relative;
     width: 250px;
     margin: 0 auto;
+    border: 6px solid #1a1a1a;
+    border-radius: 30px;
+    background: #1a1a1a;
+    overflow: hidden;
+}
+
+/* Notch indicator */
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 22px;
+    background: #1a1a1a;
+    border-radius: 0 0 14px 14px;
+    z-index: 10;
+}
+
+/* Home indicator bar */
+.phone-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #555;
+    border-radius: 2px;
+    z-index: 10;
 }
 
 .phone-screen {
     width: 100%;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(130, 89, 220, 0.25);
+    border-radius: 24px;
+    box-shadow: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -2176,23 +2038,6 @@ article header .lead {
 
 /* Wellness & Green Accent Enhancements */
 
-/* Persona tabs - purple labels (readable), icons switch green to purple */
-.personas-section .nav-pills .nav-link {
-    color: var(--primary) !important; /* Purple text - always readable */
-}
-
-.personas-section .nav-pills .nav-link i {
-    color: var(--accent) !important; /* Pink icons when unselected */
-}
-
-.personas-section .nav-pills .nav-link:hover i {
-    color: var(--primary) !important; /* Purple icons on hover */
-}
-
-.personas-section .nav-pills .nav-link.active i {
-    color: var(--primary) !important; /* Purple icons when active */
-}
-
 /* Feature boxes keep purple - green is hard to see against sand */
 /* Removed green from feature icons for better contrast */
 
@@ -2290,10 +2135,11 @@ body::after {
 .personas-section,
 #testimonials,
 .feature-section,
-.professionals-section,
 .faq-section {
     border-top: 1px solid rgba(130, 89, 220, 0.06);
 }
+
+/* Professionals uses clip-path diagonal, no border needed */
 
 /* Testimonial styling — readable italic */
 .testimonial-text {
@@ -2364,17 +2210,7 @@ body::after {
     box-shadow: 0 16px 48px rgba(130, 89, 220, 0.25), 0 4px 12px rgba(130, 89, 220, 0.15);
 }
 
-/* Professional section cards — distinct shadow */
-.professionals-section .feature-box {
-    border-left: 3px solid var(--primary-medium);
-    border-radius: 8px 15px 15px 8px;
-}
-
-.professionals-section .feature-box:hover {
-    border-left-color: var(--primary);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(130, 89, 220, 0.15);
-}
+/* Professional section cards — now uses bento-card styles */
 
 /* =============================================
    MODERN SCROLL ANIMATIONS (replaces animate.css)
@@ -2932,3 +2768,268 @@ body::after {
 .trust-section {
     border-top: none !important;
 }
+
+/* =============================================
+   ROUND 2, CHANGE 1: PERSONAS HORIZONTAL SCROLL
+   ============================================= */
+
+.personas-scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.personas-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem 0 2rem 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+}
+
+.personas-scroll-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.persona-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: var(--secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.persona-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(130, 89, 220, 0.2);
+}
+
+.persona-card-thumb {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--primary-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.persona-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.persona-card-body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.persona-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--primary-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.persona-card-icon i {
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+.persona-card-body h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.persona-card-body p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-dark);
+    flex: 1;
+    margin-bottom: 0.75rem;
+}
+
+.persona-card-body .blog-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-top: auto;
+}
+
+.persona-card-body .blog-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Responsive: tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .persona-card {
+        flex: 0 0 280px;
+    }
+}
+
+/* Responsive: mobile */
+@media (max-width: 767px) {
+    .persona-card {
+        flex: 0 0 260px;
+    }
+
+    .persona-card-thumb {
+        height: 170px;
+    }
+
+    .personas-scroll-track {
+        gap: 1rem;
+    }
+}
+
+/* =============================================
+   ROUND 2, CHANGE 2: PROFESSIONALS BENTO GRID
+   ============================================= */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bento-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 3px solid var(--primary-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(130, 89, 220, 0.15);
+    border-left-color: var(--primary);
+}
+
+.bento-card .icon-square {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-subtle);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bento-card .icon-square i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.bento-card h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.bento-card p {
+    margin-bottom: 0;
+    color: var(--text-dark);
+    line-height: 1.65;
+}
+
+/* Hero card: tall, spans 2 rows on the left */
+.bento-hero {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, white 60%, var(--secondary) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bento-hero h3 {
+    font-size: 1.6rem;
+}
+
+.bento-hero p {
+    font-size: 1.05rem;
+}
+
+/* Right cards: stacked in column 2 */
+.bento-right {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.bento-bottom {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Tablet: same 2-column, just tighter */
+@media (max-width: 991px) {
+    .bento-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile: single column stack */
+@media (max-width: 767px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-hero {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .bento-right,
+    .bento-bottom {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .bento-card {
+        padding: 1.5rem;
+    }
+}
+
+/* =============================================
+   ROUND 2, CHANGE 3: DIAGONAL CLIP-PATH
+   ============================================= */
+
+.professionals-section {
+    clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+    padding: 7rem 0 !important;
+}
+
+@media (max-width: 767px) {
+    .professionals-section {
+        clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+        padding: 5rem 0 !important;
+    }
+}
+
+/* Phone frame device chrome — merged into main .phone-frame rules above */

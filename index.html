@@ -550,99 +550,82 @@
             <div class="container">
                 <h2 class="text-center mb-4 reveal">More Than a Period Tracker</h2>
                 <p class="text-center lead mb-5">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? Training for a race while navigating perimenopause? You don't have to choose just one. Gaia adapts to your complexity, because your health isn't a single checkbox.</p>
-                <div class="personas-tabs-wrapper">
-                    <ul class="nav nav-pills nav-justified mb-4" id="personasTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="cycle-tab" data-bs-toggle="pill" data-bs-target="#cycle" type="button" role="tab" aria-controls="cycle" aria-selected="true">
-                                <i class="bi bi-calendar-heart d-block mb-2"></i>
-                                Cycle Tracking
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pcos-tab" data-bs-toggle="pill" data-bs-target="#pcos" type="button" role="tab" aria-controls="pcos" aria-selected="false">
-                                <i class="bi bi-heart-pulse d-block mb-2"></i>
-                                Managing PCOS
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="fertility-tab" data-bs-toggle="pill" data-bs-target="#fertility" type="button" role="tab" aria-controls="fertility" aria-selected="false">
-                                <i class="bi bi-flower1 d-block mb-2"></i>
-                                Fertility Tracking
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pregnancy-tab" data-bs-toggle="pill" data-bs-target="#pregnancy" type="button" role="tab" aria-controls="pregnancy" aria-selected="false">
-                                <i class="bi bi-heart d-block mb-2"></i>
-                                Pregnancy
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="menopause-tab" data-bs-toggle="pill" data-bs-target="#menopause" type="button" role="tab" aria-controls="menopause" aria-selected="false">
-                                <i class="bi bi-moon-stars d-block mb-2"></i>
-                                Menopause
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="wellness-tab" data-bs-toggle="pill" data-bs-target="#wellness" type="button" role="tab" aria-controls="wellness" aria-selected="false">
-                                <i class="bi bi-stars d-block mb-2"></i>
-                                Wellness
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="fitness-tab" data-bs-toggle="pill" data-bs-target="#fitness" type="button" role="tab" aria-controls="fitness" aria-selected="false">
-                                <i class="bi bi-activity d-block mb-2"></i>
-                                Fitness & Nutrition
-                            </button>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content" id="personasTabContent">
-                        <div class="tab-pane fade show active" id="cycle" role="tabpanel" aria-labelledby="cycle-tab">
-                            <div class="persona-content">
-                                <h3>Understanding Your Cycle</h3>
-                                <p class="lead">Just starting to track your menstrual cycle? Learn when to expect your period with accurate predictions, understand your cycle phases (follicular, ovulation, luteal, and menstrual), and discover how your hormones affect your mood, energy levels, and overall wellbeing. Track PMS symptoms and period patterns. Perfect for anyone wanting to practice cycle syncing: aligning your lifestyle, workouts, and nutrition with your menstrual cycle phases for better productivity and self-care.</p>
+                <div class="personas-scroll-container">
+                    <div class="personas-scroll-track">
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/1.png" alt="Cycle tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-calendar-heart"></i></div>
+                                <h3>Cycle Tracking</h3>
+                                <p>Accurate period predictions, cycle phase insights, and hormone-mood connections. Perfect for cycle syncing your lifestyle, workouts, and nutrition.</p>
                                 <a href="blog/cycle-syncing-guide.html" class="blog-link">Learn about cycle syncing <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pcos" role="tabpanel" aria-labelledby="pcos-tab">
-                            <div class="persona-content">
-                                <h3>Managing PCOS & Hormonal Health</h3>
-                                <p class="lead">Living with PCOS (Polycystic Ovary Syndrome) or irregular periods? Track symptoms including acne, weight fluctuations, mood swings, and irregular cycles. Identify triggers and patterns specific to your hormonal health. Log your diet, supplements, and medications to see what actually helps. Bring comprehensive data to your endocrinologist or OBGYN for more informed treatment decisions.</p>
-                                <a href="blog/complete-guide-to-pcos.html" class="blog-link">Complete guide to PCOS management <i class="bi bi-arrow-right"></i></a>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/2.png" alt="PCOS management screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-heart-pulse"></i></div>
+                                <h3>Managing PCOS</h3>
+                                <p>Track acne, weight, mood swings, and irregular cycles. Log diet, supplements, and medications to see what actually helps. Bring data to your doctor.</p>
+                                <a href="blog/complete-guide-to-pcos.html" class="blog-link">PCOS management guide <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="fertility" role="tabpanel" aria-labelledby="fertility-tab">
-                            <div class="persona-content">
-                                <h3>Trying to Conceive</h3>
-                                <p class="lead">Ready to start your family? Track ovulation predictions and pinpoint your fertile window with accuracy. Log basal body temperature (BBT), cervical mucus changes, and LH surge results from ovulation kits. Get fertile window alerts so you never miss your most fertile days. Perfect for couples trying to conceive (TTC), whether you're just starting out or working with a reproductive endocrinologist. Compatible with IVF, IUI, and other fertility treatments.</p>
-                                <a href="blog/how-to-tell-if-youre-ovulating.html" class="blog-link">Learn to recognize ovulation signs <i class="bi bi-arrow-right"></i></a>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/3.png" alt="Fertility tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-flower1"></i></div>
+                                <h3>Fertility Tracking</h3>
+                                <p>Pinpoint your fertile window with BBT, cervical mucus, and LH tracking. Compatible with IVF, IUI, and other fertility treatments.</p>
+                                <a href="blog/how-to-tell-if-youre-ovulating.html" class="blog-link">Recognize ovulation signs <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pregnancy" role="tabpanel" aria-labelledby="pregnancy-tab">
-                            <div class="persona-content">
-                                <h3>Pregnancy Tracking</h3>
-                                <p class="lead">Expecting? Follow your baby's development week by week through all three trimesters. Track pregnancy symptoms including morning sickness, fatigue, cravings, and mood changes. Monitor weight gain, baby kicks, and prenatal appointments. Keep track of questions for your OBGYN or midwife. Create a comprehensive prenatal health record to share with your healthcare provider. Perfect for first-time moms and experienced mothers alike.</p>
-                                <a href="blog/pregnancy-tracking-guide.html" class="blog-link">Complete pregnancy tracking guide <i class="bi bi-arrow-right"></i></a>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/4.png" alt="Pregnancy tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-heart"></i></div>
+                                <h3>Pregnancy</h3>
+                                <p>Week-by-week development tracking, symptom logging, weight monitoring, and prenatal appointment notes. For first-time and experienced moms.</p>
+                                <a href="blog/pregnancy-tracking-guide.html" class="blog-link">Pregnancy tracking guide <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="menopause" role="tabpanel" aria-labelledby="menopause-tab">
-                            <div class="persona-content">
-                                <h3>Perimenopause & Menopause</h3>
-                                <p class="lead">Navigating perimenopause or menopause? Track hot flashes and night sweats, sleep disturbances, mood changes, and irregular periods. Monitor brain fog, joint pain, and other symptoms. Log hormone replacement therapy (HRT) effects and lifestyle changes. Identify triggers for your symptoms and understand patterns as you transition. Share your data with your gynecologist or menopause specialist to optimize your treatment plan.</p>
-                                <a href="blog/perimenopause-guide.html" class="blog-link">Complete perimenopause guide <i class="bi bi-arrow-right"></i></a>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/5.png" alt="Menopause tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-moon-stars"></i></div>
+                                <h3>Menopause</h3>
+                                <p>Track hot flashes, night sweats, sleep disturbances, and brain fog. Log HRT effects and share patterns with your menopause specialist.</p>
+                                <a href="blog/perimenopause-guide.html" class="blog-link">Perimenopause guide <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="wellness" role="tabpanel" aria-labelledby="wellness-tab">
-                            <div class="persona-content">
-                                <h3>General Wellness & Self-Care</h3>
-                                <p class="lead">Want to optimize your overall health and wellbeing? Build healthy habits that stick, monitor your mental health with daily mood tracking, and track sleep quality. Understand how sleep affects your mood and productivity, discover patterns in your stress levels, and track self-care activities like meditation and journaling. Perfect for anyone who wants to understand their health and mental wellness better.</p>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/6.png" alt="Wellness tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-stars"></i></div>
+                                <h3>Wellness</h3>
+                                <p>Build habits that stick, track mood and sleep quality, and discover patterns in your stress levels. Understand what drives your wellbeing.</p>
                                 <a href="blog/habit-tracking-success.html" class="blog-link">Building habits that stick <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="fitness" role="tabpanel" aria-labelledby="fitness-tab">
-                            <div class="persona-content">
-                                <h3>Fitness & Nutrition Tracking</h3>
-                                <p class="lead">Training for a race or tracking macros? Log workouts, monitor athletic performance, and track nutrition to hit your goals. See how your menstrual cycle affects your strength, endurance, and recovery. Sync your training plan with your cycle phases for optimal performance. Connect MyFitnessPal, Garmin, Apple Watch, and other fitness apps to see the full picture of your health and fitness.</p>
+                        <div class="persona-card">
+                            <div class="persona-card-thumb">
+                                <img src="images/7.png" alt="Fitness tracking screenshot" loading="lazy">
+                            </div>
+                            <div class="persona-card-body">
+                                <div class="persona-card-icon"><i class="bi bi-activity"></i></div>
+                                <h3>Fitness & Nutrition</h3>
+                                <p>Log workouts, track macros, and sync with Apple Watch, Garmin, and MyFitnessPal. See how your cycle affects strength and recovery.</p>
                                 <a href="blog/cycle-syncing-guide.html" class="blog-link">Optimize training with your cycle <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
@@ -746,35 +729,29 @@
         <!-- PROFESSIONALS -->
         <section id="professionals" class="professionals-section py-5">
             <div class="container">
-                <h2 class="text-center mb-3 reveal">For Healthcare Professionals</h2>
-                <p class="text-center lead mb-5 reveal">Doctors, coaches, nutritionists, and dietitians use Gaia to stay connected with their clients.</p>
-                <div class="row g-4 row-cols-1 row-cols-md-3">
-                    <div class="col reveal stagger-1">
-                        <div class="feature-box d-flex flex-column h-100 text-center">
-                            <div class="icon-square mx-auto mb-3">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <h3>Manage Clients</h3>
-                            <p>Dedicated dashboard to manage your client list. Share invite codes for secure connections. View only the data your clients approve.</p>
+                <h2 class="text-center mb-3 reveal">For Coaches & Practitioners</h2>
+                <p class="text-center lead mb-5 reveal">Coaches, trainers, nutritionists, and dietitians use Gaia to stay connected with their clients.</p>
+                <div class="bento-grid reveal">
+                    <div class="bento-card bento-hero">
+                        <div class="icon-square mb-3">
+                            <i class="bi bi-people"></i>
                         </div>
+                        <h3>Manage Clients</h3>
+                        <p>A dedicated dashboard to manage your client list, share invite codes for secure connections, and view only the data your clients choose to share. Set up in minutes — no paperwork, no integrations.</p>
                     </div>
-                    <div class="col reveal stagger-2">
-                        <div class="feature-box d-flex flex-column h-100 text-center">
-                            <div class="icon-square mx-auto mb-3">
-                                <i class="bi bi-clipboard2-pulse"></i>
-                            </div>
-                            <h3>Prep for Sessions</h3>
-                            <p>Review client health summaries before appointments. See trends in mood, sleep, nutrition, and symptoms at a glance.</p>
+                    <div class="bento-card bento-right">
+                        <div class="icon-square mb-3">
+                            <i class="bi bi-clipboard2-pulse"></i>
                         </div>
+                        <h3>Prep for Sessions</h3>
+                        <p>Review client health summaries before appointments. See trends in mood, sleep, nutrition, and symptoms at a glance.</p>
                     </div>
-                    <div class="col reveal stagger-3">
-                        <div class="feature-box d-flex flex-column h-100 text-center">
-                            <div class="icon-square mx-auto mb-3">
-                                <i class="bi bi-graph-up"></i>
-                            </div>
-                            <h3>Track Progress</h3>
-                            <p>Schedule sessions and monitor client progress over time. Better data means better care.</p>
+                    <div class="bento-card bento-bottom">
+                        <div class="icon-square mb-3">
+                            <i class="bi bi-graph-up"></i>
                         </div>
+                        <h3>Track Progress</h3>
+                        <p>Schedule sessions and monitor client progress over time. Better data means better care.</p>
                     </div>
                 </div>
             </div>
