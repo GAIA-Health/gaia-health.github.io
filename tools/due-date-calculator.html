@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Due Date Calculator: When Is My Baby Due?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Enter your last period date and find out when your baby is due. See how far along you are, what trimester you're in, and how big your baby is right now.">
+    <meta name="keywords" content="due date calculator, when is my baby due, pregnancy due date, Naegele's rule, estimated delivery date, pregnancy calculator">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/due-date-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Due Date Calculator: When Is My Baby Due?">
+    <meta property="og:description" content="Enter your last period date and find out when your baby is due. See how far along you are, what trimester you're in, and how big your baby is right now.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/due-date-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Due Date Calculator: When Is My Baby Due?">
+    <meta name="twitter:description" content="Enter your last period date and find out when your baby is due. See how far along you are, what trimester you're in, and how big your baby is right now.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Due Date Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is my due date calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most due dates are calculated using Naegele's Rule: take the first day of your last menstrual period (LMP) and add 280 days (40 weeks). This assumes a 28-day cycle with ovulation on day 14. Your doctor may adjust your due date after an early ultrasound, which can be more accurate — especially if your cycles are irregular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is a due date calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only about 5% of babies arrive on their exact due date. Most are born within a two-week window on either side. Due date calculators based on your last period are a solid estimate, but first-trimester ultrasounds (between 8-12 weeks) tend to be the most accurate way to date a pregnancy. Think of your due date as a target range, not a deadline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I don't know my last period date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you're not sure when your last period started, your doctor can estimate your due date with an early ultrasound. The earlier it's done, the more accurate it is — ideally between 8 and 12 weeks. This is one reason tracking your periods (even casually) is so helpful when you're trying to conceive or think you might be pregnant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my due date change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it's pretty common. Your doctor might adjust your due date after an early ultrasound if baby's measurements suggest a different gestational age. This usually happens at your first prenatal appointment. Once a due date is set based on ultrasound, it typically stays — but every pregnancy is different."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the trimesters of pregnancy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pregnancy is divided into three trimesters. The first trimester runs from weeks 1-12 (this is when nausea, fatigue, and sore breasts are most common). The second trimester is weeks 13-26 — often called the 'honeymoon phase' because many symptoms ease up and you start feeling baby move. The third trimester is weeks 27-40, when baby is growing fast and you're getting ready for delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I start prenatal care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call your doctor or midwife as soon as you get a positive pregnancy test. Most providers schedule the first prenatal visit between 8-10 weeks. In the meantime, start taking a prenatal vitamin with folic acid if you aren't already, and avoid alcohol, smoking, and high-mercury fish. Early care gives you and your baby the best start."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"] {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show {
+            display: block;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+            text-align: center;
+        }
+        .due-date-display {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+        .due-date-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .stat-box {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .stat-box .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--green-deep);
+        }
+        .stat-box .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Baby size */
+        .baby-size-section {
+            background: var(--green-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .baby-size-emoji {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .baby-size-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--green-deep);
+        }
+        .baby-size-details {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Progress bar */
+        .pregnancy-progress {
+            margin-top: 1.5rem;
+        }
+        .progress {
+            height: 12px;
+            border-radius: 6px;
+            background: #e9ecef;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, var(--green) 0%, var(--primary) 100%);
+            border-radius: 6px;
+            transition: width 0.8s ease;
+        }
+        .trimester-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+        .trimester-labels span.active-trimester {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page {
+            margin-top: 3rem;
+        }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related articles */
+        .related-articles {
+            margin-top: 2.5rem;
+        }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .related-card a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .related-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            padding: 0.75rem 0;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-nav a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb-nav .separator {
+            color: var(--text-muted);
+            margin: 0 0.4rem;
+        }
+        .breadcrumb-nav .current {
+            color: var(--text-muted);
+        }
+
+        /* Not pregnant yet message */
+        .not-pregnant-msg {
+            text-align: center;
+            padding: 2rem;
+        }
+        .not-pregnant-msg h3 {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Due Date Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Due Date Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Enter the first day of your last period to find out when your baby is due.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="dueDateForm">
+                        <div class="mb-3">
+                            <label for="lmpDate" class="form-label">First day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My Due Date</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results (hidden until calculated) -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;">
+                <!-- Filled by JavaScript -->
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 640px;">
+            <div class="cta-section">
+                <h3>Track Your Pregnancy Free</h3>
+                <p>Log symptoms, see weekly milestones, and track baby's growth — all in one app.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=due-date-calculator&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Due Dates</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How is my due date calculated?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Most due dates are calculated using Naegele's Rule: take the first day of your last menstrual period (LMP) and add 280 days (40 weeks). This assumes a 28-day cycle with ovulation on day 14. Your doctor may adjust your due date after an early ultrasound, which can be more accurate — especially if your cycles are irregular.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How accurate is a due date calculator?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Only about 5% of babies arrive on their exact due date. Most are born within a two-week window on either side. Due date calculators based on your last period are a solid estimate, but first-trimester ultrasounds (between 8-12 weeks) tend to be the most accurate way to date a pregnancy. Think of your due date as a target range, not a deadline.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What if I don't know my last period date?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">If you're not sure when your last period started, your doctor can estimate your due date with an early ultrasound. The earlier it's done, the more accurate it is — ideally between 8 and 12 weeks. This is one reason tracking your periods (even casually) is so helpful when you're trying to conceive or think you might be pregnant.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can my due date change?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes, and it's pretty common. Your doctor might adjust your due date after an early ultrasound if baby's measurements suggest a different gestational age. This usually happens at your first prenatal appointment. Once a due date is set based on ultrasound, it typically stays — but every pregnancy is different.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">What are the trimesters of pregnancy?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Pregnancy is divided into three trimesters. The first trimester runs from weeks 1-12 (this is when nausea, fatigue, and sore breasts are most common). The second trimester is weeks 13-26 — often called the "honeymoon phase" because many symptoms ease up and you start feeling baby move. The third trimester is weeks 27-40, when baby is growing fast and you're getting ready for delivery.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">When should I start prenatal care?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Call your doctor or midwife as soon as you get a positive pregnancy test. Most providers schedule the first prenatal visit between 8-10 weeks. In the meantime, start taking a prenatal vitamin with folic acid if you aren't already, and avoid alcohol, smoking, and high-mercury fish. Early care gives you and your baby the best start.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>What to Track During Pregnancy</h4>
+                        <p>A trimester-by-trimester checklist covering symptoms, baby movements, and everything your doctor will want to know.</p>
+                        <a href="../blog/pregnancy-tracking-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Am I Pregnant? Early Signs to Watch For</h4>
+                        <p>Missed period, nausea, sore breasts — here's what to look for and when to take a test.</p>
+                        <a href="../blog/am-i-pregnant-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height: 3rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // Baby size data — ported from pregnancyAlgos.py
+    const BABY_SIZE = {
+        4:  { comparison: "poppy seed", emoji: "\u{1F33C}", lengthCm: 0.1, weightG: 0 },
+        5:  { comparison: "sesame seed", emoji: "\u{1F33E}", lengthCm: 0.2, weightG: 0 },
+        6:  { comparison: "lentil", emoji: "\u{1FAD8}", lengthCm: 0.6, weightG: 0 },
+        7:  { comparison: "blueberry", emoji: "\u{1FAD0}", lengthCm: 1.3, weightG: 0 },
+        8:  { comparison: "raspberry", emoji: "\u{1F347}", lengthCm: 1.6, weightG: 1 },
+        9:  { comparison: "cherry", emoji: "\u{1F352}", lengthCm: 2.3, weightG: 2 },
+        10: { comparison: "strawberry", emoji: "\u{1F353}", lengthCm: 3.1, weightG: 4 },
+        11: { comparison: "fig", emoji: "\u{1F95D}", lengthCm: 4.1, weightG: 7 },
+        12: { comparison: "lime", emoji: "\u{1F34B}", lengthCm: 5.4, weightG: 14 },
+        13: { comparison: "peach", emoji: "\u{1F351}", lengthCm: 7.4, weightG: 23 },
+        14: { comparison: "lemon", emoji: "\u{1F34B}", lengthCm: 8.7, weightG: 43 },
+        15: { comparison: "apple", emoji: "\u{1F34E}", lengthCm: 10.1, weightG: 70 },
+        16: { comparison: "avocado", emoji: "\u{1F951}", lengthCm: 11.6, weightG: 100 },
+        17: { comparison: "pear", emoji: "\u{1F350}", lengthCm: 13.0, weightG: 140 },
+        18: { comparison: "bell pepper", emoji: "\u{1FAD1}", lengthCm: 14.2, weightG: 190 },
+        19: { comparison: "mango", emoji: "\u{1F96D}", lengthCm: 15.3, weightG: 240 },
+        20: { comparison: "banana", emoji: "\u{1F34C}", lengthCm: 25.6, weightG: 300 },
+        21: { comparison: "carrot", emoji: "\u{1F955}", lengthCm: 26.7, weightG: 360 },
+        22: { comparison: "papaya", emoji: "\u{1F349}", lengthCm: 27.8, weightG: 430 },
+        23: { comparison: "grapefruit", emoji: "\u{1F34A}", lengthCm: 28.9, weightG: 501 },
+        24: { comparison: "ear of corn", emoji: "\u{1F33D}", lengthCm: 30.0, weightG: 600 },
+        25: { comparison: "cauliflower", emoji: "\u{1F966}", lengthCm: 34.6, weightG: 660 },
+        26: { comparison: "lettuce head", emoji: "\u{1F96C}", lengthCm: 35.6, weightG: 760 },
+        27: { comparison: "rutabaga", emoji: "\u{1F954}", lengthCm: 36.6, weightG: 875 },
+        28: { comparison: "eggplant", emoji: "\u{1F346}", lengthCm: 37.6, weightG: 1005 },
+        29: { comparison: "butternut squash", emoji: "\u{1F33D}", lengthCm: 38.6, weightG: 1153 },
+        30: { comparison: "cabbage", emoji: "\u{1F966}", lengthCm: 39.9, weightG: 1319 },
+        31: { comparison: "coconut", emoji: "\u{1F965}", lengthCm: 41.1, weightG: 1502 },
+        32: { comparison: "squash", emoji: "\u{1F33D}", lengthCm: 42.4, weightG: 1702 },
+        33: { comparison: "pineapple", emoji: "\u{1F34D}", lengthCm: 43.7, weightG: 1918 },
+        34: { comparison: "cantaloupe", emoji: "\u{1F348}", lengthCm: 45.0, weightG: 2146 },
+        35: { comparison: "honeydew melon", emoji: "\u{1F348}", lengthCm: 46.2, weightG: 2383 },
+        36: { comparison: "romaine lettuce", emoji: "\u{1F96C}", lengthCm: 47.4, weightG: 2622 },
+        37: { comparison: "winter melon", emoji: "\u{1F348}", lengthCm: 48.6, weightG: 2859 },
+        38: { comparison: "pumpkin", emoji: "\u{1F383}", lengthCm: 49.8, weightG: 3083 },
+        39: { comparison: "watermelon", emoji: "\u{1F349}", lengthCm: 50.7, weightG: 3288 },
+        40: { comparison: "small pumpkin", emoji: "\u{1F383}", lengthCm: 51.2, weightG: 3462 }
+    };
+
+    function getTrimester(weeks) {
+        if (weeks <= 12) return { number: 1, name: "First Trimester" };
+        if (weeks <= 26) return { number: 2, name: "Second Trimester" };
+        return { number: 3, name: "Third Trimester" };
+    }
+
+    function formatDate(date) {
+        const months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+
+    function daysUntil(dueDate) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const due = new Date(dueDate);
+        due.setHours(0, 0, 0, 0);
+        return Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+    }
+
+    // Set max date to today on the input
+    document.addEventListener('DOMContentLoaded', function() {
+        const input = document.getElementById('lmpDate');
+        const today = new Date();
+        input.max = today.toISOString().split('T')[0];
+
+        // Set min date to ~42 weeks ago
+        const minDate = new Date(today);
+        minDate.setDate(minDate.getDate() - 294);
+        input.min = minDate.toISOString().split('T')[0];
+    });
+
+    document.getElementById('dueDateForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lmpInput = document.getElementById('lmpDate').value;
+        if (!lmpInput) return;
+
+        // Parse date — add timezone offset to avoid off-by-one
+        const parts = lmpInput.split('-');
+        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
+
+        // Naegele's Rule: LMP + 280 days
+        const dueDate = new Date(lmpDate);
+        dueDate.setDate(dueDate.getDate() + 280);
+
+        // Calculate weeks and days
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const diffMs = today - lmpDate;
+        const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        const weeks = Math.floor(diffDays / 7);
+        const days = diffDays % 7;
+
+        const resultsEl = document.getElementById('results');
+
+        // If LMP is in the future or way too old
+        if (diffDays < 0) {
+            resultsEl.innerHTML = '<div class="not-pregnant-msg result-card"><h3>That date is in the future</h3><p>Enter the first day of your most recent period to calculate your due date.</p></div>';
+            resultsEl.classList.add('show');
+            return;
+        }
+
+        if (weeks > 42) {
+            resultsEl.innerHTML = '<div class="not-pregnant-msg result-card"><h3>That date is more than 42 weeks ago</h3><p>If you believe you may be past your due date, please contact your healthcare provider. For a new calculation, enter a more recent date.</p></div>';
+            resultsEl.classList.add('show');
+            return;
+        }
+
+        const trimester = getTrimester(weeks);
+        const remaining = daysUntil(dueDate);
+        const progress = Math.min(Math.round((diffDays / 280) * 100), 100);
+
+        // Get baby size (clamp to available range)
+        const sizeWeek = Math.max(4, Math.min(40, weeks));
+        const babySize = BABY_SIZE[sizeWeek] || BABY_SIZE[4];
+
+        // Format weight
+        let weightStr = '';
+        if (babySize.weightG > 0) {
+            weightStr = babySize.weightG >= 1000
+                ? `${(babySize.weightG / 1000).toFixed(1)} kg (${(babySize.weightG / 453.592).toFixed(1)} lbs)`
+                : `${babySize.weightG} g`;
+        }
+
+        let html = `
+            <div class="result-card">
+                <p class="due-date-label">Your Estimated Due Date</p>
+                <p class="due-date-display">${formatDate(dueDate)}</p>
+                ${remaining > 0 ? `<p style="color: var(--text-muted);">${remaining} days to go</p>` : `<p style="color: var(--accent); font-weight: 600;">Your due date has passed — hang in there!</p>`}
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">${weeks}w ${days}d</div>
+                        <div class="stat-label">Pregnant</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${trimester.number}</div>
+                        <div class="stat-label">${trimester.name}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${40 - weeks}</div>
+                        <div class="stat-label">Weeks Left</div>
+                    </div>
+                </div>
+
+                <div class="pregnancy-progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: ${progress}%"></div>
+                    </div>
+                    <div class="trimester-labels">
+                        <span class="${trimester.number === 1 ? 'active-trimester' : ''}">1st Trimester</span>
+                        <span class="${trimester.number === 2 ? 'active-trimester' : ''}">2nd Trimester</span>
+                        <span class="${trimester.number === 3 ? 'active-trimester' : ''}">3rd Trimester</span>
+                    </div>
+                </div>
+            </div>
+
+            ${weeks >= 4 ? `
+            <div class="baby-size-section">
+                <div class="baby-size-emoji">${babySize.emoji}</div>
+                <p class="baby-size-name">Your baby is about the size of a ${babySize.comparison}</p>
+                <p class="baby-size-details">
+                    ${babySize.lengthCm > 0 ? `~${babySize.lengthCm} cm long` : ''}${babySize.lengthCm > 0 && weightStr ? ' · ' : ''}${weightStr}
+                </p>
+            </div>
+            ` : `
+            <div class="baby-size-section">
+                <div class="baby-size-emoji">\u{2728}</div>
+                <p class="baby-size-name">Very early days</p>
+                <p class="baby-size-details">Your baby is just getting started — too tiny to compare to anything yet!</p>
+            </div>
+            `}
+        `;
+
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+
+        // Scroll to results
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

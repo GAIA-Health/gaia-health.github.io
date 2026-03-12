@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Period Calculator: When Is My Next Period?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
+    <meta name="keywords" content="period calculator, next period date, when is my next period, period predictor, menstrual cycle calculator, period tracker">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/period-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Period Calculator: When Is My Next Period?">
+    <meta property="og:description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/period-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Period Calculator: When Is My Next Period?">
+    <meta name="twitter:description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Period Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate when my next period will start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take the first day of your last period and add your average cycle length — that's your estimated next period date. So if your period started on March 1 and your cycle is 28 days, you'd expect your next period around March 29. The tricky part is knowing your actual cycle length, which is why tracking for a few months helps. Count from day 1 of one period to day 1 of the next — that's one full cycle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a normal cycle length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A normal menstrual cycle is anywhere from 21 to 35 days, with 28 days being the most commonly cited average. But here's the thing — only about 13% of people actually have a perfect 28-day cycle. Most people fall somewhere between 24 and 32 days, and it's completely normal for your cycle to vary by a few days from month to month. A variation of up to 7-9 days between your shortest and longest cycle is still considered regular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my period late?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A late period doesn't always mean pregnancy — there are a bunch of reasons your cycle might shift. Stress is a big one, since cortisol can directly delay ovulation. Other common causes include significant weight changes, starting or stopping birth control, illness, travel across time zones, over-exercising, thyroid issues, and PCOS. If your period is more than a week late and you're sexually active, it's worth taking a pregnancy test. If you're consistently late or skipping periods, check in with your doctor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can stress affect my period?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely — and it's not just in your head. When you're stressed, your body produces more cortisol, which can suppress GnRH (the hormone that kicks off your whole cycle). This can delay or even prevent ovulation, which pushes your period back. Acute stress (like a big exam or a move) might delay your period by a few days to a week. Chronic stress can cause more significant disruptions, including skipped periods entirely. This is your body's way of saying 'now isn't a great time for reproduction.'"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days does a typical period last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most periods last between 3 and 7 days, with 5 days being the average. The heaviest flow is usually on days 1-2, then it gradually tapers off. If your period consistently lasts longer than 7 days, involves soaking through a pad or tampon every hour for several hours, or includes clots larger than a quarter — that's worth mentioning to your doctor. On the flip side, very light periods (1-2 days) can be totally normal for some people, especially on hormonal birth control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I worry if my periods are irregular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on how irregular we're talking. Cycles that vary by a few days each month? Totally normal — your body isn't a clock. But if your cycles swing by more than 9 days (say, 24 days one month and 38 the next), or you're regularly skipping periods, it's a good idea to talk to your doctor. Irregular periods can sometimes signal conditions like PCOS, thyroid disorders, or hormonal imbalances that are very treatable once identified. Also worth noting: periods are often irregular during the first few years after starting, after stopping birth control, and during perimenopause."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Key dates */
+        .key-dates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 480px) {
+            .key-dates { grid-template-columns: 1fr; }
+        }
+        .key-date-box {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .key-date-box.period-box {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+        }
+        .key-date-box.phase-box {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        .key-date-box .date-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .key-date-box.phase-box .date-value {
+            color: var(--primary-dark);
+        }
+        .key-date-box .date-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Phase indicator */
+        .phase-indicator {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .phase-indicator .phase-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .phase-indicator .phase-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Upcoming periods */
+        .next-cycles { margin-top: 1.5rem; }
+        .next-cycle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .next-cycle-row:last-child { border-bottom: none; }
+        .next-cycle-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        .next-cycle-dates {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .next-cycle-dates .period-date {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .next-cycle-dates .fertile-date {
+            color: var(--green-deep);
+            font-weight: 500;
+        }
+
+        /* Calendar view */
+        .cycle-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-top: 1rem;
+        }
+        .cycle-calendar .day-header {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0.25rem;
+        }
+        .cycle-calendar .day {
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            position: relative;
+        }
+        .cycle-calendar .day.empty { visibility: hidden; }
+        .cycle-calendar .day.period {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .cycle-calendar .day.fertile {
+            background: rgba(90, 155, 107, 0.2);
+            color: var(--green-deep);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.ovulation {
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+        }
+        .cycle-calendar .day.luteal {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.today-marker {
+            outline: 3px solid var(--primary);
+            outline-offset: -1px;
+        }
+        .cycle-calendar .day .day-num {
+            font-size: 0.8rem;
+        }
+        .cycle-calendar .day .day-label {
+            font-size: 0.6rem;
+            display: block;
+            line-height: 1;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .legend-dot.period { background: var(--accent); }
+        .legend-dot.follicular { background: rgba(90, 155, 107, 0.15); border: 1px solid var(--green); }
+        .legend-dot.fertile { background: rgba(90, 155, 107, 0.3); }
+        .legend-dot.ovulation { background: var(--green); }
+        .legend-dot.luteal { background: var(--secondary); border: 1px solid var(--primary); }
+        .legend-dot.today { outline: 2px solid var(--primary); outline-offset: -1px; background: #fff; }
+
+        /* Tips section */
+        .tips-section {
+            background: var(--green-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Period Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Period Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="periodForm">
+                        <div class="mb-3">
+                            <label for="lmpDate" class="form-label">First day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cycleLength" class="form-label">Average cycle length</label>
+                            <select class="form-select" id="cycleLength">
+                                <option value="21">21 days</option>
+                                <option value="22">22 days</option>
+                                <option value="23">23 days</option>
+                                <option value="24">24 days</option>
+                                <option value="25">25 days</option>
+                                <option value="26">26 days</option>
+                                <option value="27">27 days</option>
+                                <option value="28" selected>28 days</option>
+                                <option value="29">29 days</option>
+                                <option value="30">30 days</option>
+                                <option value="31">31 days</option>
+                                <option value="32">32 days</option>
+                                <option value="33">33 days</option>
+                                <option value="34">34 days</option>
+                                <option value="35">35 days</option>
+                                <option value="36">36 days</option>
+                                <option value="37">37 days</option>
+                                <option value="38">38 days</option>
+                                <option value="39">39 days</option>
+                                <option value="40">40 days</option>
+                            </select>
+                            <div class="form-text">Not sure? Most cycles are 26-32 days. Count from the first day of one period to the first day of the next.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My Next Period</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 640px;">
+            <div class="cta-section">
+                <h3>Track Your Period Free</h3>
+                <p>Log periods, symptoms, and mood in seconds — Gaia learns your unique cycle and predicts your next period automatically.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=period-calculator&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Your Period</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I calculate when my next period will start?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Take the first day of your last period and add your average cycle length — that's your estimated next period date. So if your period started on March 1 and your cycle is 28 days, you'd expect your next period around March 29. The tricky part is knowing your actual cycle length, which is why tracking for a few months helps. Count from day 1 of one period to day 1 of the next — that's one full cycle.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is a normal cycle length?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">A normal menstrual cycle is anywhere from 21 to 35 days, with 28 days being the most commonly cited average. But here's the thing — only about 13% of people actually have a perfect 28-day cycle. Most people fall somewhere between 24 and 32 days, and it's completely normal for your cycle to vary by a few days from month to month. A variation of up to 7-9 days between your shortest and longest cycle is still considered regular.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Why is my period late?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">A late period doesn't always mean pregnancy — there are a bunch of reasons your cycle might shift. Stress is a big one, since cortisol can directly delay ovulation. Other common causes include significant weight changes, starting or stopping birth control, illness, travel across time zones, over-exercising, thyroid issues, and PCOS. If your period is more than a week late and you're sexually active, it's worth taking a pregnancy test. If you're consistently late or skipping periods, check in with your doctor.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can stress affect my period?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Absolutely — and it's not just in your head. When you're stressed, your body produces more cortisol, which can suppress GnRH (the hormone that kicks off your whole cycle). This can delay or even prevent ovulation, which pushes your period back. Acute stress (like a big exam or a move) might delay your period by a few days to a week. Chronic stress can cause more significant disruptions, including skipped periods entirely. This is your body's way of saying "now isn't a great time for reproduction."</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">How many days does a typical period last?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Most periods last between 3 and 7 days, with 5 days being the average. The heaviest flow is usually on days 1-2, then it gradually tapers off. If your period consistently lasts longer than 7 days, involves soaking through a pad or tampon every hour for several hours, or includes clots larger than a quarter — that's worth mentioning to your doctor. On the flip side, very light periods (1-2 days) can be totally normal for some people, especially on hormonal birth control.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Should I worry if my periods are irregular?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">It depends on how irregular we're talking. Cycles that vary by a few days each month? Totally normal — your body isn't a clock. But if your cycles swing by more than 9 days (say, 24 days one month and 38 the next), or you're regularly skipping periods, it's a good idea to talk to your doctor. Irregular periods can sometimes signal conditions like PCOS, thyroid disorders, or hormonal imbalances that are very treatable once identified. Also worth noting: periods are often irregular during the first few years after starting, after stopping birth control, and during perimenopause.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>The Complete Guide to Period Tracking</h4>
+                        <p>Why tracking your period matters, what to log, and how to spot patterns in your cycle.</p>
+                        <a href="../blog/period-tracking-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Cycle Syncing: Eat, Train & Rest by Phase</h4>
+                        <p>How to align your diet, workouts, and energy with each phase of your menstrual cycle.</p>
+                        <a href="../blog/cycle-syncing-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height: 3rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const LUTEAL_LENGTH = 14;
+    const DEFAULT_PERIOD_LENGTH = 5;
+
+    function formatDate(date) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return `${months[date.getMonth()]} ${date.getDate()}`;
+    }
+
+    function formatDateFull(date) {
+        const months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    function sameDay(a, b) {
+        return a.getFullYear() === b.getFullYear() &&
+               a.getMonth() === b.getMonth() &&
+               a.getDate() === b.getDate();
+    }
+
+    function calcCycle(cycleStart, cycleLength) {
+        const nextPeriod = addDays(cycleStart, cycleLength);
+        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, DEFAULT_PERIOD_LENGTH + 1);
+        const ovulationDate = addDays(cycleStart, ovulationDay - 1);
+        const fertileStart = addDays(ovulationDate, -5);
+        const fertileEnd = addDays(ovulationDate, 1);
+
+        return {
+            cycleStart,
+            nextPeriod,
+            ovulationDate,
+            ovulationDay,
+            fertileStart,
+            fertileEnd,
+        };
+    }
+
+    function getCycleDay(lmpDate, today) {
+        const diffTime = today.getTime() - lmpDate.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays + 1;
+    }
+
+    function getPhaseInfo(cycleDay, cycleLength) {
+        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, DEFAULT_PERIOD_LENGTH + 1);
+        const fertileStartDay = ovulationDay - 5;
+
+        if (cycleDay <= DEFAULT_PERIOD_LENGTH) {
+            return {
+                name: "Menstrual Phase",
+                desc: "Days 1-" + DEFAULT_PERIOD_LENGTH + " — your body is shedding the uterine lining. Energy may be lower, and it's a great time for rest and gentle movement.",
+                color: "var(--accent)"
+            };
+        } else if (cycleDay < fertileStartDay) {
+            return {
+                name: "Follicular Phase",
+                desc: "Your body is preparing to ovulate. Estrogen is rising — many people feel a boost in energy, mood, and motivation during this phase.",
+                color: "var(--green)"
+            };
+        } else if (cycleDay <= ovulationDay + 1) {
+            return {
+                name: "Ovulation Window",
+                desc: "You're in or near your fertile window. Estrogen peaks and you may notice increased energy, clearer skin, and changes in cervical mucus.",
+                color: "var(--green-deep)"
+            };
+        } else {
+            return {
+                name: "Luteal Phase",
+                desc: "Progesterone rises after ovulation. You may notice PMS symptoms like bloating, mood changes, or cravings in the second half of this phase.",
+                color: "var(--primary-dark)"
+            };
+        }
+    }
+
+    // Set date constraints
+    document.addEventListener('DOMContentLoaded', function() {
+        const input = document.getElementById('lmpDate');
+        const today = new Date();
+        input.max = today.toISOString().split('T')[0];
+        const minDate = new Date(today);
+        minDate.setDate(minDate.getDate() - 90);
+        input.min = minDate.toISOString().split('T')[0];
+    });
+
+    document.getElementById('periodForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lmpInput = document.getElementById('lmpDate').value;
+        if (!lmpInput) return;
+
+        const parts = lmpInput.split('-');
+        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        const cycleLength = parseInt(document.getElementById('cycleLength').value);
+
+        // Calculate current and next 6 cycles
+        const cycles = [];
+        let nextStart = lmpDate;
+        for (let i = 0; i < 7; i++) {
+            cycles.push(calcCycle(nextStart, cycleLength));
+            nextStart = cycles[cycles.length - 1].nextPeriod;
+        }
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Find which cycle we're currently in
+        let currentCycleIndex = 0;
+        for (let i = 0; i < cycles.length; i++) {
+            if (today >= cycles[i].cycleStart && today < cycles[i].nextPeriod) {
+                currentCycleIndex = i;
+                break;
+            }
+        }
+
+        const currentCycle = cycles[currentCycleIndex];
+        const cycleDay = getCycleDay(currentCycle.cycleStart, today);
+        const phase = getPhaseInfo(cycleDay, cycleLength);
+
+        // Find the next upcoming period (first one after today)
+        let nextPeriodDate = null;
+        for (let i = 0; i < cycles.length; i++) {
+            if (cycles[i].nextPeriod > today) {
+                nextPeriodDate = cycles[i].nextPeriod;
+                break;
+            }
+        }
+        if (!nextPeriodDate) {
+            nextPeriodDate = cycles[cycles.length - 1].nextPeriod;
+        }
+
+        const daysUntilPeriod = Math.ceil((nextPeriodDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
+        // Build calendar for current cycle
+        let calendarHtml = '';
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(d => {
+            calendarHtml += `<div class="day-header">${d}</div>`;
+        });
+
+        const calStart = currentCycle.cycleStart;
+        const startDow = calStart.getDay();
+        for (let i = 0; i < startDow; i++) {
+            calendarHtml += '<div class="day empty"></div>';
+        }
+
+        const ovDay = currentCycle.ovulationDay;
+        for (let d = 0; d < cycleLength; d++) {
+            const currentDate = addDays(calStart, d);
+            const dayNum = d + 1;
+            let cls = 'day';
+            let label = '';
+
+            if (dayNum <= DEFAULT_PERIOD_LENGTH) {
+                cls += ' period';
+            } else if (dayNum >= ovDay - 5 && dayNum <= ovDay + 1) {
+                if (dayNum === ovDay) {
+                    cls += ' ovulation';
+                    label = 'Ovulation';
+                } else {
+                    cls += ' fertile';
+                }
+            } else if (dayNum > ovDay + 1) {
+                cls += ' luteal';
+            }
+
+            if (sameDay(currentDate, today)) {
+                cls += ' today-marker';
+            }
+
+            calendarHtml += `<div class="${cls}">
+                <span class="day-num">${currentDate.getDate()}</span>
+                ${label ? `<span class="day-label">${label}</span>` : ''}
+            </div>`;
+        }
+
+        // Build upcoming 6 periods list (skip ones in the past)
+        let upcomingHtml = '';
+        let count = 0;
+        for (let i = 0; i < cycles.length && count < 6; i++) {
+            const c = cycles[i];
+            if (c.nextPeriod > today) {
+                count++;
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                upcomingHtml += `
+                    <div class="next-cycle-row">
+                        <div class="next-cycle-label">${count === 1 ? 'Next period' : 'Period ' + count}</div>
+                        <div class="next-cycle-dates">
+                            <span class="period-date">${formatDateFull(c.nextPeriod)}</span>
+                            &nbsp;&middot;&nbsp; Fertile: <span class="fertile-date">${formatDate(calcCycle(c.nextPeriod, cycleLength).fertileStart)} - ${formatDate(calcCycle(c.nextPeriod, cycleLength).fertileEnd)}</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        const html = `
+            <div class="result-card">
+                <div class="text-center mb-3">
+                    <h2 style="font-weight: 700; font-size: 1.3rem; color: var(--text-dark);">Your Next Period</h2>
+                    <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">${formatDateFull(nextPeriodDate)}</div>
+                    <div style="font-size: 1rem; color: var(--text-muted);">${daysUntilPeriod === 0 ? "That's today!" : daysUntilPeriod === 1 ? "That's tomorrow!" : daysUntilPeriod + " days from now"}</div>
+                </div>
+
+                <div class="key-dates">
+                    <div class="key-date-box period-box">
+                        <div class="date-label">Current Cycle Day</div>
+                        <div class="date-value" style="font-size: 1.5rem;">Day ${cycleDay}</div>
+                        <div class="date-label">of ${cycleLength}</div>
+                    </div>
+                    <div class="key-date-box phase-box">
+                        <div class="date-label">Current Phase</div>
+                        <div class="date-value" style="color: ${phase.color};">${phase.name}</div>
+                        <div class="date-label">${cycleDay <= DEFAULT_PERIOD_LENGTH ? 'Days 1-' + DEFAULT_PERIOD_LENGTH : cycleDay <= currentCycle.ovulationDay + 1 ? 'Around day ' + currentCycle.ovulationDay : 'Days ' + (currentCycle.ovulationDay + 1) + '-' + cycleLength}</div>
+                    </div>
+                </div>
+
+                <div class="phase-indicator">
+                    <div class="phase-name" style="color: ${phase.color};">${phase.name}</div>
+                    <div class="phase-desc">${phase.desc}</div>
+                </div>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Cycle at a Glance</h3>
+                <div class="cycle-calendar">${calendarHtml}</div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot period"></div> Period</div>
+                    <div class="legend-item"><div class="legend-dot fertile"></div> Fertile window</div>
+                    <div class="legend-item"><div class="legend-dot ovulation"></div> Ovulation</div>
+                    <div class="legend-item"><div class="legend-dot luteal"></div> Luteal</div>
+                    <div class="legend-item"><div class="legend-dot today"></div> Today</div>
+                </div>
+
+                <h3 class="mt-4 mb-0" style="font-weight: 700; font-size: 1.15rem;">Upcoming Periods & Fertile Windows</h3>
+                <div class="next-cycles">${upcomingHtml}</div>
+            </div>
+
+            <div class="tips-section">
+                <h3>Make Your Predictions More Accurate</h3>
+                <ul>
+                    <li><strong>Track for at least 3 months</strong> — your average cycle length gets more accurate with more data points. One cycle isn't enough to know your pattern.</li>
+                    <li><strong>Log the first day of full flow</strong> — spotting before your period doesn't count as day 1. Your cycle starts with the first day of real bleeding.</li>
+                    <li><strong>Note any irregularities</strong> — stress, travel, illness, and medication changes can all shift your cycle. Tracking these helps explain why a period comes early or late.</li>
+                    <li><strong>Pay attention to symptoms</strong> — PMS symptoms like bloating, mood swings, or breast tenderness often show up in the same pattern each cycle, giving you a heads-up before your period arrives.</li>
+                </ul>
+            </div>
+        `;
+
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

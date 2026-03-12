@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ovulation Calculator: Find Your Fertile Window</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Enter your last period and cycle length to estimate when you ovulate and your most fertile days. Free, instant, no sign-up required.">
+    <meta name="keywords" content="ovulation calculator, fertile window, when do I ovulate, ovulation predictor, fertility calculator, trying to conceive">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/ovulation-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ovulation Calculator: Find Your Fertile Window">
+    <meta property="og:description" content="Enter your last period and cycle length to estimate when you ovulate and your most fertile days. Free, instant, no sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/ovulation-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Ovulation Calculator: Find Your Fertile Window">
+    <meta name="twitter:description" content="Enter your last period and cycle length to estimate when you ovulate and your most fertile days. Free, instant, no sign-up required.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ovulation Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does an ovulation calculator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An ovulation calculator estimates when you ovulate by counting backwards from your next expected period. The luteal phase (the time between ovulation and your period) is typically about 14 days. So if your cycle is 28 days, you'd likely ovulate around day 14. If your cycle is 30 days, it would be around day 16. It's an estimate — tracking additional signs like cervical mucus and basal body temperature gives you a more complete picture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fertile window?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your fertile window is the handful of days each cycle when pregnancy is possible. Sperm can survive in the reproductive tract for up to 5 days, and the egg lives for about 12-24 hours after ovulation. That gives you roughly a 6-day window: the 5 days before ovulation and ovulation day itself. The two days right before ovulation tend to be your peak fertility days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the signs of ovulation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common ovulation signs include changes in cervical mucus (it becomes clear, slippery, and stretchy — like egg whites), a slight rise in basal body temperature (about 0.5-1 degree after ovulation), mild pelvic pain on one side (called mittelschmerz), increased sex drive, light spotting, and breast tenderness. Not everyone notices all of these, and tracking over several cycles helps you learn your personal pattern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is an ovulation calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ovulation calculators give you a reasonable estimate, but they assume your luteal phase is 14 days and your cycles are consistent. In reality, ovulation timing can shift by a few days each cycle due to stress, illness, travel, or hormonal fluctuations. For more precision, combine calculator estimates with LH test strips (which detect the hormone surge right before ovulation) and cervical mucus tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I ovulate without a period?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it's possible to ovulate without getting a period — and the reverse is also true (having a period without ovulating, called an anovulatory cycle). This can happen with conditions like PCOS, during breastfeeding, or during perimenopause. If your periods are very irregular or absent and you're trying to conceive, it's worth talking to your doctor about testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the best time to take a pregnancy test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most reliable time is the day of your expected period or after. Testing too early can give a false negative because hCG (the pregnancy hormone) needs time to build up. If you can't wait, some early-detection tests work 6 days before your missed period, but accuracy improves the closer you get to your expected period date. Test with first-morning urine for the most concentrated sample."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Calendar view */
+        .cycle-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-top: 1rem;
+        }
+        .cycle-calendar .day-header {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0.25rem;
+        }
+        .cycle-calendar .day {
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            position: relative;
+        }
+        .cycle-calendar .day.empty { visibility: hidden; }
+        .cycle-calendar .day.period {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .cycle-calendar .day.fertile {
+            background: rgba(90, 155, 107, 0.2);
+            color: var(--green-deep);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.ovulation {
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+        }
+        .cycle-calendar .day.peak {
+            background: rgba(90, 155, 107, 0.35);
+            color: var(--green-deep);
+            font-weight: 600;
+        }
+        .cycle-calendar .day .day-num {
+            font-size: 0.8rem;
+        }
+        .cycle-calendar .day .day-label {
+            font-size: 0.6rem;
+            display: block;
+            line-height: 1;
+        }
+
+        /* Key dates */
+        .key-dates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 480px) {
+            .key-dates { grid-template-columns: 1fr; }
+        }
+        .key-date-box {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .key-date-box.ovulation-box {
+            background: var(--green-bg);
+            border: 2px solid var(--green);
+        }
+        .key-date-box.fertile-box {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        .key-date-box .date-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--green-deep);
+        }
+        .key-date-box.fertile-box .date-value {
+            color: var(--primary-dark);
+        }
+        .key-date-box .date-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .legend-dot.period { background: var(--accent); }
+        .legend-dot.fertile { background: rgba(90, 155, 107, 0.3); }
+        .legend-dot.ovulation { background: var(--green); }
+        .legend-dot.peak { background: rgba(90, 155, 107, 0.5); }
+
+        /* Tips section */
+        .tips-section {
+            background: var(--green-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+
+        /* Next cycle projections */
+        .next-cycles { margin-top: 1.5rem; }
+        .next-cycle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .next-cycle-row:last-child { border-bottom: none; }
+        .next-cycle-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        .next-cycle-dates {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .next-cycle-dates .ov-date {
+            color: var(--green-deep);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Ovulation Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Ovulation Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Find your estimated ovulation date and fertile window based on your cycle.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="ovulationForm">
+                        <div class="mb-3">
+                            <label for="lmpDate" class="form-label">First day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cycleLength" class="form-label">Average cycle length</label>
+                            <select class="form-select" id="cycleLength">
+                                <option value="21">21 days</option>
+                                <option value="22">22 days</option>
+                                <option value="23">23 days</option>
+                                <option value="24">24 days</option>
+                                <option value="25">25 days</option>
+                                <option value="26">26 days</option>
+                                <option value="27">27 days</option>
+                                <option value="28" selected>28 days</option>
+                                <option value="29">29 days</option>
+                                <option value="30">30 days</option>
+                                <option value="31">31 days</option>
+                                <option value="32">32 days</option>
+                                <option value="33">33 days</option>
+                                <option value="34">34 days</option>
+                                <option value="35">35 days</option>
+                                <option value="36">36 days</option>
+                                <option value="37">37 days</option>
+                                <option value="38">38 days</option>
+                                <option value="39">39 days</option>
+                                <option value="40">40 days</option>
+                            </select>
+                            <div class="form-text">Not sure? Most cycles are 26-32 days. Count from the first day of one period to the first day of the next.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Find My Fertile Window</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 640px;">
+            <div class="cta-section">
+                <h3>Track Your Ovulation Free</h3>
+                <p>Log periods, cervical mucus, LH tests, and BBT — Gaia learns your unique pattern and predicts your fertile window automatically.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=ovulation-calculator&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Ovulation</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How does an ovulation calculator work?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">An ovulation calculator estimates when you ovulate by counting backwards from your next expected period. The luteal phase (the time between ovulation and your period) is typically about 14 days. So if your cycle is 28 days, you'd likely ovulate around day 14. If your cycle is 30 days, it would be around day 16. It's an estimate — tracking additional signs like cervical mucus and basal body temperature gives you a more complete picture.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is the fertile window?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Your fertile window is the handful of days each cycle when pregnancy is possible. Sperm can survive in the reproductive tract for up to 5 days, and the egg lives for about 12-24 hours after ovulation. That gives you roughly a 6-day window: the 5 days before ovulation and ovulation day itself. The two days right before ovulation tend to be your peak fertility days.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What are the signs of ovulation?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Common ovulation signs include changes in cervical mucus (it becomes clear, slippery, and stretchy — like egg whites), a slight rise in basal body temperature (about 0.5-1 degree after ovulation), mild pelvic pain on one side (called mittelschmerz), increased sex drive, light spotting, and breast tenderness. Not everyone notices all of these, and tracking over several cycles helps you learn your personal pattern.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How accurate is an ovulation calculator?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Ovulation calculators give you a reasonable estimate, but they assume your luteal phase is 14 days and your cycles are consistent. In reality, ovulation timing can shift by a few days each cycle due to stress, illness, travel, or hormonal fluctuations. For more precision, combine calculator estimates with LH test strips (which detect the hormone surge right before ovulation) and cervical mucus tracking.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Can I ovulate without a period?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes, it's possible to ovulate without getting a period — and the reverse is also true (having a period without ovulating, called an anovulatory cycle). This can happen with conditions like PCOS, during breastfeeding, or during perimenopause. If your periods are very irregular or absent and you're trying to conceive, it's worth talking to your doctor about testing.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">When is the best time to take a pregnancy test?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The most reliable time is the day of your expected period or after. Testing too early can give a false negative because hCG (the pregnancy hormone) needs time to build up. If you can't wait, some early-detection tests work 6 days before your missed period, but accuracy improves the closer you get to your expected period date. Test with first-morning urine for the most concentrated sample.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>How to Tell If You're Ovulating</h4>
+                        <p>Signs, symptoms, and tests — everything you need to know about spotting ovulation.</p>
+                        <a href="../blog/how-to-tell-if-youre-ovulating.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Cycle Syncing: Eat, Train & Rest by Phase</h4>
+                        <p>How to align your diet, workouts, and energy with each phase of your menstrual cycle.</p>
+                        <a href="../blog/cycle-syncing-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height: 3rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // Ported from fertilityAlgos.py
+    const LUTEAL_LENGTH = 14;
+    const FERTILE_DAYS_BEFORE = 5;
+    const FERTILE_DAYS_AFTER = 1;
+    const DEFAULT_PERIOD_LENGTH = 5;
+
+    function formatDate(date) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return `${months[date.getMonth()]} ${date.getDate()}`;
+    }
+
+    function formatDateFull(date) {
+        const months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    function calcOvulation(cycleStart, cycleLength) {
+        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, DEFAULT_PERIOD_LENGTH + 1);
+        const ovulationDate = addDays(cycleStart, ovulationDay - 1);
+
+        const fertileStartDay = Math.max(ovulationDay - FERTILE_DAYS_BEFORE, 1);
+        const fertileEndDay = Math.min(ovulationDay + FERTILE_DAYS_AFTER, cycleLength);
+
+        const fertileStart = addDays(cycleStart, fertileStartDay - 1);
+        const fertileEnd = addDays(cycleStart, fertileEndDay - 1);
+
+        // Peak days: 2 days before ovulation + ovulation day
+        const peakStart = addDays(ovulationDate, -2);
+
+        // Next period
+        const nextPeriod = addDays(cycleStart, cycleLength);
+
+        // Pregnancy test date: ~14 days after ovulation (day after missed period)
+        const testDate = addDays(nextPeriod, 1);
+
+        return {
+            ovulationDate,
+            ovulationDay,
+            fertileStart,
+            fertileEnd,
+            fertileStartDay,
+            fertileEndDay,
+            peakStart,
+            nextPeriod,
+            testDate,
+        };
+    }
+
+    // Set max date
+    document.addEventListener('DOMContentLoaded', function() {
+        const input = document.getElementById('lmpDate');
+        const today = new Date();
+        input.max = today.toISOString().split('T')[0];
+        const minDate = new Date(today);
+        minDate.setDate(minDate.getDate() - 90);
+        input.min = minDate.toISOString().split('T')[0];
+    });
+
+    document.getElementById('ovulationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lmpInput = document.getElementById('lmpDate').value;
+        if (!lmpInput) return;
+
+        const parts = lmpInput.split('-');
+        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        const cycleLength = parseInt(document.getElementById('cycleLength').value);
+
+        const result = calcOvulation(lmpDate, cycleLength);
+
+        // Project next 3 cycles
+        const cycles = [result];
+        let nextStart = result.nextPeriod;
+        for (let i = 0; i < 2; i++) {
+            cycles.push(calcOvulation(nextStart, cycleLength));
+            nextStart = cycles[cycles.length - 1].nextPeriod;
+        }
+
+        // Build calendar for current cycle
+        const calendarStart = new Date(lmpDate);
+        const calendarEnd = addDays(lmpDate, cycleLength - 1);
+
+        let calendarHtml = '';
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(d => {
+            calendarHtml += `<div class="day-header">${d}</div>`;
+        });
+
+        // Empty cells before start
+        const startDow = calendarStart.getDay();
+        for (let i = 0; i < startDow; i++) {
+            calendarHtml += '<div class="day empty"></div>';
+        }
+
+        // Days of cycle
+        for (let d = 0; d < cycleLength; d++) {
+            const currentDate = addDays(lmpDate, d);
+            const dayNum = d + 1;
+            let cls = 'day';
+            let label = '';
+
+            if (dayNum <= DEFAULT_PERIOD_LENGTH) {
+                cls += ' period';
+            }
+            if (currentDate.getTime() === result.ovulationDate.getTime()) {
+                cls += ' ovulation';
+                label = 'Ovulation';
+            } else if (currentDate >= result.peakStart && currentDate < result.ovulationDate) {
+                cls += ' peak';
+                label = 'Peak';
+            } else if (currentDate >= result.fertileStart && currentDate <= result.fertileEnd) {
+                cls += ' fertile';
+            }
+
+            calendarHtml += `<div class="${cls}">
+                <span class="day-num">${currentDate.getDate()}</span>
+                ${label ? `<span class="day-label">${label}</span>` : ''}
+            </div>`;
+        }
+
+        // Next cycles projection
+        let nextCyclesHtml = '';
+        cycles.forEach((c, i) => {
+            const label = i === 0 ? 'This cycle' : i === 1 ? 'Next cycle' : 'In 2 cycles';
+            nextCyclesHtml += `
+                <div class="next-cycle-row">
+                    <div class="next-cycle-label">${label}</div>
+                    <div class="next-cycle-dates">
+                        Ovulation: <span class="ov-date">${formatDate(c.ovulationDate)}</span>
+                        &nbsp;&middot;&nbsp; Fertile: ${formatDate(c.fertileStart)} - ${formatDate(c.fertileEnd)}
+                    </div>
+                </div>
+            `;
+        });
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const isOvulationPast = result.ovulationDate < today;
+        const isFertileNow = today >= result.fertileStart && today <= result.fertileEnd;
+
+        let statusMsg = '';
+        if (isFertileNow) {
+            statusMsg = '<div class="alert alert-success mt-3" style="border-radius: 12px;"><strong>You may be in your fertile window right now.</strong> This is based on your cycle length — confirm with LH test strips for more accuracy.</div>';
+        } else if (isOvulationPast) {
+            statusMsg = '<div class="alert alert-info mt-3" style="border-radius: 12px;">Your estimated ovulation has passed for this cycle. Check the next cycle dates below.</div>';
+        }
+
+        const html = `
+            <div class="result-card">
+                <div class="key-dates">
+                    <div class="key-date-box ovulation-box">
+                        <div class="date-label">Estimated Ovulation</div>
+                        <div class="date-value">${formatDateFull(result.ovulationDate)}</div>
+                        <div class="date-label">Cycle day ${result.ovulationDay}</div>
+                    </div>
+                    <div class="key-date-box fertile-box">
+                        <div class="date-label">Fertile Window</div>
+                        <div class="date-value">${formatDate(result.fertileStart)} - ${formatDate(result.fertileEnd)}</div>
+                        <div class="date-label">${result.fertileEndDay - result.fertileStartDay + 1} days</div>
+                    </div>
+                </div>
+
+                ${statusMsg}
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Cycle at a Glance</h3>
+                <div class="cycle-calendar">${calendarHtml}</div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot period"></div> Period</div>
+                    <div class="legend-item"><div class="legend-dot fertile"></div> Fertile</div>
+                    <div class="legend-item"><div class="legend-dot peak"></div> Peak fertility</div>
+                    <div class="legend-item"><div class="legend-dot ovulation"></div> Ovulation</div>
+                </div>
+
+                <h3 class="mt-4 mb-0" style="font-weight: 700; font-size: 1.15rem;">Upcoming Cycles</h3>
+                <div class="next-cycles">${nextCyclesHtml}</div>
+
+                <div class="text-center mt-3" style="font-size: 0.9rem; color: var(--text-muted);">
+                    Next period expected: <strong>${formatDateFull(result.nextPeriod)}</strong>
+                    &nbsp;&middot;&nbsp; Earliest pregnancy test: <strong>${formatDateFull(result.testDate)}</strong>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>Getting the Most From This Calculator</h3>
+                <ul>
+                    <li><strong>Track cervical mucus</strong> — when it looks like raw egg whites (clear, stretchy), ovulation is likely close. This is one of the most reliable free methods.</li>
+                    <li><strong>Use LH test strips</strong> — they detect the luteinizing hormone surge that happens 24-36 hours before ovulation. Start testing a few days before your estimated ovulation date.</li>
+                    <li><strong>Track basal body temperature (BBT)</strong> — your temperature rises slightly after ovulation. Over several cycles, this confirms your ovulation pattern.</li>
+                    <li><strong>Remember, this is an estimate</strong> — stress, travel, illness, and other factors can shift ovulation by several days. The more cycles you track, the better your predictions get.</li>
+                </ul>
+            </div>
+        `;
+
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

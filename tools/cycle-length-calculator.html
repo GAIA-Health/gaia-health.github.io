@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cycle Length Calculator: Is My Period Regular?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Enter your last 3-12 period start dates to calculate your average cycle length, see how regular your cycles are, and spot patterns.">
+    <meta name="keywords" content="cycle length calculator, period calculator, menstrual cycle length, is my period regular, irregular periods, average cycle length, period tracker">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/cycle-length-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cycle Length Calculator: Is My Period Regular?">
+    <meta property="og:description" content="Enter your last 3-12 period start dates to calculate your average cycle length, see how regular your cycles are, and spot patterns.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/cycle-length-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Cycle Length Calculator: Is My Period Regular?">
+    <meta name="twitter:description" content="Enter your last 3-12 period start dates to calculate your average cycle length, see how regular your cycles are, and spot patterns.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cycle Length Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a normal cycle length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A \"normal\" cycle length falls anywhere between 21 and 35 days — there's a pretty wide range. The textbook 28-day cycle gets all the attention, but only about 13% of people actually have one. Most cycles land somewhere between 25 and 30 days. What matters more than hitting a specific number is whether your cycles are consistent for you. If yours is reliably 32 days, that's your normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my cycle length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count from the first day of one period (day 1 of bleeding) to the day before your next period starts. That's one cycle. So if your period starts on March 1 and your next period starts on March 29, your cycle length is 28 days. The key is tracking several cycles — at least 3 — because a single cycle doesn't tell you much. Your average gives you a much clearer picture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it normal for cycle length to vary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. A variation of 1-4 days from cycle to cycle is completely normal and nothing to worry about. Your body isn't a clock — things like stress, travel, sleep changes, and even intense exercise can nudge your cycle a day or two in either direction. If your cycles swing by more than 7-8 days regularly, that's worth looking into with your doctor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What causes irregular periods?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lots of things can throw off your cycle. The most common culprits are stress (your body literally delays ovulation under stress), significant weight changes, over-exercising, thyroid issues, and PCOS. Starting or stopping hormonal birth control can cause irregularity for a few months too. Less common causes include uterine fibroids, endometriosis, and pituitary disorders. If your periods have been irregular for more than 3 months, it's a good idea to check in with your healthcare provider."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I see a doctor about my cycle length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the situation, but here are some clear signals: your cycle is consistently shorter than 21 days or longer than 35 days, you've gone 90+ days without a period (and you're not pregnant), your cycle length varies by more than 7-8 days month to month, you're bleeding for more than 7 days, or you're experiencing very heavy bleeding. Bringing your tracked data to the appointment makes it way easier for your doctor to spot patterns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does cycle length change with age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and this is totally normal. In your teens and early twenties, cycles tend to be longer and more variable as your body is still finding its rhythm. Your late twenties through mid-thirties are usually the most regular years. Then in your late thirties and forties, cycles often start getting shorter and more variable again as you approach perimenopause. Eventually cycles get longer and further apart before stopping altogether at menopause. Tracking helps you see these shifts as they happen."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"] {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Add/remove date buttons */
+        .btn-add-date {
+            background: none;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-family: 'Quicksand', sans-serif;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            width: 100%;
+        }
+        .btn-add-date:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+        .btn-remove-date {
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .btn-remove-date:hover {
+            color: var(--accent);
+        }
+        .date-input-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .date-input-row input {
+            flex: 1;
+        }
+        .date-input-row .date-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Average display */
+        .avg-display {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .avg-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+        .avg-unit {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Regularity badge */
+        .regularity-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 0.75rem;
+        }
+        .regularity-badge.very-regular {
+            background: rgba(90, 155, 107, 0.15);
+            color: var(--green-deep);
+        }
+        .regularity-badge.regular {
+            background: rgba(90, 155, 107, 0.15);
+            color: var(--green-deep);
+        }
+        .regularity-badge.somewhat-irregular {
+            background: rgba(255, 193, 7, 0.15);
+            color: #856404;
+        }
+        .regularity-badge.irregular {
+            background: rgba(232, 67, 147, 0.15);
+            color: #a71d5d;
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+        .stat-box {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .stat-box.range-box {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        .stat-box.predict-box {
+            background: var(--green-bg);
+            border: 2px solid var(--green);
+        }
+        .stat-box .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .stat-box.predict-box .stat-value {
+            color: var(--green-deep);
+        }
+        .stat-box .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Cycle bars chart */
+        .cycle-bars {
+            margin-top: 1.5rem;
+        }
+        .cycle-bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            gap: 0.75rem;
+        }
+        .cycle-bar-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 70px;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .cycle-bar-track {
+            flex: 1;
+            background: #f0f0f0;
+            border-radius: 8px;
+            height: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cycle-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #fff;
+            min-width: 40px;
+        }
+        .cycle-bar-fill.normal { background: var(--green); }
+        .cycle-bar-fill.short { background: var(--primary); }
+        .cycle-bar-fill.long { background: var(--accent); }
+        .avg-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-dark);
+            z-index: 2;
+        }
+
+        /* Individual cycles list */
+        .cycles-list {
+            margin-top: 1rem;
+        }
+        .cycle-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+        .cycle-item:last-child { border-bottom: none; }
+        .cycle-item .cycle-dates { color: var(--text-muted); }
+        .cycle-item .cycle-length-val {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Tips section */
+        .tips-section {
+            background: var(--green-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+
+        /* Error message */
+        .error-msg {
+            background: rgba(232, 67, 147, 0.1);
+            color: #a71d5d;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .error-msg.show { display: block; }
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Cycle Length Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Cycle Length Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Enter your last 3-12 period start dates to calculate your average cycle length, see how regular your cycles are, and spot patterns.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="cycleLengthForm">
+                        <label class="form-label">Period start dates <span style="font-weight: 400; color: var(--text-muted);">(earliest to most recent)</span></label>
+                        <div id="dateInputs">
+                            <div class="date-input-row">
+                                <span class="date-label">1</span>
+                                <input type="date" class="form-control period-date" required>
+                            </div>
+                            <div class="date-input-row">
+                                <span class="date-label">2</span>
+                                <input type="date" class="form-control period-date" required>
+                            </div>
+                            <div class="date-input-row">
+                                <span class="date-label">3</span>
+                                <input type="date" class="form-control period-date" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 mt-2">
+                            <button type="button" class="btn-add-date" id="addDateBtn">
+                                <i class="bi bi-plus-circle me-1"></i> Add another period
+                            </button>
+                        </div>
+                        <div id="errorMsg" class="error-msg"></div>
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-calculate">Calculate My Cycle Length</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 640px;">
+            <div class="cta-section">
+                <h3>Start Tracking Your Cycle Free</h3>
+                <p>Log your periods, symptoms, and moods — Gaia automatically calculates your cycle length, predicts your next period, and spots patterns over time.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=cycle-length-calculator&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Cycle Length</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What is a normal cycle length?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">A "normal" cycle length falls anywhere between 21 and 35 days — there's a pretty wide range. The textbook 28-day cycle gets all the attention, but only about 13% of people actually have one. Most cycles land somewhere between 25 and 30 days. What matters more than hitting a specific number is whether your cycles are consistent for <em>you</em>. If yours is reliably 32 days, that's your normal.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How do I calculate my cycle length?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Count from the first day of one period (day 1 of bleeding) to the day before your next period starts. That's one cycle. So if your period starts on March 1 and your next period starts on March 29, your cycle length is 28 days. The key is tracking several cycles — at least 3 — because a single cycle doesn't tell you much. Your average gives you a much clearer picture.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Is it normal for cycle length to vary?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Absolutely. A variation of 1-4 days from cycle to cycle is completely normal and nothing to worry about. Your body isn't a clock — things like stress, travel, sleep changes, and even intense exercise can nudge your cycle a day or two in either direction. If your cycles swing by more than 7-8 days regularly, that's worth looking into with your doctor.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What causes irregular periods?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Lots of things can throw off your cycle. The most common culprits are stress (your body literally delays ovulation under stress), significant weight changes, over-exercising, thyroid issues, and PCOS. Starting or stopping hormonal birth control can cause irregularity for a few months too. Less common causes include uterine fibroids, endometriosis, and pituitary disorders. If your periods have been irregular for more than 3 months, it's a good idea to check in with your healthcare provider.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Should I see a doctor about my cycle length?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">It depends on the situation, but here are some clear signals: your cycle is consistently shorter than 21 days or longer than 35 days, you've gone 90+ days without a period (and you're not pregnant), your cycle length varies by more than 7-8 days month to month, you're bleeding for more than 7 days, or you're experiencing very heavy bleeding. Bringing your tracked data to the appointment makes it way easier for your doctor to spot patterns.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Does cycle length change with age?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes, and this is totally normal. In your teens and early twenties, cycles tend to be longer and more variable as your body is still finding its rhythm. Your late twenties through mid-thirties are usually the most regular years. Then in your late thirties and forties, cycles often start getting shorter and more variable again as you approach perimenopause. Eventually cycles get longer and further apart before stopping altogether at menopause. Tracking helps you see these shifts as they happen.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>The Complete Guide to Period Tracking</h4>
+                        <p>Everything you need to know about tracking your period — what to log, why it matters, and how to make sense of your data.</p>
+                        <a href="../blog/period-tracking-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>How to Tell If You're Ovulating</h4>
+                        <p>Signs, symptoms, and tests — everything you need to know about spotting ovulation.</p>
+                        <a href="../blog/how-to-tell-if-youre-ovulating.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="height: 3rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const MAX_DATES = 12;
+    const MIN_DATES = 3;
+
+    function formatDate(date) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return `${months[date.getMonth()]} ${date.getDate()}`;
+    }
+
+    function formatDateFull(date) {
+        const months = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    function parseInputDate(val) {
+        const parts = val.split('-');
+        return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+    }
+
+    // Set max dates on inputs
+    function setMaxDate(input) {
+        const today = new Date();
+        input.max = today.toISOString().split('T')[0];
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.period-date').forEach(setMaxDate);
+        updateDateLabels();
+    });
+
+    function updateDateLabels() {
+        const rows = document.querySelectorAll('#dateInputs .date-input-row');
+        rows.forEach((row, i) => {
+            row.querySelector('.date-label').textContent = i + 1;
+        });
+        // Show/hide add button
+        const addBtn = document.getElementById('addDateBtn');
+        if (rows.length >= MAX_DATES) {
+            addBtn.style.display = 'none';
+        } else {
+            addBtn.style.display = 'block';
+        }
+    }
+
+    // Add date input
+    document.getElementById('addDateBtn').addEventListener('click', function() {
+        const container = document.getElementById('dateInputs');
+        const count = container.querySelectorAll('.date-input-row').length;
+        if (count >= MAX_DATES) return;
+
+        const row = document.createElement('div');
+        row.className = 'date-input-row';
+        row.innerHTML = `
+            <span class="date-label">${count + 1}</span>
+            <input type="date" class="form-control period-date">
+            <button type="button" class="btn-remove-date" title="Remove"><i class="bi bi-x-lg"></i></button>
+        `;
+        container.appendChild(row);
+
+        const newInput = row.querySelector('input');
+        setMaxDate(newInput);
+
+        row.querySelector('.btn-remove-date').addEventListener('click', function() {
+            row.remove();
+            updateDateLabels();
+        });
+
+        updateDateLabels();
+    });
+
+    // Form submission
+    document.getElementById('cycleLengthForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const errorEl = document.getElementById('errorMsg');
+        errorEl.classList.remove('show');
+        errorEl.textContent = '';
+
+        // Collect dates
+        const inputs = document.querySelectorAll('.period-date');
+        const dates = [];
+        let hasEmpty = false;
+
+        inputs.forEach(input => {
+            if (input.value) {
+                dates.push(parseInputDate(input.value));
+            } else {
+                hasEmpty = true;
+            }
+        });
+
+        if (dates.length < MIN_DATES) {
+            errorEl.textContent = 'Please enter at least 3 period start dates to calculate your cycle length.';
+            errorEl.classList.add('show');
+            return;
+        }
+
+        // Sort dates chronologically
+        dates.sort((a, b) => a - b);
+
+        // Check for duplicate dates
+        for (let i = 1; i < dates.length; i++) {
+            if (dates[i].getTime() === dates[i - 1].getTime()) {
+                errorEl.textContent = 'Two of your dates are the same. Each entry should be a different period start date.';
+                errorEl.classList.add('show');
+                return;
+            }
+        }
+
+        // Calculate cycle lengths
+        const cycleLengths = [];
+        const cycleDetails = [];
+
+        for (let i = 1; i < dates.length; i++) {
+            const diffMs = dates[i] - dates[i - 1];
+            const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+
+            if (diffDays < 10) {
+                errorEl.textContent = `One of your cycles is only ${diffDays} days. Double-check your dates — a cycle shorter than 10 days usually means a date was entered incorrectly.`;
+                errorEl.classList.add('show');
+                return;
+            }
+
+            if (diffDays > 90) {
+                errorEl.textContent = `One of your cycles is ${diffDays} days. If you missed a period, that's okay — but make sure you haven't skipped a date. You can remove dates that don't belong.`;
+                errorEl.classList.add('show');
+                return;
+            }
+
+            cycleLengths.push(diffDays);
+            cycleDetails.push({
+                start: dates[i - 1],
+                end: dates[i],
+                length: diffDays
+            });
+        }
+
+        // Calculate stats
+        const sum = cycleLengths.reduce((a, b) => a + b, 0);
+        const avg = sum / cycleLengths.length;
+        const avgRounded = Math.round(avg * 10) / 10;
+
+        const shortest = Math.min(...cycleLengths);
+        const longest = Math.max(...cycleLengths);
+
+        // Standard deviation
+        const sqDiffs = cycleLengths.map(v => Math.pow(v - avg, 2));
+        const avgSqDiff = sqDiffs.reduce((a, b) => a + b, 0) / cycleLengths.length;
+        const stdDev = Math.sqrt(avgSqDiff);
+        const stdDevRounded = Math.round(stdDev * 10) / 10;
+
+        // Regularity assessment
+        let regularity, regularityClass, regularityDesc;
+        if (stdDev <= 2) {
+            regularity = 'Very regular';
+            regularityClass = 'very-regular';
+            regularityDesc = 'Your cycles are very consistent. Nice work tracking!';
+        } else if (stdDev <= 4) {
+            regularity = 'Regular';
+            regularityClass = 'regular';
+            regularityDesc = 'Your cycles have some normal variation — this is typical and healthy.';
+        } else if (stdDev <= 7) {
+            regularity = 'Somewhat irregular';
+            regularityClass = 'somewhat-irregular';
+            regularityDesc = 'Your cycles vary more than average. Tracking more cycles will help you see if there\'s a pattern.';
+        } else {
+            regularity = 'Irregular';
+            regularityClass = 'irregular';
+            regularityDesc = 'Your cycles vary quite a bit. Consider sharing your tracking data with your doctor.';
+        }
+
+        // Predicted next period
+        const lastDate = dates[dates.length - 1];
+        const nextPeriod = addDays(lastDate, Math.round(avg));
+
+        // Build cycle bars chart
+        const maxLen = Math.max(longest, 45); // Scale to at least 45 for visual clarity
+        let barsHtml = '';
+        cycleDetails.forEach((c, i) => {
+            const pct = (c.length / maxLen) * 100;
+            let barClass = 'normal';
+            if (c.length < 21) barClass = 'short';
+            else if (c.length > 35) barClass = 'long';
+
+            const avgPct = (avg / maxLen) * 100;
+
+            barsHtml += `
+                <div class="cycle-bar-row">
+                    <span class="cycle-bar-label">${formatDate(c.start)}</span>
+                    <div class="cycle-bar-track">
+                        <div class="cycle-bar-fill ${barClass}" style="width: ${pct}%">${c.length}d</div>
+                        <div class="avg-line" style="left: ${avgPct}%" title="Average: ${avgRounded} days"></div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Build individual cycles list
+        let cyclesListHtml = '';
+        cycleDetails.forEach((c, i) => {
+            cyclesListHtml += `
+                <div class="cycle-item">
+                    <span class="cycle-dates">${formatDate(c.start)} &rarr; ${formatDate(c.end)}</span>
+                    <span class="cycle-length-val">${c.length} days</span>
+                </div>
+            `;
+        });
+
+        // Build results HTML
+        const html = `
+            <div class="result-card">
+                <div class="avg-display">
+                    <div class="avg-number">${avgRounded}</div>
+                    <div class="avg-unit">day average cycle</div>
+                    <div class="regularity-badge ${regularityClass}">${regularity}</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; margin-bottom: 0;">${regularityDesc}</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box range-box">
+                        <div class="stat-label">Cycle Range</div>
+                        <div class="stat-value">${shortest} - ${longest} days</div>
+                        <div class="stat-label">${stdDevRounded} day std deviation</div>
+                    </div>
+                    <div class="stat-box predict-box">
+                        <div class="stat-label">Next Period Predicted</div>
+                        <div class="stat-value">${formatDateFull(nextPeriod)}</div>
+                        <div class="stat-label">Based on your average</div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Cycle Lengths</h3>
+                <div class="cycle-bars">${barsHtml}</div>
+                <div class="text-center mt-1" style="font-size: 0.75rem; color: var(--text-muted);">Vertical line = your average (${avgRounded} days)</div>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Cycle Breakdown</h3>
+                <div class="cycles-list">${cyclesListHtml}</div>
+            </div>
+
+            <div class="tips-section">
+                <h3>What Your Results Mean</h3>
+                <ul>
+                    <li><strong>21-35 days is considered normal</strong> — most people fall in this range. If your average is outside it, it doesn't necessarily mean something's wrong, but it's worth mentioning to your doctor.</li>
+                    <li><strong>Consistency matters more than the exact number</strong> — a steady 33-day cycle is healthier than one that jumps between 24 and 38 days.</li>
+                    <li><strong>More data = better insights</strong> — 3 cycles gives you a starting point, but 6-12 cycles reveals much more reliable patterns.</li>
+                    <li><strong>Track beyond just dates</strong> — logging symptoms, mood, and energy alongside your periods helps you understand the full picture of your cycle.</li>
+                </ul>
+            </div>
+        `;
+
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>
