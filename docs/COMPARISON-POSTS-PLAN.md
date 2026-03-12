@@ -1,7 +1,7 @@
 # Comparison Blog Post Series: Planning Document
 
 **Created:** March 11, 2026
-**Status:** Post 1 (PCOS) published. Posts 2-5 in planning (pre-writing).
+**Status:** All 5 posts published (March 11, 2026). Post 2 was split into separate fertility/TTC and IVF posts (6 posts total).
 **Proven format reference:** `blog/how-to-choose-period-tracker-app.html` (73,692 impressions in 3 months)
 
 ---
@@ -126,8 +126,12 @@ The period tracker comparison post drives 82% of all search impressions. It prov
 
 ### Post 2: Best Fertility & IVF Tracking App (2026)
 
-**File:** `blog/best-fertility-ivf-tracking-app.html`
-**URL slug:** `/blog/best-fertility-ivf-tracking-app.html`
+**Status:** Published (March 11, 2026). Split into two posts:
+- **Fertility/TTC:** `blog/best-fertility-tracking-app.html` (8 apps compared)
+- **IVF:** `blog/best-ivf-tracking-app.html` (6 apps compared)
+
+**Original plan file:** `blog/best-fertility-ivf-tracking-app.html`
+**Actual URL slugs:** `/blog/best-fertility-tracking-app.html` and `/blog/best-ivf-tracking-app.html`
 
 #### Target Keywords
 - Primary: `best fertility tracking app`, `IVF tracker app`, `best TTC app`
@@ -213,6 +217,8 @@ The period tracker comparison post drives 82% of all search impressions. It prov
 
 ### Post 3: Best Perimenopause & Menopause Tracking App (2026)
 
+**Status:** Published (March 11, 2026)
+
 **File:** `blog/best-perimenopause-tracking-app.html`
 **URL slug:** `/blog/best-perimenopause-tracking-app.html`
 
@@ -296,6 +302,8 @@ The period tracker comparison post drives 82% of all search impressions. It prov
 ---
 
 ### Post 4: Best Pregnancy Tracking App (2026)
+
+**Status:** Published (March 11, 2026)
 
 **File:** `blog/best-pregnancy-tracking-app.html`
 **URL slug:** `/blog/best-pregnancy-tracking-app.html`
@@ -382,6 +390,8 @@ The period tracker comparison post drives 82% of all search impressions. It prov
 ---
 
 ### Post 5: Best Symptom Tracker App for Women (2026)
+
+**Status:** Published (March 11, 2026)
 
 **File:** `blog/best-symptom-tracker-app-women.html`
 **URL slug:** `/blog/best-symptom-tracker-app-women.html`
