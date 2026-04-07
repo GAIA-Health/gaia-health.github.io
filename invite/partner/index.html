@@ -123,6 +123,15 @@
             text-decoration: none;
         }
     </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEM6KB1QWF');
+    </script>
+    <script src="/analytics-events.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -136,7 +145,7 @@
 
         <a class="btn" id="open-app" href="#">Open in Gaia</a>
         <br>
-        <a class="btn" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);" href="https://apps.apple.com/app/go-go-gaia/id6608432371">Download Gaia</a>
+        <a class="btn" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=invite-partner&mt=8">Download Gaia</a>
 
         <div class="instructions">
             <p class="instructions-title">How to Connect</p>
@@ -166,7 +175,7 @@
         }
 
         const deepLink = code ? 'gogogaia://invite/partner/' + code : '';
-        const appStoreUrl = 'https://apps.apple.com/app/go-go-gaia/id6608432371';
+        const appStoreUrl = 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=invite-partner&mt=8';
 
         // Set up button links
         const openBtn = document.getElementById('open-app');
