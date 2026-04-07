@@ -1,8 +1,11 @@
 /**
- * Go Go Gaia — CTA Event Tracking
- * Tracks download (App Store) and login button clicks via GA4.
- * Uses event delegation so it works for every button pattern on the site.
+ * Go Go Gaia — Analytics Event Tracking
+ * 1. CTA clicks (download + login)
+ * 2. Scroll depth (25%, 50%, 75%, 100%)
+ * 3. Engaged reader (30s+ on page)
  */
+
+/* ── CTA click tracking ── */
 document.addEventListener('click', function (e) {
   var link = e.target.closest('a');
   if (!link || typeof gtag !== 'function') return;
@@ -30,3 +33,42 @@ document.addEventListener('click', function (e) {
     });
   }
 });
+
+/* ── Scroll depth tracking ── */
+(function () {
+  if (typeof gtag !== 'function') return;
+  var marks = [25, 50, 75, 100];
+  var fired = {};
+
+  function getScrollPercent() {
+    var doc = document.documentElement;
+    var body = document.body;
+    var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
+    var scrollHeight = Math.max(doc.scrollHeight, body.scrollHeight) - window.innerHeight;
+    if (scrollHeight <= 0) return 100;
+    return Math.round((scrollTop / scrollHeight) * 100);
+  }
+
+  window.addEventListener('scroll', function () {
+    var pct = getScrollPercent();
+    for (var i = 0; i < marks.length; i++) {
+      if (pct >= marks[i] && !fired[marks[i]]) {
+        fired[marks[i]] = true;
+        gtag('event', 'scroll_depth', {
+          percent: marks[i],
+          page_path: window.location.pathname
+        });
+      }
+    }
+  }, { passive: true });
+})();
+
+/* ── Engaged reader (30s on page) ── */
+(function () {
+  if (typeof gtag !== 'function') return;
+  setTimeout(function () {
+    gtag('event', 'engaged_reader', {
+      page_path: window.location.pathname
+    });
+  }, 30000);
+})();
