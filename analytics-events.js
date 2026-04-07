@@ -3,6 +3,8 @@
  * 1. CTA clicks (download + login)
  * 2. Scroll depth (25%, 50%, 75%, 100%)
  * 3. Engaged reader (30s+ on page)
+ * 4. CTA visibility (IntersectionObserver on .blog-cta-box)
+ * 5. Blog internal navigation clicks
  */
 
 /* ── CTA click tracking ── */
@@ -72,3 +74,43 @@ document.addEventListener('click', function (e) {
     });
   }, 30000);
 })();
+
+/* ── CTA box visibility tracking ── */
+(function () {
+  if (typeof gtag !== 'function' || typeof IntersectionObserver === 'undefined') return;
+  var boxes = document.querySelectorAll('.blog-cta-box');
+  if (!boxes.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        var box = entries[i].target;
+        var heading = box.querySelector('h3, h4, h5');
+        gtag('event', 'cta_visible', {
+          cta_text: heading ? heading.textContent.trim().substring(0, 60) : 'unknown',
+          page_path: window.location.pathname
+        });
+        observer.unobserve(box);
+      }
+    }
+  }, { threshold: 0.5 });
+
+  for (var i = 0; i < boxes.length; i++) {
+    observer.observe(boxes[i]);
+  }
+})();
+
+/* ── Blog internal navigation clicks ── */
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a');
+  if (!link || typeof gtag !== 'function') return;
+  if (link.hostname !== window.location.hostname) return;
+  if (link.pathname === window.location.pathname) return;
+  if (!window.location.pathname.match(/^\/blog\//)) return;
+
+  gtag('event', 'blog_internal_click', {
+    from_page: window.location.pathname,
+    to_page: link.pathname,
+    link_text: link.textContent.trim().substring(0, 60)
+  });
+});
