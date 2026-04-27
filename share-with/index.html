@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Share Your Health Data - Go Go Gaia</title>
+    <meta name="description" content="Share your health data on Go Go Gaia - the all-in-one women's health tracking app.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/Logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 420px;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            border-radius: 18px;
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        .username-label {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .username {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #e91e63;
+            margin-bottom: 32px;
+            padding: 16px 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(233, 30, 99, 0.1);
+            display: inline-block;
+            word-break: break-all;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+        }
+        .instructions {
+            margin-top: 32px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .instructions-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .steps {
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+        .steps li {
+            margin-bottom: 4px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEM6KB1QWF');
+    </script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="/Logo1.png" alt="Go Go Gaia" class="logo">
+        <div class="icon" aria-hidden="true">&#x1F49E;</div>
+        <h1>Share Your Health Data</h1>
+        <p class="subtitle"><span id="requester-display">Someone</span> is asking you to share your Gaia health data with them. Open Gaia to choose what you're comfortable sharing — nothing is shared automatically.</p>
+
+        <p class="username-label">Requested By</p>
+        <p class="username" id="username">@—</p>
+
+        <a class="btn" id="open-app" href="#">Open in Gaia</a>
+        <br>
+        <a class="btn" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=share-with&mt=8">Download Gaia</a>
+
+        <div class="instructions">
+            <p class="instructions-title">How to Share</p>
+            <ol class="steps">
+                <li>Download or open the Gaia app</li>
+                <li>Tap their profile or use the prompt that appears</li>
+                <li>Pick what you're comfortable sharing</li>
+                <li>You can change or revoke sharing anytime</li>
+            </ol>
+        </div>
+
+        <p class="footer">
+            <a href="/">Learn more about Go Go Gaia</a>
+        </p>
+    </div>
+
+    <script>
+        // Extract username from URL path: /share-with/{username}
+        const path = window.location.pathname;
+        const parts = path.split('/share-with/');
+        let username = '';
+        if (parts.length > 1) {
+            // Strip trailing slashes and any extra path segments
+            username = parts[1].replace(/\/.*$/, '').trim();
+            if (username) {
+                document.getElementById('username').textContent = '@' + username;
+                document.getElementById('requester-display').textContent = '@' + username;
+            }
+        }
+
+        const deepLink = username ? 'gogogaia://share-with/' + encodeURIComponent(username) : '';
+        const appStoreUrl = 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=share-with&mt=8';
+
+        // Set up button links
+        const openBtn = document.getElementById('open-app');
+        openBtn.href = deepLink || appStoreUrl;
+
+        // Auto-redirect: try deep link, fall back to App Store
+        if (username) {
+            let redirectTimer;
+
+            // When user leaves the page (app opened), cancel the fallback
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) clearTimeout(redirectTimer);
+            });
+
+            window.addEventListener('blur', function() {
+                clearTimeout(redirectTimer);
+            });
+
+            // Try to open the app
+            window.location.href = deepLink;
+
+            // If still here after 1.5s, the app isn't installed — go to App Store
+            redirectTimer = setTimeout(function() {
+                window.location.href = appStoreUrl;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
