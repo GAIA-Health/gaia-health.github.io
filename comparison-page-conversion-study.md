@@ -294,6 +294,58 @@ Added 6 inline body links from authoritative guide pages to the zombie compariso
 
 ---
 
+### 2026-05-06 — Site-wide internal-link cleanup + invisible-page title fixes
+**Commits:** `b527790`, `80c8238`, `7910c26`, `a39a712`, `74fe0d1`, `174b634`
+
+**Audit findings:**
+
+A comprehensive incoming-link audit across all 28 blog pages found that, after the zombie revival on 2026-05-05, the only pages still missing impressions were two evergreen guides that had **plenty of internal links but invisible search performance** — `birth-control-guide` (10 incoming links, 0 impressions/3mo) and `period-tracking-guide` (20 incoming links, 0 impressions/3mo). Diagnosis was title-vs-query mismatch competing with authority sites, not a linking gap.
+
+Also found 11 evergreen pages with stale `dateModified` (frozen at 2026-02-24 or older) and one missing card on the blog index (clue-vs-flo).
+
+**Changes shipped:**
+
+1. **Surfaced clue-vs-flo on blog index** (`b527790`). It had zero incoming links from anywhere on the site. Also fixed stale "5 Apps Compared" → "7 Apps Compared" on the PCOS card.
+
+2. **"Other App Comparisons" section** added to all 8 comparison pages (`80c8238`). A dedicated cross-linking section right after the existing "Related Articles" section. Each page now links to 4-7 peer comparison pages with descriptive anchor text. Result: every comparison page now has 6+ incoming site-internal links (was 0-22 range; clue-vs-flo specifically went 0→6).
+
+3. **dateModified refreshed to 2026-05-06** on 11 evergreen pages (`7910c26`): am-i-pregnant, birth-control, complete-guide-to-pcos, cycle-syncing-app, cycle-syncing-guide, fitness-tracker-cycle, habit-tracking-success, menopause-guide, mood-tracking-benefits, perimenopause-guide, period-tracking-guide. Skipped 3 seasonal pages (the 2026 New Year and January habits ones — those are dated content). Zero ranking risk, freshness signal Google rewards.
+
+4. **Training-app content backlog added** (`a39a712`) — marathon, cycling, triathlon comparison page ideas with pre-build research checklist (audit nutriease iOS repo for shipped functionality, research what Strava/Garmin/Runna/TrainingPeaks lack around female physiology, position Go Go Gaia as complementary not replacement).
+
+5. **Title rewrites for the two invisible high-link pages:**
+
+   **birth-control-guide** (`74fe0d1`):
+   - Title: "Birth Control Guide 2026: Every Method Compared (Chart Included)" → "How to Choose Birth Control: 12 Methods Compared (2026)"
+   - H1: aligned to "How to Choose Birth Control: A Side-by-Side Comparison of 12 Methods"
+   - Meta description sharpened to specific methods + comparison framing
+   - Targets "how to choose birth control" decision-aid query instead of "birth control guide" head term competing with Planned Parenthood/Mayo/NHS
+
+   **period-tracking-guide** (`174b634`):
+   - Title: "Period Tracking: What to Track Beyond Just Your Dates" → "How to Track Your Period: A Beginner's Checklist"
+   - H1 left as-is (already keyword-rich)
+   - Targets "how to track your period," "period tracking for beginners" direct-intent queries
+
+   URLs unchanged on both — all 10/20 incoming internal links still resolve.
+
+**Baselines (all four invisible-page diagnostics, last 30d ending 2026-05-04):**
+
+| Page | Sessions | GSC clicks (3mo) | GSC impressions (3mo) | Incoming links |
+|---|---|---|---|---|
+| birth-control-guide | (low) | 0 | 0 | 10 |
+| period-tracking-guide | (low) | 0 | 0 | 20 |
+
+**Hypothesis:** Both pages start showing GSC impressions within 4-6 weeks as Google re-crawls and the new titles align with searcher intent. Realistic 30-day target: 100+ impressions each. If still zero by 2026-06-19, the content itself may need restructuring (not just titles) — those queries may demand different page formats than what we have.
+
+**Watching:**
+- GSC impressions per page (currently 0)
+- Whether either page starts ranking for "how to choose birth control" / "how to track your period" / "period tracking for beginners"
+- No regression on the 11 evergreen pages whose dateModified was bumped (these are already ranking — freshness signal should help, not hurt)
+
+**Next data check:** 2026-05-19 (same checkpoint).
+
+---
+
 ## Appendix: page-by-page structural inventory
 
 | Page | Pain-point hero | GGG in Quick Answer | First app section | App count | Conv rate |
