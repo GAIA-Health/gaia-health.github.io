@@ -225,6 +225,48 @@ Likely no, if we're surgical. The page sits at position 5.93 on a high-volume he
 
 ---
 
+### 2026-05-05 — Zombie comparison pages revived
+**Commits:** `614a041`, `702df8a`, `fc33254`, `312c8e9`, `4d649cb`, `b81a172`
+
+**The zombie audit found:** 4 pages (best-ivf, best-symptom-tracker, best-pcos, best-fertility) had been live since 2026-03-12 with effectively 0 impressions. Diagnosis: a mix of Go-Go-Gaia-first ordering (same anti-pattern as the period page) AND weak inline body linking from authoritative guide pages. Most existing internal links were in footer "Related" cards, which Google weights lower than contextual body links.
+
+**Changes shipped to 5 comparison pages:**
+- **`best-pcos-tracking-app.html`** — Quick Answer + detail sections reordered: Clue → Flo → AskPCOS → **Go Go Gaia (4th)** → Bearable → PCOS Tracker → Cysterhood. Was Go Go Gaia 1st of 7. dateModified bumped to 2026-05-05. Last Updated label added.
+- **`best-perimenopause-tracking-app.html`** — Reordered: Balance → Health & Her → Clue → **Go Go Gaia (4th)** → Caria → Flo → Midday → Perry. Was Go Go Gaia 1st of 8. Same date refresh.
+- **`best-fertility-tracking-app.html`** — Quick Answer reordered to match detail (which already had GGG mid-list); slight detail nudge from 3rd to 4th. New order: Natural Cycles → Fertility Friend → Premom → **Go Go Gaia (4th)** → Clue → Glow → Flo → Ovia. Same date refresh.
+- **`best-symptom-tracker-app-women.html`** — Reordered: Bearable → Clue → **Go Go Gaia (3rd of 5)** → Embody → Flo. Was Go Go Gaia 1st in Quick Answer / 2nd in detail. Same date refresh.
+- **`best-ivf-tracking-app.html`** — Already had Go Go Gaia at 5th of 6 (good order). Just dateModified refresh.
+
+**Cross-cutting internal linking commit (`b81a172`):**
+
+Added 6 inline body links from authoritative guide pages to the zombie comparison pages, with descriptive anchor text:
+- `am-i-pregnant-guide.html` → `best-fertility-tracking-app.html` (TTC section) + `best-ivf-tracking-app.html` (fertility specialist follow-up)
+- `cycle-syncing-guide.html` → `best-symptom-tracker-app-women.html` (irregular cycle symptoms)
+- `perimenopause-guide.html` → `best-perimenopause-tracking-app.html` (tracking-app section)
+- `complete-guide-to-pcos.html` → `best-pcos-tracking-app.html` (doctor visit prep) + `best-fertility-tracking-app.html` and `best-ivf-tracking-app.html` (PCOS-TTC section)
+
+**Baselines (last 30d ending 2026-05-04):**
+
+| Page | Sessions | Downloads | Conv | GSC clicks (3mo) | GSC impressions (3mo) |
+|---|---|---|---|---|---|
+| best-perimenopause | 31 | 1 | 3.2% | 7 | 5,045 |
+| best-pcos | 11 | 0 | 0% | 0 | (low) |
+| best-fertility | 3 | 0 | 0% | 0 | (low) |
+| best-ivf | 2 | 0 | 0% | 0 | (low) |
+| best-symptom-tracker | 2 | 0 | 0% | 0 | (low) |
+
+**Hypothesis:** within 4-6 weeks, the 4 zombie pages each climb to 1k+ monthly impressions and 50+ sessions/month as Google re-evaluates their authority and they start ranking for niche queries. Perimenopause page could grow faster (already had 5k impressions). Combined uplift target: +20k impressions/month across these 5 pages.
+
+**Watching:**
+- GSC impressions and clicks per zombie page weekly
+- GA4 sessions per zombie page weekly
+- Whether any zombie breaks into the GSC "top pages" list (currently none of the 4 are there)
+- Conversion rate on perimenopause and fertility (the two with measurable session counts)
+
+**Next data check:** 2026-05-19 (2 weeks out, same checkpoint as period page).
+
+---
+
 ## Appendix: page-by-page structural inventory
 
 | Page | Pain-point hero | GGG in Quick Answer | First app section | App count | Conv rate |
