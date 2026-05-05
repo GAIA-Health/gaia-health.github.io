@@ -161,10 +161,46 @@ Likely no, if we're surgical. The page sits at position 5.93 on a high-volume he
 
 ## Next steps
 
-1. **Apply playbook to period tracker comparison page.** Highest traffic, lowest conversion = biggest absolute upside. Ship as 5 small commits (lead rewrite, Quick Answer fix, reorder, Download lines, dateModified). Watch GSC weekly for 2 weeks.
+1. ~~**Apply playbook to period tracker comparison page.**~~ ✅ Shipped 2026-05-05 — see Changelog below.
 2. **Diagnose the zombie comparison pages.** Read PCOS / fertility / IVF / symptom-tracker pages in detail. Identify SEO-visibility gaps separately from conversion gaps.
 3. **Export comparison-window GSC CSV** (e.g., Nov 5–Feb 5 vs Feb 5–May 5) for real per-page improvement attribution.
 4. **Track conversion rate weekly per page** in this doc to see if the playbook actually moves numbers.
+
+---
+
+## Changelog
+
+### 2026-05-05 — Period tracker comparison playbook applied
+**Commits:** `1624236`, `c04e6ab`, `ec7d86b`, `63b68b2`, `faa8019`
+
+**Changes shipped to `/blog/how-to-choose-period-tracker-app.html`:**
+1. Lead paragraph rewritten with pain-point opener (App Store has 30+ apps, varying prices, which is worth using). Mirrors pregnancy voice.
+2. Quick Answer box now includes Go Go Gaia at position 4 of 6 ("Best all-in-one"). Previously omitted us entirely.
+3. App detail sections reordered: Clue → Flo → Ovia → Go Go Gaia (4th) → Natural Cycles → Period Tracker. Previously Go Go Gaia was 1st. TOC updated to match.
+4. Inline disclosure replaced with prominent Full Transparency callout box, positioned right before Step 1. Names specific Go Go Gaia gaps (iOS only, smaller community than Flo/Clue, not FDA-cleared as contraceptive).
+5. Per-app Download links added to all 5 competitor sections (Clue, Flo, Ovia, Natural Cycles, Period Tracker). All competitor URLs verified with HTTP 200. Period Tracker by Simple Design uses non-linked text (couldn't verify URL).
+6. `dateModified` schema field bumped from 2026-02-24 to 2026-05-05. Visible "Last Updated" label updated to match.
+
+**Did NOT change** (load-bearing for ranking, per memory note): `<title>`, `<h1>`, `<meta description>`, URL slug, hero image.
+
+**Baseline (last 30d ending 2026-05-04, web only):**
+- Sessions: 242
+- Downloads: 2 → conv rate 0.8%
+- Logins: 0
+- GSC clicks (3-mo total): 224
+- GSC impressions (3-mo total): 132,032
+- GSC avg position: 5.93
+- GSC CTR: 0.17%
+
+**Hypothesis:** conversion rate climbs to 2–5% over 30 days (matching perimenopause/pregnancy template performance). Impressions hold ±10% during Google re-evaluation, then return to baseline or improve from `dateModified` freshness signal.
+
+**Watching:**
+- GSC daily clicks on the page — should hold steady or grow
+- GSC avg position — small dip possible during re-crawl, then recovery
+- GA4 download_click events filtered to `/blog/how-to-choose-period-tracker-app.html`
+- Sessions to the page should stay 200+/30d
+
+**Next data check:** 2026-05-19 (2 weeks out).
 
 ---
 
