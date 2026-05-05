@@ -13,6 +13,27 @@ We have a clear playbook from the pages that work. The next step is applying it 
 
 ---
 
+## Goals (locked 2026-05-05)
+
+**Deadline: 2026-08-31** (end of Q3 2026)
+
+| Metric | Current (last 30d) | Target (per month) | Gap |
+|---|---|---|---|
+| GSC impressions | 66,820 | **100,000** | +49% |
+| GSC clicks | 166 | **1,000** | +500% |
+| CTA events (download + login) | 61 | **100** | +64% |
+
+**Rationale:** We went from effectively 0 impressions in November 2025 to 67k in May 2026 (~6 months). Hitting 100k in another 3 months is +50% on top of an already-growing baseline. The 1k clicks target is the stretch — needs CTR to lift from 0.25% to ~0.5–1%, which depends on (a) the conversion playbook lifting CTR on existing rankers and (b) zombie comparison pages actually waking up and contributing. Path to 100 CTAs/month runs through the period page conversion fix shipped 2026-05-05 plus zombie page revival.
+
+**Why these are stretch but defensible:**
+- Impression growth has compounded ~14% MoM in the most recent cycle. Holding that pace gets us to 100k in 3 months naturally.
+- 4 zombie comparison pages (PCOS, fertility, IVF, symptom tracker) currently contribute ~0 impressions despite being live since 2026-03-12. Reviving any one of them adds 5k–20k/month based on the perimenopause page (5k impressions on similar topic).
+- CTA growth is the most direct path: each comparison page conversion fix adds 5–10 CTAs/month. 4 zombie page fixes + period page lift = +30–50 CTAs/month possible.
+
+**Stop and reassess if:** by 2026-06-19 (6 weeks) we're not on track for at least 2 of the 3 metrics.
+
+---
+
 ## Performance snapshot (last 30 days, web only)
 
 | Page | Sessions | Downloads | Logins | Conv rate | GSC clicks (3mo) | GSC impressions (3mo) | Avg position |
