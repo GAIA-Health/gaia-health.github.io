@@ -170,6 +170,33 @@ Likely no, if we're surgical. The page sits at position 5.93 on a high-volume he
 
 ---
 
+## Future content backlog
+
+### Training app comparison pages (women-focused, cycle-aware framing)
+
+A new content cluster targeting athletic-training searchers. Most popular running and triathlon training apps don't account for menstrual cycle phases when prescribing training intensity, recovery, or nutrition. That's the gap to wedge into.
+
+**Pages to build:**
+- `best-marathon-training-app.html` — compare Garmin Connect, Nike Run Club, Strava, Runna, Adidas Running, Hal Higdon, plus Go Go Gaia. Frame: most apps prescribe training plans without cycle awareness — Go Go Gaia adapts to your phase + integrates wearable data + tracks fueling/sleep/mood.
+- `best-cycling-training-app.html` (sport cycling, not menstrual cycle) — compare Strava, TrainerRoad, Zwift, Wahoo SYSTM, Rouvy, plus Go Go Gaia.
+- `best-triathlon-training-app.html` — compare TrainingPeaks, TriDot, MyTriathlonTraining, plus Go Go Gaia. Niche audience but high-intent.
+- Possible additions: `best-half-marathon-training-app.html`, `best-strength-training-app-women.html`, `best-running-app-for-women.html`.
+
+**Before writing, do this research pass:**
+1. **Audit nutriease iOS app repo** for what's actually built around training functionality. Check `/docs` and the codebase. We need to be specific about what Go Go Gaia *does* with training data (Apple Watch / Garmin sync, workout phase recommendations, recovery flags, fueling tied to phase) and what it *doesn't* do (no built-in training plans yet, etc.). Don't overpromise features that aren't shipped.
+2. **Research the popular training apps** — Strava (massive social/segments), Garmin Connect (deep wearable integration), Runna (AI coaching, growing fast), TrainingPeaks (gold standard for serious endurance), Zwift (indoor cycling). Focus on what their cycle-awareness story is (mostly: nothing), what their data privacy looks like, and which features women athletes specifically miss.
+3. **Framing for Go Go Gaia in these comparisons:**
+   - "Best for women athletes who want training that adapts to their cycle"
+   - "Best comprehensive solution" — not just training, but training + cycle + nutrition + sleep + mood + symptoms in one place
+   - Lean into the gap: most training apps treat women athletes as small men. The cycle phase changes performance, recovery needs, and injury risk. Few apps acknowledge this.
+4. **Avoid the trap** of positioning Go Go Gaia as a *replacement* for Strava/Garmin. They have things we don't (advanced training plans, social leaderboards, structured workouts). Position as complementary: keep using your training app for plans + segments, use Go Go Gaia for the female-physiology layer they're missing.
+
+**SEO opportunity sizing:** "marathon training app" head term is competitive but has clear runner-up positions. "Marathon training app for women" is a wide-open long-tail with no major dedicated player.
+
+**When this gets built**, log a changelog entry below per page (same format as zombie revival), and update the playbook in this doc if anything new about training-niche conversion patterns emerges.
+
+---
+
 ## What we don't know yet
 
 - **Per-page improvement attribution.** We have current totals but no before/after diff at the page level. Need a second GSC export from a prior date range (e.g., Nov 5 – Feb 5) to do a real winners-and-losers comparison.
