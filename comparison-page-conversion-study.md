@@ -346,6 +346,61 @@ Also found 11 evergreen pages with stale `dateModified` (frozen at 2026-02-24 or
 
 ---
 
+### 2026-05-07 — Cycle-syncing cluster split + app-guide revival
+**Commit:** `802189a`
+
+**Audit findings:**
+
+GA4 review of the cycle-syncing cluster found two pages cleanly split by intent but cannibalizing each other in metadata:
+
+- `cycle-syncing-guide.html` (informational, "what to do by phase"): 5 views / 60% bounce over 90 days
+- `cycle-syncing-app-guide.html` (commercial, "which app to use"): 1 view / 100% bounce over 90 days — fully zombie
+
+Both titles led with "What to Eat, How to Train" so Google had no reason to rank both. Twitter title on the app-guide didn't match its main title either. App-guide had only 6 inbound internal links vs. 23 for the guide, so it was also half-orphaned. Body of app-guide buried its actual angle (apps vs manual + criteria) ~1,000 words deep, behind a feature-y lead.
+
+**Changes shipped (all to `cycle-syncing-app-guide.html` unless noted):**
+
+1. **De-cannibalization.** Title/meta/OG/Twitter/schema headline + description + articleBody all retargeted to "Best Cycle Syncing Apps for 2026: What to Look For" (buyer intent). The guide page kept its "What to Eat, How to Train & When to Rest (By Phase)" title (informational intent). The two pages now target distinct query clusters.
+
+2. **Playbook applied to page body** (per the 9 patterns above):
+   - Quick Answer box at top featuring Go Go Gaia with "best for cycle syncing specifically" superlative, plus Clue/Flo named as alternatives, plus bridge anchor to the guide
+   - 5-point "What to Look For" criteria callout immediately after (was buried 1,000+ words deep)
+   - Pain-point hero replacing feature-y lead ("It's week 3 of your cycle syncing experiment. You can't remember if you're on Day 19 or Day 21..." vs. previous "Ready to start cycle syncing but overwhelmed... Here's exactly how to use Go Go Gaia...")
+   - Transparency callout disclosing iOS-only and newer-product gaps
+   - Renamed deeper section "What Makes an Effective Cycle Syncing App" → "How These Capabilities Work in Practice" to avoid H2 dup with new top-of-page criteria
+   - Em-dashes scrubbed from new copy per `TONE-OF-VOICE-GUIDE.md`
+
+3. **Bridge anchors both directions with keyword-rich text:**
+   - `cycle-syncing-guide.html` → `cycle-syncing-app-guide.html`: bottom CTA anchor changed from "cycle syncing app guide" to "best cycle syncing apps and what to look for in one"
+   - `cycle-syncing-app-guide.html` → `cycle-syncing-guide.html`: linked 3× from the new top section ("phase-by-phase cycle syncing guide" anchor)
+
+4. **Freshness signal:** sitemap lastmod and schema dateModified both bumped to 2026-05-07.
+
+**Note on scope:** This page is a hybrid (criteria guide + app pitch), not a strict ranked comparison. The "position GGG 3rd–5th" and "per-app Download lines" patterns from the playbook don't apply directly because there's no numbered app list — the page links out to `clue-vs-flo.html` and the existing comparison pages instead. If app-guide impressions don't lift in 4-6 weeks, the next move is converting it into a true ranked comparison or redirecting to one.
+
+**Baselines (last 90d ending 2026-05-07, web only):**
+
+| Page | Page views (90d) | Bounce rate | Inbound internal links |
+|---|---|---|---|
+| cycle-syncing-guide | 5 | 60% | 23 |
+| cycle-syncing-app-guide | 1 | 100% | 6 |
+
+**Hypothesis:** within 4-6 weeks, app-guide breaks out of the 1-view-per-90-days zombie zone and starts ranking for "cycle syncing app" / "best cycle syncing app" / "what to look for in a cycle syncing app" buyer-intent queries. Realistic 30-day target: 50+ sessions on the app-guide, with the de-cannibalized guide also gaining (no longer splitting query intent with itself). Combined cluster target: 200+ sessions/month within 60 days.
+
+**Watching:**
+- GSC impressions and clicks for "cycle syncing app" cluster queries weekly
+- GA4 sessions on both pages weekly
+- Bounce rate on app-guide (the 100% baseline is the most telling signal — if the new pain-point hero + Quick Answer don't move it under 70%, the title/intent match isn't strong enough)
+- No regression on the guide page during Google re-evaluation
+
+**Next data check:** 2026-05-21 (2 weeks out).
+
+**Possible follow-ups if data warrants:**
+- Convert app-guide to a ranked comparison if criteria-guide format underperforms
+- Add inbound links from `how-to-choose-period-tracker-app.html` (263 views/30d), `best-pregnancy-tracking-app.html` (220 views/30d), `clue-vs-flo.html` (19 views/30d) to lift app-guide's link equity from 6 → 9+
+
+---
+
 ## Appendix: page-by-page structural inventory
 
 | Page | Pain-point hero | GGG in Quick Answer | First app section | App count | Conv rate |
