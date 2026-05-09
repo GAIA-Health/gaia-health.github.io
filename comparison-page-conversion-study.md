@@ -1,5 +1,5 @@
 # Comparison Page Conversion Study
-**Last updated:** 2026-05-05
+**Last updated:** 2026-05-09
 **Scope:** All "best X tracking app" comparison pages and period tracker comparison
 **Purpose:** Track which structural patterns drive impressions vs conversions, so we can apply what's working to the pages that aren't.
 
@@ -398,6 +398,85 @@ Both titles led with "What to Eat, How to Train" so Google had no reason to rank
 **Possible follow-ups if data warrants:**
 - Convert app-guide to a ranked comparison if criteria-guide format underperforms
 - Add inbound links from `how-to-choose-period-tracker-app.html` (263 views/30d), `best-pregnancy-tracking-app.html` (220 views/30d), `clue-vs-flo.html` (19 views/30d) to lift app-guide's link equity from 6 → 9+
+
+---
+
+### 2026-05-09 — Two-week data check on revival cohort + period reframe baseline
+
+**No commit (data-only checkpoint).** Comparing L14 (2026-04-26 to 2026-05-08) vs P14 (2026-04-12 to 2026-04-25) at the page level, web only.
+
+**What worked:**
+
+| Page | L14 | P14 | Δ | L14 eng | P14 eng |
+|---|---|---|---|---|---|
+| best-pregnancy-tracking-app | 152 | 73 | **+79 (2.1x)** | 31% | 34% |
+| best-perimenopause-tracking-app | 28 | 14 | **+14 (2x)** | 39% | 43% |
+| clue-vs-flo | 14 | 4 | **+10 (3.5x)** | 57% | 100% |
+| how-to-choose-period-tracker-app | 122 | 108 | +14 (+13%) | 46% | 55% |
+
+Pregnancy and perimenopause comparison pages are the two biggest revival wins. Period comparison traffic is up but engagement dipped 9pp — the May 7 reframe (commit `e8e4b82`) is the bet to fix that and currently has only ~1.5 days of post-change data in this window.
+
+**What didn't or regressed:**
+
+| Page | L14 | P14 | Δ | L14 eng | P14 eng |
+|---|---|---|---|---|---|
+| best-pcos-tracking-app | 5 | 8 | **−3** | **20%** | **62%** |
+| best-fertility-tracking-app | 3 | 1 | +2 | 67% | — |
+| best-ivf-tracking-app | 3 | 1 | +2 | 67% | — |
+| best-symptom-tracker-app-women | 1 | 1 | 0 | — | 100% |
+
+best-pcos is the only revival that regressed on both traffic and engagement. The other three moved by 0–2 sessions — the freshness + reorder commits did not unlock anything.
+
+**Diagnosis: title pattern correlates with revival success.**
+
+Looking at title length and specificity across the cohort:
+
+| Page | Title chars | Subtitle content | L14 outcome |
+|---|---|---|---|
+| best-pregnancy | 63 | "Flo vs Ovia vs What to Expect (Tested)" | +79 |
+| best-perimenopause | 60 | "Hot Flash & HRT Trackers Tested" | +14 |
+| best-pcos | 76 | "7 Apps Compared for Irregular Cycles & Symptoms" | −3 |
+| best-ivf | 67 | "6 Apps Compared for Fertility Treatment" | +2 |
+| best-fertility | 57 | "8 Apps Compared for TTC" | +2 |
+| best-symptom-tracker | 56 | "5 Apps Compared" | 0 |
+
+Both winners stay under Google's ~63-char SERP display limit and name something concrete in the subtitle (competitor brand or specific symptom tested). The four underperformers all use the generic "X Apps Compared for [topic]" pattern and either truncate (PCOS at 76 chars) or fail to differentiate.
+
+The doc's earlier hypothesis (Apr's "playbook" was Quick Answer + pain-point hero + transparency callout) holds, but those structural changes are necessary not sufficient. Page-1-zero-click title rewrites (commit `d972298`, 2026-05-06) appear to be a second mechanism — and the four flat/regressed pages all still have the unrewritten generic titles.
+
+**Title rewrites shipped 2026-05-09** (functionality-not-brands style per founder preference, mirrors perimenopause winner pattern):
+- **best-pcos**: "Best PCOS Tracking App 2026: Irregular Cycles & Symptoms" (56 chars)
+- **best-fertility**: "Best Fertility App 2026: Ovulation, BBT & Fertile Window" (56 chars; dropped "Tracking" from name to fit)
+- **best-ivf**: "Best IVF Tracking App 2026: Medications & Cycle Tracking" (56 chars)
+- **best-symptom-tracker**: "Best Symptom Tracker App for Women 2026: Pain, Cycle & Sleep" (60 chars)
+
+H1s left unchanged on all 4 (matches perimenopause pattern: title and H1 decoupled, title for SERP CTR, H1 for on-page expectation-setting). dateModified + sitemap lastmod bumped to 2026-05-09.
+
+**Playbook audit on the 4 rewritten pages** (after title fix):
+- ✅ All have: Quick Answer with GGG link, Full Transparency callout, "Other App Comparisons" section, per-app Download lines, healthy inbound link network (8–11 internal pages link to each)
+- ❌ None have a hero image (only `best-perimenopause` does — the hormone-levels chart). Adding a topic-relevant chart to each could be the next lever if titles alone don't lift them.
+
+**Sample-size caveats:** N is very small (1–8 sessions per page in either window). PCOS regression on n=5 vs n=8 is within statistical noise, and the engagement drop (62% → 20%) is one disengaged session away from looking very different. Treat the title-pattern correlation as directional, not proven — but it is consistent with what already worked on pregnancy and perimenopause.
+
+**Will the wins persist?**
+- *Likely persistent*: structural revival changes (perimenopause +14 sessions) that compound from improved rankings, internal links, and freshness signals.
+- *Possibly seasonal*: pregnancy's +79-session jump coincides with Mother's Day weekend (May 10–11). Watch for fade in late May.
+- *Period comparison engagement*: 9pp drop is the first signal worth watching — if the May 7 reframe does not reverse it by 2026-05-21, the daily-life-connection angle may not be landing.
+
+**Other notable movers:**
+- `complete-guide-to-pcos`: 3 → 8 sessions, engagement 33% → 75% (untouched, surprise gainer)
+- `what-is-luteal-phase`: 2 → 7 sessions (untouched)
+- `pregnancy-wellness-tips`: 4 → 0 sessions (worth a one-off look — was it deindexed?)
+- Home + blog index + about all stable or up — no cannibalization detected from comparison page revivals
+
+**Watching:**
+- Title-rewrite candidates above — only ship after angle review per page
+- Period comparison engagement rate week over week (baseline: 46%)
+- best-pcos engagement rate next checkpoint (5-session N too small to act on yet)
+- Whether pregnancy comparison fades post-Mother's Day (currently 152 / 14d; pre-revival baseline was ~37 / 14d)
+- pregnancy-wellness-tips ranking + indexation status
+
+**Next data check:** 2026-05-21 (2 weeks out — same checkpoint as the cycle-syncing entry).
 
 ---
 
