@@ -456,6 +456,14 @@ H1s left unchanged on all 4 (matches perimenopause pattern: title and H1 decoupl
 - ✅ All have: Quick Answer with GGG link, Full Transparency callout, "Other App Comparisons" section, per-app Download lines, healthy inbound link network (8–11 internal pages link to each)
 - ❌ None have a hero image (only `best-perimenopause` does — the hormone-levels chart). Adding a topic-relevant chart to each could be the next lever if titles alone don't lift them.
 
+**Hero images shipped 2026-05-09** (mirrors perimenopause winner pattern: chart inserted between H1 and lead paragraph, `class="img-fluid rounded mb-4" loading="eager"`):
+- **best-pcos**: `Hormone_Levels_in_PCOS.png` (also replaced og:image and twitter:image, which were a generic journaling stock photo)
+- **best-fertility**: `Cycle_Comparison_Ovulatory_vs_Anovulatory.png` (already its og:image)
+- **best-symptom-tracker**: `Biometrics_Throughout_Menstrual_Cycle.png` (already its og:image)
+- **best-ivf**: deferred — no IVF/fertility-specific stock photo available; needs an Unsplash add before retrying
+
+Stacked with the title rewrites in the same window, so attribution is mixed. Acceptable trade given the underperformer urgency — overall trajectory still tells us if the playbook is working.
+
 **Sample-size caveats:** N is very small (1–8 sessions per page in either window). PCOS regression on n=5 vs n=8 is within statistical noise, and the engagement drop (62% → 20%) is one disengaged session away from looking very different. Treat the title-pattern correlation as directional, not proven — but it is consistent with what already worked on pregnancy and perimenopause.
 
 **Will the wins persist?**
