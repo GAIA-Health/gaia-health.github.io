@@ -234,13 +234,13 @@ document.addEventListener('DOMContentLoaded', function() {
             { label: 'Blood Tests',   color: '#7C4DDB', ring: 1 },
             { label: 'Urine Strips',  color: '#B07CED', ring: 1 },
             // Outer ring — lifestyle & daily tracking
-            { label: 'Workouts',      color: '#5A9B6B', ring: 2 },
-            { label: 'Steps',         color: '#5A9B6B', ring: 2 },
+            { label: 'Workouts',      color: '#1E5631', ring: 2 },
+            { label: 'Steps',         color: '#1E5631', ring: 2 },
             { label: 'Macros',        color: '#E84393', ring: 2 },
             { label: 'Habits',        color: '#7C4DDB', ring: 2 },
             { label: 'Medications',   color: '#B07CED', ring: 2 },
             { label: 'Supplements',   color: '#7C4DDB', ring: 2 },
-            { label: 'Energy',        color: '#5A9B6B', ring: 2 },
+            { label: 'Energy',        color: '#1E5631', ring: 2 },
             { label: 'Hydration',     color: '#6B5CE7', ring: 2 },
             { label: 'Stress',        color: '#A78BFA', ring: 2 },
         ];
