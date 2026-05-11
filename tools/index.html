@@ -144,6 +144,19 @@
     }
     </script>
 
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Free Women's Health Calculators: Due Date, Ovulation, Period & Cycle Tools",
+      "url": "https://www.go-go-gaia.com/tools/",
+      "datePublished": "2026-05-09",
+      "dateModified": "2026-05-11",
+      "inLanguage": "en-US"
+    }
+    </script>
+
     <style>
         .tools-hero {
             background: var(--secondary);
@@ -409,8 +422,21 @@
             </nav>
         </div>
 
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculators">All 5 calculators</a></li>
+                    <li><a href="#how-to-choose">How to choose the right one</a></li>
+                    <li><a href="#what-calculators-cant">What calculators can't tell you</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <!-- Hero -->
-        <section class="tools-hero">
+        <section id="calculators" class="tools-hero">
             <div class="container text-center">
                 <h1>Free Women's Health Calculators</h1>
                 <p class="lead">Quick, accurate calculators for due date, ovulation, your next period, pregnancy week, and cycle length. No sign-up, no data stored, no apps to install.</p>
@@ -484,6 +510,38 @@
             </div>
         </section>
 
+        <!-- Educational: how to choose + what calculators can't do -->
+        <section id="how-to-choose" class="tools-educational container" style="max-width: 740px;">
+            <h2>How to choose the right calculator</h2>
+            <p>Each tool answers a different question. Most people use two or three of these together at different points in their cycle or life stage.</p>
+
+            <h3>If you're trying to conceive</h3>
+            <p>Start with the <a href="ovulation-calculator.html">ovulation calculator</a> to find your fertile window, then use the <a href="cycle-length-calculator.html">cycle length calculator</a> if your cycles aren't textbook 28 days — irregular cycle length is the #1 reason ovulation predictions go wrong. Once you get a positive test, switch to the <a href="due-date-calculator.html">due date calculator</a>.</p>
+
+            <h3>If you're already pregnant</h3>
+            <p>The <a href="due-date-calculator.html">due date calculator</a> gives you your estimated delivery date. The <a href="pregnancy-week-calculator.html">pregnancy week calculator</a> tells you exactly how far along you are right now, what's happening with baby this week, and what milestones are coming.</p>
+
+            <h3>If you just want to know when your next period is coming</h3>
+            <p>The <a href="period-calculator.html">period calculator</a> predicts your next period from your last period date and average cycle length. If you're not sure how regular your cycles are, run the <a href="cycle-length-calculator.html">cycle length calculator</a> first.</p>
+
+            <h3>If your cycles feel off</h3>
+            <p>Start with the <a href="cycle-length-calculator.html">cycle length calculator</a>. Plug in your last 3-12 period start dates and you'll see whether your cycles are regular, somewhat irregular, or irregular — and what that pattern can mean (PCOS, perimenopause, post-pill, stress, thyroid). Read the <a href="../blog/period-tracking-guide.html">period tracking guide</a> for the full beginner walkthrough.</p>
+
+            <h2 id="what-calculators-cant">What calculators can't tell you</h2>
+            <p>Every tool on this page runs the same math your doctor uses — Naegele's Rule, cycle-length-minus-14, weighted averages. That math is genuinely useful for a one-time answer. It's also working with very limited information about you.</p>
+
+            <h3>Calculators don't know if you're actually ovulating</h3>
+            <p>The ovulation calculator assumes you ovulate around 14 days before your next period. That's true for most people most of the time. It's not true for cycles where ovulation didn't happen (anovulation, which is common in PCOS, post-pill, postpartum, and perimenopause), and it can be off by days even in regular cycles. Tracking BBT, cervical fluid, or LH tests over a few months tells you what calendar math can't.</p>
+
+            <h3>Calculators don't know your cycle history</h3>
+            <p>A calculator can only do math on the numbers you give it today. A tracking app sees the last 3, 6, 12 months — which is what your doctor needs to spot patterns and what your provider compares against when something changes.</p>
+
+            <h3>Calculators don't know your symptoms</h3>
+            <p>"When is my next period?" is a useful question. "Why do I get migraines two days before my period?" or "Is this breast tenderness normal for week 8?" are the questions that actually shape care. Calculators can't answer those. Tracking can.</p>
+
+            <p class="tools-tip-line"><strong>Bottom line:</strong> Calculators are the right tool for a one-time answer. If you're trying to conceive, managing PCOS or perimenopause, navigating pregnancy, or want a real conversation with your doctor next visit — that's where tracking compounds.</p>
+        </section>
+
         <!-- CTA -->
         <section class="container">
             <div class="cta-section">
@@ -496,7 +554,7 @@
         </section>
 
         <!-- FAQ -->
-        <section class="faq-section-page">
+        <section id="faq" class="faq-section-page">
             <h2>Frequently Asked Questions</h2>
             <div class="accordion" id="toolsFaq">
                 <div class="accordion-item">

@@ -120,6 +120,72 @@
     }
     </script>
 
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Predict Your Next Period",
+      "description": "Estimate when your next period will start by combining your last period start date with your average cycle length.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Identify the first day of your last period",
+          "text": "Use the first day you saw bleeding (not spotting). This is day 1 of your current cycle."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Know your average cycle length",
+          "text": "Count the days from the first day of one period to the first day of the next. The average is 28 days, but anywhere from 21 to 35 is considered normal. Average your last 3-6 cycles for better accuracy."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Add your cycle length to the last period start",
+          "text": "That's your estimated next period date. The longer you've been tracking, the sharper this estimate gets — especially if your cycles vary."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Period Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/period-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Period Calculator: When Is My Next Period?",
+      "url": "https://www.go-go-gaia.com/tools/period-calculator.html",
+      "datePublished": "2026-04-06",
+      "dateModified": "2026-05-11",
+      "inLanguage": "en-US"
+    }
+    </script>
+
     <style>
         .calculator-hero {
             background: var(--secondary);
@@ -502,8 +568,21 @@
             </nav>
         </div>
 
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Period calculator</a></li>
+                    <li><a href="#what-to-track">What to track besides dates</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <!-- Hero + Calculator -->
-        <section class="calculator-hero">
+        <section id="calculator" class="calculator-hero">
             <div class="container">
                 <div class="text-center mb-4">
                     <h1 style="font-weight: 700; color: var(--text-dark);">Period Calculator</h1>
@@ -555,6 +634,26 @@
             <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
         </section>
 
+        <!-- Educational: What to track -->
+        <section id="what-to-track" class="tools-educational container" style="max-width: 740px;">
+            <h2>What to track besides your period dates</h2>
+            <p>Dates are the easy part. The signal most people miss — and the thing your doctor actually wants — is everything happening <em>between</em> periods. Even logging two or three of these consistently gives you a meaningfully clearer picture of what's normal for your body.</p>
+
+            <h3>Flow, cramps, and physical symptoms</h3>
+            <p>Track flow as light, medium, heavy, or very heavy by day. Note any clots and whether you're soaking through a pad/tampon faster than every 1-2 hours (clinical sign of heavy menstrual bleeding). For cramps, log severity (1-10), location (lower abdomen, lower back, radiating to thighs), and what helps. Persistent severe pain that interferes with daily life is the #1 underreported symptom of endometriosis.</p>
+
+            <h3>Mood, energy, and sleep</h3>
+            <p>Mood and energy shift predictably across the cycle for most people — log them daily and the pattern emerges within 2-3 cycles. PMS affects about 75% of women with mild-to-moderate symptoms; PMDD affects 3-8% and looks similar but is severe enough to interfere with daily life. A written log makes the difference visible.</p>
+
+            <h3>Headaches, skin, and gut</h3>
+            <p>Cycle-linked headaches (often called menstrual migraines) typically hit 2 days before through 3 days into your period. Breakouts, bloating, constipation, and food cravings also follow hormonal patterns. None of these on its own is concerning — but the connection between them and your cycle is data your doctor can actually use.</p>
+
+            <h3>What ongoing tracking actually unlocks</h3>
+            <p>One calculator predicts your next period. Months of tracking lets you spot the pattern your doctor needs to diagnose PCOS, endometriosis, thyroid issues, or perimenopause — conditions that are highly treatable once identified but can take years to diagnose without data. See our <a href="../blog/period-tracking-guide.html">period tracking guide</a> for the full beginner checklist, or our <a href="../blog/understanding-pms-guide.html">PMS guide</a> for the symptom side of the cycle.</p>
+
+            <p class="tools-tip-line"><strong>Up next:</strong> Want to know if your cycles are actually regular? Run the <a href="cycle-length-calculator.html">cycle length calculator</a>. Trying to conceive — or avoid? The <a href="ovulation-calculator.html">ovulation calculator</a> finds your fertile window. Pregnant? The <a href="due-date-calculator.html">due date calculator</a> is your next stop.</p>
+        </section>
+
         <!-- CTA -->
         <section class="container" style="max-width: 640px;">
             <div class="cta-section">
@@ -570,7 +669,7 @@
         </section>
 
         <!-- FAQ -->
-        <section class="container faq-section-page" style="max-width: 740px;">
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Your Period</h2>
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
@@ -625,7 +724,7 @@
         </section>
 
         <!-- Related Articles -->
-        <section class="container related-articles" style="max-width: 740px;">
+        <section id="related" class="container related-articles" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
             <div class="row g-3">
                 <div class="col-md-6">

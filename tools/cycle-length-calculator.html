@@ -120,6 +120,78 @@
     }
     </script>
 
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Your Average Cycle Length",
+      "description": "Average your cycle length over multiple cycles and see how regular your cycles are.",
+      "totalTime": "PT2M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Record the first day of each of your last 3-12 periods",
+          "text": "More cycles equals a more reliable average. 3 is the minimum, 6+ is better, 12 gives the clearest picture."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Calculate the gap between each consecutive period",
+          "text": "Count from day 1 of one period to day 1 of the next. That's one cycle length. Repeat for each pair."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Average those numbers",
+          "text": "Add them together and divide by how many gaps you have. The result is your average cycle length. Typical range is 21-35 days."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Check the variance",
+          "text": "If your shortest and longest cycle differ by 7 days or less, your cycles are regular. 8-9 days of variance is somewhat irregular. More than 9 days variance, or repeatedly skipping periods, is worth discussing with a doctor."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cycle Length Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/cycle-length-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Cycle Length Calculator: Is My Period Regular?",
+      "url": "https://www.go-go-gaia.com/tools/cycle-length-calculator.html",
+      "datePublished": "2026-04-06",
+      "dateModified": "2026-05-11",
+      "inLanguage": "en-US"
+    }
+    </script>
+
     <style>
         .calculator-hero {
             background: var(--secondary);
@@ -542,8 +614,21 @@
             </nav>
         </div>
 
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Cycle length calculator</a></li>
+                    <li><a href="#what-to-track">What patterns to look for</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <!-- Hero + Calculator -->
-        <section class="calculator-hero">
+        <section id="calculator" class="calculator-hero">
             <div class="container">
                 <div class="text-center mb-4">
                     <h1 style="font-weight: 700; color: var(--text-dark);">Cycle Length Calculator</h1>
@@ -586,6 +671,29 @@
             <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
         </section>
 
+        <!-- Educational: What to track -->
+        <section id="what-to-track" class="tools-educational container" style="max-width: 740px;">
+            <h2>What cycle patterns to look for over time</h2>
+            <p>One average tells you what's typical right now. Months or years of data tells you the story — when something changed, what changed alongside it, and what that probably means. Here's what the patterns actually point to.</p>
+
+            <h3>Variance (and what it means)</h3>
+            <p>Cycles that vary by <strong>up to 7 days</strong> across a year are considered regular. <strong>8-9 days</strong> of variance is the somewhat-irregular zone — usually fine but worth watching. <strong>More than 9 days</strong> of variance, repeatedly skipping cycles, or cycles consistently under 21 days or over 35 days is what doctors call "menstrual irregularity" and can be a signal worth investigating.</p>
+
+            <h3>Anovulation signs</h3>
+            <p>Long cycles with no BBT shift, no mid-cycle cervical fluid changes, and no positive LH test often mean a cycle without ovulation (anovulation). Anovulatory cycles are common occasionally — but if they're the norm, that's the #1 indicator of PCOS-related fertility issues. Tracking lets you tell the difference.</p>
+
+            <h3>Life-stage shifts</h3>
+            <p>Cycles change predictably with life stage: irregular in the first few years after menarche, most regular in late 20s to mid-30s, then shorter and more variable as perimenopause begins (typically mid-40s but sometimes earlier). Post-pill cycles often take 3-6 months to resettle. Postpartum cycles can take 12+ months. Knowing what your "baseline" looks like makes the shifts much easier to recognize.</p>
+
+            <h3>Stress, sleep, and lifestyle correlations</h3>
+            <p>Cycles can lengthen by a week or more after intense stress, illness, big travel/time-zone changes, or under-eating. A tracking app that captures cycle length <em>and</em> these factors makes the cause-and-effect visible — which is what your doctor needs before they can do much.</p>
+
+            <h3>What ongoing tracking actually unlocks</h3>
+            <p>A one-time average tells you "right now." Months of data lets you and your doctor have an evidence-based conversation about PCOS, thyroid issues, perimenopause, or post-pill recovery — conditions that can take years to diagnose without records. See our <a href="../blog/period-tracking-guide.html">period tracking guide</a> for what to log, or our <a href="../blog/complete-guide-to-pcos.html">PCOS guide</a> and <a href="../blog/perimenopause-guide.html">perimenopause guide</a> for what irregular patterns can mean.</p>
+
+            <p class="tools-tip-line"><strong>Up next:</strong> Want to predict your next period? Use the <a href="period-calculator.html">period calculator</a>. Trying to conceive or avoid? The <a href="ovulation-calculator.html">ovulation calculator</a> finds your fertile window based on your real cycle length.</p>
+        </section>
+
         <!-- CTA -->
         <section class="container" style="max-width: 640px;">
             <div class="cta-section">
@@ -601,7 +709,7 @@
         </section>
 
         <!-- FAQ -->
-        <section class="container faq-section-page" style="max-width: 740px;">
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Cycle Length</h2>
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
@@ -656,7 +764,7 @@
         </section>
 
         <!-- Related Articles -->
-        <section class="container related-articles" style="max-width: 740px;">
+        <section id="related" class="container related-articles" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
             <div class="row g-3">
                 <div class="col-md-6">

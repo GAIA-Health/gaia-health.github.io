@@ -3079,3 +3079,103 @@ body::after {
         gap: 10px 16px;
     }
 }
+
+/* =============================================
+   TOOL PAGES — shared SEO components
+   (TOC, educational body sections, tip lines)
+   ============================================= */
+.tools-toc {
+    background: #fff;
+    border: 1px solid rgba(130, 89, 220, 0.15);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem auto 0;
+    max-width: 740px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.tools-toc strong {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tools-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.4rem 1.5rem;
+}
+.tools-toc li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+}
+.tools-toc li a::before {
+    content: "→";
+    color: var(--primary-medium);
+    transition: transform 0.2s;
+}
+.tools-toc li a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+.tools-toc li a:hover::before {
+    transform: translateX(3px);
+    color: var(--primary);
+}
+
+.tools-educational {
+    margin: 3rem auto 2.5rem;
+}
+.tools-educational h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+.tools-educational h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 1.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
+}
+.tools-educational p {
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.tools-educational a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.tools-educational a:hover {
+    color: var(--primary-dark);
+}
+.tools-tip-line {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--secondary);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    font-size: 0.97rem;
+}
+.tools-tip-line strong {
+    color: var(--primary-dark);
+}

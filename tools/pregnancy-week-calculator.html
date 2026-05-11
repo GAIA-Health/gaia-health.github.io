@@ -120,6 +120,72 @@
     }
     </script>
 
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Count Pregnancy Weeks",
+      "description": "Calculate how many weeks pregnant you are from the first day of your last menstrual period (LMP) — the standard medical method.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Identify the first day of your last period (LMP)",
+          "text": "Pregnancy is measured from LMP, not from conception. This is why you're already considered '2 weeks pregnant' the moment you ovulate and conceive."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Count the days since your LMP",
+          "text": "Subtract your LMP date from today's date to get total days. Divide by 7 to get weeks. The remainder is the day within that week (e.g., 13 weeks + 4 days)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Confirm with an early ultrasound if available",
+          "text": "An ultrasound between 8 and 13 weeks measures baby's size and can re-date the pregnancy. If your cycle is irregular or you're unsure of your LMP, the ultrasound date is what your provider will use going forward."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Pregnancy Week Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "How Many Weeks Pregnant Am I? Pregnancy Week Calculator",
+      "url": "https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html",
+      "datePublished": "2026-04-06",
+      "dateModified": "2026-05-11",
+      "inLanguage": "en-US"
+    }
+    </script>
+
     <style>
         .calculator-hero {
             background: var(--secondary);
@@ -558,8 +624,21 @@
             </nav>
         </div>
 
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Pregnancy week calculator</a></li>
+                    <li><a href="#what-to-track">What to track each week</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <!-- Hero + Calculator -->
-        <section class="calculator-hero">
+        <section id="calculator" class="calculator-hero">
             <div class="container">
                 <div class="text-center mb-4">
                     <h1 style="font-weight: 700; color: var(--text-dark);">How Many Weeks Pregnant Am I?</h1>
@@ -587,6 +666,26 @@
             </div>
         </section>
 
+        <!-- Educational: What to track -->
+        <section id="what-to-track" class="tools-educational container" style="max-width: 740px;">
+            <h2>What to track each pregnancy week</h2>
+            <p>Knowing your week is the orientation point. The data that actually shapes how your pregnancy unfolds — and what your provider will ask about at every visit — is what you log between appointments.</p>
+
+            <h3>Symptoms by trimester</h3>
+            <p>The <strong>first trimester</strong> is mostly about nausea, fatigue, food aversions, and breast changes. Log time of day, severity, and what helps. The <strong>second trimester</strong> is when first movements arrive (weeks 18-22 typically), along with round-ligament pain, skin changes, and a usually-welcome energy rebound. The <strong>third trimester</strong> shifts to baby movement counts, Braxton Hicks, swelling, sleep changes, and prep for labor.</p>
+
+            <h3>Baby movements (after week 28)</h3>
+            <p>Kick counts are one of the few things you can do at home that has real clinical value. After 28 weeks, most providers recommend tracking 10 movements within 2 hours once a day. A sudden decrease in normal movement is the most important thing to log and call about — written counts make that call much easier.</p>
+
+            <h3>Weight, blood pressure, mood, and sleep</h3>
+            <p>Weekly weight gain is more useful than monthly — the <em>curve</em> matters more than the number. Home blood pressure is worth logging if your provider flagged it (preeclampsia signal). Mood and sleep are the most overlooked: prenatal depression affects ~1 in 7 women and is best caught early, and sleep often deteriorates well before the third trimester.</p>
+
+            <h3>What ongoing tracking actually unlocks</h3>
+            <p>A calculator gives you "weeks + days." A tracking app gives you week-by-week comparison: how this week's symptoms compare to last, when something shifts, and a written record to bring to every prenatal appointment. See our <a href="../blog/pregnancy-tracking-guide.html">pregnancy tracking guide</a> for the trimester-by-trimester checklist, or <a href="../blog/pregnancy-wellness-tips.html">pregnancy wellness tips</a> for what to focus on week by week.</p>
+
+            <p class="tools-tip-line"><strong>Up next:</strong> Need your estimated delivery date? Try the <a href="due-date-calculator.html">due date calculator</a>. Planning for after baby arrives — or for a future pregnancy? The <a href="ovulation-calculator.html">ovulation calculator</a> and <a href="period-calculator.html">period calculator</a> are useful once cycles resume postpartum.</p>
+        </section>
+
         <!-- CTA -->
         <section class="container" style="max-width: 640px;">
             <div class="cta-section">
@@ -602,7 +701,7 @@
         </section>
 
         <!-- FAQ Section -->
-        <section class="container faq-section-page" style="max-width: 740px;">
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Pregnancy Weeks</h2>
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
@@ -657,7 +756,7 @@
         </section>
 
         <!-- Related Articles -->
-        <section class="container related-articles" style="max-width: 740px;">
+        <section id="related" class="container related-articles" style="max-width: 740px;">
             <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
             <div class="row g-3">
                 <div class="col-md-6">
