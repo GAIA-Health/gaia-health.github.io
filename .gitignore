@@ -62,3 +62,5 @@ npm-debug.log*
 # Dev screenshots (Playwright)
 screenshots/
 .ga-credentials.json
+.gstack/
+images/2026 screenshots/

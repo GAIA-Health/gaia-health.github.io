@@ -79,11 +79,12 @@ Determine which type of post the topic requires:
 ### Standard Blog Post (educational, how-to, listicle, guide)
 - 1000-4000 words depending on depth
 - Opening hook (relatable scenario, surprising stat, or question)
+- Lead paragraph tells the reader exactly what the guide covers (not vague "gives you the tools")
 - Medical disclaimer if health-related
 - 3-7 major H2 sections
 - Actionable takeaways
-- "How Go Go Gaia Helps" section (natural, not salesy)
-- CTA at the end
+- Tracking/app section framed around the reader's goal (e.g., "What to Track for Your Doctor"), NOT around the product (never "What to Track in Go Go Gaia" as a heading)
+- Clinically-grounded CTA (see CTA RULES below)
 - Related articles section
 
 ### Comparison Post (app comparison / "best X app")
@@ -234,11 +235,12 @@ Every blog post is a full HTML page. Use this exact structure:
                     </div>
                 </section>
 
-                <!-- CTA BOX -->
+                <!-- CTA BOX: Ground in clinical standard or article's own advice -->
                 <div class="text-center mt-5 p-4 bg-light rounded">
-                    <h2 class="h4 mb-3">[CTA headline relevant to post topic]</h2>
-                    <p>[1-2 sentence value prop]</p>
-                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">Download Go Go Gaia Free</a>
+                    <h2 class="h4 mb-3">[Clinical fact or guideline that motivates tracking]</h2>
+                    <p>[1-2 sentences connecting that fact to the reader's next step, with citation if applicable]</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">[Concrete goal: "Start a 3-Month Symptom Log"]</a>
+                    <p class="small text-muted mt-3">[Encouraging, specific subtext: "Most people spot their first pattern within 2 weeks."]</p>
                 </div>
             </div>
         </div>
@@ -384,9 +386,55 @@ Customize for pregnancy posts (add OB-GYN note), mental health posts (add 988 cr
 
 ---
 
+## CTA RULES (CRITICAL)
+
+CTAs should feel like useful advice, not a sales pitch. Apply these rules to every CTA:
+
+### 1. Ground the CTA in a clinical standard or the article's own advice
+- **Good:** "ACOG recommends tracking symptoms for 2 cycles to support a PMS diagnosis. Start a 2-cycle tracking log."
+- **Good:** "Your doctor can now diagnose endo from your symptoms. Give them the data."
+- **Bad:** "Track Your Symptoms. Build Your Case. Get the Care You Deserve." (slogany)
+- **Bad:** "Track PMS Effortlessly with Go Go Gaia" (product-first)
+
+### 2. Button text = concrete, achievable goal
+- **Good:** "Start a 3-Month Symptom Log", "Start a 2-Cycle Tracking Log"
+- **Bad:** "Download Go Go Gaia Free" (generic), "Get Started" (vague)
+
+### 3. Subtext = encouraging + specific
+- **Good:** "Most people spot their first pain-cycle pattern within 2 weeks."
+- **Good:** "Most people start noticing their own PMS pattern within the first month."
+- **Bad:** "Join thousands of women making evidence-based health decisions." (vague marketing)
+
+### 4. Bottom CTA = low-pressure
+After FAQ/related articles, use a soft close: "Still deciding? Just try one." or "Track it for 2 cycles. See what you find." Not a repeat of the mid-article CTA.
+
+---
+
+## GO GO GAIA MENTIONS (DE-BRANDING RULES)
+
+The product should be mentioned naturally, never as the frame. These rules apply to all post types:
+
+1. **Never use "Go Go Gaia" in a section heading.** Frame headings around the reader's goal: "What to Track for Your Doctor" not "What to Track in Go Go Gaia". "How Tracking Helps" not "How Go Go Gaia Helps".
+2. **Mention Go Go Gaia once or twice in the tracking/app section, naturally.** "A tracking app like Go Go Gaia can show you patterns like..." not "Go Go Gaia's correlation insights do the analysis for you."
+3. **Don't list Go Go Gaia features in prose.** If you name features, frame them as what the reader gets: "you can see patterns like 'pain is 40% higher in the luteal phase'" not "Go Go Gaia's correlation engine identifies cross-metric patterns."
+4. **The CTA box is where Go Go Gaia gets named directly.** That's the one place where a direct product mention is expected. Everywhere else, the article should read as genuinely helpful even if Go Go Gaia didn't exist.
+
+---
+
+## ABOVE-THE-FOLD RULES
+
+The first screenful the reader sees determines bounce rate. Prioritize useful content:
+
+1. **H1 + lead paragraph + Quick Answer box should be visible without scrolling.** No large images, hero banners, or decorative elements above the Quick Answer.
+2. **Lead paragraph must be concrete about what the reader gets.** Not "this guide gives you the tools" but "this guide covers [specific thing 1], [specific thing 2], and [specific thing 3]."
+3. **If using a featured image, place it BELOW the Table of Contents** with `loading="lazy"`, not above the lead paragraph where it pushes useful content off-screen.
+
+---
+
 ## CONTENT QUALITY CHECKLIST
 
 - [ ] Opens with a relatable scenario, stat, or question (not a definition)
+- [ ] Lead paragraph tells the reader exactly what the guide covers (concrete, not vague)
 - [ ] Addresses reader as "you" throughout
 - [ ] Specific examples with real numbers (not vague claims)
 - [ ] Actionable takeaways the reader can implement
@@ -399,7 +447,9 @@ Customize for pregnancy posts (add OB-GYN note), mental health posts (add 988 cr
 - [ ] Short paragraphs (2-3 sentences)
 - [ ] Subheadings every 150-300 words
 - [ ] Medical disclaimer included (if health-related)
-- [ ] CTA that relates to the post topic (not generic)
+- [ ] CTA is clinically-grounded with a concrete button goal (see CTA RULES)
+- [ ] No section headings mention "Go Go Gaia" (see DE-BRANDING RULES)
+- [ ] Go Go Gaia mentioned naturally 1-2 times in tracking section, not as the frame
 
 ---
 
@@ -467,8 +517,9 @@ Fix any violations found.
 
 ## LESSONS LEARNED FROM PREVIOUS POSTS
 
-These rules were established through the iterative process of writing and reviewing the PCOS comparison post:
+These rules were established through iterative writing, reviewing, and bounce-rate analysis:
 
+### From PCOS comparison post (March 2026)
 1. **Em-dashes are everywhere by default.** Actively watch for them. They sneak into every sentence. Replace with periods, commas, or colons.
 2. **"Comprehensive" is a corporate word.** Use "all-in-one" or just list what's included.
 3. **Visual styling matters for bias.** All decision matrix boxes must use the same CSS class (alert-secondary). Don't highlight Go Go Gaia differently.
@@ -477,6 +528,14 @@ These rules were established through the iterative process of writing and review
 6. **Our USP sells itself.** We're the all-in-one tracker. We don't need to point out what others lack. Just describe what we do and let readers draw their own conclusions.
 7. **Always include a "Worth Noting" callout** for adjacent tools (hardware monitors, complementary apps) that don't warrant full profiles but readers should know about.
 8. **Research competitors thoroughly.** Include 6-8 apps, not just 4-5. Missing a notable competitor makes the comparison feel incomplete.
+
+### From period tracker + PMS guide reworks (April 2026, bounce-rate fixes)
+9. **Above-the-fold content wins or loses the reader.** H1, lead, and Quick Answer must be visible without scrolling. Move images below the ToC with `loading="lazy"`. Don't let a stock photo push useful content off-screen.
+10. **Lead paragraphs must be concrete.** "This guide covers [specific thing 1], [specific thing 2], and [specific thing 3]" beats "This guide gives you the knowledge and tools." Tell people exactly what they'll get.
+11. **CTAs need clinical backing, not slogans.** "Your doctor will ask for this data" (citing ACOG) converts better than "Track Your Symptoms Effortlessly." Ground every CTA in a clinical standard, guideline, or the article's own actionable advice. Button text should be a concrete goal ("Start a 2-Cycle Tracking Log") not generic ("Download Go Go Gaia Free").
+12. **Never put "Go Go Gaia" in a section heading.** Frame sections around the reader's goal. "What to Track for Your Doctor" not "What to Track in Go Go Gaia." The product gets named once or twice naturally in the body, and in the CTA box. That's enough.
+13. **Transparency disclosure in comparison posts.** Move Go Go Gaia to last in Quick Answer lists. Add a short disclosure: "We make Go Go Gaia. We included it because we think it's a strong option, but we'll be honest about its limitations too."
+14. **Bottom CTA should be low-pressure.** "Still deciding? Just try one." or "Track it for 2 cycles. See what you find." Not a restatement of the mid-article pitch.
 
 ---
 
