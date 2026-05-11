@@ -122,7 +122,7 @@
 
     <style>
         .calculator-hero {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            background: var(--secondary);
             padding: 3rem 0 2rem;
         }
         .calculator-card {
@@ -299,12 +299,12 @@
             font-weight: 600;
         }
         .cycle-calendar .day.fertile {
-            background: rgba(90, 155, 107, 0.2);
-            color: var(--green-deep);
+            background: rgba(232, 67, 147, 0.15);
+            color: var(--primary-dark);
             font-weight: 500;
         }
         .cycle-calendar .day.ovulation {
-            background: var(--green);
+            background: var(--green-deep);
             color: #fff;
             font-weight: 700;
         }
@@ -347,15 +347,15 @@
             flex-shrink: 0;
         }
         .legend-dot.period { background: var(--accent); }
-        .legend-dot.follicular { background: rgba(90, 155, 107, 0.15); border: 1px solid var(--green); }
-        .legend-dot.fertile { background: rgba(90, 155, 107, 0.3); }
-        .legend-dot.ovulation { background: var(--green); }
+        .legend-dot.follicular { background: rgba(130, 89, 220, 0.15); border: 1px solid var(--primary); }
+        .legend-dot.fertile { background: rgba(232, 67, 147, 0.18); }
+        .legend-dot.ovulation { background: var(--green-deep); }
         .legend-dot.luteal { background: var(--secondary); border: 1px solid var(--primary); }
         .legend-dot.today { outline: 2px solid var(--primary); outline-offset: -1px; background: #fff; }
 
         /* Tips section */
         .tips-section {
-            background: var(--green-bg);
+            background: var(--secondary);
             border-radius: 16px;
             padding: 2rem;
             margin-top: 1.5rem;
@@ -558,8 +558,8 @@
         <!-- CTA -->
         <section class="container" style="max-width: 640px;">
             <div class="cta-section">
-                <h3>Track Your Period Free</h3>
-                <p>Log periods, symptoms, and mood in seconds — Gaia learns your unique cycle and predicts your next period automatically.</p>
+                <h3>Averages are a guess. Your history is the answer.</h3>
+                <p>Got irregular cycles, post-pill spotting, or post-baby periods that won't settle? Gaia learns from your actual cycle history and gets sharper every period you log — so the next-period date you see is yours, not a textbook 28-day average.</p>
                 <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=period-calculator&mt=8" target="_blank" class="btn-cta">
                     <i class="bi bi-apple me-1"></i> Download Go Go Gaia
                 </a>
@@ -744,7 +744,7 @@
             return {
                 name: "Follicular Phase",
                 desc: "Your body is preparing to ovulate. Estrogen is rising — many people feel a boost in energy, mood, and motivation during this phase.",
-                color: "var(--green)"
+                color: "var(--primary)"
             };
         } else if (cycleDay <= ovulationDay + 1) {
             return {
