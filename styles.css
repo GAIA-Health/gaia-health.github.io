@@ -3179,3 +3179,49 @@ body::after {
 .tools-tip-line strong {
     color: var(--primary-dark);
 }
+
+/* Inline disclaimer attached to the calculator form */
+.calculator-inline-note {
+    margin: 1.25rem 0 0;
+    padding: 0.75rem 0.9rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+}
+.calculator-inline-note i {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    font-size: 1rem;
+}
+
+/* Standardized medical disclaimer block, used at the bottom of every tool page */
+.medical-disclaimer {
+    margin: 2.5rem auto 3rem;
+}
+.medical-disclaimer p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    border-left: 3px solid var(--primary-medium);
+    background: #fff;
+    padding: 1rem 1.2rem;
+    border-radius: 0 10px 10px 0;
+    margin: 0;
+}
+.medical-disclaimer i {
+    color: var(--primary);
+    margin-right: 0.4rem;
+}
+.medical-disclaimer strong {
+    color: var(--text-dark);
+}
+.medical-disclaimer a {
+    color: var(--primary);
+    text-decoration: underline;
+}
