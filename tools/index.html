@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Free Women's Health Calculators: Due Date, Ovulation, Period & Cycle Tools</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Free calculators for due date, ovulation, next period, pregnancy week, and cycle length. Instant results, no sign-up required. Built by the Go Go Gaia team.">
+    <meta name="keywords" content="women's health calculators, due date calculator, ovulation calculator, period calculator, pregnancy week calculator, cycle length calculator, free fertility tools">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Women's Health Calculators: Due Date, Ovulation, Period & Cycle Tools">
+    <meta property="og:description" content="Free calculators for due date, ovulation, next period, pregnancy week, and cycle length. Instant results, no sign-up required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Free Women's Health Calculators: Due Date, Ovulation, Period & Cycle Tools">
+    <meta name="twitter:description" content="Free calculators for due date, ovulation, next period, pregnancy week, and cycle length. Instant results, no sign-up required.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        }
+      ]
+    }
+    </script>
+
+    <!-- CollectionPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Go Go Gaia Health Calculators",
+      "description": "A collection of free women's health calculators for cycle tracking, ovulation, pregnancy, and fertility planning.",
+      "url": "https://www.go-go-gaia.com/tools/",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.go-go-gaia.com/tools/due-date-calculator.html",
+            "name": "Due Date Calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://www.go-go-gaia.com/tools/ovulation-calculator.html",
+            "name": "Ovulation Calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.go-go-gaia.com/tools/period-calculator.html",
+            "name": "Period Calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html",
+            "name": "Pregnancy Week Calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://www.go-go-gaia.com/tools/cycle-length-calculator.html",
+            "name": "Cycle Length Calculator"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these calculators free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every calculator on this page is completely free and works in your browser. No sign-up, no email, no app download required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you save the dates I enter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All calculations run locally in your browser. We never store, share, or transmit the dates you enter. Close the tab and the data is gone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are these calculators?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculators use the same established formulas your doctor uses: Naegele's Rule for due dates, the cycle-length-minus-14 method for ovulation, and weighted averages for period predictions. They are accurate estimates, not medical diagnoses. For pregnancy, your doctor may adjust the date after an early ultrasound."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use a calculator or a tracking app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calculators give you a one-time estimate. A tracking app like Go Go Gaia learns from your unique patterns over time, so predictions get more accurate the longer you track. Use the calculators for quick answers and the app if you want ongoing, personalized predictions."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .tools-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--green-bg) 50%, var(--secondary) 100%);
+            padding: 4rem 0 3rem;
+        }
+        .tools-hero h1 {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .tools-hero p.lead {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            padding: 0.75rem 0;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-nav a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb-nav .separator {
+            color: var(--text-muted);
+            margin: 0 0.4rem;
+        }
+        .breadcrumb-nav .current {
+            color: var(--text-muted);
+        }
+
+        /* Tool cards */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .tool-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: inherit;
+            text-decoration: none;
+        }
+        .tool-card .tool-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--green-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
+        }
+        .tool-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .tool-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+        .tool-card .tool-cta {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: auto;
+        }
+        .tool-card .tool-cta i {
+            transition: transform 0.2s;
+            margin-left: 0.25rem;
+        }
+        .tool-card:hover .tool-cta i {
+            transform: translateX(4px);
+        }
+
+        /* Section: How calculators work */
+        .info-section {
+            background: var(--secondary);
+            padding: 3.5rem 0;
+            margin-top: 4rem;
+        }
+        .info-section h2 {
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+        .info-section .info-lead {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .info-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        .info-item .info-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .info-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .info-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin: 4rem auto;
+            max-width: 860px;
+        }
+        .cta-section h2 {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .cta-section p {
+            opacity: 0.92;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.25rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1.05rem;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page {
+            max-width: 760px;
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+        }
+        .faq-section-page h2 {
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-body {
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEM6KB1QWF');
+    </script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Tools</span>
+            </nav>
+        </div>
+
+        <!-- Hero -->
+        <section class="tools-hero">
+            <div class="container text-center">
+                <h1>Free Women's Health Calculators</h1>
+                <p class="lead">Quick, accurate calculators for due date, ovulation, your next period, pregnancy week, and cycle length. No sign-up, no data stored, no apps to install.</p>
+            </div>
+        </section>
+
+        <!-- Tool Grid -->
+        <section class="container" style="margin-top: -2rem;">
+            <div class="tool-grid">
+
+                <a href="due-date-calculator.html" class="tool-card">
+                    <div class="tool-icon"><i class="bi bi-heart-pulse"></i></div>
+                    <h2>Due Date Calculator</h2>
+                    <p>Enter the first day of your last period to find out when your baby is due, what trimester you're in, and how big your baby is right now.</p>
+                    <span class="tool-cta">Calculate due date <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a href="ovulation-calculator.html" class="tool-card">
+                    <div class="tool-icon"><i class="bi bi-circle-half"></i></div>
+                    <h2>Ovulation Calculator</h2>
+                    <p>Estimate when you're ovulating and identify your fertile window — the 6 days each cycle when conception is most likely.</p>
+                    <span class="tool-cta">Find your fertile window <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a href="period-calculator.html" class="tool-card">
+                    <div class="tool-icon"><i class="bi bi-calendar-event"></i></div>
+                    <h2>Period Calculator</h2>
+                    <p>Predict when your next period will start and see the next 6 months of expected periods at a glance.</p>
+                    <span class="tool-cta">Predict next period <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a href="pregnancy-week-calculator.html" class="tool-card">
+                    <div class="tool-icon"><i class="bi bi-bookmark-star"></i></div>
+                    <h2>Pregnancy Week Calculator</h2>
+                    <p>Find out exactly how far along you are, what's happening with baby this week, and what milestones are coming up.</p>
+                    <span class="tool-cta">See your week <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a href="cycle-length-calculator.html" class="tool-card">
+                    <div class="tool-icon"><i class="bi bi-arrow-repeat"></i></div>
+                    <h2>Cycle Length Calculator</h2>
+                    <p>Enter your last 3–12 period dates to calculate your average cycle length, see how regular your cycles are, and spot patterns.</p>
+                    <span class="tool-cta">Check cycle regularity <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Info -->
+        <section class="info-section">
+            <div class="container">
+                <h2>Built by women, backed by the math your doctor uses</h2>
+                <p class="info-lead">Every calculator on this page uses the same established formulas clinicians rely on — and runs entirely in your browser, so your dates stay on your device.</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-lightning-charge"></i></div>
+                        <h3>Instant results</h3>
+                        <p>Pick a date, get your answer. No loading screens, no waiting.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h3>Private by design</h3>
+                        <p>Calculations happen in your browser. We never store the dates you enter.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-clipboard-check"></i></div>
+                        <h3>Clinician-aligned math</h3>
+                        <p>Naegele's Rule, the cycle-length-minus-14 method, and weighted averages — the same formulas your doctor uses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="cta-section">
+                <h2>Want predictions that learn from your body?</h2>
+                <p>One-time calculators are great for quick answers. Go Go Gaia learns from your unique patterns over time — so predictions get more accurate the longer you track, and you start to see the connections between your cycle, mood, sleep, and energy.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn-cta" target="_blank">
+                    <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section-page">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="toolsFaq">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Are these calculators free to use?
+                        </button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#toolsFaq">
+                        <div class="accordion-body">Yes. Every calculator on this page is completely free and works in your browser. No sign-up, no email, no app download required.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Do you save the dates I enter?
+                        </button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#toolsFaq">
+                        <div class="accordion-body">No. All calculations run locally in your browser. We never store, share, or transmit the dates you enter. Close the tab and the data is gone.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            How accurate are these calculators?
+                        </button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#toolsFaq">
+                        <div class="accordion-body">Our calculators use the same established formulas your doctor uses: Naegele's Rule for due dates, the cycle-length-minus-14 method for ovulation, and weighted averages for period predictions. They're accurate estimates, not medical diagnoses. For pregnancy, your doctor may adjust the date after an early ultrasound.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Should I use a calculator or a tracking app?
+                        </button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#toolsFaq">
+                        <div class="accordion-body">Calculators give you a one-time estimate. A tracking app like Go Go Gaia learns from your unique patterns over time, so predictions get more accurate the longer you track. Use the calculators for quick answers and the app if you want ongoing, personalized predictions.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="https://hollandneurotech.com/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="https://hollandneurotech.com/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
