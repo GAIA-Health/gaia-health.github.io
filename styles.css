@@ -2965,3 +2965,117 @@ body::after {
         opacity: 0.7;
     }
 }
+
+/* =============================================
+   CONNECTIONS / KNOWLEDGE GRAPH SECTION
+   ============================================= */
+
+.connections-section {
+    background: linear-gradient(180deg, var(--secondary) 0%, #FFFFFF 100%);
+}
+
+.connections-section h2 {
+    color: var(--primary);
+}
+
+.connections-section .lead {
+    color: var(--text-muted);
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kg-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kg-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1400 / 900;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(130, 89, 220, 0.12);
+    border: 1px solid var(--primary-medium);
+    overflow: hidden;
+}
+
+.kg-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.kg-tooltip {
+    position: absolute;
+    background: var(--primary-dark);
+    color: #FFFFFF;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    max-width: 260px;
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(91, 35, 198, 0.35);
+}
+.kg-tooltip.show { opacity: 1; }
+.kg-tooltip strong { color: var(--primary-medium); }
+
+.kg-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 24px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.kg-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.kg-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.kg-swatch-outline {
+    border-radius: 4px;
+    border: 1.5px solid rgba(130, 89, 220, 0.55);
+    background: transparent;
+}
+.kg-swatch-line {
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.kg-swatch-line-purple { background: rgba(130, 89, 220, 0.55); }
+.kg-swatch-line-pink   { background: rgba(232, 67, 147, 0.55); }
+
+/* On phones, give the graph room to breathe by letting the user pan */
+@media (max-width: 640px) {
+    .kg-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        aspect-ratio: auto;
+        height: 420px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .kg-container svg {
+        width: 960px;
+        height: 100%;
+        min-width: 960px;
+    }
+    .kg-legend {
+        font-size: 12px;
+        gap: 10px 16px;
+    }
+}

@@ -135,6 +135,26 @@
                     </div>
                 </section>
 
+                <!-- Connectome Section -->
+                <section id="connections" class="connections-section mb-5">
+                    <h2 class="text-center mb-2">Hormonal conditions share more than they don't.</h2>
+                    <p class="text-center lead mb-4">PCOS drives infertility. Endometriosis overlaps with autoimmune. Perimenopause shares symptoms with PMDD. 45% of women live with a hormonal condition &mdash; and yet these conditions remain dramatically under-studied, with nothing connecting them. We built Gaia to change that.</p>
+
+                    <div class="kg-wrapper">
+                        <div class="kg-container" id="kg-graph">
+                            <svg id="kg-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Interactive connectome of women's health conditions and their shared symptoms"></svg>
+                            <div class="kg-tooltip" id="kg-tooltip"></div>
+                        </div>
+
+                        <div class="kg-legend">
+                            <div class="kg-legend-item"><span class="kg-swatch" style="background:#8259DC;"></span>Condition</div>
+                            <div class="kg-legend-item"><span class="kg-swatch" style="background:#E84393;"></span>Symptom</div>
+                            <div class="kg-legend-item"><span class="kg-swatch-line kg-swatch-line-purple"></span>Comorbidity</div>
+                            <div class="kg-legend-item"><span class="kg-swatch-line kg-swatch-line-pink"></span>Shared symptom</div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Why Women-Led Matters Section -->
                 <section class="mb-5">
                     <h2 class="mb-4">Why "Women-Led" Matters</h2>
@@ -257,5 +277,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

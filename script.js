@@ -538,4 +538,372 @@ document.addEventListener('DOMContentLoaded', function() {
         animFrame = requestAnimationFrame(draw);
     })();
 
+    // =========================================
+    // CONNECTIONS CONNECTOME (radial chord diagram)
+    // =========================================
+    (function initConnectome() {
+        const svg = document.getElementById('kg-svg');
+        const tooltip = document.getElementById('kg-tooltip');
+        const container = document.getElementById('kg-graph');
+        if (!svg || !tooltip || !container) return;
+
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+
+        // ---- Brand palette ----
+        const COLOR = {
+            condition:   { fill: '#8259DC', stroke: '#5B23C6', label: '#5B23C6', hot: '#5B23C6' },
+            symptom:     { fill: '#E84393', stroke: '#BD2F76', label: '#A01F5C', hot: '#BD2F76' },
+            arcCondLbl:  'rgba(130, 89, 220, 0.5)',
+            arcSymLbl:   'rgba(232, 67, 147, 0.5)',
+            tickCond:    'rgba(130, 89, 220, 0.3)',
+            tickSym:     'rgba(232, 67, 147, 0.3)',
+            comorbIdle:  'rgba(130, 89, 220, 0.2)',
+            comorbHot:   'rgba(91, 35, 198, 0.75)',
+            comorbDim:   'rgba(130, 89, 220, 0.04)',
+            sympIdle:    'rgba(232, 67, 147, 0.09)',
+            sympHot:     'rgba(232, 67, 147, 0.55)',
+            sympDim:     'rgba(232, 67, 147, 0.03)',
+            centerText:  '#5B23C6',
+            centerHint:  '#888',
+        };
+
+        // ---- LAYOUT ----
+        const cx = 700, cy = 450, radius = 320;
+
+        // ---- DATA ----
+        const nodes = [
+            // Conditions (purple) — left arc
+            { id: 'pcos',       label: 'PCOS',           type: 'condition', angle: 200 },
+            { id: 'endo',       label: 'Endometriosis',  type: 'condition', angle: 225 },
+            { id: 'pmdd',       label: 'PMDD',           type: 'condition', angle: 170 },
+            { id: 'fertility',  label: 'Fertility',      type: 'condition', angle: 250 },
+            { id: 'peri',       label: 'Perimenopause',  type: 'condition', angle: 275 },
+            { id: 'thyroid',    label: "Hashimoto's",    type: 'condition', angle: 148 },
+            { id: 'fibroids',   label: 'Fibroids',       type: 'condition', angle: 300 },
+            { id: 'adeno',      label: 'Adenomyosis',    type: 'condition', angle: 320 },
+            { id: 'autoimmune', label: 'Autoimmune',     type: 'condition', angle: 130 },
+            // Symptoms (pink) — right arc
+            { id: 'fatigue',       label: 'Fatigue',          type: 'symptom', angle: 20 },
+            { id: 'mood',          label: 'Mood changes',     type: 'symptom', angle: 40 },
+            { id: 'irregular',     label: 'Irregular periods',type: 'symptom', angle: 58 },
+            { id: 'infertility_s', label: 'Infertility',      type: 'symptom', angle: 76 },
+            { id: 'bloating',      label: 'Bloating / GI',    type: 'symptom', angle: 94 },
+            { id: 'pain',          label: 'Pelvic pain',      type: 'symptom', angle: 112 },
+            { id: 'hmb',           label: 'Heavy bleeding',   type: 'symptom', angle: 2 },
+            { id: 'brainfog',      label: 'Brain fog',        type: 'symptom', angle: 350 },
+            { id: 'sleep',         label: 'Sleep disruption', type: 'symptom', angle: 335 },
+        ];
+
+        const comorbidities = [
+            { from: 'pcos',     to: 'fertility',   label: '70-80% anovulatory infertility',    w: 5 },
+            { from: 'pcos',     to: 'thyroid',     label: "3x Hashimoto's risk",               w: 3.5 },
+            { from: 'endo',     to: 'fertility',   label: '30-50% infertility',                w: 4 },
+            { from: 'endo',     to: 'adeno',       label: '20-40% co-occurrence',              w: 3.5 },
+            { from: 'endo',     to: 'autoimmune',  label: '42% autoimmune comorbidity',        w: 3 },
+            { from: 'endo',     to: 'fibroids',    label: '12-26% co-occurrence',              w: 2.5 },
+            { from: 'peri',     to: 'autoimmune',  label: '40% of POI have autoimmune',        w: 3 },
+            { from: 'pcos',     to: 'endo',        label: '7-20% co-occurrence',               w: 2 },
+            { from: 'fibroids', to: 'adeno',       label: '20-35% co-occurrence',              w: 3 },
+            { from: 'pcos',     to: 'pmdd',        label: 'Shared mood pathways',              w: 2 },
+            { from: 'peri',     to: 'fibroids',    label: 'Shared HMB pathway',                w: 2 },
+            { from: 'endo',     to: 'peri',        label: '7.5x surgical menopause',           w: 2.5 },
+        ];
+
+        const symptomLinks = [
+            // Fatigue — 8
+            { from: 'pcos', to: 'fatigue', w: 2 }, { from: 'endo', to: 'fatigue', w: 2 },
+            { from: 'fertility', to: 'fatigue', w: 1.5 }, { from: 'peri', to: 'fatigue', w: 2 },
+            { from: 'pmdd', to: 'fatigue', w: 1.5 }, { from: 'fibroids', to: 'fatigue', w: 1.5 },
+            { from: 'adeno', to: 'fatigue', w: 1.5 }, { from: 'autoimmune', to: 'fatigue', w: 2 },
+            // Mood — 6
+            { from: 'pcos', to: 'mood', w: 2 }, { from: 'endo', to: 'mood', w: 1.5 },
+            { from: 'fertility', to: 'mood', w: 1.5 }, { from: 'peri', to: 'mood', w: 2 },
+            { from: 'pmdd', to: 'mood', w: 3 }, { from: 'autoimmune', to: 'mood', w: 1.5 },
+            // Irregular — 6
+            { from: 'pcos', to: 'irregular', w: 3 }, { from: 'endo', to: 'irregular', w: 2 },
+            { from: 'fertility', to: 'irregular', w: 2 }, { from: 'peri', to: 'irregular', w: 3 },
+            { from: 'fibroids', to: 'irregular', w: 1.5 }, { from: 'adeno', to: 'irregular', w: 1.5 },
+            // Infertility — 7
+            { from: 'pcos', to: 'infertility_s', w: 3 }, { from: 'endo', to: 'infertility_s', w: 2.5 },
+            { from: 'fertility', to: 'infertility_s', w: 3 }, { from: 'peri', to: 'infertility_s', w: 1.5 },
+            { from: 'fibroids', to: 'infertility_s', w: 1.5 }, { from: 'adeno', to: 'infertility_s', w: 2 },
+            { from: 'autoimmune', to: 'infertility_s', w: 1.5 },
+            // Bloating — 6
+            { from: 'pcos', to: 'bloating', w: 2 }, { from: 'endo', to: 'bloating', w: 2.5 },
+            { from: 'peri', to: 'bloating', w: 1.5 }, { from: 'fibroids', to: 'bloating', w: 1.5 },
+            { from: 'adeno', to: 'bloating', w: 1.5 }, { from: 'autoimmune', to: 'bloating', w: 1.5 },
+            // Pelvic pain — 4
+            { from: 'endo', to: 'pain', w: 3.5 }, { from: 'fibroids', to: 'pain', w: 2.5 },
+            { from: 'adeno', to: 'pain', w: 3 }, { from: 'pcos', to: 'pain', w: 1 },
+            // Heavy bleeding — 4
+            { from: 'endo', to: 'hmb', w: 2.5 }, { from: 'peri', to: 'hmb', w: 2.5 },
+            { from: 'fibroids', to: 'hmb', w: 3 }, { from: 'adeno', to: 'hmb', w: 3 },
+            // Brain fog — 3
+            { from: 'pcos', to: 'brainfog', w: 1.5 }, { from: 'peri', to: 'brainfog', w: 2.5 },
+            { from: 'autoimmune', to: 'brainfog', w: 2 },
+            // Sleep — 3
+            { from: 'pcos', to: 'sleep', w: 1.5 }, { from: 'peri', to: 'sleep', w: 3 },
+            { from: 'pmdd', to: 'sleep', w: 2 },
+        ];
+
+        // ---- GEOMETRY HELPERS ----
+        function pos(angle, r) {
+            const rad = (angle - 90) * Math.PI / 180;
+            return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+        }
+        function chordPath(a1, a2, r) {
+            const p1 = pos(a1, r), p2 = pos(a2, r);
+            const pull = 0.15;
+            const cpx = cx + (((p1.x + p2.x) / 2) - cx) * pull;
+            const cpy = cy + (((p1.y + p2.y) / 2) - cy) * pull;
+            return `M ${p1.x} ${p1.y} Q ${cpx} ${cpy} ${p2.x} ${p2.y}`;
+        }
+        function getNode(id) { return nodes.find(n => n.id === id); }
+        function create(tag) { return document.createElementNS(SVG_NS, tag); }
+
+        // ---- ARC LABELS ----
+        function arcLabel(text, angle, r, color, size) {
+            const p = pos(angle, r);
+            const t = create('text');
+            t.setAttribute('x', p.x); t.setAttribute('y', p.y);
+            t.setAttribute('text-anchor', 'middle');
+            t.setAttribute('dominant-baseline', 'middle');
+            t.setAttribute('font-family', 'Open Sans, sans-serif');
+            t.setAttribute('font-size', size || '11');
+            t.setAttribute('font-weight', '700');
+            t.setAttribute('letter-spacing', '2.5');
+            t.setAttribute('fill', color);
+            t.textContent = text;
+            svg.appendChild(t);
+        }
+        arcLabel('CONDITIONS', 225, radius + 62, COLOR.arcCondLbl);
+        arcLabel('SYMPTOMS',   45,  radius + 62, COLOR.arcSymLbl);
+
+        // ---- SYMPTOM CHORDS (pink) ----
+        const symptomChordEls = [];
+        symptomLinks.forEach(link => {
+            const from = getNode(link.from), to = getNode(link.to);
+            if (!from || !to) return;
+            const path = create('path');
+            path.setAttribute('d', chordPath(from.angle, to.angle, radius));
+            path.setAttribute('stroke', COLOR.sympIdle);
+            path.setAttribute('stroke-width', Math.max(0.5, link.w * 0.5));
+            path.setAttribute('fill', 'none');
+            path.classList.add('kg-s-chord');
+            path.dataset.from = link.from;
+            path.dataset.to = link.to;
+            svg.appendChild(path);
+            symptomChordEls.push(path);
+        });
+
+        // ---- COMORBIDITY CHORDS (purple) ----
+        const comorbChordEls = [];
+        comorbidities.forEach(link => {
+            const from = getNode(link.from), to = getNode(link.to);
+            if (!from || !to) return;
+            const path = create('path');
+            path.setAttribute('d', chordPath(from.angle, to.angle, radius));
+            path.setAttribute('stroke', COLOR.comorbIdle);
+            path.setAttribute('stroke-width', Math.max(1, link.w * 0.7));
+            path.setAttribute('fill', 'none');
+            path.classList.add('kg-c-chord');
+            path.dataset.from = link.from;
+            path.dataset.to = link.to;
+            svg.appendChild(path);
+            comorbChordEls.push({ el: path, link });
+        });
+
+        // ---- NODES ----
+        const nodeEls = {};
+        nodes.forEach(n => {
+            const p = pos(n.angle, radius);
+            const g = create('g');
+            g.style.cursor = 'pointer';
+            g.dataset.id = n.id;
+            g.dataset.type = n.type;
+
+            const isCond = n.type === 'condition';
+            const palette = isCond ? COLOR.condition : COLOR.symptom;
+            const r = isCond ? 26 : 22;
+
+            const circle = create('circle');
+            circle.setAttribute('cx', p.x); circle.setAttribute('cy', p.y);
+            circle.setAttribute('r', r);
+            circle.setAttribute('fill', palette.fill);
+            circle.setAttribute('stroke', palette.stroke);
+            circle.setAttribute('stroke-width', isCond ? '2.5' : '1.5');
+            g.appendChild(circle);
+
+            // Tick line from circle outward toward label
+            const tickStart = pos(n.angle, radius + r + 2);
+            const tickEnd = pos(n.angle, radius + (isCond ? 58 : 50));
+            const tick = create('line');
+            tick.setAttribute('x1', tickStart.x); tick.setAttribute('y1', tickStart.y);
+            tick.setAttribute('x2', tickEnd.x); tick.setAttribute('y2', tickEnd.y);
+            tick.setAttribute('stroke', isCond ? COLOR.tickCond : COLOR.tickSym);
+            tick.setAttribute('stroke-width', '1');
+            g.appendChild(tick);
+
+            // Anchor side follows the node's x relative to center so text
+            // always extends outward, away from the circle.
+            const labelR = radius + (isCond ? 78 : 68);
+            const lp = pos(n.angle, labelR);
+            const sinA = Math.sin(n.angle * Math.PI / 180);
+            const adjustedAnchor = Math.abs(sinA) < 0.08
+                ? 'middle'
+                : (sinA > 0 ? 'start' : 'end');
+
+            const label = create('text');
+            label.setAttribute('x', lp.x); label.setAttribute('y', lp.y);
+            label.setAttribute('text-anchor', adjustedAnchor);
+            label.setAttribute('dominant-baseline', 'middle');
+            label.setAttribute('font-family', 'Open Sans, sans-serif');
+            label.setAttribute('font-size', isCond ? '13' : '12');
+            label.setAttribute('font-weight', isCond ? '600' : '500');
+            label.setAttribute('fill', palette.label);
+            label.textContent = n.label;
+            g.appendChild(label);
+
+            svg.appendChild(g);
+            nodeEls[n.id] = { g, circle, label, r, node: n, palette };
+
+            // ---- HOVER ----
+            g.addEventListener('mouseenter', (e) => {
+                circle.setAttribute('r', r + 4);
+                circle.setAttribute('fill', palette.hot);
+
+                if (isCond) {
+                    comorbChordEls.forEach(({ el, link }) => {
+                        if (link.from === n.id || link.to === n.id) {
+                            el.setAttribute('stroke', COLOR.comorbHot);
+                            el.setAttribute('stroke-width', Math.max(2, link.w));
+                        } else {
+                            el.setAttribute('stroke', COLOR.comorbDim);
+                        }
+                    });
+                    svg.querySelectorAll('.kg-s-chord').forEach(el => {
+                        if (el.dataset.from === n.id || el.dataset.to === n.id) {
+                            el.setAttribute('stroke', COLOR.sympHot);
+                            el.setAttribute('stroke-width', '2');
+                        } else {
+                            el.setAttribute('stroke', COLOR.sympDim);
+                        }
+                    });
+                    const connectedConds = comorbidities
+                        .filter(l => l.from === n.id || l.to === n.id)
+                        .map(l => l.from === n.id ? l.to : l.from);
+                    const connectedSyms = symptomLinks
+                        .filter(l => l.from === n.id)
+                        .map(l => l.to);
+                    Object.values(nodeEls).forEach(ne => {
+                        if (ne.node.id === n.id) return;
+                        const isConnected = connectedConds.includes(ne.node.id) || connectedSyms.includes(ne.node.id);
+                        if (!isConnected) {
+                            ne.circle.setAttribute('opacity', '0.2');
+                            ne.label.setAttribute('opacity', '0.2');
+                        }
+                    });
+
+                    const cLinks = comorbidities.filter(l => l.from === n.id || l.to === n.id);
+                    const sLinks = symptomLinks.filter(l => l.from === n.id);
+                    let tip = `<strong>${n.label}</strong>`;
+                    if (cLinks.length) {
+                        tip += `<br/><br/><span style="color:#E5CFFC;font-size:10px;letter-spacing:1px;">COMORBIDITIES</span>`;
+                        cLinks.forEach(l => { tip += `<br/>${l.label}`; });
+                    }
+                    tip += `<br/><br/><span style="color:#FBDAE8;font-size:10px;letter-spacing:1px;">SHARED SYMPTOMS</span>`;
+                    tip += `<br/>${sLinks.length} symptoms overlap with other conditions`;
+                    showTip(e, tip);
+                } else {
+                    const connectedConds = symptomLinks.filter(l => l.to === n.id).map(l => l.from);
+                    svg.querySelectorAll('.kg-s-chord').forEach(el => {
+                        if (el.dataset.to === n.id) {
+                            el.setAttribute('stroke', COLOR.sympHot);
+                            el.setAttribute('stroke-width', '2.5');
+                        } else {
+                            el.setAttribute('stroke', COLOR.sympDim);
+                        }
+                    });
+                    comorbChordEls.forEach(({ el }) => el.setAttribute('stroke', COLOR.comorbDim));
+                    Object.values(nodeEls).forEach(ne => {
+                        if (ne.node.id === n.id) return;
+                        if (!connectedConds.includes(ne.node.id)) {
+                            ne.circle.setAttribute('opacity', '0.2');
+                            ne.label.setAttribute('opacity', '0.2');
+                        }
+                    });
+                    const condNames = connectedConds.map(id => getNode(id).label);
+                    showTip(e, `<strong>${n.label}</strong><br/><br/>Shared across ${connectedConds.length} conditions:<br/>${condNames.join(', ')}`);
+                }
+            });
+
+            g.addEventListener('mouseleave', () => {
+                circle.setAttribute('r', r);
+                circle.setAttribute('fill', palette.fill);
+                comorbChordEls.forEach(({ el, link }) => {
+                    el.setAttribute('stroke', COLOR.comorbIdle);
+                    el.setAttribute('stroke-width', Math.max(1, link.w * 0.7));
+                });
+                svg.querySelectorAll('.kg-s-chord').forEach(el => {
+                    const link = symptomLinks.find(l => l.from === el.dataset.from && l.to === el.dataset.to);
+                    el.setAttribute('stroke', COLOR.sympIdle);
+                    el.setAttribute('stroke-width', link ? Math.max(0.5, link.w * 0.5) : '0.5');
+                });
+                Object.values(nodeEls).forEach(ne => {
+                    ne.circle.setAttribute('opacity', '1');
+                    ne.label.setAttribute('opacity', '1');
+                });
+                hideTip();
+            });
+        });
+
+        // ---- CENTER HINT ----
+        const centerHint = create('text');
+        centerHint.setAttribute('x', cx); centerHint.setAttribute('y', cy);
+        centerHint.setAttribute('text-anchor', 'middle');
+        centerHint.setAttribute('dominant-baseline', 'middle');
+        centerHint.setAttribute('font-family', 'Open Sans, sans-serif');
+        centerHint.setAttribute('font-size', '12');
+        centerHint.setAttribute('font-weight', '400');
+        centerHint.setAttribute('fill', COLOR.centerHint);
+        centerHint.textContent = 'Hover a node to explore connections';
+        svg.appendChild(centerHint);
+
+        // ---- TOOLTIP ----
+        function showTip(e, html) {
+            tooltip.innerHTML = html;
+            tooltip.classList.add('show');
+            positionTip(e);
+        }
+        function positionTip(e) {
+            const rect = container.getBoundingClientRect();
+            let x = e.clientX - rect.left + 14;
+            let y = e.clientY - rect.top - 10;
+            if (x + 280 > rect.width) x -= 300;
+            if (y + 140 > rect.height) y -= 120;
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+        }
+        function hideTip() { tooltip.classList.remove('show'); }
+
+        container.addEventListener('mousemove', (e) => {
+            if (tooltip.classList.contains('show')) positionTip(e);
+        });
+
+        // Analytics: first hover on a condition
+        if (typeof gtag === 'function') {
+            let logged = false;
+            svg.querySelectorAll('g[data-type="condition"]').forEach(g => {
+                g.addEventListener('mouseenter', () => {
+                    if (logged) return;
+                    logged = true;
+                    gtag('event', 'connectome_engage', {
+                        event_category: 'engagement',
+                        event_label: g.dataset.id,
+                    });
+                });
+            });
+        }
+    })();
+
 });
