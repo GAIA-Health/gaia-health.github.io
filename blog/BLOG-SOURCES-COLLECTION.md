@@ -2957,3 +2957,89 @@ James JJ, Klevenow EA, Atkinson MA, et al. Underrepresentation of women in exerc
 https://pubmed.ncbi.nlm.nih.gov/37650136/
 
 ---
+
+## Source #39: Plasma Volume Expansion in Pregnancy
+
+**Full Citation:**
+Vricella LK. Emerging understanding and measurement of plasma volume expansion in pregnancy. *Am J Clin Nutr*. 2017;106(Suppl 6):1620S-1625S. doi:10.3945/ajcn.117.155903
+
+**Journal:** American Journal of Clinical Nutrition
+**Publication Date:** December 2017
+**Study Type:** Comprehensive review
+**Focus:** Plasma volume expansion physiology in normal pregnancy
+
+### Key Findings:
+
+1. **Magnitude of expansion:**
+   - "The physiologic process of plasma volume expansion achieves a 30–50% increase from prepregnancy concentrations near full term"
+2. **Timing:** Begins as early as 6 weeks gestation, peaks ~32 weeks, plateaus until delivery
+3. **Mechanism for physiologic anemia:** Plasma volume (~50% increase) outpaces RBC mass (~25% increase), causing dilutional drop in hemoglobin
+4. **Clinical relevance:** Inadequate plasma volume expansion linked to preeclampsia, IUGR, preterm birth
+
+### Applicable to These Blog Claims:
+
+✅ **Pregnancy Wellness Tips - HIGH PRIORITY**
+- "Your plasma volume expands by 30-50%" — replaces vague "blood volume increases" claim ⭐⭐⭐⭐⭐
+- Physiologic anemia / iron needs context
+
+✅ **Pregnancy Tracking Guide - MEDIUM**
+- Background physiology
+
+✅ **Postpartum Recovery Guide - LOW**
+- Postpartum blood volume normalization
+
+### Citation Format for Blog:
+
+```html
+<li>Vricella LK. Emerging understanding and measurement of plasma volume expansion in pregnancy. <em>Am J Clin Nutr</em>. 2017;106(Suppl 6):1620S-1625S. doi:10.3945/ajcn.117.155903</li>
+```
+
+### Online Source:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC5701717/
+
+---
+
+## Source #40: Ginger for Nausea and Vomiting of Pregnancy — Systematic Review
+
+**Full Citation:**
+Viljoen E, Visser J, Koen N, Musekiwa A. A systematic review and meta-analysis of the effect and safety of ginger in the treatment of pregnancy-associated nausea and vomiting. *Nutr J*. 2014;13:20. doi:10.1186/1475-2891-13-20
+
+**Journal:** Nutrition Journal
+**Publication Date:** March 19, 2014
+**Study Type:** Systematic review and meta-analysis
+**Methodology:** Cochrane-style meta-analysis of RCTs of oral ginger vs placebo for NVP
+
+### Key Findings:
+
+1. **Effect on nausea:**
+   - "Ginger significantly improved the symptoms of nausea when compared to placebo (MD 1.20, 95% CI 0.56-1.84, p = 0.0002)"
+   - Subgroup analyses favored doses <1500 mg/day
+2. **Effect on vomiting:**
+   - Did NOT significantly reduce vomiting episodes
+3. **Safety:**
+   - No significant adverse events or pregnancy outcomes
+   - Considered a "harmless and possibly effective alternative"
+
+### Applicable to These Blog Claims:
+
+✅ **Pregnancy Wellness Tips - HIGH PRIORITY**
+- "Ginger actually works for nausea" with precise dose context ⭐⭐⭐⭐⭐
+
+✅ **Am I Pregnant Guide - MEDIUM**
+- Morning sickness management section
+
+### Citation Format for Blog:
+
+```html
+<li>Viljoen E, Visser J, Koen N, Musekiwa A. A systematic review and meta-analysis of the effect and safety of ginger in the treatment of pregnancy-associated nausea and vomiting. <em>Nutr J</em>. 2014;13:20. doi:10.1186/1475-2891-13-20</li>
+```
+
+### Strengths/Limitations:
+
+- Strengths: Meta-analytic, includes safety data, accepted by major reviews
+- Limitations: Limited number of RCTs; ginger effective for nausea symptoms but NOT vomiting episodes; should specify this nuance in citations
+
+### Online Source:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC3995184/
+
+---
