@@ -1,0 +1,58 @@
+# Go Go Gaia
+
+> Go Go Gaia is an all-in-one women's health tracking app for iOS, made by Holland Neurotech Inc. It covers cycle tracking, pregnancy, postpartum, PCOS, perimenopause, endometriosis, IVF, fertility, symptoms, mood, habits, and nutrition in one dashboard. The website publishes comparison guides, app reviews, and educational content on women's health topics.
+
+## About the company
+
+- App: Go Go Gaia (iOS)
+- Company: Holland Neurotech Inc.
+- Website: https://www.go-go-gaia.com/
+- App Store: https://apps.apple.com/us/app/go-go-gaia/id6608432371
+- Contact: support@hollandneurotech.com
+- About page: https://www.go-go-gaia.com/about.html
+
+## Comparison guides (tested, side-by-side reviews)
+
+- [How to choose a period tracker app](https://www.go-go-gaia.com/blog/how-to-choose-period-tracker-app.html): Step-by-step guide comparing Clue, Flo, Ovia and 3 other period trackers across accuracy, privacy, features, and price.
+- [Best pregnancy app 2026](https://www.go-go-gaia.com/blog/best-pregnancy-tracking-app.html): Flo, Ovia, What to Expect, BabyCenter and others tested side-by-side on symptom tracking, accuracy, privacy, and community.
+- [Clue vs Flo](https://www.go-go-gaia.com/blog/clue-vs-flo.html): Head-to-head comparison of the two most popular period trackers on prediction accuracy, privacy, features, and price.
+- [Best fertility app 2026](https://www.go-go-gaia.com/blog/best-fertility-tracking-app.html): Apps compared on ovulation prediction, BBT logging, fertile window accuracy, and TTC tools.
+- [Best IVF tracking app 2026](https://www.go-go-gaia.com/blog/best-ivf-tracking-app.html): Apps tested for medication reminders, cycle tracking, and IVF-specific features.
+- [Best PCOS tracking app 2026](https://www.go-go-gaia.com/blog/best-pcos-tracking-app.html): Apps for irregular cycles, symptom tracking, and PCOS management.
+- [Best perimenopause app 2026](https://www.go-go-gaia.com/blog/best-perimenopause-tracking-app.html): Apps for hot flash logging, HRT tracking, and perimenopause symptoms.
+- [Best endometriosis tracking app 2026](https://www.go-go-gaia.com/blog/best-endometriosis-tracking-app.html): Apps for pain logging, flare tracking, and surgery recovery.
+- [Best chronic symptom tracker app for women](https://www.go-go-gaia.com/blog/best-symptom-tracker-app-women.html): Apps tested for PMDD, endometriosis, and PCOS symptom tracking.
+
+## Educational guides (women's health)
+
+- [Endometriosis guide](https://www.go-go-gaia.com/blog/endometriosis-guide.html): Symptoms, diagnosis, treatment options, and tracking strategies.
+- [Complete guide to PCOS](https://www.go-go-gaia.com/blog/complete-guide-to-pcos.html): Causes, symptoms, diagnosis, and management of polycystic ovary syndrome.
+- [Perimenopause guide](https://www.go-go-gaia.com/blog/perimenopause-guide.html): Symptoms, timeline, HRT options, and lifestyle strategies.
+- [Menopause guide](https://www.go-go-gaia.com/blog/menopause-guide.html): Symptoms, hormone changes, and treatment options.
+- [Period tracking guide](https://www.go-go-gaia.com/blog/period-tracking-guide.html): How to track your cycle and what the data means.
+- [Pregnancy tracking guide](https://www.go-go-gaia.com/blog/pregnancy-tracking-guide.html): Week-by-week tracking and what to monitor.
+- [Postpartum recovery guide](https://www.go-go-gaia.com/blog/postpartum-recovery-guide.html): Physical and mental recovery, what to track.
+- [Birth control guide](https://www.go-go-gaia.com/blog/birth-control-guide.html): Types, effectiveness, side effects, and tracking.
+- [Cycle syncing guide](https://www.go-go-gaia.com/blog/cycle-syncing-guide.html): Aligning lifestyle with menstrual cycle phases.
+- [Understanding PMS](https://www.go-go-gaia.com/blog/understanding-pms-guide.html): Symptoms, causes, and management.
+- [What is the luteal phase](https://www.go-go-gaia.com/blog/what-is-luteal-phase.html): Hormones, length, and what to track.
+- [How to tell if you're ovulating](https://www.go-go-gaia.com/blog/how-to-tell-if-youre-ovulating.html): Signs, BBT, OPKs, and tracking methods.
+- [Am I pregnant guide](https://www.go-go-gaia.com/blog/am-i-pregnant-guide.html): Early signs, when to test, and what to do next.
+- [Mood tracking benefits](https://www.go-go-gaia.com/blog/mood-tracking-benefits.html): Why mood tracking matters and how to do it.
+- [Habit tracking success](https://www.go-go-gaia.com/blog/habit-tracking-success.html): Building habits that stick with tracking.
+- [Fitness tracker cycle tracking](https://www.go-go-gaia.com/blog/fitness-tracker-cycle-tracking.html): Using wearables for cycle insights.
+- [Cycle syncing app guide](https://www.go-go-gaia.com/blog/cycle-syncing-app-guide.html): How to use apps for cycle syncing.
+- [Pregnancy wellness tips](https://www.go-go-gaia.com/blog/pregnancy-wellness-tips.html): Nutrition, exercise, and self-care during pregnancy.
+
+## Free tools
+
+- [Tools index](https://www.go-go-gaia.com/tools/): All free women's health calculators.
+- [Period calculator](https://www.go-go-gaia.com/tools/period-calculator.html): Predict your next period date.
+- [Ovulation calculator](https://www.go-go-gaia.com/tools/ovulation-calculator.html): Predict your fertile window and ovulation day.
+- [Due date calculator](https://www.go-go-gaia.com/tools/due-date-calculator.html): Calculate your pregnancy due date from LMP or conception date.
+- [Pregnancy week calculator](https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html): Find your current pregnancy week and trimester.
+- [Cycle length calculator](https://www.go-go-gaia.com/tools/cycle-length-calculator.html): Calculate your average cycle length.
+
+## Blog index
+
+- [All blog posts](https://www.go-go-gaia.com/blog/)
