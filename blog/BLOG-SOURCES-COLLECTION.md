@@ -2823,3 +2823,137 @@ American College of Obstetricians and Gynecologists. ACOG Practice Bulletin No. 
 `~/Desktop/gogogaia-sources/acog2009-pcos-practice-bulletin-108.pdf`
 
 ---
+
+## Source #36: Cycle-Tracked Mood Patterns in Women with Depression (EMA Study)
+
+**Full Citation:**
+Delray K, Lewis G, Hayes JF. Tracking mood symptoms across the menstrual cycle in women with depression using ecological momentary assessment and heart rate variability. *BMJ Ment Health*. 2025;28(1):e301674. doi:10.1136/bmjment-2025-301674
+
+**Journal:** BMJ Mental Health
+**Publication Date:** 2025
+**Study Type:** Observational EMA (ecological momentary assessment) study via Juli mobile health platform
+**Sample Size:** 352 women with diagnosed depression (PHQ-8 >4), median age 28 (IQR 23-33), ≥2 tracked cycles, ≥5 daily entries (9,393 total entries)
+**Methodology:** App-based daily mood/energy tracking + HRV alongside menstrual cycle data
+
+### Key Findings:
+
+1. **Perimenstrual mood drop:**
+   - 191 of 352 participants (**54.3%, 95% CI 48.9-59.6%**) had lower mean mood scores in the 3 days before to 2 days after menstruation onset than during the rest of the cycle
+   - Confirms a real, measurable perimenstrual mood pattern in a clinically depressed sample tracked prospectively
+
+2. **Why it matters for tracking advocacy:**
+   - Demonstrates that mobile-app-based mood tracking surfaces clinically meaningful cycle patterns
+   - Pattern emerged with ≥2 cycles of consistent tracking, supporting "track 2-3 cycles to see patterns" guidance
+
+### Applicable to These Blog Claims:
+
+✅ **Mood Tracking Benefits - HIGH PRIORITY**
+- Replaces fabricated "45% anxiety reduction" / "89% identify correlations" stats with a real, defensible finding ⭐⭐⭐⭐⭐
+- Use phrasing: "in a 2025 study of 352 women with diagnosed depression" — DO NOT generalize to all women
+
+✅ **Understanding PMS Guide - MEDIUM**
+- Quantitative support that perimenstrual mood worsening is real and measurable
+
+✅ **What is Luteal Phase - MEDIUM**
+- Supports luteal/perimenstrual mood-drop discussion
+
+### Citation Format for Blog:
+
+```html
+<li id="ref4">Delray K, Lewis G, Hayes JF. Tracking mood symptoms across the menstrual cycle in women with depression using ecological momentary assessment and heart rate variability. <em>BMJ Ment Health</em>. 2025;28(1):e301674. <a href="https://doi.org/10.1136/bmjment-2025-301674" target="_blank" rel="noopener">doi:10.1136/bmjment-2025-301674</a></li>
+```
+
+### Limitations:
+
+- Sample is women with diagnosed depression, NOT general population — must characterize sample correctly when citing
+- Observational, not interventional — does not prove tracking *causes* improvement
+- Self-selected app users (Juli platform) — selection bias possible
+
+### PDF Location:
+Online: https://pmc.ncbi.nlm.nih.gov/articles/PMC12198828/
+
+---
+
+## Source #37: Menstrual Cycle Modulates Reward-Related Neural Function
+
+**Full Citation:**
+Dreher JC, Schmidt PJ, Kohn P, Furman D, Rubinow D, Berman KF. Menstrual cycle phase modulates reward-related neural function in women. *Proc Natl Acad Sci U S A*. 2007;104(7):2465-2470. doi:10.1073/pnas.0605569104
+
+**Journal:** PNAS
+**Publication Date:** February 13, 2007
+**Study Type:** fMRI study with monetary reward task
+**Sample Size:** 11 women (mean age 29) scanned twice — midfollicular (days 4-8 after menses onset) and luteal (days 6-10 after LH surge), order counterbalanced. 13 male controls (mean age 27) scanned once.
+
+### Key Findings:
+
+1. **Midfollicular > luteal reward reactivity:**
+   - During reward anticipation: greater activation in orbitofrontal cortex and amygdala
+   - During reward delivery: greater activation in midbrain, striatum, and left fronto-polar cortex
+2. **Mechanism:** Effects most pronounced during midfollicular phase when estrogen is "unopposed" by progesterone
+3. **Implication:** Reward sensitivity is not static across the cycle — has implications for habit formation, motivation timing, addictive behaviors
+
+### Applicable to These Blog Claims:
+
+✅ **Habit Tracking Success - HIGH PRIORITY**
+- "Rising estrogen levels boost your brain's reward system" ⭐⭐⭐⭐⭐
+- "Women's motivation, energy levels, and reward sensitivity vary significantly across cycle" ⭐⭐⭐⭐⭐
+
+✅ **Cycle Syncing Guide - MEDIUM**
+- Supports why follicular phase feels different for motivation/habits
+
+### Limitations:
+
+- Small sample (n=11 women)
+- Single-task paradigm (monetary reward) — generalizability to all reward types unclear
+- Does NOT specifically test habit formation duration
+
+### Online Source:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC1892961/
+
+---
+
+## Source #38: Women Underrepresented in Exercise Science Research
+
+**Full Citation:**
+James JJ, Klevenow EA, Atkinson MA, et al. Underrepresentation of women in exercise science and physiology research is associated with authorship gender. *J Appl Physiol* (1985). 2023;135(4):932-942. doi:10.1152/japplphysiol.00377.2023
+
+**Journal:** Journal of Applied Physiology
+**Publication Date:** October 2023
+**Study Type:** Bibliometric analysis across three decades
+**Methodology:** Analyzed published exercise physiology research 1991-2021 for gender representation of participants, authors, and editorial board members
+
+### Key Findings:
+
+1. **Female participant representation grew but remained below parity:**
+   - 1991: ~22% female participants
+   - 2021: ~36% female participants
+2. **Authorship gender correlates with participant gender:**
+   - Studies with women as last author: ~52% female participants (2021)
+   - Studies with men as last author: ~32% female participants (2021)
+3. **Editorial board representation grew faster than other categories:**
+   - 1991: 13% women on editorial boards
+   - 2021: 42% women on editorial boards
+4. **Exclusion rationale historically cited:** "the more variable hormonal cycle influence and the perceived need to maintain a 'male norm'"
+
+### Applicable to These Blog Claims:
+
+✅ **Habit Tracking Success - HIGH PRIORITY**
+- Defensible version of "habit/exercise research has been male-biased" ⭐⭐⭐⭐⭐
+- Replaces sweeping unsourced claims about ALL habit research
+
+✅ **Fitness Tracker Cycle Tracking - MEDIUM**
+- Supports premise that exercise advice often wasn't designed around female physiology
+
+✅ **All Cycle/Health Guides - General Context**
+- Explains WHY women-specific health research matters
+
+### Limitations:
+
+- Specific to exercise science/physiology — not all behavior-change research
+- Bibliometric, not interventional
+- Does NOT cover habit-formation research specifically (e.g., Lally 2010 had majority-female sample)
+
+### Online Source:
+https://pubmed.ncbi.nlm.nih.gov/37650136/
+
+---
