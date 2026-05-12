@@ -128,7 +128,7 @@
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/best-endometriosis-tracking-app.html</loc>
-        <lastmod>2026-05-11</lastmod>
+        <lastmod>2026-05-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -146,7 +146,7 @@
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/blog/best-symptom-tracker-app-women.html</loc>
-        <lastmod>2026-05-11</lastmod>
+        <lastmod>2026-05-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -191,6 +191,12 @@
         <lastmod>2026-02-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/medical-disclaimer.html</loc>
+        <lastmod>2026-05-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.go-go-gaia.com/tools/</loc>
