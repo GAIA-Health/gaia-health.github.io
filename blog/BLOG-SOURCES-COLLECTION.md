@@ -1758,13 +1758,19 @@ The NAMS 2022 Hormone Therapy Advisory Panel. The 2022 hormone therapy position 
 
 ## Source #24: SWAN Study - Perimenopause Age and Duration
 
-**Full Citation:**
+**⚠️ CORRECTION (2026-05):** The original entry below misattributed SWAN epidemiology numbers (median onset age, age 51 menopause, 4-8 year duration) to Harlow 2012, which is actually a staging criteria paper that does NOT report population-level age/duration figures. For those numbers use El Khoudary 2019 SWAN progress report. Reserve Harlow 2012 for STAGING terminology only (early/late transition, Stages +1a/+1b/+1c).
+
+**Primary epidemiology citation (use for age 51, transition duration):**
+El Khoudary SR, Greendale G, Crawford SL, et al. The menopause transition and women's health at midlife: a progress report from the Study of Women's Health Across the Nation (SWAN). *Menopause*. 2019;26(10):1213-1227. doi:10.1097/GME.0000000000001424
+- Median age at natural menopause: **51.4 years** (cross-sectional screener); 52.5 years (longitudinal)
+- Menstrual cycle changes begin ~7.5 years before final menstrual period
+- Frequent VMS persisted for a median of 7.4 years
+
+**Staging citation (use for terminology/stage definitions only):**
 Harlow SD, Gass M, Hall JE, et al. Executive summary of the Stages of Reproductive Aging Workshop + 10: addressing the unfinished agenda of staging reproductive aging. *Menopause*. 2012;19(4):387-395. doi:10.1210/jc.2011-3362
 
-**Journal:** Menopause / Journal of Clinical Endocrinology & Metabolism
-**Publication Date:** April 2012
-**Study Type:** Expert Workshop Summary / SWAN Study Synthesis
-**Cohort:** Study of Women's Health Across the Nation (SWAN) - 3,302 women followed longitudinally
+**Journal:** Menopause (both)
+**Cohort:** SWAN - 3,302 women followed longitudinally
 
 ### Key Findings:
 
@@ -3041,5 +3047,49 @@ Viljoen E, Visser J, Koen N, Musekiwa A. A systematic review and meta-analysis o
 
 ### Online Source:
 https://pmc.ncbi.nlm.nih.gov/articles/PMC3995184/
+
+---
+
+## Source #41: SWAN Cognitive Performance Across Menopause Transition
+
+**Full Citation:**
+Greendale GA, Huang MH, Wight RG, et al. Effects of the menopause transition and hormone use on cognitive performance in midlife women. *Neurology*. 2009;72(21):1850-1857. doi:10.1212/WNL.0b013e3181a71193
+
+**Journal:** Neurology
+**Publication Date:** May 2009
+**Study Type:** Longitudinal cohort analysis (SWAN)
+**Sample Size:** 2,362 women across 4-year follow-up
+**Methodology:** Repeated cognitive testing across menopause transition stages — Symbol Digit Modalities Test (processing speed), East Boston Memory Test (verbal memory), Digit Span Backward (working memory)
+
+### Key Findings:
+
+1. **Temporary cognitive decrement during perimenopause:**
+   - Measurable decrement in processing speed and verbal episodic memory observed during the menopause transition
+   - Scores did not absolutely drop but failed to show practice-related improvement seen in premenopausal women
+2. **Recovery in postmenopause:**
+   - "Improvement rebounded to premenopausal levels in postmenopause"
+   - "Menopause transition-related cognitive difficulties may be time-limited"
+3. **Symptoms not the mechanism:**
+   - Objective cognitive changes were NOT explained by self-reported menopausal symptoms (hot flashes, sleep disturbance, anxiety, depression)
+   - Anxiety and depressive symptoms had independent unfavorable effects on cognition
+
+### Applicable to These Blog Claims:
+
+✅ **Perimenopause Guide - HIGH PRIORITY**
+- "Cognitive changes during perimenopause typically improve after menopause" ⭐⭐⭐⭐⭐ (replaces incorrect Weber 2014 citation)
+
+✅ **Menopause Guide - HIGH PRIORITY**
+- Time-limited nature of brain-fog symptoms
+
+### Notes on Use:
+
+**IMPORTANT — Weber 2014 vs Greendale 2009:**
+- Weber 2014 meta-analysis found cognitive decline persists into postmenopause
+- Greendale 2009 SWAN longitudinal data found cognitive decrement is time-limited and rebounds
+- These are not directly contradictory — Weber is cross-sectional meta-analysis; Greendale is within-woman longitudinal
+- For "cognitive symptoms improve after menopause" claim, cite Greendale 2009 (within-woman recovery is what the claim asserts)
+
+### Online Source:
+https://pubmed.ncbi.nlm.nih.gov/19470968/
 
 ---
