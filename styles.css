@@ -199,18 +199,6 @@ article header h1 {
 
 /* Purple wave background removed for cleaner hero */
 
-.hero-container::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: var(--primary-medium-subtle);
-    z-index: 0;
-}
-
 .hero-text {
     flex: 1;
     padding: 1rem;
@@ -302,70 +290,6 @@ article header h1 {
 .hero-feature i {
     font-size: 0.9rem;
     color: var(--accent);
-}
-
-/* =============================================
-   HERO ORGANIC BLOBS — morphing background shapes
-   ============================================= */
-.hero-blob {
-    position: absolute;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    opacity: 0.5;
-    z-index: 0;
-    filter: blur(40px);
-    will-change: border-radius, transform;
-}
-
-.hero-blob-1 {
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(135deg, rgba(130, 89, 220, 0.2) 0%, rgba(229, 207, 252, 0.3) 100%);
-    top: -5%;
-    right: -2%;
-    animation: blobMorph1 12s ease-in-out infinite;
-}
-
-.hero-blob-2 {
-    width: 280px;
-    height: 280px;
-    background: linear-gradient(135deg, rgba(255, 107, 152, 0.15) 0%, rgba(229, 207, 252, 0.2) 100%);
-    bottom: 5%;
-    right: 10%;
-    animation: blobMorph2 10s ease-in-out infinite;
-    animation-delay: -3s;
-}
-
-.hero-blob-3 {
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, rgba(130, 89, 220, 0.12) 0%, rgba(237, 231, 246, 0.3) 100%);
-    top: 40%;
-    right: 20%;
-    animation: blobMorph3 14s ease-in-out infinite;
-    animation-delay: -7s;
-}
-
-@keyframes blobMorph1 {
-    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0) rotate(0deg); }
-    25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; transform: translate(10px, -15px) rotate(5deg); }
-    50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; transform: translate(-5px, 10px) rotate(-3deg); }
-    75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; transform: translate(8px, 5px) rotate(2deg); }
-}
-
-@keyframes blobMorph2 {
-    0%, 100% { border-radius: 40% 60% 55% 45% / 55% 35% 65% 45%; transform: translate(0, 0) scale(1); }
-    33% { border-radius: 70% 30% 45% 55% / 40% 65% 35% 60%; transform: translate(-12px, 8px) scale(1.05); }
-    66% { border-radius: 35% 65% 70% 30% / 65% 40% 60% 35%; transform: translate(6px, -10px) scale(0.97); }
-}
-
-@keyframes blobMorph3 {
-    0%, 100% { border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; transform: translate(0, 0); }
-    50% { border-radius: 60% 40% 35% 65% / 40% 60% 40% 60%; transform: translate(-8px, 12px); }
-}
-
-/* Hide blobs on small screens for performance */
-@media (max-width: 768px) {
-    .hero-blob { display: none; }
 }
 
 /* =============================================
@@ -520,18 +444,6 @@ article header h1 {
     overflow: hidden;
 }
 
-#testimonials::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: var(--primary-subtle);
-    z-index: 0;
-}
-
 #testimonials h2 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
@@ -609,30 +521,6 @@ article header h1 {
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-#early-access::before {
-    content: '';
-    position: absolute;
-    top: -150px;
-    left: -150px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: var(--primary-subtle);
-    z-index: 0;
-}
-
-#early-access::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    right: -150px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: var(--green-subtle);
-    z-index: 0;
 }
 
 #early-access .container {
@@ -752,29 +640,6 @@ article header h1 {
     overflow: hidden;
 }
 
-.faq-section::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: var(--green-subtle);
-    z-index: 0;
-}
-
-.faq-section::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: var(--primary-subtle);
-    z-index: 0;
-}
 
 .faq-section .container {
     position: relative;
@@ -1148,30 +1013,6 @@ html {
     padding: 6rem 0;
     position: relative;
     /* no overflow hidden/clip here — it breaks position: sticky on the phone */
-}
-
-.how-it-works-section::before {
-    content: '';
-    position: absolute;
-    top: -150px;
-    left: -150px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: var(--primary-subtle);
-    z-index: 0;
-}
-
-.how-it-works-section::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    right: -150px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: var(--green-subtle);
-    z-index: 0;
 }
 
 .how-it-works-section h2 {
@@ -1869,15 +1710,6 @@ article header .lead {
 /* Feature boxes keep purple - green is hard to see against sand */
 /* Removed green from feature icons for better contrast */
 
-/* How It Works section - add warmth to background decorations */
-.how-it-works-section::before {
-    background: var(--green-soft);
-}
-
-.how-it-works-section::after {
-    background: var(--primary-subtle);
-}
-
 /* Add subtle green to checkmarks and success icons */
 .bi-check-circle,
 .bi-check-square {
@@ -1907,30 +1739,6 @@ body::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 256px 256px;
-}
-
-/* Richer decorative blobs — more visible, softer */
-#testimonials::before {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(130, 89, 220, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-#early-access::before {
-    background: radial-gradient(circle, rgba(130, 89, 220, 0.07) 0%, transparent 70%);
-}
-
-#early-access::after {
-    background: radial-gradient(circle, rgba(232, 67, 147, 0.07) 0%, transparent 70%);
-}
-
-.faq-section::before {
-    background: radial-gradient(circle, rgba(232, 67, 147, 0.06) 0%, transparent 70%);
-}
-
-.faq-section::after {
-    background: radial-gradient(circle, rgba(130, 89, 220, 0.06) 0%, transparent 70%);
 }
 
 /* Varied hover effects per section type */
@@ -2179,17 +1987,6 @@ body::after {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     position: relative;
     overflow: hidden;
-}
-
-.stats-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
 }
 
 .stat-number {
