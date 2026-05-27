@@ -208,8 +208,8 @@
                     </div>
                 </section>
 
-                <!-- Connectome Section -->
-                <section id="connections" class="connections-section mb-5">
+                <!-- Connectome Section: Variant A (current connectome — kept for ?connectome=current QA override) -->
+                <section id="connections" class="connections-section mb-5" data-connectome-variant="current" hidden>
                     <h2 class="text-center mb-2">Hormonal conditions share more than they don't.</h2>
                     <p class="text-center lead mb-4">PCOS drives infertility. Endometriosis overlaps with autoimmune. Perimenopause shares symptoms with PMDD. 45% of women live with a hormonal condition &mdash; and yet these conditions remain dramatically under-studied, with nothing connecting them. We built Gaia to change that.</p>
 
@@ -226,6 +226,56 @@
                             <div class="kg-legend-item"><span class="kg-swatch-line kg-swatch-line-pink"></span>Shared symptom</div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Connectome Section: Variant B (overlap map — published version with sources) -->
+                <section id="connections-overlap" class="connections-section mb-5" data-connectome-variant="overlap-map">
+                    <div class="ov-intro">
+                        <div class="ov-eyebrow">The longitudinal arc</div>
+                        <h2 class="ov-title">One body, eight conditions, the same hormonal signals.</h2>
+                        <p class="ov-lede">PCOS, endometriosis, fertility, perimenopause, PMDD, fibroids, adenomyosis, and autoimmune conditions share symptoms, treatments, tests, and documented comorbidity rates. Every line on the ring is one shared element appearing in two conditions at once. Hover anything to read it.</p>
+                        <p class="ov-callout">
+                            <span class="ov-callout-num" id="ov-callout-num">&mdash;</span>
+                            <span class="ov-callout-text">conditions, on average, share each symptom, test, or treatment.
+                                <span class="ov-callout-sub" id="ov-callout-sub"></span>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="ov-controls" role="group" aria-label="Filter and search overlap">
+                        <div class="ov-controls-row ov-controls-row--search">
+                            <div class="ov-search">
+                                <i class="bi bi-search ov-search-icon" aria-hidden="true"></i>
+                                <input type="search" id="ov-search" class="ov-search-input" placeholder="Search symptoms, treatments, tests&hellip;" aria-label="Search the overlap map">
+                                <span class="ov-search-count" id="ov-search-count"></span>
+                            </div>
+                            <div class="ov-meta-actions">
+                                <button type="button" class="ov-meta-btn" id="ov-show-all">Show all</button>
+                                <button type="button" class="ov-meta-btn" id="ov-hide-all">Hide all</button>
+                            </div>
+                        </div>
+                        <div class="ov-controls-row ov-controls-row--toggles">
+                            <span class="ov-controls-label">Filter by layer</span>
+                            <div class="ov-layer-toggles" id="ov-layer-toggles"></div>
+                        </div>
+                    </div>
+
+                    <div class="ov-layout">
+                        <div class="ov-chart-wrap">
+                            <svg id="ov-chord" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chord diagram showing how symptoms, treatments, tests, and comorbidities overlap across hormonal conditions"></svg>
+                        </div>
+                        <aside class="ov-sidebar">
+                            <h3>Conditions</h3>
+                            <div id="ov-legend"></div>
+                            <p class="ov-hint">Hover a chord to see the shared element. Hover a condition to isolate everything it touches. Toggle the layers above to filter by category.</p>
+                        </aside>
+                    </div>
+
+                    <div class="ov-stats" id="ov-stats"></div>
+
+                    <p class="ov-footer">Comorbidity rates from published meta-analyses including ESHRE/ASRM 2023, Bahri Khomami 2024 (Nature Communications), Shigesi 2019 (Human Reproduction Update), Cooney 2017 (Human Reproduction), and Zhu 2019 (Lancet Public Health).</p>
+
+                    <div class="ov-tooltip" id="ov-tooltip" role="tooltip"></div>
                 </section>
 
                 <!-- Why Women-Led Matters Section -->

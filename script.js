@@ -273,19 +273,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const rings = [[], [], []];
             nodeLabels.forEach((info, i) => rings[info.ring].push({ ...info, idx: i }));
 
-            // Evenly spaced rings for 32 nodes
-            const ringRadii = [0.24, 0.54, 0.84];
+            // Evenly spaced rings for 32 nodes. Inner ring pushed outward
+            // to give its long labels (Perimenopause, Postpartum) more arc
+            // length without crowding the middle ring.
+            const ringRadii = [0.32, 0.60, 0.88];
 
             nodeLabels.forEach((info, i) => {
                 const ring = rings[info.ring];
                 const idxInRing = ring.findIndex(n => n.idx === i);
                 const countInRing = ring.length;
 
-                // Even spacing with organic scatter on inner ring
+                // Even angular spacing; inner ring gets a tiny radius jitter
+                // only, so the long labels stay readable around the circle.
                 const evenAngle = (idxInRing / countInRing) * Math.PI * 2 + info.ring * 0.55;
-                const angleJitter = info.ring === 0 ? (Math.random() - 0.5) * 0.6 : 0;
-                const radiusJitter = info.ring === 0 ? (Math.random() - 0.5) * 0.12 : 0;
-                const baseAngle = evenAngle + angleJitter;
+                const radiusJitter = info.ring === 0 ? (Math.random() - 0.5) * 0.08 : 0;
+                const baseAngle = evenAngle;
                 const r = baseRadius * (ringRadii[info.ring] + radiusJitter);
 
                 const bx = cx + Math.cos(baseAngle) * r;
@@ -469,20 +471,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 ctx.fillStyle = n.color;
                 ctx.fill();
 
-                // Label — pill background for readability
+                // Label — pill background for readability.
+                // Position radially outward from canvas center so adjacent
+                // labels fan apart instead of stacking vertically above each
+                // node (which collided on the dense middle ring).
                 const baseFontSize = n.ring === 0 ? 13 : n.ring === 1 ? 11 : 10.5;
                 const fontSize = baseFontSize * proximityScale;
                 const labelAlpha = isNear ? 1 : (n.ring === 0 ? 1 : n.ring === 1 ? 0.9 : 0.8);
                 ctx.font = '600 ' + fontSize.toFixed(1) + 'px Quicksand, sans-serif';
                 ctx.textAlign = 'center';
-                const labelY = n.y - n.radius * proximityScale - 12;
                 const textW = ctx.measureText(n.label).width;
                 const padX = 7, padY = 4;
                 const pillW = textW + padX * 2;
                 const pillH = fontSize + padY * 2;
-                const pillX = n.x - pillW / 2;
-                const pillY = labelY - fontSize + 1 - padY;
                 const pillR = pillH / 2;
+
+                const dxFromCenter = n.baseX - cx;
+                const dyFromCenter = n.baseY - cy;
+                const distFromCenter = Math.sqrt(dxFromCenter * dxFromCenter + dyFromCenter * dyFromCenter) || 1;
+                const dirX = dxFromCenter / distFromCenter;
+                const dirY = dyFromCenter / distFromCenter;
+                // Project the axis-aligned pill onto the radial direction so
+                // the pill edge (not its center) clears the dot by `spacing`.
+                const radialExtent = (Math.abs(dirX) * pillW + Math.abs(dirY) * pillH) / 2;
+                const labelOffset = n.radius * proximityScale + 10 + radialExtent;
+                const labelCx = n.x + dirX * labelOffset;
+                const labelCy = n.y + dirY * labelOffset;
+                const labelY = labelCy + fontSize * 0.35; // text baseline
+                const pillX = labelCx - pillW / 2;
+                const pillY = labelCy - pillH / 2;
 
                 // Pill background — more opaque when near cursor
                 const pillAlpha = isNear ? 0.95 : labelAlpha * 0.85;
@@ -495,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Label text
                 ctx.globalAlpha = labelAlpha;
                 ctx.fillStyle = n.color;
-                ctx.fillText(n.label, n.x, labelY);
+                ctx.fillText(n.label, labelCx, labelY);
                 ctx.globalAlpha = 1;
             });
 
@@ -539,6 +556,22 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 
     // =========================================
+    // CONNECTOME — overlap map is the published version.
+    // ?connectome=current still surfaces the legacy radial chord for QA.
+    // =========================================
+    (function pickConnectomeVariant() {
+        const a = document.getElementById('connections');
+        const b = document.getElementById('connections-overlap');
+        if (!a || !b) return;
+
+        const urlOverride = new URLSearchParams(window.location.search).get('connectome');
+        const showLegacy = urlOverride === 'current';
+
+        a.hidden = !showLegacy;
+        b.hidden = showLegacy;
+    })();
+
+    // =========================================
     // CONNECTIONS CONNECTOME (radial chord diagram)
     // =========================================
     (function initConnectome() {
@@ -546,6 +579,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const tooltip = document.getElementById('kg-tooltip');
         const container = document.getElementById('kg-graph');
         if (!svg || !tooltip || !container) return;
+        if (container.closest('[hidden]')) return;
 
         const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -903,6 +937,480 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
             });
+        }
+    })();
+
+    // =========================================
+    // OVERLAP MAP — A/B Variant B
+    // Single-ring chord diagram with 4 toggleable layers:
+    // symptoms, treatments, tests, comorbidities. Adapted from the
+    // Veya overlap-map design, rewritten in vanilla SVG against the
+    // brand palette.
+    // =========================================
+    (function initOverlapMap() {
+        const svg = document.getElementById('ov-chord');
+        const tooltip = document.getElementById('ov-tooltip');
+        const section = document.getElementById('connections-overlap');
+        if (!svg || !tooltip || !section) return;
+        if (section.hidden) return;
+
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+        const create = (t) => document.createElementNS(SVG_NS, t);
+
+        const conditions = [
+            { id: 'pcos',  name: 'PCOS',          color: '#8259DC' },
+            { id: 'endo',  name: 'Endometriosis', color: '#1E5631' },
+            { id: 'fert',  name: 'Fertility',     color: '#C97A2B' },
+            { id: 'peri',  name: 'Perimenopause', color: '#E84393' },
+            { id: 'pmdd',  name: 'PMDD',          color: '#378ADD' },
+            { id: 'fib',   name: 'Fibroids',      color: '#A32D2D' },
+            { id: 'adeno', name: 'Adenomyosis',   color: '#5B23C6' },
+            { id: 'auto',  name: 'Autoimmune',    color: '#6B5B47' },
+        ];
+        const cIdx = Object.fromEntries(conditions.map((c, i) => [c.id, i]));
+
+        const elements = [
+            { label: 'Irregular periods',        layer: 'symptom', conds: ['pcos','endo','fert','peri','fib','adeno','auto'] },
+            { label: 'Heavy menstrual bleeding', layer: 'symptom', conds: ['endo','peri','fib','adeno'] },
+            { label: 'Fatigue',                  layer: 'symptom', conds: ['pcos','endo','fert','peri','fib','adeno','auto'] },
+            { label: 'Mood changes',             layer: 'symptom', conds: ['pcos','endo','fert','peri','pmdd','auto'] },
+            { label: 'Pelvic pain',              layer: 'symptom', conds: ['endo','fib','adeno'] },
+            { label: 'Bloating / GI issues',     layer: 'symptom', conds: ['pcos','endo','peri','fib','adeno','auto'] },
+            { label: 'Infertility',              layer: 'symptom', conds: ['pcos','endo','fert','peri','fib','adeno','auto'] },
+            { label: 'Brain fog',                layer: 'symptom', conds: ['pcos','peri','pmdd','auto'] },
+            { label: 'Hair changes',             layer: 'symptom', conds: ['pcos','peri','auto'] },
+            { label: 'Sleep disruption',         layer: 'symptom', conds: ['pcos','peri','pmdd'] },
+            { label: 'Acne / skin changes',      layer: 'symptom', conds: ['pcos','peri'] },
+            { label: 'Weight gain',              layer: 'symptom', conds: ['pcos','peri'] },
+            { label: 'Painful sex',              layer: 'symptom', conds: ['endo','peri','fib'] },
+            { label: 'Anxiety / depression',     layer: 'symptom', conds: ['pcos','endo','peri','pmdd','fert'] },
+            { label: 'Dysmenorrhea',             layer: 'symptom', conds: ['endo','pmdd','adeno'] },
+
+            { label: 'Anti-inflammatory diet',   layer: 'treatment', conds: ['pcos','endo','fert','peri','fib','auto'] },
+            { label: 'Vitamin D',                layer: 'treatment', conds: ['pcos','endo','fert','peri','fib','auto','pmdd'] },
+            { label: 'Omega-3',                  layer: 'treatment', conds: ['pcos','endo','fert','peri','auto'] },
+            { label: 'Exercise',                 layer: 'treatment', conds: ['pcos','endo','fert','peri','fib','pmdd','auto'] },
+            { label: 'CBT and mindfulness',      layer: 'treatment', conds: ['pcos','endo','fert','peri','pmdd','auto'] },
+            { label: 'Magnesium',                layer: 'treatment', conds: ['pcos','endo','peri','pmdd'] },
+            { label: 'Inositol',                 layer: 'treatment', conds: ['pcos','fert'] },
+            { label: 'GnRH agonists',            layer: 'treatment', conds: ['endo','fib','adeno','pmdd'] },
+            { label: 'LNG-IUS (Mirena)',         layer: 'treatment', conds: ['fib','adeno','endo'] },
+            { label: 'Iron supplementation',     layer: 'treatment', conds: ['endo','fib','adeno','peri'] },
+            { label: 'Hormonal therapy / HRT',   layer: 'treatment', conds: ['endo','peri','pmdd'] },
+            { label: 'SSRIs (luteal dosing)',    layer: 'treatment', conds: ['pmdd','peri'] },
+
+            { label: 'FSH',                      layer: 'test', conds: ['pcos','fert','peri'] },
+            { label: 'LH',                       layer: 'test', conds: ['pcos','fert','peri'] },
+            { label: 'Estradiol',                layer: 'test', conds: ['pcos','endo','fert','peri'] },
+            { label: 'Progesterone',             layer: 'test', conds: ['pcos','fert','peri'] },
+            { label: 'Testosterone',             layer: 'test', conds: ['pcos','peri'] },
+            { label: 'AMH',                      layer: 'test', conds: ['pcos','fert','peri','endo'] },
+            { label: 'Thyroid panel',            layer: 'test', conds: ['pcos','fert','peri','auto'] },
+            { label: 'Fasting insulin/glucose',  layer: 'test', conds: ['pcos','peri'] },
+            { label: 'CRP / inflammatory',       layer: 'test', conds: ['endo','auto'] },
+            { label: 'Pelvic ultrasound',        layer: 'test', conds: ['endo','fib','adeno','fert'] },
+
+            { label: 'PCOS to infertility (70-80% of anovulatory)', layer: 'comorbidity', conds: ['pcos','fert'] },
+            { label: 'Endo to infertility (30-50%)',                layer: 'comorbidity', conds: ['endo','fert'] },
+            { label: 'Endo to adenomyosis (20-40%)',                layer: 'comorbidity', conds: ['endo','adeno'] },
+            { label: 'Endo to fibroids (12-26%)',                   layer: 'comorbidity', conds: ['endo','fib'] },
+            { label: 'Fibroids and adenomyosis (20-35%)',           layer: 'comorbidity', conds: ['fib','adeno'] },
+            { label: 'Endo to surgical menopause (HR 7.54)',        layer: 'comorbidity', conds: ['endo','peri'] },
+            { label: "PCOS to Hashimoto's (3x risk)",               layer: 'comorbidity', conds: ['pcos','auto'] },
+            { label: 'Endo to celiac (OR 4.04)',                    layer: 'comorbidity', conds: ['endo','auto'] },
+            { label: 'PCOS delays menopause by ~2 years',           layer: 'comorbidity', conds: ['pcos','peri'] },
+            { label: 'Endo and PCOS co-occurrence (7-20%)',         layer: 'comorbidity', conds: ['endo','pcos'] },
+            { label: 'PMDD and endo (progesterone sensitivity)',    layer: 'comorbidity', conds: ['pmdd','endo'] },
+            { label: 'PMDD and perimenopause (mood vulnerability)', layer: 'comorbidity', conds: ['pmdd','peri'] },
+            { label: 'Adenomyosis to infertility (LBR OR 0.56)',    layer: 'comorbidity', conds: ['adeno','fert'] },
+            { label: 'Fibroids to infertility (submucosal)',        layer: 'comorbidity', conds: ['fib','fert'] },
+            { label: 'Perimenopause to autoimmune flare',           layer: 'comorbidity', conds: ['peri','auto'] },
+            { label: 'POI to autoimmune (40% have ≥1)',             layer: 'comorbidity', conds: ['peri','auto'] },
+        ];
+
+        const layers = [
+            { id: 'symptom',     name: 'Symptoms',      color: '#E84393' },
+            { id: 'treatment',   name: 'Treatments',    color: '#1E5631' },
+            { id: 'test',        name: 'Tests',         color: '#C97A2B' },
+            { id: 'comorbidity', name: 'Comorbidities', color: '#8259DC' },
+        ];
+        const layerOn = Object.fromEntries(layers.map(l => [l.id, true]));
+
+        const W = 640, cx = W / 2, cy = W / 2;
+        const R_outer = 270, R_inner = 235, R_node = 252;
+        const arcGap = 0.04;
+        const totalArc = Math.PI * 2;
+        const perArc = (totalArc - arcGap * conditions.length) / conditions.length;
+
+        const condArcs = conditions.map((c, i) => {
+            const a0 = -Math.PI / 2 + i * (perArc + arcGap);
+            const a1 = a0 + perArc;
+            return Object.assign({}, c, { a0, a1, mid: (a0 + a1) / 2 });
+        });
+
+        const nodesPerCond = {};
+        conditions.forEach(c => { nodesPerCond[c.id] = []; });
+        elements.forEach((el, ei) => {
+            el.conds.forEach(cid => { if (nodesPerCond[cid]) nodesPerCond[cid].push({ ei, cid }); });
+        });
+
+        const layerOrder = { symptom: 0, treatment: 1, test: 2, comorbidity: 3 };
+        Object.values(nodesPerCond).forEach(arr => {
+            arr.sort((a, b) => layerOrder[elements[a.ei].layer] - layerOrder[elements[b.ei].layer]);
+        });
+
+        condArcs.forEach(c => {
+            const ns = nodesPerCond[c.id];
+            const n = ns.length;
+            const pad = perArc * 0.06;
+            const a0 = c.a0 + pad, a1 = c.a1 - pad;
+            const step = (a1 - a0) / Math.max(n - 1, 1);
+            ns.forEach((node, i) => {
+                node.angle = n === 1 ? (a0 + a1) / 2 : a0 + i * step;
+            });
+        });
+
+        const nodeMap = new Map();
+        Object.entries(nodesPerCond).forEach(([cid, arr]) => {
+            arr.forEach(node => {
+                const x = cx + R_node * Math.cos(node.angle);
+                const y = cy + R_node * Math.sin(node.angle);
+                nodeMap.set(node.ei + '|' + cid, Object.assign({}, node, { x, y }));
+            });
+        });
+
+        const ring = create('circle');
+        ring.setAttribute('cx', cx); ring.setAttribute('cy', cy);
+        ring.setAttribute('r', R_node);
+        ring.setAttribute('fill', 'none');
+        ring.setAttribute('stroke', '#EDE7F6');
+        ring.setAttribute('stroke-width', '0.5');
+        svg.appendChild(ring);
+
+        function arcPath(a0, a1, ri, ro) {
+            const large = (a1 - a0) > Math.PI ? 1 : 0;
+            const x0o = cx + ro * Math.cos(a0), y0o = cy + ro * Math.sin(a0);
+            const x1o = cx + ro * Math.cos(a1), y1o = cy + ro * Math.sin(a1);
+            const x0i = cx + ri * Math.cos(a1), y0i = cy + ri * Math.sin(a1);
+            const x1i = cx + ri * Math.cos(a0), y1i = cy + ri * Math.sin(a0);
+            return 'M ' + x0o + ' ' + y0o +
+                   ' A ' + ro + ' ' + ro + ' 0 ' + large + ' 1 ' + x1o + ' ' + y1o +
+                   ' L ' + x0i + ' ' + y0i +
+                   ' A ' + ri + ' ' + ri + ' 0 ' + large + ' 0 ' + x1i + ' ' + y1i + ' Z';
+        }
+
+        const labelGroups = [];
+        condArcs.forEach(c => {
+            const p = create('path');
+            p.setAttribute('d', arcPath(c.a0, c.a1, R_inner, R_outer));
+            p.setAttribute('fill', c.color);
+            p.setAttribute('opacity', '0.85');
+            p.style.cursor = 'pointer';
+            p.addEventListener('mouseenter', (e) => {
+                highlightCondition(c.id);
+                showTip(e, '<div style="font-weight:600;color:' + c.color + '">' + c.name + '</div>' +
+                           '<div class="ov-t-sub">' + nodesPerCond[c.id].length + ' shared elements</div>');
+            });
+            p.addEventListener('mousemove', moveTip);
+            p.addEventListener('mouseleave', () => { clearHighlight(); hideTip(); });
+            svg.appendChild(p);
+
+            const labelR = R_outer + 26;
+            const lx = cx + labelR * Math.cos(c.mid);
+            const ly = cy + labelR * Math.sin(c.mid);
+
+            const g = create('g');
+            g.classList.add('ov-cond-label');
+            const rect = create('rect');
+            rect.setAttribute('rx', '8');
+            rect.setAttribute('ry', '8');
+            rect.setAttribute('fill', '#fff');
+            rect.setAttribute('stroke', c.color);
+            rect.setAttribute('stroke-opacity', '0.35');
+            rect.setAttribute('stroke-width', '1');
+            g.appendChild(rect);
+
+            const txt = create('text');
+            txt.setAttribute('x', lx); txt.setAttribute('y', ly);
+            txt.setAttribute('text-anchor', 'middle');
+            txt.setAttribute('dominant-baseline', 'middle');
+            txt.setAttribute('font-family', 'Quicksand, Open Sans, sans-serif');
+            txt.setAttribute('font-size', '13');
+            txt.setAttribute('font-weight', '600');
+            txt.setAttribute('fill', c.color);
+            txt.textContent = c.name;
+            g.appendChild(txt);
+            svg.appendChild(g);
+            labelGroups.push({ g, rect, txt });
+        });
+
+        // Size the white pill behind each label using the text's bbox. Must run
+        // after the text is in the DOM so getBBox returns real metrics.
+        requestAnimationFrame(() => {
+            labelGroups.forEach(({ rect, txt }) => {
+                const bb = txt.getBBox();
+                const padX = 9, padY = 4;
+                rect.setAttribute('x', bb.x - padX);
+                rect.setAttribute('y', bb.y - padY);
+                rect.setAttribute('width', bb.width + padX * 2);
+                rect.setAttribute('height', bb.height + padY * 2);
+            });
+        });
+
+        const chords = [];
+        elements.forEach((el, ei) => {
+            for (let i = 0; i < el.conds.length; i++) {
+                for (let j = i + 1; j < el.conds.length; j++) {
+                    const a = nodeMap.get(ei + '|' + el.conds[i]);
+                    const b = nodeMap.get(ei + '|' + el.conds[j]);
+                    if (a && b) chords.push({ ei, a, b, layer: el.layer, label: el.label });
+                }
+            }
+        });
+
+        const chordEls = [];
+        chords.forEach(d => {
+            const p = create('path');
+            p.setAttribute('d', 'M ' + d.a.x + ' ' + d.a.y + ' Q ' + cx + ' ' + cy + ' ' + d.b.x + ' ' + d.b.y);
+            p.setAttribute('fill', 'none');
+            const layer = layers.find(l => l.id === d.layer);
+            p.setAttribute('stroke', layer.color);
+            p.setAttribute('stroke-opacity', '0.25');
+            p.setAttribute('stroke-width', '1');
+            p.dataset.layer = d.layer;
+            p.dataset.ei = d.ei;
+            p.style.cursor = 'pointer';
+            p.addEventListener('mouseenter', (e) => {
+                chordEls.forEach(({ el, data }) => {
+                    if (data.ei === d.ei) {
+                        el.setAttribute('stroke-opacity', '0.95');
+                        el.setAttribute('stroke-width', '2');
+                    }
+                });
+                showTip(e, '<div style="font-weight:600">' + d.label + '</div>' +
+                           '<div class="ov-t-sub" style="color:' + layer.color + '">' + layer.name + '</div>');
+            });
+            p.addEventListener('mousemove', moveTip);
+            p.addEventListener('mouseleave', () => {
+                chordEls.forEach(({ el, data }) => {
+                    if (data.ei === d.ei) {
+                        el.setAttribute('stroke-opacity', '0.25');
+                        el.setAttribute('stroke-width', '1');
+                    }
+                });
+                hideTip();
+            });
+            svg.appendChild(p);
+            chordEls.push({ el: p, data: d });
+        });
+
+        const nodeEls = [];
+        nodeMap.forEach(node => {
+            const el = elements[node.ei];
+            const cond = conditions[cIdx[node.cid]];
+            const c = create('circle');
+            c.setAttribute('cx', node.x); c.setAttribute('cy', node.y);
+            c.setAttribute('r', '3.2');
+            c.setAttribute('fill', cond.color);
+            c.dataset.layer = el.layer;
+            c.dataset.ei = node.ei;
+            c.style.cursor = 'pointer';
+            c.addEventListener('mouseenter', (e) => {
+                chordEls.forEach(({ el: chEl, data }) => {
+                    if (data.ei === node.ei) {
+                        chEl.setAttribute('stroke-opacity', '0.95');
+                        chEl.setAttribute('stroke-width', '2');
+                    }
+                });
+                const layer = layers.find(l => l.id === el.layer);
+                showTip(e, '<div style="font-weight:600">' + el.label + '</div>' +
+                           '<div class="ov-t-sub" style="color:' + layer.color + '">' + layer.name + ' · ' + el.conds.length + ' conditions</div>');
+            });
+            c.addEventListener('mousemove', moveTip);
+            c.addEventListener('mouseleave', () => {
+                chordEls.forEach(({ el: chEl, data }) => {
+                    if (data.ei === node.ei) {
+                        chEl.setAttribute('stroke-opacity', '0.25');
+                        chEl.setAttribute('stroke-width', '1');
+                    }
+                });
+                hideTip();
+            });
+            svg.appendChild(c);
+            nodeEls.push(c);
+        });
+
+        const toggleHost = document.getElementById('ov-layer-toggles');
+        layers.forEach(l => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'ov-toggle';
+            btn.dataset.layer = l.id;
+            btn.innerHTML = '<span class="ov-swatch" style="background:' + l.color + '"></span>' + l.name;
+            btn.addEventListener('click', () => {
+                layerOn[l.id] = !layerOn[l.id];
+                btn.classList.toggle('is-off', !layerOn[l.id]);
+                applyLayers();
+            });
+            toggleHost.appendChild(btn);
+        });
+
+        document.getElementById('ov-show-all').addEventListener('click', () => {
+            layers.forEach(l => { layerOn[l.id] = true; });
+            toggleHost.querySelectorAll('.ov-toggle').forEach(b => b.classList.remove('is-off'));
+            applyLayers();
+        });
+        document.getElementById('ov-hide-all').addEventListener('click', () => {
+            layers.forEach(l => { layerOn[l.id] = false; });
+            toggleHost.querySelectorAll('.ov-toggle').forEach(b => b.classList.add('is-off'));
+            applyLayers();
+        });
+
+        function applyLayers() {
+            chordEls.forEach(({ el, data }) => { el.style.display = layerOn[data.layer] ? '' : 'none'; });
+            nodeEls.forEach(c => { c.style.display = layerOn[c.dataset.layer] ? '' : 'none'; });
+        }
+
+        const legend = document.getElementById('ov-legend');
+        conditions.forEach(c => {
+            const row = document.createElement('div');
+            row.className = 'ov-legend-row';
+            row.innerHTML = '<span class="ov-legend-dot" style="background:' + c.color + '"></span>' +
+                            '<span class="ov-legend-name">' + c.name + '</span>' +
+                            '<span class="ov-legend-count">' + nodesPerCond[c.id].length + '</span>';
+            row.addEventListener('mouseenter', () => highlightCondition(c.id));
+            row.addEventListener('mouseleave', () => clearHighlight());
+            legend.appendChild(row);
+        });
+
+        function highlightCondition(cid) {
+            chordEls.forEach(({ el, data }) => {
+                const includesC = elements[data.ei].conds.includes(cid);
+                el.setAttribute('stroke-opacity', includesC ? 0.9 : 0.04);
+                el.setAttribute('stroke-width', includesC ? 1.6 : 1);
+            });
+        }
+        function clearHighlight() {
+            chordEls.forEach(({ el }) => {
+                el.setAttribute('stroke-opacity', 0.25);
+                el.setAttribute('stroke-width', 1);
+            });
+        }
+
+        const statsHost = document.getElementById('ov-stats');
+        const cards = [
+            { label: 'Conditions mapped',         num: conditions.length,                                  sub: 'hormonal and autoimmune' },
+            { label: 'Shared elements',           num: elements.length,                                    sub: 'symptoms, treatments, tests, links' },
+            { label: 'Overlapping pairs',         num: chords.length,                                      sub: 'one per shared element per pair' },
+            { label: 'Elements in 7+ conditions', num: elements.filter(e => e.conds.length >= 7).length,   sub: 'cross-cutting signals' },
+        ];
+        cards.forEach(c => {
+            const d = document.createElement('div');
+            d.className = 'ov-stat';
+            d.innerHTML = '<div class="ov-stat-label">' + c.label + '</div>' +
+                          '<div class="ov-stat-num">' + c.num + '</div>' +
+                          '<div class="ov-stat-sub">' + c.sub + '</div>';
+            statsHost.appendChild(d);
+        });
+
+        function showTip(e, html) {
+            tooltip.innerHTML = html;
+            tooltip.classList.add('show');
+            moveTip(e);
+        }
+        function moveTip(e) {
+            const pad = 14;
+            let x = e.clientX + pad, y = e.clientY + pad;
+            const rect = tooltip.getBoundingClientRect();
+            if (x + rect.width > window.innerWidth - 8) x = e.clientX - rect.width - pad;
+            if (y + rect.height > window.innerHeight - 8) y = e.clientY - rect.height - pad;
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+        }
+        function hideTip() { tooltip.classList.remove('show'); }
+
+        // Callout numbers — average conditions per element + cross-cutting count
+        const totalMemberships = elements.reduce((acc, e) => acc + e.conds.length, 0);
+        const avgConds = (totalMemberships / elements.length).toFixed(1);
+        const sevenPlus = elements.filter(e => e.conds.length >= 7).length;
+        const calloutNum = document.getElementById('ov-callout-num');
+        const calloutSub = document.getElementById('ov-callout-sub');
+        if (calloutNum) calloutNum.textContent = avgConds;
+        if (calloutSub) calloutSub.textContent = sevenPlus + ' of them appear in 7 or more.';
+
+        // Search — highlights matching chords + nodes by element label
+        const searchInput = document.getElementById('ov-search');
+        const searchCount = document.getElementById('ov-search-count');
+        if (searchInput) {
+            const applySearch = () => {
+                const q = searchInput.value.trim().toLowerCase();
+                if (!q) {
+                    chordEls.forEach(({ el, data }) => {
+                        el.setAttribute('stroke-opacity', '0.25');
+                        el.setAttribute('stroke-width', '1');
+                        el.style.display = layerOn[data.layer] ? '' : 'none';
+                    });
+                    nodeEls.forEach(c => { c.setAttribute('opacity', '1'); });
+                    if (searchCount) searchCount.textContent = '';
+                    return;
+                }
+                const matchedEi = new Set();
+                elements.forEach((el, ei) => {
+                    if (el.label.toLowerCase().includes(q)) matchedEi.add(ei);
+                });
+                chordEls.forEach(({ el, data }) => {
+                    if (!layerOn[data.layer]) { el.style.display = 'none'; return; }
+                    el.style.display = '';
+                    if (matchedEi.has(data.ei)) {
+                        el.setAttribute('stroke-opacity', '0.95');
+                        el.setAttribute('stroke-width', '2');
+                    } else {
+                        el.setAttribute('stroke-opacity', '0.04');
+                        el.setAttribute('stroke-width', '1');
+                    }
+                });
+                nodeEls.forEach(c => {
+                    const ei = Number(c.dataset.ei);
+                    c.setAttribute('opacity', matchedEi.has(ei) ? '1' : '0.18');
+                });
+                if (searchCount) {
+                    const n = matchedEi.size;
+                    searchCount.textContent = n === 0 ? 'no matches' : (n + (n === 1 ? ' match' : ' matches'));
+                }
+            };
+            searchInput.addEventListener('input', applySearch);
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    applySearch();
+                    searchInput.blur();
+                }
+            });
+        }
+
+        if (typeof gtag === 'function') {
+            let logged = false;
+            const onFirst = () => {
+                if (logged) return;
+                logged = true;
+                gtag('event', 'connectome_engage', {
+                    event_category: 'engagement',
+                    event_label: 'overlap_map',
+                });
+            };
+            svg.addEventListener('mouseenter', onFirst, { capture: true });
+
+            if (searchInput) {
+                let searchLogged = false;
+                searchInput.addEventListener('input', () => {
+                    if (searchLogged || !searchInput.value.trim()) return;
+                    searchLogged = true;
+                    gtag('event', 'connectome_search', {
+                        event_category: 'engagement',
+                        event_label: 'overlap_map',
+                    });
+                });
+            }
         }
     })();
 
