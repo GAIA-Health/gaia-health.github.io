@@ -537,6 +537,15 @@ These rules were established through iterative writing, reviewing, and bounce-ra
 13. **Transparency disclosure in comparison posts.** Move Go Go Gaia to last in Quick Answer lists. Add a short disclosure: "We make Go Go Gaia. We included it because we think it's a strong option, but we'll be honest about its limitations too."
 14. **Bottom CTA should be low-pressure.** "Still deciding? Just try one." or "Track it for 2 cycles. See what you find." Not a restatement of the mid-article pitch.
 
+### From May 2026 traffic + conversion analytics
+
+The strategy is paying off: web traffic doubled in the May 22 28-day window (1,046 sessions vs. 456 the prior 28 days), AI assistants now drive ~37% of traffic with ChatGPT as the #1 source, and `download_click` events grew +417%. Conversion-by-page data tells us *which* posts do the work — use this when planning what to write next.
+
+15. **Niche treatment/condition comparison posts convert dramatically better than broad "how to choose" posts.** `best-ivf-tracking-app` converts ~58% click-to-App-Store (11 / 19 sessions). `best-pregnancy-tracking-app` converts ~5.5%. `how-to-choose-period-tracker-app` converts ~1.2% despite 258 sessions. **Implication for new posts:** prioritize niche, treatment-specific comparison listicles (IVF, endometriosis, PCOS, egg freezing, perimenopause) over generic guides. Broad guides build awareness but don't drive downloads.
+16. **AI assistants are the primary distribution channel now, not Google.** Write for citation by ChatGPT/Claude/Copilot/Perplexity as the first audience — that means tight H2/H3 hierarchy, comparison tables, TL;DR boxes, FAQ blocks with FAQPage schema, and citable stats with named sources. Pages that are easy for an LLM to chunk and quote get cited more.
+17. **Internally link high-traffic posts toward high-converting niche posts.** The pregnancy and period-tracker-comparison posts pull traffic but convert poorly; the IVF/endometriosis posts convert well but get little traffic. Adding contextual links from the volume posts to the niche posts is free conversion lift.
+18. **Full data and methodology:** `docs/AI-SEARCH-TRAFFIC-FINDINGS.md` (May 22 refresh). All percentages there are 28-day-over-28-day with small absolute bases — directional, not absolute.
+
 ---
 
 ## FINAL REMINDER
