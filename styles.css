@@ -16,6 +16,7 @@ body {
     /* PRIMARY COLORS - Purple, Pink, Green */
     --primary: #8259DC; /* Bright purple - navbar, buttons, main brand */
     --primary-dark: #5B23C6; /* Deep purple for hover states & download button (from poster) */
+    --primary-light: #A98BE8; /* Light purple - gradient ends, soft accents (between primary and medium) */
     --primary-medium: #E5CFFC; /* Medium purple - dynamic section */
     --secondary: #EDE7F6; /* Lightest lavender for backgrounds */
 
@@ -1413,7 +1414,11 @@ main {
 }
 
 .badge.bg-info {
-    background-color: var(--primary-light) !important;
+    /* Soft chip: light purple background with deep purple text. White text on a
+       light purple fails contrast, and the previous var(--primary-light) reference
+       pointed at a token that didn't exist, leaving these badges transparent. */
+    background-color: var(--primary-medium) !important;
+    color: var(--primary-dark) !important;
 }
 
 /* Updated badge colors with brand green */
