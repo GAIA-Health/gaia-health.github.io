@@ -1590,6 +1590,29 @@ main {
     margin-top: 0;
 }
 
+/* Headings sized down with Bootstrap utility classes (.h5/.h6) keep document
+   structure as h2 (Quick Answer, Table of Contents) but must render compact.
+   Without these rules, .blog-content h2 above wins and blows them up to 2rem
+   with a 3rem top margin inside their boxes. */
+.blog-content h2.h5,
+.blog-content h2.h6 {
+    margin-top: 0;
+}
+
+.blog-content h2.h5 {
+    font-size: 1.25rem;
+}
+
+.blog-content h2.h6 {
+    font-size: 1rem;
+}
+
+/* Box titles outside .alert (CTA and info boxes) get the same treatment as .alert h4 */
+.blog-content .blog-cta-box h4,
+.blog-content .blog-info-box h4 {
+    margin-top: 0;
+}
+
 .blog-content .alert p {
     font-family: 'Quicksand', sans-serif;
 }
