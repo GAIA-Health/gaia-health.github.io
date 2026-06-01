@@ -3395,3 +3395,24 @@ body::after {
     color: var(--primary);
     text-decoration: underline;
 }
+
+/* Desktop-only "scan to download" QR.
+   The app is iOS-only, so a desktop App Store click can't install. We show a QR
+   ONLY on real desktops/laptops (wide viewport AND a mouse/fine pointer). Phones and
+   tablets never match the pointer query, so they keep the tappable App Store button.
+   The QR is purely additive — the button stays for everyone, so a misdetection has no downside. */
+.desktop-qr { display: none; }
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+    .desktop-qr { display: inline-flex; }
+}
+.desktop-qr-img {
+    background: #fff;
+    padding: 6px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(91, 35, 198, 0.12);
+}
+.desktop-qr-label {
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: var(--text-muted);
+}

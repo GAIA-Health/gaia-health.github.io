@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison — Go Go Gaia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Comfortaa:wght@400;500;600;700&family=Varela+Round&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #f5f0fa;
+            color: #333;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .page-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8259DC;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .font-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(130, 89, 220, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .font-card:hover {
+            border-color: #8259DC;
+            box-shadow: 0 8px 30px rgba(130, 89, 220, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .font-card.current {
+            border-color: #E5CFFC;
+        }
+
+        .font-card.current::after {
+            content: 'CURRENT';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #E5CFFC;
+            color: #8259DC;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            letter-spacing: 0.08em;
+        }
+
+        .font-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #8259DC;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .font-vibe {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .sample-hero {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #8259DC;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .sample-hero span {
+            color: #FF6B98;
+        }
+
+        .sample-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .sample-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sample-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8259DC;
+            background: #EDE7F6;
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+        }
+
+        .sample-section-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8259DC;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .sample-body {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #6c757d;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .sample-button {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            background: #8259DC;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 0.5rem;
+        }
+
+        .sample-button.outline {
+            background: transparent;
+            color: #8259DC;
+            border: 2px solid #8259DC;
+        }
+
+        .sample-nav {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #EDE7F6;
+        }
+
+        .sample-nav span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #6c757d;
+        }
+
+        .sample-nav span:first-child {
+            font-weight: 700;
+            color: #8259DC;
+        }
+
+        .sample-testimonial {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+            background: #f9f7fd;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid #E5CFFC;
+        }
+
+        .divider {
+            height: 1px;
+            background: #EDE7F6;
+            margin: 1.25rem 0;
+        }
+
+        /* Font-specific families */
+        .font-nunito * { font-family: 'Nunito', sans-serif; }
+        .font-quicksand * { font-family: 'Quicksand', sans-serif; }
+        .font-poppins * { font-family: 'Poppins', sans-serif; }
+        .font-comfortaa * { font-family: 'Comfortaa', cursive; }
+        .font-varela * { font-family: 'Varela Round', sans-serif; }
+        .font-jakarta * { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Quicksand max weight is 700 */
+        .font-quicksand .sample-hero { font-weight: 700; }
+        /* Comfortaa max weight is 700 */
+        .font-comfortaa .sample-hero { font-weight: 700; }
+        /* Varela Round is single weight */
+        .font-varela .sample-hero { font-weight: 400; font-size: 1.85rem; }
+        .font-varela .sample-section-heading { font-weight: 400; }
+        .font-varela .sample-badge { font-weight: 400; }
+        .font-varela .sample-button { font-weight: 400; }
+        .font-varela .sample-nav span:first-child { font-weight: 400; }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>Font Comparison for Go Go Gaia</h1>
+        <p>Same content, different fonts. Hover to highlight. Your current font is marked.</p>
+    </div>
+
+    <div class="grid">
+
+        <!-- 1. Plus Jakarta Sans (current) -->
+        <div class="font-card current font-jakarta">
+            <div class="font-name">Plus Jakarta Sans</div>
+            <div class="font-vibe">Your current font — modern, slightly rounded, matches iOS app</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+        <!-- 2. Nunito -->
+        <div class="font-card font-nunito">
+            <div class="font-name">Nunito</div>
+            <div class="font-vibe">Rounded terminals, warm and bubbly, very readable at all sizes</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+        <!-- 3. Quicksand -->
+        <div class="font-card font-quicksand">
+            <div class="font-name">Quicksand</div>
+            <div class="font-vibe">Geometric, airy, very rounded — light and feminine energy</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+        <!-- 4. Poppins -->
+        <div class="font-card font-poppins">
+            <div class="font-name">Poppins</div>
+            <div class="font-vibe">Geometric, smooth, widely loved — clean bubbly without being childish</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+        <!-- 5. Comfortaa -->
+        <div class="font-card font-comfortaa">
+            <div class="font-name">Comfortaa</div>
+            <div class="font-vibe">Maximum bubbly — very rounded, distinctive, Headspace/wellness vibes</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+        <!-- 6. Varela Round -->
+        <div class="font-card font-varela">
+            <div class="font-name">Varela Round</div>
+            <div class="font-vibe">Soft and friendly, single weight only — great for body, limited for hierarchy</div>
+
+            <div class="sample-nav">
+                <span>Home</span><span>About</span><span>Blog</span><span>FAQ</span>
+            </div>
+
+            <div class="sample-hero">Stop wondering why.<br>Start <span>understanding</span>.</div>
+            <div class="sample-subtitle">Go Go Gaia connects your period, mood, sleep, and habits to answer the questions other apps can't.</div>
+            <div class="sample-badge-row">
+                <span class="sample-badge">Cycles</span>
+                <span class="sample-badge">PCOS</span>
+                <span class="sample-badge">Fertility</span>
+                <span class="sample-badge">Pregnancy</span>
+            </div>
+            <div class="sample-button">Download</div>
+            <div class="sample-button outline">Web App</div>
+            <div class="divider"></div>
+            <div class="sample-section-heading">More Than a Period Tracker</div>
+            <div class="sample-body">Managing PCOS while trying to conceive? Cycle syncing while tracking macros? You don't have to choose just one.</div>
+            <div class="sample-testimonial">"Go Go Gaia showed me I was consistently sleeping worse during my luteal phase. Now I prioritize sleep days 18-25."</div>
+        </div>
+
+    </div>
+</body>
+</html>

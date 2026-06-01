@@ -343,6 +343,11 @@
                             <i class="bi bi-globe me-2"></i>Try it Online
                         </a>
                     </div>
+                    <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                    <div class="desktop-qr align-items-center gap-3 mt-4">
+                        <img src="images/download-qr.png" alt="QR code linking to Go Go Gaia on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                        <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                    </div>
                 </div>
 
                 <!-- Connection web — RIGHT side -->
