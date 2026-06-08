@@ -1631,6 +1631,31 @@ main {
     font-weight: 600;
 }
 
+/* On desktop, compact wide comparison tables so every column fits the
+   article column without horizontal scroll. Phrases wrap at spaces,
+   words are never broken mid-word, and nothing is truncated. Below the
+   lg breakpoint the table keeps its natural width and scrolls inside
+   .table-responsive (the accepted pattern for wide tables on mobile). */
+@media (min-width: 992px) {
+    .blog-content .table {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    /* Columns size to their content so each is only as narrow as its
+       longest word — words are never split and nothing is truncated.
+       The smaller font + tight padding are what let all the columns
+       fit the article column without horizontal scroll. */
+    .blog-content .table th,
+    .blog-content .table td {
+        padding: 0.45rem 0.5rem;
+        vertical-align: top;
+        overflow-wrap: normal;
+        word-break: keep-all;
+        hyphens: none;
+    }
+}
+
 .blog-content .accordion-button {
     font-family: 'Quicksand', sans-serif;
 }
