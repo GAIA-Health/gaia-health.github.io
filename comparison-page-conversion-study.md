@@ -34,6 +34,23 @@ We have a clear playbook from the pages that work. The next step is applying it 
 
 ---
 
+## Goals (re-scoped 2026-06-08)
+
+**Why re-scoped:** The June 8 fresh GSC pull changed the picture. CTAs already beat the original 100/mo target (124), so that goal was stale. Impressions are *declining* (66.8k → 50.5k), not compounding — the 14% MoM assumption broke, driven almost entirely by the period page losing ~2 ranking positions and ~29k impressions/mo (see Changelog 2026-06-08). Meanwhile CTR nearly doubled (0.25% → 0.46%) and clicks rose (166 → 230). So the funnel is now winning on *efficiency*, not *reach*. We're keeping impressions and clicks as **separate** optimization tracks because they have different levers — impressions = rankings/content visibility, clicks = title/snippet CTR — and raising the conversion bar since we cleared it.
+
+**New business context:** The company target is **5,000 MAU by August** (currently ~225 MAU). The website cannot deliver that alone (even 100% CTA→install conversion ≈ 370 installs/quarter). Paid acquisition, referral/viral loops, and influencer/PR carry the bulk. The website's job is to contribute **a couple hundred installs/month** via SEO + AI-search — meaningful because app retention is solid.
+
+| Metric | Current 30d (2026-06-08) | Target (per month) | Stretch | Lever |
+|---|---|---|---|---|
+| GSC impressions | 50,462 | **100,000** | — | Recover period-page rankings + keep zombies climbing |
+| GSC clicks | 230 | **1,000** | — | Title/snippet CTR (working — CTR doubled) |
+| CTA events (download + login) | 124 | **150** | **200** | On-page conversion + traffic growth |
+| Website-attributed installs/MAU contribution | (set up tracking) | **+200/mo** | — | SEO + AI-search → install funnel |
+
+**Near-term checkpoint:** 124 → **150 CTAs/mo** is the next concrete bar; 200 if the zombie pages keep converting. Deadline unchanged: **2026-08-31**.
+
+---
+
 ## Performance snapshot (last 30 days, web only)
 
 | Page | Sessions | Downloads | Logins | Conv rate | GSC clicks (3mo) | GSC impressions (3mo) | Avg position |
@@ -217,6 +234,46 @@ A new content cluster targeting athletic-training searchers. Most popular runnin
 ---
 
 ## Changelog
+
+### 2026-06-08 — Fresh GSC data check + period page reframe partial revert
+
+**Commit:** (period page edit — see below) | **Data:** GSC export 2026-06-08 (28d, May 10–Jun 6), GA4 web-only 30d vs prior 30d.
+
+**Site-wide picture (fresh GSC, 28d):** 230 clicks / 50,462 impressions / CTR 0.46% / declining position.
+- **Clicks up** vs locked baseline (166 → 230, +39%). **CTR nearly doubled** (0.25% → 0.46%).
+- **Impressions DOWN** (66.8k → 50.5k, −24%) and still falling within the window (first 14d 31k imp @ pos 9.1 → last 14d 19k imp @ pos 11.1, though CTR climbed 0.36% → 0.61%).
+- **CTAs already beat goal:** 124/mo (85 download + 39 login) vs 100 target. → goals re-scoped (see above).
+
+**The period page is the site's biggest loser and is dragging total impressions down:**
+| Metric | Locked baseline | Now (28d) | Δ |
+|---|---|---|---|
+| Position | 5.93 | 8.06 | −2.1 spots |
+| Impressions | ~44k/mo | ~15k | −66% |
+| Clicks | ~75/mo | 33 | −56% |
+| CTR | 0.17% | 0.22% | +0.05pp (barely moved while site CTR doubled) |
+| Downloads (GA4) | 4 (prior 30d) | 1 (last 30d) | noise — N too small |
+
+The period page lost ~29k impressions/mo; the whole site only lost ~16k — meaning the zombie gains *partially offset* the period page bleed. Its 2-spot ranking slip is the primary driver of the site-wide impression decline.
+
+**Diagnosis:** The May 7 reframe (`e8e4b82`) narrowed Go Go Gaia's pitch from "best all-in-one" to "best for connecting your cycle to daily life" (cycle+workouts+nutrition+mood connectome). On a high-volume *head-term* page ("best period tracker app"), that's too niche — searchers want a broad period tracker. The doc had **pre-registered** a test: "if the daily-life-connection angle doesn't reverse the engagement dip by 2026-05-21, it's not landing." It's June 8 and the page still lags → the bet failed its own criterion.
+
+**Caveat (honest attribution):** Site-wide impressions/position also fell, so part of the period drop is external (Google volatility/seasonal), not purely our edits. Title/H1/meta were never touched (load-bearing, intact). Can't prove causation — but the period page fell *more* than average and its CTR didn't lift with the rest of the site.
+
+**Changes shipped to `/blog/how-to-choose-period-tracker-app.html`:**
+1. Quick Answer line reverted: "Best for connecting your cycle to daily life" → "Best all-in-one" (broad period/cycle/mood/sleep/fitness/nutrition framing).
+2. GGG section H3 reverted: "For Cycle Tracking That Connects to Workouts, Nutrition, and Mood" → "For All-in-One Period & Cycle Tracking."
+3. "Best if you want" line broadened back to period/cycle/fertility/mood/sleep/fitness/nutrition.
+4. dateModified + visible "Last reviewed" → 2026-06-08. Sitemap lastmod already 2026-06-08.
+
+**Did NOT change** (per memory + playbook): `<title>`, `<h1>`, `<meta description>`, URL slug, hero image. Kept the connectome SVG visual and the May 7 CTA-box removal (deliberate bounce-reduction call). Kept the May 5 Quick Answer GGG inclusion + per-app Download lines (proven wins).
+
+**Hypothesis:** broadening the value prop back to head-term intent recovers some conversion; the dateModified freshness signal nudges re-crawl. If position doesn't recover toward 6–7 by ~2026-06-29, the drop is external (not our copy) and no further revert is warranted.
+
+**Watching:** period page position (target: recover toward 6–7), impressions, GA4 downloads; whether site-wide impression decline reverses as the period page recovers.
+
+**Next data check:** 2026-06-22 (2 weeks; needs a fresh GSC export).
+
+---
 
 ### 2026-05-05 — Period tracker comparison playbook applied
 **Commits:** `1624236`, `c04e6ab`, `ec7d86b`, `63b68b2`, `faa8019`
