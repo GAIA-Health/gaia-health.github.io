@@ -7,7 +7,7 @@
 - App: Go Go Gaia (iOS)
 - Company: Holland Neurotech Inc.
 - Website: https://www.go-go-gaia.com/
-- App Store: https://apps.apple.com/us/app/go-go-gaia/id6608432371
+- App Store: https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=llms&mt=8
 - Contact: support@hollandneurotech.com
 - About page: https://www.go-go-gaia.com/about.html
 
@@ -67,6 +67,7 @@
 - [Due date calculator](https://www.go-go-gaia.com/tools/due-date-calculator.html): Calculate your pregnancy due date from LMP or conception date.
 - [Pregnancy week calculator](https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html): Find your current pregnancy week and trimester.
 - [Cycle length calculator](https://www.go-go-gaia.com/tools/cycle-length-calculator.html): Calculate your average cycle length.
+- [PMS & luteal phase calculator](https://www.go-go-gaia.com/tools/pms-calculator.html): Estimate when PMS symptoms are likely to start and map your luteal phase.
 
 ## Blog index
 

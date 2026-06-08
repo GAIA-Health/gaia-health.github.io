@@ -20,11 +20,30 @@ document.addEventListener('click', function (e) {
     : 'page_body';
 
   if (href.indexOf('apps.apple.com') !== -1) {
-    gtag('event', 'download_click', {
-      link_text: text,
-      link_location: location,
-      page_path: window.location.pathname
-    });
+    // Only OUR app (id6608432371) is a real download intent. Competitor
+    // App Store links on comparison/best-of pages were inflating download_click.
+    var isOwnApp = href.indexOf('id6608432371') !== -1;
+    if (isOwnApp) {
+      // ct= mirrors the App Store Connect campaign token, so GA segments the
+      // funnel by surface (gogogaia.com, wrapped, invite-*, tools, comparison…)
+      // even when ASC only surfaces the one campaign you registered.
+      var ctMatch = href.match(/[?&]ct=([^&]+)/);
+      gtag('event', 'download_click', {
+        link_text: text,
+        link_location: location,
+        page_path: window.location.pathname,
+        campaign_token: ctMatch ? decodeURIComponent(ctMatch[1]) : '(none)'
+      });
+    } else {
+      // Which competitor are they leaving for? Slug from /app/<slug>/id…
+      var slugMatch = href.match(/apps\.apple\.com\/[a-z]{2}\/app\/([^\/]+)\//);
+      gtag('event', 'outbound_app_click', {
+        link_text: text,
+        link_location: location,
+        page_path: window.location.pathname,
+        competitor_app: slugMatch ? slugMatch[1] : '(unknown)'
+      });
+    }
   }
 
   if (href.indexOf('app.go-go-gaia.com') !== -1) {
