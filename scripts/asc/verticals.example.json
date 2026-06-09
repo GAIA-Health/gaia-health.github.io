@@ -1,0 +1,12 @@
+{
+  "_comment": "Copy to verticals.json (gitignored) and fill in. promotionalText max 170 chars; no superlatives, no medical advice. appId is the numeric resource id from `audit` (NOT the 6608432371 store id).",
+  "appId": "REPLACE_WITH_RESOURCE_ID_FROM_AUDIT",
+  "defaultLocale": "en-US",
+  "pages": [
+    { "slug": "pcos", "name": "PCOS", "promotionalText": "Track irregular cycles, symptoms, mood, sleep, and labs in one place. Free with most features, ad-free, on iOS." },
+    { "slug": "pregnancy", "name": "Pregnancy", "promotionalText": "Kick counter, contraction timer, symptoms, nutrition, mood, and wearables in one free app for your pregnancy." },
+    { "slug": "perimenopause", "name": "Perimenopause", "promotionalText": "Track hot flashes, cycle changes, mood, and sleep through perimenopause, with the connections between them visible." },
+    { "slug": "ttc", "name": "TTC", "promotionalText": "Ovulation predictions, fertile window, BBT, and LH tests in one free app while you are trying to conceive." },
+    { "slug": "mood", "name": "Mood", "promotionalText": "Track mood alongside cycle, sleep, and energy, and see how they connect over time. Free and ad-free on iOS." }
+  ]
+}

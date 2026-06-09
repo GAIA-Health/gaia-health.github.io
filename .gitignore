@@ -1,3 +1,8 @@
+# App Store Connect API secrets — NEVER commit
+*.p8
+scripts/asc/.env
+scripts/asc/verticals.json
+
 # Private/internal documentation (not published)
 docs-private/
 
