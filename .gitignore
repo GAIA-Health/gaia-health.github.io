@@ -4,6 +4,9 @@ scripts/asc/.env
 scripts/asc/verticals.json
 
 # Private/internal documentation (not published)
+# docs/ holds internal strategy/briefs/audits — NOT public content and gives no
+# SEO (never linked or in sitemap). Keep the whole folder out of the public repo.
+docs/
 docs-private/
 
 # Internal planning docs (PRDs, redesign specs, audits, guides)
@@ -19,16 +22,6 @@ SEARCH-CONSOLE-ANALYSIS.md
 SEO-IMPROVEMENT-PLAN.md
 TONE-OF-VOICE-GUIDE.md
 indexing-diagnosis.md
-docs/BLOG-CSS-COMPONENTS.md
-docs/CALLOUT-BOXES-PLAN.md
-docs/CONTENT-OPPORTUNITIES.md
-docs/DESIGN-SYSTEM.md
-docs/DIRECT-LINKS-STOCK-PHOTOS.md
-docs/IMAGE-USAGE-TRACKER.md
-docs/REUSABLE-IMAGE-LIBRARY.md
-docs/SEO-IMPROVEMENTS-PRD.md
-docs/SOCIAL-SHARE-BUTTONS-TEMPLATE.md
-docs/BLOG-WRITING-GUIDE.md
 
 # Web app development (separate deployment)
 web-app/
