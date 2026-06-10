@@ -126,10 +126,68 @@ async function cmdSales(start, end) {
   console.log(`${'TOTAL'.padEnd(13)} ${String(tNew).padStart(5)} ${String(tRe).padStart(6)} ${String(tUp).padStart(8)}`);
 }
 
+// ---- App Analytics reports (impressions / page views / downloads BY SOURCE) ----
+// Pulls from the ONE_TIME_SNAPSHOT request in ASC_ANALYTICS_REQUEST. The snapshot
+// generates within ~24-48h of creation; until then instances are empty.
+
+async function apiGet(path) {
+  const r = await fetch(BASE + path, { headers: { Authorization: `Bearer ${token()}` } });
+  const t = await r.text();
+  if (!r.ok) throw new Error(`${path} -> ${r.status}: ${t.slice(0, 200)}`);
+  return JSON.parse(t);
+}
+
+async function cmdReport(nameSub, gran = 'WEEKLY') {
+  const req = need('ASC_ANALYTICS_REQUEST');
+  const reports = (await apiGet(`/v1/analyticsReportRequests/${req}/reports?limit=200`)).data;
+  if (!nameSub) {
+    console.log('Available reports (pass a name substring + granularity):');
+    for (const r of reports) console.log(`  [${r.attributes.category}] ${r.attributes.name}`);
+    return;
+  }
+  const rep = reports.find((r) => r.attributes.name.toLowerCase().includes(nameSub.toLowerCase()));
+  if (!rep) throw new Error(`No report matching "${nameSub}". Run \`report\` with no args to list.`);
+  console.log(`Report: ${rep.attributes.name} [${rep.attributes.category}] granularity=${gran}\n`);
+  const insts = (await apiGet(`/v1/analyticsReports/${rep.id}/instances?filter[granularity]=${gran}&limit=200`)).data;
+  if (!insts.length) { console.log('No instances yet — snapshot still generating (~24-48h). Re-run later.'); return; }
+  let header = null; const rows = [];
+  for (const inst of insts) {
+    const segs = (await apiGet(`/v1/analyticsReportInstances/${inst.id}/segments?limit=100`)).data;
+    for (const s of segs) {
+      const buf = Buffer.from(await (await fetch(s.attributes.url)).arrayBuffer());
+      const txt = zlib.gunzipSync(buf).toString('utf8');
+      const lines = txt.trim().split('\n');
+      const delim = lines[0].includes('\t') ? '\t' : ',';
+      if (!header) header = lines[0].split(delim);
+      for (const l of lines.slice(1)) rows.push(l.split(delim));
+    }
+  }
+  console.log(`Columns: ${header.join(' | ')}`);
+  console.log(`Rows: ${rows.length}`);
+  // Aggregate by "Source Type" if present (answers the ASO-share question).
+  const iSrc = header.findIndex((h) => /source type/i.test(h));
+  const iCnt = header.findIndex((h) => /^(counts|impressions|unique devices|product page views|downloads)$/i.test(h));
+  if (iSrc >= 0 && iCnt >= 0) {
+    const agg = {};
+    for (const r of rows) { const k = r[iSrc] || '(none)'; agg[k] = (agg[k] || 0) + (parseInt(r[iCnt], 10) || 0); }
+    const total = Object.values(agg).reduce((a, b) => a + b, 0) || 1;
+    console.log(`\nBy ${header[iSrc]} (sum of ${header[iCnt]}):`);
+    for (const [k, v] of Object.entries(agg).sort((a, b) => b[1] - a[1])) {
+      console.log(`  ${k.padEnd(28)} ${String(v).padStart(8)}  (${(v / total * 100).toFixed(1)}%)`);
+    }
+  } else {
+    console.log('\nFirst 10 rows:'); for (const r of rows.slice(0, 10)) console.log('  ' + r.join(' | '));
+  }
+}
+
 const [cmd, a, b] = process.argv.slice(2).filter((x) => !x.startsWith('--'));
 try {
   if (cmd === 'sales' && a) await cmdSales(a, b);
-  else { console.log('Usage: node scripts/asc/asc-analytics.mjs sales <YYYY-MM-DD> [end YYYY-MM-DD]'); process.exit(1); }
+  else if (cmd === 'report') await cmdReport(a, b);
+  else {
+    console.log('Usage:\n  node scripts/asc/asc-analytics.mjs sales <YYYY-MM-DD> [end]\n  node scripts/asc/asc-analytics.mjs report ["name substring"] [DAILY|WEEKLY|MONTHLY]');
+    process.exit(1);
+  }
 } catch (e) {
   console.error('\nError:', e.message);
   process.exit(1);
