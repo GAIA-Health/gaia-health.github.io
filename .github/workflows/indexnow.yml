@@ -1,0 +1,58 @@
+name: IndexNow ping
+
+# Notifies Bing (and other IndexNow engines) when HTML pages change.
+# Bing's index feeds ChatGPT search + DuckDuckGo, so fast Bing indexing
+# is an AI-search lever, not just a Bing one. Does nothing for Google.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # GitHub Pages needs a moment to deploy before engines fetch the new content
+      - name: Wait for Pages deploy
+        run: sleep 120
+
+      - name: Submit changed URLs to IndexNow
+        env:
+          KEY: 7ee6eaca09e1360cba21042029b816be
+          HOST: www.go-go-gaia.com
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if git cat-file -e "$BEFORE" 2>/dev/null; then
+            FILES=$(git diff --name-only --diff-filter=ACMR "$BEFORE" "$AFTER" -- '*.html')
+          else
+            FILES=$(git diff-tree --no-commit-id --name-only -r --diff-filter=ACMR "$AFTER" -- '*.html')
+          fi
+          if [ -z "$FILES" ]; then
+            echo "No HTML changes to submit."
+            exit 0
+          fi
+          URLS=""
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            case "$f" in
+              index.html)    u="https://$HOST/" ;;
+              */index.html)  u="https://$HOST/${f%index.html}" ;;
+              *)             u="https://$HOST/$f" ;;
+            esac
+            URLS="$URLS$u"$'\n'
+          done <<< "$FILES"
+          printf '%s' "$URLS" | sed '/^$/d' | jq -R . | jq -s \
+            --arg host "$HOST" --arg key "$KEY" \
+            '{host:$host, key:$key, keyLocation:("https://"+$host+"/"+$key+".txt"), urlList:.}' \
+            > payload.json
+          echo "Submitting:"; cat payload.json
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d @payload.json -w "\nHTTP %{http_code}\n"
