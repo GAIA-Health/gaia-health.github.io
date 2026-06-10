@@ -9,8 +9,15 @@ You are starting (or continuing) App Store Optimization work. Load the standing 
 ## 1. Read the reference docs (in this order)
 
 1. `docs-private/ASO.md` — the primary ASO reference: how App Store fields work (indexed vs conversion-only), current copy state, findings, proposed changes, measurement/A-B approach, tools, status checklist, and guardrails. This is the source of truth.
-2. `docs-private/MARKETING-HIGHLIGHTS.md` or `docs/MARKETING-HIGHLIGHTS.md` — killer features + per-audience marketing points.
-3. `docs/DIFFERENTIATION-AND-CPP-COPY.md` — the positioning spine ("See how it all connects") and the per-vertical Custom Product Page (CPP) copy.
+2. `docs-private/ASO-STRATEGY.md` — the 3k/mo playbook: lever stack (L1-L11 + S1-S5 spike portfolio), sprint plans, 12-week roadmap, measurement framework, execution briefs.
+3. `docs-private/ASO-RESEARCH.md` — the evidence base: conversion/ranking benchmarks, ranking mechanics (caption indexing, 10-locale stacking, IAP-name indexing, CPP keyword associations, iOS 26 Tags), featuring/event data, organic channel evidence, all with sources.
+4. `docs-private/ASO-COMPETITORS.md` — live competitor metadata, our keyword rank baseline (top-100 for zero non-branded terms as of 2026-06-10), per-term winnability, metadata Option A/B.
+5. `docs-private/ASO-PLAYBOOK-ORGANIC.md` — enumerated free-channel action lists (one-day wins, review responses, founder video hooks, listicle outreach, gifting, communities).
+6. `docs-private/ANALYTICS.md` — the data map: every source + how to pull it, current numbers, install history, the acquisition funnel, the ASO-share + 3k-scenario analysis.
+7. `docs/MARKETING-HIGHLIGHTS.md` — killer features + per-audience marketing points.
+8. `docs/DIFFERENTIATION-AND-CPP-COPY.md` — the positioning spine ("See how it all connects") and the per-vertical Custom Product Page (CPP) copy.
+
+When WRITING any store copy, also read `docs-private/APP-STORE-VOICE.md` (per-field rules, char limits, indexing truth table) — it extends `TONE-OF-VOICE-GUIDE.md` for store surfaces. Pending copy drafts awaiting review live in `docs-private/ASO.md` §4 and `docs-private/ASO-DESCRIPTION-DRAFT.md`.
 
 If any are missing, say so and continue with what's available.
 
