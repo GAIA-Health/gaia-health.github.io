@@ -145,7 +145,7 @@
 
         <a class="btn" id="open-app" href="#">Open in Gaia</a>
         <br>
-        <a class="btn" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=invite-partner&mt=8">Download Gaia</a>
+        <a class="btn" id="download-app" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%); box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=invite-partner&mt=8">Download Gaia</a>
 
         <div class="instructions">
             <p class="instructions-title">How to Connect</p>
@@ -181,6 +181,21 @@
         const openBtn = document.getElementById('open-app');
         openBtn.href = deepLink || appStoreUrl;
 
+        // Copy this invite page's URL to the clipboard so a fresh app install
+        // can recover the invite code via a one-time pasteboard probe.
+        function copyInviteUrlToClipboard() {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(window.location.href).catch(function() {});
+            }
+        }
+
+        const downloadBtn = document.getElementById('download-app');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function() {
+                copyInviteUrlToClipboard();
+            });
+        }
+
         // Auto-redirect: try deep link, fall back to App Store
         if (code) {
             let redirectTimer;
@@ -199,6 +214,7 @@
 
             // If still here after 1.5s, the app isn't installed — go to App Store
             redirectTimer = setTimeout(function() {
+                copyInviteUrlToClipboard();
                 window.location.href = appStoreUrl;
             }, 1500);
         }
