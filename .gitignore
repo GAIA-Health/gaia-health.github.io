@@ -9,6 +9,18 @@ scripts/asc/verticals.json
 docs/
 docs-private/
 
+# Internal marketing/channel work — repo is PUBLIC, keep strategy local
+scripts/pinterest/
+scripts/asc/metadata-*.json
+scripts/asc/metadata/
+GRANT-VOICE.md
+.claude/agents/
+.claude/skills/
+.claude/commands/content-system.md
+.claude/commands/grants.md
+.claude/commands/pinterest.md
+.claude/commands/research.md
+
 # Internal planning docs (PRDs, redesign specs, audits, guides)
 WEBSITE-UPDATE-PRD.md
 HOW-IT-WORKS-REDESIGN.md
