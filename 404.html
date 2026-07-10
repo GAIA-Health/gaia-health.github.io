@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Go Go Gaia</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/Logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--wash, #f5f5f7) 0%, #fff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 420px;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            border-radius: 18px;
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        .code-label {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .code {
+            font-family: 'Quicksand', monospace;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent, #5c6bc0);
+            letter-spacing: 6px;
+            margin-bottom: 32px;
+            padding: 16px 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px var(--accent-shadow, rgba(92, 107, 192, 0.1));
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent, #5c6bc0) 0%, var(--accent-light, #7986cb) 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px var(--accent-glow, rgba(92, 107, 192, 0.3));
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6274 100%);
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+        }
+        .instructions {
+            margin-top: 32px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .instructions-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .steps {
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+            padding-left: 18px;
+        }
+        .steps li {
+            margin-bottom: 4px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer a {
+            color: var(--accent, #5c6bc0);
+            text-decoration: none;
+        }
+        [hidden] { display: none !important; }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEM6KB1QWF');
+    </script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="/Logo1.png" alt="Go Go Gaia" class="logo">
+        <div class="icon" id="icon" aria-hidden="true">&#x2728;</div>
+        <h1 id="title">Opening your invite</h1>
+        <p class="subtitle" id="subtitle">One moment while we hand this off to the app.</p>
+
+        <div id="code-block" hidden>
+            <p class="code-label" id="code-label">Your Code</p>
+            <p class="code" id="code">------</p>
+        </div>
+
+        <a class="btn" id="open-app" href="/">Open in Gaia</a>
+        <br>
+        <a class="btn btn-secondary" id="download-app" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=invite-fallback&mt=8">Download Gaia</a>
+
+        <div class="instructions" id="instructions" hidden>
+            <p class="instructions-title" id="instructions-title">How to Connect</p>
+            <ol class="steps" id="steps"></ol>
+        </div>
+
+        <p class="footer">
+            <a href="/">Learn more about Go Go Gaia</a>
+        </p>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // GitHub Pages serves this file for any path it has no static file for.
+        // Every invite link the app shares is `/invite/{type}/{code}` — a path
+        // that by definition has no static file, since the code is dynamic. So
+        // this router, not the per-type pages, is what real invite links land on.
+
+        var APP_STORE = 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&mt=8&ct=';
+        var ORIGIN = 'https://www.go-go-gaia.com';
+
+        var TYPES = {
+            'friend': {
+                icon: '🤝',
+                title: "You've Got a Friend Request!",
+                subtitle: 'Someone wants to connect with you on Go Go Gaia.',
+                codeLabel: 'Your Friend Code',
+                accent: '#5c6bc0', light: '#7986cb', wash: '#f0f4ff',
+                ct: 'invite-friend',
+                stepsTitle: 'How to Connect',
+                steps: ['Download or open the Gaia app', 'Go to the Social tab', 'Tap "Add Friend"', 'Enter the code above']
+            },
+            'partner': {
+                icon: '💗',
+                title: 'Connect as Partners',
+                subtitle: 'Download Gaia to connect with your partner and share your health journey together.',
+                codeLabel: 'Your Partner Code',
+                accent: '#e91e63', light: '#f06292', wash: '#fdf2f8',
+                ct: 'invite-partner',
+                stepsTitle: 'How to Connect',
+                steps: ['Download or open the Gaia app', 'Go to Settings', 'Tap "Partner Connection"', 'Enter the code above']
+            },
+            'challenge': {
+                icon: '🏆',
+                title: "You've Been Invited!",
+                subtitle: 'Someone wants you to join their health challenge on Go Go Gaia.',
+                codeLabel: 'Your Challenge Code',
+                accent: '#b8860b', light: '#daa520', wash: '#fdf8ec',
+                ct: 'invite-challenge',
+                stepsTitle: 'How to Join',
+                steps: ['Download or open the Gaia app', 'Go to the Challenges tab', 'Tap "Join Challenge"', 'Enter the code above']
+            },
+            'professional': {
+                icon: '🩺',
+                title: 'Your Practitioner Invited You',
+                subtitle: 'Connect with your health professional so they can see the data you choose to share, and nothing else.',
+                codeLabel: 'Your Practitioner Code',
+                accent: '#2e9e6b', light: '#43a047', wash: '#f0faf5',
+                ct: 'invite-professional',
+                stepsTitle: 'How to Connect',
+                steps: ['Download or open the Gaia app', 'Go to Settings', 'Tap "Connected Professionals"', 'Enter the code above']
+            },
+            'pcos-awareness': {
+                icon: '🌿',
+                title: 'A Friend Sent You This',
+                subtitle: 'They thought you might want to explore your patterns. It takes about two minutes.',
+                codeLabel: 'Your Invite Code',
+                accent: '#00897b', light: '#26a69a', wash: '#effaf8',
+                ct: 'invite-pcos-awareness',
+                stepsTitle: 'How to Start',
+                steps: ['Download or open the Gaia app', 'Go to the Cycle tab', 'Open the pattern assessment', 'Enter the code above']
+            },
+            'share-with': {
+                icon: '🔒',
+                title: 'Share Your Health Data',
+                subtitle: 'Someone asked to see the health data you choose to share. Nothing is shared until you pick.',
+                accent: '#5c6bc0', light: '#7986cb', wash: '#f0f4ff',
+                ct: 'share-with',
+                stepsTitle: 'How to Share',
+                steps: ['Download or open the Gaia app', 'Tap their profile or use the prompt that appears', "Pick what you're comfortable sharing", 'You can change or revoke sharing anytime']
+            }
+        };
+
+        var NOT_FOUND = {
+            icon: '🧭',
+            title: "We couldn't find that page",
+            subtitle: 'The link may be out of date. Everything else is still here.',
+            accent: '#5c6bc0', light: '#7986cb', wash: '#f5f5f7',
+            ct: 'not-found'
+        };
+
+        // ---- Route ----------------------------------------------------------
+        // Returns { key, code, canonical } or null. `canonical` is always the
+        // `/invite/{type}/{code}` shape the iOS cold-start pasteboard probe
+        // parses, even when the user arrived via a legacy `/challenge/join/`
+        // link, so a fresh install can still recover the code.
+        function route(path) {
+            var m = path.match(/^\/invite\/([^\/]+)\/([^\/?#]+)/);
+            if (m && TYPES[m[1]]) {
+                return { key: m[1], code: m[2], canonical: ORIGIN + '/invite/' + m[1] + '/' + m[2] };
+            }
+
+            m = path.match(/^\/challenge\/join\/([^\/?#]+)/);
+            if (m) {
+                return { key: 'challenge', code: m[1], canonical: ORIGIN + '/invite/challenge/' + m[1] };
+            }
+
+            m = path.match(/^\/share-with\/([^\/?#]+)/);
+            if (m) {
+                return { key: 'share-with', code: m[1], canonical: null };
+            }
+
+            return null;
+        }
+
+        function deepLinkFor(key, code) {
+            if (key === 'share-with') return 'gogogaia://share-with/' + encodeURIComponent(code);
+            return 'gogogaia://invite/' + key + '/' + encodeURIComponent(code);
+        }
+
+        // ---- Render ---------------------------------------------------------
+        function paint(cfg) {
+            var root = document.documentElement.style;
+            root.setProperty('--accent', cfg.accent);
+            root.setProperty('--accent-light', cfg.light);
+            root.setProperty('--wash', cfg.wash);
+            root.setProperty('--accent-shadow', hexToRgba(cfg.accent, 0.1));
+            root.setProperty('--accent-glow', hexToRgba(cfg.accent, 0.3));
+
+            document.getElementById('icon').textContent = cfg.icon;
+            document.getElementById('title').textContent = cfg.title;
+            document.getElementById('subtitle').textContent = cfg.subtitle;
+            document.title = cfg.title + ' - Go Go Gaia';
+
+            var download = document.getElementById('download-app');
+            download.href = APP_STORE + cfg.ct;
+
+            if (cfg.steps) {
+                document.getElementById('instructions-title').textContent = cfg.stepsTitle;
+                var ol = document.getElementById('steps');
+                cfg.steps.forEach(function (s) {
+                    var li = document.createElement('li');
+                    li.textContent = s;
+                    ol.appendChild(li);
+                });
+                document.getElementById('instructions').hidden = false;
+            }
+        }
+
+        function hexToRgba(hex, a) {
+            var n = parseInt(hex.slice(1), 16);
+            return 'rgba(' + [(n >> 16) & 255, (n >> 8) & 255, n & 255].join(', ') + ', ' + a + ')';
+        }
+
+        // Copy the canonical invite URL so a Safari → App Store → fresh-install
+        // detour can recover the code: the app probes the pasteboard once on
+        // first launch and parses `/invite/{type}/{code}` out of it.
+        function copyCanonical(canonical) {
+            if (!canonical) return;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(canonical).catch(function () {});
+            }
+        }
+
+        // ---- Go -------------------------------------------------------------
+        var matched = route(window.location.pathname);
+
+        if (!matched) {
+            paint(NOT_FOUND);
+            document.getElementById('open-app').href = '/';
+            document.getElementById('open-app').textContent = 'Go to homepage';
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_not_found', { page_path: window.location.pathname });
+            }
+            return;
+        }
+
+        var cfg = TYPES[matched.key];
+        var code = matched.key === 'share-with' ? matched.code : matched.code.toUpperCase();
+        var deepLink = deepLinkFor(matched.key, code);
+
+        paint(cfg);
+
+        if (cfg.codeLabel) {
+            document.getElementById('code-label').textContent = cfg.codeLabel;
+            document.getElementById('code').textContent = code;
+            document.getElementById('code-block').hidden = false;
+        }
+
+        document.getElementById('open-app').href = deepLink;
+        document.getElementById('download-app').addEventListener('click', function () {
+            copyCanonical(matched.canonical);
+        });
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'invite_landing_view', {
+                invite_type: matched.key,
+                page_path: window.location.pathname
+            });
+        }
+
+        // Try the app first. If it opens, the page is backgrounded and the
+        // timer is cancelled; if nothing handles the scheme we fall through to
+        // the App Store, copying the code on the way out.
+        var redirectTimer;
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearTimeout(redirectTimer);
+        });
+        window.addEventListener('blur', function () {
+            clearTimeout(redirectTimer);
+        });
+
+        window.location.href = deepLink;
+
+        redirectTimer = setTimeout(function () {
+            copyCanonical(matched.canonical);
+            window.location.href = APP_STORE + cfg.ct;
+        }, 1500);
+    })();
+    </script>
+</body>
+</html>
