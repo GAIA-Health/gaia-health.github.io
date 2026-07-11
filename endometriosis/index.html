@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Endometriosis Symptom Check: Track the Pain Pattern | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Endometriosis affects 1 in 10 women and many don't know it. Take the two-minute symptom check that connects the pain patterns, start tracking cramps and pain daily, and get a script to bring to your doctor.">
+    <meta name="keywords" content="endometriosis app, endometriosis symptom tracker, app to track endometriosis symptoms, apps for endometriosis, endometriosis symptom check">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/endometriosis/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Endometriosis Symptom Check: Track the Pain Pattern">
+    <meta property="og:description" content="Endometriosis affects 1 in 10 women and many don't know it. Take the two-minute symptom check that connects the pain patterns and get a script for your doctor.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/endometriosis/">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Endometriosis Symptom Check: Track the Pain Pattern">
+    <meta name="twitter:description" content="Endometriosis affects 1 in 10 women and many don't know it. Take the two-minute symptom check that connects the pain patterns and get a script for your doctor.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Endometriosis"
+        }
+      ]
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Endometriosis Symptom Check: Track the Pain Pattern",
+      "url": "https://www.go-go-gaia.com/endometriosis/",
+      "datePublished": "2026-07-11",
+      "dateModified": "2026-07-11",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .pcos-hero {
+            background: var(--secondary);
+            padding: 3.5rem 0 3rem;
+        }
+        .pcos-hero h1 {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .pcos-hero .lead {
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 1rem auto 2rem;
+        }
+        .btn-cta {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.85rem 2.25rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+        .btn-cta:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .pcos-section { max-width: 740px; }
+        .pcos-section h2 {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .pcos-section p {
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.9rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 576px) {
+            .symptom-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .symptom-chip {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+        }
+        .symptom-chip i {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+            color: var(--primary);
+        }
+        .time-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            border: 2px solid var(--secondary);
+            border-radius: 999px;
+            padding: 0.5rem 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        .next-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 576px) {
+            .next-steps { grid-template-columns: 1fr; }
+        }
+        .next-step-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 1.75rem;
+        }
+        .next-step-card i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .next-step-card h3 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .next-step-card p {
+            font-size: 0.92rem;
+            margin-bottom: 0;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2.5rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; color: #fff; }
+        .cta-section .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+        }
+        .cta-section .btn-cta:hover {
+            color: var(--primary-dark);
+            background: #fff;
+        }
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEM6KB1QWF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEM6KB1QWF');
+    </script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=endometriosis&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Endometriosis</span>
+            </nav>
+        </div>
+
+        <!-- Hero -->
+        <section class="pcos-hero">
+            <div class="container text-center">
+                <h1 class="display-6">Painful periods aren't just something to live with.</h1>
+                <p class="lead">Endometriosis affects 1 in 10 women, and many don't know it. This is a two-minute symptom check that connects the pain patterns you've been told to expect. It won't tell you whether you have endometriosis, but it might put the pieces together, and give you something real to bring to a doctor.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=endometriosis&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Take the Symptom Check
+                </a>
+            </div>
+        </section>
+
+        <!-- What it is -->
+        <section class="container pcos-section py-5">
+            <h2>What this actually is</h2>
+            <p>It's a short set of questions about pain that often gets brushed off one piece at a time: period pain that stops you in your tracks, pain that has gotten worse over the years, pain during intimacy, bowel or bladder pain that shows up with your period, and pelvic pain that lingers when you're not bleeding.</p>
+            <div class="symptom-grid">
+                <div class="symptom-chip"><i class="bi bi-lightning"></i>Severe period pain</div>
+                <div class="symptom-chip"><i class="bi bi-graph-up-arrow"></i>Pain getting worse</div>
+                <div class="symptom-chip"><i class="bi bi-heart"></i>Pain with intimacy</div>
+                <div class="symptom-chip"><i class="bi bi-arrow-repeat"></i>Bowel or GI pain</div>
+                <div class="symptom-chip"><i class="bi bi-droplet"></i>Bladder pain or UTIs</div>
+                <div class="symptom-chip"><i class="bi bi-radioactive"></i>Pain between periods</div>
+            </div>
+            <p>Any one of these is easy for a busy appointment to wave away. Seen together, they can be a pattern worth naming. No app can diagnose endometriosis, and this one doesn't try to. What it does is put your own answers next to each other so the pattern is visible instead of scattered across years of shrugs.</p>
+            <div class="time-note"><i class="bi bi-stopwatch"></i> Takes about two minutes</div>
+        </section>
+
+        <!-- What happens after -->
+        <section class="container pcos-section pb-4">
+            <h2>What happens after</h2>
+            <p>Once you flag which kinds of pain feel familiar, two things happen.</p>
+            <div class="next-steps">
+                <div class="next-step-card">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <h3>Tracking turns on for what you flagged</h3>
+                    <p>Gaia adds cramps, pain, and bloating to your daily log so you can build a clear record over the next few cycles, instead of trying to reconstruct months of pain from memory in the exam room.</p>
+                </div>
+                <div class="next-step-card">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <h3>You get a script for your doctor</h3>
+                    <p>A plain-language summary of what you've been experiencing, written so you can copy it, share it, or read it aloud. It exists because too many endometriosis conversations start with years of not being taken seriously.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container pcos-section">
+            <div class="cta-section">
+                <h3>See if your pain adds up to a conversation worth having</h3>
+                <p>Two minutes, a handful of questions about pain you already know too well, and a script you can actually use at your next appointment.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=endometriosis&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keep Reading -->
+        <section class="container pcos-section related-articles">
+            <h2 class="text-center mb-4">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>The Complete Guide to Endometriosis</h4>
+                        <p>Symptoms, why diagnosis takes so long, and what actually helps.</p>
+                        <a href="../blog/endometriosis-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Best Endometriosis Tracking App</h4>
+                        <p>How Gaia compares to Flo, Clue, and others for tracking endometriosis symptoms.</p>
+                        <a href="../blog/best-endometriosis-tracking-app.html">Read the comparison &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer pcos-section">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This symptom check is an awareness tool, not a diagnostic one. It doesn't screen for endometriosis and it can't tell you whether you have it. Endometriosis is diagnosed by a healthcare provider, and confirming it often takes imaging or laparoscopic surgery. What this tool can do is help you notice your own pain patterns and put them into words before that appointment. Read our full <a href="../medical-disclaimer.html">Medical Disclaimer</a>.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
