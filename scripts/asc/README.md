@@ -32,11 +32,23 @@ node scripts/asc/asc-cpp.mjs sync scripts/asc/verticals.json
 
 # 4) Apply — actually writes to App Store Connect.
 node scripts/asc/asc-cpp.mjs sync scripts/asc/verticals.json --apply
+
+# 5) Screenshots — upload the framed PNGs for a CPP once its shell exists.
+#    Files must be named "1_foo.png", "2_bar.png", ... — the leading number
+#    sets upload/display order. Dry run first (no --apply):
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS
+
+# 6) Apply the screenshot upload.
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS --apply
+
+# If the set already has screenshots, `screenshots` SKIPS by default (no
+# duplicate upload). Pass --replace to delete the existing ones first:
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS --replace --apply
 ```
 
 ## Important limits
 
-- **Screenshots are not automated here.** A CPP is created *hidden* (`visible=false`) and **cannot go live without screenshots**. Add them in the ASC UI (or extend the script with the media reserve→upload→commit flow). The text/promo and page structure are what this tool manages.
+- **A CPP is created *hidden* (`visible=false`) and cannot go live without screenshots.** `sync` builds the text/shell; `screenshots` handles the asset upload end-to-end (reserve -> upload bytes -> commit -> poll for processing -> reorder), so nothing has to be dragged into the ASC UI by hand. `screenshots` always targets the **en-US** locale and the **APP_IPHONE_67** screenshot set (the display type Apple assigns to 1290x2796 6.9"/6.7" portrait shots — confirmed by reading the live app-level listing's screenshot set, not assumed). Other locales/device sizes aren't wired up.
 - CPPs can customize **screenshots, app previews, and promotional text** — not the app-level name/keywords/description.
 - `promotionalText` max **170 chars**. Keep to the guardrails: no superlatives, no medical advice, no em-dashes.
 - Writes require `--apply`. Always run `audit` and a dry run first.

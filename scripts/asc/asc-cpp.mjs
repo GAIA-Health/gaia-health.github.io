@@ -19,10 +19,22 @@
 //   node scripts/asc/asc-cpp.mjs sync scripts/asc/verticals.json [--apply]
 //       Reconciles CPPs from config: creates any missing page (shell + version),
 //       and sets promotional text per locale. Without --apply it's a DRY RUN that
-//       prints what it WOULD do. Screenshots are NOT handled here (see README).
+//       prints what it WOULD do.
 //
-// A CPP cannot go live without screenshots — this tool builds the text/shell;
-// screenshots are an asset step done in the ASC UI or via a separate media upload.
+//   node scripts/asc/asc-cpp.mjs screenshots <CPP-NAME> <folder> [--apply] [--replace]
+//       Uploads the PNGs in <folder> (named "1_foo.png", "2_bar.png", ... — the
+//       leading number sets upload/display order) to the CPP's default-locale
+//       (en-US) screenshot set, via the reserve -> upload-bytes -> commit ->
+//       poll flow, then reorders to match the numeric prefixes. Without --apply
+//       it's a DRY RUN that prints exactly what it would do. If the set already
+//       has screenshots, it SKIPS (no duplicate upload) unless --replace is also
+//       given, which deletes the existing screenshots first (only under --apply).
+//       Display type is APP_IPHONE_67, confirmed by reading the live app-level
+//       6.9"/6.7" en-US screenshot set (1290x2796 shots are tagged APP_IPHONE_67,
+//       not e.g. APP_IPHONE_65) — don't assume, re-verify if Apple ever changes this.
+//
+// A CPP cannot go live without screenshots. `sync` builds the text/shell;
+// `screenshots` handles the asset upload end-to-end (no more dragging into the ASC UI).
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -41,6 +53,14 @@ function need(name) {
 
 function b64url(input) {
   return Buffer.from(input).toString('base64').replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function md5(buf) {
+  return crypto.createHash('md5').update(buf).digest('hex');
 }
 
 // Mint a short-lived ES256 JWT for the ASC API.
@@ -82,6 +102,46 @@ async function listCpps(appId) {
   const { data } = await api(
     `/v1/apps/${appId}/appCustomProductPages?limit=200&include=appCustomProductPageVersions` +
     `&fields[appCustomProductPages]=name,visible,url,appCustomProductPageVersions`
+  );
+  return data;
+}
+
+async function findCppByName(appId, name) {
+  const cpps = await listCpps(appId);
+  return cpps.find((c) => c.attributes.name.toLowerCase() === name.toLowerCase());
+}
+
+// Versions for one CPP, with state so we can pick the editable one.
+// NB: the attribute is just "state" (confirmed against the live API — NOT
+// "appCustomProductPageVersionState", despite that being the more Apple-ish guess).
+async function listCppVersions(cppId) {
+  const { data } = await api(
+    `/v1/appCustomProductPages/${cppId}/appCustomProductPageVersions?limit=50` +
+    `&fields[appCustomProductPageVersions]=version,state`
+  );
+  return data;
+}
+
+async function listLocalizations(versionId) {
+  const { data } = await api(
+    `/v1/appCustomProductPageVersions/${versionId}/appCustomProductPageLocalizations?limit=50` +
+    `&fields[appCustomProductPageLocalizations]=locale`
+  );
+  return data;
+}
+
+async function listScreenshotSets(localizationId) {
+  const { data } = await api(
+    `/v1/appCustomProductPageLocalizations/${localizationId}/appScreenshotSets?limit=50` +
+    `&fields[appScreenshotSets]=screenshotDisplayType`
+  );
+  return data;
+}
+
+async function listScreenshots(setId) {
+  const { data } = await api(
+    `/v1/appScreenshotSets/${setId}/appScreenshots?limit=50` +
+    `&fields[appScreenshots]=fileName,fileSize,assetDeliveryState,sourceFileChecksum`
   );
   return data;
 }
@@ -129,6 +189,96 @@ async function setLocalization(versionId, locale, promotionalText) {
     },
   });
   return data;
+}
+
+async function createScreenshotSet(localizationId, displayType) {
+  const { data } = await api('/v1/appScreenshotSets', {
+    method: 'POST',
+    body: {
+      data: {
+        type: 'appScreenshotSets',
+        attributes: { screenshotDisplayType: displayType },
+        relationships: {
+          appCustomProductPageLocalization: {
+            data: { type: 'appCustomProductPageLocalizations', id: localizationId },
+          },
+        },
+      },
+    },
+  });
+  return data;
+}
+
+async function deleteScreenshot(id) {
+  await api(`/v1/appScreenshots/${id}`, { method: 'DELETE' });
+}
+
+// Reserve an upload slot for one file. Returns the appScreenshot resource,
+// whose attributes.uploadOperations describes the byte-range PUT(s) to do.
+async function reserveScreenshot(setId, fileName, fileSize) {
+  const { data } = await api('/v1/appScreenshots', {
+    method: 'POST',
+    body: {
+      data: {
+        type: 'appScreenshots',
+        attributes: { fileName, fileSize },
+        relationships: { appScreenshotSet: { data: { type: 'appScreenshotSets', id: setId } } },
+      },
+    },
+  });
+  return data;
+}
+
+// Execute every uploadOperation against the raw file bytes at its offset/length.
+async function uploadScreenshotBytes(uploadOperations, fileBuffer) {
+  for (const op of uploadOperations) {
+    const chunk = fileBuffer.subarray(op.offset, op.offset + op.length);
+    const headers = {};
+    for (const h of op.requestHeaders || []) headers[h.name] = h.value;
+    const res = await fetch(op.url, { method: op.method, headers, body: chunk });
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(`Upload PUT -> ${res.status} ${res.statusText}\n${text}`);
+    }
+  }
+}
+
+async function commitScreenshot(id, checksum) {
+  const { data } = await api(`/v1/appScreenshots/${id}`, {
+    method: 'PATCH',
+    body: {
+      data: {
+        type: 'appScreenshots',
+        id,
+        attributes: { uploaded: true, sourceFileChecksum: checksum },
+      },
+    },
+  });
+  return data;
+}
+
+// Poll until the asset leaves the transitional upload/processing states.
+// Returns the final assetDeliveryState; throws only on network error (a
+// FAILED state is returned, not thrown, so the caller can report Apple's detail).
+async function pollScreenshotState(id, { timeoutMs = 120_000, intervalMs = 3000 } = {}) {
+  const deadline = Date.now() + timeoutMs;
+  for (;;) {
+    const { data } = await api(`/v1/appScreenshots/${id}?fields[appScreenshots]=assetDeliveryState`);
+    const state = data.attributes.assetDeliveryState;
+    const phase = state?.state;
+    if (phase && phase !== 'AWAITING_UPLOAD' && phase !== 'UPLOAD_COMPLETE') return state;
+    if (Date.now() > deadline) return state || { state: 'TIMEOUT' };
+    await sleep(intervalMs);
+  }
+}
+
+// Reorder a set's screenshots to match `orderedIds` (Apple orders by the
+// position of each id in this relationship's data array).
+async function reorderScreenshotSet(setId, orderedIds) {
+  await api(`/v1/appScreenshotSets/${setId}/relationships/appScreenshots`, {
+    method: 'PATCH',
+    body: { data: orderedIds.map((id) => ({ type: 'appScreenshots', id })) },
+  });
 }
 
 // ---- commands -----------------------------------------------------------
@@ -194,14 +344,159 @@ async function cmdSync(configPath) {
   }
 }
 
+// Display type confirmed empirically against the live app-level en-US 6.9"/6.7"
+// screenshot set (1290x2796 shots are tagged APP_IPHONE_67) — see header comment.
+const IPHONE_67_DISPLAY_TYPE = 'APP_IPHONE_67';
+
+function loadOrderedScreenshots(folder) {
+  const files = fs.readdirSync(folder).filter((f) => /^\d+_.*\.png$/i.test(f));
+  if (files.length === 0) {
+    throw new Error(`No numbered PNGs (e.g. "1_foo.png") found in ${folder}`);
+  }
+  return files
+    .map((f) => ({ file: f, order: parseInt(f.match(/^(\d+)_/)[1], 10), path: `${folder}/${f}` }))
+    .sort((a, b) => a.order - b.order);
+}
+
+async function cmdScreenshots(cppName, folder) {
+  if (!cppName || !folder) {
+    throw new Error('Usage: screenshots <CPP-NAME> <folder> [--apply] [--replace]');
+  }
+  const REPLACE = process.argv.includes('--replace');
+  const appId = need('ASC_APP_ID');
+  const locale = 'en-US';
+
+  const shots = loadOrderedScreenshots(folder);
+  console.log(`${APPLY ? 'APPLYING' : 'DRY RUN'} — ${shots.length} screenshot(s) in ${folder}:`);
+  for (const s of shots) console.log(`  ${s.order}. ${s.file}  (${fs.statSync(s.path).size} bytes)`);
+  console.log();
+
+  const cpp = await findCppByName(appId, cppName);
+  if (!cpp) {
+    throw new Error(
+      `No CPP named "${cppName}" found for app ${appId}. Run \`sync --apply\` first, or \`audit\` to list existing CPPs.`
+    );
+  }
+  console.log(`CPP "${cppName}" -> id ${cpp.id}`);
+
+  const versions = await listCppVersions(cpp.id);
+  if (versions.length === 0) {
+    throw new Error(`CPP "${cppName}" has no versions — run \`sync --apply\` first to create one.`);
+  }
+  let version = versions[0];
+  if (versions.length > 1) {
+    console.log(`  ⚠ CPP has ${versions.length} versions:`);
+    for (const v of versions) console.log(`      ${v.id}  state=${v.attributes.state}`);
+    const notReplaced = versions.find((v) => v.attributes.state !== 'REPLACED');
+    version = notReplaced || versions[versions.length - 1];
+    console.log(`    Using ${version.id} (state=${version.attributes.state}).`);
+  } else {
+    console.log(`  Version ${version.id} (state=${version.attributes.state}).`);
+  }
+
+  // ---- localization: get or create --------------------------------------
+  let localization = (await listLocalizations(version.id)).find((l) => l.attributes.locale === locale);
+  if (localization) {
+    console.log(`Localization ${locale} -> id ${localization.id} (exists).`);
+  } else if (APPLY) {
+    localization = await setLocalization(version.id, locale, undefined);
+    console.log(`Localization ${locale} did not exist — created id ${localization.id}.`);
+  } else {
+    console.log(`Localization ${locale} does not exist yet — would CREATE it.`);
+  }
+
+  // ---- screenshot set: get or create -------------------------------------
+  let set;
+  if (localization) {
+    set = (await listScreenshotSets(localization.id)).find(
+      (s) => s.attributes.screenshotDisplayType === IPHONE_67_DISPLAY_TYPE
+    );
+    if (set) {
+      console.log(`Screenshot set (${IPHONE_67_DISPLAY_TYPE}) -> id ${set.id} (exists).`);
+    } else if (APPLY) {
+      set = await createScreenshotSet(localization.id, IPHONE_67_DISPLAY_TYPE);
+      console.log(`Screenshot set (${IPHONE_67_DISPLAY_TYPE}) did not exist — created id ${set.id}.`);
+    } else {
+      console.log(`Screenshot set (${IPHONE_67_DISPLAY_TYPE}) does not exist yet — would CREATE it.`);
+    }
+  }
+
+  // ---- idempotency check --------------------------------------------------
+  let existing = [];
+  if (set) {
+    existing = await listScreenshots(set.id);
+    if (existing.length > 0) {
+      console.log(`\nSet already has ${existing.length} screenshot(s):`);
+      for (const e of existing) console.log(`  - ${e.attributes.fileName} (id ${e.id})`);
+      if (!REPLACE) {
+        console.log(
+          `\nSKIPPING upload — set is non-empty and --replace was not given (no duplicate upload).` +
+          `\nRe-run with --replace${APPLY ? '' : ' --apply'} to delete these and upload the new set.`
+        );
+        return;
+      }
+      console.log(
+        `\n--replace given: ${APPLY ? 'will DELETE these first, then upload.' : 'would DELETE these first, then upload (dry run — nothing deleted).'}`
+      );
+    }
+  }
+
+  console.log(`\n${APPLY ? 'Uploading' : 'Would upload'} ${shots.length} screenshot(s) to ${locale} / ${IPHONE_67_DISPLAY_TYPE} in this order:`);
+  for (const s of shots) console.log(`  ${s.order}. ${s.file}`);
+
+  if (!APPLY) {
+    console.log('\nDry run only. Re-run with --apply to upload.');
+    return;
+  }
+
+  // ---- apply: delete-if-replace, then reserve -> upload -> commit -> poll --
+  if (REPLACE && existing.length > 0) {
+    for (const e of existing) {
+      await deleteScreenshot(e.id);
+      console.log(`  - Deleted existing ${e.attributes.fileName} (${e.id})`);
+    }
+  }
+
+  const uploadedIds = [];
+  for (const s of shots) {
+    const buf = fs.readFileSync(s.path);
+    const reserved = await reserveScreenshot(set.id, s.file, buf.length);
+    console.log(`\n[${s.order}] ${s.file} — reserved (id ${reserved.id}), uploading ${buf.length} bytes...`);
+    await uploadScreenshotBytes(reserved.attributes.uploadOperations || [], buf);
+    const checksum = md5(buf);
+    await commitScreenshot(reserved.id, checksum);
+    console.log(`    committed (checksum ${checksum}), polling for processing...`);
+    const state = await pollScreenshotState(reserved.id);
+    if (state.state === 'FAILED') {
+      const detail = (state.errors || []).map((e) => e.description || e.detail || JSON.stringify(e)).join('; ');
+      console.log(`    ✗ FAILED: ${detail || 'no error detail from Apple'}`);
+    } else {
+      console.log(`    -> ${state.state}`);
+    }
+    uploadedIds.push(reserved.id);
+  }
+
+  console.log('\nReordering set to match filename order...');
+  await reorderScreenshotSet(set.id, uploadedIds);
+  console.log('\nDone. Verify in the ASC UI before making the CPP visible.');
+}
+
 // ---- entry --------------------------------------------------------------
 
-const [cmd, arg] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const positional = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const [cmd, ...rest] = positional;
 try {
   if (cmd === 'audit') await cmdAudit();
-  else if (cmd === 'sync') await cmdSync(arg || 'scripts/asc/verticals.json');
+  else if (cmd === 'sync') await cmdSync(rest[0] || 'scripts/asc/verticals.json');
+  else if (cmd === 'screenshots') await cmdScreenshots(rest[0], rest[1]);
   else {
-    console.log('Commands: audit | sync <config.json> [--apply]\nSee header of this file for env setup.');
+    console.log(
+      'Commands:\n' +
+      '  audit\n' +
+      '  sync <config.json> [--apply]\n' +
+      '  screenshots <CPP-NAME> <folder> [--apply] [--replace]\n' +
+      'See header of this file for env setup.'
+    );
     process.exit(1);
   }
 } catch (e) {
