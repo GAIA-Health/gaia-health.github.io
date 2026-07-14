@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PCOS Tracker App, on iPhone & Web | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Track PCOS symptoms, irregular cycles, labs, and glucose data in one app. Apple Watch, Oura, Garmin, Dexcom, and Libre data sync in automatically. Free on iPhone and web.">
+    <meta name="keywords" content="pcos tracker app, pcos app, best pcos app, pcos symptom tracker, app for pcos irregular periods, best wearable for pcos">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/pcos-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PCOS Tracker App for Irregular Cycles & Symptoms">
+    <meta property="og:description" content="Track PCOS symptoms, irregular cycles, labs, and glucose data in one app. Apple Watch, Oura, Garmin, Dexcom, and Libre data sync in automatically.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/pcos-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/app-pcos.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="PCOS Tracker App for Irregular Cycles & Symptoms">
+    <meta name="twitter:description" content="Track PCOS symptoms, irregular cycles, labs, and glucose data in one app. Wearable and CGM data sync in automatically.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/app-pcos.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Go Go Gaia",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should I look for in a PCOS symptom tracker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A PCOS symptom tracker should handle irregular or missing cycles without breaking, let you log PCOS-specific symptoms like acne, hair changes, weight, and fatigue, track medications and supplements, and let you bring your data to a doctor's appointment. Calendar-based predictions built for regular 28-day cycles tend to be far less accurate for PCOS, so pattern tracking matters more than prediction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a PCOS app handle irregular or missing periods?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go Go Gaia is built for irregular cycles. Instead of assuming a standard cycle length, it bases predictions on your own logged data and keeps tracking through missing or unpredictable periods rather than resetting or breaking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Go Go Gaia free to use for PCOS tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, most PCOS tracking features are free, including symptom logging, cycle tracking, nutrition logging, medication tracking, and lab result tracking. A premium tier is available for full AI insights and advanced correlations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track PCOS and fertility at the same time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia tracks PCOS symptoms alongside ovulation signs, so if you're trying to conceive with PCOS you can see cycle and symptom patterns together in one place, with wearable integration for automatic temperature tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best wearable for PCOS tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No wearable diagnoses PCOS on its own. What devices like the Apple Watch and Oura Ring do well is capture overnight temperature, sleep, and HRV data, which Go Go Gaia pulls in automatically alongside your logged symptoms and cycle history. Garmin devices sync in the same way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Go Go Gaia work with a CGM like Dexcom or Libre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia connects with Dexcom and Libre continuous glucose monitors, so glucose readings sync automatically alongside your cycle, symptoms, and labs, with summaries you can bring to a doctor visit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export my PCOS tracking data for my doctor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia lets you export your cycle, symptom, medication, and lab data so you can bring an organized record to appointments with an endocrinologist, OB-GYN, or dietitian."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo1.png" alt="GO GO GAIA Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold mb-3">A PCOS tracker built into a whole-health app</h1>
+                    <p class="lead">Cycles that don't follow a calendar, symptoms that come and go, labs to keep straight. Go Go Gaia is built to keep tracking through irregular and missing periods, log PCOS-specific symptoms, and bring your bloodwork, glucose, and wearable data into the same place as your cycle history.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg mt-2" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="text-center mb-5">
+                    <img src="images/app-pcos.png" alt="Go Go Gaia app screen showing PCOS symptom tracking, cycle history, and lab results" class="img-fluid rounded" style="max-height: 480px;" loading="eager">
+                </div>
+
+                <!-- Built for PCOS -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Built for PCOS</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-arrow-repeat me-2" style="color: var(--primary);"></i>Irregular cycle tracking</h3>
+                                    <p class="mb-0">Predictions are based on your own logged data instead of a standard 28-day assumption, so tracking keeps working through irregular or missing periods rather than resetting.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-clipboard2-pulse me-2" style="color: var(--primary);"></i>PCOS symptom logging</h3>
+                                    <p class="mb-0">Log acne, hair changes, weight, and fatigue alongside the rest of your cycle and symptom history, in seconds.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>Lab & bloodwork tracking</h3>
+                                    <p class="mb-0">Scan or import bloodwork like TSH, AMH, and progesterone, and see values trend over time next to your symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-droplet-half me-2" style="color: var(--primary);"></i>Glucose & wearable data</h3>
+                                    <p class="mb-0">Dexcom and Libre glucose readings sync in automatically, alongside sleep, HRV, and temperature from Apple Watch, Oura, and Garmin.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-capsule me-2" style="color: var(--primary);"></i>Medication & supplement tracking</h3>
+                                    <p class="mb-0">Log medications and supplements like metformin, inositol, or birth control, and see them tracked over time alongside your symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-diagram-3 me-2" style="color: var(--primary);"></i>Correlation insights</h3>
+                                    <p class="mb-0">A correlation engine surfaces patterns from your own data, like which foods, habits, or lifestyle factors line up with your symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">How it fits together</h2>
+                    <p class="mb-0">Other apps track each thing in its own silo: cycle here, symptoms there, glucose in a separate app entirely. Go Go Gaia keeps your cycle, symptoms, mood, sleep, nutrition, labs, and glucose in one place, then surfaces the real patterns from your own data. If you're also trying to conceive with PCOS, ovulation tracking and wearable-based temperature data sit in the same app, so your cycle and fertility history carry through together instead of living in separate tools.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Cycle length & missing periods</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Acne</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Hair changes</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Weight</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Fatigue</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Mood</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Nutrition</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Medications & supplements</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Lab results (TSH, AMH, progesterone, and more)</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Glucose (Dexcom, Libre)</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Sleep, HRV & temperature (wearable)</span>
+                        <span class="badge rounded-pill text-bg-light border p-2 px-3">Ovulation signs</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5">
+                    <h2 class="mb-3 text-center">Privacy & trust</h2>
+                    <p class="text-center lead mb-0">PCOS data, including cycle history, symptoms, and labs, is personal. Go Go Gaia doesn't run ads and doesn't sell your data. You can export or delete your data anytime.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="pcosFaq">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What should I look for in a PCOS symptom tracker?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">A PCOS symptom tracker should handle irregular or missing cycles without breaking, let you log PCOS-specific symptoms like acne, hair changes, weight, and fatigue, track medications and supplements, and let you bring your data to a doctor's appointment. Calendar-based predictions built for regular 28-day cycles tend to be far less accurate for PCOS, so pattern tracking matters more than prediction.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can a PCOS app handle irregular or missing periods?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">Go Go Gaia is built for irregular cycles. Instead of assuming a standard cycle length, it bases predictions on your own logged data and keeps tracking through missing or unpredictable periods rather than resetting or breaking.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Is Go Go Gaia free to use for PCOS tracking?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">Yes, most PCOS tracking features are free, including symptom logging, cycle tracking, nutrition logging, medication tracking, and lab result tracking. A premium tier is available for full AI insights and advanced correlations.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can I track PCOS and fertility at the same time?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia tracks PCOS symptoms alongside ovulation signs, so if you're trying to conceive with PCOS you can see cycle and symptom patterns together in one place, with wearable integration for automatic temperature tracking.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What's the best wearable for PCOS tracking?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">No wearable diagnoses PCOS on its own. What devices like the Apple Watch and Oura Ring do well is capture overnight temperature, sleep, and HRV data, which Go Go Gaia pulls in automatically alongside your logged symptoms and cycle history. Garmin devices sync in the same way.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Does Go Go Gaia work with a CGM like Dexcom or Libre?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia connects with Dexcom and Libre continuous glucose monitors, so glucose readings sync automatically alongside your cycle, symptoms, and labs, with summaries you can bring to a doctor visit.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Can I export my PCOS tracking data for my doctor?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#pcosFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia lets you export your cycle, symptom, medication, and lab data so you can bring an organized record to appointments with an endocrinologist, OB-GYN, or dietitian.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-center mt-4"><a href="blog/best-pcos-tracking-app.html">Still comparing options? See our PCOS app comparison</a>.</p>
+                </section>
+
+                <!-- CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Track your PCOS the way it actually shows up</h2>
+                    <p class="lead mb-4">Cycles, symptoms, labs, and glucose, all in one place, all connected.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="conditions.html">Conditions</a></p>
+                    <p><a href="blog/index.html">Blog</a></p>
+                    <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

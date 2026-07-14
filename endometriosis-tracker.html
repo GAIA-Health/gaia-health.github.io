@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Endometriosis Tracking App, on iPhone & Web | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Log endometriosis pain by location and severity, track flares and triggers alongside your cycle phase, and export records for your next appointment.">
+    <meta name="keywords" content="endometriosis tracking app, endo tracker app, endometriosis symptom tracker, app to track endometriosis pain, endometriosis flare tracking">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/endometriosis-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Endometriosis Tracking App, on iPhone & Web | Go Go Gaia">
+    <meta property="og:description" content="Log endometriosis pain by location and severity, track flares and triggers alongside your cycle phase, and export records for your next appointment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/endometriosis-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Endometriosis Tracking App, on iPhone & Web | Go Go Gaia">
+    <meta name="twitter:description" content="Log endometriosis pain by location and severity, track flares and triggers alongside your cycle phase, and export records for your next appointment.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Go Go Gaia",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc."
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should I look for in an endometriosis tracking app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for pain tracking by location and severity (not just yes/no), flare and trigger logging, medication and surgery history over time, patterns shown across your full cycle rather than a single period, and a clean export you can bring to appointments. Go Go Gaia covers all of these alongside cycle, nutrition, and wearable tracking in one app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track endometriosis pain by location and severity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia logs pain and other symptoms like cramps, bloating, fatigue, and GI issues, so you can record where it hurts and how bad it is rather than a single yes/no entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an app to track endometriosis flares and triggers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia runs a correlation engine across your symptom logs, cycle phase, nutrition, sleep, and wearable data to surface patterns in your own data, like a lifestyle factor that tends to line up with flare days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it track cycle phase alongside endometriosis symptoms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cycle tracking runs alongside symptom logging, so pain and flares are shown in the context of where you are in your cycle, not as isolated entries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export records for doctor appointments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia includes free doctor-ready data export, so you can bring an organized record of pain, flares, medications, and surgeries to an appointment instead of relying on memory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track medications and surgeries for endometriosis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia includes free medication, supplement, and surgery logging, so you can keep a history of treatments alongside your symptom data over time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the endometriosis tracker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most features are free, including symptom, pain, cycle, nutrition, and medication tracking plus doctor-ready export. Premium unlocks full AI insights and advanced correlations for $9.99/month or $49.99/year."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo1.png" alt="GO GO GAIA Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold mb-3">An endometriosis tracking app for pain, flares, and cycle phase</h1>
+                    <p class="lead">Log pain by location and severity, track flares and what led up to them, and see it all lined up against your cycle phase, nutrition, sleep, and wearable data. Add medications and surgeries over time, then export a record you can bring to your next appointment.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg mt-3" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                </div>
+
+                <!-- Built for endometriosis -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Built for tracking endometriosis</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-bandaid me-2" style="color: var(--primary);"></i>Pain and symptom logging</h3>
+                                    <p class="mb-0">Log pain by location and severity, plus cramps, bloating, fatigue, and GI symptoms, so an entry captures more than yes or no.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-calendar-heart me-2" style="color: var(--primary);"></i>Cycle-phase correlation</h3>
+                                    <p class="mb-0">Cycle tracking runs alongside your symptom log, so pain and flares are shown against where you are in your cycle, not as isolated entries.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-cup-straw me-2" style="color: var(--primary);"></i>Nutrition alongside symptoms</h3>
+                                    <p class="mb-0">Nutrition tracking sits next to your symptom logs, useful for spotting food-related patterns over time.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-watch me-2" style="color: var(--primary);"></i>Wearable data, automatically</h3>
+                                    <p class="mb-0">Apple Watch, Oura, and Garmin data flows in on their own, so sleep, HRV, and temperature are tracked without extra logging.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-capsule me-2" style="color: var(--primary);"></i>Medication and surgery history</h3>
+                                    <p class="mb-0">Track medications and supplements over time, and log surgeries so before-and-after symptom data is in one place.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-3"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>Records for your appointments</h3>
+                                    <p class="mb-0">Export a doctor-ready record of your pain, flares, medications, and surgeries instead of trying to describe it all from memory.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">How it fits together</h2>
+                    <p class="mb-0">Other apps track each thing in its own silo: pain in one place, cycle in another, sleep somewhere else entirely. Go Go Gaia keeps your cycle, symptoms, nutrition, sleep, and wearable data in one place, then surfaces real patterns from your own data, like a lifestyle factor that lines up with flare days. That connective layer is the same correlation engine behind every condition the app tracks, not a separate tool bolted on for endo.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="text-center">
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Pain (location &amp; severity)</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Flares &amp; triggers</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Cramps</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Bloating</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Fatigue</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">GI symptoms</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Mood</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Cycle &amp; bleeding</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Medications &amp; supplements</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Surgery history</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Nutrition &amp; food triggers</span>
+                        <span class="badge bg-info text-dark rounded-pill me-2 mb-2 p-2 px-3">Sleep &amp; HRV (wearable)</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4 text-center" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Endo data is personal: pain patterns, surgery dates, medications. Go Go Gaia doesn't sell your data or show ads. Export or delete your data anytime.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+                    <div class="accordion" id="endoFaq">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What should I look for in an endometriosis tracking app?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Look for pain tracking by location and severity (not just yes/no), flare and trigger logging, medication and surgery history over time, patterns shown across your full cycle rather than a single period, and a clean export you can bring to appointments. Go Go Gaia covers all of these alongside cycle, nutrition, and wearable tracking in one app.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I track endometriosis pain by location and severity?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia logs pain and other symptoms like cramps, bloating, fatigue, and GI issues, so you can record where it hurts and how bad it is rather than a single yes/no entry.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Is there an app to track endometriosis flares and triggers?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia runs a correlation engine across your symptom logs, cycle phase, nutrition, sleep, and wearable data to surface patterns in your own data, like a lifestyle factor that tends to line up with flare days.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Does it track cycle phase alongside endometriosis symptoms?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Yes. Cycle tracking runs alongside symptom logging, so pain and flares are shown in the context of where you are in your cycle, not as isolated entries.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Can I export records for doctor appointments?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia includes free doctor-ready data export, so you can bring an organized record of pain, flares, medications, and surgeries to an appointment instead of relying on memory.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Can I track medications and surgeries for endometriosis?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Yes. Go Go Gaia includes free medication, supplement, and surgery logging, so you can keep a history of treatments alongside your symptom data over time.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Is the endometriosis tracker free?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#endoFaq">
+                                <div class="accordion-body">Most features are free, including symptom, pain, cycle, nutrition, and medication tracking plus doctor-ready export. Premium unlocks full AI insights and advanced correlations for $9.99/month or $49.99/year.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="small text-muted text-center mt-4 mb-0">Still comparing options? See our <a href="blog/best-endometriosis-tracking-app.html">endometriosis app comparison</a>.</p>
+                </section>
+
+                <!-- CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Track your pain. Bring the pattern to your next appointment.</h2>
+                    <p class="lead mb-4">Start logging today. Your history builds as you go.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="conditions.html">Conditions</a></p>
+                    <p><a href="blog/index.html">Blog</a></p>
+                    <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

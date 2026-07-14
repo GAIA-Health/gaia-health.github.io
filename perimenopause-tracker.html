@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Perimenopause Tracker App, on iPhone & Web | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Track hot flashes, night sweats, brain fog, mood, sleep, and cycle changes in one free perimenopause app, with wearable data connected. iOS & web.">
+    <meta name="keywords" content="perimenopause tracker app, perimenopause app, best free perimenopause app, app to track perimenopause symptoms, perimenopause symptom tracker">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/perimenopause-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Perimenopause Tracker App, on iPhone & Web | Go Go Gaia">
+    <meta property="og:description" content="Track hot flashes, night sweats, brain fog, mood, sleep, and cycle changes in one free perimenopause app, with wearable data connected.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/perimenopause-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Perimenopause Tracker App, on iPhone & Web | Go Go Gaia">
+    <meta name="twitter:description" content="Track hot flashes, night sweats, brain fog, mood, sleep, and cycle changes in one free perimenopause app, with wearable data connected.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Go Go Gaia",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should I look for in a perimenopause tracker app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for an app that handles irregular or missing cycles without breaking, tracks a wide range of perimenopause symptoms rather than just hot flashes, supports medication and supplement logging, and shows patterns over months rather than days. Wearable integration is a bonus for capturing temperature shifts and sleep disruption automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Go Go Gaia a free perimenopause app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia provides free perimenopause symptom tracking alongside nutrition, fitness, and wearable integration. Premium (about $12/month) unlocks the full AI assistant and advanced correlation insights, but core symptom tracking is free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this app track perimenopause symptoms if my cycle has become irregular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia is built to keep tracking through irregular and skipped cycles instead of forcing your data into a 28-day template. Cycle-change monitoring shows how your pattern is shifting over time, alongside your symptoms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What perimenopause symptoms can I log in the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go Go Gaia logs 20+ symptoms including hot flashes, night sweats, brain fog, mood shifts, and sleep disruption, alongside your cycle, nutrition, and fitness. Medications and supplements, including HRT, can be tracked too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the app connect to my Apple Watch or Oura Ring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Go Go Gaia syncs with Apple Watch, Oura Ring, and Garmin, so temperature shifts, sleep disruption, and HRV changes are captured automatically instead of logged by hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a regular period tracker during perimenopause?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard period trackers predict your next cycle from past regularity, which breaks down when cycles swing unpredictably. Go Go Gaia keeps tracking through that irregularity and connects it to hot flashes, sleep, mood, nutrition, and fitness in one place, rather than treating cycle and symptoms as separate apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my perimenopause tracking data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your data is encrypted and stored securely, and Go Go Gaia does not sell data to third parties or run ads. You can export or delete your data at any time."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo1.png" alt="GO GO GAIA Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">A perimenopause tracker for hot flashes, sleep, mood, and cycle changes</h1>
+                        <p class="lead">Your cycle stops following its old pattern, and hot flashes, night sweats, brain fog, or mood shifts start showing up. Go Go Gaia is a free app for tracking all of it in one place, cycle changes, symptoms, sleep, and wearable data, so you can see how they connect instead of guessing.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/app-symptoms.png" alt="Go Go Gaia symptom tracking dashboard with a weekly health trend chart" class="img-fluid rounded" style="max-height: 480px;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for perimenopause -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Built for the perimenopause transition</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-calendar-x me-2" style="color: var(--primary);"></i>Keeps working when cycles turn irregular</h3>
+                                    <p class="mb-0">Go Go Gaia handles irregular and skipped cycles without breaking, instead of forcing your data into a 28-day template.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-thermometer-sun me-2" style="color: var(--primary);"></i>Hot flash &amp; symptom tracking</h3>
+                                    <p class="mb-0">Log hot flashes, night sweats, brain fog, mood shifts, sleep disruption, and more, from a list of 20+ trackable symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-diagram-3 me-2" style="color: var(--primary);"></i>Correlation insights</h3>
+                                    <p class="mb-0">See which lifestyle factors line up with your symptoms, like weeks with less exercise tracking alongside worse hot flashes, or better sleep on weeks with less evening caffeine.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-watch me-2" style="color: var(--primary);"></i>Wearable integration</h3>
+                                    <p class="mb-0">Apple Watch, Oura Ring, and Garmin sync automatically, so temperature shifts, HRV changes, and sleep disruption are captured without manual logging.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-capsule me-2" style="color: var(--primary);"></i>Medication &amp; supplement tracking</h3>
+                                    <p class="mb-0">Track HRT, black cohosh, or other supplements alongside your symptoms, so you can see how your body responds over time.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>Doctor-ready data export</h3>
+                                    <p class="mb-0">Bring organized, dated records of your symptoms and patterns to your next appointment instead of trying to recall them from memory.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">See how it all connects</h2>
+                    <p class="mb-0">Perimenopause rarely shows up as one clean symptom. Cycle changes, hot flashes, disrupted sleep, and mood shifts tend to move together. Go Go Gaia keeps your cycle, symptoms, sleep, fitness, and nutrition in one place, then surfaces real patterns from your own data, like which weeks make your symptoms worse. It's the same correlation engine that carries through every stage, from your first period through perimenopause and beyond, so your history doesn't reset when your body changes.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Hot flashes</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Night sweats</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Brain fog</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mood shifts</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep disruption</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Cycle length changes</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">HRT &amp; supplements</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Nutrition</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Fitness &amp; activity</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Wearable temperature &amp; HRV</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep (from your wearable)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">And more</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Your health data is encrypted and stored securely. Go Go Gaia doesn't run ads or sell your data to third parties, and you can export or delete your data at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What should I look for in a perimenopause tracker app?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Look for an app that handles irregular or missing cycles without breaking, tracks a wide range of perimenopause symptoms rather than just hot flashes, supports medication and supplement logging, and shows patterns over months rather than days. Wearable integration is a bonus for capturing temperature shifts and sleep disruption automatically.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Is Go Go Gaia a free perimenopause app?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Go Go Gaia provides free perimenopause symptom tracking alongside nutrition, fitness, and wearable integration. Premium (about $12/month) unlocks the full AI assistant and advanced correlation insights, but core symptom tracking is free.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can this app track perimenopause symptoms if my cycle has become irregular?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Go Go Gaia is built to keep tracking through irregular and skipped cycles instead of forcing your data into a 28-day template. Cycle-change monitoring shows how your pattern is shifting over time, alongside your symptoms.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What perimenopause symptoms can I log in the app?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Go Go Gaia logs 20+ symptoms including hot flashes, night sweats, brain fog, mood shifts, and sleep disruption, alongside your cycle, nutrition, and fitness. Medications and supplements, including HRT, can be tracked too.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Does the app connect to my Apple Watch or Oura Ring?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Go Go Gaia syncs with Apple Watch, Oura Ring, and Garmin, so temperature shifts, sleep disruption, and HRV changes are captured automatically instead of logged by hand.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    How is this different from a regular period tracker during perimenopause?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Standard period trackers predict your next cycle from past regularity, which breaks down when cycles swing unpredictably. Go Go Gaia keeps tracking through that irregularity and connects it to hot flashes, sleep, mood, nutrition, and fitness in one place, rather than treating cycle and symptoms as separate apps.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Is my perimenopause tracking data private?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Your data is encrypted and stored securely, and Go Go Gaia does not sell data to third parties or run ads. You can export or delete your data at any time.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-center mt-4 mb-0">Still comparing options? See our <a href="blog/best-perimenopause-tracking-app.html">perimenopause app comparison</a>.</p>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Track your perimenopause transition in one place</h2>
+                    <p class="lead mb-4">Cycle changes, symptoms, sleep, and lifestyle, together from day one.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Go Go Gaia
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="conditions.html">Conditions</a></p>
+                    <p><a href="blog/index.html">Blog</a></p>
+                    <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
