@@ -38,6 +38,23 @@
 - [Can you get pregnant on your period?](https://www.go-go-gaia.com/blog/can-you-get-pregnant-on-your-period.html): Why it is unlikely but possible, with a timeline of the fertile window relative to bleeding.
 - [How accurate are period tracker apps?](https://www.go-go-gaia.com/blog/how-accurate-are-period-tracker-apps.html): Accuracy by method (calendar, symptom, BBT, LH, wearable) and why predictions drift for irregular cycles.
 
+## Cycle data explainers (what wearables measure, with cited research)
+
+- [Your hormone curve, explained: estrogen, progesterone & LH](https://www.go-go-gaia.com/blog/hormone-curve-across-your-cycle.html): Phase-by-phase reference for the hormone mechanics underneath every signal a wearable reads. Estrogen climbs and peaks, LH surges, progesterone takes over the luteal phase.
+- [HRV and resting heart rate across your cycle](https://www.go-go-gaia.com/blog/hrv-resting-heart-rate-cycle.html): HRV tends to fall and resting heart rate tends to rise in the luteal phase, both driven by progesterone. Covers how much they typically shift and why a single rough night on a ring or watch is not meaningful.
+- [Exercise heart rate and training load across your cycle](https://www.go-go-gaia.com/blog/exercise-heart-rate-training-load-cycle.html): Why the same workout can post a different heart rate depending on cycle phase, and why perceived effort often does not shift the same way the number does.
+- [Why activity and step count shift across your cycle](https://www.go-go-gaia.com/blog/step-count-activity-cycle-phases.html): Step counts tend to peak in the follicular phase and dip before menstruation even when scheduled workout time barely changes.
+- [Blood sugar patterns across your menstrual cycle](https://www.go-go-gaia.com/blog/blood-glucose-cycle-phases.html): CGM research finds glucose runs lower in the late-follicular phase and higher in the luteal phase. Describes the population-level pattern, not an individual target.
+
+## Condition tracking (what the app does, per condition)
+
+- [Cycle syncing app](https://www.go-go-gaia.com/cycle-syncing-app.html): Phase detection and phase-tagged logging of workouts, meals, mood, sleep, and energy, with correlations drawn from your own logged history rather than textbook phase prescriptions.
+- [PCOS tracker](https://www.go-go-gaia.com/pcos-tracker.html): Irregular-cycle handling, symptom and metabolic tracking, lab and bloodwork import (TSH, AMH, progesterone), and glucose support via Dexcom and Libre.
+- [Endometriosis tracker](https://www.go-go-gaia.com/endometriosis-tracker.html): Pain and flare logging, symptom-to-phase correlations, and doctor-ready records to bring to appointments.
+- [Perimenopause tracker](https://www.go-go-gaia.com/perimenopause-tracker.html): Hot flash and symptom logging, cycle-change monitoring as the pattern shifts, and patterns showing which weeks make symptoms worse.
+- [IVF tracker](https://www.go-go-gaia.com/ivf-tracker.html): Medication, appointment, and protocol logging with hormone and lab values tracked over time. Does not include medication barcode scanning, injection site rotation, or clinic EMR sync.
+- [What's your wellness type?](https://www.go-go-gaia.com/wellness-type.html): Six wellness types read from your own last 30 days of sleep, movement, mood, and cycle data. Not a questionnaire — it is computed from logged data.
+
 ## Educational guides (women's health)
 
 - [Endometriosis guide](https://www.go-go-gaia.com/blog/endometriosis-guide.html): Symptoms, diagnosis, treatment options, and tracking strategies.

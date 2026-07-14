@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What's Your Wellness Type? | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Six wellness types, read from your own last 30 days. Go Go Gaia looks at how you actually sleep, move, and feel, then tells you which one you are and shows you why. Free health tracking app for women.">
+    <meta name="keywords" content="wellness type, wellness archetype, health personality quiz, what's my wellness type, health type quiz, sleep type, wellness personality, health tracker, women's health app, cycle tracker, habit tracker">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/wellness-type.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+    <link rel="apple-touch-icon" href="Logo1.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="What's Your Wellness Type?">
+    <meta property="og:description" content="Six wellness types, read from your own last 30 days. Not a quiz. Go Go Gaia looks at how you actually sleep, move, and feel, then shows you the receipts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/wellness-type.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="What's Your Wellness Type?">
+    <meta name="twitter:description" content="Six wellness types, read from your own last 30 days. Not a quiz.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "What's Your Wellness Type?",
+      "description": "Six wellness types, read from your own last 30 days of sleep, movement, mood, and cycle data in the Go Go Gaia app.",
+      "url": "https://www.go-go-gaia.com/wellness-type.html",
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Go Go Gaia",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        .wt-hero {
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+        .wt-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #8e7cc3;
+            margin-bottom: 1rem;
+        }
+        .wt-hero h1 {
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        .wt-lede {
+            font-size: 1.15rem;
+            max-width: 34rem;
+            margin: 0 auto 2rem;
+            color: #5a5a6e;
+        }
+        .wt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin: 3rem 0;
+        }
+        .wt-card {
+            border-radius: 18px;
+            padding: 1.75rem 1.5rem;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(90, 70, 140, 0.06);
+            text-align: left;
+        }
+        .wt-card .wt-glyph {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+        .wt-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .wt-card .wt-tagline {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+        .wt-card p {
+            font-size: 0.95rem;
+            color: #5a5a6e;
+            margin-bottom: 0;
+        }
+        .wt-steps {
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+        .wt-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .wt-step-num {
+            flex: 0 0 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #8e7cc3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .wt-honest {
+            max-width: 38rem;
+            margin: 3rem auto 0;
+            padding: 1.5rem;
+            border-radius: 16px;
+            background: rgba(142, 124, 195, 0.07);
+            font-size: 0.95rem;
+            color: #5a5a6e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="wt-hero">
+            <div class="container">
+                <p class="wt-eyebrow">My Wellness Type</p>
+                <h1>Which one are you?</h1>
+                <p class="wt-lede">
+                    Six wellness types. Not a quiz, and not a guess. Go Go Gaia reads your own last 30 days of sleep,
+                    movement, mood, and cycle data, tells you which type you are right now, and shows you exactly why.
+                </p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta-primary">
+                    Find your type
+                </a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="wt-grid">
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(76, 175, 120, 0.15); color: #4caf78;"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h3>The Steady Climber</h3>
+                    <p class="wt-tagline" style="color: #4caf78;">Consistent progress, week after week</p>
+                    <p>You don't chase trends or shortcuts. You show up, track your progress, and let the data guide you. Every week is a little better than the last.</p>
+                </div>
+
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(38, 166, 166, 0.15); color: #26a6a6;"><i class="bi bi-lightning-charge-fill"></i></div>
+                    <h3>The Engine</h3>
+                    <p class="wt-tagline" style="color: #26a6a6;">Always in motion</p>
+                    <p>Movement is your baseline. You train with a consistency most people can't sustain, showing up week after week and letting momentum do the work.</p>
+                </div>
+
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(92, 107, 192, 0.15); color: #5c6bc0;"><i class="bi bi-moon-stars-fill"></i></div>
+                    <h3>The Recharger</h3>
+                    <p class="wt-tagline" style="color: #5c6bc0;">Rest is my secret weapon</p>
+                    <p>You understand that recovery is where the real gains happen. Your sleep consistency is what everything else is built on.</p>
+                </div>
+
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(142, 124, 195, 0.15); color: #8e7cc3;"><i class="bi bi-cloud-moon-fill"></i></div>
+                    <h3>The Night Owl Warrior</h3>
+                    <p class="wt-tagline" style="color: #8e7cc3;">Fighting for better rest, every night</p>
+                    <p>Sleep might not always cooperate, but you never stop fighting for better rest. Awareness is the first step to change, and you have it.</p>
+                </div>
+
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(233, 130, 170, 0.15); color: #e982aa;"><i class="bi bi-heart-fill"></i></div>
+                    <h3>The Mood Monitor</h3>
+                    <p class="wt-tagline" style="color: #e982aa;">Emotional intelligence is my superpower</p>
+                    <p>You lead with emotional intelligence. Tracking your moods gives you the ability to see patterns before they become problems.</p>
+                </div>
+
+                <div class="wt-card">
+                    <div class="wt-glyph" style="background: rgba(142, 124, 195, 0.15); color: #8e7cc3;"><i class="bi bi-star-fill"></i></div>
+                    <h3>The All-Rounder</h3>
+                    <p class="wt-tagline" style="color: #8e7cc3;">Every pillar of health in balance</p>
+                    <p>You keep every pillar of health in balance. That kind of consistency is rare, and it means no single area is holding you back.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-4">
+            <h2 class="text-center mb-4">How your type gets read</h2>
+            <div class="wt-steps">
+                <div class="wt-step">
+                    <div class="wt-step-num">1</div>
+                    <div>
+                        <strong>Track like you normally would.</strong>
+                        <p class="mb-0">Sleep, workouts, moods, meals, your cycle. Connect Apple Health and most of it arrives on its own.</p>
+                    </div>
+                </div>
+                <div class="wt-step">
+                    <div class="wt-step-num">2</div>
+                    <div>
+                        <strong>Open My Wellness Type.</strong>
+                        <p class="mb-0">It sits on the Explore tab. Go Go Gaia reads your last 30 days and lands on the one type that fits how you have actually been living.</p>
+                    </div>
+                </div>
+                <div class="wt-step">
+                    <div class="wt-step-num">3</div>
+                    <div>
+                        <strong>See the receipts.</strong>
+                        <p class="mb-0">Your type comes with the reason it fired, in your own numbers. A 12 day streak. Your best sleep week. The workouts you logged.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wt-honest">
+                <strong>Your type will change, and that's the point.</strong>
+                <p class="mb-0 mt-2">
+                    This isn't a personality label you're stuck with. It's a read on the last 30 days, so a hard training block,
+                    a rough stretch of sleep, or a new baby will move you somewhere else. Checking back in is the whole idea.
+                </p>
+            </div>
+        </section>
+
+        <section class="container text-center py-5">
+            <h2 class="mb-3">Find out which one you are</h2>
+            <p class="wt-lede">Free to download. Your type is waiting once you have a few days of data in.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta-primary">
+                Get Go Go Gaia
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer-bg text-center py-4">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#features" class="text-decoration-none">Features</a></li>
+                        <li><a href="index.html#faq" class="text-decoration-none">FAQ</a></li>
+                        <li><a href="blog/index.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="wrapped.html" class="text-decoration-none">Health Wrapped</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h6>Connect With Us</h6>
+                    <div class="social-links">
+                        <a href="https://twitter.com/holland_neuro" target="_blank" class="me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-0 small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+            <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
