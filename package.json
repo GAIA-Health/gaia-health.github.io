@@ -1,0 +1,14 @@
+{
+  "name": "gaia-health-marketing-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Smoke tests for the gaia-health.github.io static marketing site (GitHub Pages). No build step — plain HTML/CSS/JS served as-is.",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "http-server": "^14.1.1"
+  }
+}

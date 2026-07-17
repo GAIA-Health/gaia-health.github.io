@@ -3469,3 +3469,456 @@ body::after {
     line-height: 1.35;
     color: var(--text-muted);
 }
+
+/* =============================================
+   BREADCRUMB (shared — was duplicated per-page inline;
+   consolidated here so /for-professionals/ can reuse it)
+   ============================================= */
+.breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+.breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+.breadcrumb-nav a:hover { text-decoration: underline; }
+.breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+.breadcrumb-nav .current { color: var(--text-muted); }
+
+/* =============================================
+   FOR PROFESSIONALS — /for-professionals/
+   "Professional restraint" recipe (design review 8A):
+   - Box-shadows ONLY on .pro-shot-frame-shadow (hero image + tour sticky panel).
+   - No hover-lift on non-interactive elements.
+   - Purple stays reserved for CTAs/links; green (--green-deep) is this page's
+     trust/clinical accent (step numbers, trust icons).
+   ============================================= */
+
+/* Nav CTA — same pill styling as the homepage's .nav-download button, so the
+   only difference on this page's navbar is the label + destination. */
+.navbar-nav .nav-link.nav-pro-cta {
+    color: white !important;
+    background-color: var(--primary-dark);
+    font-weight: 500;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+.navbar-nav .nav-link.nav-pro-cta:after { display: none; }
+.navbar-nav .nav-link.nav-pro-cta:hover {
+    background-color: var(--primary);
+}
+
+/* ---- Hero ---- */
+.pro-hero {
+    padding: 4rem 0 3rem;
+    background: var(--secondary);
+}
+
+.pro-hero-grid {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.pro-hero-eyebrow {
+    color: var(--green-deep);
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+}
+
+.pro-hero-copy h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+}
+
+/* The C2 canonical sentence, entity-consistent wherever it appears */
+.pro-hero-subhead {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.pro-hero-support {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 1.75rem;
+}
+
+.pro-hero-media {
+    min-width: 0; /* allow grid item to shrink below image intrinsic width */
+}
+
+/* ---- CTA block + seam microcopy (design review 6A) ---- */
+.pro-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* .btn-primary's default background (--primary #8259DC) clears 4.5:1 against
+   white by a hair (~4.76:1) — too close for this page's highest-stakes
+   element, repeated 3x. Use --primary-dark instead (10A: "borderline —
+   use #5B23C6 where it fails"), comfortably >8:1. */
+.pro-cta-btn {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.75rem;
+    white-space: normal;
+    text-align: center;
+    background: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(91, 35, 198, 0.35);
+}
+
+.pro-cta-btn:hover,
+.pro-cta-btn:focus {
+    background: #4a1ca3;
+}
+
+/* Visible focus ring (10A: no outline:none without a replacement) */
+.pro-cta-btn:focus-visible,
+.nav-pro-cta:focus-visible,
+.pro-trust-row a:focus-visible {
+    outline: 3px solid var(--green-deep);
+    outline-offset: 2px;
+}
+
+.pro-closing-section .pro-cta-block {
+    align-items: center;
+}
+
+.pro-cta-seam {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.6rem 0 0;
+    max-width: 340px;
+}
+
+/* ---- Screenshot frames (image robustness spec 4A) ----
+   Fixed 3:2 ratio + lavender placeholder on every slot, so a slow/failed
+   load still shows a designed surface instead of a broken-image icon. */
+.pro-shot-frame {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--secondary);
+}
+
+.pro-shot-frame picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.pro-shot-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* The ONLY two shadowed surfaces on this page (restraint recipe 8A) */
+.pro-shot-frame-shadow {
+    box-shadow: 0 8px 24px rgba(130, 89, 220, 0.15);
+}
+
+.pro-shot-frame-hero {
+    border-radius: 16px;
+}
+
+/* ---- Tour section ---- */
+.pro-tour-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.pro-tour-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--primary);
+}
+
+.pro-tour-lede {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+/* Reuses .scroll-story's flex layout; only step content differs from the
+   homepage phone story (marker+body row instead of a column card). */
+.pro-tour-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pro-tour .story-step {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.25rem;
+    transform: none; /* restraint recipe: no slide/scale, cross-fade only */
+}
+
+/* Inactive steps sit at 60% opacity (design review 11A), not the homepage's
+   30% + slide-up — this page's motion is quieter. */
+.pro-tour .story-step {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.pro-tour .story-step.active {
+    opacity: 1;
+}
+
+.pro-step-marker {
+    flex-shrink: 0;
+}
+
+.pro-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--green-deep);
+    color: var(--green-deep);
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active step number fills green with a white numeral (design review 11A) */
+.story-step.active .pro-step-number {
+    background: var(--green-deep);
+    color: #fff;
+}
+
+.pro-step-time {
+    color: var(--green-deep);
+    font-weight: 700;
+    margin-right: 0.4rem;
+}
+
+.pro-step-body h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+}
+
+.pro-step-body p {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+/* Inline screenshot: the mobile + reduced-motion rendering. Shown by default
+   (mobile-first); hidden on desktop where the sticky panel takes over. */
+.pro-tour-inline-shot {
+    margin-top: 1rem;
+    max-width: 420px;
+}
+
+/* Desktop sticky panel (Build 2 enhancement). Reuses .scroll-story-phone's
+   sticky positioning; overridden here for width + offset per the tour's
+   own micro-spec instead of the homepage phone's.
+   NOTE: the display:flex below is gated to desktop width on purpose — this
+   selector (two classes) is more specific than the shared mobile rule
+   `.scroll-story-phone { display: none }`, so an unguarded display:flex here
+   would win at every viewport and break the mobile/reduced-motion layout. */
+.pro-tour-panel.scroll-story-phone {
+    flex: 0 0 440px;
+    top: 96px; /* clears the sticky navbar with breathing room */
+}
+
+@media (min-width: 769px) {
+    .pro-tour-panel.scroll-story-phone {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: stretch;
+    }
+}
+
+.pro-tour-rail {
+    --story-rail-fill: 25%;
+    flex-shrink: 0;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--secondary);
+    position: relative;
+}
+
+.pro-tour-rail-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--story-rail-fill);
+    background: var(--green-deep);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.pro-tour-screen-frame {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Each screenshot inside the sticky panel — cross-fades in/out, no slide */
+.pro-tour-shot {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.pro-tour-shot.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Annotation overlays: percentage-anchored, duplicated in the visible
+   caption text, so they're decorative-only (aria-hidden in the markup). */
+.pro-tour-annotation {
+    position: absolute;
+    background: #fff;
+    border: 1px solid var(--green-deep);
+    color: var(--green-deep);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Desktop only: hide the inline mobile screenshot, show the sticky panel */
+@media (min-width: 769px) {
+    .pro-tour-inline-shot {
+        display: none;
+    }
+}
+
+/* Mobile: no sticky panel, no rail — inline screenshots only (handled by the
+   existing .scroll-story-phone { display:none } mobile rule above, which
+   also matches .pro-tour-panel since it shares that class) */
+@media (max-width: 768px) {
+    .pro-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pro-hero-copy {
+        text-align: left;
+    }
+
+    .pro-cta-block,
+    .pro-cta-btn {
+        width: 100%;
+    }
+
+    .pro-closing-section .pro-cta-block {
+        align-items: stretch;
+    }
+
+    .pro-hero-copy h1 {
+        font-size: 2rem;
+    }
+}
+
+/* prefers-reduced-motion: force the static stacked story even on desktop —
+   the JS observer never attaches (see script.js), so this keeps the visual
+   state consistent with actual behavior instead of leaving a dead sticky panel. */
+@media (prefers-reduced-motion: reduce) {
+    .pro-tour-panel {
+        display: none !important;
+    }
+
+    .pro-tour-inline-shot {
+        display: block !important;
+    }
+
+    .pro-tour .story-step {
+        opacity: 1;
+    }
+}
+
+/* ---- Trust strip (design review 7A) — one quiet row, no card chrome ---- */
+.pro-trust-section {
+    padding: 3rem 0;
+    background-color: var(--secondary);
+}
+
+.pro-trust-row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.pro-trust-row li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.pro-trust-row i {
+    color: var(--green-deep);
+    font-size: 1.1rem;
+}
+
+.pro-trust-row a {
+    color: var(--text-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--green-deep);
+}
+
+.pro-trust-row a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 576px) {
+    .pro-trust-row {
+        gap: 1.25rem 1.5rem;
+    }
+    .pro-trust-row li {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+
+/* ---- Closing CTA ---- */
+.pro-closing-section {
+    padding: 4rem 0 5rem;
+    background-color: #ffffff;
+}
+
+.pro-closing-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.pro-closing-support {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.75rem;
+}

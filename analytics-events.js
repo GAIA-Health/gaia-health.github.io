@@ -119,6 +119,30 @@ document.addEventListener('click', function (e) {
   }
 })();
 
+/* ── /for-professionals/ page view + CTA click (T6) ──
+   CTA hrefs already carry ?utm_source=for-professionals so the app-side
+   PostHog pro-funnel events can attribute signups back to this page; these
+   GA events are the marketing-site half of that attribution story. */
+(function () {
+  if (typeof gtag !== 'function') return;
+  if (!window.location.pathname.match(/^\/for-professionals\/?$/)) return;
+
+  gtag('event', 'pro_page_view', {
+    page_path: window.location.pathname
+  });
+})();
+
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a.pro-cta-link');
+  if (!link || typeof gtag !== 'function') return;
+
+  gtag('event', 'pro_cta_click', {
+    cta_location: link.getAttribute('data-cta-location') || 'unknown',
+    link_text: link.textContent.trim().substring(0, 80),
+    page_path: window.location.pathname
+  });
+});
+
 /* ── Blog internal navigation clicks ── */
 document.addEventListener('click', function (e) {
   var link = e.target.closest('a');

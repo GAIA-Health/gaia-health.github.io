@@ -43,7 +43,7 @@ gaia-health.github.io/
 - JavaScript (vanilla)
 - Bootstrap 5.3.2
 - Bootstrap Icons
-- Google Fonts (Montserrat, Open Sans)
+- Google Fonts (Quicksand — the only loaded web font; Georgia for serif accents. Verified against styles.css 2026-07-15; an earlier version of this doc wrongly said Montserrat/Open Sans)
 
 ## App Information
 - **App Name**: Go Go Gaia

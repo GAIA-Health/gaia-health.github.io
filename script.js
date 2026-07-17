@@ -81,42 +81,79 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =========================================
-    // SCROLL-LINKED STORY (How It Works)
+    // SCROLL-LINKED STORY (How It Works phone story +
+    // "A coach's Tuesday" tour on /for-professionals/)
+    //
+    // Generalized so any number of `.scroll-story` instances on a page can
+    // each drive their own sticky screen(s). The engine no longer hardcodes
+    // `.phone-screen` — it looks for a shared `[data-story-screen]` attribute,
+    // so different pages can style their screens differently (phone chrome
+    // vs. a flat screenshot panel) while sharing one observer implementation.
+    // Do not fork a second copy of this for new scroll-stories — add another
+    // `.scroll-story` section to the page instead; this loop picks it up.
     // =========================================
-    const scrollStory = document.querySelector('.scroll-story');
-    if (scrollStory) {
-        const steps = scrollStory.querySelectorAll('.story-step');
-        const screens = scrollStory.querySelectorAll('.phone-screen');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-        const stepObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const stepNum = entry.target.getAttribute('data-step');
+    function initScrollStories() {
+        const scrollStories = document.querySelectorAll('.scroll-story');
+        if (!scrollStories.length) return;
 
-                    // Activate the content card
-                    steps.forEach(s => s.classList.remove('active'));
-                    entry.target.classList.add('active');
+        scrollStories.forEach(scrollStory => {
+            const steps = scrollStory.querySelectorAll('.story-step');
+            const screens = scrollStory.querySelectorAll('[data-story-screen]');
+            const rail = scrollStory.querySelector('[data-story-rail]');
+            if (!steps.length || !screens.length) return;
 
-                    // Crossfade to the matching phone screenshot
-                    screens.forEach(s => {
-                        s.classList.remove('active');
-                        s.style.position = 'absolute';
-                    });
-                    const activeScreen = scrollStory.querySelector(
-                        `.phone-screen[data-step="${stepNum}"]`
-                    );
-                    if (activeScreen) {
-                        activeScreen.classList.add('active');
-                        activeScreen.style.position = 'relative';
+            const stepObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stepNum = entry.target.getAttribute('data-step');
+
+                        // Activate the content card
+                        steps.forEach(s => {
+                            s.classList.remove('active');
+                            s.removeAttribute('aria-current');
+                        });
+                        entry.target.classList.add('active');
+                        entry.target.setAttribute('aria-current', 'step');
+
+                        // Crossfade to the matching screenshot
+                        screens.forEach(s => {
+                            s.classList.remove('active');
+                            s.style.position = 'absolute';
+                        });
+                        const activeScreen = scrollStory.querySelector(
+                            `[data-story-screen][data-step="${stepNum}"]`
+                        );
+                        if (activeScreen) {
+                            activeScreen.classList.add('active');
+                            activeScreen.style.position = 'relative';
+                        }
+
+                        // Optional progress rail (used by the coach's-Tuesday tour;
+                        // homepage story has none, so this is a silent no-op there)
+                        if (rail) {
+                            const stepIndex = Array.prototype.indexOf.call(steps, entry.target);
+                            const pct = ((stepIndex + 1) / steps.length) * 100;
+                            rail.style.setProperty('--story-rail-fill', pct + '%');
+                        }
                     }
-                }
+                });
+            }, {
+                rootMargin: '-30% 0px -30% 0px',
+                threshold: 0.1
             });
-        }, {
-            rootMargin: '-30% 0px -30% 0px',
-            threshold: 0.1
-        });
 
-        steps.forEach(step => stepObserver.observe(step));
+            steps.forEach(step => stepObserver.observe(step));
+        });
+    }
+
+    // Respect prefers-reduced-motion: skip the observer entirely so the
+    // semantic, stacked story (already in the HTML with no JS required)
+    // stays put instead of animating. This also closes a pre-existing gap
+    // on the homepage phone story, which never had a reduced-motion guard.
+    if (!reducedMotionQuery.matches) {
+        initScrollStories();
     }
 
 

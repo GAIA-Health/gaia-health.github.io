@@ -74,3 +74,9 @@ screenshots/
 .ga-credentials.json
 .gstack/
 images/2026 screenshots/
+
+# Playwright test infra (T8) — local run artifacts only, not the suite itself
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
