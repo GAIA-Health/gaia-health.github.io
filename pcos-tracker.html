@@ -164,6 +164,11 @@
                         <i class="bi bi-apple me-2"></i>Download Go Go Gaia
                     </a>
                     <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                    <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                    <div class="desktop-qr align-items-center gap-3 mt-4">
+                        <img src="images/download-qr.png" alt="QR code linking to Go Go Gaia on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                        <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                    </div>
                 </div>
 
                 <!-- Screenshot -->

@@ -1,11 +1,33 @@
 /**
- * Go Go Gaia — Cookie consent gate for GA4
+ * Go Go Gaia — GA4 Consent Mode v2, geo-scoped
  *
- * Strict opt-in: gtag.js is never requested from Google until the visitor
- * clicks "Allow analytics". Until then window.gtag is a safe no-op so any
- * script that calls gtag(...) (analytics-events.js, script.js) never throws
- * and never queues events for a later replay — a call made before consent
- * is simply dropped, not retroactively reported after a later grant.
+ * Google Consent Mode v2, not a hard load-gate. gtag.js loads on every page.
+ * What differs by region is the DEFAULT consent state:
+ *
+ *   EU / EEA / UK / CH  -> analytics_storage denied by default + consent banner.
+ *                          GA still sends a cookieless ping, so the visit is
+ *                          counted, but no cookie or identifier is stored until
+ *                          the visitor clicks "Allow analytics".
+ *   Everywhere else     -> analytics_storage granted by default, no banner.
+ *                          Full cookie-based measurement, which is what makes
+ *                          users / sessions / returning-visitor data accurate.
+ *
+ * Why the split: cookieless pings keep you counted but not identified, and this
+ * property is far below Google's behavioural-modelling volume threshold
+ * (~1,000 events/day), so denied-state numbers are directional rather than
+ * precise. ~81% of traffic is outside the EU/UK and has no opt-in requirement,
+ * so granting there recovers full-fidelity data for most of the site.
+ *
+ * The previous implementation was a hard load-gate that made gtag a no-op until
+ * a click, so ~94% of all traffic went uncounted — visitors read and leave
+ * without ever touching a banner, and the pageview was dropped before they
+ * could consent. See docs: GA4 consent gap, 2026-07-13 -> 2026-07-24.
+ *
+ * Region comes from the IANA timezone (Intl), not an IP lookup: no third-party
+ * request, no latency, nothing to block. It over-includes rather than under-
+ * includes (Europe/Moscow, Europe/Istanbul and friends get the strict path even
+ * though they are not GDPR territories) and any detection failure falls back to
+ * strict, so the error direction is always toward more privacy, never less.
  */
 (function () {
   'use strict';
@@ -13,32 +35,79 @@
   var GA_ID = 'G-ZEM6KB1QWF';
   var CONSENT_KEY = 'analytics-consent';
 
-  // Safe no-op so gtag(...) is always callable, everywhere, before consent.
-  window.gtag = window.gtag || function () {};
+  // EEA/UK/CH outliers that do not live under the Europe/* prefix.
+  var STRICT_ZONES = [
+    'Atlantic/Reykjavik',  // Iceland (EEA)
+    'Atlantic/Faroe',      // Faroe Islands (DK)
+    'Atlantic/Azores',     // Portugal
+    'Atlantic/Madeira',    // Portugal
+    'Atlantic/Canary'      // Spain
+  ];
 
-  function loadGA() {
-    if (window.__gaLoaded) return;
-    window.__gaLoaded = true;
+  /** True for EU/EEA/UK/CH visitors, and for anyone we cannot place. */
+  function needsOptIn() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (!tz) return true; // unknown -> strict
+      if (tz.indexOf('Europe/') === 0) return true;
+      return STRICT_ZONES.indexOf(tz) !== -1;
+    } catch (e) {
+      return true; // no Intl support -> strict
+    }
+  }
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
+  // gtag must be callable synchronously, before gtag.js arrives, so that
+  // analytics-events.js and script.js never throw. Commands queue in dataLayer
+  // and replay once the library loads.
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
 
-    gtag('js', new Date());
-    gtag('config', GA_ID, { anonymize_ip: true });
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(script);
+  function storedConsent() {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null; // private mode etc. — treat as undecided
+    }
   }
 
   function setConsent(value) {
     try {
       localStorage.setItem(CONSENT_KEY, value);
     } catch (e) {
-      /* localStorage unavailable (private mode, etc.) — banner will just reappear next visit */
+      /* localStorage unavailable — banner will just reappear next visit */
     }
+  }
+
+  var consent = storedConsent();
+  var strict = needsOptIn();
+
+  // An explicit stored choice always wins over geo. Otherwise EU/UK starts
+  // denied and everyone else starts granted.
+  var analyticsDefault = consent === 'granted' ? 'granted'
+    : consent === 'denied' ? 'denied'
+    : strict ? 'denied' : 'granted';
+
+  // Defaults MUST be set before the config command, or the first hit races the
+  // consent state and can be sent under the wrong assumption.
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: analyticsDefault,
+    wait_for_update: 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(script);
+
+  function grant() {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
   }
 
   function injectStyle() {
@@ -66,6 +135,11 @@
     document.head.appendChild(style);
   }
 
+  function removeBanner() {
+    var banner = document.getElementById('cookie-consent-banner');
+    if (banner) banner.parentNode.removeChild(banner);
+  }
+
   function showBanner() {
     injectStyle();
 
@@ -75,7 +149,7 @@
     banner.setAttribute('aria-label', 'Cookie consent');
 
     var text = document.createElement('p');
-    text.textContent = 'We use optional analytics cookies to understand how people use the site. Nothing runs until you choose. ';
+    text.textContent = 'We use optional analytics cookies to understand how people use the site. Nothing is stored until you choose. ';
     var link = document.createElement('a');
     link.href = '/privacy-policy.html';
     link.textContent = 'Privacy policy';
@@ -90,7 +164,7 @@
     allowBtn.textContent = 'Allow analytics';
     allowBtn.addEventListener('click', function () {
       setConsent('granted');
-      loadGA();
+      grant();
       removeBanner();
     });
 
@@ -110,30 +184,14 @@
     document.body.appendChild(banner);
   }
 
-  function removeBanner() {
-    var banner = document.getElementById('cookie-consent-banner');
-    if (banner) banner.parentNode.removeChild(banner);
-  }
-
-  function init() {
-    var consent;
-    try {
-      consent = localStorage.getItem(CONSENT_KEY);
-    } catch (e) {
-      consent = null;
+  // Banner is only for undecided visitors on the strict path. Outside the
+  // EU/UK the default is already granted, so there is nothing to ask.
+  if (consent === null && strict) {
+    if (document.body) {
+      showBanner();
+    } else {
+      document.addEventListener('DOMContentLoaded', showBanner);
     }
-
-    if (consent === 'granted') {
-      loadGA();
-    } else if (consent === null) {
-      if (document.body) {
-        showBanner();
-      } else {
-        document.addEventListener('DOMContentLoaded', showBanner);
-      }
-    }
-    // consent === 'denied' -> do nothing, gtag stays the safe no-op
   }
-
-  init();
+  // 'granted' -> already applied in the default above; 'denied' -> stays cookieless.
 })();
