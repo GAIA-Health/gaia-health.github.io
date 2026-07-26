@@ -6,6 +6,22 @@
     <title>Add a Friend - Go Go Gaia</title>
     <meta name="description" content="Connect with a friend on Go Go Gaia - the all-in-one women's health tracking app.">
     <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="You've Got a Friend Request! - Go Go Gaia">
+    <meta property="og:description" content="Someone wants to connect with you on Go Go Gaia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/invite/friend/">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="You've Got a Friend Request! - Go Go Gaia">
+    <meta name="twitter:description" content="Someone wants to connect with you on Go Go Gaia.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
     <link rel="icon" type="image/png" href="/Logo1.png">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -157,15 +173,23 @@
     </div>
 
     <script>
-        // Extract code from URL path
+        // Extract code from the URL path (legacy `/invite/friend/{code}` shape)
+        // or the `?c=` query string (the shape that actually returns HTTP 200
+        // on GitHub Pages, so link previews can render a card - see TODO-089).
         const path = window.location.pathname;
         const parts = path.split('/invite/friend/');
         let code = '';
         if (parts.length > 1) {
             code = parts[1].replace(/\//g, '').toUpperCase();
-            if (code) {
-                document.getElementById('code').textContent = code;
+        }
+        if (!code) {
+            const queryCode = new URLSearchParams(window.location.search).get('c');
+            if (queryCode) {
+                code = queryCode.toUpperCase();
             }
+        }
+        if (code) {
+            document.getElementById('code').textContent = code;
         }
 
         const deepLink = code ? 'gogogaia://invite/friend/' + code : '';
