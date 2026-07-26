@@ -148,15 +148,55 @@ async function listScreenshots(setId) {
 
 // ---- write helpers (only called under --apply) --------------------------
 
-async function createCpp(appId, name) {
+// As of Jul 2026 the API requires a DEEP CREATE: the version and localization
+// must be created inline with the CPP via `${local-id}` temp ids in `included`
+// (separate POSTs get 409 RELATIONSHIP.REQUIRED). 'visible' is likewise rejected
+// on CREATE (409 ATTRIBUTE.NOT_ALLOWED) — new CPPs are created hidden by default.
+//
+// KNOWN APPLE BUG (verified empirically 2026-07-20): every payload shape is
+// rejected with contradictory 409s —
+//   • documented shape (version→localizations forward link): "must provide
+//     'appCustomProductPageLocalizations'" even though it IS provided/linked;
+//   • adding the localization→version back-ref satisfies that check but then
+//     409s with "inline include id not allowed for this request";
+//   • a null-data back-ref crashes their server (500 UNEXPECTED_ERROR);
+//   • appStoreVersionTemplate / customProductPageTemplate don't bypass it.
+// So CPP *creation* must currently be done in the ASC web UI (App Store →
+// Custom Product Pages → "+", name it, copy from current version — ~30s each).
+// Everything else (promo text, screenshots) works via API: re-run `sync` after
+// creating the shells and it takes the update path below.
+async function createCpp(appId, name, locale, promotionalText) {
+  const VER = '${new-appCustomProductPageVersion-id}';
+  const LOC = '${new-appCustomProductPageLocalization-id}';
   const { data } = await api('/v1/appCustomProductPages', {
     method: 'POST',
     body: {
       data: {
         type: 'appCustomProductPages',
-        attributes: { name, visible: false },
-        relationships: { app: { data: { type: 'apps', id: appId } } },
+        attributes: { name },
+        relationships: {
+          app: { data: { type: 'apps', id: appId } },
+          appCustomProductPageVersions: {
+            data: [{ type: 'appCustomProductPageVersions', id: VER }],
+          },
+        },
       },
+      included: [
+        {
+          type: 'appCustomProductPageVersions',
+          id: VER,
+          relationships: {
+            appCustomProductPageLocalizations: {
+              data: [{ type: 'appCustomProductPageLocalizations', id: LOC }],
+            },
+          },
+        },
+        {
+          type: 'appCustomProductPageLocalizations',
+          id: LOC,
+          attributes: promotionalText ? { locale, promotionalText } : { locale },
+        },
+      ],
     },
   });
   return data;
@@ -169,6 +209,20 @@ async function createVersion(cppId) {
       data: {
         type: 'appCustomProductPageVersions',
         relationships: { appCustomProductPage: { data: { type: 'appCustomProductPages', id: cppId } } },
+      },
+    },
+  });
+  return data;
+}
+
+async function patchLocalization(localizationId, promotionalText) {
+  const { data } = await api(`/v1/appCustomProductPageLocalizations/${localizationId}`, {
+    method: 'PATCH',
+    body: {
+      data: {
+        type: 'appCustomProductPageLocalizations',
+        id: localizationId,
+        attributes: { promotionalText },
       },
     },
   });
@@ -321,20 +375,47 @@ async function cmdSync(configPath) {
     }
     const found = byName.get(page.name.toLowerCase());
     if (found) {
-      console.log(`  = "${page.name}" exists (id ${found.id}). ${APPLY ? 'Would update promo text on a fresh version.' : 'Would update.'}`);
-      // Updating an existing CPP's text means adding/editing a localization on its
-      // current editable version. Left as a follow-up once we confirm version state
-      // handling on the live account — safer to verify with `audit` first.
+      if (!APPLY) {
+        console.log(`  = "${page.name}" exists (id ${found.id}). Would set ${locale} promo text on its editable version.`);
+        continue;
+      }
+      const versions = await listCppVersions(found.id);
+      const editable = versions.find((v) => v.attributes.state === 'PREPARE_FOR_SUBMISSION') || versions[0];
+      if (!editable) {
+        console.log(`  ⚠ "${page.name}" (id ${found.id}) has no versions — create one in ASC first. Skipping.`);
+        continue;
+      }
+      if (editable.attributes.state !== 'PREPARE_FOR_SUBMISSION') {
+        console.log(`  ⚠ "${page.name}" version state is ${editable.attributes.state} (not editable) — skipping promo text.`);
+        continue;
+      }
+      const locs = await listLocalizations(editable.id);
+      const loc = locs.find((l) => l.attributes.locale === locale);
+      if (loc) {
+        await patchLocalization(loc.id, page.promotionalText);
+        console.log(`  = "${page.name}": updated ${locale} promo text (localization ${loc.id}).`);
+      } else {
+        const created = await setLocalization(editable.id, locale, page.promotionalText);
+        console.log(`  = "${page.name}": created ${locale} localization (${created.id}) with promo text.`);
+      }
       continue;
     }
     if (!APPLY) {
       console.log(`  + "${page.name}" would be CREATED (shell + version + ${locale} promo text).`);
       continue;
     }
-    const cpp = await createCpp(appId, page.name);
-    const version = await createVersion(cpp.id);
-    if (page.promotionalText) await setLocalization(version.id, locale, page.promotionalText);
-    console.log(`  + Created "${page.name}" (id ${cpp.id}). NOTE: add screenshots in ASC before making it visible.`);
+    try {
+      const cpp = await createCpp(appId, page.name, locale, page.promotionalText);
+      console.log(`  + Created "${page.name}" (id ${cpp.id}) with version + ${locale} localization. NOTE: add screenshots in ASC before making it visible.`);
+    } catch (e) {
+      if (/409/.test(e.message)) {
+        console.log(`  ✗ "${page.name}": API create is currently broken on Apple's side (see header comment).`);
+        console.log(`    → Create it manually in ASC (App Store → Custom Product Pages → "+", name it "${page.name}"),`);
+        console.log(`      then re-run this sync to set the promo text.`);
+      } else {
+        throw e;
+      }
+    }
   }
 
   if (APPLY) {
@@ -349,12 +430,13 @@ async function cmdSync(configPath) {
 const IPHONE_67_DISPLAY_TYPE = 'APP_IPHONE_67';
 
 function loadOrderedScreenshots(folder) {
-  const files = fs.readdirSync(folder).filter((f) => /^\d+_.*\.png$/i.test(f));
+  // Accepts "1_foo.png" and "01-foo.png" (the frames/ render pipeline emits the latter).
+  const files = fs.readdirSync(folder).filter((f) => /^\d+[-_].*\.png$/i.test(f));
   if (files.length === 0) {
-    throw new Error(`No numbered PNGs (e.g. "1_foo.png") found in ${folder}`);
+    throw new Error(`No numbered PNGs (e.g. "1_foo.png" or "01-foo.png") found in ${folder}`);
   }
   return files
-    .map((f) => ({ file: f, order: parseInt(f.match(/^(\d+)_/)[1], 10), path: `${folder}/${f}` }))
+    .map((f) => ({ file: f, order: parseInt(f.match(/^(\d+)[-_]/)[1], 10), path: `${folder}/${f}` }))
     .sort((a, b) => a.order - b.order);
 }
 

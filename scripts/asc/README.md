@@ -9,13 +9,12 @@ Zero dependencies — needs Node 18+ (you have v20). No secrets are stored in th
 ## Setup (one time)
 
 1. In **App Store Connect → Users and Access → Integrations → App Store Connect API**, note your **Issuer ID** (a UUID). Confirm the API key you use has the **Admin** or **App Manager** role (CPP writes require it).
-2. You already have key files in `~/Downloads` (`AuthKey_<KEY_ID>.p8`). The `<KEY_ID>` in the filename is your `ASC_KEY_ID`.
-3. Export the three env vars (do NOT commit them):
+2. The Admin key lives at `scripts/asc/AuthKey_6G33C3358M.p8` (gitignored via `*.p8`).
+   It was moved out of `~/Downloads` on 2026-07-20 because macOS TCC blocks CLI
+   tools from reading Downloads. `scripts/asc/.env` has all env vars filled in:
 
    ```sh
-   export ASC_KEY_ID=9XR2W9PT44                      # whichever key has the right role
-   export ASC_ISSUER_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-   export ASC_KEY_PATH="$HOME/Downloads/AuthKey_9XR2W9PT44.p8"
+   source scripts/asc/.env    # then run any command below
    ```
 
 ## Use
@@ -34,17 +33,31 @@ node scripts/asc/asc-cpp.mjs sync scripts/asc/verticals.json
 node scripts/asc/asc-cpp.mjs sync scripts/asc/verticals.json --apply
 
 # 5) Screenshots — upload the framed PNGs for a CPP once its shell exists.
-#    Files must be named "1_foo.png", "2_bar.png", ... — the leading number
-#    sets upload/display order. Dry run first (no --apply):
-node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS
+#    Files must be named "1_foo.png" or "01-foo.png" (the frames/ render
+#    pipeline emits the latter) — the leading number sets upload/display
+#    order. Dry run first (no --apply):
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos
 
 # 6) Apply the screenshot upload.
-node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS --apply
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos --apply
 
 # If the set already has screenshots, `screenshots` SKIPS by default (no
 # duplicate upload). Pass --replace to delete the existing ones first:
-node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_framed/CPP-PCOS --replace --apply
+node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos --replace --apply
 ```
+
+## ⚠ CPP creation is currently broken in Apple's API (2026-07-20)
+
+`POST /v1/appCustomProductPages` rejects every payload shape with contradictory
+409s (verified empirically — documented deep-create shape included; details in
+the header comment of `asc-cpp.mjs`). Until Apple fixes it:
+
+1. Create each CPP shell **manually in the ASC UI**: App Store → Custom Product
+   Pages → "+" → name it exactly as in `verticals.json` (PCOS, Pregnancy,
+   Perimenopause, TTC, Mood) → copy from current version. ~30s each.
+2. Re-run `sync --apply` — it now detects existing CPPs and sets/updates the
+   en-US promo text on their editable version via PATCH (that path works).
+3. Run `screenshots <NAME> frames/out/cpp-<slug> --apply --replace` per page.
 
 ## Important limits
 
@@ -56,4 +69,4 @@ node scripts/asc/asc-cpp.mjs screenshots "PCOS" ~/Desktop/GaiaScreenshots/cpp_fr
 ## Security
 
 - `*.p8`, `scripts/asc/.env`, and `scripts/asc/verticals.json` are gitignored. Never commit keys, the Issuer ID, or a filled-in config.
-- Tokens are minted in-memory and expire in 15 minutes. The key file is read from `ASC_KEY_PATH`, never copied into the repo.
+- Tokens are minted in-memory and expire in 15 minutes. The key file sits in `scripts/asc/` (chmod 600) and is kept out of git by the `*.p8` ignore rule — verify with `git check-ignore scripts/asc/AuthKey_6G33C3358M.p8` after any .gitignore change.
