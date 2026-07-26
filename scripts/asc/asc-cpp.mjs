@@ -202,19 +202,6 @@ async function createCpp(appId, name, locale, promotionalText) {
   return data;
 }
 
-async function createVersion(cppId) {
-  const { data } = await api('/v1/appCustomProductPageVersions', {
-    method: 'POST',
-    body: {
-      data: {
-        type: 'appCustomProductPageVersions',
-        relationships: { appCustomProductPage: { data: { type: 'appCustomProductPages', id: cppId } } },
-      },
-    },
-  });
-  return data;
-}
-
 async function patchLocalization(localizationId, promotionalText) {
   const { data } = await api(`/v1/appCustomProductPageLocalizations/${localizationId}`, {
     method: 'PATCH',
