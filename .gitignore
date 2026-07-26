@@ -10,6 +10,10 @@ docs/
 docs-private/
 
 # Internal marketing/channel work — repo is PUBLIC, keep strategy local
+# frames/ = App Store screenshot/CPP render pipeline (source + 31MB of rendered
+# PNGs). Never commit: GitHub Pages would serve the mockup HTML at
+# go-go-gaia.com/frames/ and the PNGs would bloat the repo permanently.
+frames/
 scripts/pinterest/
 scripts/asc/metadata-*.json
 scripts/asc/metadata/
