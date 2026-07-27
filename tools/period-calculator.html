@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Period Calculator: When Is My Next Period?</title>
+    <title>Period Calculator: Next Period & How Late Am I?</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=6608432371">
-    <meta name="description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
-    <meta name="keywords" content="period calculator, next period date, when is my next period, period predictor, menstrual cycle calculator, period tracker">
+    <meta name="description" content="Enter your last period date and cycle length to predict your next period date and see how many days late you are. See upcoming periods for the next 6 months.">
+    <meta name="keywords" content="period calculator, late period calculator, next period date, when is my next period, when will my next period be, how many days late period calculator, is my period late calculator, calculate next period date, period predictor, menstrual cycle calculator, period tracker">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.go-go-gaia.com/tools/period-calculator.html">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Period Calculator: When Is My Next Period?">
-    <meta property="og:description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
+    <meta property="og:title" content="Period Calculator: Next Period & How Late Am I?">
+    <meta property="og:description" content="Enter your last period date and cycle length to predict your next period date and see how many days late you are. See upcoming periods for the next 6 months.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.go-go-gaia.com/tools/period-calculator.html">
     <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
@@ -22,8 +22,8 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@holland_neuro">
-    <meta name="twitter:title" content="Period Calculator: When Is My Next Period?">
-    <meta name="twitter:description" content="Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.">
+    <meta name="twitter:title" content="Period Calculator: Next Period & How Late Am I?">
+    <meta name="twitter:description" content="Enter your last period date and cycle length to predict your next period date and see how many days late you are. See upcoming periods for the next 6 months.">
     <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
 
     <!-- Favicon -->
@@ -70,6 +70,22 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "When will my next period be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your next period date is your last period's start date plus your average cycle length. Most cycles fall somewhere between 21 and 35 days, with 28 days being the commonly cited average. Enter your own last period date and cycle length into the calculator above for a personalized estimate, plus your next 6 upcoming periods and fertile windows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my next period date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add your average cycle length to the first day of your last period. The calculator above does this automatically — enter the first day of your last period and select your average cycle length, and it returns your estimated next period date, current cycle day, and current phase, plus a 6-month lookahead."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How do I calculate when my next period will start?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -82,6 +98,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A normal menstrual cycle is anywhere from 21 to 35 days, with 28 days being the most commonly cited average. But here's the thing — only about 13% of people actually have a perfect 28-day cycle. Most people fall somewhere between 24 and 32 days, and it's completely normal for your cycle to vary by a few days from month to month. A variation of up to 7-9 days between your shortest and longest cycle is still considered regular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days late can a period be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There's no fixed number — cycles that are normally 28 days can occasionally run a week or more past the expected date without anything being wrong, since your period date shifts whenever ovulation shifts. To find out how many days late you are, compare today's date to the expected date the calculator above gives you (last period start plus average cycle length); the difference in days is how late you are. See the \"How late is my period?\" section on this page for common reasons cycles shift."
           }
         },
         {
@@ -178,10 +202,10 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Period Calculator: When Is My Next Period?",
+      "name": "Period Calculator: Next Period & How Late Am I?",
       "url": "https://www.go-go-gaia.com/tools/period-calculator.html",
       "datePublished": "2026-04-06",
-      "dateModified": "2026-05-11",
+      "dateModified": "2026-07-27",
       "inLanguage": "en-US"
     }
     </script>
@@ -288,6 +312,19 @@
             color: var(--text-muted);
             margin-top: 0.25rem;
         }
+
+        /* Late note */
+        .late-note {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        .late-note i { color: var(--accent); margin-right: 0.4rem; }
 
         /* Phase indicator */
         .phase-indicator {
@@ -568,6 +605,7 @@
                 <strong>On this page</strong>
                 <ul>
                     <li><a href="#calculator">Period calculator</a></li>
+                    <li><a href="#how-late">How late is my period?</a></li>
                     <li><a href="#what-to-track">What to track besides dates</a></li>
                     <li><a href="#faq">Common questions</a></li>
                     <li><a href="#related">Related guides &amp; tools</a></li>
@@ -580,7 +618,7 @@
             <div class="container">
                 <div class="text-center mb-4">
                     <h1 style="font-weight: 700; color: var(--text-dark);">Period Calculator</h1>
-                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Enter your last period date and cycle length to predict when your next period will start. See upcoming periods for the next 6 months.</p>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Your next period is estimated by adding your average cycle length to the first day of your last period. Most cycles run 21-35 days, with 28 days the commonly cited average, though it's normal to vary a few days month to month. Enter your dates below for a personalized estimate, upcoming periods, and fertile windows for the next 6 months &mdash; or scroll to <a href="#how-late">how late is my period?</a> if that's what brought you here.</p>
                 </div>
 
                 <div class="calculator-card">
@@ -629,6 +667,16 @@
             <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
         </section>
 
+        <!-- Educational: How late is my period -->
+        <section id="how-late" class="tools-educational container" style="max-width: 740px;">
+            <h2>How late is my period?</h2>
+            <p>"Late" simply means today has passed the date you expected your period to start. To find out how many days late you are, compare two dates: the expected start date (your last period's start date plus your average cycle length &mdash; the same math the calculator above uses) and today's date. The gap between them, in days, is how late you are. For example, if your calculated expected date was March 10 and today is March 14, you're 4 days late.</p>
+
+            <h3>Common reasons a cycle shifts</h3>
+            <p>A late period doesn't automatically mean anything is wrong &mdash; cycles shift for a lot of ordinary reasons. Stress, travel across time zones, changes in sleep, a new workout routine or a heavier training block, and shifts in weight or diet can all nudge ovulation later than usual. Since your period date is really set by when you ovulate, anything that delays ovulation delays the whole cycle along with it.</p>
+            <p>If you want to go deeper on what a late period can mean and how to read your own pattern, see our <a href="../blog/why-is-my-period-late.html">guide on why your period might be late</a>.</p>
+        </section>
+
         <!-- Educational: What to track -->
         <section id="what-to-track" class="tools-educational container" style="max-width: 740px;">
             <h2>What to track besides your period dates</h2>
@@ -669,49 +717,73 @@
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I calculate when my next period will start?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">When will my next period be?</button>
                     </h3>
                     <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Your next period date is your last period's start date plus your average cycle length. Most cycles fall somewhere between 21 and 35 days, with 28 days being the commonly cited average. Enter your own last period date and cycle length into the calculator above for a personalized estimate, plus your next 6 upcoming periods and fertile windows.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How do I calculate my next period date?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Add your average cycle length to the first day of your last period. The calculator above does this automatically — enter the first day of your last period and select your average cycle length, and it returns your estimated next period date, current cycle day, and current phase, plus a 6-month lookahead.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How do I calculate when my next period will start?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">Take the first day of your last period and add your average cycle length — that's your estimated next period date. So if your period started on March 1 and your cycle is 28 days, you'd expect your next period around March 29. The tricky part is knowing your actual cycle length, which is why tracking for a few months helps. Count from day 1 of one period to day 1 of the next — that's one full cycle.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is a normal cycle length?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What is a normal cycle length?</button>
                     </h3>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">A normal menstrual cycle is anywhere from 21 to 35 days, with 28 days being the most commonly cited average. But here's the thing — only about 13% of people actually have a perfect 28-day cycle. Most people fall somewhere between 24 and 32 days, and it's completely normal for your cycle to vary by a few days from month to month. A variation of up to 7-9 days between your shortest and longest cycle is still considered regular.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Why is my period late?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">How many days late can a period be?</button>
                     </h3>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">There's no fixed number — cycles that are normally 28 days can occasionally run a week or more past the expected date without anything being wrong, since your period date shifts whenever ovulation shifts. To find out how many days late you are, compare today's date to the expected date the calculator above gives you (last period start plus average cycle length); the difference in days is how late you are. See the "How late is my period?" section above for common reasons cycles shift.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Why is my period late?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">A late period doesn't always mean pregnancy — there are a bunch of reasons your cycle might shift. Stress is a big one, since cortisol can directly delay ovulation. Other common causes include significant weight changes, starting or stopping birth control, illness, travel across time zones, over-exercising, thyroid issues, and PCOS. If your period is more than a week late and you're sexually active, it's worth taking a pregnancy test. If you're consistently late or skipping periods, check in with your doctor.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can stress affect my period?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Can stress affect my period?</button>
                     </h3>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">Absolutely — and it's not just in your head. When you're stressed, your body produces more cortisol, which can suppress GnRH (the hormone that kicks off your whole cycle). This can delay or even prevent ovulation, which pushes your period back. Acute stress (like a big exam or a move) might delay your period by a few days to a week. Chronic stress can cause more significant disruptions, including skipped periods entirely. This is your body's way of saying "now isn't a great time for reproduction."</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">How many days does a typical period last?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">How many days does a typical period last?</button>
                     </h3>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">Most periods last between 3 and 7 days, with 5 days being the average. The heaviest flow is usually on days 1-2, then it gradually tapers off. If your period consistently lasts longer than 7 days, involves soaking through a pad or tampon every hour for several hours, or includes clots larger than a quarter — that's worth mentioning to your doctor. On the flip side, very light periods (1-2 days) can be totally normal for some people, especially on hormonal birth control.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Should I worry if my periods are irregular?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">Should I worry if my periods are irregular?</button>
                     </h3>
-                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">It depends on how irregular we're talking. Cycles that vary by a few days each month? Totally normal — your body isn't a clock. But if your cycles swing by more than 9 days (say, 24 days one month and 38 the next), or you're regularly skipping periods, it's a good idea to talk to your doctor. Irregular periods can sometimes signal conditions like PCOS, thyroid disorders, or hormonal imbalances that are very treatable once identified. Also worth noting: periods are often irregular during the first few years after starting, after stopping birth control, and during perimenopause.</div>
                     </div>
                 </div>
@@ -922,6 +994,10 @@
 
         const daysUntilPeriod = Math.ceil((nextPeriodDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 
+        // How many days late (based on the immediate expected date from the entered last period + cycle length)
+        const immediateNextPeriod = cycles[0].nextPeriod;
+        const daysLate = Math.floor((today.getTime() - immediateNextPeriod.getTime()) / (1000 * 60 * 60 * 24));
+
         // Build calendar for current cycle
         let calendarHtml = '';
         const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -987,6 +1063,11 @@
 
         const html = `
             <div class="result-card">
+                ${daysLate > 0 ? `
+                <div class="late-note">
+                    <i class="bi bi-calendar-x"></i>Based on the dates you entered, your period was expected on ${formatDateFull(immediateNextPeriod)} &mdash; that's <strong>${daysLate} day${daysLate === 1 ? '' : 's'} late</strong> as of today.
+                </div>
+                ` : ''}
                 <div class="text-center mb-3">
                     <h2 style="font-weight: 700; font-size: 1.3rem; color: var(--text-dark);">Your Next Period</h2>
                     <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">${formatDateFull(nextPeriodDate)}</div>
