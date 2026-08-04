@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Go Go Gaia Creator Code</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/Logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #E5CFFC 0%, #fff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 440px;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            border-radius: 18px;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+        .code-label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .code {
+            font-family: 'Quicksand', monospace;
+            font-size: 40px;
+            font-weight: 700;
+            color: #8259DC;
+            letter-spacing: 6px;
+            margin-bottom: 8px;
+            padding: 18px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(130, 89, 220, 0.15);
+            display: inline-block;
+            word-break: break-all;
+        }
+        .code-hint {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 28px;
+            min-height: 18px;
+        }
+        .code-hint.copied {
+            color: #2e9e6b;
+            font-weight: 600;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            background: linear-gradient(135deg, #8259DC 0%, #A98BE8 100%);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 6px 0;
+            font-family: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(130, 89, 220, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .discount-card {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .discount-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .discount-card a {
+            font-size: 13px;
+            color: #8259DC;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .discount-card a:hover {
+            text-decoration: underline;
+        }
+        .no-code {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 24px;
+        }
+        .footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer a {
+            color: #8259DC;
+            text-decoration: none;
+        }
+        [hidden] { display: none !important; }
+    </style>
+    <!-- Cookie consent + gated GA4, same pattern as /invite/ and 404.html -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="/Logo1.png" alt="Go Go Gaia" class="logo">
+        <h1>You've Been Invited to Go Go Gaia</h1>
+        <p class="subtitle" id="subtitle">Someone you follow uses Go Go Gaia to track their health — download the app to get started.</p>
+
+        <div id="code-block" hidden>
+            <p class="code-label">Your Creator Code</p>
+            <p class="code" id="code">--------</p>
+            <p class="code-hint" id="code-hint">Tap Download and we'll copy this for you.</p>
+        </div>
+
+        <div id="no-code-block" class="no-code" hidden>
+            No code was found in this link. You can still download the app below —
+            free signups are always welcome.
+        </div>
+
+        <button class="btn" id="download-btn" type="button">Download Go Go Gaia</button>
+
+        <div class="discount-card" id="discount-card" hidden>
+            <p>
+                Already have the app, or just installed it? Your code also unlocks a
+                limited-time discount on Go Go Gaia Pro — redeem it on the App Store.
+            </p>
+            <a id="redeem-link" href="#">Redeem your discount &rarr;</a>
+        </div>
+
+        <p class="footer">
+            <a href="/">Learn more about Go Go Gaia</a>
+        </p>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // App Store listing (app id 6608432371 — same id used across 404.html's
+        // invite router and the iOS repo's App Store Connect config).
+        var APP_STORE_URL = 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=creator-landing&mt=8';
+
+        // TODO-162 piece 3 (Abby-side): the App Store offer-code redemption URL
+        // for the creator discount campaign. Apple's offer-code campaigns are
+        // created in App Store Connect, not via API — Abby creates the campaign
+        // (Pro, discount %/duration TBD) and this constant gets the real
+        // apps.apple.com/redeem?... URL ASC generates for it. Until then this
+        // points at the plain App Store listing so the page never shows a dead
+        // link — the discount card stays hidden (see below) until a real
+        // redemption URL is filled in here.
+        var OFFER_CODE_REDEMPTION_URL = null; // e.g. 'https://apps.apple.com/redeem?ctx=offercodes&id=6608432371&code=XXXXXXXX'
+
+        function getCodeFromQuery() {
+            var params = new URLSearchParams(window.location.search);
+            var code = (params.get('code') || '').trim();
+            // Same shape as the vanity codes scripts/create_creator_invite.py
+            // accepts server-side: <=8 chars, A-Z0-9 after uppercasing. This is
+            // display/UX validation only — the real check happens server-side
+            // when the code is attributed.
+            if (!/^[A-Za-z0-9]{1,8}$/.test(code)) return null;
+            return code.toUpperCase();
+        }
+
+        var code = getCodeFromQuery();
+        var copied = false;
+
+        if (code) {
+            document.getElementById('code').textContent = code;
+            document.getElementById('code-block').hidden = false;
+            if (OFFER_CODE_REDEMPTION_URL) {
+                document.getElementById('redeem-link').href = OFFER_CODE_REDEMPTION_URL;
+                document.getElementById('discount-card').hidden = false;
+            }
+        } else {
+            document.getElementById('no-code-block').hidden = false;
+        }
+
+        function copyCode() {
+            if (!code || !navigator.clipboard || !navigator.clipboard.writeText) {
+                return Promise.resolve(false);
+            }
+            return navigator.clipboard.writeText(code).then(function () {
+                return true;
+            }).catch(function () {
+                return false;
+            });
+        }
+
+        document.getElementById('download-btn').addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'creator_landing_download_click', {
+                    invite_type: 'referral',
+                    invite_subtype: 'creator',
+                    code: code || null
+                });
+            }
+
+            if (!code) {
+                window.location.href = APP_STORE_URL;
+                return;
+            }
+
+            copyCode().then(function (didCopy) {
+                var hint = document.getElementById('code-hint');
+                if (didCopy) {
+                    copied = true;
+                    hint.textContent = 'Copied! Paste it when the app asks for a creator code.';
+                    hint.classList.add('copied');
+                } else {
+                    // Honest microcopy either way — never claim a copy that didn't
+                    // happen (Safari without a user gesture, unsupported browser).
+                    hint.textContent = 'Remember this code: ' + code;
+                }
+                // Small delay so the "Copied!" message is actually readable before
+                // the tab backgrounds for the App Store handoff.
+                setTimeout(function () {
+                    window.location.href = APP_STORE_URL;
+                }, copied ? 600 : 0);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
