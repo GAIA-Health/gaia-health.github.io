@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Apps That Pull Wearables, Labs & Cycle Data Together (2026)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Your Oura, CGM, and lab PDFs live in different apps. See how Apple Health, Guava Health, Bearable, Oura, and Go Go Gaia compare at pulling it together.">
+    <meta name="keywords" content="health data app, apps that combine health data, wearable and lab data app, all in one health app, health dashboard app, sync wearable and cycle data, health data aggregator app">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Apps That Pull Wearables, Labs & Cycle Data Together (2026)">
+    <meta property="og:description" content="Your Oura, CGM, and lab PDFs live in different apps. See how Apple Health, Guava Health, Bearable, Oura, and Go Go Gaia compare at pulling it together.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/cycle/Biometrics_Throughout_Menstrual_Cycle.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+    <meta property="article:published_time" content="2026-08-04">
+    <meta property="article:author" content="Holland Neurotech Inc.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Apps That Pull Wearables, Labs & Cycle Data Together (2026)">
+    <meta name="twitter:description" content="Your Oura, CGM, and lab PDFs live in different apps. See how Apple Health, Guava Health, Bearable, Oura, and Go Go Gaia compare at pulling it together.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/cycle/Biometrics_Throughout_Menstrual_Cycle.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Apps That Pull Wearables, Labs & Cycle Data Together (2026)",
+      "description": "Your Oura, CGM, and lab PDFs live in different apps. See how Apple Health, Guava Health, Bearable, Oura, and Go Go Gaia compare at pulling it together.",
+      "author": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc."
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.go-go-gaia.com/Logo1.png"
+        }
+      },
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://www.go-go-gaia.com/images/cycle/Biometrics_Throughout_Menstrual_Cycle.png",
+          "width": 1200,
+          "height": 800
+        }
+      ],
+      "keywords": "health data app, apps that combine health data, wearable and lab data app, all in one health app, health dashboard app"
+    }
+    </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the best app for seeing wearable, lab, and cycle data in one place?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on what you're trying to do. Apple Health is the free, automatic hub that most iOS apps already write to, but it doesn't analyze anything. Guava Health is built for people working with a provider and wants to combine EHR records, labs, and wearable data with AI summaries. Bearable is best if you want to correlate custom symptoms against anything you track. Oura is the best hub for its own ring data specifically. Go Go Gaia pulls wearables, CGM data, and lab uploads together and overlays all of it against your cycle phase, which none of the others do."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Apple Health show my sleep and HRV data against my cycle phase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not really. Apple Health has a Cycle Tracking module and it stores sleep, HRV, and other wearable metrics, but each lives on its own card. There's no built-in view that overlays your HRV or sleep trend against where you are in your cycle. You'd need a separate app that reads from Apple Health and adds that layer on top."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Guava Health work for period or cycle tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Guava Health is built as a general health dashboard for combining EHR records, labs, and wearable data, often for people managing a chronic condition alongside a provider. It's not built around the menstrual cycle specifically, so it won't show you cycle phases or overlay your data against them the way a women's health app does."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I upload my own lab results to a health tracking app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the app. Guava Health connects to labs through EHR integrations with participating providers. Apple Health's Health Records feature only works if your hospital system participates, and even then it's not a manual upload. Go Go Gaia lets you upload lab PDFs or CSV files yourself through its web app, so you're not dependent on your provider using a specific system. None of these apps interpret or diagnose from your labs. They store and display what you upload so you and your doctor can review it together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a wearable to use one of these apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every app in this comparison works with manual logging alone. A wearable just fills in data you'd otherwise have to enter by hand, like overnight HRV, resting heart rate, or temperature. If you don't have a wearable yet, start logging manually and add a device later. The historical data you build up manually stays useful either way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What CGMs and glucose monitors can sync with a health tracking app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dexcom and FreeStyle Libre are the two most widely supported continuous glucose monitors across health apps, and Ultrahuman's ring and CGM combo is increasingly supported too. Go Go Gaia ingests data from all three (Dexcom, Libre, and Ultrahuman) and overlays glucose trends against your cycle phase. Apple Health can receive glucose data if the CGM's own app writes to HealthKit, but it won't connect that data to anything else automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free option for Android users who want their health data together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Health Connect is Google's version of Apple Health: a free, on-device layer that lets Android apps share fitness and health data with each other, and Google Fit sits on top of it for basic activity tracking. Like Apple Health, it's a passive data pipe rather than an app that analyzes or overlays your data for you. Guava Health and Bearable are both cross-platform and available free on Android if you want an app that does more with the data than just store it."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.go-go-gaia.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Apps That Pull Wearables, Labs & Cycle Data Together"
+        }
+      ]
+    }
+    </script>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Apps That Combine Wearable, Lab, and Cycle Data 2026",
+      "numberOfItems": 5,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#apple-health",
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Apple Health",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS",
+            "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#apple-health"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#guava",
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Guava Health",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#guava"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#bearable",
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Bearable",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#bearable"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#oura",
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Oura",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#oura"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#go-go-gaia",
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Go Go Gaia",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS",
+            "url": "https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html#go-go-gaia"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Blog</a></li>
+                        <li class="breadcrumb-item active">All Your Health Data in One App</li>
+                    </ol>
+                </nav>
+
+                <article>
+                    <header class="mb-5">
+                        <h1 class="display-4 fw-bold mb-3">Apps That Pull Wearables, Labs & Cycle Data Together (2026)</h1>
+
+                        <p class="lead">Your Oura ring lives in one app. Your CGM lives in another. Your lab PDFs sit in a folder somewhere, and your period app has no idea any of it exists. This guide compares 5 apps that try to pull it together, and looks closely at the one thing most of them miss: showing that data against your cycle phase.</p>
+                        <div class="d-flex align-items-center text-muted flex-wrap">
+                            <small>By Go Go Gaia Team</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>Published August 4, 2026</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>9 min read</small>
+                            <span class="mx-2">&bull;</span>
+                            <span class="badge bg-info">App Comparison</span>
+                        </div>
+                    </header>
+
+                    <div class="blog-content">
+
+                        <div class="alert alert-light border p-4 mb-4">
+                            <h2 class="h5 fw-bold mb-3">Quick Answer: Which App Pulls Your Health Data Together?</h2>
+                            <p class="mb-3">There's no single winner here, because "pull my data together" means different things depending on whether you want a passive hub, an AI-summarized dashboard for your doctor, or a place to actually see patterns. Apple Health is the free automatic hub, Guava Health is best if you work with a provider, Bearable is best for correlating anything against anything, Oura is the best hub for its own ring data, and Go Go Gaia is the one that overlays wearables, CGM, and labs against your cycle phase. Here's how they compare:</p>
+                            <ul class="mb-0">
+                                <li><strong>Best free automatic hub:</strong> <a href="#apple-health">Apple Health</a>. Nearly every iOS health app already writes to it, no setup required</li>
+                                <li><strong>Best for provider-connected care:</strong> <a href="#guava">Guava Health</a>. EHR integration, labs, wearables, and AI summaries built around working with a doctor or practice</li>
+                                <li><strong>Best for custom symptom correlation:</strong> <a href="#bearable">Bearable</a>. Track anything, see what correlates with anything else</li>
+                                <li><strong>Best hub for your ring's own data:</strong> <a href="#oura">Oura</a>. Deep sleep, HRV, temperature, and now AI-validated cycle and ovulation detection from the ring itself</li>
+                                <li><strong>Best for overlaying it all against your cycle:</strong> <a href="#go-go-gaia">Go Go Gaia</a>. Wearables, CGM data, and uploaded labs, all shown against where you are in your cycle</li>
+                            </ul>
+                        </div>
+
+                        <nav class="mb-4 p-3 bg-light rounded">
+                            <h2 class="h6 fw-bold mb-2">Table of Contents</h2>
+                            <ol class="mb-0 small">
+                                <li><a href="#methodology">How We Picked These Apps</a></li>
+                                <li><a href="#step-1">Why Your Health Data Is Scattered in the First Place</a></li>
+                                <li><a href="#step-2">The 5 Apps Compared</a> (Apple Health, Guava Health, Bearable, Oura, Go Go Gaia)</li>
+                                <li><a href="#comparison-table">Feature Comparison Table</a></li>
+                                <li><a href="#step-3">Making Your Decision</a></li>
+                                <li><a href="#privacy">Privacy Considerations</a></li>
+                                <li><a href="#getting-started">Getting the Most Out of a Combined Dashboard</a></li>
+                                <li><a href="#faq-section">Frequently Asked Questions</a></li>
+                            </ol>
+                        </nav>
+
+                        <section id="methodology" class="mb-4 p-3 border rounded">
+                            <h2 class="h6 fw-bold mb-2">How We Picked These Apps</h2>
+                            <p class="small mb-2">We compared apps people actually reach for when their health data is split across a wearable, a period tracker, a CGM app, and a stack of lab PDFs. We looked at breadth of data sources each app can pull in (wearables, CGM, labs), whether it does anything with that data beyond storing it, and whether it connects any of it to menstrual cycle phase, which is the piece most general health dashboards leave out entirely. Feature details and pricing were checked in July and August 2026.</p>
+                            <p class="small mb-0"><strong>Full disclosure:</strong> this site is published by Holland Neurotech Inc., the maker of Go Go Gaia. The list isn't ranked. Each app is presented for the job it's actually good at, and we include our own app only where it genuinely belongs.</p>
+                        </section>
+
+                        <p class="lead">If you use a wearable, a period app, and have ever uploaded a lab result anywhere, you already know the problem. Your Oura or Apple Watch data lives in its own app. Your CGM has its own app. Your labs are a PDF from a portal, or a photo in your camera roll. And your period tracker doesn't know any of it exists.</p>
+
+                        <p>None of those apps talk to each other, so the patterns that would actually be useful, like "my glucose spikes are worse in the days before my period" or "my HRV tanks every luteal phase regardless of sleep," stay invisible. You'd have to line up four different exports by hand to see it.</p>
+
+                        <div class="blog-info-box">
+                            <h4><i class="bi bi-info-circle me-2"></i>Full Transparency</h4>
+                            <p><strong>This guide is published by Holland Neurotech Inc., the company behind Go Go Gaia.</strong> We've compared each app based on its actual data-pulling capabilities, publicly available information, and (where relevant) our own testing. Every app here does something genuinely well, and the right one depends on what you're trying to see.</p>
+                            <p class="mb-0">Our goal is to help you find the right fit, whether that's Go Go Gaia or something else.</p>
+                        </div>
+
+                        <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content, not medical advice. None of the apps below interpret or diagnose from your lab results. For personal concerns, please consult your doctor.</p>
+
+                        <div class="alert alert-warning border-warning">
+                            <h4><i class="bi bi-info-circle me-2"></i>Medical Disclaimer</h4>
+                            <p class="mb-0"><strong>This article is for educational and informational purposes only and does not constitute medical advice.</strong> Storing your lab results or wearable data in an app is not the same as having them interpreted by a clinician. Always review lab results and health data with your doctor or a qualified healthcare provider, especially before making decisions based on what an app shows you. If something in your data concerns you, seek medical attention rather than relying on an app's summary.</p>
+                        </div>
+
+                        <img src="../images/cycle/Biometrics_Throughout_Menstrual_Cycle.png" alt="Line graph showing basal body temperature, resting heart rate, heart rate variability, energy, and sleep quality changing across the four phases of the menstrual cycle" class="img-fluid rounded mb-4" loading="lazy">
+
+                        <h2 id="step-1">Step 1: Why Your Health Data Is Scattered in the First Place</h2>
+
+                        <p>This isn't really your fault. Every wearable maker wants you living inside their app. Every CGM manufacturer builds its own closed ecosystem. Hospitals and labs each run their own patient portal. None of these companies has much incentive to make their data easy to move somewhere else.</p>
+
+                        <p>Before picking an app to fix this, it helps to know what you actually need pulled together:</p>
+
+                        <h3>Wearable Data</h3>
+                        <p>Sleep, heart rate, HRV, temperature, and activity, from an Apple Watch, Oura Ring, Garmin, Fitbit, or similar. Most of this can flow into a hub automatically once you connect the device.</p>
+
+                        <h3>CGM and Glucose Data</h3>
+                        <p>If you use a continuous glucose monitor like Dexcom or FreeStyle Libre, or a metabolic ring like Ultrahuman, that data usually lives in its own app unless something else is built to pull it in.</p>
+
+                        <h3>Lab Results</h3>
+                        <p>Bloodwork, hormone panels, thyroid tests. Usually a PDF from a patient portal or a piece of paper from your doctor's office. Very few apps let you actually store and revisit this alongside everything else.</p>
+
+                        <h3>Cycle Phase</h3>
+                        <p>The piece almost nobody connects to the rest. Your sleep, HRV, glucose response, and energy don't behave the same way in the follicular phase as they do in the luteal phase. <a href="how-wearables-track-your-cycle.html">Wearables can already detect a lot of this shift</a>, but most general health dashboards never show it against your actual cycle.</p>
+
+                        <hr class="my-5">
+
+                        <h2 id="step-2">Step 2: The 5 Apps Compared</h2>
+
+                        <h3 id="apple-health">For a Free Automatic Hub: Apple Health</h3>
+
+                        <p><strong>Best if you want:</strong> Everything your iOS apps already collect, sitting in one place, without setting anything up.</p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Built into every iPhone, free, no account needed beyond your Apple ID</li>
+                            <li>Automatically receives data from nearly any iOS wearable app or fitness app via HealthKit</li>
+                            <li>Basic Cycle Tracking module for logging periods and symptoms</li>
+                            <li>Health Records can pull in labs and visit summaries, but only from hospital systems that participate</li>
+                            <li>One tap to export a PDF summary for a doctor's visit</li>
+                        </ul>
+
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>It's already there. If you own an iPhone, you're already collecting data in it whether you open the app or not</li>
+                            <li>Free, with no premium tier or upsells</li>
+                            <li>The closest thing to a universal iOS data pipe, since most other apps are built to write to it</li>
+                            <li>Health Records, where available, pulls real clinical data directly from participating hospital systems</li>
+                        </ul>
+
+                        <h4>Limitations</h4>
+                        <ul>
+                            <li>It's a storage shelf, not an analyst. Sleep, HRV, and cycle data each sit on their own card with no correlation between them</li>
+                            <li>No overlay of wearable data against cycle phase</li>
+                            <li>Health Records only works if your hospital or clinic participates. Most people can't use it at all</li>
+                            <li>No manual lab upload. You can't just drop in a PDF from a lab that isn't a participating system</li>
+                            <li>No CGM-specific dashboard, even though some glucose apps can write basic readings to it</li>
+                            <li>iOS only. There's no Apple Health on Android</li>
+                        </ul>
+
+                        <h4>Who Should Choose This</h4>
+                        <p>Apple Health is ideal if you:</p>
+                        <ul>
+                            <li>Just want your data captured somewhere without extra effort</li>
+                            <li>Have a hospital system that supports Health Records</li>
+                            <li>Plan to use a second app on top of it for actual analysis</li>
+                            <li>Want a free, no-account-required option</li>
+                        </ul>
+
+                        <p><strong>Pricing:</strong> Free, built into iOS.</p>
+                        <p><strong>Download:</strong> Pre-installed on all iPhones.</p>
+
+                        <hr class="my-5">
+
+                        <h3 id="guava">For Provider-Connected Care: Guava Health</h3>
+
+                        <p><strong>Best if you want:</strong> One dashboard that combines your medical records, labs, and wearable data, especially if you're working with a doctor or functional medicine practice.</p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>EHR integrations that pull in medical records and lab results from participating providers</li>
+                            <li>Wearable and device syncing from Garmin, Oura, Fitbit, and Dexcom</li>
+                            <li>Daily symptom and lifestyle logs inside the Guava app</li>
+                            <li>AI-generated summaries and alerts that flag meaningful changes across your data</li>
+                            <li>A companion Provider Dashboard used by practices to monitor patients remotely</li>
+                            <li>Free consumer app, available on iOS, Android, and web, in 20+ languages</li>
+                        </ul>
+
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>The strongest EHR and lab integration of any app in this comparison, when your provider supports it</li>
+                            <li>Direct Dexcom CGM syncing alongside multiple wearable brands</li>
+                            <li>AI summaries are built for sharing with a provider, not just self-review</li>
+                            <li>Cross-platform, including a full web version</li>
+                            <li>Rated well on both app stores (4.7 and 4.9 respectively, per its own listings)</li>
+                        </ul>
+
+                        <h4>Limitations</h4>
+                        <ul>
+                            <li>Not built around the menstrual cycle. There's no cycle-phase view, so it won't show you how your labs or wearable data shift across your cycle</li>
+                            <li>Its deepest features (EHR pull-in, provider dashboard) depend on your clinic or practice using Guava, which most people's doctors don't</li>
+                            <li>General health platform, not built specifically for women's health or reproductive tracking</li>
+                            <li>Best suited to people actively managing a condition with a provider, less useful as a general wellness tracker</li>
+                        </ul>
+
+                        <h4>Who Should Choose This</h4>
+                        <p>Guava Health is ideal if you:</p>
+                        <ul>
+                            <li>Work with a provider or practice that already uses Guava</li>
+                            <li>Manage a chronic condition and want labs, records, and wearable data together</li>
+                            <li>Want AI-generated summaries to bring to appointments</li>
+                            <li>Don't need cycle-specific tracking</li>
+                        </ul>
+
+                        <p><strong>Pricing:</strong> Free for the consumer app. Provider-side dashboard pricing varies by practice.</p>
+                        <p><strong>Download:</strong> Available on <a href="https://apps.apple.com/us/app/guava-health-tracker/id1622255863" target="_blank">iOS</a>, Android, and web.</p>
+
+                        <hr class="my-5">
+
+                        <h3 id="bearable">For Custom Symptom Correlation: Bearable</h3>
+
+                        <p><strong>Best if you want:</strong> To track anything you can think of and see how it correlates with everything else you're tracking.</p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Fully customizable symptom and factor tracking</li>
+                            <li>Reads sleep, heart rate, HRV, and steps from Apple Health, Health Connect, Fitbit, Garmin, and Samsung Health</li>
+                            <li>An "Impacts" view that surfaces correlations between anything you track</li>
+                            <li>Period tracking available as one module among many, not the core focus</li>
+                            <li>Medication, supplement, and treatment logging</li>
+                        </ul>
+
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>The most flexible correlation engine of any app here. If you can name it, you can track it and see what it correlates with</li>
+                            <li>Pulls from more third-party wearable brands than most single-purpose apps</li>
+                            <li>Popular with people managing multiple chronic conditions at once</li>
+                            <li>Generous free tier, GDPR-compliant, doesn't sell data</li>
+                        </ul>
+
+                        <h4>Limitations</h4>
+                        <ul>
+                            <li>Wearable sync is mostly one-directional (pulling in, not writing back), and it doesn't connect that data to cycle phase specifically</li>
+                            <li>No CGM ingestion</li>
+                            <li>No lab result storage or upload</li>
+                            <li>No nutrition or macro tracking</li>
+                            <li>The flexibility comes with setup time. It takes a while to configure what you actually want tracked</li>
+                        </ul>
+
+                        <h4>Who Should Choose This</h4>
+                        <p>Bearable is ideal if you:</p>
+                        <ul>
+                            <li>Want to track very specific, custom factors that most apps don't have a preset for</li>
+                            <li>Care more about correlation than about cycle-phase context</li>
+                            <li>Already have your wearable connected to Apple Health or Health Connect</li>
+                            <li>Need an Android option</li>
+                        </ul>
+
+                        <p><strong>Pricing:</strong> Free (generous tier), Premium ~$34.99/year or ~$6.99/month.</p>
+                        <p><strong>Download:</strong> Available on <a href="https://apps.apple.com/us/app/bearable-symptom-tracker/id1482581097" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.bearable" target="_blank">Android</a>.</p>
+
+                        <hr class="my-5">
+
+                        <h3 id="oura">For Deep Data on Your Own Ring: Oura</h3>
+
+                        <p><strong>Best if you want:</strong> The most detailed possible picture of your own sleep, HRV, temperature, and readiness, plus increasingly accurate cycle and ovulation detection built from that data.</p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Overnight temperature, HRV, resting heart rate, and sleep stage tracking from the ring</li>
+                            <li>Cycle Insights, which uses your temperature trend to detect ovulation and forecast your period, reporting roughly 96% ovulation detection accuracy in Oura's own published validation study</li>
+                            <li>A Fertile Window feature combining heart rate, HRV, temperature, and respiratory rate</li>
+                            <li>Oura Advisor, an AI assistant launched in February 2026 that answers reproductive health questions inside the app</li>
+                            <li>A partnership with Natural Cycles for FDA-cleared, temperature-based digital birth control</li>
+                        </ul>
+
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>Unmatched depth on the metrics it does track, since it owns the sensor generating the data</li>
+                            <li>Its cycle-phase detection is validated and specifically built around the temperature shift that happens after ovulation, which is the same signal <a href="hrv-resting-heart-rate-cycle.html">HRV and resting heart rate patterns</a> partly reflect</li>
+                            <li>The Natural Cycles integration is a genuinely useful option for hormone-free contraception or conception planning</li>
+                            <li>Comfortable, unobtrusive hardware that people actually wear consistently, which matters for data quality</li>
+                        </ul>
+
+                        <h4>Limitations</h4>
+                        <ul>
+                            <li>It's a hub for its own data, not other people's. It doesn't ingest data from a Garmin, Fitbit, Apple Watch, or CGM</li>
+                            <li>No lab result storage</li>
+                            <li>No nutrition or workout planning</li>
+                            <li>Requires buying the ring hardware plus an ongoing membership subscription on top of it</li>
+                            <li>Correlation stays within its own metrics. It won't connect your cycle data to something like glucose or a symptom you logged elsewhere</li>
+                        </ul>
+
+                        <h4>Who Should Choose This</h4>
+                        <p>Oura is ideal if you:</p>
+                        <ul>
+                            <li>Want the ring specifically and don't need to combine data from other wearables</li>
+                            <li>Care most about validated, temperature-based cycle and ovulation detection</li>
+                            <li>Are interested in hormone-free contraception via the Natural Cycles integration</li>
+                            <li>Don't need lab results or nutrition tracking in the same app</li>
+                        </ul>
+
+                        <p><strong>Pricing:</strong> Ring purchase (roughly $300-$550 depending on model) plus a monthly membership subscription required for full features.</p>
+                        <p><strong>Download:</strong> App available on iOS and Android, requires an Oura Ring.</p>
+
+                        <hr class="my-5">
+
+                        <h3 id="go-go-gaia">For Overlaying Data Against Your Cycle: Go Go Gaia</h3>
+
+                        <p><strong>Best if you want:</strong> Wearable data, CGM readings, and your own uploaded labs shown together, and shown against your actual cycle phase instead of on separate screens.</p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>350+ trackable metrics with wearable sync</li>
+                            <li>CGM ingestion from Dexcom, Libre, and Ultrahuman</li>
+                            <li>Lab result upload (PDF or CSV) through the web app, no participating hospital system required</li>
+                            <li>Everything, wearable data, CGM readings, and uploaded labs, overlaid with your cycle phase</li>
+                            <li>Correlation insights across data sources, not just within one</li>
+                            <li>General workout plans that adapt to your cycle phase, plus calorie and macro targets</li>
+                            <li>Health Wrapped, a quarterly and yearly recap scoring physical, mental, sleep, and hormonal health</li>
+                            <li>1-click logging for anything you're tracking manually</li>
+                        </ul>
+
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>Ingests wearables, CGM data, and manually uploaded labs, then shows all three against cycle phase in one view, which none of the other apps here do together</li>
+                            <li>Doesn't require your provider or hospital to use a particular system. You upload your own lab PDF or CSV</li>
+                            <li>Combines the data layer with day-to-day features (nutrition targets, workout plans) instead of being purely a viewer</li>
+                            <li>Free for most core tracking and data ingestion</li>
+                        </ul>
+
+                        <h4>Limitations</h4>
+                        <ul>
+                            <li>iOS only, with lab upload happening through the web app rather than natively in the phone app</li>
+                            <li>Doesn't connect to EHR systems the way Guava does, so there's no automatic pull from your provider's records</li>
+                            <li>Newer app with a smaller user community than Apple Health or Oura</li>
+                            <li>Stores and displays your labs, it doesn't interpret or flag them clinically. That conversation still happens with your doctor</li>
+                        </ul>
+
+                        <h4>Who Should Choose This</h4>
+                        <p>Go Go Gaia is ideal if you:</p>
+                        <ul>
+                            <li>Already have data spread across a wearable, a CGM, and lab PDFs and want it in one view</li>
+                            <li>Want to see whether patterns in your sleep, glucose, or HRV actually shift with your cycle, not just assume they do</li>
+                            <li>Want nutrition and workout guidance that accounts for cycle phase, not just raw data storage</li>
+                            <li>Prefer uploading your own labs rather than depending on your provider's system</li>
+                        </ul>
+
+                        <p><strong>Pricing:</strong> Free for most tracking and data ingestion. Premium available for full AI insights.</p>
+                        <p><strong>Download:</strong> <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Available on iOS App Store</a></p>
+
+                        <hr class="my-5">
+
+                        <div class="blog-info-box">
+                            <h4><i class="bi bi-info-circle me-2"></i>Worth Noting: Health Connect and Google Fit (Android)</h4>
+                            <p>If you're on Android, there's no direct equivalent to Apple Health's ecosystem, but there's a close one. <strong>Health Connect</strong> is Google's on-device layer that lets apps share fitness and health data with each other, and <strong>Google Fit</strong> sits on top of it for basic activity tracking.</p>
+                            <p class="mb-0">Like Apple Health, both are free data pipes rather than apps that analyze or overlay anything for you. If you're on Android and want more than storage, Bearable and Guava Health both connect to Health Connect and are available free on Google Play.</p>
+                        </div>
+
+                        <h2 id="comparison-table">Feature Comparison Table</h2>
+
+                        <p>Here's how the 5 apps stack up on pulling different types of health data together:</p>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Go Go Gaia</th>
+                                        <th>Apple Health</th>
+                                        <th>Guava Health</th>
+                                        <th>Bearable</th>
+                                        <th>Oura</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Wearable Sync (Watch, Garmin, Fitbit)</strong></td>
+                                        <td>✅ Multiple brands</td>
+                                        <td>✅ Automatic hub</td>
+                                        <td>✅ Garmin, Oura, Fitbit</td>
+                                        <td>✅ Via Health Connect/Apple Health</td>
+                                        <td>⚠️ Its own ring only</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CGM / Glucose Ingestion</strong></td>
+                                        <td>✅ Dexcom, Libre, Ultrahuman</td>
+                                        <td>⚠️ Only if source app writes to it</td>
+                                        <td>✅ Dexcom</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lab Result Upload</strong></td>
+                                        <td>✅ PDF/CSV, web app</td>
+                                        <td>⚠️ Only participating hospitals</td>
+                                        <td>✅ EHR integrations</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cycle-Phase Overlay on Data</strong></td>
+                                        <td>✅ Wearables, CGM & labs</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                        <td>⚠️ Basic period module</td>
+                                        <td>✅ Temperature-based, own data only</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cross-Source Correlation Insights</strong></td>
+                                        <td>✅</td>
+                                        <td>❌</td>
+                                        <td>✅ AI summaries</td>
+                                        <td>✅ "Impacts" view</td>
+                                        <td>⚠️ Within own metrics only</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nutrition & Macro Tracking</strong></td>
+                                        <td>✅ Free</td>
+                                        <td>⚠️ Basic, via connected apps</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cycle-Adaptive Workout Plans</strong></td>
+                                        <td>✅</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AI Insights / Recaps</strong></td>
+                                        <td>✅ Health Wrapped</td>
+                                        <td>❌</td>
+                                        <td>✅ Alerts & summaries</td>
+                                        <td>❌</td>
+                                        <td>✅ Oura Advisor</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Provider / EHR Integration</strong></td>
+                                        <td>❌</td>
+                                        <td>⚠️ Limited hospitals</td>
+                                        <td>✅ Core feature</td>
+                                        <td>❌</td>
+                                        <td>❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cost</strong></td>
+                                        <td>Free (Premium optional)</td>
+                                        <td>Free</td>
+                                        <td>Free</td>
+                                        <td>Free (Premium optional)</td>
+                                        <td>Ring + membership</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td><strong>Platforms</strong></td>
+                                        <td>iOS only</td>
+                                        <td>iOS only</td>
+                                        <td>iOS, Android, web</td>
+                                        <td>iOS, Android</td>
+                                        <td>iOS, Android (+ ring)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2 id="step-3">Step 3: Making Your Decision</h2>
+
+                        <p>Here's the bottom line for each app:</p>
+
+                        <div class="alert alert-secondary">
+                            <h4>Choose Apple Health if:</h4>
+                            <ul class="mb-0">
+                                <li>You just want a free, automatic place for your iOS data to land</li>
+                                <li>Your hospital system supports Health Records</li>
+                                <li>You plan to use a second app on top for actual analysis</li>
+                            </ul>
+                        </div>
+
+                        <div class="alert alert-secondary">
+                            <h4>Choose Guava Health if:</h4>
+                            <ul class="mb-0">
+                                <li>You're managing a condition with a provider or practice that supports it</li>
+                                <li>You want labs, EHR records, and wearable data pulled together automatically</li>
+                                <li>You want AI-generated summaries to bring to appointments</li>
+                                <li>You don't need cycle-specific tracking</li>
+                            </ul>
+                        </div>
+
+                        <div class="alert alert-secondary">
+                            <h4>Choose Bearable if:</h4>
+                            <ul class="mb-0">
+                                <li>You want to track custom symptoms or factors most apps don't have a preset for</li>
+                                <li>Correlation matters more to you than cycle-phase context</li>
+                                <li>You need an Android option</li>
+                            </ul>
+                        </div>
+
+                        <div class="alert alert-secondary">
+                            <h4>Choose Oura if:</h4>
+                            <ul class="mb-0">
+                                <li>You want the ring specifically and don't need other wearable brands folded in</li>
+                                <li>Validated, temperature-based cycle and ovulation detection is your priority</li>
+                                <li>You're interested in the Natural Cycles birth control integration</li>
+                            </ul>
+                        </div>
+
+                        <div class="alert alert-secondary">
+                            <h4>Choose Go Go Gaia if:</h4>
+                            <ul class="mb-0">
+                                <li>Your data is spread across a wearable, a CGM, and lab PDFs and you want it in one view</li>
+                                <li>You want to see whether your sleep, glucose, or HRV patterns actually shift with your cycle</li>
+                                <li>You want nutrition and workout guidance that adjusts for cycle phase</li>
+                                <li>You'd rather upload your own labs than wait on your provider's system to support an integration</li>
+                            </ul>
+                        </div>
+
+                        <h2 id="privacy">Privacy Considerations</h2>
+
+                        <p>Combining your wearable, CGM, and lab data in one place means that one app now holds a lot about you. Here's how each handles it:</p>
+
+                        <ul>
+                            <li><strong>Apple Health</strong> keeps data on-device by default and is widely regarded as privacy-strong, since Apple's business model isn't built around selling health data.</li>
+                            <li><strong>Guava Health</strong> handles clinical data through EHR integrations, which fall under stricter healthcare data-handling requirements given its use with medical practices.</li>
+                            <li><strong>Bearable</strong> is GDPR-compliant and states it doesn't sell user data.</li>
+                            <li><strong>Oura</strong> collects continuous biometric data from the ring. Review its current privacy policy directly, since a wearable worn 24/7 generates more data than an app you open occasionally.</li>
+                            <li><strong>Go Go Gaia</strong> keeps data private and doesn't sell it to third parties. Uploading lab results is optional and happens through the web app under your control.</li>
+                        </ul>
+
+                        <p>Whichever app you choose, it's worth reading the current privacy policy rather than assuming, especially for anything handling lab results or continuous biometric data.</p>
+
+                        <h2 id="getting-started">Getting the Most Out of a Combined Dashboard</h2>
+
+                        <p>Whichever app you land on, a few things make it actually useful instead of just another place your data sits unread:</p>
+
+                        <ol>
+                            <li><strong>Connect your wearable first.</strong> That's the data that requires the least ongoing effort from you, and it's usually the fastest way to start seeing something.</li>
+                            <li><strong>Add labs when you get them, not months later.</strong> Upload a lab PDF the same week you receive it. Waiting means you'll eventually lose track of where it is.</li>
+                            <li><strong>Give it at least one full cycle before judging the patterns.</strong> A single week of data won't show you anything about how your metrics shift with your cycle. A full cycle, or two, will.</li>
+                            <li><strong>Don't try to interpret labs yourself.</strong> An app that stores your labs is not the same as a clinician reading them. Bring what you've collected to your doctor rather than drawing conclusions on your own.</li>
+                            <li><strong>Check what's actually connecting, not just what's installed.</strong> It's easy to assume a wearable is syncing when it stopped weeks ago. Spot-check the data periodically.</li>
+                        </ol>
+
+                        <div class="blog-info-box">
+                            <h4><i class="bi bi-lightbulb me-2"></i>Pro Tip</h4>
+                            <p class="mb-0">If you're not sure which app fits, start with whichever one already has the least setup friction for the data source you care about most. If that's your wearable, start there. If it's labs, prioritize an app that lets you upload your own PDFs rather than waiting on a provider integration.</p>
+                        </div>
+
+                        <h2 id="faq-section">Frequently Asked Questions</h2>
+
+                        <h3>What's the best app for seeing wearable, lab, and cycle data in one place?</h3>
+                        <p>It depends on what you're trying to do. Apple Health is the free, automatic hub that most iOS apps already write to, but it doesn't analyze anything. Guava Health is built for people working with a provider who want to combine EHR records, labs, and wearable data with AI summaries. Bearable is best if you want to correlate custom symptoms against anything you track. Oura is the best hub for its own ring data specifically. Go Go Gaia pulls wearables, CGM data, and lab uploads together and overlays all of it against your cycle phase, which none of the others do.</p>
+
+                        <h3>Can Apple Health show my sleep and HRV data against my cycle phase?</h3>
+                        <p>Not really. Apple Health has a Cycle Tracking module and it stores sleep, HRV, and other wearable metrics, but each lives on its own card. There's no built-in view that overlays your HRV or sleep trend against where you are in your cycle. You'd need a separate app that reads from Apple Health and adds that layer on top.</p>
+
+                        <h3>Does Guava Health work for period or cycle tracking?</h3>
+                        <p>Guava Health is built as a general health dashboard for combining EHR records, labs, and wearable data, often for people managing a chronic condition alongside a provider. It's not built around the menstrual cycle specifically, so it won't show you cycle phases or overlay your data against them the way a women's health app does.</p>
+
+                        <h3>Can I upload my own lab results to a health tracking app?</h3>
+                        <p>It depends on the app. Guava Health connects to labs through EHR integrations with participating providers. Apple Health's Health Records feature only works if your hospital system participates, and even then it's not a manual upload. Go Go Gaia lets you upload lab PDFs or CSV files yourself through its web app, so you're not dependent on your provider using a specific system. None of these apps interpret or diagnose from your labs. They store and display what you upload so you and your doctor can review it together.</p>
+
+                        <h3>Do I need a wearable to use one of these apps?</h3>
+                        <p>Every app in this comparison works with manual logging alone. A wearable just fills in data you'd otherwise have to enter by hand, like overnight HRV, resting heart rate, or temperature. If you don't have a wearable yet, <a href="fitness-tracker-cycle-tracking.html">start logging manually and add a device later</a>. The historical data you build up manually stays useful either way.</p>
+
+                        <h3>What CGMs and glucose monitors can sync with a health tracking app?</h3>
+                        <p>Dexcom and FreeStyle Libre are the two most widely supported continuous glucose monitors across health apps, and Ultrahuman's ring and CGM combo is increasingly supported too. Go Go Gaia ingests data from all three (Dexcom, Libre, and Ultrahuman) and overlays glucose trends against your cycle phase. Apple Health can receive glucose data if the CGM's own app writes to HealthKit, but it won't connect that data to anything else automatically.</p>
+
+                        <h3>Is there a free option for Android users who want their health data together?</h3>
+                        <p>Health Connect is Google's version of Apple Health: a free, on-device layer that lets Android apps share fitness and health data with each other, and Google Fit sits on top of it for basic activity tracking. Like Apple Health, it's a passive data pipe rather than an app that analyzes or overlays your data for you. Guava Health and Bearable are both cross-platform and available free on Android if you want an app that does more with the data than just store it.</p>
+
+                        <h2>Final Thoughts</h2>
+
+                        <p>There's no single app that wins at everything here, because "combine my health data" covers a few genuinely different jobs. If you just want a free place for your data to land automatically, Apple Health already does that without you doing anything. If you're working with a provider on a chronic condition, Guava Health's EHR and lab integration is hard to beat. If correlation across custom symptoms is what you're after, Bearable is the most flexible. If you specifically want the deepest data on your own ring, Oura keeps getting better at validated cycle and ovulation detection.</p>
+
+                        <p>And if what you actually want is to see your wearable data, your CGM readings, and your own uploaded labs shown against your cycle phase instead of on four separate screens, that's the gap Go Go Gaia is built to close.</p>
+
+                        <p>Whichever you pick, the value isn't in having the data sitting somewhere. It's in actually looking at it often enough to notice what changes and when.</p>
+
+                        <h2>Related Articles</h2>
+                        <ul>
+                            <li><a href="how-wearables-track-your-cycle.html">How Wearables Track Your Cycle: What the Data Actually Shows</a></li>
+                            <li><a href="hrv-resting-heart-rate-cycle.html">HRV & Resting Heart Rate Across Your Cycle: What the Patterns Mean</a></li>
+                            <li><a href="fitness-tracker-cycle-tracking.html">Cycle Tracking with Wearables: What Your HRV & Temp Data Mean</a></li>
+                            <li><a href="best-symptom-tracker-app-women.html">Best Symptom Tracker App for Women 2026: 5 Apps Compared</a></li>
+                        </ul>
+
+                        <h2>Other App Comparisons</h2>
+                        <ul>
+                            <li><a href="best-pcos-tracking-app.html">Best PCOS Tracking App 2026: 7 Apps Compared</a></li>
+                            <li><a href="best-fertility-tracking-app.html">Best Fertility Tracking App 2026: 8 Apps Compared for TTC</a></li>
+                            <li><a href="how-to-choose-period-tracker-app.html">Best Period Tracker App 2026: 6 Apps Compared</a></li>
+                            <li><a href="best-perimenopause-tracking-app.html">Best Perimenopause App 2026: 8 Apps Compared</a></li>
+                        </ul>
+
+                        <div class="blog-cta-box mt-5">
+                            <h4><i class="bi bi-phone me-2"></i>Want to See Your Data Against Your Cycle?</h4>
+                            <p>If you're tired of checking four apps to piece together one picture, download Go Go Gaia free and connect your wearable, CGM, or upload a lab result to see how it looks overlaid with your cycle.</p>
+                            <p class="mb-0">
+                                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-apple me-2"></i>Download Go Go Gaia Free
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Social Share Buttons - Bottom -->
+                <div class="share-buttons text-center my-5 py-4 border-top border-bottom">
+                    <p class="text-muted mb-3"><small>Found this helpful? Share it with others who might benefit:</small></p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://twitter.com/intent/tweet?text=Apps%20That%20Pull%20Wearables%2C%20Labs%20%26%20Cycle%20Data%20Together&url=https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-twitter-x me-1"></i> Share
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Share
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html&description=Apps%20that%20pull%20wearable%2C%20lab%2C%20and%20cycle%20data%20together%2C%20compared."
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-pinterest me-1"></i> Pin
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-linkedin me-1"></i> Share
+                        </a>
+                        <a href="mailto:?subject=Apps%20That%20Pull%20Health%20Data%20Together&body=I%20found%20this%20comparison%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html"
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-envelope me-1"></i> Email
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/all-health-data-one-place-app.html', this)" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="index.html">Health & Wellness Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Copy Link Function -->
+    <script>
+    function copyToClipboard(url, button) {
+        navigator.clipboard.writeText(url).then(function() {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check me-1"></i> Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            setTimeout(function() {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy link. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html>
