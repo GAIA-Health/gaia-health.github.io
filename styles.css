@@ -2395,7 +2395,7 @@ body::after {
     margin-top: -1px;
 }
 
-.wave-testimonials-trust {
+.wave-wrapped-trust {
     background-color: var(--secondary);
     margin-top: -1px;
 }
@@ -3921,4 +3921,243 @@ body::after {
     color: var(--text-muted);
     font-size: 1.05rem;
     margin-bottom: 1.75rem;
+}
+
+/* =============================================
+   HERO PRODUCT SHOT — replaces the abstract web
+   ============================================= */
+
+.hero-phone-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+    min-height: 650px;
+}
+
+/* Shared device chrome for hero + wrapped */
+.device-frame {
+    position: relative;
+    width: 300px;
+    max-width: 76vw;
+    border: 7px solid #1a1a1a;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    background: #1a1a1a;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(91, 35, 198, 0.28);
+}
+
+/* No notch: frames/src captures are already cropped above the status bar,
+   so a pseudo-notch would sit on top of real app UI. */
+
+.device-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+}
+
+.hero-phone-container .device-frame {
+    /* let the shot bleed off the bottom of the hero rather than float */
+    margin-bottom: -3rem;
+}
+
+@media (max-width: 768px) {
+    .hero-phone-container {
+        min-height: auto;
+        margin-top: 1rem;
+    }
+
+    .hero-phone-container .device-frame {
+        width: 240px;
+        margin-bottom: -2rem;
+    }
+}
+
+/* =============================================
+   WHAT GAIA SURFACES — the connection proof
+   ============================================= */
+
+.surfaces-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--secondary) 100%);
+}
+
+/* The retired hero canvas lives here now, as background texture only. */
+.surfaces-web-wrap {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+}
+
+.surfaces-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.surfaces-lead {
+    max-width: 640px;
+    margin: 0 auto 3rem;
+}
+
+.surfaces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.surface-chip {
+    margin: 0;
+    text-align: center;
+}
+
+.surface-chip img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 132px;
+    object-fit: contain;
+    margin: 0 auto 1.25rem;
+}
+
+.surface-chip figcaption {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* Brand-bit figure for blog posts — a floating app chip inline with the article */
+.bit-figure {
+    margin: 2rem auto;
+    padding: 2rem 1.5rem 1.25rem;
+    max-width: 480px;
+    text-align: center;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #F7F3FD, #EFE6FA);
+}
+
+.bit-figure img {
+    display: block;
+    width: auto;
+    max-width: min(100%, 380px);
+    height: auto;
+    margin: 0 auto 1rem;
+}
+
+.bit-figure figcaption {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-muted, #6B6480);
+}
+
+.surfaces-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    opacity: 0.85;
+    margin: 2.5rem 0 0;
+}
+
+@media (max-width: 992px) {
+    .surfaces-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .surfaces-web-wrap {
+        opacity: 0.1;
+    }
+}
+
+/* =============================================
+   HEALTH WRAPPED
+   ============================================= */
+
+.wrapped-section {
+    background: var(--secondary);
+}
+
+.wrapped-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.wrapped-text h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.wrapped-text p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.wrapped-text .btn {
+    margin-top: 1rem;
+}
+
+.wrapped-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapped-visual .device-frame {
+    width: 260px;
+    /* this one does not bleed off a section edge, so round it all the way */
+    border-radius: 34px;
+}
+
+.wrapped-visual .device-frame img {
+    border-radius: 27px;
+}
+
+@media (max-width: 992px) {
+    .wrapped-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .wrapped-text {
+        text-align: center;
+    }
+
+    .wrapped-text h2 {
+        text-align: center;
+    }
+
+    .wrapped-visual .device-frame {
+        width: 230px;
+    }
+}
+
+/* Trust grid: centre the text block so it does not leave a dead column */
+.trust-grid {
+    align-items: center;
+}
+
+.cta-price {
+    max-width: 620px;
+    margin: 1.75rem auto 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.how-it-works-section .phone-frame::before {
+    display: none;
 }
