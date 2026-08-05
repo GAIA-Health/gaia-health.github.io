@@ -433,7 +433,9 @@ async function cmdScreenshots(cppName, folder) {
   }
   const REPLACE = process.argv.includes('--replace');
   const appId = need('ASC_APP_ID');
-  const locale = 'en-US';
+  // App primary locale is en-CA; storefronts fall back to the primary-locale
+  // localization, so CPP content must exist there too (ASC_SS_LOCALE=en-CA).
+  const locale = process.env.ASC_SS_LOCALE || 'en-US';
 
   const shots = loadOrderedScreenshots(folder);
   console.log(`${APPLY ? 'APPLYING' : 'DRY RUN'} — ${shots.length} screenshot(s) in ${folder}:`);

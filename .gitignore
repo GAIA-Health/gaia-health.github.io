@@ -84,3 +84,9 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+
+# Apple Ads API keys — never commit
+scripts/asc/*.pem
+
+# local working board — never commit (internal strategy)
+TODOS.md
