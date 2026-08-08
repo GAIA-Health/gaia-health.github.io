@@ -69,9 +69,24 @@
 - [VO2 max](https://www.go-go-gaia.com/encyclopedia/vo2-max.html): The highest rate at which the body takes in, transports, and uses oxygen during intense exercise, reflecting combined heart, lung, and muscle capacity.
 - [Blood glucose](https://www.go-go-gaia.com/encyclopedia/blood-glucose.html): The concentration of glucose circulating in the bloodstream, regulated mainly by insulin and glucagon.
 - [Sleep stages](https://www.go-go-gaia.com/encyclopedia/sleep-stages.html): The recurring light, deep, and REM sleep phases wearables estimate overnight, cycling roughly every 90 to 110 minutes.
+- [HRV: RMSSD](https://www.go-go-gaia.com/encyclopedia/hrv-rmssd.html): The root mean square of successive differences between heartbeats, the primary time-domain HRV measure and the one most consumer wearables report.
+- [Heart rate](https://www.go-go-gaia.com/encyclopedia/heart-rate.html): Beats per minute set by the heart's own pacemaker, adjusted by the autonomic nervous system and hormones with movement, stress, and rest.
+- [Body temperature](https://www.go-go-gaia.com/encyclopedia/body-temperature.html): The heat level the hypothalamus regulates, covering core vs. skin vs. oral measurement, circadian rhythm, and the revised 98.6°F average.
+- [Step count](https://www.go-go-gaia.com/encyclopedia/steps.html): Daily steps counted by an accelerometer, and where accuracy breaks down.
+- [Active energy (calories burned)](https://www.go-go-gaia.com/encyclopedia/active-energy.html): Calories burned through movement, estimated by wearables from motion and heart-rate data separately from resting energy.
+- [Sleep latency (time to fall asleep)](https://www.go-go-gaia.com/encyclopedia/sleep-latency.html): How long it takes to fall asleep, measured in a lab from lights out to the first scored epoch of sleep and estimated by wearables from movement and heart rate.
 - [LH surge](https://www.go-go-gaia.com/encyclopedia/lh-surge.html): The rapid rise in luteinizing hormone triggered once estradiol peaks, signaling the ovary to release an egg roughly 34 to 36 hours later.
 - [Luteal phase](https://www.go-go-gaia.com/encyclopedia/luteal-phase.html): The second half of the menstrual cycle, from ovulation until the next period, driven by progesterone from the corpus luteum.
 - [Follicular phase](https://www.go-go-gaia.com/encyclopedia/follicular-phase.html): The first half of the menstrual cycle, from day one of the period until ovulation.
+- [Ovulation](https://www.go-go-gaia.com/encyclopedia/ovulation.html): The release of a mature egg from an ovarian follicle roughly midway through the cycle, triggered by the LH surge, after which the emptied follicle becomes the corpus luteum.
+- [Fertile window](https://www.go-go-gaia.com/encyclopedia/fertile-window.html): The roughly six-day stretch of the cycle when intercourse can lead to conception, ending on ovulation day, shaped by sperm survival time.
+- [Ovulation test (OPK)](https://www.go-go-gaia.com/encyclopedia/ovulation-test-opk.html): A urine strip that detects the LH surge before ovulation, and why a positive predicts but doesn't confirm ovulation.
+- [Cycle length](https://www.go-go-gaia.com/encyclopedia/cycle-length.html): The number of days from day 1 of one period through the day before the next, with real-world data on the distribution.
+- [Period flow](https://www.go-go-gaia.com/encyclopedia/period-flow.html): The amount of menstrual bleeding, usually logged as light, medium, or heavy, and how researchers measure blood loss directly.
+- [Spotting & intermenstrual bleeding](https://www.go-go-gaia.com/encyclopedia/spotting-intermenstrual-bleeding.html): Light vaginal bleeding between periods, logged separately from period flow so it doesn't reset the cycle-day count.
+- [Menstrual phase](https://www.go-go-gaia.com/encyclopedia/menstrual-phase.html): The days of bleeding that open each cycle, triggered by progesterone withdrawal, and why apps label it separately from the follicular phase.
+- [Cervical position](https://www.go-go-gaia.com/encyclopedia/cervical-position.html): A fertility awareness check on cervix height, firmness, and opening, which shifts higher, softer, and more open around the fertile window.
+- [Anovulatory cycle](https://www.go-go-gaia.com/encyclopedia/anovulatory-cycle.html): A cycle in which no egg is released, so no corpus luteum forms and progesterone never rises the way it does in an ovulatory cycle.
 - [Progesterone](https://www.go-go-gaia.com/encyclopedia/progesterone.html): The hormone the corpus luteum makes after ovulation, tested by blood draw or urine, that supports the luteal phase.
 - [FSH (follicle-stimulating hormone)](https://www.go-go-gaia.com/encyclopedia/fsh.html): The pituitary hormone that recruits ovarian follicles each cycle, and why blood testing conventions call for an early-follicular draw.
 - [Testosterone](https://www.go-go-gaia.com/encyclopedia/testosterone.html): Where women's testosterone comes from, how labs report total vs. free testosterone, and what research shows about changes across the cycle.
@@ -143,6 +158,7 @@
 - [Heart palpitations](https://www.go-go-gaia.com/encyclopedia/heart-palpitations.html): The felt awareness of your own heartbeat, described as fast, slow, regular, irregular, a flutter, a pound, or a skipped beat. Names the sensation itself rather than any single heart rhythm, so it's recorded as a symptom rather than a measurement.
 - [Cold intolerance](https://www.go-go-gaia.com/encyclopedia/cold-intolerance.html): An unusual sensitivity to a cold environment or cold temperatures, feeling cold when others are comfortable or needing extra layers to feel warm. A reported sensation rather than a temperature reading, so it's logged as a symptom, not measured by a device.
 - [Restless legs](https://www.go-go-gaia.com/encyclopedia/restless-legs.html): An urge to move the legs that starts at rest, often with uncomfortable sensations that ease with movement and tend to be worse in the evening or at night. Researchers estimate restless legs syndrome affects between 5% and 15% of the population.
+- [Mindful minutes](https://www.go-go-gaia.com/encyclopedia/mindful-minutes.html): The Apple Health metric that counts time logged in meditation or breathing sessions. It records that you practiced, not how the session went.
 
 ## Condition tracking (what the app does, per condition)
 

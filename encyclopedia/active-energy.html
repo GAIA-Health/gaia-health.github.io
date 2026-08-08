@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HRV (Heart Rate Variability): What It Measures | Go Go Gaia Encyclopedia</title>
+    <title>Active Energy (Calories Burned): What It Measures | Go Go Gaia Encyclopedia</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=6608432371">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Heart rate variability (HRV) measures the variation between heartbeats and reflects autonomic nervous system activity, tracked overnight by wearables.">
-    <meta name="keywords" content="heart rate variability, HRV, HRV meaning, HRV cycle tracking, SDNN">
+    <meta name="description" content="Active energy is the calories burned through movement, separate from resting energy. Learn how wearables estimate it and what validation studies found.">
+    <meta name="keywords" content="active energy, calories burned, active vs resting energy, wearable calorie accuracy, energy expenditure">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.go-go-gaia.com/encyclopedia/hrv.html">
-    <meta property="og:title" content="HRV (Heart Rate Variability): What It Measures">
-    <meta property="og:description" content="Heart rate variability (HRV) measures the variation between heartbeats and reflects autonomic nervous system activity, tracked overnight by wearables.">
+    <meta property="og:url" content="https://www.go-go-gaia.com/encyclopedia/active-energy.html">
+    <meta property="og:title" content="Active Energy (Calories Burned): What It Measures">
+    <meta property="og:description" content="Active energy is the calories burned through movement, separate from resting energy. Learn how wearables estimate it and what validation studies found.">
     <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
     <meta property="og:site_name" content="Go Go Gaia">
     <meta property="article:published_time" content="2026-08-08">
@@ -21,13 +21,13 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.go-go-gaia.com/encyclopedia/hrv.html">
-    <meta property="twitter:title" content="HRV (Heart Rate Variability): What It Measures">
-    <meta property="twitter:description" content="Heart rate variability (HRV) measures the variation between heartbeats and reflects autonomic nervous system activity, tracked overnight by wearables.">
+    <meta property="twitter:url" content="https://www.go-go-gaia.com/encyclopedia/active-energy.html">
+    <meta property="twitter:title" content="Active Energy (Calories Burned): What It Measures">
+    <meta property="twitter:description" content="Active energy is the calories burned through movement, separate from resting energy. Learn how wearables estimate it and what validation studies found.">
     <meta property="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.go-go-gaia.com/encyclopedia/hrv.html">
+    <link rel="canonical" href="https://www.go-go-gaia.com/encyclopedia/active-energy.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../Logo1.png">
@@ -43,9 +43,9 @@
     {
       "@context": "https://schema.org",
       "@type": "DefinedTerm",
-      "name": "Heart Rate Variability (HRV)",
-      "description": "Heart rate variability (HRV) is the variation in time between consecutive heartbeats, measured in milliseconds. It reflects the ongoing push and pull between your sympathetic and parasympathetic nervous systems, the two halves of the autonomic nervous system that speed up or slow down your heart rate in response to stress, activity, and rest.",
-      "url": "https://www.go-go-gaia.com/encyclopedia/hrv.html",
+      "name": "Active Energy (Calories Burned)",
+      "description": "Active energy is the energy burned through physical activity and exercise, recorded separately from basal (resting) energy, which is what the body burns to maintain basic functions like breathing and circulation. Wearables estimate active energy from motion and heart-rate data rather than measuring calories directly.",
+      "url": "https://www.go-go-gaia.com/encyclopedia/active-energy.html",
       "inDefinedTermSet": "https://www.go-go-gaia.com/encyclopedia/#termset"
     }
     </script>
@@ -58,26 +58,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is HRV the same as heart rate?",
+          "name": "What's the difference between active energy and resting (basal) energy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Heart rate is how many times your heart beats per minute. HRV is the variation in the time gap between those beats, measured in milliseconds. A slow heart rate and a fast heart rate can each come with high or low HRV. They describe different things about your cardiovascular system."
+            "text": "Apple HealthKit splits energy into two streams. Basal energy is what your body burns to maintain its normal resting state, powering basic functions like breathing, circulating blood, and cell maintenance. Active energy is what you burn on top of that through physical activity and exercise, and active samples are supposed to exclude the resting energy burned during the same window."
           }
         },
         {
           "@type": "Question",
-          "name": "What's the difference between HRV (SDNN) and HRV RMSSD?",
+          "name": "How accurate are the calorie burn numbers on my watch?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most wearables report HRV as SDNN, the standard deviation of beat-to-beat intervals calculated over hours, usually overnight. RMSSD is a separate calculation, typically taken from a short on-demand reading like a camera pulse check, on a different scale and time window. The two numbers aren't meant to be compared directly."
+            "text": "Less accurate than the heart-rate numbers next to them. A Stanford study tested seven wrist-worn devices against indirect calorimetry in 60 people and found that while most devices measured heart rate well, no device kept energy expenditure error below 20 percent. Calorie estimates work better as a trend over time than as an exact daily number."
           }
         },
         {
           "@type": "Question",
-          "name": "Why does Go Go Gaia show HRV alongside cycle data?",
+          "name": "How does Go Go Gaia get my active energy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HRV tends to shift across the menstrual cycle, generally running lower in the luteal phase. Charting it next to cycle phase and other biometrics like resting heart rate and basal body temperature gives a fuller picture of that pattern over time."
+            "text": "Go Go Gaia doesn't estimate calories itself. It syncs the active energy your Apple Watch or iPhone already records through Apple HealthKit and charts it alongside your cycle phase and other metrics."
           }
         }
       ]
@@ -92,7 +92,7 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.go-go-gaia.com/" },
         { "@type": "ListItem", "position": 2, "name": "Metrics Encyclopedia", "item": "https://www.go-go-gaia.com/encyclopedia/" },
-        { "@type": "ListItem", "position": 3, "name": "Heart Rate Variability (HRV)" }
+        { "@type": "ListItem", "position": 3, "name": "Active Energy (Calories Burned)" }
       ]
     }
     </script>
@@ -147,9 +147,9 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.go-go-gaia.com/encyclopedia/hrv.html#webpage",
-      "url": "https://www.go-go-gaia.com/encyclopedia/hrv.html",
-      "name": "HRV (Heart Rate Variability): What It Measures | Go Go Gaia Encyclopedia",
+      "@id": "https://www.go-go-gaia.com/encyclopedia/active-energy.html#webpage",
+      "url": "https://www.go-go-gaia.com/encyclopedia/active-energy.html",
+      "name": "Active Energy (Calories Burned): What It Measures | Go Go Gaia Encyclopedia",
       "dateModified": "2026-08-08",
       "publisher": {
         "@id": "https://www.go-go-gaia.com/#organization"
@@ -199,57 +199,57 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="index.html">Encyclopedia</a></li>
-                        <li class="breadcrumb-item active">Heart Rate Variability (HRV)</li>
+                        <li class="breadcrumb-item active">Active Energy (Calories Burned)</li>
                     </ol>
                 </nav>
 
                 <!-- 1. Term + one-line definition (40-60 words, standalone citable) -->
                 <header class="mb-4">
-                    <h1 class="display-5 fw-bold mb-3">Heart Rate Variability (HRV)</h1>
+                    <h1 class="display-5 fw-bold mb-3">Active Energy (Calories Burned)</h1>
                     <p class="text-muted small mb-3">Biometrics &amp; Vitals &middot; Reviewed August 2026</p>
                 </header>
 
                 <div class="definition-box mb-4">
                     <p class="definition-label mb-2">Definition</p>
-                    <p class="mb-0">Heart rate variability (HRV) is the variation in time between consecutive heartbeats, measured in milliseconds. It reflects the ongoing push and pull between your sympathetic and parasympathetic nervous systems, the two halves of the autonomic nervous system that speed up or slow down your heart rate in response to stress, activity, and rest.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
+                    <p class="mb-0">Active energy is the energy burned through physical activity and exercise, recorded separately from basal (resting) energy, which is what the body burns to maintain basic functions like breathing and circulation. Wearables estimate active energy from motion and heart-rate data rather than measuring calories directly.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
                 </div>
 
                 <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content, not medical advice. For personal or fertility concerns, please consult your doctor.</p>
 
                 <!-- 2. What it measures / how it's measured -->
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">What HRV Measures</h2>
-                    <p>A perfectly steady heartbeat isn't actually the goal: some variation between beats is a sign that your nervous system can adjust quickly to changing demands. HRV is most often reported as SDNN, the standard deviation of the time between beats calculated over a long window, generally hours rather than minutes. A separate calculation, RMSSD, measures beat-to-beat variation from a short reading and reflects parasympathetic ("rest and digest") activity more specifically. SDNN and RMSSD use different math on different time windows and land on different scales, so they aren't interchangeable. <a href="hrv-rmssd.html">RMSSD gets its own entry</a> in this encyclopedia.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
+                    <h2 class="h3 fw-bold mb-3">What Active Energy Measures</h2>
+                    <p>Apple HealthKit splits energy into two streams. Basal energy is what your body burns to maintain its normal resting state, covering basic functions like breathing, circulating blood, and the growth and maintenance of cells.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Active energy is everything on top of that, the energy burned through physical activity and exercise, and Apple's definition says active samples shouldn't include the resting energy burned during the same window.<sup><a href="#ref1" rel="noopener">[1]</a></sup> When your watch says you burned 400 active calories, it's claiming those came from movement, not from just being alive.</p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">How It's Measured</h3>
-                    <p>Consumer wearables estimate HRV using photoplethysmography (PPG), an optical sensor that shines light into the skin and detects the tiny changes in blood volume with each heartbeat, most often worn at the wrist. Most devices calculate the night's SDNN from beat-to-beat intervals captured while you sleep, when the body is still and the signal is cleanest. A 2025 validation study put five consumer wearables against a chest-strap ECG reference and found accuracy varies by device: some tracked the reference closely overnight, others less so.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
+                    <p>No wearable measures calories. The gold-standard methods track the oxygen and carbon dioxide in your breath or use specially labeled water, and both live in labs. A wearable instead runs your accelerometer and heart-rate data through a prediction model and outputs an estimate. A meta-analysis in the British Journal of Sports Medicine found monitor accuracy varies substantially by activity type, with large differences between studies, and that combining heart-rate sensing with accelerometry cut the error in most activity types.<sup><a href="#ref3" rel="noopener">[3]</a></sup> That's why modern watches lean on both sensors at once.</p>
+                    <p>The honest headline comes from a Stanford validation study that tested seven wrist-worn devices against indirect calorimetry in 60 people across sitting, walking, running, and cycling. Most devices measured heart rate well, with median error under 5% in several conditions. For energy expenditure, no device achieved an error below 20%.<sup><a href="#ref4" rel="noopener">[4]</a></sup> The heart-rate number on your wrist and the calorie number next to it aren't equally trustworthy. Calorie estimates work best as a trend, not as an exact count.</p>
                 </section>
 
                 <!-- 3. Why people track it -->
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">Why People Track HRV</h2>
-                    <p>The same autonomic nervous system that produces HRV also handles stress and recovery, so people track HRV as a broad marker of both, watched as a trend over days and weeks rather than read as a single night's number. It also shifts across the menstrual cycle, generally running lower in the luteal phase, the second half of the cycle after ovulation.</p>
-                    <p>For a deeper look at how much HRV typically moves across the cycle and how that pattern compares to resting heart rate, see <a href="../blog/hrv-resting-heart-rate-cycle.html">HRV and Resting Heart Rate Across Your Cycle</a>.</p>
+                    <h2 class="h3 fw-bold mb-3">Why People Track Active Energy</h2>
+                    <p>Active energy is a single number that summarizes how hard your body worked in a day, whatever mix of walks, workouts, and errands produced it. That makes it a natural companion to cycle data, because energy metabolism isn't fully flat across the month either. A meta-analysis of 26 studies covering 318 women found a small rise in resting metabolic rate in the luteal phase compared to the follicular phase, though the effect was smaller and no longer statistically significant when the analysis was limited to studies published since 2000.<sup><a href="#ref5" rel="noopener">[5]</a></sup> That's a population-level pattern in resting metabolism, not something a watch can show you day to day.</p>
                 </section>
 
                 <!-- 4. How Go Go Gaia tracks it (App Store CTA lives here, one per page) -->
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">How Go Go Gaia Tracks HRV</h2>
-                    <p>Go Go Gaia pulls HRV automatically from Apple HealthKit, so any HRV reading your Apple Watch or connected wearable already records syncs into the app without extra logging. The app charts HRV as a trend alongside your cycle phase, resting heart rate, and basal body temperature, so you can see how it moves in the context of where you are in your cycle rather than as an isolated number.</p>
+                    <h2 class="h3 fw-bold mb-3">How Go Go Gaia Tracks Active Energy</h2>
+                    <p>Go Go Gaia doesn't estimate calories itself. It syncs the active energy your Apple Watch or iPhone already records through Apple HealthKit, then charts it against your cycle phase alongside steps, heart rate, and your other biometrics. The app also generates phase-aware workout plans, so your energy data sits next to training suggestions matched to where you are in your cycle.</p>
 
                     <div class="text-center mt-4 p-4 bg-light rounded">
-                        <h3 class="h5 mb-3">See your HRV next to your cycle</h3>
-                        <p>Go Go Gaia charts HRV alongside your cycle phase, resting heart rate, and temperature automatically.</p>
+                        <h3 class="h5 mb-3">See your active energy next to your cycle</h3>
+                        <p>Go Go Gaia charts your daily active energy against your cycle phase automatically.</p>
                         <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg"><i class="bi bi-apple me-2"></i>Download Go Go Gaia</a>
-                        <p class="small text-muted mt-3">Free on the App Store. HRV syncs automatically from Apple Health.</p>
+                        <p class="small text-muted mt-3">Free on the App Store. Active energy syncs automatically from Apple Health.</p>
                     </div>
                 </section>
 
                 <!-- 5. What the research shows -->
                 <section class="mb-5">
                     <h2 class="h3 fw-bold mb-3">What the Research Shows</h2>
-                    <p>A 2019 meta-analysis pooling 37 studies and more than 1,000 individuals found a significant, moderate decrease in cardiac vagal activity (a category of HRV measures) from the follicular phase to the luteal phase of the menstrual cycle, with the sharpest drop-off heading into the premenstrual days.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
-                    <p>A follow-up study found the luteal-phase HRV decrease tracks with progesterone specifically, not estradiol: on days when someone's progesterone ran higher than their own typical level, their HRV ran lower.<sup><a href="#ref4" rel="noopener">[4]</a></sup> For more on how this pattern plays out alongside resting heart rate, see <a href="../blog/hrv-resting-heart-rate-cycle.html">HRV and Resting Heart Rate Across Your Cycle</a>.</p>
+                    <p>The validation literature is consistent on the core point: wearable calorie estimates carry substantial error against lab measurement. In the Stanford study, error in energy expenditure never dropped below 20% for any of the seven devices tested, even while the same devices tracked heart rate closely, and the authors advised caution in using the calorie numbers.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
+                    <p>The picture isn't static, though. The British Journal of Sports Medicine meta-analysis found that fusing heart-rate or heat-sensing data with accelerometry reduced error in most activity types, so multi-sensor estimates beat motion-only ones.<sup><a href="#ref3" rel="noopener">[3]</a></sup> And on the cycle side, the resting-metabolism meta-analysis found the luteal-phase rise is small and inconsistent across studies, with the more recent literature showing a weaker effect.<sup><a href="#ref5" rel="noopener">[5]</a></sup> Both findings point the same way: read energy numbers as directional, and read them over weeks rather than days.</p>
                 </section>
 
                 <!-- 6. Related terms -->
@@ -260,9 +260,29 @@
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
                                     <h3 class="h6 card-title">
+                                        <a href="steps.html" class="text-decoration-none">Step Count</a>
+                                    </h3>
+                                    <p class="card-text small text-muted">The motion data that feeds part of your active energy estimate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title">
+                                        <a href="vo2-max.html" class="text-decoration-none">VO2 Max</a>
+                                    </h3>
+                                    <p class="card-text small text-muted">Another wearable estimate with its own validation caveats.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title">
                                         <a href="resting-heart-rate.html" class="text-decoration-none">Resting Heart Rate</a>
                                     </h3>
-                                    <p class="card-text small text-muted">Beats per minute at rest, tracked overnight alongside HRV.</p>
+                                    <p class="card-text small text-muted">The sensor stream wearables lean on to improve calorie estimates.</p>
                                 </div>
                             </div>
                         </div>
@@ -270,29 +290,9 @@
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
                                     <h3 class="h6 card-title">
-                                        <a href="basal-body-temperature.html" class="text-decoration-none">Basal Body Temperature</a>
+                                        <a href="blood-glucose.html" class="text-decoration-none">Blood Glucose</a>
                                     </h3>
-                                    <p class="card-text small text-muted">Another biometric that shifts across the menstrual cycle.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h6 card-title">
-                                        <a href="cervical-mucus.html" class="text-decoration-none">Cervical Mucus</a>
-                                    </h3>
-                                    <p class="card-text small text-muted">A logged fertility signal that changes across cycle phases.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h6 card-title">
-                                        <a href="estradiol.html" class="text-decoration-none">Estradiol</a>
-                                    </h3>
-                                    <p class="card-text small text-muted">The primary estrogen that rises and falls across the cycle.</p>
+                                    <p class="card-text small text-muted">A metabolic metric with its own cycle-phase research.</p>
                                 </div>
                             </div>
                         </div>
@@ -304,25 +304,25 @@
                     <h2 class="h3 fw-bold mb-3" id="faq">Frequently Asked Questions</h2>
                     <p class="small text-muted mb-4">Educational information based on published sources. Not medical advice. For personal concerns, please consult your doctor.</p>
 
-                    <h3 class="h5 fw-semibold mt-4">Is HRV the same as heart rate?</h3>
-                    <p>No. Heart rate is how many times your heart beats per minute. HRV is the variation in the time gap between those beats, measured in milliseconds. A slow heart rate and a fast heart rate can each come with high or low HRV. They describe different things about your cardiovascular system.</p>
+                    <h3 class="h5 fw-semibold mt-4">What's the difference between active energy and resting (basal) energy?</h3>
+                    <p>Apple HealthKit splits energy into two streams. Basal energy is what your body burns to maintain its normal resting state, powering basic functions like breathing, circulating blood, and cell maintenance. Active energy is what you burn on top of that through physical activity and exercise, and active samples are supposed to exclude the resting energy burned during the same window.</p>
 
-                    <h3 class="h5 fw-semibold mt-4">What's the difference between HRV (SDNN) and HRV RMSSD?</h3>
-                    <p>Most wearables report HRV as SDNN, the standard deviation of beat-to-beat intervals calculated over hours, usually overnight. RMSSD is a separate calculation, typically taken from a short on-demand reading like a camera pulse check, on a different scale and time window. The two numbers aren't meant to be compared directly.</p>
+                    <h3 class="h5 fw-semibold mt-4">How accurate are the calorie burn numbers on my watch?</h3>
+                    <p>Less accurate than the heart-rate numbers next to them. A Stanford study tested seven wrist-worn devices against indirect calorimetry in 60 people and found that while most devices measured heart rate well, no device kept energy expenditure error below 20 percent. Calorie estimates work better as a trend over time than as an exact daily number.</p>
 
-                    <h3 class="h5 fw-semibold mt-4">Why does Go Go Gaia show HRV alongside cycle data?</h3>
-                    <p>HRV tends to shift across the menstrual cycle, generally running lower in the luteal phase. Charting it next to cycle phase and other biometrics like resting heart rate and basal body temperature gives a fuller picture of that pattern over time.</p>
+                    <h3 class="h5 fw-semibold mt-4">How does Go Go Gaia get my active energy?</h3>
+                    <p>Go Go Gaia doesn't estimate calories itself. It syncs the active energy your Apple Watch or iPhone already records through Apple HealthKit and charts it alongside your cycle phase and other metrics.</p>
                 </section>
 
                 <!-- 8. References (numbered, 4-10 real citations, each checked to resolve and support its sentence) -->
                 <section class="mb-5 mt-5">
                     <h2 class="h3 fw-bold mb-3" id="references">References</h2>
                     <ol class="references-list">
-                        <li id="ref1">Shaffer F, Ginsberg JP. An Overview of Heart Rate Variability Metrics and Norms. <em>Frontiers in Public Health</em>. 2017;5:258. <a href="https://doi.org/10.3389/fpubh.2017.00258" target="_blank" rel="noopener">doi.org/10.3389/fpubh.2017.00258</a></li>
-                        <li id="ref2">Dial MB, Hollander ME, Vatne EA, Emerson AM, Edwards NA, Hagen JA. Validation of nocturnal resting heart rate and heart rate variability in consumer wearables. <em>Physiological Reports</em>. 2025;13(16):e70527. <a href="https://doi.org/10.14814/phy2.70527" target="_blank" rel="noopener">doi.org/10.14814/phy2.70527</a></li>
-                        <li id="ref3">Schmalenberger KM, Eisenlohr-Moul TA, Würth L, Schneider E, Thayer JF, Ditzen B, Jarczok MN. A Systematic Review and Meta-Analysis of Within-Person Changes in Cardiac Vagal Activity across the Menstrual Cycle. <em>Journal of Clinical Medicine</em>. 2019;8(11):1946. <a href="https://doi.org/10.3390/jcm8111946" target="_blank" rel="noopener">doi.org/10.3390/jcm8111946</a></li>
-                        <li id="ref4">Schmalenberger KM, Eisenlohr-Moul TA, Jarczok MN, Eckstein M, Schneider E, Brenner IG, Duffy K, Schweizer S, Kiesner J, Thayer JF, Ditzen B. Menstrual Cycle Changes in Vagally-Mediated Heart Rate Variability Are Associated with Progesterone: Evidence from Two Within-Person Studies. <em>Journal of Clinical Medicine</em>. 2020;9(3):617. <a href="https://doi.org/10.3390/jcm9030617" target="_blank" rel="noopener">doi.org/10.3390/jcm9030617</a></li>
-                        <!-- add up to 10 total; StatPearls/NIH acceptable for basic mechanism claims -->
+                        <li id="ref1">Apple Inc. HKQuantityTypeIdentifier.activeEnergyBurned. <em>Apple Developer Documentation, HealthKit</em>. <a href="https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/activeenergyburned" target="_blank" rel="noopener">developer.apple.com/documentation/healthkit</a></li>
+                        <li id="ref2">Apple Inc. HKQuantityTypeIdentifier.basalEnergyBurned. <em>Apple Developer Documentation, HealthKit</em>. <a href="https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/basalenergyburned" target="_blank" rel="noopener">developer.apple.com/documentation/healthkit</a></li>
+                        <li id="ref3">O'Driscoll R, Turicchi J, Beaulieu K, Scott S, Matu J, Deighton K, Finlayson G, Stubbs J. How well do activity monitors estimate energy expenditure? A systematic review and meta-analysis of the validity of current technologies. <em>British Journal of Sports Medicine</em>. 2020;54(6):332-340. <a href="https://doi.org/10.1136/bjsports-2018-099643" target="_blank" rel="noopener">doi.org/10.1136/bjsports-2018-099643</a></li>
+                        <li id="ref4">Shcherbina A, Mattsson CM, Waggott D, Salisbury H, Christle JW, Hastie T, Wheeler MT, Ashley EA. Accuracy in Wrist-Worn, Sensor-Based Measurements of Heart Rate and Energy Expenditure in a Diverse Cohort. <em>Journal of Personalized Medicine</em>. 2017;7(2):3. <a href="https://doi.org/10.3390/jpm7020003" target="_blank" rel="noopener">doi.org/10.3390/jpm7020003</a></li>
+                        <li id="ref5">Benton MJ, Hutchins AM, Dawes JJ. Effect of menstrual cycle on resting metabolism: A systematic review and meta-analysis. <em>PLOS ONE</em>. 2020;15(7):e0236025. <a href="https://doi.org/10.1371/journal.pone.0236025" target="_blank" rel="noopener">doi.org/10.1371/journal.pone.0236025</a></li>
                     </ol>
                 </section>
 
