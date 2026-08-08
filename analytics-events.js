@@ -47,10 +47,17 @@ document.addEventListener('click', function (e) {
   }
 
   if (href.indexOf('app.go-go-gaia.com') !== -1) {
+    var webAppIntent = 'login';
+    if (href.indexOf('mode=signup') !== -1) {
+      webAppIntent = 'signup';
+    } else if (href.indexOf('/pro/signup') !== -1) {
+      webAppIntent = 'pro_signup';
+    }
     gtag('event', 'login_click', {
       link_text: text,
       link_location: location,
-      page_path: window.location.pathname
+      page_path: window.location.pathname,
+      web_app_intent: webAppIntent
     });
   }
 });

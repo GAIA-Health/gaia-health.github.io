@@ -52,6 +52,113 @@
     <!-- Cookie consent + gated GA4 -->
     <script src="/cookie-consent.js"></script>
     <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/conditions.html#webpage",
+      "url": "https://www.go-go-gaia.com/conditions.html",
+      "name": "What Go Go Gaia Tracks: Every Condition & Life Stage",
+      "dateModified": "2026-07-14",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json" data-schema="gg-itemlist">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://www.go-go-gaia.com/conditions.html#itemlist",
+  "name": "Conditions and life stages Go Go Gaia supports",
+  "description": "What Go Go Gaia tracks and shows, broken out by condition and life stage.",
+  "numberOfItems": 10,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Period & Cycle",
+      "url": "https://www.go-go-gaia.com/conditions.html#period-cycle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PCOS",
+      "url": "https://www.go-go-gaia.com/conditions.html#pcos"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Trying to Conceive & Fertility",
+      "url": "https://www.go-go-gaia.com/conditions.html#fertility"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "IVF & Egg Freezing",
+      "url": "https://www.go-go-gaia.com/conditions.html#ivf-egg-freezing"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Pregnancy",
+      "url": "https://www.go-go-gaia.com/conditions.html#pregnancy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Postpartum & Breastfeeding",
+      "url": "https://www.go-go-gaia.com/conditions.html#postpartum"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Perimenopause & Menopause",
+      "url": "https://www.go-go-gaia.com/conditions.html#perimenopause-menopause"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Endometriosis",
+      "url": "https://www.go-go-gaia.com/conditions.html#endometriosis"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "PMDD & PMS",
+      "url": "https://www.go-go-gaia.com/conditions.html#pmdd-pms"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Mood & Whole-Body Wellness",
+      "url": "https://www.go-go-gaia.com/conditions.html#mood-wellness"
+    }
+  ]
+}
+</script>
 </head>
 <body>
     <header class="sticky-top">
@@ -72,7 +179,7 @@
                         <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
                         <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
                     </ul>
                     <div class="social-icons ms-md-3 d-none d-md-flex">
@@ -128,7 +235,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-calendar-heart me-2" style="color: var(--primary);"></i>Period &amp; Cycle</h3>
+                                    <h3 id="period-cycle" class="h5 mb-3"><i class="bi bi-calendar-heart me-2" style="color: var(--primary);"></i>Period &amp; Cycle</h3>
                                     <ul class="mb-3">
                                         <li>Period predictions and a cycle calendar</li>
                                         <li>Phase detection (menstrual, follicular, ovulatory, luteal) with phase-aware insights</li>
@@ -143,7 +250,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-arrow-repeat me-2" style="color: var(--primary);"></i>PCOS</h3>
+                                    <h3 id="pcos" class="h5 mb-3"><i class="bi bi-arrow-repeat me-2" style="color: var(--primary);"></i>PCOS</h3>
                                     <ul class="mb-3">
                                         <li>Built for irregular cycles, with predictions from your real data, not calendar assumptions</li>
                                         <li>Symptom, metabolic, and lab tracking — scan or import your bloodwork (TSH, AMH, progesterone, and more)</li>
@@ -159,7 +266,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-egg-fried me-2" style="color: var(--primary);"></i>Trying to Conceive &amp; Fertility</h3>
+                                    <h3 id="fertility" class="h5 mb-3"><i class="bi bi-egg-fried me-2" style="color: var(--primary);"></i>Trying to Conceive &amp; Fertility</h3>
                                     <ul class="mb-3">
                                         <li>Ovulation and fertile-window predictions</li>
                                         <li>BBT, LH test results, and cervical mucus logging</li>
@@ -175,7 +282,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-clipboard-pulse me-2" style="color: var(--primary);"></i>IVF &amp; Egg Freezing</h3>
+                                    <h3 id="ivf-egg-freezing" class="h5 mb-3"><i class="bi bi-clipboard-pulse me-2" style="color: var(--primary);"></i>IVF &amp; Egg Freezing</h3>
                                     <ul class="mb-3">
                                         <li>Treatment-stage tracking for IUI, IVF, FET, and egg freezing</li>
                                         <li>Medication, appointment, and protocol logging</li>
@@ -191,7 +298,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-heart me-2" style="color: var(--primary);"></i>Pregnancy</h3>
+                                    <h3 id="pregnancy" class="h5 mb-3"><i class="bi bi-heart me-2" style="color: var(--primary);"></i>Pregnancy</h3>
                                     <ul class="mb-3">
                                         <li>Week-by-week tracking, kick counter, and contraction timer</li>
                                         <li>Pregnancy symptoms, nutrition, mood, and wearable data together</li>
@@ -206,7 +313,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-moon-stars me-2" style="color: var(--primary);"></i>Postpartum &amp; Breastfeeding</h3>
+                                    <h3 id="postpartum" class="h5 mb-3"><i class="bi bi-moon-stars me-2" style="color: var(--primary);"></i>Postpartum &amp; Breastfeeding</h3>
                                     <ul class="mb-3">
                                         <li>Recovery tracking and mood monitoring</li>
                                         <li>Breastfeeding and pumping logs, plus baby feeding, sleep, and diapers</li>
@@ -220,7 +327,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-thermometer-sun me-2" style="color: var(--primary);"></i>Perimenopause &amp; Menopause</h3>
+                                    <h3 id="perimenopause-menopause" class="h5 mb-3"><i class="bi bi-thermometer-sun me-2" style="color: var(--primary);"></i>Perimenopause &amp; Menopause</h3>
                                     <ul class="mb-3">
                                         <li>Hot flash, night sweat, and symptom tracking</li>
                                         <li>Cycle-change monitoring as your pattern shifts</li>
@@ -236,7 +343,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-bandaid me-2" style="color: var(--primary);"></i>Endometriosis</h3>
+                                    <h3 id="endometriosis" class="h5 mb-3"><i class="bi bi-bandaid me-2" style="color: var(--primary);"></i>Endometriosis</h3>
                                     <ul class="mb-3">
                                         <li>Pain and symptom tracking through the cycle</li>
                                         <li>Correlations between symptoms, cycle phase, and lifestyle</li>
@@ -251,7 +358,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-emoji-neutral me-2" style="color: var(--primary);"></i>PMDD &amp; PMS</h3>
+                                    <h3 id="pmdd-pms" class="h5 mb-3"><i class="bi bi-emoji-neutral me-2" style="color: var(--primary);"></i>PMDD &amp; PMS</h3>
                                     <ul class="mb-3">
                                         <li>Daily mood and symptom logging mapped to your cycle phase</li>
                                         <li>Pattern detection across months, not just one cycle</li>
@@ -266,7 +373,7 @@
                         <div class="col-md-6">
                             <div class="card h-100 border-0" style="background-color: var(--secondary);">
                                 <div class="card-body">
-                                    <h3 class="h5 mb-3"><i class="bi bi-emoji-smile me-2" style="color: var(--primary);"></i>Mood &amp; Whole-Body Wellness</h3>
+                                    <h3 id="mood-wellness" class="h5 mb-3"><i class="bi bi-emoji-smile me-2" style="color: var(--primary);"></i>Mood &amp; Whole-Body Wellness</h3>
                                     <ul class="mb-3">
                                         <li>Mood tracked alongside cycle, sleep, energy, fitness, and nutrition</li>
                                         <li>Real patterns from your own data, like what makes the hard days harder</li>
@@ -323,7 +430,7 @@
                     <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
                         <i class="bi bi-apple me-2"></i>Download Go Go Gaia
                     </a>
-                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com" target="_blank">Use the web app</a> in any browser.</p>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=conditions" target="_blank">Use the web app</a> in any browser.</p>
                 </section>
 
                 <!-- Not tracking a condition -->
