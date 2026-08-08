@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Health Metrics Encyclopedia | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="A sourced, plain-language reference for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks: what each one measures, how it's measured, and what research shows.">
+    <meta name="keywords" content="health metrics glossary, biometrics definitions, hormone glossary, cycle tracking terms, women's health encyclopedia">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/encyclopedia/">
+    <meta property="og:title" content="Health Metrics Encyclopedia | Go Go Gaia">
+    <meta property="og:description" content="A sourced, plain-language reference for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks: what each one measures, how it's measured, and what research shows.">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.go-go-gaia.com/encyclopedia/">
+    <meta property="twitter:title" content="Health Metrics Encyclopedia | Go Go Gaia">
+    <meta property="twitter:description" content="A sourced, plain-language reference for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks: what each one measures, how it's measured, and what research shows.">
+    <meta property="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/encyclopedia/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data: DefinedTermSet -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "@id": "https://www.go-go-gaia.com/encyclopedia/#termset",
+      "name": "Go Go Gaia Health Metrics Encyclopedia",
+      "description": "Sourced, plain-language definitions for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks.",
+      "url": "https://www.go-go-gaia.com/encyclopedia/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.go-go-gaia.com/Logo1.png"
+        }
+      },
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "HRV (Heart Rate Variability)", "url": "https://www.go-go-gaia.com/encyclopedia/hrv.html" },
+        { "@type": "DefinedTerm", "name": "Resting Heart Rate", "url": "https://www.go-go-gaia.com/encyclopedia/resting-heart-rate.html" },
+        { "@type": "DefinedTerm", "name": "Basal Body Temperature", "url": "https://www.go-go-gaia.com/encyclopedia/basal-body-temperature.html" },
+        { "@type": "DefinedTerm", "name": "Cervical Mucus", "url": "https://www.go-go-gaia.com/encyclopedia/cervical-mucus.html" },
+        { "@type": "DefinedTerm", "name": "AMH (Anti-Müllerian Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/amh.html" },
+        { "@type": "DefinedTerm", "name": "Estradiol", "url": "https://www.go-go-gaia.com/encyclopedia/estradiol.html" },
+        { "@type": "DefinedTerm", "name": "TSH (Thyroid-Stimulating Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/tsh.html" },
+        { "@type": "DefinedTerm", "name": "Ferritin", "url": "https://www.go-go-gaia.com/encyclopedia/ferritin.html" },
+        { "@type": "DefinedTerm", "name": "Wrist Temperature", "url": "https://www.go-go-gaia.com/encyclopedia/wrist-temperature.html" },
+        { "@type": "DefinedTerm", "name": "Blood Pressure", "url": "https://www.go-go-gaia.com/encyclopedia/blood-pressure.html" },
+        { "@type": "DefinedTerm", "name": "Respiratory Rate", "url": "https://www.go-go-gaia.com/encyclopedia/respiratory-rate.html" },
+        { "@type": "DefinedTerm", "name": "SpO2 (Blood Oxygen Saturation)", "url": "https://www.go-go-gaia.com/encyclopedia/spo2.html" },
+        { "@type": "DefinedTerm", "name": "VO2 Max", "url": "https://www.go-go-gaia.com/encyclopedia/vo2-max.html" },
+        { "@type": "DefinedTerm", "name": "Blood Glucose", "url": "https://www.go-go-gaia.com/encyclopedia/blood-glucose.html" },
+        { "@type": "DefinedTerm", "name": "Sleep Stages", "url": "https://www.go-go-gaia.com/encyclopedia/sleep-stages.html" },
+        { "@type": "DefinedTerm", "name": "LH Surge", "url": "https://www.go-go-gaia.com/encyclopedia/lh-surge.html" },
+        { "@type": "DefinedTerm", "name": "Luteal Phase", "url": "https://www.go-go-gaia.com/encyclopedia/luteal-phase.html" },
+        { "@type": "DefinedTerm", "name": "Follicular Phase", "url": "https://www.go-go-gaia.com/encyclopedia/follicular-phase.html" },
+        { "@type": "DefinedTerm", "name": "Progesterone", "url": "https://www.go-go-gaia.com/encyclopedia/progesterone.html" },
+        { "@type": "DefinedTerm", "name": "FSH (Follicle-Stimulating Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/fsh.html" },
+        { "@type": "DefinedTerm", "name": "Testosterone", "url": "https://www.go-go-gaia.com/encyclopedia/testosterone.html" },
+        { "@type": "DefinedTerm", "name": "Free Testosterone", "url": "https://www.go-go-gaia.com/encyclopedia/free-testosterone.html" },
+        { "@type": "DefinedTerm", "name": "SHBG (Sex Hormone-Binding Globulin)", "url": "https://www.go-go-gaia.com/encyclopedia/shbg.html" },
+        { "@type": "DefinedTerm", "name": "Cortisol", "url": "https://www.go-go-gaia.com/encyclopedia/cortisol.html" },
+        { "@type": "DefinedTerm", "name": "Prolactin", "url": "https://www.go-go-gaia.com/encyclopedia/prolactin.html" },
+        { "@type": "DefinedTerm", "name": "DHEA-S", "url": "https://www.go-go-gaia.com/encyclopedia/dhea-s.html" },
+        { "@type": "DefinedTerm", "name": "Insulin", "url": "https://www.go-go-gaia.com/encyclopedia/insulin.html" },
+        { "@type": "DefinedTerm", "name": "Estrone (E1)", "url": "https://www.go-go-gaia.com/encyclopedia/estrone.html" },
+        { "@type": "DefinedTerm", "name": "Free T4 (Free Thyroxine)", "url": "https://www.go-go-gaia.com/encyclopedia/free-t4.html" },
+        { "@type": "DefinedTerm", "name": "Free T3 (Free Triiodothyronine)", "url": "https://www.go-go-gaia.com/encyclopedia/free-t3.html" },
+        { "@type": "DefinedTerm", "name": "Reverse T3 (rT3)", "url": "https://www.go-go-gaia.com/encyclopedia/reverse-t3.html" },
+        { "@type": "DefinedTerm", "name": "Thyroid Antibodies (TPO & Thyroglobulin Antibodies)", "url": "https://www.go-go-gaia.com/encyclopedia/thyroid-antibodies.html" },
+        { "@type": "DefinedTerm", "name": "hCG (Human Chorionic Gonadotropin)", "url": "https://www.go-go-gaia.com/encyclopedia/hcg.html" },
+        { "@type": "DefinedTerm", "name": "PdG (Pregnanediol Glucuronide)", "url": "https://www.go-go-gaia.com/encyclopedia/pdg.html" },
+        { "@type": "DefinedTerm", "name": "E3G (Estrone-3-Glucuronide)", "url": "https://www.go-go-gaia.com/encyclopedia/e3g.html" },
+        { "@type": "DefinedTerm", "name": "17-OH Progesterone (17-Hydroxyprogesterone)", "url": "https://www.go-go-gaia.com/encyclopedia/17-oh-progesterone.html" },
+        { "@type": "DefinedTerm", "name": "Androstenedione", "url": "https://www.go-go-gaia.com/encyclopedia/androstenedione.html" },
+        { "@type": "DefinedTerm", "name": "Fasting Glucose", "url": "https://www.go-go-gaia.com/encyclopedia/fasting-glucose.html" },
+        { "@type": "DefinedTerm", "name": "HbA1c (Hemoglobin A1c)", "url": "https://www.go-go-gaia.com/encyclopedia/hba1c.html" },
+        { "@type": "DefinedTerm", "name": "C-Peptide", "url": "https://www.go-go-gaia.com/encyclopedia/c-peptide.html" },
+        { "@type": "DefinedTerm", "name": "Creatinine", "url": "https://www.go-go-gaia.com/encyclopedia/creatinine.html" },
+        { "@type": "DefinedTerm", "name": "BUN (Blood Urea Nitrogen)", "url": "https://www.go-go-gaia.com/encyclopedia/bun.html" },
+        { "@type": "DefinedTerm", "name": "eGFR (Estimated Glomerular Filtration Rate)", "url": "https://www.go-go-gaia.com/encyclopedia/egfr.html" },
+        { "@type": "DefinedTerm", "name": "ALT (Alanine Aminotransferase)", "url": "https://www.go-go-gaia.com/encyclopedia/alt.html" },
+        { "@type": "DefinedTerm", "name": "AST (Aspartate Aminotransferase)", "url": "https://www.go-go-gaia.com/encyclopedia/ast.html" },
+        { "@type": "DefinedTerm", "name": "Alkaline Phosphatase (ALP)", "url": "https://www.go-go-gaia.com/encyclopedia/alkaline-phosphatase.html" },
+        { "@type": "DefinedTerm", "name": "Bilirubin (Total & Direct)", "url": "https://www.go-go-gaia.com/encyclopedia/bilirubin.html" },
+        { "@type": "DefinedTerm", "name": "Total Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/total-cholesterol.html" },
+        { "@type": "DefinedTerm", "name": "HDL Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/hdl.html" },
+        { "@type": "DefinedTerm", "name": "LDL Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/ldl.html" },
+        { "@type": "DefinedTerm", "name": "Triglycerides", "url": "https://www.go-go-gaia.com/encyclopedia/triglycerides.html" },
+        { "@type": "DefinedTerm", "name": "ApoB (Apolipoprotein B)", "url": "https://www.go-go-gaia.com/encyclopedia/apob.html" },
+        { "@type": "DefinedTerm", "name": "Lipoprotein(a)", "url": "https://www.go-go-gaia.com/encyclopedia/lipoprotein-a.html" },
+        { "@type": "DefinedTerm", "name": "Hemoglobin", "url": "https://www.go-go-gaia.com/encyclopedia/hemoglobin.html" },
+        { "@type": "DefinedTerm", "name": "Hematocrit", "url": "https://www.go-go-gaia.com/encyclopedia/hematocrit.html" },
+        { "@type": "DefinedTerm", "name": "Red Blood Cell (RBC) Count", "url": "https://www.go-go-gaia.com/encyclopedia/red-blood-cells.html" },
+        { "@type": "DefinedTerm", "name": "White Blood Cell (WBC) Count", "url": "https://www.go-go-gaia.com/encyclopedia/white-blood-cells.html" },
+        { "@type": "DefinedTerm", "name": "Platelet Count", "url": "https://www.go-go-gaia.com/encyclopedia/platelets.html" },
+        { "@type": "DefinedTerm", "name": "MCV (Mean Corpuscular Volume)", "url": "https://www.go-go-gaia.com/encyclopedia/mcv.html" },
+        { "@type": "DefinedTerm", "name": "Serum Iron", "url": "https://www.go-go-gaia.com/encyclopedia/serum-iron.html" },
+        { "@type": "DefinedTerm", "name": "TIBC & Transferrin Saturation", "url": "https://www.go-go-gaia.com/encyclopedia/tibc-transferrin-saturation.html" },
+        { "@type": "DefinedTerm", "name": "hs-CRP (High-Sensitivity C-Reactive Protein)", "url": "https://www.go-go-gaia.com/encyclopedia/hs-crp.html" },
+        { "@type": "DefinedTerm", "name": "ESR (Erythrocyte Sedimentation Rate)", "url": "https://www.go-go-gaia.com/encyclopedia/esr.html" },
+        { "@type": "DefinedTerm", "name": "Homocysteine", "url": "https://www.go-go-gaia.com/encyclopedia/homocysteine.html" },
+        { "@type": "DefinedTerm", "name": "Vitamin D (25-Hydroxyvitamin D)", "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-d.html" },
+        { "@type": "DefinedTerm", "name": "Vitamin B12", "url": "https://www.go-go-gaia.com/encyclopedia/b12.html" },
+        { "@type": "DefinedTerm", "name": "Folate (Vitamin B9)", "url": "https://www.go-go-gaia.com/encyclopedia/folate.html" },
+        { "@type": "DefinedTerm", "name": "Vitamin A (Retinol)", "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-a.html" },
+        { "@type": "DefinedTerm", "name": "Zinc", "url": "https://www.go-go-gaia.com/encyclopedia/zinc.html" },
+        { "@type": "DefinedTerm", "name": "Urinalysis", "url": "https://www.go-go-gaia.com/encyclopedia/urinalysis.html" },
+        { "@type": "DefinedTerm", "name": "Urine Hormone Metabolites", "url": "https://www.go-go-gaia.com/encyclopedia/urine-hormone-metabolites.html" },
+        { "@type": "DefinedTerm", "name": "Hot Flashes", "url": "https://www.go-go-gaia.com/encyclopedia/hot-flashes.html" },
+        { "@type": "DefinedTerm", "name": "Night Sweats", "url": "https://www.go-go-gaia.com/encyclopedia/night-sweats.html" },
+        { "@type": "DefinedTerm", "name": "Hirsutism", "url": "https://www.go-go-gaia.com/encyclopedia/hirsutism.html" },
+        { "@type": "DefinedTerm", "name": "Hormonal Acne", "url": "https://www.go-go-gaia.com/encyclopedia/acne-hormonal.html" },
+        { "@type": "DefinedTerm", "name": "Hair Thinning", "url": "https://www.go-go-gaia.com/encyclopedia/hair-thinning.html" },
+        { "@type": "DefinedTerm", "name": "Bloating", "url": "https://www.go-go-gaia.com/encyclopedia/bloating.html" },
+        { "@type": "DefinedTerm", "name": "Breast Tenderness", "url": "https://www.go-go-gaia.com/encyclopedia/breast-tenderness.html" },
+        { "@type": "DefinedTerm", "name": "Cramps (Dysmenorrhea)", "url": "https://www.go-go-gaia.com/encyclopedia/cramps-dysmenorrhea.html" },
+        { "@type": "DefinedTerm", "name": "Fatigue", "url": "https://www.go-go-gaia.com/encyclopedia/fatigue.html" },
+        { "@type": "DefinedTerm", "name": "Mood Swings", "url": "https://www.go-go-gaia.com/encyclopedia/mood-swings.html" },
+        { "@type": "DefinedTerm", "name": "Libido / Sex Drive", "url": "https://www.go-go-gaia.com/encyclopedia/libido-sex-drive.html" },
+        { "@type": "DefinedTerm", "name": "Nausea", "url": "https://www.go-go-gaia.com/encyclopedia/nausea.html" },
+        { "@type": "DefinedTerm", "name": "Headache / Migraine", "url": "https://www.go-go-gaia.com/encyclopedia/headache-migraine.html" },
+        { "@type": "DefinedTerm", "name": "Insomnia", "url": "https://www.go-go-gaia.com/encyclopedia/insomnia.html" },
+        { "@type": "DefinedTerm", "name": "Heart Palpitations", "url": "https://www.go-go-gaia.com/encyclopedia/heart-palpitations.html" },
+        { "@type": "DefinedTerm", "name": "Cold Intolerance", "url": "https://www.go-go-gaia.com/encyclopedia/cold-intolerance.html" },
+        { "@type": "DefinedTerm", "name": "Restless Legs", "url": "https://www.go-go-gaia.com/encyclopedia/restless-legs.html" },
+        { "@type": "DefinedTerm", "name": "Discharge", "url": "https://www.go-go-gaia.com/encyclopedia/discharge.html" }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.go-go-gaia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Metrics Encyclopedia" }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+
+    <style>
+        .term-category-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .term-category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .term-category-card i {
+            font-size: 1.75rem;
+            color: #46583a;
+        }
+        .az-section h3 {
+            border-left: 4px solid #46583a;
+            padding-left: 0.75rem;
+            font-weight: 700;
+        }
+        .term-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .term-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .term-list li:last-child {
+            border-bottom: none;
+        }
+        .term-list a {
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+        .term-list a:hover {
+            color: #FF6B98;
+        }
+        .term-list .term-def {
+            display: block;
+            color: #666;
+            font-size: 0.92rem;
+            margin-top: 0.15rem;
+        }
+        .methodology-box {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="GO GO GAIA Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Encyclopedia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">Metrics Encyclopedia</li>
+            </ol>
+        </nav>
+
+        <header class="mb-5 text-center">
+            <h1 class="display-4 fw-bold mb-3">Health Metrics Encyclopedia</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 720px;">
+                Every biometric, cycle signal, hormone, and symptom Go Go Gaia tracks, defined in one place and sourced to real research. Each entry explains what a metric measures and how it's measured, not what your own number means.
+            </p>
+        </header>
+
+        <p class="small text-muted border-start border-2 border-secondary ps-3 mb-5 mx-auto" style="max-width: 720px;"><i class="bi bi-info-circle me-1"></i> Educational reference content, not medical advice. Entries describe what the research shows at a population level. For questions about your own results, please consult your doctor.</p>
+
+        <!-- Category navigation -->
+        <section class="mb-5">
+            <div class="row g-3">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#biometrics" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-heart-pulse d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Biometrics &amp; Vitals</h2>
+                            <p class="small text-muted mb-0">HRV, heart rate, temperature, sleep signals</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#cycle-fertility" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-droplet d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Cycle &amp; Fertility</h2>
+                            <p class="small text-muted mb-0">Ovulation, phases, fertile-window signals</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#hormones-labs" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-clipboard2-pulse d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Hormones &amp; Labs</h2>
+                            <p class="small text-muted mb-0">Serum, urine, and saliva analytes</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#metabolic-kidney-liver" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-activity d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Metabolic, Kidney &amp; Liver Labs</h2>
+                            <p class="small text-muted mb-0">Glucose, creatinine, liver enzymes, kidney function</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#lipids-heart" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-heart d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Lipids &amp; Heart Health Labs</h2>
+                            <p class="small text-muted mb-0">Cholesterol, triglycerides, ApoB, Lipoprotein(a)</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#blood-count" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-droplet-half d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Blood Count (CBC)</h2>
+                            <p class="small text-muted mb-0">Hemoglobin, hematocrit, red and white cells, platelets</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#iron-inflammation-nutrients" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-capsule d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Iron, Inflammation &amp; Nutrients</h2>
+                            <p class="small text-muted mb-0">Iron panels, CRP, B vitamins, zinc</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#symptoms" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-clipboard-check d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Symptoms</h2>
+                            <p class="small text-muted mb-0">What people log day to day</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- A-Z listing -->
+        <section id="biometrics" class="az-section mb-5">
+            <h3 class="h4 mb-3">Biometrics &amp; Vitals</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="hrv.html">HRV (Heart Rate Variability)</a>
+                    <span class="term-def">The variation in time between heartbeats, tracked overnight as a signal of autonomic nervous system balance.</span>
+                </li>
+                <li>
+                    <a href="resting-heart-rate.html">Resting Heart Rate</a>
+                    <span class="term-def">Beats per minute at rest, typically measured overnight or first thing in the morning.</span>
+                </li>
+                <li>
+                    <a href="basal-body-temperature.html">Basal Body Temperature</a>
+                    <span class="term-def">Body temperature at rest, taken immediately on waking, used to spot the post-ovulation temperature shift.</span>
+                </li>
+                <!--
+                <li><a href="hrv-rmssd.html">HRV: RMSSD</a><span class="term-def">The specific HRV calculation most consumer wearables report.</span></li>
+                <li><a href="heart-rate.html">Heart Rate</a><span class="term-def">Beats per minute, measured continuously or on demand.</span></li>
+                -->
+                <li>
+                    <a href="wrist-temperature.html">Wrist Temperature</a>
+                    <span class="term-def">Skin temperature sampled at the wrist overnight by devices like Apple Watch.</span>
+                </li>
+                <li>
+                    <a href="blood-pressure.html">Blood Pressure</a>
+                    <span class="term-def">The force of blood against artery walls, recorded as systolic over diastolic.</span>
+                </li>
+                <li>
+                    <a href="respiratory-rate.html">Respiratory Rate</a>
+                    <span class="term-def">Breaths per minute at rest, tracked overnight by many wearables.</span>
+                </li>
+                <li>
+                    <a href="spo2.html">SpO2 (Blood Oxygen Saturation)</a>
+                    <span class="term-def">The percentage of oxygen-saturated hemoglobin in the blood.</span>
+                </li>
+                <li>
+                    <a href="vo2-max.html">VO2 Max</a>
+                    <span class="term-def">An estimate of the maximum rate of oxygen your body can use during exercise.</span>
+                </li>
+                <li>
+                    <a href="blood-glucose.html">Blood Glucose</a>
+                    <span class="term-def">The concentration of sugar in the blood, measured via fingerstick or continuous glucose monitor.</span>
+                </li>
+                <li>
+                    <a href="sleep-stages.html">Sleep Stages</a>
+                    <span class="term-def">REM, deep, and core sleep as estimated by wearable sensors overnight.</span>
+                </li>
+                <!--
+                <li><a href="sleep-latency.html">Sleep Latency</a><span class="term-def">How long it takes to fall asleep after getting into bed.</span></li>
+                <li><a href="body-temperature.html">Body Temperature</a><span class="term-def">Core body temperature, distinct from basal or skin temperature readings.</span></li>
+                <li><a href="walking-heart-rate.html">Walking Heart Rate</a><span class="term-def">Average heart rate during typical walking activity.</span></li>
+                <li><a href="active-energy.html">Active Energy</a><span class="term-def">Calories burned through movement above resting baseline.</span></li>
+                -->
+            </ul>
+        </section>
+
+        <section id="cycle-fertility" class="az-section mb-5">
+            <h3 class="h4 mb-3">Cycle &amp; Fertility</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="cervical-mucus.html">Cervical Mucus</a>
+                    <span class="term-def">Vaginal discharge that changes texture across the cycle and is used as a fertility-awareness sign.</span>
+                </li>
+                <li>
+                    <a href="lh-surge.html">LH Surge</a>
+                    <span class="term-def">The rapid rise in luteinizing hormone that triggers ovulation.</span>
+                </li>
+                <li>
+                    <a href="luteal-phase.html">Luteal Phase</a>
+                    <span class="term-def">The second half of the cycle, from ovulation to the next period.</span>
+                </li>
+                <li>
+                    <a href="follicular-phase.html">Follicular Phase</a>
+                    <span class="term-def">The first half of the cycle, from the start of the period to ovulation.</span>
+                </li>
+                <!--
+                <li><a href="cervical-position.html">Cervical Position</a><span class="term-def">Changes in cervix height, softness, and openness across the cycle.</span></li>
+                <li><a href="ovulation-test-opk.html">Ovulation Test (OPK)</a><span class="term-def">A urine test strip that detects the LH surge ahead of ovulation.</span></li>
+                <li><a href="period-flow.html">Period Flow</a><span class="term-def">The volume and pattern of menstrual bleeding, typically logged by intensity.</span></li>
+                <li><a href="ovulation.html">Ovulation</a><span class="term-def">The release of an egg from the ovary, roughly midway through a typical cycle.</span></li>
+                <li><a href="menstrual-phase.html">Menstrual Phase</a><span class="term-def">The days of active bleeding at the start of the cycle.</span></li>
+                <li><a href="fertile-window.html">Fertile Window</a><span class="term-def">The days in a cycle when pregnancy is biologically possible.</span></li>
+                <li><a href="cycle-length.html">Cycle Length</a><span class="term-def">The number of days from the first day of one period to the first day of the next.</span></li>
+                <li><a href="spotting-intermenstrual-bleeding.html">Spotting / Intermenstrual Bleeding</a><span class="term-def">Light bleeding that occurs outside the expected period.</span></li>
+                <li><a href="anovulatory-cycle.html">Anovulatory Cycle</a><span class="term-def">A cycle in which no egg is released.</span></li>
+                <li><a href="cycle-day.html">Cycle Day</a><span class="term-def">The count of days since the first day of the current period.</span></li>
+                -->
+            </ul>
+        </section>
+
+        <section id="hormones-labs" class="az-section mb-5">
+            <h3 class="h4 mb-3">Hormones &amp; Labs</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="amh.html">AMH (Anti-Müllerian Hormone)</a>
+                    <span class="term-def">A hormone produced by ovarian follicles, commonly used as a marker of ovarian reserve.</span>
+                </li>
+                <li>
+                    <a href="estradiol.html">Estradiol</a>
+                    <span class="term-def">The primary form of estrogen during reproductive years, rising and falling across the cycle.</span>
+                </li>
+                <li>
+                    <a href="tsh.html">TSH (Thyroid-Stimulating Hormone)</a>
+                    <span class="term-def">A pituitary hormone that signals the thyroid gland to produce thyroid hormone.</span>
+                </li>
+                <li>
+                    <a href="ferritin.html">Ferritin</a>
+                    <span class="term-def">A protein that stores iron, used as a lab marker of the body's iron reserves.</span>
+                </li>
+                <li>
+                    <a href="estrone.html">Estrone (E1)</a>
+                    <span class="term-def">A weaker form of estrogen, more prominent after menopause.</span>
+                </li>
+                <li>
+                    <a href="progesterone.html">Progesterone</a>
+                    <span class="term-def">The hormone that rises after ovulation and supports the luteal phase.</span>
+                </li>
+                <li>
+                    <a href="fsh.html">FSH (Follicle-Stimulating Hormone)</a>
+                    <span class="term-def">The pituitary hormone that stimulates follicle growth in the ovary.</span>
+                </li>
+                <li>
+                    <a href="testosterone.html">Testosterone</a>
+                    <span class="term-def">An androgen hormone present in smaller amounts in women, involved in libido and muscle maintenance.</span>
+                </li>
+                <li>
+                    <a href="free-testosterone.html">Free Testosterone</a>
+                    <span class="term-def">The portion of testosterone not bound to carrier proteins, considered biologically active.</span>
+                </li>
+                <li>
+                    <a href="shbg.html">SHBG (Sex Hormone-Binding Globulin)</a>
+                    <span class="term-def">A protein that binds sex hormones in the blood, affecting how much is free and active.</span>
+                </li>
+                <li>
+                    <a href="dhea-s.html">DHEA-S</a>
+                    <span class="term-def">An adrenal androgen used as a marker of adrenal hormone production.</span>
+                </li>
+                <li>
+                    <a href="prolactin.html">Prolactin</a>
+                    <span class="term-def">A pituitary hormone best known for its role in milk production.</span>
+                </li>
+                <li>
+                    <a href="cortisol.html">Cortisol</a>
+                    <span class="term-def">The primary stress hormone, produced by the adrenal glands on a daily rhythm.</span>
+                </li>
+                <li>
+                    <a href="insulin.html">Insulin</a>
+                    <span class="term-def">The hormone that regulates blood sugar by moving glucose into cells.</span>
+                </li>
+                <li>
+                    <a href="free-t4.html">Free T4 (Free Thyroxine)</a>
+                    <span class="term-def">The unbound, biologically active portion of thyroxine, the thyroid gland's main secreted hormone.</span>
+                </li>
+                <li>
+                    <a href="free-t3.html">Free T3 (Free Triiodothyronine)</a>
+                    <span class="term-def">The small unbound fraction of T3, the biologically active thyroid hormone, circulating in blood.</span>
+                </li>
+                <li>
+                    <a href="reverse-t3.html">Reverse T3 (rT3)</a>
+                    <span class="term-def">An inactive form of thyroid hormone produced when deiodinase enzymes break down T4.</span>
+                </li>
+                <li>
+                    <a href="thyroid-antibodies.html">Thyroid Antibodies (TPO &amp; Thyroglobulin Antibodies)</a>
+                    <span class="term-def">Immune proteins that target parts of the thyroid gland, used as markers of thyroid autoimmunity.</span>
+                </li>
+                <li>
+                    <a href="hcg.html">hCG (Human Chorionic Gonadotropin)</a>
+                    <span class="term-def">A hormone made by the developing placenta and detected by pregnancy tests.</span>
+                </li>
+                <li>
+                    <a href="pdg.html">PdG (Pregnanediol Glucuronide)</a>
+                    <span class="term-def">The urinary metabolite of progesterone, used to confirm ovulation without a blood draw.</span>
+                </li>
+                <li>
+                    <a href="e3g.html">E3G (Estrone-3-Glucuronide)</a>
+                    <span class="term-def">A urinary breakdown product of estradiol, read by at-home fertility monitors to track the estrogen curve.</span>
+                </li>
+                <li>
+                    <a href="17-oh-progesterone.html">17-OH Progesterone (17-Hydroxyprogesterone)</a>
+                    <span class="term-def">A steroid hormone made as an in-between step on the pathway from progesterone toward cortisol.</span>
+                </li>
+                <li>
+                    <a href="androstenedione.html">Androstenedione</a>
+                    <span class="term-def">An androgen produced by the ovaries and adrenal glands that serves as a precursor to testosterone and estrone.</span>
+                </li>
+                <li>
+                    <a href="urinalysis.html">Urinalysis</a>
+                    <span class="term-def">The standard urine test, done three ways: a visual color check, a chemical dipstick, and a microscope exam.</span>
+                </li>
+                <li>
+                    <a href="urine-hormone-metabolites.html">Urine Hormone Metabolites</a>
+                    <span class="term-def">Urinary cortisol, melatonin's breakdown product aMT6s, and the DNA-oxidation marker 8-OHdG.</span>
+                </li>
+                <!--
+                <li><a href="lh.html">LH (Luteinizing Hormone)</a><span class="term-def">The pituitary hormone whose surge triggers ovulation.</span></li>
+                <li><a href="hemoglobin.html">Hemoglobin</a><span class="term-def">The oxygen-carrying protein in red blood cells, part of standard blood-count testing.</span></li>
+                <li><a href="hba1c.html">HbA1c</a><span class="term-def">A blood test reflecting average blood sugar levels over roughly three months.</span></li>
+                <li><a href="hs-crp.html">hs-CRP</a><span class="term-def">A sensitive marker of inflammation in the blood.</span></li>
+                <li><a href="vitamin-d.html">Vitamin D</a><span class="term-def">A fat-soluble vitamin and hormone precursor, commonly tested via blood draw.</span></li>
+                <li><a href="b12.html">Vitamin B12</a><span class="term-def">A vitamin essential for nerve function and red blood cell production.</span></li>
+                <li><a href="folate.html">Folate</a><span class="term-def">A B vitamin involved in cell division, particularly relevant around conception.</span></li>
+                -->
+            </ul>
+        </section>
+
+        <section id="metabolic-kidney-liver" class="az-section mb-5">
+            <h3 class="h4 mb-3">Metabolic, Kidney &amp; Liver Labs</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="fasting-glucose.html">Fasting Glucose</a>
+                    <span class="term-def">Blood glucose measured after at least eight hours without food, a baseline reading on standard metabolic panels.</span>
+                </li>
+                <li>
+                    <a href="hba1c.html">HbA1c (Hemoglobin A1c)</a>
+                    <span class="term-def">The share of hemoglobin with glucose attached, reflecting average blood glucose over roughly three months.</span>
+                </li>
+                <li>
+                    <a href="c-peptide.html">C-Peptide</a>
+                    <span class="term-def">A protein chain the pancreas releases alongside insulin in equal amounts, measured by lab blood draw.</span>
+                </li>
+                <li>
+                    <a href="creatinine.html">Creatinine</a>
+                    <span class="term-def">A muscle waste product filtered by the kidneys, a standard part of routine bloodwork and kidney function estimates.</span>
+                </li>
+                <li>
+                    <a href="bun.html">BUN (Blood Urea Nitrogen)</a>
+                    <span class="term-def">The amount of urea nitrogen in the blood, a liver-made waste product filtered out by the kidneys.</span>
+                </li>
+                <li>
+                    <a href="egfr.html">eGFR (Estimated Glomerular Filtration Rate)</a>
+                    <span class="term-def">A calculated estimate of how fast the kidneys filter blood, derived from creatinine plus age and sex.</span>
+                </li>
+                <li>
+                    <a href="alt.html">ALT (Alanine Aminotransferase)</a>
+                    <span class="term-def">A liver enzyme that leaks into the blood when liver cells are stressed or damaged.</span>
+                </li>
+                <li>
+                    <a href="ast.html">AST (Aspartate Aminotransferase)</a>
+                    <span class="term-def">An enzyme found in the liver, heart, muscle, kidneys, and red blood cells, released when those cells are damaged.</span>
+                </li>
+                <li>
+                    <a href="alkaline-phosphatase.html">Alkaline Phosphatase (ALP)</a>
+                    <span class="term-def">An enzyme made mainly in the liver and bone, measured as part of a liver or metabolic panel.</span>
+                </li>
+                <li>
+                    <a href="bilirubin.html">Bilirubin (Total &amp; Direct)</a>
+                    <span class="term-def">A pigment made when the body breaks down heme from retired red blood cells, reported as total and direct fractions.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="lipids-heart" class="az-section mb-5">
+            <h3 class="h4 mb-3">Lipids &amp; Heart Health Labs</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="total-cholesterol.html">Total Cholesterol</a>
+                    <span class="term-def">The combined amount of cholesterol in the blood, counting the cholesterol carried by every type of lipoprotein particle, including HDL, LDL, and VLDL.</span>
+                </li>
+                <li>
+                    <a href="hdl.html">HDL Cholesterol</a>
+                    <span class="term-def">The cholesterol carried inside high-density lipoprotein particles, the smallest and densest of the lipoprotein particles that move fats through the bloodstream.</span>
+                </li>
+                <li>
+                    <a href="ldl.html">LDL Cholesterol</a>
+                    <span class="term-def">The cholesterol carried by low-density lipoprotein, the particle that delivers most of the cholesterol circulating in blood to tissues around the body.</span>
+                </li>
+                <li>
+                    <a href="triglycerides.html">Triglycerides</a>
+                    <span class="term-def">A fat molecule built from one glycerol backbone joined to three fatty acids, the body's main form of stored and transported fat.</span>
+                </li>
+                <li>
+                    <a href="apob.html">ApoB (Apolipoprotein B)</a>
+                    <span class="term-def">The main structural protein of LDL, VLDL, and related lipoprotein particles, with one ApoB molecule on each particle.</span>
+                </li>
+                <li>
+                    <a href="lipoprotein-a.html">Lipoprotein(a)</a>
+                    <span class="term-def">A cholesterol-carrying particle built like an LDL particle with an extra protein, apolipoprotein(a), bonded to its surface.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="blood-count" class="az-section mb-5">
+            <h3 class="h4 mb-3">Blood Count (CBC)</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="hemoglobin.html">Hemoglobin</a>
+                    <span class="term-def">The iron-containing protein inside red blood cells that picks up oxygen in the lungs and carries it to the rest of the body.</span>
+                </li>
+                <li>
+                    <a href="hematocrit.html">Hematocrit</a>
+                    <span class="term-def">The fraction of blood volume taken up by red blood cells, reported as a percentage.</span>
+                </li>
+                <li>
+                    <a href="red-blood-cells.html">Red Blood Cell (RBC) Count</a>
+                    <span class="term-def">The number of red blood cells, the body's oxygen-carrying cells, in a set volume of blood.</span>
+                </li>
+                <li>
+                    <a href="white-blood-cells.html">White Blood Cell (WBC) Count</a>
+                    <span class="term-def">The number of white blood cells, the cells of the immune system, in a set volume of blood.</span>
+                </li>
+                <li>
+                    <a href="platelets.html">Platelet Count</a>
+                    <span class="term-def">The number of platelets, the small cell fragments that clump to stop bleeding, in a set volume of blood.</span>
+                </li>
+                <li>
+                    <a href="mcv.html">MCV (Mean Corpuscular Volume)</a>
+                    <span class="term-def">The average size of red blood cells, one of the red cell indices reported as part of a complete blood count.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="iron-inflammation-nutrients" class="az-section mb-5">
+            <h3 class="h4 mb-3">Iron, Inflammation &amp; Nutrients</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="serum-iron.html">Serum Iron</a>
+                    <span class="term-def">The iron circulating in blood, bound to the carrier protein transferrin, measured by blood draw.</span>
+                </li>
+                <li>
+                    <a href="tibc-transferrin-saturation.html">TIBC &amp; Transferrin Saturation</a>
+                    <span class="term-def">How much iron the blood's transferrin can carry (TIBC) and the share of that capacity currently in use.</span>
+                </li>
+                <li>
+                    <a href="hs-crp.html">hs-CRP (High-Sensitivity C-Reactive Protein)</a>
+                    <span class="term-def">A high-sensitivity blood test for C-reactive protein, a liver-made marker of inflammation.</span>
+                </li>
+                <li>
+                    <a href="esr.html">ESR (Erythrocyte Sedimentation Rate)</a>
+                    <span class="term-def">How far red blood cells settle in a tube of blood over one hour, an older marker of inflammation.</span>
+                </li>
+                <li>
+                    <a href="homocysteine.html">Homocysteine</a>
+                    <span class="term-def">An amino acid produced during methionine metabolism, kept in check by B12, folate, and B6.</span>
+                </li>
+                <li>
+                    <a href="vitamin-d.html">Vitamin D (25-Hydroxyvitamin D)</a>
+                    <span class="term-def">The standard blood test for vitamin D status, measuring the storage form circulating in blood.</span>
+                </li>
+                <li>
+                    <a href="b12.html">Vitamin B12</a>
+                    <span class="term-def">A cobalt-containing vitamin the body needs for DNA synthesis and red blood cell formation.</span>
+                </li>
+                <li>
+                    <a href="folate.html">Folate (Vitamin B9)</a>
+                    <span class="term-def">The B vitamin behind DNA synthesis and new cell formation.</span>
+                </li>
+                <li>
+                    <a href="vitamin-a.html">Vitamin A (Retinol)</a>
+                    <span class="term-def">A fat-soluble vitamin measured on lab panels as serum retinol.</span>
+                </li>
+                <li>
+                    <a href="zinc.html">Zinc</a>
+                    <span class="term-def">An essential trace mineral behind hundreds of enzymes, with no dedicated body store.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="symptoms" class="az-section mb-5">
+            <h3 class="h4 mb-3">Symptoms</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="hot-flashes.html">Hot Flashes</a>
+                    <span class="term-def">A sudden wave of heat across the face, neck, and chest, often with sweating, most common during the menopause transition.</span>
+                </li>
+                <li>
+                    <a href="night-sweats.html">Night Sweats</a>
+                    <span class="term-def">Episodes of heavy sweating during sleep, sharing the same physiology as hot flashes.</span>
+                </li>
+                <li>
+                    <a href="hirsutism.html">Hirsutism</a>
+                    <span class="term-def">Coarse, pigmented hair growth in areas where growth depends on androgens, such as the face and chest.</span>
+                </li>
+                <li>
+                    <a href="acne-hormonal.html">Hormonal Acne</a>
+                    <span class="term-def">Acne that tracks with hormone shifts, driven by androgen receptors in sebaceous glands.</span>
+                </li>
+                <li>
+                    <a href="hair-thinning.html">Hair Thinning</a>
+                    <span class="term-def">A drop in visible hair density on the scalp as fewer follicles grow at once.</span>
+                </li>
+                <li>
+                    <a href="bloating.html">Bloating</a>
+                    <span class="term-def">A feeling of abdominal fullness or swelling that shifts across the menstrual cycle.</span>
+                </li>
+                <li>
+                    <a href="breast-tenderness.html">Breast Tenderness</a>
+                    <span class="term-def">Soreness or heaviness in breast tissue that often builds during the luteal phase.</span>
+                </li>
+                <li>
+                    <a href="cramps-dysmenorrhea.html">Cramps (Dysmenorrhea)</a>
+                    <span class="term-def">Crampy lower-abdominal pain around the start of a period, driven by prostaglandins that make the uterus contract.</span>
+                </li>
+                <li>
+                    <a href="fatigue.html">Fatigue</a>
+                    <span class="term-def">A feeling of tiredness or low energy that doesn't fully lift with rest.</span>
+                </li>
+                <li>
+                    <a href="mood-swings.html">Mood Swings</a>
+                    <span class="term-def">Noticeable shifts in emotional state over hours or days, logged as a subjective symptom.</span>
+                </li>
+                <li>
+                    <a href="libido-sex-drive.html">Libido / Sex Drive</a>
+                    <span class="term-def">Overall level of sexual desire, shaped by hormones, stress, sleep, and life context.</span>
+                </li>
+                <li>
+                    <a href="nausea.html">Nausea</a>
+                    <span class="term-def">A queasy, unsettled stomach sensation that can precede vomiting.</span>
+                </li>
+                <li>
+                    <a href="headache-migraine.html">Headache / Migraine</a>
+                    <span class="term-def">Head pain that, for many, clusters in the days just before and during menstruation.</span>
+                </li>
+                <li>
+                    <a href="insomnia.html">Insomnia</a>
+                    <span class="term-def">Difficulty falling asleep, staying asleep, or getting sleep that feels restful.</span>
+                </li>
+                <li>
+                    <a href="heart-palpitations.html">Heart Palpitations</a>
+                    <span class="term-def">The felt awareness of your own heartbeat, described as fast, fluttering, or pounding.</span>
+                </li>
+                <li>
+                    <a href="cold-intolerance.html">Cold Intolerance</a>
+                    <span class="term-def">An unusual sensitivity to cold, feeling cold when others are comfortable.</span>
+                </li>
+                <li>
+                    <a href="restless-legs.html">Restless Legs</a>
+                    <span class="term-def">An urge to move the legs at rest, often easing with movement.</span>
+                </li>
+                <li>
+                    <a href="discharge.html">Discharge</a>
+                    <span class="term-def">Vaginal fluid whose amount and texture shift across the menstrual cycle.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Methodology -->
+        <section class="mb-5">
+            <div class="methodology-box">
+                <h2 class="h5 fw-bold mb-3"><i class="bi bi-journal-check me-2"></i>How We Source This</h2>
+                <p class="mb-2">Every physiological claim in this encyclopedia is cited to a real, verifiable source: peer-reviewed research where possible, or established references like NIH, StatPearls, or physiology textbooks for basic mechanism claims. If a claim can't be traced to a real source, we cut it rather than soften the citation.</p>
+                <p class="mb-2">Entries describe what a metric is, how it's measured, and what population-level research shows. They do not state clinical or lab reference ranges, do not interpret what a specific value means for an individual reader, and do not suggest testing or monitoring action. For anything about your own results, talk to your doctor.</p>
+                <p class="mb-0">Every reference is checked to confirm it resolves to a real title, authors, and journal, and that it actually supports the sentence it's attached to. Entries carry a review date, and we revisit them as the underlying research changes.</p>
+            </div>
+        </section>
+
+        <div class="text-center mt-5 p-4 bg-light rounded">
+            <h2 class="h4 mb-3">Go Go Gaia tracks these metrics in one place</h2>
+            <p>Connect your wearable, log by hand, or upload a lab PDF. Go Go Gaia lines it up against your cycle so you can see how it moves over time.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg"><i class="bi bi-apple me-2"></i>Get Go Go Gaia</a>
+        </div>
+
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2025 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
