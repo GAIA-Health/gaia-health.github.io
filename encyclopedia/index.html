@@ -39,128 +39,578 @@
     <!-- Structured Data: DefinedTermSet -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "DefinedTermSet",
-      "@id": "https://www.go-go-gaia.com/encyclopedia/#termset",
-      "name": "Go Go Gaia Health Metrics Encyclopedia",
-      "description": "Sourced, plain-language definitions for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks.",
-      "url": "https://www.go-go-gaia.com/encyclopedia/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Holland Neurotech Inc.",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.go-go-gaia.com/Logo1.png"
-        }
-      },
-      "hasDefinedTerm": [
-        { "@type": "DefinedTerm", "name": "HRV (Heart Rate Variability)", "url": "https://www.go-go-gaia.com/encyclopedia/hrv.html" },
-        { "@type": "DefinedTerm", "name": "Resting Heart Rate", "url": "https://www.go-go-gaia.com/encyclopedia/resting-heart-rate.html" },
-        { "@type": "DefinedTerm", "name": "Basal Body Temperature", "url": "https://www.go-go-gaia.com/encyclopedia/basal-body-temperature.html" },
-        { "@type": "DefinedTerm", "name": "Cervical Mucus", "url": "https://www.go-go-gaia.com/encyclopedia/cervical-mucus.html" },
-        { "@type": "DefinedTerm", "name": "AMH (Anti-Müllerian Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/amh.html" },
-        { "@type": "DefinedTerm", "name": "Estradiol", "url": "https://www.go-go-gaia.com/encyclopedia/estradiol.html" },
-        { "@type": "DefinedTerm", "name": "TSH (Thyroid-Stimulating Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/tsh.html" },
-        { "@type": "DefinedTerm", "name": "Ferritin", "url": "https://www.go-go-gaia.com/encyclopedia/ferritin.html" },
-        { "@type": "DefinedTerm", "name": "Wrist Temperature", "url": "https://www.go-go-gaia.com/encyclopedia/wrist-temperature.html" },
-        { "@type": "DefinedTerm", "name": "Blood Pressure", "url": "https://www.go-go-gaia.com/encyclopedia/blood-pressure.html" },
-        { "@type": "DefinedTerm", "name": "Respiratory Rate", "url": "https://www.go-go-gaia.com/encyclopedia/respiratory-rate.html" },
-        { "@type": "DefinedTerm", "name": "SpO2 (Blood Oxygen Saturation)", "url": "https://www.go-go-gaia.com/encyclopedia/spo2.html" },
-        { "@type": "DefinedTerm", "name": "VO2 Max", "url": "https://www.go-go-gaia.com/encyclopedia/vo2-max.html" },
-        { "@type": "DefinedTerm", "name": "Blood Glucose", "url": "https://www.go-go-gaia.com/encyclopedia/blood-glucose.html" },
-        { "@type": "DefinedTerm", "name": "Sleep Stages", "url": "https://www.go-go-gaia.com/encyclopedia/sleep-stages.html" },
-        { "@type": "DefinedTerm", "name": "LH Surge", "url": "https://www.go-go-gaia.com/encyclopedia/lh-surge.html" },
-        { "@type": "DefinedTerm", "name": "Luteal Phase", "url": "https://www.go-go-gaia.com/encyclopedia/luteal-phase.html" },
-        { "@type": "DefinedTerm", "name": "Follicular Phase", "url": "https://www.go-go-gaia.com/encyclopedia/follicular-phase.html" },
-        { "@type": "DefinedTerm", "name": "Progesterone", "url": "https://www.go-go-gaia.com/encyclopedia/progesterone.html" },
-        { "@type": "DefinedTerm", "name": "FSH (Follicle-Stimulating Hormone)", "url": "https://www.go-go-gaia.com/encyclopedia/fsh.html" },
-        { "@type": "DefinedTerm", "name": "Testosterone", "url": "https://www.go-go-gaia.com/encyclopedia/testosterone.html" },
-        { "@type": "DefinedTerm", "name": "Free Testosterone", "url": "https://www.go-go-gaia.com/encyclopedia/free-testosterone.html" },
-        { "@type": "DefinedTerm", "name": "SHBG (Sex Hormone-Binding Globulin)", "url": "https://www.go-go-gaia.com/encyclopedia/shbg.html" },
-        { "@type": "DefinedTerm", "name": "Cortisol", "url": "https://www.go-go-gaia.com/encyclopedia/cortisol.html" },
-        { "@type": "DefinedTerm", "name": "Prolactin", "url": "https://www.go-go-gaia.com/encyclopedia/prolactin.html" },
-        { "@type": "DefinedTerm", "name": "DHEA-S", "url": "https://www.go-go-gaia.com/encyclopedia/dhea-s.html" },
-        { "@type": "DefinedTerm", "name": "Insulin", "url": "https://www.go-go-gaia.com/encyclopedia/insulin.html" },
-        { "@type": "DefinedTerm", "name": "Estrone (E1)", "url": "https://www.go-go-gaia.com/encyclopedia/estrone.html" },
-        { "@type": "DefinedTerm", "name": "Free T4 (Free Thyroxine)", "url": "https://www.go-go-gaia.com/encyclopedia/free-t4.html" },
-        { "@type": "DefinedTerm", "name": "Free T3 (Free Triiodothyronine)", "url": "https://www.go-go-gaia.com/encyclopedia/free-t3.html" },
-        { "@type": "DefinedTerm", "name": "Reverse T3 (rT3)", "url": "https://www.go-go-gaia.com/encyclopedia/reverse-t3.html" },
-        { "@type": "DefinedTerm", "name": "Thyroid Antibodies (TPO & Thyroglobulin Antibodies)", "url": "https://www.go-go-gaia.com/encyclopedia/thyroid-antibodies.html" },
-        { "@type": "DefinedTerm", "name": "hCG (Human Chorionic Gonadotropin)", "url": "https://www.go-go-gaia.com/encyclopedia/hcg.html" },
-        { "@type": "DefinedTerm", "name": "PdG (Pregnanediol Glucuronide)", "url": "https://www.go-go-gaia.com/encyclopedia/pdg.html" },
-        { "@type": "DefinedTerm", "name": "E3G (Estrone-3-Glucuronide)", "url": "https://www.go-go-gaia.com/encyclopedia/e3g.html" },
-        { "@type": "DefinedTerm", "name": "17-OH Progesterone (17-Hydroxyprogesterone)", "url": "https://www.go-go-gaia.com/encyclopedia/17-oh-progesterone.html" },
-        { "@type": "DefinedTerm", "name": "Androstenedione", "url": "https://www.go-go-gaia.com/encyclopedia/androstenedione.html" },
-        { "@type": "DefinedTerm", "name": "Fasting Glucose", "url": "https://www.go-go-gaia.com/encyclopedia/fasting-glucose.html" },
-        { "@type": "DefinedTerm", "name": "HbA1c (Hemoglobin A1c)", "url": "https://www.go-go-gaia.com/encyclopedia/hba1c.html" },
-        { "@type": "DefinedTerm", "name": "C-Peptide", "url": "https://www.go-go-gaia.com/encyclopedia/c-peptide.html" },
-        { "@type": "DefinedTerm", "name": "Creatinine", "url": "https://www.go-go-gaia.com/encyclopedia/creatinine.html" },
-        { "@type": "DefinedTerm", "name": "BUN (Blood Urea Nitrogen)", "url": "https://www.go-go-gaia.com/encyclopedia/bun.html" },
-        { "@type": "DefinedTerm", "name": "eGFR (Estimated Glomerular Filtration Rate)", "url": "https://www.go-go-gaia.com/encyclopedia/egfr.html" },
-        { "@type": "DefinedTerm", "name": "ALT (Alanine Aminotransferase)", "url": "https://www.go-go-gaia.com/encyclopedia/alt.html" },
-        { "@type": "DefinedTerm", "name": "AST (Aspartate Aminotransferase)", "url": "https://www.go-go-gaia.com/encyclopedia/ast.html" },
-        { "@type": "DefinedTerm", "name": "Alkaline Phosphatase (ALP)", "url": "https://www.go-go-gaia.com/encyclopedia/alkaline-phosphatase.html" },
-        { "@type": "DefinedTerm", "name": "Bilirubin (Total & Direct)", "url": "https://www.go-go-gaia.com/encyclopedia/bilirubin.html" },
-        { "@type": "DefinedTerm", "name": "Total Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/total-cholesterol.html" },
-        { "@type": "DefinedTerm", "name": "HDL Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/hdl.html" },
-        { "@type": "DefinedTerm", "name": "LDL Cholesterol", "url": "https://www.go-go-gaia.com/encyclopedia/ldl.html" },
-        { "@type": "DefinedTerm", "name": "Triglycerides", "url": "https://www.go-go-gaia.com/encyclopedia/triglycerides.html" },
-        { "@type": "DefinedTerm", "name": "ApoB (Apolipoprotein B)", "url": "https://www.go-go-gaia.com/encyclopedia/apob.html" },
-        { "@type": "DefinedTerm", "name": "Lipoprotein(a)", "url": "https://www.go-go-gaia.com/encyclopedia/lipoprotein-a.html" },
-        { "@type": "DefinedTerm", "name": "Hemoglobin", "url": "https://www.go-go-gaia.com/encyclopedia/hemoglobin.html" },
-        { "@type": "DefinedTerm", "name": "Hematocrit", "url": "https://www.go-go-gaia.com/encyclopedia/hematocrit.html" },
-        { "@type": "DefinedTerm", "name": "Red Blood Cell (RBC) Count", "url": "https://www.go-go-gaia.com/encyclopedia/red-blood-cells.html" },
-        { "@type": "DefinedTerm", "name": "White Blood Cell (WBC) Count", "url": "https://www.go-go-gaia.com/encyclopedia/white-blood-cells.html" },
-        { "@type": "DefinedTerm", "name": "Platelet Count", "url": "https://www.go-go-gaia.com/encyclopedia/platelets.html" },
-        { "@type": "DefinedTerm", "name": "MCV (Mean Corpuscular Volume)", "url": "https://www.go-go-gaia.com/encyclopedia/mcv.html" },
-        { "@type": "DefinedTerm", "name": "Serum Iron", "url": "https://www.go-go-gaia.com/encyclopedia/serum-iron.html" },
-        { "@type": "DefinedTerm", "name": "TIBC & Transferrin Saturation", "url": "https://www.go-go-gaia.com/encyclopedia/tibc-transferrin-saturation.html" },
-        { "@type": "DefinedTerm", "name": "hs-CRP (High-Sensitivity C-Reactive Protein)", "url": "https://www.go-go-gaia.com/encyclopedia/hs-crp.html" },
-        { "@type": "DefinedTerm", "name": "ESR (Erythrocyte Sedimentation Rate)", "url": "https://www.go-go-gaia.com/encyclopedia/esr.html" },
-        { "@type": "DefinedTerm", "name": "Homocysteine", "url": "https://www.go-go-gaia.com/encyclopedia/homocysteine.html" },
-        { "@type": "DefinedTerm", "name": "Vitamin D (25-Hydroxyvitamin D)", "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-d.html" },
-        { "@type": "DefinedTerm", "name": "Vitamin B12", "url": "https://www.go-go-gaia.com/encyclopedia/b12.html" },
-        { "@type": "DefinedTerm", "name": "Folate (Vitamin B9)", "url": "https://www.go-go-gaia.com/encyclopedia/folate.html" },
-        { "@type": "DefinedTerm", "name": "Vitamin A (Retinol)", "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-a.html" },
-        { "@type": "DefinedTerm", "name": "Zinc", "url": "https://www.go-go-gaia.com/encyclopedia/zinc.html" },
-        { "@type": "DefinedTerm", "name": "Urinalysis", "url": "https://www.go-go-gaia.com/encyclopedia/urinalysis.html" },
-        { "@type": "DefinedTerm", "name": "Urine Hormone Metabolites", "url": "https://www.go-go-gaia.com/encyclopedia/urine-hormone-metabolites.html" },
-        { "@type": "DefinedTerm", "name": "Hot Flashes", "url": "https://www.go-go-gaia.com/encyclopedia/hot-flashes.html" },
-        { "@type": "DefinedTerm", "name": "Night Sweats", "url": "https://www.go-go-gaia.com/encyclopedia/night-sweats.html" },
-        { "@type": "DefinedTerm", "name": "Hirsutism", "url": "https://www.go-go-gaia.com/encyclopedia/hirsutism.html" },
-        { "@type": "DefinedTerm", "name": "Hormonal Acne", "url": "https://www.go-go-gaia.com/encyclopedia/acne-hormonal.html" },
-        { "@type": "DefinedTerm", "name": "Hair Thinning", "url": "https://www.go-go-gaia.com/encyclopedia/hair-thinning.html" },
-        { "@type": "DefinedTerm", "name": "Bloating", "url": "https://www.go-go-gaia.com/encyclopedia/bloating.html" },
-        { "@type": "DefinedTerm", "name": "Breast Tenderness", "url": "https://www.go-go-gaia.com/encyclopedia/breast-tenderness.html" },
-        { "@type": "DefinedTerm", "name": "Cramps (Dysmenorrhea)", "url": "https://www.go-go-gaia.com/encyclopedia/cramps-dysmenorrhea.html" },
-        { "@type": "DefinedTerm", "name": "Fatigue", "url": "https://www.go-go-gaia.com/encyclopedia/fatigue.html" },
-        { "@type": "DefinedTerm", "name": "Mood Swings", "url": "https://www.go-go-gaia.com/encyclopedia/mood-swings.html" },
-        { "@type": "DefinedTerm", "name": "Libido / Sex Drive", "url": "https://www.go-go-gaia.com/encyclopedia/libido-sex-drive.html" },
-        { "@type": "DefinedTerm", "name": "Nausea", "url": "https://www.go-go-gaia.com/encyclopedia/nausea.html" },
-        { "@type": "DefinedTerm", "name": "Headache / Migraine", "url": "https://www.go-go-gaia.com/encyclopedia/headache-migraine.html" },
-        { "@type": "DefinedTerm", "name": "Insomnia", "url": "https://www.go-go-gaia.com/encyclopedia/insomnia.html" },
-        { "@type": "DefinedTerm", "name": "Heart Palpitations", "url": "https://www.go-go-gaia.com/encyclopedia/heart-palpitations.html" },
-        { "@type": "DefinedTerm", "name": "Cold Intolerance", "url": "https://www.go-go-gaia.com/encyclopedia/cold-intolerance.html" },
-        { "@type": "DefinedTerm", "name": "Restless Legs", "url": "https://www.go-go-gaia.com/encyclopedia/restless-legs.html" },
-        { "@type": "DefinedTerm", "name": "Discharge", "url": "https://www.go-go-gaia.com/encyclopedia/discharge.html" },
-        { "@type": "DefinedTerm", "name": "HRV: RMSSD", "url": "https://www.go-go-gaia.com/encyclopedia/hrv-rmssd.html" },
-        { "@type": "DefinedTerm", "name": "Heart Rate", "url": "https://www.go-go-gaia.com/encyclopedia/heart-rate.html" },
-        { "@type": "DefinedTerm", "name": "Body Temperature", "url": "https://www.go-go-gaia.com/encyclopedia/body-temperature.html" },
-        { "@type": "DefinedTerm", "name": "Active Energy (Calories Burned)", "url": "https://www.go-go-gaia.com/encyclopedia/active-energy.html" },
-        { "@type": "DefinedTerm", "name": "Step Count", "url": "https://www.go-go-gaia.com/encyclopedia/steps.html" },
-        { "@type": "DefinedTerm", "name": "Sleep Latency (Time to Fall Asleep)", "url": "https://www.go-go-gaia.com/encyclopedia/sleep-latency.html" },
-        { "@type": "DefinedTerm", "name": "Cervical Position", "url": "https://www.go-go-gaia.com/encyclopedia/cervical-position.html" },
-        { "@type": "DefinedTerm", "name": "Ovulation Test (OPK)", "url": "https://www.go-go-gaia.com/encyclopedia/ovulation-test-opk.html" },
-        { "@type": "DefinedTerm", "name": "Period Flow", "url": "https://www.go-go-gaia.com/encyclopedia/period-flow.html" },
-        { "@type": "DefinedTerm", "name": "Ovulation", "url": "https://www.go-go-gaia.com/encyclopedia/ovulation.html" },
-        { "@type": "DefinedTerm", "name": "Menstrual Phase", "url": "https://www.go-go-gaia.com/encyclopedia/menstrual-phase.html" },
-        { "@type": "DefinedTerm", "name": "Fertile Window", "url": "https://www.go-go-gaia.com/encyclopedia/fertile-window.html" },
-        { "@type": "DefinedTerm", "name": "Cycle Length", "url": "https://www.go-go-gaia.com/encyclopedia/cycle-length.html" },
-        { "@type": "DefinedTerm", "name": "Spotting & Intermenstrual Bleeding", "url": "https://www.go-go-gaia.com/encyclopedia/spotting-intermenstrual-bleeding.html" },
-        { "@type": "DefinedTerm", "name": "Anovulatory Cycle", "url": "https://www.go-go-gaia.com/encyclopedia/anovulatory-cycle.html" },
-        { "@type": "DefinedTerm", "name": "Mindful Minutes", "url": "https://www.go-go-gaia.com/encyclopedia/mindful-minutes.html" }
-      ]
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://www.go-go-gaia.com/encyclopedia/#termset",
+  "name": "Go Go Gaia Health Metrics Encyclopedia",
+  "description": "Sourced, plain-language definitions for the biometrics, cycle signals, hormones, and symptoms Go Go Gaia tracks.",
+  "url": "https://www.go-go-gaia.com/encyclopedia/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Holland Neurotech Inc.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.go-go-gaia.com/Logo1.png"
     }
+  },
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "HRV (Heart Rate Variability)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hrv.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Resting Heart Rate",
+      "url": "https://www.go-go-gaia.com/encyclopedia/resting-heart-rate.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Basal Body Temperature",
+      "url": "https://www.go-go-gaia.com/encyclopedia/basal-body-temperature.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cervical Mucus",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cervical-mucus.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AMH (Anti-Müllerian Hormone)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/amh.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Estradiol",
+      "url": "https://www.go-go-gaia.com/encyclopedia/estradiol.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "TSH (Thyroid-Stimulating Hormone)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/tsh.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ferritin",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ferritin.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Wrist Temperature",
+      "url": "https://www.go-go-gaia.com/encyclopedia/wrist-temperature.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Blood Pressure",
+      "url": "https://www.go-go-gaia.com/encyclopedia/blood-pressure.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Respiratory Rate",
+      "url": "https://www.go-go-gaia.com/encyclopedia/respiratory-rate.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "SpO2 (Blood Oxygen Saturation)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/spo2.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "VO2 Max",
+      "url": "https://www.go-go-gaia.com/encyclopedia/vo2-max.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Blood Glucose",
+      "url": "https://www.go-go-gaia.com/encyclopedia/blood-glucose.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Sleep Stages",
+      "url": "https://www.go-go-gaia.com/encyclopedia/sleep-stages.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "LH Surge",
+      "url": "https://www.go-go-gaia.com/encyclopedia/lh-surge.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Luteal Phase",
+      "url": "https://www.go-go-gaia.com/encyclopedia/luteal-phase.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Follicular Phase",
+      "url": "https://www.go-go-gaia.com/encyclopedia/follicular-phase.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Progesterone",
+      "url": "https://www.go-go-gaia.com/encyclopedia/progesterone.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "FSH (Follicle-Stimulating Hormone)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fsh.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Testosterone",
+      "url": "https://www.go-go-gaia.com/encyclopedia/testosterone.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Free Testosterone",
+      "url": "https://www.go-go-gaia.com/encyclopedia/free-testosterone.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "SHBG (Sex Hormone-Binding Globulin)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/shbg.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cortisol",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cortisol.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Prolactin",
+      "url": "https://www.go-go-gaia.com/encyclopedia/prolactin.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "DHEA-S",
+      "url": "https://www.go-go-gaia.com/encyclopedia/dhea-s.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Insulin",
+      "url": "https://www.go-go-gaia.com/encyclopedia/insulin.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Estrone (E1)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/estrone.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Free T4 (Free Thyroxine)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/free-t4.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Free T3 (Free Triiodothyronine)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/free-t3.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Reverse T3 (rT3)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/reverse-t3.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Thyroid Antibodies (TPO & Thyroglobulin Antibodies)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/thyroid-antibodies.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "hCG (Human Chorionic Gonadotropin)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hcg.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "PdG (Pregnanediol Glucuronide)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/pdg.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "E3G (Estrone-3-Glucuronide)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/e3g.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "17-OH Progesterone (17-Hydroxyprogesterone)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/17-oh-progesterone.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Androstenedione",
+      "url": "https://www.go-go-gaia.com/encyclopedia/androstenedione.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fasting Glucose",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fasting-glucose.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "HbA1c (Hemoglobin A1c)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hba1c.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "C-Peptide",
+      "url": "https://www.go-go-gaia.com/encyclopedia/c-peptide.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Creatinine",
+      "url": "https://www.go-go-gaia.com/encyclopedia/creatinine.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "BUN (Blood Urea Nitrogen)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/bun.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "eGFR (Estimated Glomerular Filtration Rate)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/egfr.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ALT (Alanine Aminotransferase)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/alt.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AST (Aspartate Aminotransferase)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ast.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Alkaline Phosphatase (ALP)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/alkaline-phosphatase.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bilirubin (Total & Direct)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/bilirubin.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Total Cholesterol",
+      "url": "https://www.go-go-gaia.com/encyclopedia/total-cholesterol.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "HDL Cholesterol",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hdl.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "LDL Cholesterol",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ldl.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Triglycerides",
+      "url": "https://www.go-go-gaia.com/encyclopedia/triglycerides.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ApoB (Apolipoprotein B)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/apob.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Lipoprotein(a)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/lipoprotein-a.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hemoglobin",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hemoglobin.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hematocrit",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hematocrit.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Red Blood Cell (RBC) Count",
+      "url": "https://www.go-go-gaia.com/encyclopedia/red-blood-cells.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "White Blood Cell (WBC) Count",
+      "url": "https://www.go-go-gaia.com/encyclopedia/white-blood-cells.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Platelet Count",
+      "url": "https://www.go-go-gaia.com/encyclopedia/platelets.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "MCV (Mean Corpuscular Volume)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/mcv.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Serum Iron",
+      "url": "https://www.go-go-gaia.com/encyclopedia/serum-iron.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "TIBC & Transferrin Saturation",
+      "url": "https://www.go-go-gaia.com/encyclopedia/tibc-transferrin-saturation.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "hs-CRP (High-Sensitivity C-Reactive Protein)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hs-crp.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ESR (Erythrocyte Sedimentation Rate)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/esr.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Homocysteine",
+      "url": "https://www.go-go-gaia.com/encyclopedia/homocysteine.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Vitamin D (25-Hydroxyvitamin D)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-d.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Vitamin B12",
+      "url": "https://www.go-go-gaia.com/encyclopedia/b12.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Folate (Vitamin B9)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/folate.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Vitamin A (Retinol)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/vitamin-a.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Zinc",
+      "url": "https://www.go-go-gaia.com/encyclopedia/zinc.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Urinalysis",
+      "url": "https://www.go-go-gaia.com/encyclopedia/urinalysis.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Urine Hormone Metabolites",
+      "url": "https://www.go-go-gaia.com/encyclopedia/urine-hormone-metabolites.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hot Flashes",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hot-flashes.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Night Sweats",
+      "url": "https://www.go-go-gaia.com/encyclopedia/night-sweats.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hirsutism",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hirsutism.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hormonal Acne",
+      "url": "https://www.go-go-gaia.com/encyclopedia/acne-hormonal.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hair Thinning",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hair-thinning.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bloating",
+      "url": "https://www.go-go-gaia.com/encyclopedia/bloating.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Breast Tenderness",
+      "url": "https://www.go-go-gaia.com/encyclopedia/breast-tenderness.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cramps (Dysmenorrhea)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cramps-dysmenorrhea.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fatigue",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fatigue.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Mood Swings",
+      "url": "https://www.go-go-gaia.com/encyclopedia/mood-swings.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Libido / Sex Drive",
+      "url": "https://www.go-go-gaia.com/encyclopedia/libido-sex-drive.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Nausea",
+      "url": "https://www.go-go-gaia.com/encyclopedia/nausea.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Headache / Migraine",
+      "url": "https://www.go-go-gaia.com/encyclopedia/headache-migraine.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Insomnia",
+      "url": "https://www.go-go-gaia.com/encyclopedia/insomnia.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Heart Palpitations",
+      "url": "https://www.go-go-gaia.com/encyclopedia/heart-palpitations.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cold Intolerance",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cold-intolerance.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Restless Legs",
+      "url": "https://www.go-go-gaia.com/encyclopedia/restless-legs.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Discharge",
+      "url": "https://www.go-go-gaia.com/encyclopedia/discharge.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "HRV: RMSSD",
+      "url": "https://www.go-go-gaia.com/encyclopedia/hrv-rmssd.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Heart Rate",
+      "url": "https://www.go-go-gaia.com/encyclopedia/heart-rate.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Body Temperature",
+      "url": "https://www.go-go-gaia.com/encyclopedia/body-temperature.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Active Energy (Calories Burned)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/active-energy.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Step Count",
+      "url": "https://www.go-go-gaia.com/encyclopedia/steps.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Sleep Latency (Time to Fall Asleep)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/sleep-latency.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cervical Position",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cervical-position.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ovulation Test (OPK)",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ovulation-test-opk.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Period Flow",
+      "url": "https://www.go-go-gaia.com/encyclopedia/period-flow.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Ovulation",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ovulation.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Menstrual Phase",
+      "url": "https://www.go-go-gaia.com/encyclopedia/menstrual-phase.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fertile Window",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fertile-window.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cycle Length",
+      "url": "https://www.go-go-gaia.com/encyclopedia/cycle-length.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Spotting & Intermenstrual Bleeding",
+      "url": "https://www.go-go-gaia.com/encyclopedia/spotting-intermenstrual-bleeding.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Anovulatory Cycle",
+      "url": "https://www.go-go-gaia.com/encyclopedia/anovulatory-cycle.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Mindful Minutes",
+      "url": "https://www.go-go-gaia.com/encyclopedia/mindful-minutes.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fetal Heart Rate",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fetal-heart-rate.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fundal Height",
+      "url": "https://www.go-go-gaia.com/encyclopedia/fundal-height.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Antral Follicle Count",
+      "url": "https://www.go-go-gaia.com/encyclopedia/follicle-count.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Endometrial Thickness",
+      "url": "https://www.go-go-gaia.com/encyclopedia/endometrial-thickness.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Embryo Grading",
+      "url": "https://www.go-go-gaia.com/encyclopedia/embryo-grading.html"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "IVF Cycle Numbers",
+      "url": "https://www.go-go-gaia.com/encyclopedia/ivf-cycle-numbers.html"
+    }
+  ]
+}
     </script>
 
     <!-- Structured Data: Breadcrumb -->
@@ -1007,6 +1457,15 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#pregnancy-ivf" class="text-decoration-none text-dark">
+                        <div class="term-category-card text-center">
+                            <i class="bi bi-balloon-heart d-block mb-2"></i>
+                            <h2 class="h6 fw-bold mb-1">Pregnancy &amp; IVF</h2>
+                            <p class="small text-muted mb-0">Values recorded from prenatal and clinic visits</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -1142,6 +1601,36 @@
                 <!--
                 <li><a href="cycle-day.html">Cycle Day</a><span class="term-def">The count of days since the first day of the current period.</span></li>
                 -->
+            </ul>
+        </section>
+
+        <section id="pregnancy-ivf" class="az-section mb-5">
+            <h3 class="h4 mb-3">Pregnancy &amp; IVF</h3>
+            <ul class="term-list">
+                <li>
+                    <a href="fetal-heart-rate.html">Fetal Heart Rate</a>
+                    <span class="term-def">The fetal heartbeat rate measured by Doppler or ultrasound at prenatal visits, logged from appointments.</span>
+                </li>
+                <li>
+                    <a href="fundal-height.html">Fundal Height</a>
+                    <span class="term-def">The tape measurement from pubic bone to the top of the uterus, recorded at prenatal checkups.</span>
+                </li>
+                <li>
+                    <a href="follicle-count.html">Antral Follicle Count</a>
+                    <span class="term-def">The number of small ovarian follicles counted on early-cycle ultrasound, an ovarian-reserve marker alongside AMH.</span>
+                </li>
+                <li>
+                    <a href="endometrial-thickness.html">Endometrial Thickness</a>
+                    <span class="term-def">The ultrasound measurement of the uterine lining, tracked in IVF and embryo-transfer cycles.</span>
+                </li>
+                <li>
+                    <a href="embryo-grading.html">Embryo Grading</a>
+                    <span class="term-def">The lab notation describing an embryo's appearance at day 3 or day 5, as reported by an IVF clinic.</span>
+                </li>
+                <li>
+                    <a href="ivf-cycle-numbers.html">IVF Cycle Numbers</a>
+                    <span class="term-def">The counts recorded through an IVF cycle: eggs retrieved, mature, fertilized, and embryos developing.</span>
+                </li>
             </ul>
         </section>
 

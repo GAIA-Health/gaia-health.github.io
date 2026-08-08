@@ -159,6 +159,12 @@
 - [Cold intolerance](https://www.go-go-gaia.com/encyclopedia/cold-intolerance.html): An unusual sensitivity to a cold environment or cold temperatures, feeling cold when others are comfortable or needing extra layers to feel warm. A reported sensation rather than a temperature reading, so it's logged as a symptom, not measured by a device.
 - [Restless legs](https://www.go-go-gaia.com/encyclopedia/restless-legs.html): An urge to move the legs that starts at rest, often with uncomfortable sensations that ease with movement and tend to be worse in the evening or at night. Researchers estimate restless legs syndrome affects between 5% and 15% of the population.
 - [Mindful minutes](https://www.go-go-gaia.com/encyclopedia/mindful-minutes.html): The Apple Health metric that counts time logged in meditation or breathing sessions. It records that you practiced, not how the session went.
+- [Fetal Heart Rate](https://www.go-go-gaia.com/encyclopedia/fetal-heart-rate.html): The fetal heartbeat rate measured by Doppler or ultrasound at prenatal visits, logged from appointments.
+- [Fundal Height](https://www.go-go-gaia.com/encyclopedia/fundal-height.html): The tape measurement from pubic bone to the top of the uterus, recorded at prenatal checkups.
+- [Antral Follicle Count](https://www.go-go-gaia.com/encyclopedia/follicle-count.html): The number of small ovarian follicles counted on early-cycle ultrasound, an ovarian-reserve marker alongside AMH.
+- [Endometrial Thickness](https://www.go-go-gaia.com/encyclopedia/endometrial-thickness.html): The ultrasound measurement of the uterine lining, tracked in IVF and embryo-transfer cycles.
+- [Embryo Grading](https://www.go-go-gaia.com/encyclopedia/embryo-grading.html): The lab notation describing an embryo's appearance at day 3 or day 5, as reported by an IVF clinic.
+- [IVF Cycle Numbers](https://www.go-go-gaia.com/encyclopedia/ivf-cycle-numbers.html): The counts recorded through an IVF cycle: eggs retrieved, mature, fertilized, and embryos developing.
 
 ## Condition tracking (what the app does, per condition)
 
