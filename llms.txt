@@ -195,6 +195,7 @@
 - [Fitness tracker cycle tracking](https://www.go-go-gaia.com/blog/fitness-tracker-cycle-tracking.html): Using wearables for cycle insights.
 - [Cycle syncing app guide](https://www.go-go-gaia.com/blog/cycle-syncing-app-guide.html): How to use apps for cycle syncing.
 - [Pregnancy wellness tips](https://www.go-go-gaia.com/blog/pregnancy-wellness-tips.html): Nutrition, exercise, and self-care during pregnancy.
+- [Creatine for women](https://www.go-go-gaia.com/blog/creatine-for-women.html): What the research protocols use, why the standard advice is male-derived, and what's known about creatine and your cycle.
 
 ## Free tools
 
@@ -205,6 +206,14 @@
 - [Pregnancy week calculator](https://www.go-go-gaia.com/tools/pregnancy-week-calculator.html): Find your current pregnancy week and trimester.
 - [Cycle length calculator](https://www.go-go-gaia.com/tools/cycle-length-calculator.html): Calculate your average cycle length.
 - [PMS & luteal phase calculator](https://www.go-go-gaia.com/tools/pms-calculator.html): Estimate when PMS symptoms are likely to start and map your luteal phase.
+- [Sleep calculator](https://www.go-go-gaia.com/tools/sleep-calculator.html): Find your best bedtime or wake time using 90-minute sleep cycles, and see your sleep debt.
+- [Caffeine calculator](https://www.go-go-gaia.com/tools/caffeine-calculator.html): Calculate the latest time to have caffeine and still sleep well.
+- [Heart rate zone calculator](https://www.go-go-gaia.com/tools/heart-rate-zone-calculator.html): Find your zone 2 heart rate and training zones using the Gulati formula for women.
+- [Protein calculator](https://www.go-go-gaia.com/tools/protein-calculator.html): Find your daily protein range in grams from your weight, activity level, and life stage.
+- [Cycle phase calculator](https://www.go-go-gaia.com/tools/cycle-phase-calculator.html): Find out what phase of your menstrual cycle you're in today — menstrual, follicular, ovulatory, or luteal.
+- [Creatine dosage calculator](https://www.go-go-gaia.com/tools/creatine-calculator.html): Calculate your creatine dose from your bodyweight, including maintenance and loading grams per day.
+- [Macro calculator](https://www.go-go-gaia.com/tools/macro-calculator.html): Calculate your daily calories and macros, with separate follicular and luteal targets.
+- [BMI calculator](https://www.go-go-gaia.com/tools/bmi-calculator.html): Get your BMI paired with waist-to-height ratio and what the number can't tell you, including context for PCOS and fertility.
 
 ## Blog index
 

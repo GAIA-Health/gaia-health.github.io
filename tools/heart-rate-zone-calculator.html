@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Heart Rate Zone Calculator for Women: Zone 2 &amp; Max HR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Find your zone 2 heart rate and all five training zones using the Gulati formula for women, not the male-derived 220 minus age. Add resting heart rate for Karvonen zones.">
+    <meta name="keywords" content="heart rate zone calculator, zone 2 heart rate, max heart rate for women, Gulati formula, Karvonen formula, heart rate zones women, 220 minus age">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/heart-rate-zone-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Heart Rate Zone Calculator for Women: Zone 2 &amp; Max HR">
+    <meta property="og:description" content="Find your zone 2 heart rate and all five training zones using the Gulati formula for women, not the male-derived 220 minus age. Add resting heart rate for Karvonen zones.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/heart-rate-zone-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Heart Rate Zone Calculator for Women: Zone 2 &amp; Max HR">
+    <meta name="twitter:description" content="Find your zone 2 heart rate and all five training zones using the Gulati formula for women, not the male-derived 220 minus age. Add resting heart rate for Karvonen zones.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Heart Rate Zone Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is zone 2 heart rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zone 2 is the second of five heart rate training zones, roughly 60 to 70% of your max heart rate (or 60 to 70% of heart rate reserve if you use the Karvonen method with your resting heart rate). It's an easy, conversational pace: you can talk in full sentences, but singing would be a stretch. Most endurance training research points to zone 2 making up the bulk of a well-rounded training week, with harder zones layered in on top rather than replacing it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is 220 minus age wrong for women?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 220 minus age formula comes from a 1970s review of studies that were overwhelmingly conducted on men. When researchers later built a formula from a study population that included women (Gulati et al., 2010), the result was 206 minus 0.88 times age, which lands lower than 220 minus age for most adult ages. Using the male-derived formula tends to overestimate a woman's true max heart rate, which pushes every training zone built on top of it higher than it should be."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Gulati formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Gulati formula estimates maximum heart rate for women as 206 minus 0.88 times age. It comes from a 2010 study (Gulati et al.) that measured maximal exercise heart rate in a large cohort of asymptomatic women, rather than extrapolating from the mostly-male data behind 220 minus age. It's still a population average and not a substitute for a measured max, but it's the better starting formula for women."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Karvonen formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Karvonen formula calculates training zones from heart rate reserve (HRR) instead of max heart rate alone. HRR is your max heart rate minus your resting heart rate. Each zone's bpm target is resting heart rate plus a percentage of HRR, for example zone 2 at 60 to 70% would be resting HR + 0.6×HRR to resting HR + 0.7×HRR. Because it accounts for your resting heart rate, Karvonen zones are more personalized than plain percent-of-max zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does heart rate change across the menstrual cycle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Resting and submaximal heart rate tend to run a few beats per minute higher in the luteal phase (after ovulation, before your period) than in the follicular phase, tracking the rise in progesterone and core body temperature. That means the same pace or effort can land in a slightly higher heart rate zone in the luteal phase than it would earlier in your cycle, even though the effort itself hasn't changed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find my zone 2 heart rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Estimate your max heart rate with the Gulati formula (206 minus 0.88 times age), then take 60 to 70% of that number for a plain percent-of-max zone 2. If you know your resting heart rate, the Karvonen method sharpens it further: subtract resting heart rate from max heart rate to get heart rate reserve, then zone 2 is resting heart rate plus 60 to 70% of that reserve. A watch that logs your actual resting heart rate over time will generally track closer to your real physiology than either formula alone."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Find Your Heart Rate Zones",
+      "description": "Estimate your maximum heart rate with the Gulati formula for women and calculate your five training zones, using the Karvonen method if resting heart rate is known.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Estimate max heart rate",
+          "text": "Use the Gulati formula for women: 206 minus 0.88 times your age. This is a population average built from women, unlike 220 minus age."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Add resting heart rate if you know it",
+          "text": "Your watch or a few mornings of a manual pulse check gives you resting heart rate. This unlocks the Karvonen heart-rate-reserve method for more personalized zones."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Calculate heart rate reserve (optional)",
+          "text": "Heart rate reserve (HRR) equals max heart rate minus resting heart rate."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Apply the zone percentages",
+          "text": "Five zones at 50-60%, 60-70%, 70-80%, 80-90% and 90-100% of either max heart rate, or of HRR added to resting heart rate if you supplied it."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Heart Rate Zone Calculator for Women",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/heart-rate-zone-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Heart Rate Zone Calculator for Women: Zone 2 & Max HR",
+      "url": "https://www.go-go-gaia.com/tools/heart-rate-zone-calculator.html",
+      "datePublished": "2026-08-08",
+      "dateModified": "2026-08-08",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="number"] {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="number"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Zone 2 hero */
+        .zone2-hero {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .zone2-hero .zone2-range {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .zone2-hero .zone2-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Max HR comparison */
+        .maxhr-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        @media (max-width: 480px) {
+            .maxhr-compare { grid-template-columns: 1fr; }
+        }
+        .maxhr-box {
+            border-radius: 12px;
+            padding: 1.1rem;
+            text-align: center;
+        }
+        .maxhr-box.gulati-box {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        .maxhr-box.fox-box {
+            background: #f2f2f2;
+            border: 2px solid #cfcfcf;
+        }
+        .maxhr-box .maxhr-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .maxhr-box.fox-box .maxhr-value {
+            color: var(--text-muted);
+        }
+        .maxhr-box .maxhr-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Zone table */
+        .zone-table {
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .zone-row {
+            display: grid;
+            grid-template-columns: 90px 1fr 2fr;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .zone-row:last-child { border-bottom: none; }
+        .zone-row .zone-tag {
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.3rem 0.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+        .zone-row .zone-bpm {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+        .zone-row .zone-feel {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .zone-row.zone2-row {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        .zone1-tag { background: #b7cdd8; }
+        .zone2-tag { background: var(--primary); }
+        .zone3-tag { background: var(--green-deep); }
+        .zone4-tag { background: #e8943a; }
+        .zone5-tag { background: var(--accent); }
+
+        /* Working box */
+        .working-box {
+            background: #f8f8f6;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+        .working-box strong { color: var(--text-dark); }
+        .working-box code {
+            background: #eee;
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            color: var(--text-dark);
+        }
+
+        /* Female physiology box */
+        .physio-box {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .physio-box h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .physio-box p { color: var(--text-muted); margin-bottom: 0.75rem; }
+        .physio-box p:last-child { margin-bottom: 0; }
+
+        /* Cycle bridge: onward path from the cycle-nuance box */
+        .cycle-bridge {
+            background: var(--primary-subtle);
+            border-left: 3px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            margin-top: 1rem;
+        }
+        .cycle-bridge h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .cycle-bridge p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .cycle-bridge a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cycle-bridge a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tips section (reuse pattern) */
+        .tips-section {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Heart Rate Zone Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Heart rate zone calculator</a></li>
+                    <li><a href="#about-zones">Why 220 minus age is wrong for women</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Heart Rate Zone Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Find your zone 2 heart rate and all five training zones using the Gulati formula for women, built from women's data instead of the male-derived 220 minus age. Add your resting heart rate for zones personalized with the Karvonen method.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="hrForm">
+                        <div class="mb-3">
+                            <label for="ageInput" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="ageInput" min="13" max="90" placeholder="e.g. 35" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="restingInput" class="form-label">Resting heart rate <span style="font-weight: 400; color: var(--text-muted);">(optional, but worth adding)</span></label>
+                            <input type="number" class="form-control" id="restingInput" min="35" max="110" placeholder="e.g. 60">
+                            <div class="form-text">Your watch already knows this. Adding it switches the calculation to the Karvonen heart-rate-reserve method, which builds your zones off your own baseline instead of age alone.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My Heart Rate Zones</button>
+                        </div>
+                    </form>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This is a formula-based estimate, not a measured max heart rate or a training prescription. It describes the standard zone framework so you can see where your own effort falls.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 680px; margin: 0 auto;"></div>
+
+            <div class="blog-cta-box blog-cta-box-inline" style="max-width: 680px; margin: 2rem auto; display: none;" id="inlineCta">
+                <h4><i class="bi bi-phone me-2"></i>Stop typing this in</h4>
+                <p>Gaia pulls resting heart rate and workouts straight from your watch, and shows how your zone time shifts with your cycle phase.</p>
+                <p class="mb-0">
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational: About zones -->
+        <section id="about-zones" class="tools-educational container" style="max-width: 740px;">
+            <h2>Why 220 minus age is wrong for women</h2>
+            <p>The formula most people know, 220 minus age, comes from a 1971 review of earlier studies that were overwhelmingly conducted on men. It became the default because it's simple, not because it was validated on women. In 2010, a study by Gulati and colleagues measured maximal exercise heart rate directly in a large cohort of asymptomatic women and produced a different formula: <strong>206 minus 0.88 times age</strong>. For most adult ages, that lands lower than 220 minus age, which means the older formula tends to overestimate a woman's true max heart rate. Every zone calculated from an inflated max heart rate ends up inflated too, so your "moderate" effort might actually be your "hard" one.</p>
+
+            <h3>What the five zones mean</h3>
+            <p>Heart rate zones split effort into five bands, each defined as a percentage of your max heart rate (or, with the Karvonen method, a percentage of your heart rate reserve added to your resting heart rate). Zone 1 is a warm-up pace, zone 2 is the easy, sustainable pace that makes up the bulk of most endurance training, zone 3 is a moderate "tempo" effort, zone 4 is hard, and zone 5 is close to an all-out sprint.</p>
+
+            <h3>Zone 2, specifically</h3>
+            <p>Zone 2 (roughly 60 to 70% of max heart rate, or 60 to 70% of heart rate reserve with Karvonen) is an easy, conversational effort. You should be able to talk in full sentences without gasping, even if you'd rather not try to sing. It's the zone that shows up most often in endurance training research as the foundation of a training week, with harder efforts layered on top rather than replacing it. It's also the zone most people run too fast, because "easy" doesn't feel like it's doing anything.</p>
+
+            <h3>Percent of max vs. Karvonen</h3>
+            <p>The plain percent-of-max method just multiplies your estimated max heart rate by the zone percentage. The <strong>Karvonen formula</strong> uses heart rate reserve (HRR) instead: HRR = max heart rate − resting heart rate, and each zone's target is resting heart rate + (percentage × HRR). Because Karvonen factors in your resting heart rate, it produces zones that are more personalized to your own cardiovascular baseline than a straight percentage of a population-average max.</p>
+
+            <p class="tools-tip-line"><strong>Up next:</strong> Curious what training apps can actually adjust for your cycle? See <a href="../blog/cycle-aware-training-apps.html">training around your cycle</a>. Dialing in recovery too? Pair your zones with the <a href="protein-calculator.html">protein calculator</a>, or track your pattern with the <a href="cycle-length-calculator.html">cycle length calculator</a>.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Heart Rate Zones</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What is zone 2 heart rate?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Zone 2 is the second of five heart rate training zones, roughly 60 to 70% of your max heart rate (or 60 to 70% of heart rate reserve if you use the Karvonen method with your resting heart rate). It's an easy, conversational pace: you can talk in full sentences, but singing would be a stretch. Most endurance training research points to zone 2 making up the bulk of a well-rounded training week, with harder zones layered in on top rather than replacing it.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Why is 220 minus age wrong for women?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The 220 minus age formula comes from a 1970s review of studies that were overwhelmingly conducted on men. When researchers later built a formula from a study population that included women (Gulati et al., 2010), the result was 206 minus 0.88 times age, which lands lower than 220 minus age for most adult ages. Using the male-derived formula tends to overestimate a woman's true max heart rate, which pushes every training zone built on top of it higher than it should be.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What is the Gulati formula?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The Gulati formula estimates maximum heart rate for women as 206 minus 0.88 times age. It comes from a 2010 study (Gulati et al.) that measured maximal exercise heart rate in a large cohort of asymptomatic women, rather than extrapolating from the mostly-male data behind 220 minus age. It's still a population average and not a substitute for a measured max, but it's the better starting formula for women.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What is the Karvonen formula?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The Karvonen formula calculates training zones from heart rate reserve (HRR) instead of max heart rate alone. HRR is your max heart rate minus your resting heart rate. Each zone's bpm target is resting heart rate plus a percentage of HRR, for example zone 2 at 60 to 70% would be resting HR + 0.6×HRR to resting HR + 0.7×HRR. Because it accounts for your resting heart rate, Karvonen zones are more personalized than plain percent-of-max zones.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Does heart rate change across the menstrual cycle?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes. Resting and submaximal heart rate tend to run a few beats per minute higher in the luteal phase (after ovulation, before your period) than in the follicular phase, tracking the rise in progesterone and core body temperature. That means the same pace or effort can land in a slightly higher heart rate zone in the luteal phase than it would earlier in your cycle, even though the effort itself hasn't changed.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">How do I find my zone 2 heart rate?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Estimate your max heart rate with the Gulati formula (206 minus 0.88 times age), then take 60 to 70% of that number for a plain percent-of-max zone 2. If you know your resting heart rate, the Karvonen method sharpens it further: subtract resting heart rate from max heart rate to get heart rate reserve, then zone 2 is resting heart rate plus 60 to 70% of that reserve. A watch that logs your actual resting heart rate over time will generally track closer to your real physiology than either formula alone.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 680px;">
+            <div class="cta-section">
+                <h3>A formula estimates. Weeks of workouts show you the real number.</h3>
+                <p>Gulati and Karvonen are still population estimates, not a measured max. Gaia logs your actual heart rate zone time from every workout, so instead of guessing where zone 2 sits, you can see exactly how much of your training week you're really spending there.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=heart-rate-zone-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related" class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Training Around Your Cycle</h4>
+                        <p>What cycle-aware training apps can actually adjust for, and what's still on you.</p>
+                        <a href="../blog/cycle-aware-training-apps.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator applies published formulas to the numbers you enter; it does not measure your actual max heart rate and it is not a training plan. Heart rate response to exercise varies by fitness level, medication, heat, sleep, and many other factors beyond age and resting heart rate. Go Go Gaia is a tracking tool, not a substitute for professional medical or coaching guidance.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const ZONES = [
+        { key: 'z1', label: 'Zone 1', tagClass: 'zone1-tag', lo: 0.50, hi: 0.60, feel: 'Very light. A warm-up or recovery pace, easy to hold a full conversation.' },
+        { key: 'z2', label: 'Zone 2', tagClass: 'zone2-tag', lo: 0.60, hi: 0.70, feel: 'Easy and sustainable. You can hold a conversation, but you would rather not sing.' },
+        { key: 'z3', label: 'Zone 3', tagClass: 'zone3-tag', lo: 0.70, hi: 0.80, feel: 'Moderate, a "tempo" effort. Talking comes in shorter bursts.' },
+        { key: 'z4', label: 'Zone 4', tagClass: 'zone4-tag', lo: 0.80, hi: 0.90, feel: 'Hard. Breathing is heavy and full sentences are difficult.' },
+        { key: 'z5', label: 'Zone 5', tagClass: 'zone5-tag', lo: 0.90, hi: 1.00, feel: 'Very hard to maximal. Sprint or all-out effort, only sustainable briefly.' }
+    ];
+
+    function round(n) { return Math.round(n); }
+
+    document.getElementById('hrForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const age = parseFloat(document.getElementById('ageInput').value);
+        if (!age || age <= 0) return;
+        const restingRaw = document.getElementById('restingInput').value;
+        const resting = restingRaw ? parseFloat(restingRaw) : null;
+
+        const maxHrGulati = 206 - 0.88 * age;
+        const maxHrFox = 220 - age;
+        const useKarvonen = !!(resting && resting > 0 && resting < maxHrGulati);
+        const hrr = useKarvonen ? (maxHrGulati - resting) : null;
+
+        function zoneRange(z) {
+            if (useKarvonen) {
+                return [round(resting + z.lo * hrr), round(resting + z.hi * hrr)];
+            }
+            return [round(z.lo * maxHrGulati), round(z.hi * maxHrGulati)];
+        }
+
+        const zone2 = ZONES[1];
+        const [z2lo, z2hi] = zoneRange(zone2);
+
+        let zoneRowsHtml = '';
+        ZONES.forEach(z => {
+            const [lo, hi] = zoneRange(z);
+            const isZone2 = z.key === 'z2';
+            zoneRowsHtml += `
+                <div class="zone-row${isZone2 ? ' zone2-row' : ''}">
+                    <div class="zone-tag ${z.tagClass}">${z.label}</div>
+                    <div class="zone-bpm">${lo}&ndash;${hi} bpm</div>
+                    <div class="zone-feel">${z.feel}</div>
+                </div>`;
+        });
+
+        const methodNote = useKarvonen
+            ? `Calculated with the <strong>Karvonen heart-rate-reserve method</strong>, using your resting heart rate of ${resting} bpm: heart rate reserve (HRR) = ${round(maxHrGulati)} &minus; ${resting} = ${round(hrr)} bpm. Each zone = resting HR + (percentage &times; HRR).`
+            : `Calculated as a straight <strong>percentage of max heart rate</strong> (no resting heart rate entered). Add your resting heart rate above to switch to the more personalized Karvonen method.`;
+
+        const workingHtml = `
+            <strong>How we got there:</strong><br>
+            Max heart rate (Gulati formula for women) = <code>206 &minus; 0.88 &times; ${age}</code> = <strong>${round(maxHrGulati)} bpm</strong>.<br>
+            ${methodNote}
+        `;
+
+        const html = `
+            <div class="result-card">
+                <div class="zone2-hero">
+                    <div class="zone2-label">Your Zone 2 (the easy, sustainable one)</div>
+                    <div class="zone2-range">${z2lo}&ndash;${z2hi} bpm</div>
+                    <div class="zone2-label">Conversational pace: you can talk, but singing is a stretch</div>
+                </div>
+
+                <div class="maxhr-compare">
+                    <div class="maxhr-box gulati-box">
+                        <div class="maxhr-value">${round(maxHrGulati)} bpm</div>
+                        <div class="maxhr-label">Gulati formula (built from women)<br>206 &minus; 0.88 &times; age</div>
+                    </div>
+                    <div class="maxhr-box fox-box">
+                        <div class="maxhr-value">${round(maxHrFox)} bpm</div>
+                        <div class="maxhr-label">220 &minus; age (built from men)<br>shown for comparison only</div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Five Heart Rate Zones</h3>
+                <div class="zone-table">${zoneRowsHtml}</div>
+
+                <div class="working-box">${workingHtml}</div>
+            </div>
+
+            <div class="physio-box">
+                <h3>The female-physiology note</h3>
+                <p><strong>Gulati vs. Fox:</strong> the familiar 220 minus age formula (sometimes called the Fox formula) was built from studies conducted mostly on men. The Gulati formula used here comes from a study population of women, which is why the two numbers above don't match, and why the women's formula tends to run lower.</p>
+                <p><strong>Cycle phase shifts the reading:</strong> resting and submaximal heart rate tend to run a few beats per minute higher in the luteal phase than in the follicular phase, tracking the rise in progesterone and core body temperature. The same pace can land in a slightly higher zone in the second half of your cycle, even when the effort hasn't changed.</p>
+            </div>
+
+            <div class="cycle-bridge">
+                <h4>Want to factor your cycle in?</h4>
+                <p>Same effort can read as a higher zone in the luteal phase, since resting and submaximal heart rate tend to run a few beats higher there &mdash; <a href="cycle-phase-calculator.html">find out what phase you're in</a> before you read too much into a shift in the numbers. <a href="../blog/exercise-heart-rate-training-load-cycle.html">Exercise heart rate across your cycle</a> goes deeper on the pattern.</p>
+            </div>
+        `;
+
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        document.getElementById('inlineCta').style.display = 'block';
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

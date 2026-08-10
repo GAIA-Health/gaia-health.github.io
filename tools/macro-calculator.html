@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Macro Calculator for Women: Calories &amp; Macros by Cycle Phase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Calculate your daily calories and macros, with separate follicular and luteal targets, because resting energy expenditure shifts across your cycle. Built for women.">
+    <meta name="keywords" content="macro calculator, macro calculator for women, how many calories do I need, TDEE calculator, calorie calculator women, macros by cycle phase, protein fat carb calculator">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/macro-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Macro Calculator for Women: Calories &amp; Macros by Cycle Phase">
+    <meta property="og:description" content="Calculate your daily calories and macros, with separate follicular and luteal targets, because resting energy expenditure shifts across your cycle. Built for women.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/macro-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Macro Calculator for Women: Calories &amp; Macros by Cycle Phase">
+    <meta name="twitter:description" content="Calculate your daily calories and macros, with separate follicular and luteal targets, because resting energy expenditure shifts across your cycle. Built for women.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Macro Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many calories do I need per day as a woman?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It starts with your basal metabolic rate (BMR), the calories your body burns at rest, estimated here with the Mifflin-St Jeor equation. Multiply BMR by an activity factor (1.2 for sedentary up to 1.725 for very active) to get your total daily energy expenditure, or TDEE. From there, a goal adjustment shifts the number up or down: roughly -15% to support fat loss, or +10% to support muscle building, with maintenance left as-is. This calculator does that math for you, but it's a population-average estimate, not a personalized prescription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does this calculator give two calorie targets instead of one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a single number ignores half the month. Research on resting energy expenditure across the menstrual cycle finds it runs roughly 2 to 9 percent higher in the luteal phase (the two weeks or so after ovulation) than in the follicular phase. Most calorie calculators are built around a static number and, implicitly, a male or non-cycling body. This one shows a follicular band and a luteal band side by side so that eating a bit more in the second half of your cycle reads as a normal physiological shift, not a lapse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between BMR and TDEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BMR (basal metabolic rate) is the energy your body uses at complete rest, just to keep your organs running. TDEE (total daily energy expenditure) is BMR multiplied by an activity factor to account for movement, exercise, and daily life on top of that resting baseline. TDEE is the number most people mean when they ask 'how many calories do I need,' since it reflects an actual day rather than a body lying still."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much protein, fat, and carbs should I eat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator uses the same published gram-per-kilogram protein ranges as our protein calculator (roughly 1.2 g/kg for sedentary up to 2.0 g/kg for resistance training or a fat-loss phase), fat at 0.8 to 1.0 g/kg, and fills the remaining calories with carbohydrate. Protein and fat targets are based on your bodyweight and stay fairly constant; carbohydrate is what flexes to cover the difference between your follicular and luteal calorie bands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I eat more before my period?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the luteal phase, the one to two weeks before your period, resting energy expenditure runs modestly higher and appetite commonly rises alongside it, both linked to the hormonal shifts after ovulation. Eating somewhat more during that window lines up with what your body is actually doing, rather than working against it. This calculator's luteal band reflects that shift; it isn't a suggestion to under-eat in the follicular phase to compensate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do pregnant or postpartum women need a different calorie target?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but by how much depends on trimester and individual factors that go beyond what a general formula should estimate, so this calculator intentionally doesn't generate a number for pregnancy or early postpartum. If you're pregnant or postpartum, a conversation with your provider or a registered dietitian is the better path than a calculator built for a non-pregnant, non-postpartum body."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Your Daily Calories and Macros",
+      "description": "Estimate daily calorie needs and a protein, fat, and carbohydrate split using the Mifflin-St Jeor equation, activity multipliers, and a follicular/luteal phase overlay.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter your weight, height, and age",
+          "text": "Weight in kilograms or pounds, height in centimeters or feet and inches, and your age. These feed the Mifflin-St Jeor BMR equation."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose your activity level and goal",
+          "text": "Sedentary (1.2), lightly active (1.375), active (1.55), or very active (1.725) sets your TDEE multiplier. Your goal (maintain, support fat loss, or build muscle) then shifts that number by roughly -15% or +10%."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Choose your life stage",
+          "text": "Cycling, perimenopause, postmenopause, pregnant, or postpartum. Pregnant and postpartum route to guidance instead of a number."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Read your follicular and luteal bands",
+          "text": "The result shows two calorie targets, follicular and luteal, plus a protein, fat, and carbohydrate split in grams, calories, and percentages for each."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Macro &amp; Calorie Calculator for Women",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/macro-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Macro Calculator for Women: Calories &amp; Macros by Cycle Phase",
+      "url": "https://www.go-go-gaia.com/tools/macro-calculator.html",
+      "datePublished": "2026-08-08",
+      "dateModified": "2026-08-08",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="number"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="number"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .unit-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .unit-toggle input[type="radio"] {
+            display: none;
+        }
+        .unit-toggle label {
+            margin: 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.6rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .unit-toggle input[type="radio"]:checked + label {
+            border-color: var(--primary);
+            background: var(--primary-subtle);
+            color: var(--primary-dark);
+        }
+        .weight-row {
+            display: flex;
+            gap: 0.75rem;
+            align-items: stretch;
+        }
+        .weight-row input[type="number"] { flex: 1; min-width: 0; }
+        .height-toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .height-toggle-row label { margin-bottom: 0; }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Follicular / luteal calorie bands */
+        .band-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 480px) {
+            .band-grid { grid-template-columns: 1fr; }
+        }
+        .band-box {
+            border-radius: 14px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .band-box.follicular {
+            background: var(--secondary);
+            border: 2px solid var(--primary-subtle);
+        }
+        .band-box.luteal {
+            background: var(--primary-subtle);
+            border: 2px solid var(--primary);
+        }
+        .band-box .band-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+        .band-box.luteal .band-label { color: var(--primary-dark); }
+        .band-box .band-value {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.1;
+        }
+        .band-box .band-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        /* Macro split */
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 480px) {
+            .macro-grid { grid-template-columns: 1fr; }
+        }
+        .macro-box {
+            background: #fdf7f2;
+            border: 1px solid #f0e2d4;
+            border-radius: 12px;
+            padding: 1rem 0.75rem;
+            text-align: center;
+        }
+        .macro-box .macro-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .macro-box .macro-grams {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-top: 0.2rem;
+        }
+        .macro-box .macro-detail {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        /* Working / how we got there */
+        .working-box {
+            background: #f6f5f2;
+            border: 1px dashed #cfc9be;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+        }
+        .working-box h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .working-box ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.1rem;
+        }
+        .working-box li { margin-bottom: 0.3rem; }
+        .working-box code {
+            background: #fff;
+            border: 1px solid #e2ddd2;
+            border-radius: 6px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.88rem;
+        }
+
+        /* Cycle nuance box */
+        .nuance-box {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-top: 1.5rem;
+        }
+        .nuance-box h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+        }
+        .nuance-box p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Cycle bridge: onward path from the cycle-nuance box */
+        .cycle-bridge {
+            background: var(--primary-subtle);
+            border-left: 3px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            margin-top: 1rem;
+        }
+        .cycle-bridge h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .cycle-bridge p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .cycle-bridge a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cycle-bridge a:hover {
+            text-decoration: underline;
+        }
+
+        /* A legitimate-choice note, unpatronising */
+        .estimate-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Pregnancy / postpartum panel */
+        .soft-panel {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            text-align: center;
+        }
+        .soft-panel h2 {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+        .soft-panel p {
+            color: var(--text-dark);
+            max-width: 520px;
+            margin: 0 auto 0.5rem;
+        }
+        .soft-panel p.soft-panel-product {
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Macro Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Macro calculator</a></li>
+                    <li><a href="#macros-and-your-cycle">Calories, macros &amp; your cycle</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Macro Calculator for Women</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Get your daily calories and protein, fat, and carb split, built from your weight, height, age, activity, and goal. And because a static 28-day-average number misses half the picture, you'll get a follicular band and a luteal band, not just one.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="macroForm">
+                        <div class="mb-3">
+                            <label for="weightInput" class="form-label">Your weight</label>
+                            <div class="weight-row">
+                                <input type="number" class="form-control" id="weightInput" min="30" max="300" step="0.1" required placeholder="e.g. 68">
+                                <div class="unit-toggle" role="radiogroup" aria-label="Weight unit">
+                                    <input type="radio" name="weightUnit" id="unitKg" value="kg" checked>
+                                    <label for="unitKg">kg</label>
+                                    <input type="radio" name="weightUnit" id="unitLb" value="lb">
+                                    <label for="unitLb">lb</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="height-toggle-row">
+                                <label for="heightCmInput" class="form-label">Your height</label>
+                                <div class="unit-toggle" role="radiogroup" aria-label="Height unit">
+                                    <input type="radio" name="heightUnit" id="unitCm" value="cm" checked>
+                                    <label for="unitCm">cm</label>
+                                    <input type="radio" name="heightUnit" id="unitFtIn" value="ftin">
+                                    <label for="unitFtIn">ft/in</label>
+                                </div>
+                            </div>
+                            <div id="heightCmField">
+                                <input type="number" class="form-control" id="heightCmInput" min="120" max="220" step="0.1" placeholder="e.g. 168">
+                            </div>
+                            <div id="heightFtInField" style="display:none;">
+                                <div class="weight-row">
+                                    <input type="number" class="form-control" id="heightFtInput" min="3" max="7" placeholder="feet">
+                                    <input type="number" class="form-control" id="heightInInput" min="0" max="11" placeholder="inches">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ageInput" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="ageInput" min="13" max="100" required placeholder="e.g. 38">
+                        </div>
+                        <div class="mb-3">
+                            <label for="activityInput" class="form-label">Activity level</label>
+                            <select class="form-select" id="activityInput">
+                                <option value="0">Sedentary (little structured exercise)</option>
+                                <option value="1">Lightly active (light exercise 1&ndash;2x/week)</option>
+                                <option value="2" selected>Active (moderate exercise most days)</option>
+                                <option value="3">Very active (hard exercise or physical job most days)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="goalInput" class="form-label">Goal</label>
+                            <select class="form-select" id="goalInput">
+                                <option value="maintain" selected>Maintain &mdash; no specific body composition goal</option>
+                                <option value="fatloss">Support fat loss</option>
+                                <option value="muscle">Build muscle or strength</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lifeStageInput" class="form-label">Life stage</label>
+                            <select class="form-select" id="lifeStageInput">
+                                <option value="cycling" selected>Cycling (regular periods)</option>
+                                <option value="perimenopause">Perimenopause</option>
+                                <option value="postmenopause">Postmenopause</option>
+                                <option value="pregnant">Pregnant</option>
+                                <option value="postpartum">Postpartum</option>
+                            </select>
+                            <div class="form-text">Pregnant or postpartum? This calculator won't give you a number for those stages, but it'll show you how Gaia handles the math instead.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My Calories &amp; Macros</button>
+                        </div>
+                    </form>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This uses the Mifflin-St Jeor equation and published activity multipliers, not your personal data. It's a starting point, not a prescription, and it isn't a substitute for advice from your provider or a registered dietitian.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 680px; margin: 0 auto;"></div>
+
+            <div class="blog-cta-box blog-cta-box-inline" id="inlineCta" style="max-width: 680px; margin: 2rem auto; display: none;">
+                <h4><i class="bi bi-phone me-2"></i>A formula assumes an average 28-day cycle and a static you</h4>
+                <p>This band comes from population multipliers and a textbook cycle length applied to what you typed in. Gaia sets phase-aware targets from your own logged cycle instead, so the number adjusts to your actual pattern, not an assumed one.</p>
+                <p class="mb-0">
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational: Calories, macros & your cycle -->
+        <section id="macros-and-your-cycle" class="tools-educational container" style="max-width: 740px;">
+            <h2>Calories, macros &amp; your cycle</h2>
+            <p>This calculator starts with the Mifflin-St Jeor equation, one of the more accurate published formulas for estimating basal metabolic rate (BMR) from weight, height, age, and sex: <code>10 &times; kg + 6.25 &times; cm &minus; 5 &times; age &minus; 161</code> for women. Multiplying BMR by an activity factor (1.2 to 1.725, depending on how much you move) gives total daily energy expenditure, or TDEE, the number most people mean when they ask how many calories they need. A goal adjustment then nudges that up or down: roughly &minus;15% to support fat loss, +10% to support muscle building, or no change at all to maintain.</p>
+
+            <h3>Why one number isn't the whole story</h3>
+            <p>Almost every calorie calculator online stops there, with a single daily number. Research on resting energy expenditure across the menstrual cycle finds it runs roughly 2 to 9 percent higher in the luteal phase, the one to two weeks after ovulation, than in the follicular phase before it. That's a real, measured shift in how much energy your body is using at rest, not a story about willpower or discipline. This calculator shows both bands side by side so a bigger number in the back half of your cycle reads as expected, not as a lapse.</p>
+
+            <h3>How the macro split works</h3>
+            <p>Protein uses the same published gram-per-kilogram ranges as our <a href="protein-calculator.html">protein calculator</a>, from about 1.2 g/kg for a mostly sedentary day up to 2.0 g/kg for resistance training or a fat-loss phase, with perimenopause and postmenopause nudged toward the higher end on the anabolic-resistance rationale. Fat is set at 0.8 to 1.0 g/kg. Carbohydrate fills whatever calories are left, which is also why carbohydrate is the macro that moves most between your follicular and luteal bands: protein and fat targets are tied to your bodyweight and stay fairly steady, while the extra calories in the luteal phase show up mostly as more carbohydrate.</p>
+
+            <h3>These are estimates, and tracking them is optional</h3>
+            <p>Every number on this page comes from population formulas applied to what you typed in. They're a reasonable starting point, not a personalized prescription, and they can be off in either direction for your actual metabolism. It's also worth saying plainly: if counting grams and calories tends to make food feel harder rather than easier, not tracking them is a legitimate choice, not a failure to optimize.</p>
+
+            <p class="tools-tip-line"><strong>Also worth a look:</strong> Curious exactly where you are in your cycle right now? See our <a href="cycle-phase-calculator.html">cycle phase calculator</a>. And for what to eat and how to train by phase more broadly, read the <a href="../blog/cycle-syncing-guide.html">cycle syncing guide</a>.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 680px;">
+            <div class="cta-section">
+                <h3>Weeks of logging beats a formula run once.</h3>
+                <p>This page runs the same math for everyone who types in the same numbers. Gaia sets phase-aware calorie and macro targets from your own logged cycle, tracks what you actually eat against them, and adjusts as your patterns change, instead of asking you to re-run a formula every few weeks.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=macro-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Macros &amp; Calories</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How many calories do I need per day as a woman?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">It starts with your basal metabolic rate (BMR), the calories your body burns at rest, estimated here with the Mifflin-St Jeor equation. Multiply BMR by an activity factor (1.2 for sedentary up to 1.725 for very active) to get your total daily energy expenditure, or TDEE. From there, a goal adjustment shifts the number up or down: roughly -15% to support fat loss, or +10% to support muscle building, with maintenance left as-is. This calculator does that math for you, but it's a population-average estimate, not a personalized prescription.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Why does this calculator give two calorie targets instead of one?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Because a single number ignores half the month. Research on resting energy expenditure across the menstrual cycle finds it runs roughly 2 to 9 percent higher in the luteal phase (the two weeks or so after ovulation) than in the follicular phase. Most calorie calculators are built around a static number and, implicitly, a male or non-cycling body. This one shows a follicular band and a luteal band side by side so that eating a bit more in the second half of your cycle reads as a normal physiological shift, not a lapse.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What's the difference between BMR and TDEE?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">BMR (basal metabolic rate) is the energy your body uses at complete rest, just to keep your organs running. TDEE (total daily energy expenditure) is BMR multiplied by an activity factor to account for movement, exercise, and daily life on top of that resting baseline. TDEE is the number most people mean when they ask "how many calories do I need," since it reflects an actual day rather than a body lying still.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How much protein, fat, and carbs should I eat?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">This calculator uses the same published gram-per-kilogram protein ranges as our protein calculator (roughly 1.2 g/kg for sedentary up to 2.0 g/kg for resistance training or a fat-loss phase), fat at 0.8 to 1.0 g/kg, and fills the remaining calories with carbohydrate. Protein and fat targets are based on your bodyweight and stay fairly constant; carbohydrate is what flexes to cover the difference between your follicular and luteal calorie bands.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Should I eat more before my period?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">In the luteal phase, the one to two weeks before your period, resting energy expenditure runs modestly higher and appetite commonly rises alongside it, both linked to the hormonal shifts after ovulation. Eating somewhat more during that window lines up with what your body is actually doing, rather than working against it. This calculator's luteal band reflects that shift; it isn't a suggestion to under-eat in the follicular phase to compensate.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Do pregnant or postpartum women need a different calorie target?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes, but by how much depends on trimester and individual factors that go beyond what a general formula should estimate, so this calculator intentionally doesn't generate a number for pregnancy or early postpartum. If you're pregnant or postpartum, a conversation with your provider or a registered dietitian is the better path than a calculator built for a non-pregnant, non-postpartum body.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related" class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Protein Calculator</h4>
+                        <p>Get your daily protein range in grams, the same ladder this macro calculator's protein target is built on.</p>
+                        <a href="protein-calculator.html">Calculate protein &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Cycle Phase Calculator</h4>
+                        <p>Find out exactly where you are in your cycle right now, follicular, ovulation, or luteal.</p>
+                        <a href="cycle-phase-calculator.html">Find your phase &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Cycle Syncing: Eating &amp; Training by Phase</h4>
+                        <p>What to eat, how to train, and when to rest across your follicular and luteal phases.</p>
+                        <a href="../blog/cycle-syncing-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator applies the Mifflin-St Jeor equation and published activity, protein, and fat ranges to the numbers you enter. It is not a personalized nutrition plan, it does not diagnose or treat any condition, and it does not account for metabolic, digestive, or other medical conditions that can change what's right for you. If you are pregnant, postpartum, managing a health condition, have a history of disordered eating, or unsure what's right for your body, a registered dietitian or your healthcare provider can help you land on a plan. Go Go Gaia is a tracking tool, not a substitute for professional medical or nutrition care.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // Published sports-nutrition g/kg protein bands, ordered lowest to highest.
+    // Same ladder as protein-calculator.html so the two pages never contradict each other.
+    const BANDS = [
+        { min: 1.2, max: 1.4, name: "sedentary band (1.2&ndash;1.4 g/kg)" },
+        { min: 1.4, max: 1.6, name: "lightly active band (1.4&ndash;1.6 g/kg)" },
+        { min: 1.6, max: 1.8, name: "active band (1.6&ndash;1.8 g/kg)" },
+        { min: 1.8, max: 2.0, name: "resistance-training band (1.8&ndash;2.0 g/kg)" }
+    ];
+
+    // Mifflin-St Jeor activity multipliers
+    const ACTIVITY_MULT = [1.2, 1.375, 1.55, 1.725];
+    const ACTIVITY_LABELS = ["Sedentary", "Lightly active", "Active", "Very active"];
+    const GOAL_LABELS = { maintain: "Maintain", fatloss: "Support fat loss", muscle: "Build muscle or strength" };
+    const GOAL_ADJ = { maintain: 0, fatloss: -0.15, muscle: 0.10 };
+    const LIFE_STAGE_LABELS = {
+        cycling: "Cycling (regular periods)",
+        perimenopause: "Perimenopause",
+        postmenopause: "Postmenopause",
+        pregnant: "Pregnant",
+        postpartum: "Postpartum"
+    };
+
+    // Luteal-phase resting energy expenditure runs roughly 2-9% higher than follicular
+    const LUTEAL_LOW_MULT = 1.02;
+    const LUTEAL_HIGH_MULT = 1.09;
+
+    function clamp(n, lo, hi) {
+        return Math.max(lo, Math.min(hi, n));
+    }
+
+    const APP_STORE_URL = "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8";
+
+    const DEFAULT_INLINE_CTA_HTML = `
+        <h4><i class="bi bi-phone me-2"></i>A formula assumes an average 28-day cycle and a static you</h4>
+        <p>This band comes from population multipliers and a textbook cycle length applied to what you typed in. Gaia sets phase-aware targets from your own logged cycle instead, so the number adjusts to your actual pattern, not an assumed one.</p>
+        <p class="mb-0">
+            <a href="${APP_STORE_URL}" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-apple me-2"></i>Download on the App Store
+            </a>
+        </p>
+    `;
+
+    const PREGNANT_CTA_HTML = `
+        <h4><i class="bi bi-phone me-2"></i>Let Gaia handle the trimester math</h4>
+        <p>Log your pregnancy start date once, and Gaia works out your trimester and adjusts your targets from there &mdash; no formula, no guessing.</p>
+        <p class="mb-0">
+            <a href="${APP_STORE_URL}" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-apple me-2"></i>Download on the App Store
+            </a>
+        </p>
+    `;
+
+    const POSTPARTUM_CTA_HTML = `
+        <h4><i class="bi bi-phone me-2"></i>Let Gaia hold your target steady</h4>
+        <p>For the first six weeks postpartum, Gaia keeps you at maintenance automatically, so you're not the one deciding whether today's the day to cut back.</p>
+        <p class="mb-0">
+            <a href="${APP_STORE_URL}" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-apple me-2"></i>Download on the App Store
+            </a>
+        </p>
+    `;
+
+    // Height unit toggle
+    const heightCmField = document.getElementById('heightCmField');
+    const heightFtInField = document.getElementById('heightFtInField');
+    document.querySelectorAll('input[name="heightUnit"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            if (this.value === 'cm') {
+                heightCmField.style.display = '';
+                heightFtInField.style.display = 'none';
+            } else {
+                heightCmField.style.display = 'none';
+                heightFtInField.style.display = '';
+            }
+        });
+    });
+
+    document.getElementById('macroForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const weightVal = parseFloat(document.getElementById('weightInput').value);
+        if (!weightVal || weightVal <= 0) return;
+        const weightUnit = document.querySelector('input[name="weightUnit"]:checked').value;
+        const kg = weightUnit === 'lb' ? weightVal / 2.20462 : weightVal;
+        const lb = weightUnit === 'lb' ? weightVal : weightVal * 2.20462;
+
+        const heightUnit = document.querySelector('input[name="heightUnit"]:checked').value;
+        let cm;
+        if (heightUnit === 'cm') {
+            cm = parseFloat(document.getElementById('heightCmInput').value);
+        } else {
+            const ft = parseFloat(document.getElementById('heightFtInput').value) || 0;
+            const inches = parseFloat(document.getElementById('heightInInput').value) || 0;
+            cm = (ft * 12 + inches) * 2.54;
+        }
+        if (!cm || cm <= 0) return;
+
+        const age = parseInt(document.getElementById('ageInput').value, 10);
+        if (!age || age <= 0) return;
+
+        const activityTier = parseInt(document.getElementById('activityInput').value, 10);
+        const goal = document.getElementById('goalInput').value;
+        const lifeStage = document.getElementById('lifeStageInput').value;
+
+        const resultsEl = document.getElementById('results');
+        const inlineCta = document.getElementById('inlineCta');
+
+        // Pregnancy: no number, but the app genuinely handles this one
+        if (lifeStage === 'pregnant') {
+            resultsEl.innerHTML = `
+                <div class="soft-panel">
+                    <h2><i class="bi bi-heart me-2"></i>This one moves too much for a formula</h2>
+                    <p>A general calculator shouldn't put a number on this, because the right target moves with your trimester and where you started from.</p>
+                    <p class="soft-panel-product">Gaia works this out from your pregnancy start date &mdash; it adds around 340 calories a day in the second trimester and 450 in the third, lifts your protein floor, and pauses any deficit automatically.</p>
+                    <p>Anything specific to your pregnancy is still a conversation for your provider or a dietitian.</p>
+                </div>
+            `;
+            resultsEl.classList.add('show');
+            inlineCta.innerHTML = PREGNANT_CTA_HTML;
+            inlineCta.style.display = 'block';
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+
+        // Postpartum: no number, same honesty about what the app does and doesn't do
+        if (lifeStage === 'postpartum') {
+            resultsEl.innerHTML = `
+                <div class="soft-panel">
+                    <h2><i class="bi bi-heart me-2"></i>Early postpartum isn't a chart moment</h2>
+                    <p>This isn't the moment for a target pulled off a chart. For the first six weeks, Gaia holds you at maintenance instead of any deficit, automatically.</p>
+                    <p>If you're breastfeeding, your needs are higher than any general calculator can estimate.</p>
+                    <p>Anything specific to your recovery is still a conversation for your provider or a dietitian. For the fuller picture of what's shifting in your body right now, see our <a href="../blog/postpartum-recovery-guide.html">postpartum recovery guide</a>.</p>
+                </div>
+            `;
+            resultsEl.classList.add('show');
+            inlineCta.innerHTML = POSTPARTUM_CTA_HTML;
+            inlineCta.style.display = 'block';
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+
+        // BMR via Mifflin-St Jeor (female equation)
+        const bmr = 10 * kg + 6.25 * cm - 5 * age - 161;
+        const activityMult = ACTIVITY_MULT[activityTier];
+        const tdeeBase = bmr * activityMult;
+        const goalAdj = GOAL_ADJ[goal];
+        const adjustedTdee = tdeeBase * (1 + goalAdj);
+
+        const follicularCal = Math.round(adjustedTdee);
+        const lutealLow = Math.round(adjustedTdee * LUTEAL_LOW_MULT);
+        const lutealHigh = Math.round(adjustedTdee * LUTEAL_HIGH_MULT);
+
+        // Protein tier bumps: goal (fat loss or muscle) and life stage (peri/postmenopause)
+        // push toward the top of the published range, same logic as protein-calculator.html.
+        let tierIndex = activityTier;
+        const proteinReasons = [];
+        if (goal === 'fatloss' || goal === 'muscle') {
+            tierIndex += 1;
+            proteinReasons.push(`Your goal (${GOAL_LABELS[goal]}) moves your protein target toward the higher end of the range.`);
+        }
+        if (lifeStage === 'perimenopause' || lifeStage === 'postmenopause') {
+            tierIndex += 1;
+            proteinReasons.push(`${LIFE_STAGE_LABELS[lifeStage]} moves your protein target toward the higher end of the range, based on the anabolic-resistance rationale in the research.`);
+        }
+        const clampedTier = clamp(tierIndex, 0, BANDS.length - 1);
+        if (tierIndex > clampedTier) {
+            proteinReasons.push(`Your combined adjustments would go past the top published band, so protein is capped at 1.8&ndash;2.0 g/kg.`);
+        }
+        const band = BANDS[clampedTier];
+
+        // Single protein figure = midpoint of the same range the protein calculator shows
+        const proteinLow = Math.round(kg * band.min);
+        const proteinHigh = Math.round(kg * band.max);
+        const proteinG = Math.round(kg * (band.min + band.max) / 2);
+        const fatG = Math.round(kg * 0.9);
+
+        const proteinCal = proteinG * 4;
+        const fatCal = fatG * 9;
+
+        const carbCalFollicular = Math.max(0, follicularCal - proteinCal - fatCal);
+        const carbGFollicular = Math.round(carbCalFollicular / 4);
+        const carbCalLutealLow = Math.max(0, lutealLow - proteinCal - fatCal);
+        const carbCalLutealHigh = Math.max(0, lutealHigh - proteinCal - fatCal);
+        const carbGLutealLow = Math.round(carbCalLutealLow / 4);
+        const carbGLutealHigh = Math.round(carbCalLutealHigh / 4);
+
+        const proteinPct = Math.round((proteinCal / follicularCal) * 100);
+        const fatPct = Math.round((fatCal / follicularCal) * 100);
+        const carbPct = Math.max(0, 100 - proteinPct - fatPct);
+
+        const proteinReasonsHtml = proteinReasons.length
+            ? `<ul>${proteinReasons.map(r => `<li>${r}</li>`).join('')}</ul>`
+            : `<p style="margin: 0.5rem 0 0; color: var(--text-muted);">No goal or life-stage adjustment applied to protein, so this uses your activity band as-is.</p>`;
+
+        const html = `
+            <div class="result-card">
+                <div class="text-center mb-3">
+                    <h2 style="font-weight: 700; font-size: 1.15rem; color: var(--text-dark);">Your Daily Calories, by Cycle Phase</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Based on ${kg.toFixed(1)} kg (${Math.round(lb)} lb), ${cm.toFixed(0)} cm, age ${age}, and ${ACTIVITY_LABELS[activityTier].toLowerCase()} activity, after your goal adjustment.</p>
+                </div>
+
+                <div class="band-grid">
+                    <div class="band-box follicular">
+                        <div class="band-label">Follicular</div>
+                        <div class="band-value">${follicularCal}</div>
+                        <div class="band-sub">calories / day</div>
+                    </div>
+                    <div class="band-box luteal">
+                        <div class="band-label">Luteal</div>
+                        <div class="band-value">${lutealLow}&ndash;${lutealHigh}</div>
+                        <div class="band-sub">calories / day</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">Resting energy expenditure runs roughly 2&ndash;9% higher in the luteal phase (the one to two weeks before your period). Eating a bit more then is a normal physiological response, not a lapse.</p>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.05rem;">Your Macro Split</h3>
+                <div class="macro-grid">
+                    <div class="macro-box">
+                        <div class="macro-name">Protein</div>
+                        <div class="macro-grams">${proteinG} g</div>
+                        <div class="macro-detail">${proteinCal} cal &middot; ${proteinPct}%</div>
+                    </div>
+                    <div class="macro-box">
+                        <div class="macro-name">Fat</div>
+                        <div class="macro-grams">${fatG} g</div>
+                        <div class="macro-detail">${fatCal} cal &middot; ${fatPct}%</div>
+                    </div>
+                    <div class="macro-box">
+                        <div class="macro-name">Carbs</div>
+                        <div class="macro-grams">${carbGFollicular} g</div>
+                        <div class="macro-detail">${carbCalFollicular} cal &middot; ${carbPct}%</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; text-align: center;">Protein and fat stay steady across the month, based on your bodyweight. Carbs are the macro that flexes: in the luteal band above, carbs run roughly ${carbGLutealLow}&ndash;${carbGLutealHigh} g/day to cover the extra calories.</p>
+
+                <div class="working-box">
+                    <h4><i class="bi bi-calculator me-1"></i>How we got these numbers</h4>
+                    <p style="margin: 0;">BMR (Mifflin-St Jeor): <code>10 &times; ${kg.toFixed(1)} + 6.25 &times; ${cm.toFixed(0)} &minus; 5 &times; ${age} &minus; 161 = ${Math.round(bmr)} cal</code></p>
+                    <p style="margin: 0.4rem 0 0;">TDEE: <code>${Math.round(bmr)} &times; ${activityMult} (${ACTIVITY_LABELS[activityTier].toLowerCase()}) = ${Math.round(tdeeBase)} cal</code>${goalAdj !== 0 ? `, then ${goalAdj > 0 ? '+' : ''}${Math.round(goalAdj * 100)}% for your goal (${GOAL_LABELS[goal].toLowerCase()}) = <code>${follicularCal} cal</code>` : ` (no goal adjustment for maintain)`}.</p>
+                    <p style="margin: 0.4rem 0 0;">Luteal band: <code>${follicularCal} &times; 1.02&ndash;1.09 = ${lutealLow}&ndash;${lutealHigh} cal</code>.</p>
+                    <p style="margin: 0.4rem 0 0;">Protein: <code>${kg.toFixed(1)} kg &times; ${band.min}&ndash;${band.max} g/kg = ${proteinLow}&ndash;${proteinHigh} g</code>, using the midpoint (${proteinG} g) here. Fat: <code>${kg.toFixed(1)} kg &times; 0.9 g/kg = ${fatG} g</code>. Carbs fill what's left.</p>
+                    ${proteinReasonsHtml}
+                </div>
+
+                <div class="nuance-box">
+                    <h3><i class="bi bi-moon-stars me-1"></i>Why two bands, not one</h3>
+                    <p>Most calorie calculators assume a static body and hand you one number for every day of the month. Resting energy expenditure genuinely runs higher in the luteal phase, and appetite tends to rise alongside it, both linked to the hormonal shifts after ovulation. The follicular and luteal bands above reflect that shift instead of averaging it away. Perimenopause and postmenopause change the picture too, which is why those life stages here nudge your protein target toward the top of its range rather than the middle.</p>
+                </div>
+
+                <div class="cycle-bridge">
+                    <h4>Want to know which band applies to you right now?</h4>
+                    <p>These bands assume a textbook cycle. <a href="cycle-phase-calculator.html">Find your current cycle phase</a> to see whether you're in the follicular or luteal window today, or read more on <a href="../blog/cycle-syncing-guide.html">eating and training by cycle phase</a>.</p>
+                </div>
+
+                <p class="estimate-note">These are estimates from published formulas, not a personalized plan. If tracking these numbers makes food feel harder rather than easier, not tracking them is a legitimate choice too.</p>
+            </div>
+        `;
+
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        inlineCta.innerHTML = DEFAULT_INLINE_CTA_HTML;
+        inlineCta.style.display = 'block';
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

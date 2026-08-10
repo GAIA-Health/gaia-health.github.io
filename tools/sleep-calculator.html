@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sleep Calculator: Bedtime, Wake Time & Sleep Debt</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Find your best bedtime or wake time using 90-minute sleep cycles, and see your sleep debt from the last 7 nights. Free calculator, no login required.">
+    <meta name="keywords" content="sleep calculator, bedtime calculator, wake up time calculator, sleep cycle calculator, sleep debt calculator, 90 minute sleep cycles, how much sleep do I need">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/sleep-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sleep Calculator: Bedtime, Wake Time & Sleep Debt">
+    <meta property="og:description" content="Find your best bedtime or wake time using 90-minute sleep cycles, and see your sleep debt from the last 7 nights. Free calculator, no login required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/sleep-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Sleep Calculator: Bedtime, Wake Time & Sleep Debt">
+    <meta name="twitter:description" content="Find your best bedtime or wake time using 90-minute sleep cycles, and see your sleep debt from the last 7 nights. Free calculator, no login required.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sleep Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate my best bedtime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start from your wake-up time and count back in 90-minute sleep cycles, then subtract the time it usually takes you to fall asleep. Waking at the end of a cycle, rather than in the middle of one, is what makes mornings feel less groggy. Five cycles (7.5 hours of sleep) is a common target for adults, with four cycles (6 hours) and six cycles (9 hours) as the shorter and longer options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a 90-minute sleep cycle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A sleep cycle is one pass through the stages of sleep, from light sleep down to deep sleep and back up through REM. Ninety minutes is the commonly used average for calculating bedtimes, but real cycles vary from about 70 to 120 minutes and shift across the night, so any bedtime or wake-time estimate is a starting point to test, not an exact schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sleep debt calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sleep debt is the running gap between how much sleep you needed and how much you actually got. Add up the difference between your recommended nightly range and your actual hours slept for each of the last several nights. A night where you slept less than recommended adds to the debt; a night where you slept more or matched it does not subtract further once you are caught up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many hours of sleep do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most adults ages 18 to 64 do best with 7 to 9 hours a night. Teens typically need more, around 8 to 10 hours, and adults 65 and older often settle into 7 to 8 hours. These are population ranges from sleep research, not a diagnosis of what your body specifically needs, which is why tracking your own pattern over time tells you more than any single number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does your cycle affect how well you sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In the luteal phase, the second half of the cycle after ovulation, core body temperature rises roughly 0.3 to 0.5 degrees Celsius and sleep tends to become more fragmented, with more awakenings and less deep sleep. Going to bed at the same time can produce noticeably worse sleep in the luteal phase than in the follicular phase, and that is a hormonal pattern, not a discipline problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many nights does it take to recover from sleep debt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no fixed formula, but a common way to think about it is paying it back gradually: adding roughly 45 extra minutes of sleep across several nights rather than trying to sleep off a whole week's shortfall in one long weekend sleep-in, which mostly resets your schedule without actually clearing the debt."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Your Best Bedtime or Wake Time",
+      "description": "Find your best bedtime or wake time using 90-minute sleep cycles, and see your sleep debt from the last 7 nights.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick your anchor: wake time or bedtime",
+          "text": "Choose whichever one is fixed for you, such as an alarm you have to wake up to, or a bedtime you're already locked into."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Add your fall-asleep latency",
+          "text": "Most people take about 15 minutes to fall asleep after getting into bed. Adjust this if you know your own number runs higher or lower."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count 90-minute cycles from that point",
+          "text": "Four cycles is about 6 hours of sleep, five cycles is about 7.5 hours, and six cycles is about 9 hours. Waking at the end of a cycle rather than mid-cycle is the goal."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Log your last 7 nights for sleep debt",
+          "text": "Enter how many hours you actually slept each of the last 7 nights against your age-based recommended range to see your running sleep debt and how long it takes to clear."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Sleep Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/sleep-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Sleep Calculator: Bedtime, Wake Time & Sleep Debt",
+      "url": "https://www.go-go-gaia.com/tools/sleep-calculator.html",
+      "datePublished": "2026-08-08",
+      "dateModified": "2026-08-08",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="time"],
+        .calculator-card input[type="number"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="time"]:focus,
+        .calculator-card input[type="number"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Anchor toggle */
+        .anchor-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .anchor-toggle button {
+            flex: 1;
+            padding: 0.6rem 0.75rem;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .anchor-toggle button.active {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+            background: var(--primary-subtle);
+        }
+
+        /* Night rows */
+        .night-row {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .night-row label {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        details.nights-details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Time option rows */
+        .time-options {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .time-option {
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--secondary);
+            border: 2px solid transparent;
+        }
+        .time-option.recommended {
+            border-color: var(--primary);
+            background: var(--primary-subtle);
+        }
+        .time-option .opt-time {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .time-option .opt-meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .time-option .opt-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Working / how we got there */
+        .working-box {
+            background: #f7f7f4;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+        .working-box strong { color: var(--text-dark); }
+        .working-box ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+        .working-box li { margin-bottom: 0.35rem; }
+
+        /* Phase-nuance box */
+        .phase-indicator {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+        }
+        .phase-indicator .phase-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .phase-indicator .phase-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        /* Cycle bridge: onward path from the cycle-nuance box */
+        .cycle-bridge {
+            background: var(--primary-subtle);
+            border-left: 3px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            margin-top: 1rem;
+        }
+        .cycle-bridge h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .cycle-bridge p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .cycle-bridge a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cycle-bridge a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sleep debt */
+        .debt-card {
+            background: #fff4e6;
+            border: 2px solid #e8943a;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .debt-card .debt-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #b86b16;
+        }
+        .debt-card .debt-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Tips section */
+        .tips-section {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Sleep Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Sleep &amp; bedtime calculator</a></li>
+                    <li><a href="#how-sleep-cycles-work">How sleep cycles work</a></li>
+                    <li><a href="#sleep-and-your-cycle">Sleep and your cycle</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Sleep Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Find your best bedtime or wake time using 90-minute sleep cycles. Add your last 7 nights to see your sleep debt too.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="sleepForm">
+                        <label class="d-block">What do you know?</label>
+                        <div class="anchor-toggle" role="group" aria-label="Choose anchor type">
+                            <button type="button" id="btnWakeMode" class="active">I know my wake time</button>
+                            <button type="button" id="btnBedMode">I know my bedtime</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="anchorTime" class="form-label" id="anchorLabel">Wake-up time</label>
+                            <input type="time" class="form-control" id="anchorTime" value="07:00" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="latency" class="form-label">Time it usually takes you to fall asleep</label>
+                            <select class="form-select" id="latency">
+                                <option value="0">0 minutes</option>
+                                <option value="5">5 minutes</option>
+                                <option value="10">10 minutes</option>
+                                <option value="15" selected>15 minutes</option>
+                                <option value="20">20 minutes</option>
+                                <option value="25">25 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                            </select>
+                            <div class="form-text">15 minutes is a typical average if you're not sure.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ageBand" class="form-label">Age band</label>
+                            <select class="form-select" id="ageBand">
+                                <option value="teen">13&ndash;17 (teen)</option>
+                                <option value="adult" selected>18&ndash;64 (adult)</option>
+                                <option value="older">65+</option>
+                            </select>
+                            <div class="form-text">Sets the recommended sleep range used for the sleep-debt math below.</div>
+                        </div>
+
+                        <details class="nights-details mb-3">
+                            <summary>Add your last 7 nights (optional, for sleep debt)</summary>
+                            <div id="nightsWrap">
+                                <!-- night rows injected by JS -->
+                            </div>
+                            <div class="form-text">Leave any night blank to skip it. Hours only, e.g. 6.5.</div>
+                        </details>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My Sleep</button>
+                        </div>
+                    </form>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This uses population averages, not your actual sleep stages. It's a starting point to test against how you actually feel, not a diagnosis.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 680px; margin: 0 auto;"></div>
+
+            <div class="blog-cta-box blog-cta-box-inline" id="ctaInline" style="max-width: 680px; margin: 2rem auto; display: none;">
+                <h4><i class="bi bi-phone me-2"></i>Stop typing your sleep in by hand</h4>
+                <p>Gaia reads your sleep straight from Apple Health, so the 7-night column above fills itself, and shows it next to your cycle phase automatically.</p>
+                <p class="mb-0">
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational: How sleep cycles work -->
+        <section id="how-sleep-cycles-work" class="tools-educational container" style="max-width: 740px;">
+            <h2>How sleep cycles work</h2>
+            <p>Sleep isn't one flat state, it's a series of cycles, each moving through light sleep, deep sleep, and REM before starting over. The commonly used average for one full cycle is 90 minutes, which is why bedtime calculators count backward or forward in blocks of 90. Waking up at the end of a cycle, rather than in the middle of deep sleep, tends to feel less groggy, even if the total hours are similar. That's the whole idea behind this calculator: instead of just picking a round number of hours, it lines your wake-up or bedtime up with a cycle boundary.</p>
+
+            <h3>90 minutes is an average, not a rule</h3>
+            <p>Real sleep cycles run anywhere from about 70 to 120 minutes, and they shift across the night, with more deep sleep earlier and more REM later. So a calculator using a flat 90-minute cycle is giving you a reasonable estimate to test, not a precise readout of your own sleep architecture. If a suggested time consistently leaves you groggy, that's useful information about where your own cycles run long or short.</p>
+
+            <h3>What the cycle counts mean</h3>
+            <p>Four cycles works out to about 6 hours of sleep, five cycles to about 7.5 hours, and six cycles to about 9 hours. Most adults land somewhere in the 7-to-9-hour range recommended by sleep researchers, which is why five or six cycles is usually the more sustainable target, with four cycles better suited to an occasional short night than a regular schedule.</p>
+
+            <h3>What sleep debt actually measures</h3>
+            <p>Sleep debt is simply the running difference between how much sleep your age-based range recommends and how much you actually got, added up across recent nights. It's a rough tally, not a precise metabolic measurement, but it's a useful way to see a pattern that a single bad night hides: five nights of six hours each adds up to more missed sleep than one very late night followed by a normal week.</p>
+
+            <p class="tools-tip-line"><strong>Up next:</strong> Caffeine timing matters just as much as bedtime — the <a href="caffeine-calculator.html">caffeine calculator</a> shows your cutoff for a full night's sleep. And if your cycle length isn't a textbook 28 days, the <a href="cycle-length-calculator.html">cycle length calculator</a> shows your real pattern.</p>
+        </section>
+
+        <!-- Educational: Sleep and your cycle (female physiology) -->
+        <section id="sleep-and-your-cycle" class="tools-educational container" style="max-width: 740px;">
+            <h2>Sleep and your cycle</h2>
+            <p>The same bedtime doesn't produce the same sleep all month. In the luteal phase, the second half of the cycle after ovulation, progesterone rises and core body temperature climbs roughly 0.3 to 0.5&deg;C above where it sits in the follicular phase. Since falling and staying asleep both depend partly on core temperature dropping, a warmer baseline is associated with more fragmented sleep: more awakenings, lighter sleep, and less time in deep sleep, even when total time in bed doesn't change. If the back half of your cycle reliably feels like worse sleep on the same schedule, that's a physiological pattern showing up, not a lapse in sleep discipline.</p>
+
+            <h3>Perimenopause and night waking</h3>
+            <p>Night waking is one of the most commonly reported sleep complaints during perimenopause. Fluctuating estrogen and progesterone are linked to hot flashes and night sweats that interrupt sleep directly, along with more general sleep fragmentation as hormone levels become less predictable cycle to cycle. The 90-minute cycle math on this page still applies, but the more useful signal during perimenopause is usually the pattern across weeks, not any single night's number. For the wider picture of what's shifting during this transition, see our <a href="../blog/perimenopause-guide.html">perimenopause guide</a>.</p>
+
+            <p class="tools-tip-line">This page describes the pattern; it doesn't diagnose it. If disrupted sleep is new, worsening, or affecting your daily life, that's worth raising with a healthcare provider.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 680px;">
+            <div class="cta-section">
+                <h3>A calculator resets every time. Your baseline doesn't.</h3>
+                <p>Tonight's number comes from a population formula and disappears once you close the tab. Gaia keeps every night you log, sleep debt included, next to your mood, energy, and cycle day, so weeks from now you're looking at your own pattern instead of running the same math over again.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=sleep-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Sleep Timing</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I calculate my best bedtime?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Start from your wake-up time and count back in 90-minute sleep cycles, then subtract the time it usually takes you to fall asleep. Waking at the end of a cycle, rather than in the middle of one, is what makes mornings feel less groggy. Five cycles (7.5 hours of sleep) is a common target for adults, with four cycles (6 hours) and six cycles (9 hours) as the shorter and longer options.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is a 90-minute sleep cycle?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">A sleep cycle is one pass through the stages of sleep, from light sleep down to deep sleep and back up through REM. Ninety minutes is the commonly used average for calculating bedtimes, but real cycles vary from about 70 to 120 minutes and shift across the night, so any bedtime or wake-time estimate is a starting point to test, not an exact schedule.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How is sleep debt calculated?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sleep debt is the running gap between how much sleep you needed and how much you actually got. Add up the difference between your recommended nightly range and your actual hours slept for each of the last several nights. A night where you slept less than recommended adds to the debt; a night where you slept more or matched it does not subtract further once you are caught up.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How many hours of sleep do I need?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Most adults ages 18 to 64 do best with 7 to 9 hours a night. Teens typically need more, around 8 to 10 hours, and adults 65 and older often settle into 7 to 8 hours. These are population ranges from sleep research, not a diagnosis of what your body specifically needs, which is why tracking your own pattern over time tells you more than any single number.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Does your cycle affect how well you sleep?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes. In the luteal phase, the second half of the cycle after ovulation, core body temperature rises roughly 0.3 to 0.5 degrees Celsius and sleep tends to become more fragmented, with more awakenings and less deep sleep. Going to bed at the same time can produce noticeably worse sleep in the luteal phase than in the follicular phase, and that is a hormonal pattern, not a discipline problem.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">How many nights does it take to recover from sleep debt?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">There is no fixed formula, but a common way to think about it is paying it back gradually: adding roughly 45 extra minutes of sleep across several nights rather than trying to sleep off a whole week's shortfall in one long weekend sleep-in, which mostly resets your schedule without actually clearing the debt.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related" class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Period Trackers That Also Track Sleep</h4>
+                        <p>A comparison of Oura, Whoop, Apple Watch, and period-tracking apps on sleep data.</p>
+                        <a href="../blog/period-tracker-that-tracks-sleep.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator gives you an estimate based on published sleep-cycle averages, not a diagnosis. It cannot detect insomnia, sleep apnea, or other sleep disorders, and it isn't a substitute for a sleep study or a conversation with a healthcare provider. Go Go Gaia is a tracking tool, not a substitute for professional medical care.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const CYCLE_MIN = 90; // minutes, textbook average sleep cycle
+    const DEBT_CAP_HOURS = 14;
+    const RECOVERY_MIN_PER_NIGHT = 45;
+
+    // Recommended nightly range + a single midpoint target used for sleep-debt math
+    const AGE_RANGES = {
+        teen:  { label: "13–17 (teen)", low: 8, high: 10, target: 9 },
+        adult: { label: "18–64 (adult)", low: 7, high: 9, target: 8 },
+        older: { label: "65+", low: 7, high: 8, target: 7.5 }
+    };
+
+    function pad2(n) { return String(n).padStart(2, '0'); }
+
+    function formatTime(totalMinutes) {
+        // totalMinutes can be negative or >1440; normalize into a 0-1439 clock time
+        let m = ((totalMinutes % 1440) + 1440) % 1440;
+        let h = Math.floor(m / 60);
+        const min = m % 60;
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        let h12 = h % 12;
+        if (h12 === 0) h12 = 12;
+        return `${h12}:${pad2(min)} ${ampm}`;
+    }
+
+    function parseTimeToMinutes(hhmm) {
+        const [h, m] = hhmm.split(':').map(Number);
+        return h * 60 + m;
+    }
+
+    function dayOffsetLabel(totalMinutes) {
+        const m = Math.floor(totalMinutes / 1440);
+        if (m < 0) return ' (previous night)';
+        if (m > 0) return ' (next day)';
+        return '';
+    }
+
+    // Build the 7-night input rows
+    document.addEventListener('DOMContentLoaded', function() {
+        const wrap = document.getElementById('nightsWrap');
+        let html = '';
+        for (let i = 1; i <= 7; i++) {
+            html += `<div class="night-row">
+                <label for="night${i}">Night ${i} ago</label>
+                <input type="number" class="form-control" id="night${i}" min="0" max="16" step="0.25" placeholder="hours">
+            </div>`;
+        }
+        wrap.innerHTML = html;
+    });
+
+    // Anchor mode toggle
+    let mode = 'wake'; // 'wake' or 'bed'
+    const btnWake = document.getElementById('btnWakeMode');
+    const btnBed = document.getElementById('btnBedMode');
+    const anchorLabel = document.getElementById('anchorLabel');
+    const anchorTime = document.getElementById('anchorTime');
+
+    btnWake.addEventListener('click', function() {
+        mode = 'wake';
+        btnWake.classList.add('active');
+        btnBed.classList.remove('active');
+        anchorLabel.textContent = 'Wake-up time';
+        anchorTime.value = '07:00';
+    });
+    btnBed.addEventListener('click', function() {
+        mode = 'bed';
+        btnBed.classList.add('active');
+        btnWake.classList.remove('active');
+        anchorLabel.textContent = 'Bedtime';
+        anchorTime.value = '22:30';
+    });
+
+    document.getElementById('sleepForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const anchorMinutes = parseTimeToMinutes(anchorTime.value);
+        const latency = parseInt(document.getElementById('latency').value, 10);
+        const ageKey = document.getElementById('ageBand').value;
+        const age = AGE_RANGES[ageKey];
+
+        // Build the 3 cycle-count options: 4 / 5 / 6 cycles
+        const cycleCounts = [4, 5, 6];
+        const options = cycleCounts.map(function(cycles) {
+            const totalSleepMin = cycles * CYCLE_MIN;
+            let resultMinutes, otherMinutes;
+            if (mode === 'wake') {
+                // Working backward from wake time: bedtime = wake - sleep - latency
+                resultMinutes = anchorMinutes - totalSleepMin - latency;
+            } else {
+                // Working forward from bedtime: wake = bedtime + latency + sleep
+                resultMinutes = anchorMinutes + latency + totalSleepMin;
+            }
+            return {
+                cycles: cycles,
+                hours: (totalSleepMin / 60),
+                minutes: resultMinutes
+            };
+        });
+
+        // The 5-cycle (7.5h) option is the recommended default for most adults
+        const recommendedCycles = 5;
+
+        // Sleep debt from the 7-night log
+        let nightsEntered = 0;
+        let debtHours = 0;
+        for (let i = 1; i <= 7; i++) {
+            const val = document.getElementById('night' + i).value;
+            if (val === '') continue;
+            const hours = parseFloat(val);
+            if (isNaN(hours)) continue;
+            nightsEntered++;
+            const diff = age.target - hours;
+            if (diff > 0) debtHours += diff;
+        }
+        const debtCapped = Math.min(debtHours, DEBT_CAP_HOURS);
+        const debtWasCapped = debtHours > DEBT_CAP_HOURS;
+        const recoveryNights = debtHours > 0 ? Math.ceil((debtHours * 60) / RECOVERY_MIN_PER_NIGHT) : 0;
+
+        // Build option rows
+        const optionLabels = { 4: 'Shorter night', 5: 'Recommended', 6: 'Longer night' };
+        let optionsHtml = '';
+        options.forEach(function(opt) {
+            const isRec = opt.cycles === recommendedCycles;
+            optionsHtml += `<div class="time-option${isRec ? ' recommended' : ''}">
+                <div>
+                    ${isRec ? '<div class="opt-badge">RECOMMENDED</div>' : ''}
+                    <div class="opt-time">${formatTime(opt.minutes)}${dayOffsetLabel(opt.minutes)}</div>
+                </div>
+                <div class="opt-meta">${opt.cycles} cycles<br>~${opt.hours % 1 === 0 ? opt.hours : opt.hours.toFixed(1)}h sleep</div>
+            </div>`;
+        });
+
+        const heroTime = formatTime(options[1].minutes); // 5-cycle option
+        const plainRead = mode === 'wake'
+            ? `To wake at ${formatTime(anchorMinutes)} feeling rested, aim to be asleep by around ${heroTime}.`
+            : `Falling asleep around ${anchorTime.value ? formatTime(anchorMinutes + latency) : ''}, you'd naturally surface around ${heroTime}.`;
+
+        const anchorLabelText = mode === 'wake' ? 'wake-up time' : 'bedtime';
+        const workingHtml = `
+            <strong>How we got there:</strong>
+            <ul>
+                <li>Your ${anchorLabelText}: ${formatTime(anchorMinutes)}</li>
+                <li>Fall-asleep latency: ${latency} minutes</li>
+                <li>Sleep cycle length used: 90 minutes (textbook average)</li>
+                <li>${mode === 'wake' ? 'Counted back' : 'Counted forward'} ${recommendedCycles} cycles (${(recommendedCycles * CYCLE_MIN / 60)} hours) ${mode === 'wake' ? 'from your wake time, then subtracted latency' : 'from your bedtime, after adding latency'}</li>
+            </ul>
+        `;
+
+        let debtHtml = '';
+        if (nightsEntered > 0) {
+            debtHtml = `
+                <div class="debt-card">
+                    <div class="debt-value">${debtCapped.toFixed(1)}h${debtWasCapped ? '+' : ''} sleep debt</div>
+                    <div class="debt-label">From ${nightsEntered} night${nightsEntered === 1 ? '' : 's'} logged against your ${age.label} target of ${age.target}h/night${debtWasCapped ? ' (capped at ' + DEBT_CAP_HOURS + 'h)' : ''}</div>
+                    ${recoveryNights > 0
+                        ? `<div class="debt-label" style="margin-top: 0.5rem;">About ${recoveryNights} night${recoveryNights === 1 ? '' : 's'} of +${RECOVERY_MIN_PER_NIGHT} minutes would clear it</div>`
+                        : `<div class="debt-label" style="margin-top: 0.5rem;">You're not carrying a debt over the nights you logged</div>`}
+                </div>
+            `;
+        }
+
+        const html = `
+            <div class="result-card">
+                <div class="text-center mb-3">
+                    <h2 style="font-weight: 700; font-size: 1.3rem; color: var(--text-dark);">Your Best ${mode === 'wake' ? 'Bedtime' : 'Wake Time'}</h2>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-dark);">${heroTime}</div>
+                    <div style="font-size: 1rem; color: var(--text-muted);">${plainRead}</div>
+                </div>
+
+                <div class="time-options">${optionsHtml}</div>
+
+                <div class="working-box">${workingHtml}</div>
+
+                <div class="phase-indicator">
+                    <div class="phase-name">Same bedtime, different night</div>
+                    <div class="phase-desc">These times assume an average night. In the luteal phase (the back half of your cycle), core body temperature runs about 0.3&ndash;0.5&deg;C higher and sleep tends to fragment more, so the same bedtime can produce a rougher night. That's a hormonal pattern, not a discipline problem &mdash; see the female-physiology note below.</div>
+                </div>
+
+                <div class="cycle-bridge">
+                    <h4>Want to factor your cycle in?</h4>
+                    <p>Work out where you are in your cycle first, then read tonight's numbers against your phase &mdash; the luteal half of the cycle runs warmer and more fragmented no matter what bedtime you pick. <a href="cycle-phase-calculator.html">Find out what phase you're in</a>, or read <a href="../blog/best-app-track-sleep-cycle.html">how sleep quality shifts across the month</a>.</p>
+                </div>
+
+                ${debtHtml}
+            </div>
+        `;
+
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        document.getElementById('ctaInline').style.display = 'block';
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

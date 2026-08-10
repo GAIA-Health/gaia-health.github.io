@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BMI Calculator for Women: Your Number &amp; What It Can't Tell You</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Calculate your BMI and waist-to-height ratio, plus what the number actually can and can't tell you, with context for PCOS, fertility treatment, and perimenopause.">
+    <meta name="keywords" content="bmi calculator, bmi calculator for women, bmi and pcos, bmi for ivf, waist to height ratio calculator, what is my bmi, body mass index calculator">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/bmi-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BMI Calculator for Women: Your Number &amp; What It Can't Tell You">
+    <meta property="og:description" content="Calculate your BMI and waist-to-height ratio, plus what the number actually can and can't tell you, with context for PCOS, fertility treatment, and perimenopause.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/bmi-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="BMI Calculator for Women: Your Number &amp; What It Can't Tell You">
+    <meta name="twitter:description" content="Calculate your BMI and waist-to-height ratio, plus what the number actually can and can't tell you, with context for PCOS, fertility treatment, and perimenopause.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BMI Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is BMI calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Body mass index is your weight in kilograms divided by your height in meters, squared: BMI = kg / m². For a 68 kg woman at 168 cm (1.68 m), that's 68 / (1.68 × 1.68), or about 24.1. The World Health Organization then places that number into population categories: under 18.5, 18.5–24.9, 25–29.9, and 30 or above. Those labels describe where a number sits in a population distribution, not a diagnosis or an assessment of any individual's health."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can't BMI tell you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BMI can't distinguish muscle from fat, so a muscular or highly active body can land in a higher category without that reflecting body composition. It also can't see where fat sits on the body, which matters more for cardiometabolic risk than total weight does. The formula and its cut-offs were derived from studies of white European men, and research shows those same cut-offs perform differently for South Asian and East Asian populations, who can face higher metabolic risk at lower BMI numbers. And BMI says nothing at all about how healthy any individual actually is; it's a population screening statistic, not a personal health assessment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is waist-to-height ratio and why does this calculator show it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Waist-to-height ratio is your waist measurement divided by your height, in the same units. A commonly cited reference point is 0.5, keep your waist under half your height, though it's descriptive rather than a hard cutoff. Because it captures where weight is carried rather than just total weight, research has found it correlates with cardiometabolic risk at least as well as BMI, often better. This calculator shows it alongside BMI as a companion metric, not a replacement, when you choose to enter a waist measurement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does BMI come up so much in PCOS care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PCOS involves insulin resistance for many people, and weight and insulin sensitivity interact in both directions, which is part of why BMI gets tracked closely in PCOS appointments. It's also well documented that PCOS can make weight harder to shift for hormonal reasons, not a matter of effort. A single BMI number doesn't capture any of that interaction; a waist measurement and how you actually feel day to day carry information BMI misses entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do fertility clinics use BMI thresholds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many fertility clinics and some public or insurance-based IVF funding pathways do use BMI thresholds as part of eligibility criteria, which is a policy and access fact, not a statement about whether BMI predicts any individual's fertility outcome. It's understandably one of the more anxiety-inducing reasons people search for a BMI number, and it's worth knowing plainly rather than being surprised by it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator give a BMI number during pregnancy or postpartum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. BMI wasn't designed for a pregnant or newly postpartum body, and a general-population number isn't useful in either window, so this calculator intentionally doesn't generate one. If you're pregnant or postpartum and want to talk through weight, nutrition, or anything else specific to your body right now, your provider or a registered dietitian is the right conversation to have instead."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Your BMI and Waist-to-Height Ratio",
+      "description": "Calculate body mass index from weight and height using the standard BMI formula, with an optional waist-to-height ratio and context for PCOS, fertility treatment, and perimenopause.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter your weight and height",
+          "text": "Weight in kilograms or pounds, height in centimeters or feet and inches. These feed the standard BMI formula, weight in kilograms divided by height in meters squared."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Optionally enter your waist measurement",
+          "text": "Waist in centimeters or inches. If provided, the calculator also shows your waist-to-height ratio, a companion metric that reflects where weight is carried."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Choose your context",
+          "text": "General, PCOS, trying to conceive or fertility treatment, perimenopause or postmenopause, or pregnant or postpartum. This changes the explanatory context shown with your result, not the math."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Read your result and its limits",
+          "text": "The result shows your BMI, the WHO population category it falls in, your waist-to-height ratio if entered, and a plain explanation of what BMI can and can't tell you as an individual."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BMI Calculator for Women",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/bmi-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "BMI Calculator for Women: Your Number &amp; What It Can't Tell You",
+      "url": "https://www.go-go-gaia.com/tools/bmi-calculator.html",
+      "datePublished": "2026-08-08",
+      "dateModified": "2026-08-08",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="number"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="number"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .unit-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .unit-toggle input[type="radio"] {
+            display: none;
+        }
+        .unit-toggle label {
+            margin: 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.6rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .unit-toggle input[type="radio"]:checked + label {
+            border-color: var(--primary);
+            background: var(--primary-subtle);
+            color: var(--primary-dark);
+        }
+        .weight-row {
+            display: flex;
+            gap: 0.75rem;
+            align-items: stretch;
+        }
+        .weight-row input[type="number"] { flex: 1; min-width: 0; }
+        .height-toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .height-toggle-row label { margin-bottom: 0; }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        .bmi-headline {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.1;
+        }
+        .bmi-subline {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0.35rem auto 0;
+        }
+        .bmi-category-tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            background: var(--secondary);
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* What BMI can't see box */
+        .limits-box {
+            background: #fdf7f2;
+            border: 1px solid #f0e2d4;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .limits-box h3 {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+        .limits-box ul {
+            margin: 0;
+            padding-left: 1.15rem;
+        }
+        .limits-box li {
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .limits-box li:last-child { margin-bottom: 0; }
+
+        /* Waist-to-height companion metric */
+        .whr-box {
+            background: var(--primary-subtle);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .whr-box h3 {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .whr-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .whr-box p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin: 0.5rem auto 0;
+            max-width: 480px;
+        }
+
+        /* Working / how we got there */
+        .working-box {
+            background: #f6f5f2;
+            border: 1px dashed #cfc9be;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+        }
+        .working-box h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .working-box p { margin: 0.3rem 0 0; }
+        .working-box code {
+            background: #fff;
+            border: 1px solid #e2ddd2;
+            border-radius: 6px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.88rem;
+        }
+
+        /* Context nuance box */
+        .nuance-box {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-top: 1.5rem;
+        }
+        .nuance-box h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+        }
+        .nuance-box p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Cycle bridge: onward path from the nuance box */
+        .cycle-bridge {
+            background: var(--primary-subtle);
+            border-left: 3px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            margin-top: 1rem;
+        }
+        .cycle-bridge h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .cycle-bridge p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .cycle-bridge a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cycle-bridge a:hover {
+            text-decoration: underline;
+        }
+
+        /* A legitimate-choice note, unpatronising */
+        .estimate-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Pregnancy / postpartum panel */
+        .soft-panel {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            text-align: center;
+        }
+        .soft-panel h2 {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+        .soft-panel p {
+            color: var(--text-dark);
+            max-width: 520px;
+            margin: 0 auto 0.5rem;
+        }
+        .soft-panel p.soft-panel-product {
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">BMI Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">BMI calculator</a></li>
+                    <li><a href="#bmi-and-your-body">What BMI can and can't tell you</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">BMI Calculator for Women</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Get your BMI, plus an honest read on what a population statistic can and can't tell you about your own body. Add a waist measurement for a companion metric that carries more information than BMI alone.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="bmiForm">
+                        <div class="mb-3">
+                            <label for="weightInput" class="form-label">Your weight</label>
+                            <div class="weight-row">
+                                <input type="number" class="form-control" id="weightInput" min="30" max="300" step="0.1" required placeholder="e.g. 68">
+                                <div class="unit-toggle" role="radiogroup" aria-label="Weight unit">
+                                    <input type="radio" name="weightUnit" id="unitKg" value="kg" checked>
+                                    <label for="unitKg">kg</label>
+                                    <input type="radio" name="weightUnit" id="unitLb" value="lb">
+                                    <label for="unitLb">lb</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="height-toggle-row">
+                                <label for="heightCmInput" class="form-label">Your height</label>
+                                <div class="unit-toggle" role="radiogroup" aria-label="Height unit">
+                                    <input type="radio" name="heightUnit" id="unitCm" value="cm" checked>
+                                    <label for="unitCm">cm</label>
+                                    <input type="radio" name="heightUnit" id="unitFtIn" value="ftin">
+                                    <label for="unitFtIn">ft/in</label>
+                                </div>
+                            </div>
+                            <div id="heightCmField">
+                                <input type="number" class="form-control" id="heightCmInput" min="120" max="220" step="0.1" placeholder="e.g. 168">
+                            </div>
+                            <div id="heightFtInField" style="display:none;">
+                                <div class="weight-row">
+                                    <input type="number" class="form-control" id="heightFtInput" min="3" max="7" placeholder="feet">
+                                    <input type="number" class="form-control" id="heightInInput" min="0" max="11" placeholder="inches">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="height-toggle-row">
+                                <label for="waistInput" class="form-label">Waist measurement <span style="font-weight: 400; color: var(--text-muted);">(optional)</span></label>
+                                <div class="unit-toggle" role="radiogroup" aria-label="Waist unit">
+                                    <input type="radio" name="waistUnit" id="waistUnitCm" value="cm" checked>
+                                    <label for="waistUnitCm">cm</label>
+                                    <input type="radio" name="waistUnit" id="waistUnitIn" value="in">
+                                    <label for="waistUnitIn">in</label>
+                                </div>
+                            </div>
+                            <input type="number" class="form-control" id="waistInput" min="40" max="200" step="0.1" placeholder="e.g. 80">
+                            <div class="form-text">Add this for your waist-to-height ratio, a companion metric that reflects where weight is carried, not just how much.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contextInput" class="form-label">Context <span style="font-weight: 400; color: var(--text-muted);">(optional)</span></label>
+                            <select class="form-select" id="contextInput">
+                                <option value="general" selected>General</option>
+                                <option value="pcos">PCOS</option>
+                                <option value="fertility">Trying to conceive or fertility treatment</option>
+                                <option value="perimenopause">Perimenopause or postmenopause</option>
+                                <option value="pregnant">Pregnant or postpartum</option>
+                            </select>
+                            <div class="form-text">Pregnant or postpartum? This calculator won't give you a BMI number for that stage, but it'll show you what Gaia does instead.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Calculate My BMI</button>
+                        </div>
+                    </form>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This uses the standard BMI formula and WHO population categories, not your personal data. It's a screening statistic, not a personal health assessment, and it isn't a substitute for advice from your provider.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 680px; margin: 0 auto;"></div>
+
+            <div class="blog-cta-box blog-cta-box-inline" id="inlineCta" style="max-width: 680px; margin: 2rem auto; display: none;">
+                <h4><i class="bi bi-phone me-2"></i>One reading is a snapshot, and a fairly weak one</h4>
+                <p>A single BMI, taken once, can't show you a trend. Gaia logs your weight alongside symptoms, cycle, and energy, so you see the pattern across months instead of one static number.</p>
+                <p class="mb-0">
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational: What BMI can and can't tell you -->
+        <section id="bmi-and-your-body" class="tools-educational container" style="max-width: 740px;">
+            <h2>What BMI can and can't tell you</h2>
+            <p>Body mass index is a simple formula: weight in kilograms divided by height in meters, squared. The World Health Organization sorts the result into population categories, under 18.5, 18.5 to 24.9, 25 to 29.9, and 30 or above, that were built from large population studies, not from any single person's health. Those labels describe where a number sits in a distribution. They were never meant to describe an individual, and this calculator won't address you as one, either; the result says where your number falls, not what you are.</p>
+
+            <h3>What the number can't see</h3>
+            <p>BMI can't distinguish muscle from fat, so a muscular or highly active body can land in a higher category without that reflecting body composition at all. It also can't see where fat sits on the body, which matters more for cardiometabolic risk than total weight does. The formula and its cut-offs were derived largely from studies of white European men, and research has repeatedly shown those same cut-offs perform differently for South Asian and East Asian populations, who can carry higher metabolic risk at BMI numbers the standard categories would call normal. And underneath all of that: BMI says nothing about how healthy any individual actually is. It's a screening statistic for populations, not an assessment of a person.</p>
+
+            <h3>Waist-to-height ratio: the companion metric</h3>
+            <p>If you enter a waist measurement, this calculator also shows your waist-to-height ratio, waist divided by height, in the same units. A commonly cited reference point is 0.5, keeping your waist under half your height, described here plainly rather than as a rule. Because it reflects where weight sits rather than just how much there is, research has found waist-to-height ratio correlates with cardiometabolic risk at least as well as BMI, and in a number of studies, better. It's not a replacement for BMI on this page; it's shown alongside it because it's the genuinely useful addition a bare BMI number is missing.</p>
+
+            <h3>BMI and PCOS</h3>
+            <p>BMI comes up constantly in PCOS care, because weight and insulin resistance interact in both directions for many people with PCOS. It's also well documented that PCOS can make weight harder to shift for hormonal reasons, not a matter of effort. A single BMI number doesn't capture any of that interaction. A waist measurement and how you actually feel day to day, energy, cycle regularity, mood, carry information a BMI number alone misses entirely.</p>
+
+            <h3>BMI and fertility treatment</h3>
+            <p>Many fertility clinics and some public or insurance-based IVF funding pathways use BMI thresholds as part of eligibility criteria. That's a policy and access fact worth knowing plainly, and it's a common reason people arrive at a BMI calculator feeling anxious rather than curious. This page won't comment on whether a given number predicts your outcome, and it has no advice about meeting a threshold; that's a conversation for your clinic.</p>
+
+            <h3>BMI in perimenopause and postmenopause</h3>
+            <p>Body composition shifts in this window even when the scale doesn't move much, muscle mass tends to decline and fat distribution tends to shift toward the abdomen. BMI can read exactly the same across that transition while quite a lot changes underneath it, which is part of why a waist measurement can be more informative during this stage than it was earlier.</p>
+
+            <h3>Tracking these numbers is optional</h3>
+            <p>If numbers like this one make food or your body harder to think about, skipping them is a legitimate choice, not a failure to engage with your health. There's no requirement to weigh in or calculate anything to take your health seriously.</p>
+
+            <p class="tools-tip-line"><strong>Also worth a look:</strong> Want calorie and macro targets rather than a weight-and-height statistic? Try our <a href="macro-calculator.html">macro calculator</a>. And for a fuller picture of PCOS, read our <a href="../blog/complete-guide-to-pcos.html">complete guide to PCOS</a>.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 680px;">
+            <div class="cta-section">
+                <h3>A number today doesn't show you a pattern.</h3>
+                <p>What's actually useful isn't one BMI, it's watching weight, waist, symptoms, energy, and cycle move together over months. Gaia logs weight alongside everything else you're already tracking, so you see the trend instead of chasing a single figure.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=bmi-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About BMI</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How is BMI calculated?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Body mass index is your weight in kilograms divided by your height in meters, squared: BMI = kg / m&sup2;. For a 68 kg woman at 168 cm (1.68 m), that's 68 / (1.68 &times; 1.68), or about 24.1. The World Health Organization then places that number into population categories: under 18.5, 18.5&ndash;24.9, 25&ndash;29.9, and 30 or above. Those labels describe where a number sits in a population distribution, not a diagnosis or an assessment of any individual's health.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What can't BMI tell you?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">BMI can't distinguish muscle from fat, so a muscular or highly active body can land in a higher category without that reflecting body composition. It also can't see where fat sits on the body, which matters more for cardiometabolic risk than total weight does. The formula and its cut-offs were derived from studies of white European men, and research shows those same cut-offs perform differently for South Asian and East Asian populations, who can face higher metabolic risk at lower BMI numbers. And BMI says nothing at all about how healthy any individual actually is; it's a population screening statistic, not a personal health assessment.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What is waist-to-height ratio and why does this calculator show it?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Waist-to-height ratio is your waist measurement divided by your height, in the same units. A commonly cited reference point is 0.5, keep your waist under half your height, though it's descriptive rather than a hard cutoff. Because it captures where weight is carried rather than just total weight, research has found it correlates with cardiometabolic risk at least as well as BMI, often better. This calculator shows it alongside BMI as a companion metric, not a replacement, when you choose to enter a waist measurement.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Why does BMI come up so much in PCOS care?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">PCOS involves insulin resistance for many people, and weight and insulin sensitivity interact in both directions, which is part of why BMI gets tracked closely in PCOS appointments. It's also well documented that PCOS can make weight harder to shift for hormonal reasons, not a matter of effort. A single BMI number doesn't capture any of that interaction; a waist measurement and how you actually feel day to day carry information BMI misses entirely.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Do fertility clinics use BMI thresholds?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Many fertility clinics and some public or insurance-based IVF funding pathways do use BMI thresholds as part of eligibility criteria, which is a policy and access fact, not a statement about whether BMI predicts any individual's fertility outcome. It's understandably one of the more anxiety-inducing reasons people search for a BMI number, and it's worth knowing plainly rather than being surprised by it.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Does this calculator give a BMI number during pregnancy or postpartum?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">No. BMI wasn't designed for a pregnant or newly postpartum body, and a general-population number isn't useful in either window, so this calculator intentionally doesn't generate one. If you're pregnant or postpartum and want to talk through weight, nutrition, or anything else specific to your body right now, your provider or a registered dietitian is the right conversation to have instead.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related" class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Macro Calculator</h4>
+                        <p>Get calorie and macro targets by cycle phase, if you're looking for numbers to act on rather than a population statistic.</p>
+                        <a href="macro-calculator.html">Calculate macros &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Cycle Phase Calculator</h4>
+                        <p>Find out exactly where you are in your cycle right now, follicular, ovulation, or luteal.</p>
+                        <a href="cycle-phase-calculator.html">Find your phase &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="related-card">
+                        <h4>Complete Guide to PCOS</h4>
+                        <p>Symptoms, causes, and what actually helps, including the weight and insulin resistance connection.</p>
+                        <a href="../blog/complete-guide-to-pcos.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator applies the standard BMI formula and WHO population categories to the numbers you enter. It is a screening-population statistic, not an assessment of your health, and it does not diagnose, treat, or predict anything about any individual. Anything about your weight in the context of PCOS, fertility treatment, or a health condition belongs with your provider, not a formula on this page. If you are pregnant, postpartum, managing a health condition, have a history of disordered eating, or unsure what's right for your body, your healthcare provider or a registered dietitian can help you further. Go Go Gaia is a tracking tool, not a substitute for professional medical or nutrition care.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    // WHO adult BMI categories. These are population classifications, never an
+    // identity or diagnosis: the copy always says "this number falls in the range
+    // labeled X," never "you are X."
+    const CATEGORIES = [
+        { max: 18.5, label: "the range the WHO labels underweight" },
+        { max: 25, label: "the range the WHO labels “normal weight”" },
+        { max: 30, label: "the range the WHO labels overweight" },
+        { max: Infinity, label: "the range the WHO labels obese" }
+    ];
+
+    const CONTEXT_LABELS = {
+        general: "General",
+        pcos: "PCOS",
+        fertility: "Trying to conceive or fertility treatment",
+        perimenopause: "Perimenopause or postmenopause",
+        pregnant: "Pregnant or postpartum"
+    };
+
+    const CONTEXT_NUANCE = {
+        pcos: `BMI comes up constantly in PCOS care, because weight and insulin resistance interact in both directions for many people with PCOS. It's also well documented that PCOS can make weight harder to shift for hormonal reasons, not a matter of effort. A single BMI number doesn't capture any of that interaction; a waist measurement and how you actually feel, energy, cycle regularity, mood, carry information this number misses entirely.`,
+        fertility: `Many fertility clinics and some public or insurance-based IVF funding pathways use BMI thresholds as part of eligibility criteria. That's a policy and access fact worth knowing plainly, and a common reason this page gets visited with some anxiety rather than curiosity. This calculator has no comment on whether your number predicts your outcome, and no advice about meeting a threshold; that conversation belongs with your clinic.`,
+        perimenopause: `Body composition shifts in this window even when the scale doesn't move much, muscle mass tends to decline and fat distribution tends to shift toward the abdomen. BMI can read exactly the same across that transition while quite a lot changes underneath it, which is part of why a waist measurement can tell you more right now than it used to.`
+    };
+
+    const APP_STORE_URL = "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8";
+
+    const DEFAULT_INLINE_CTA_HTML = `
+        <h4><i class="bi bi-phone me-2"></i>One reading is a snapshot, and a fairly weak one</h4>
+        <p>A single BMI, taken once, can't show you a trend. Gaia logs your weight alongside symptoms, cycle, and energy, so you see the pattern across months instead of one static number.</p>
+        <p class="mb-0">
+            <a href="${APP_STORE_URL}" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-apple me-2"></i>Download on the App Store
+            </a>
+        </p>
+    `;
+
+    const PREGNANT_CTA_HTML = `
+        <h4><i class="bi bi-phone me-2"></i>Let Gaia handle what actually moves right now</h4>
+        <p>Log your pregnancy start date once, and Gaia works out your trimester and adjusts your targets from there &mdash; no BMI, no formula standing in for a conversation with your provider.</p>
+        <p class="mb-0">
+            <a href="${APP_STORE_URL}" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi bi-apple me-2"></i>Download on the App Store
+            </a>
+        </p>
+    `;
+
+    // Height unit toggle
+    const heightCmField = document.getElementById('heightCmField');
+    const heightFtInField = document.getElementById('heightFtInField');
+    document.querySelectorAll('input[name="heightUnit"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            if (this.value === 'cm') {
+                heightCmField.style.display = '';
+                heightFtInField.style.display = 'none';
+            } else {
+                heightCmField.style.display = 'none';
+                heightFtInField.style.display = '';
+            }
+        });
+    });
+
+    document.getElementById('bmiForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const weightVal = parseFloat(document.getElementById('weightInput').value);
+        if (!weightVal || weightVal <= 0) return;
+        const weightUnit = document.querySelector('input[name="weightUnit"]:checked').value;
+        const kg = weightUnit === 'lb' ? weightVal / 2.20462 : weightVal;
+        const lb = weightUnit === 'lb' ? weightVal : weightVal * 2.20462;
+
+        const heightUnit = document.querySelector('input[name="heightUnit"]:checked').value;
+        let cm;
+        if (heightUnit === 'cm') {
+            cm = parseFloat(document.getElementById('heightCmInput').value);
+        } else {
+            const ft = parseFloat(document.getElementById('heightFtInput').value) || 0;
+            const inches = parseFloat(document.getElementById('heightInInput').value) || 0;
+            cm = (ft * 12 + inches) * 2.54;
+        }
+        if (!cm || cm <= 0) return;
+
+        const context = document.getElementById('contextInput').value;
+
+        const resultsEl = document.getElementById('results');
+        const inlineCta = document.getElementById('inlineCta');
+
+        // Pregnant or postpartum: no BMI number at all, hard requirement.
+        if (context === 'pregnant') {
+            resultsEl.innerHTML = `
+                <div class="soft-panel">
+                    <h2><i class="bi bi-heart me-2"></i>This isn't a number that means anything useful right now</h2>
+                    <p>BMI wasn't designed for a pregnant or newly postpartum body, and a general-population number isn't useful in either window, so this calculator intentionally doesn't generate one for you.</p>
+                    <p class="soft-panel-product">Gaia works out your trimester from your pregnancy start date and adjusts your targets from there, and pauses any deficit automatically; early postpartum holds you at maintenance for the first six weeks.</p>
+                    <p>Anything specific to your weight, pregnancy, or recovery is still a conversation for your provider or a registered dietitian.</p>
+                </div>
+            `;
+            resultsEl.classList.add('show');
+            inlineCta.innerHTML = PREGNANT_CTA_HTML;
+            inlineCta.style.display = 'block';
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+
+        const heightM = cm / 100;
+        const bmi = kg / (heightM * heightM);
+        const bmiRounded = bmi.toFixed(1);
+
+        const category = CATEGORIES.find(c => bmi < c.max);
+
+        // Optional waist-to-height ratio
+        const waistVal = parseFloat(document.getElementById('waistInput').value);
+        let whrHtml = '';
+        if (waistVal && waistVal > 0) {
+            const waistUnit = document.querySelector('input[name="waistUnit"]:checked').value;
+            const waistCm = waistUnit === 'in' ? waistVal * 2.54 : waistVal;
+            const ratio = waistCm / cm;
+            const ratioRounded = ratio.toFixed(2);
+            const belowHalf = ratio < 0.5;
+            whrHtml = `
+                <div class="whr-box">
+                    <h3><i class="bi bi-rulers me-1"></i>Waist-to-Height Ratio</h3>
+                    <div class="whr-value">${ratioRounded}</div>
+                    <p>Your waist is ${belowHalf ? 'under' : 'at or above'} half your height. A commonly cited reference point is 0.5, described plainly rather than as a strict cutoff. This ratio reflects where weight is carried, not just how much, and research links it to cardiometabolic risk at least as well as BMI, often better &mdash; it's the companion metric worth paying attention to here, not a footnote.</p>
+                </div>
+            `;
+        }
+
+        const contextNuance = CONTEXT_NUANCE[context] || '';
+        const contextNuanceHtml = contextNuance ? `
+            <div class="nuance-box">
+                <h3><i class="bi bi-moon-stars me-1"></i>${CONTEXT_LABELS[context]} and this number</h3>
+                <p>${contextNuance}</p>
+            </div>
+        ` : '';
+
+        const html = `
+            <div class="result-card">
+                <div class="text-center mb-3">
+                    <h2 style="font-weight: 700; font-size: 1.15rem; color: var(--text-dark);">Your BMI</h2>
+                    <div class="bmi-headline">${bmiRounded}</div>
+                    <div class="bmi-subline">Based on ${kg.toFixed(1)} kg (${Math.round(lb)} lb) and ${cm.toFixed(0)} cm.</div>
+                    <div class="bmi-category-tag">This number falls in ${category.label}</div>
+                </div>
+
+                <div class="limits-box">
+                    <h3><i class="bi bi-info-circle me-1"></i>What this number can't see</h3>
+                    <ul>
+                        <li>It doesn't distinguish muscle from fat, so a muscular or highly active body can land in a higher category without that reflecting body composition.</li>
+                        <li>It doesn't know where fat sits on your body, which matters more for cardiometabolic risk than total weight does.</li>
+                        <li>It was derived from populations of white European men, and the cut-offs perform differently for South Asian and East Asian populations.</li>
+                        <li>It says nothing about how healthy any individual is. It's a screening statistic for populations, not an assessment of you.</li>
+                    </ul>
+                </div>
+
+                ${whrHtml}
+
+                <div class="working-box">
+                    <h4><i class="bi bi-calculator me-1"></i>How we got this number</h4>
+                    <p>BMI: <code>${kg.toFixed(1)} kg / (${heightM.toFixed(2)} m)&sup2; = ${bmiRounded}</code></p>
+                    <p>WHO adult categories: under 18.5, 18.5&ndash;24.9, 25&ndash;29.9, and 30 or above.</p>
+                </div>
+
+                ${contextNuanceHtml}
+
+                <div class="cycle-bridge">
+                    <h4>Want numbers you can actually act on?</h4>
+                    <p>BMI doesn't tell you what to eat or how to train. The <a href="macro-calculator.html">macro calculator</a> gives calorie and macro targets by cycle phase, and the <a href="cycle-phase-calculator.html">cycle phase calculator</a> shows you where you are right now.</p>
+                </div>
+
+                <p class="estimate-note">This is a population screening statistic applied to what you typed in, not a personalized assessment. If numbers like this one make food or your body harder to think about, skipping them is a legitimate choice too.</p>
+            </div>
+        `;
+
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        inlineCta.innerHTML = DEFAULT_INLINE_CTA_HTML;
+        inlineCta.style.display = 'block';
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>

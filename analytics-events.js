@@ -4,7 +4,8 @@
  * 2. Scroll depth (25%, 50%, 75%, 100%)
  * 3. Engaged reader (30s+ on page)
  * 4. CTA visibility (IntersectionObserver on .blog-cta-box)
- * 5. Blog internal navigation clicks
+ * 5. Blog + tools internal navigation clicks
+ * 6. Calculator usage (/tools/ form submits)
  */
 
 /* ── CTA click tracking ── */
@@ -150,17 +151,41 @@ document.addEventListener('click', function (e) {
   });
 });
 
-/* ── Blog internal navigation clicks ── */
+/* ── Blog + tools internal navigation clicks ──
+   Same event name for both surfaces (existing GA4 reports are built on
+   blog_internal_click), widened to /tools/ with a surface param so blog
+   and tools traffic can still be split out downstream. */
 document.addEventListener('click', function (e) {
   var link = e.target.closest('a');
   if (!link || typeof gtag !== 'function') return;
   if (link.hostname !== window.location.hostname) return;
   if (link.pathname === window.location.pathname) return;
-  if (!window.location.pathname.match(/^\/blog\//)) return;
+  var isBlog = window.location.pathname.match(/^\/blog\//);
+  var isTools = window.location.pathname.match(/^\/tools\//);
+  if (!isBlog && !isTools) return;
 
   gtag('event', 'blog_internal_click', {
     from_page: window.location.pathname,
     to_page: link.pathname,
-    link_text: link.textContent.trim().substring(0, 60)
+    link_text: link.textContent.trim().substring(0, 60),
+    surface: isBlog ? 'blog' : 'tools'
+  });
+});
+
+/* ── Calculator usage (/tools/ pages) ──
+   Fires once per form submit so calculator engagement shows up in GA4;
+   nothing else was tracking that anyone actually used one. */
+document.addEventListener('submit', function (e) {
+  var form = e.target;
+  if (!form || form.tagName !== 'FORM' || typeof gtag !== 'function') return;
+  if (!window.location.pathname.match(/^\/tools\//)) return;
+
+  var slugMatch = window.location.pathname.match(/\/tools\/([^\/]+)\.html/);
+  var calculator = slugMatch ? slugMatch[1] : window.location.pathname;
+
+  gtag('event', 'calculator_use', {
+    calculator: calculator,
+    page_path: window.location.pathname,
+    form_id: form.id || '(none)'
   });
 });

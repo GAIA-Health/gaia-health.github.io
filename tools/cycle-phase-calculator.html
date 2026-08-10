@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cycle Phase Calculator: What Phase Are You In Today?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Find out what phase of your menstrual cycle you're in today: menstrual, follicular, ovulatory, or luteal. Enter your last period and cycle length for your phase, next period, and ovulation date.">
+    <meta name="keywords" content="cycle phase calculator, what cycle phase am I in, menstrual cycle phases calculator, am I in my luteal phase, follicular phase calculator, ovulation phase calculator">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/cycle-phase-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cycle Phase Calculator: What Phase Are You In Today?">
+    <meta property="og:description" content="Find out what phase of your menstrual cycle you're in today: menstrual, follicular, ovulatory, or luteal. Enter your last period and cycle length for your phase, next period, and ovulation date.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/cycle-phase-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Go Go Gaia">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Cycle Phase Calculator: What Phase Are You In Today?">
+    <meta name="twitter:description" content="Find out what phase of your menstrual cycle you're in today: menstrual, follicular, ovulatory, or luteal. Enter your last period and cycle length for your phase, next period, and ovulation date.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.go-go-gaia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.go-go-gaia.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cycle Phase Calculator"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What cycle phase am I in today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count from the first day of your last period. That's cycle day 1. Using your typical cycle length and luteal phase length, the days roughly split into four stretches: menstrual (bleeding), follicular (after bleeding stops, estrogen rising), ovulatory (a short window around estimated ovulation), and luteal (after ovulation until your next period). Enter your last period date above and this calculator does that count for you, plus shows how many days you have left in your current phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many phases does a menstrual cycle have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four: menstrual, follicular, ovulatory, and luteal. Menstrual is when you bleed. Follicular runs from the end of bleeding to just before ovulation, with estrogen climbing. Ovulatory is the short window around when an egg is released. Luteal is the back half of the cycle, from ovulation to your next period, when progesterone dominates. Some sources fold the ovulatory window into the follicular phase since hormonally it's the tail end of estrogen's rise, but tracking it separately makes the fertile window easier to see."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is ovulation day estimated from cycle length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard estimate is cycle length minus luteal phase length. The luteal phase, the stretch from ovulation to your next period, tends to stay fairly consistent at around 14 days, while the follicular phase before ovulation is what actually stretches or shortens a cycle. So if your typical cycle is 28 days and your luteal phase is 14, ovulation is estimated around day 14. A 32-day cycle with the same 14-day luteal phase would put estimated ovulation around day 18, not day 16, because the extra days belong to the follicular phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between the follicular and luteal phase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The follicular phase comes first, running from the end of your period to ovulation, and is driven by rising estrogen as follicles mature in the ovary. It's the variable half of the cycle, the one that lengthens or shortens a cycle overall. The luteal phase comes after ovulation and is driven by progesterone from the corpus luteum, which prepares the uterine lining. The luteal phase is the more consistent half, usually staying within a day or two of the same length cycle to cycle for a given person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a cycle phase calculator work for irregular cycles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can give you a rough estimate, but the math gets weaker the more your cycle length varies. This calculator assumes a typical cycle length and a typical luteal phase length applied to your most recent period; if your cycles swing widely, that single average won't reflect any one cycle well, and ovulation timing especially can shift. Logging your actual cycles over time is what narrows the estimate for an irregular pattern, since it replaces one textbook average with your own recent history."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a fertility awareness or contraception method?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This calculator is an educational estimate of where you likely are in your cycle based on averages, not a method for avoiding or achieving pregnancy. Calendar-based ovulation estimates can be off by several days, especially with any cycle irregularity, and this tool does not account for the day-to-day signs that fertility awareness methods rely on. Please don't use it to plan around pregnancy in either direction."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Find What Cycle Phase You're In",
+      "description": "Estimate your current menstrual cycle phase, days remaining in it, and your next period and ovulation dates using your last period date and average cycle length.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter the first day of your last period",
+          "text": "Use the first day of real bleeding, not spotting. This is cycle day 1 and anchors the whole estimate."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Set your typical cycle length",
+          "text": "Count from day 1 of one period to day 1 of the next. The average is 28 days, but anywhere from 21 to 40 is common."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Adjust period length and luteal phase length if you know them",
+          "text": "Both are optional and default to typical values (5 days of bleeding, a 14-day luteal phase). Entering your own sharpens the estimate."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Read your current phase and what's next",
+          "text": "The calculator shows today's cycle day, your current phase, how many days are left in it, and your estimated next period and ovulation dates."
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cycle Phase Calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any (web browser)",
+      "url": "https://www.go-go-gaia.com/tools/cycle-phase-calculator.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Go Go Gaia",
+        "url": "https://www.go-go-gaia.com/"
+      }
+    }
+    </script>
+
+    <!-- WebPage Schema (freshness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Cycle Phase Calculator: What Phase Are You In Today?",
+      "url": "https://www.go-go-gaia.com/tools/cycle-phase-calculator.html",
+      "datePublished": "2026-08-08",
+      "dateModified": "2026-08-08",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"],
+        .calculator-card input[type="number"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus,
+        .calculator-card input[type="number"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        .warning-card {
+            background: #fff4e6;
+            border: 2px solid #e8943a;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.92rem;
+            color: #6b4a15;
+        }
+
+        /* Key dates */
+        .key-dates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 480px) {
+            .key-dates { grid-template-columns: 1fr; }
+        }
+        .key-date-box {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .key-date-box.period-box {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+        }
+        .key-date-box.ov-box {
+            background: var(--secondary);
+            border: 2px solid var(--green-deep);
+        }
+        .key-date-box .date-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .key-date-box.ov-box .date-value {
+            color: var(--green-deep);
+        }
+        .key-date-box .date-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Phase indicator */
+        .phase-indicator {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .phase-indicator .phase-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .phase-indicator .phase-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Calendar view */
+        .cycle-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-top: 1rem;
+        }
+        .cycle-calendar .day-header {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0.25rem;
+        }
+        .cycle-calendar .day {
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            position: relative;
+        }
+        .cycle-calendar .day.empty { visibility: hidden; }
+        .cycle-calendar .day.menstrual {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .cycle-calendar .day.follicular {
+            background: var(--primary-subtle);
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.ovulatory {
+            background: var(--green-deep);
+            color: #fff;
+            font-weight: 700;
+        }
+        .cycle-calendar .day.luteal {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            font-weight: 500;
+            border: 1px solid var(--primary);
+        }
+        .cycle-calendar .day.today-marker {
+            outline: 3px solid var(--primary-dark);
+            outline-offset: -1px;
+        }
+        .cycle-calendar .day .day-num {
+            font-size: 0.8rem;
+        }
+        .cycle-calendar .day .day-label {
+            font-size: 0.6rem;
+            display: block;
+            line-height: 1;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .legend-dot.menstrual { background: var(--accent); }
+        .legend-dot.follicular { background: var(--primary-subtle); border: 1px solid var(--primary); }
+        .legend-dot.ovulatory { background: var(--green-deep); }
+        .legend-dot.luteal { background: var(--secondary); border: 1px solid var(--primary); }
+        .legend-dot.today { outline: 2px solid var(--primary-dark); outline-offset: -1px; background: #fff; }
+
+        /* Working / method box */
+        .working-box {
+            background: var(--primary-subtle);
+            border-left: 3px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .working-box strong { color: var(--text-dark); }
+
+        /* Now use your phase — onward grid */
+        .phase-links-section {
+            margin-top: 1.5rem;
+        }
+        .phase-links-section h3 {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        .phase-links-section > p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+        .phase-link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+        }
+        @media (max-width: 560px) {
+            .phase-link-grid { grid-template-columns: 1fr; }
+        }
+        .phase-link-card {
+            background: #fff;
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+        }
+        .phase-link-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .phase-link-card .plc-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .phase-link-card .plc-reason {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            line-height: 1.5;
+        }
+
+        /* Tips / hormone section */
+        .tips-section {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section p { color: var(--text-muted); margin-bottom: 0; }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Cycle Phase Calculator</span>
+            </nav>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="container">
+            <nav class="tools-toc" aria-label="On this page">
+                <strong>On this page</strong>
+                <ul>
+                    <li><a href="#calculator">Cycle phase calculator</a></li>
+                    <li><a href="#phases-explained">The four cycle phases</a></li>
+                    <li><a href="#faq">Common questions</a></li>
+                    <li><a href="#related">Related guides &amp; tools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Hero + Calculator -->
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Cycle Phase Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Find out what phase of your cycle you're in today, how many days are left in it, and your estimated next period and ovulation dates. Enter your last period date and your typical cycle length to get started.</p>
+                </div>
+
+                <div class="calculator-card">
+                    <form id="phaseForm">
+                        <div class="mb-3">
+                            <label for="lmpDate" class="form-label">First day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cycleLength" class="form-label">Typical cycle length</label>
+                            <select class="form-select" id="cycleLength">
+                                <option value="21">21 days</option>
+                                <option value="22">22 days</option>
+                                <option value="23">23 days</option>
+                                <option value="24">24 days</option>
+                                <option value="25">25 days</option>
+                                <option value="26">26 days</option>
+                                <option value="27">27 days</option>
+                                <option value="28" selected>28 days</option>
+                                <option value="29">29 days</option>
+                                <option value="30">30 days</option>
+                                <option value="31">31 days</option>
+                                <option value="32">32 days</option>
+                                <option value="33">33 days</option>
+                                <option value="34">34 days</option>
+                                <option value="35">35 days</option>
+                                <option value="36">36 days</option>
+                                <option value="37">37 days</option>
+                                <option value="38">38 days</option>
+                                <option value="39">39 days</option>
+                                <option value="40">40 days</option>
+                            </select>
+                            <div class="form-text">Not sure? Count from the first day of one period to the first day of the next. The average is 28 days.</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="periodLength" class="form-label">Period length <span style="font-weight: 400; color: var(--text-muted);">(optional)</span></label>
+                                <input type="number" class="form-control" id="periodLength" min="2" max="10" value="5">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="lutealLength" class="form-label">Luteal phase length <span style="font-weight: 400; color: var(--text-muted);">(optional)</span></label>
+                                <input type="number" class="form-control" id="lutealLength" min="10" max="16" value="14">
+                            </div>
+                        </div>
+                        <div class="form-text mb-3">Not sure about either? The defaults (5 days of bleeding, a 14-day luteal phase) are typical and fine to leave as-is.</div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Find My Cycle Phase</button>
+                        </div>
+                    </form>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This is an estimate based on cycle averages, not a diagnosis, and it is not a fertility awareness or contraception method. Ovulation timing shifts from cycle to cycle and can't be pinned to a single day from calendar math alone.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="container py-4">
+            <div id="results" class="results-section" style="max-width: 680px; margin: 0 auto;"></div>
+
+            <div class="blog-cta-box blog-cta-box-inline" style="max-width: 680px; margin: 2rem auto;">
+                <h4><i class="bi bi-phone me-2"></i>That's today's estimate. Here's your real data.</h4>
+                <p>This calculator works off cycle averages. Go Go Gaia logs your actual cycles and tells you your phase from what you've really logged, not a textbook number.</p>
+                <p class="mb-0">
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-apple me-2"></i>Download on the App Store
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational: The four phases -->
+        <section id="phases-explained" class="tools-educational container" style="max-width: 740px;">
+            <h2>The four cycle phases, explained</h2>
+            <p>A menstrual cycle runs in four stretches, and they're not equal lengths. The first half is the part that actually varies cycle to cycle; the second half tends to stay fairly steady. Here's what's happening in each.</p>
+
+            <h3>Menstrual phase</h3>
+            <p>Day 1 is the first day of real bleeding, and the menstrual phase runs for the length of your period, typically around 5 days. Estrogen and progesterone are both at their lowest here, which is why this phase can come with lower energy for some people.</p>
+
+            <h3>Follicular phase</h3>
+            <p>This starts once bleeding ends and runs until ovulation. Estrogen climbs through this window as follicles mature in the ovary, one of which will eventually release an egg. This is the phase that stretches or shrinks a cycle overall &mdash; if your cycle runs long or short one month, it's almost always the follicular phase that moved, not the luteal phase.</p>
+
+            <h3>Ovulatory phase</h3>
+            <p>A short window around the estimated day an egg is released. Estrogen peaks right before ovulation, then luteinizing hormone surges and triggers the release. This is the part of the cycle most associated with the fertile window, though the fertile window itself (days when pregnancy is possible) is wider than the ovulation day alone, since sperm can survive for several days.</p>
+
+            <h3>Luteal phase</h3>
+            <p>From ovulation until your next period starts. The ruptured follicle becomes the corpus luteum and releases progesterone, which prepares the uterine lining for a possible pregnancy. If there's no pregnancy, progesterone and estrogen drop in the days before your period, which is when premenstrual symptoms tend to cluster. Unlike the follicular phase, the luteal phase is usually consistent in length for a given person, commonly 12 to 16 days.</p>
+
+            <h3>Why this is an estimate, not a fact</h3>
+            <p>Cycles vary, both between people and from month to month for the same person. Ovulation timing especially isn't something you can pin down from a calendar alone &mdash; it's an estimate built from averages, not an event you can predict with certainty in advance. The more irregular your cycles run, the weaker calendar math gets, since it leans on a single typical cycle length that may not describe any one cycle well. If your cycles are irregular, our <a href="../blog/best-period-tracker-irregular-cycles.html">guide to period tracking with irregular cycles</a> covers what actually helps.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="max-width: 680px;">
+            <div class="cta-section">
+                <h3>A calendar assumes every cycle is the same. Yours isn't.</h3>
+                <p>This calculator applies one typical cycle length and luteal length to your last period, because that's all a calendar can do. Weeks of logged cycles give Gaia something a formula never has: your own recent pattern, so your phase, next period, and fertile window get more accurate the longer you track, not less.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
+                    <i class="bi bi-apple me-1"></i> Download Go Go Gaia
+                </a>
+                <div class="mt-3">
+                    <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=cycle-phase-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Gaia free in your browser &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container faq-section-page" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Common Questions About Cycle Phases</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What cycle phase am I in today?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Count from the first day of your last period. That's cycle day 1. Using your typical cycle length and luteal phase length, the days roughly split into four stretches: menstrual (bleeding), follicular (after bleeding stops, estrogen rising), ovulatory (a short window around estimated ovulation), and luteal (after ovulation until your next period). Enter your last period date above and this calculator does that count for you, plus shows how many days you have left in your current phase.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How many phases does a menstrual cycle have?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Four: menstrual, follicular, ovulatory, and luteal. Menstrual is when you bleed. Follicular runs from the end of bleeding to just before ovulation, with estrogen climbing. Ovulatory is the short window around when an egg is released. Luteal is the back half of the cycle, from ovulation to your next period, when progesterone dominates. Some sources fold the ovulatory window into the follicular phase since hormonally it's the tail end of estrogen's rise, but tracking it separately makes the fertile window easier to see.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How is ovulation day estimated from cycle length?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The standard estimate is cycle length minus luteal phase length. The luteal phase, the stretch from ovulation to your next period, tends to stay fairly consistent at around 14 days, while the follicular phase before ovulation is what actually stretches or shortens a cycle. So if your typical cycle is 28 days and your luteal phase is 14, ovulation is estimated around day 14. A 32-day cycle with the same 14-day luteal phase would put estimated ovulation around day 18, not day 16, because the extra days belong to the follicular phase.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What's the difference between the follicular and luteal phase?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">The follicular phase comes first, running from the end of your period to ovulation, and is driven by rising estrogen as follicles mature in the ovary. It's the variable half of the cycle, the one that lengthens or shortens a cycle overall. The luteal phase comes after ovulation and is driven by progesterone from the corpus luteum, which prepares the uterine lining. The luteal phase is the more consistent half, usually staying within a day or two of the same length cycle to cycle for a given person.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Can a cycle phase calculator work for irregular cycles?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">It can give you a rough estimate, but the math gets weaker the more your cycle length varies. This calculator assumes a typical cycle length and a typical luteal phase length applied to your most recent period; if your cycles swing widely, that single average won't reflect any one cycle well, and ovulation timing especially can shift. Logging your actual cycles over time is what narrows the estimate for an irregular pattern, since it replaces one textbook average with your own recent history.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Is this a fertility awareness or contraception method?</button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">No. This calculator is an educational estimate of where you likely are in your cycle based on averages, not a method for avoiding or achieving pregnancy. Calendar-based ovulation estimates can be off by several days, especially with any cycle irregularity, and this tool does not account for the day-to-day signs that fertility awareness methods rely on. Please don't use it to plan around pregnancy in either direction.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section id="related" class="container related-articles" style="max-width: 740px;">
+            <h2 class="text-center mb-4" style="font-weight: 700;">Keep Reading</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>Cycle Syncing Guide</h4>
+                        <p>How to work with your cycle phases instead of against them, from training to nutrition to planning your week.</p>
+                        <a href="../blog/cycle-syncing-guide.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="related-card">
+                        <h4>What Is the Luteal Phase?</h4>
+                        <p>The hormonal story behind the second half of your cycle, and why symptoms cluster there.</p>
+                        <a href="../blog/what-is-luteal-phase.html">Read the guide &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator estimates your cycle phase using cycle-length and luteal-length averages. It is not a diagnosis, and it is not a fertility awareness or contraception method &mdash; please don't rely on it to plan around pregnancy in either direction. Cycle length, ovulation timing, and phase length vary from person to person and cycle to cycle. If your cycles or symptoms concern you, your healthcare provider can help. Go Go Gaia is a tracking tool, not a substitute for professional medical care.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="../about.html">About Us</a></p>
+                    <p><a href="../blog/index.html">Blog</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const DAY_MS = 1000 * 60 * 60 * 24;
+    const STALE_DAYS = 60;
+
+    function formatDate(date) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return `${months[date.getMonth()]} ${date.getDate()}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    function daysBetween(a, b) {
+        return Math.round((b.getTime() - a.getTime()) / DAY_MS);
+    }
+
+    function sameDay(a, b) {
+        return a.getFullYear() === b.getFullYear() &&
+               a.getMonth() === b.getMonth() &&
+               a.getDate() === b.getDate();
+    }
+
+    // Set date constraints
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        const lmp = document.getElementById('lmpDate');
+        lmp.max = today.toISOString().split('T')[0];
+    });
+
+    document.getElementById('phaseForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lmpInput = document.getElementById('lmpDate').value;
+        if (!lmpInput) return;
+
+        const lp = lmpInput.split('-');
+        const lmpDate = new Date(lp[0], lp[1] - 1, lp[2]);
+
+        const cycleLength = parseInt(document.getElementById('cycleLength').value);
+        let periodLength = parseInt(document.getElementById('periodLength').value);
+        if (!periodLength || periodLength < 2 || periodLength > 10) periodLength = 5;
+        let lutealLength = parseInt(document.getElementById('lutealLength').value);
+        if (!lutealLength || lutealLength < 10 || lutealLength > 16) lutealLength = 14;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const resultsEl = document.getElementById('results');
+
+        // Edge case: future date
+        if (lmpDate > today) {
+            resultsEl.innerHTML = `
+                <div class="result-card">
+                    <div class="warning-card"><i class="bi bi-exclamation-triangle me-2"></i>That date is in the future. Enter the first day of a period that has already started so we can count forward from it.</div>
+                </div>`;
+            resultsEl.classList.add('show');
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+
+        const daysSince = daysBetween(lmpDate, today);
+        const stale = daysSince > STALE_DAYS;
+        const cycleDay = daysSince + 1;
+
+        // Ovulation day estimate: cycle length minus luteal length
+        const ovDay = cycleLength - lutealLength;
+        const fertileStart = ovDay - 5;
+        const fertileEnd = ovDay + 1;
+        const ovulatoryStart = ovDay - 1;
+        const ovulatoryEnd = ovDay + 1;
+        const follicularEnd = ovulatoryStart - 1;
+
+        const nextPeriod = addDays(lmpDate, cycleLength);
+        const nextOvulation = addDays(lmpDate, ovDay - 1);
+
+        const late = cycleDay > cycleLength;
+        const lateBy = late ? cycleDay - cycleLength : 0;
+
+        // Phase bucket for the (possibly late) cycle day
+        let phaseKey, phaseName, phaseStartDay, phaseEndDay, hormoneText;
+        if (!late && cycleDay <= periodLength) {
+            phaseKey = 'menstrual';
+            phaseName = 'Menstrual phase';
+            phaseStartDay = 1;
+            phaseEndDay = periodLength;
+            hormoneText = "Estrogen and progesterone are both at their lowest right now. Your period is here, and for a lot of people this is a lower-energy stretch simply because hormone levels have bottomed out.";
+        } else if (!late && cycleDay <= follicularEnd) {
+            phaseKey = 'follicular';
+            phaseName = cycleDay >= follicularEnd - 2 ? 'Follicular phase (approaching ovulation)' : 'Follicular phase';
+            phaseStartDay = periodLength + 1;
+            phaseEndDay = follicularEnd;
+            hormoneText = "Estrogen is climbing as your body prepares to ovulate. Energy and mood tend to trend upward through this stretch for a lot of people, building toward ovulation.";
+        } else if (!late && cycleDay <= ovulatoryEnd) {
+            phaseKey = 'ovulatory';
+            phaseName = 'Ovulatory phase';
+            phaseStartDay = ovulatoryStart;
+            phaseEndDay = ovulatoryEnd;
+            hormoneText = "Estrogen is at or near its peak and luteinizing hormone is surging, which is what triggers the release of an egg. This is the window most associated with fertility, roughly the days from " + formatDate(addDays(lmpDate, fertileStart - 1)) + " to " + formatDate(addDays(lmpDate, fertileEnd - 1)) + ".";
+        } else {
+            phaseKey = 'luteal';
+            phaseName = late ? 'Luteal phase (running long)' : 'Luteal phase';
+            phaseStartDay = ovulatoryEnd + 1;
+            phaseEndDay = late ? cycleDay : cycleLength;
+            hormoneText = "Progesterone has risen since ovulation and is the dominant hormone now. In the days right before your period, both progesterone and estrogen drop, which is tied to the mood, bloating, and energy shifts a lot of people notice premenstrually.";
+        }
+
+        const daysIntoPhase = cycleDay - phaseStartDay + 1;
+        const daysLeftInPhase = late ? null : Math.max(phaseEndDay - cycleDay, 0);
+
+        // Build calendar for the cycle (or the expected length if running late)
+        const calendarLength = Math.max(cycleLength, late ? cycleDay : cycleLength);
+        let calendarHtml = '';
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(d => { calendarHtml += `<div class="day-header">${d}</div>`; });
+
+        const startDow = lmpDate.getDay();
+        for (let i = 0; i < startDow; i++) {
+            calendarHtml += '<div class="day empty"></div>';
+        }
+        for (let d = 0; d < calendarLength; d++) {
+            const currentDate = addDays(lmpDate, d);
+            const dayNum = d + 1;
+            let cls = 'day';
+            let label = '';
+
+            if (dayNum <= periodLength) {
+                cls += ' menstrual';
+            } else if (dayNum >= ovulatoryStart && dayNum <= ovulatoryEnd) {
+                cls += ' ovulatory';
+                if (dayNum === ovDay) label = 'Ovul.';
+            } else if (dayNum > ovulatoryEnd) {
+                cls += ' luteal';
+            } else {
+                cls += ' follicular';
+            }
+
+            if (sameDay(currentDate, today)) cls += ' today-marker';
+
+            calendarHtml += `<div class="${cls}">
+                <span class="day-num">${currentDate.getDate()}</span>
+                ${label ? `<span class="day-label">${label}</span>` : ''}
+            </div>`;
+        }
+
+        const staleWarning = stale ? `
+            <div class="warning-card"><i class="bi bi-exclamation-triangle me-2"></i>That last period date is over ${STALE_DAYS} days ago. The further back the anchor date, the less reliable a single cycle-length average gets &mdash; treat this as a rough, stale estimate rather than today's real picture, and use your most recent period date for a sharper read.</div>
+        ` : '';
+
+        const lateNote = late ? `
+            <div class="warning-card"><i class="bi bi-info-circle me-2"></i>Your period is ${lateBy} day${lateBy === 1 ? '' : 's'} later than this estimate expected, which happens. Cycles run long sometimes for all kinds of reasons. If your period starts, use its actual first day as your new anchor.</div>
+        ` : '';
+
+        const workingText = `We estimate ovulation as your cycle length minus your luteal phase length (${cycleLength} &minus; ${lutealLength} = day ${ovDay}), since the luteal phase (ovulation to your next period) tends to stay fairly consistent, while the days before ovulation are what actually stretch or shrink a cycle. From there: menstrual is days 1&ndash;${periodLength}, follicular runs to day ${follicularEnd}, ovulatory spans days ${ovulatoryStart}&ndash;${ovulatoryEnd}, and luteal covers the rest of the cycle.`;
+
+        const html = `
+            <div class="result-card">
+                ${staleWarning}
+                ${lateNote}
+                <div class="text-center mb-3">
+                    <h2 style="font-weight: 700; font-size: 1.5rem; color: var(--text-dark);">You're on cycle day ${cycleDay} &mdash; ${phaseName}</h2>
+                    <div style="font-size: 1rem; color: var(--text-muted);">
+                        ${late ? 'Running longer than expected right now.' : (daysLeftInPhase === 0 ? 'Last day of this phase.' : `${daysIntoPhase} day${daysIntoPhase === 1 ? '' : 's'} in, about ${daysLeftInPhase} day${daysLeftInPhase === 1 ? '' : 's'} left in this phase.`)}
+                    </div>
+                </div>
+
+                <div class="key-dates">
+                    <div class="key-date-box period-box">
+                        <div class="date-label">Next Period (estimated)</div>
+                        <div class="date-value">${formatDate(nextPeriod)}</div>
+                    </div>
+                    <div class="key-date-box ov-box">
+                        <div class="date-label">Next Ovulation (estimated)</div>
+                        <div class="date-value">${formatDate(nextOvulation)}</div>
+                    </div>
+                </div>
+
+                <div class="phase-indicator">
+                    <div class="phase-name">What's happening hormonally right now</div>
+                    <div class="phase-desc">${hormoneText}</div>
+                </div>
+
+                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Cycle at a Glance</h3>
+                <div class="cycle-calendar">${calendarHtml}</div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot menstrual"></div> Menstrual</div>
+                    <div class="legend-item"><div class="legend-dot follicular"></div> Follicular</div>
+                    <div class="legend-item"><div class="legend-dot ovulatory"></div> Ovulatory</div>
+                    <div class="legend-item"><div class="legend-dot luteal"></div> Luteal</div>
+                    <div class="legend-item"><div class="legend-dot today"></div> Today</div>
+                </div>
+
+                <div class="working-box"><strong>How we got there:</strong> ${workingText}</div>
+            </div>
+
+            <div class="phase-links-section">
+                <h3>Now use your phase</h3>
+                <p>Your cycle phase changes more than your calendar &mdash; here's where it actually matters today.</p>
+                <div class="phase-link-grid">
+                    <a href="sleep-calculator.html" class="phase-link-card">
+                        <div class="plc-title"><i class="bi bi-moon-stars"></i> Sleep calculator</div>
+                        <div class="plc-reason">The luteal phase runs warmer and more fragmented, so the same bedtime can mean worse sleep.</div>
+                    </a>
+                    <a href="caffeine-calculator.html" class="phase-link-card">
+                        <div class="plc-title"><i class="bi bi-cup-hot"></i> Caffeine cutoff calculator</div>
+                        <div class="plc-reason">Caffeine clearance slows in the luteal phase, which moves your safe cutoff time earlier.</div>
+                    </a>
+                    <a href="heart-rate-zone-calculator.html" class="phase-link-card">
+                        <div class="plc-title"><i class="bi bi-heart-pulse"></i> Heart rate zone calculator</div>
+                        <div class="plc-reason">Heart rate runs a few beats higher in the luteal phase, so the same effort can read as a higher zone.</div>
+                    </a>
+                    <a href="protein-calculator.html" class="phase-link-card">
+                        <div class="plc-title"><i class="bi bi-egg-fried"></i> Protein target calculator</div>
+                        <div class="plc-reason">Appetite and protein needs shift with your phase, especially heading into the luteal phase.</div>
+                    </a>
+                </div>
+            </div>
+        `;
+
+        resultsEl.innerHTML = html;
+        resultsEl.classList.add('show');
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+</html>
