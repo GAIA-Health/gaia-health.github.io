@@ -124,6 +124,22 @@
         .discount-card a:hover {
             text-decoration: underline;
         }
+        .theme-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: -12px 0 28px;
+        }
+        .theme-tags span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #8259DC;
+            background: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(130, 89, 220, 0.12);
+        }
         .no-code {
             font-size: 14px;
             color: #999;
@@ -149,6 +165,8 @@
         <img src="/Logo1.png" alt="Go Go Gaia" class="logo">
         <h1>You've Been Invited to Go Go Gaia</h1>
         <p class="subtitle" id="subtitle">Someone you follow uses Go Go Gaia to track their health — download the app to get started.</p>
+
+        <div class="theme-tags" id="theme-tags" hidden></div>
 
         <div id="code-block" hidden>
             <p class="code-label">Your Creator Code</p>
@@ -216,6 +234,32 @@
             return 'https://apps.apple.com/redeem?ctx=offercodes&id=6608432371&code=' + appleCode;
         }
 
+        // CREATOR_THEMES: optional per-code landing copy so a creator's audience
+        // sees a pitch matched to their niche instead of the generic invite.
+        // Copy rules apply (knowledgeable friend, never diagnostic). Codes with
+        // no entry keep the generic heading/subtitle and show no tag pills.
+        var CREATOR_THEMES = {
+            'LARRIS26': {
+                heading: 'Work with your hormones, not against them',
+                subtitle: 'Go Go Gaia connects your workouts, sleep, cycle, and symptoms in one place, so you can see what perimenopause is actually changing and what helps you feel strong.',
+                tags: ['Perimenopause tracking', 'Cycle-aware training', 'Sleep & recovery']
+            }
+        };
+
+        function applyTheme(code) {
+            var theme = code && CREATOR_THEMES[code];
+            if (!theme) return;
+            document.querySelector('h1').textContent = theme.heading;
+            document.getElementById('subtitle').textContent = theme.subtitle;
+            var tagsEl = document.getElementById('theme-tags');
+            theme.tags.forEach(function (tag) {
+                var span = document.createElement('span');
+                span.textContent = tag;
+                tagsEl.appendChild(span);
+            });
+            tagsEl.hidden = false;
+        }
+
         function getCodeFromQuery() {
             var params = new URLSearchParams(window.location.search);
             var code = (params.get('code') || '').trim();
@@ -230,6 +274,8 @@
         var code = getCodeFromQuery();
         var copied = false;
         var APP_STORE_URL = appStoreUrl(code);
+
+        applyTheme(code);
 
         if (code) {
             document.getElementById('code').textContent = code;
