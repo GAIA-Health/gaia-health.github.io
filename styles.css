@@ -3923,6 +3923,58 @@ body::after {
     margin-bottom: 1.75rem;
 }
 
+/* ---- From the blog ---- */
+.pro-blog-section {
+    padding: 4rem 0;
+    background-color: var(--secondary);
+}
+
+.pro-blog-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+}
+
+.pro-blog-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.pro-blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pro-blog-card h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.pro-blog-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.pro-blog-card a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pro-blog-card a:hover {
+    text-decoration: underline;
+}
+
 /* =============================================
    HERO PRODUCT SHOT — replaces the abstract web
    ============================================= */
