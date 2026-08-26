@@ -735,6 +735,27 @@ footer a:hover .bi {
     transform: scale(1.2);
 }
 
+/* Plain content links (FAQ copy, inline body links, etc.) — scoped to <main>
+   so classed links (buttons, nav, blog cards, social icons) keep their own
+   more-specific rules and are unaffected. */
+main a:not(.btn):not(.nav-link):not(.blog-link):not(.social-icon) {
+    color: var(--primary);
+}
+
+main a:not(.btn):not(.nav-link):not(.blog-link):not(.social-icon):hover {
+    color: var(--primary-dark);
+}
+
+/* White band for BOFU page rhythm — same corner radius + padding scale as the
+   tinted callout card (background-color: var(--green-bg); border-radius: 15px;
+   p-4), so a page alternates lavender -> white -> lavender instead of one flat
+   wash. Apply alongside the section's own mb-5. */
+.section-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
 /* Carousel Controls */
 .carousel-control-prev,
 .carousel-control-next {
@@ -1122,7 +1143,7 @@ html {
     flex-direction: column;
     justify-content: center;
     padding: 2rem 0;
-    opacity: 0.3;
+    opacity: 0.55;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -3485,8 +3506,9 @@ body::after {
    "Professional restraint" recipe (design review 8A):
    - Box-shadows ONLY on .pro-shot-frame-shadow (hero image + tour sticky panel).
    - No hover-lift on non-interactive elements.
-   - Purple stays reserved for CTAs/links; green (--green-deep) is this page's
-     trust/clinical accent (step numbers, trust icons).
+   - Brand purple (--primary) is this page's trust/clinical accent (eyebrow,
+     step numbers, trust icons) as well as its CTA/link color — green
+     (--green-deep) retired from this page in favor of unified brand color.
    ============================================= */
 
 /* Nav CTA — same pill styling as the homepage's .nav-download button, so the
@@ -3519,7 +3541,7 @@ body::after {
 }
 
 .pro-hero-eyebrow {
-    color: var(--green-deep);
+    color: var(--primary);
     letter-spacing: 0.08em;
     font-size: 0.85rem;
 }
@@ -3582,7 +3604,7 @@ body::after {
 .pro-cta-btn:focus-visible,
 .nav-pro-cta:focus-visible,
 .pro-trust-row a:focus-visible {
-    outline: 3px solid var(--green-deep);
+    outline: 3px solid var(--primary);
     outline-offset: 2px;
 }
 
@@ -3686,8 +3708,8 @@ body::after {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid var(--green-deep);
-    color: var(--green-deep);
+    border: 2px solid var(--primary);
+    color: var(--primary);
     background: transparent;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
@@ -3697,12 +3719,12 @@ body::after {
 
 /* Active step number fills green with a white numeral (design review 11A) */
 .story-step.active .pro-step-number {
-    background: var(--green-deep);
+    background: var(--primary);
     color: #fff;
 }
 
 .pro-step-time {
-    color: var(--green-deep);
+    color: var(--primary);
     font-weight: 700;
     margin-right: 0.4rem;
 }
@@ -3765,7 +3787,7 @@ body::after {
     left: 0;
     width: 100%;
     height: var(--story-rail-fill);
-    background: var(--green-deep);
+    background: var(--primary);
     border-radius: 2px;
     transition: height 0.3s ease;
 }
@@ -3793,8 +3815,8 @@ body::after {
 .pro-tour-annotation {
     position: absolute;
     background: #fff;
-    border: 1px solid var(--green-deep);
-    color: var(--green-deep);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     font-size: 13px;
     font-weight: 600;
     padding: 0.25rem 0.6rem;
@@ -3880,14 +3902,14 @@ body::after {
 }
 
 .pro-trust-row i {
-    color: var(--green-deep);
+    color: var(--primary);
     font-size: 1.1rem;
 }
 
 .pro-trust-row a {
     color: var(--text-dark);
     text-decoration: underline;
-    text-decoration-color: var(--green-deep);
+    text-decoration-color: var(--primary);
 }
 
 .pro-trust-row a:hover {
