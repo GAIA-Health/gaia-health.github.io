@@ -35,6 +35,17 @@
   var GA_ID = 'G-ZEM6KB1QWF';
   var CONSENT_KEY = 'analytics-consent';
 
+  // Automated browsers (headless Chrome, Playwright, Puppeteer, Selenium)
+  // execute JS and therefore register as real visitors — a Singapore-based
+  // scraper fleet was ~70% of "direct" traffic in Aug 2026. navigator.webdriver
+  // is true in automation by spec; those visits get a no-op gtag and no GA at
+  // all. Keep gtag callable so analytics-events.js and script.js never throw.
+  if (navigator.webdriver || /HeadlessChrome/.test(navigator.userAgent)) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {};
+    return;
+  }
+
   // EEA/UK/CH outliers that do not live under the Europe/* prefix.
   var STRICT_ZONES = [
     'Atlantic/Reykjavik',  // Iceland (EEA)
