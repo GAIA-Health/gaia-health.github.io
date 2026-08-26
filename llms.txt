@@ -42,6 +42,7 @@
 - [Implantation bleeding vs your period](https://www.go-go-gaia.com/blog/implantation-bleeding-vs-period.html): Table-first comparison across color, timing, duration, flow, and cramping.
 - [Can you get pregnant on your period?](https://www.go-go-gaia.com/blog/can-you-get-pregnant-on-your-period.html): Why it is unlikely but possible, with a timeline of the fertile window relative to bleeding.
 - [How accurate are period tracker apps?](https://www.go-go-gaia.com/blog/how-accurate-are-period-tracker-apps.html): Accuracy by method (calendar, symptom, BBT, LH, wearable) and why predictions drift for irregular cycles.
+- [How to balance your hormones](https://www.go-go-gaia.com/blog/how-to-balance-your-hormones.html): What research actually supports across sleep, exercise, food, and stress, what lacks evidence (seed cycling), and when symptoms warrant a doctor.
 
 ## Cycle data explainers (what wearables measure, with cited research)
 
@@ -173,6 +174,8 @@
 - [Endometriosis tracker](https://www.go-go-gaia.com/endometriosis-tracker.html): Pain and flare logging, symptom-to-phase correlations, and doctor-ready records to bring to appointments.
 - [Perimenopause tracker](https://www.go-go-gaia.com/perimenopause-tracker.html): Hot flash and symptom logging, cycle-change monitoring as the pattern shifts, and patterns showing which weeks make symptoms worse.
 - [IVF tracker](https://www.go-go-gaia.com/ivf-tracker.html): Medication, appointment, and protocol logging with hormone and lab values tracked over time. Does not include medication barcode scanning, injection site rotation, or clinic EMR sync.
+- [PMDD tracker](https://www.go-go-gaia.com/pmdd-tracker.html): Daily charting of PMDD mood and physical symptoms against the cycle across two cycles, producing the pattern record a diagnosis conversation needs.
+- [Postpartum tracker](https://www.go-go-gaia.com/postpartum-tracker.html): Bleeding, mood, sleep, and pain tracking through the fourth trimester, transitioning into cycle tracking when the period returns.
 - [What's your wellness type?](https://www.go-go-gaia.com/wellness-type.html): Six wellness types read from your own last 30 days of sleep, movement, mood, and cycle data. Not a questionnaire — it is computed from logged data.
 
 ## Educational guides (women's health)

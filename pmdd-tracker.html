@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PMDD Tracker App, on iPhone & Web | Go Go Gaia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Chart PMDD mood and physical symptoms against your cycle across two cycles, then bring the pattern to your doctor. Free on iOS and web.">
+    <meta name="keywords" content="pmdd tracker app, pmdd symptom tracker, app to chart pmdd, pmdd diagnosis tracking, premenstrual dysphoric disorder app">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/pmdd-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PMDD Tracker App, on iPhone & Web | Go Go Gaia">
+    <meta property="og:description" content="Chart PMDD mood and physical symptoms against your cycle across two cycles, then bring the pattern to your doctor.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/pmdd-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="PMDD Tracker App, on iPhone & Web | Go Go Gaia">
+    <meta name="twitter:description" content="Chart PMDD mood and physical symptoms against your cycle across two cycles, then bring the pattern to your doctor.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Go Go Gaia",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is PMDD diagnosed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PMDD is diagnosed from prospective daily symptom ratings across at least two consecutive menstrual cycles, which is also what ACOG recommends for premenstrual conditions in general. Prospective means logging as you go rather than recalling afterward, since day-to-day records are far more reliable than memory. Your clinician uses that chart to confirm the pattern is tied to your luteal phase before deciding on next steps with you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this app diagnose PMDD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No app can diagnose PMDD. What Go Go Gaia can do is help you build the exact record a clinician needs: daily mood and physical symptom ratings shown against your cycle, so you can see whether a pattern is forming and bring it to your doctor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many cycles do I need to track?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least two consecutive cycles. That's the minimum used in PMDD diagnostic criteria, and a third cycle of data can make the pattern even clearer before your appointment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I log for PMDD in the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can log mood (irritability, anxiety, low mood, feeling overwhelmed), physical symptoms like bloating and fatigue, sleep, and your cycle, all in one place, with one-tap entry designed for logging every day, not just the hard days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Go Go Gaia free to use for PMDD tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Daily mood and symptom logging, cycle tracking, and doctor-ready export are free. Premium ($9.99/month or $49.99/year) opens the full AI assistant and advanced correlation insights."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my PMDD tracking data private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your data is encrypted and stored securely, and Go Go Gaia does not sell data to third parties or run ads. You can export or delete your data at any time."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/pmdd-tracker.html#webpage",
+      "url": "https://www.go-go-gaia.com/pmdd-tracker.html",
+      "name": "PMDD Tracker App, on iPhone & Web | Go Go Gaia",
+      "dateModified": "2026-08-17",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="Logo1.png" alt="GO GO GAIA Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">A PMDD tracker for daily mood and symptom charting</h1>
+                        <p class="lead">A PMDD diagnosis is built on daily symptom ratings across at least two consecutive cycles, not a single hard week you try to describe from memory. Go Go Gaia logs your mood and physical symptoms every day and shows them against your cycle, so you can see whether they cluster in your luteal phase and bring a real pattern to your doctor.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Start a 2-Cycle Symptom Log
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=pmdd-tracker" target="_blank">Use the web app</a> in any browser.</p>
+                        <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                        <div class="desktop-qr align-items-center gap-3 mt-4">
+                            <img src="images/download-qr.png" alt="QR code linking to Go Go Gaia on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                            <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/app-symptoms.png" alt="Go Go Gaia symptom tracking dashboard with a weekly health trend chart" class="img-fluid rounded" style="max-height: 480px;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for PMDD -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Built for charting PMDD</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-emoji-frown me-2" style="color: var(--primary);"></i>Daily mood logging</h3>
+                                    <p class="mb-0">Rate irritability, anxiety, low mood, and feeling overwhelmed each day, in seconds, so the record covers every day and not just the hard ones.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-thermometer-half me-2" style="color: var(--primary);"></i>Physical symptom tracking</h3>
+                                    <p class="mb-0">Log bloating, fatigue, sleep changes, and more alongside your mood, from a list of 20+ trackable symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-calendar2-week me-2" style="color: var(--primary);"></i>Symptoms shown against your cycle</h3>
+                                    <p class="mb-0">See your mood and symptoms lined up with your luteal phase, so a repeating pattern becomes visible instead of a string of hard weeks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-diagram-3 me-2" style="color: var(--primary);"></i>Correlation insights</h3>
+                                    <p class="mb-0">See which lifestyle factors line up with your symptoms, like weeks with less sleep tracking alongside worse mood, or better weeks with more consistent exercise.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-capsule me-2" style="color: var(--primary);"></i>Medication & supplement tracking</h3>
+                                    <p class="mb-0">Track what you're taking alongside your symptoms, so you and your doctor can see whether an option is helping over time.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>Doctor-ready data export</h3>
+                                    <p class="mb-0">Bring an organized, dated record of your symptoms to your next appointment instead of trying to recall a hard week from memory.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">Why the chart matters</h2>
+                    <p class="mb-0">There's no blood test for PMDD. Diagnosis comes from prospective daily symptom ratings across at least two consecutive cycles, logged as you go rather than recalled afterward, since day-to-day records are far more reliable than memory. Go Go Gaia keeps your mood, symptoms, sleep, and cycle in one place, so after two cycles you can see whether the pattern is really there and bring something concrete to your appointment, instead of describing a hard week from memory.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Irritability & anger</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Anxiety</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Low mood</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Feeling overwhelmed</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Bloating</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Fatigue</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep changes</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Cycle & luteal phase</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Medications & supplements</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Nutrition</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Fitness & activity</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">And more</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Your health data is encrypted and stored securely. Go Go Gaia doesn't run ads or sell your data to third parties, and you can export or delete your data at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How is PMDD diagnosed?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">PMDD is diagnosed from prospective daily symptom ratings across at least two consecutive menstrual cycles, which is also what ACOG recommends for premenstrual conditions in general. Prospective means logging as you go rather than recalling afterward, since day-to-day records are far more reliable than memory. Your clinician uses that chart to confirm the pattern is tied to your luteal phase before deciding on next steps with you.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can this app diagnose PMDD?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No app can diagnose PMDD. What Go Go Gaia can do is help you build the exact record a clinician needs: daily mood and physical symptom ratings shown against your cycle, so you can see whether a pattern is forming and bring it to your doctor.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How many cycles do I need to track?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">At least two consecutive cycles. That's the minimum used in PMDD diagnostic criteria, and a third cycle of data can make the pattern even clearer before your appointment.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What can I log for PMDD in the app?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">You can log mood (irritability, anxiety, low mood, feeling overwhelmed), physical symptoms like bloating and fatigue, sleep, and your cycle, all in one place, with one-tap entry designed for logging every day, not just the hard days.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Is Go Go Gaia free to use for PMDD tracking?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Daily mood and symptom logging, cycle tracking, and doctor-ready export are free. Premium ($9.99/month or $49.99/year) opens the full AI assistant and advanced correlation insights.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Is my PMDD tracking data private?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Your data is encrypted and stored securely, and Go Go Gaia does not sell data to third parties or run ads. You can export or delete your data at any time.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-center mt-4 mb-0">Still comparing options? See our <a href="blog/best-pmdd-tracking-app.html">PMDD app comparison</a>, or read <a href="blog/pms-vs-pmdd.html">PMS vs PMDD: how to tell the difference</a>.</p>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">See your PMDD pattern in two cycles</h2>
+                    <p class="lead mb-4">Mood, symptoms, and cycle, together from day one.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Start a 2-Cycle Symptom Log
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=pmdd-tracker" target="_blank">Use the web app</a> in any browser.</p>
+                </section>
+
+                <!-- Related tracking pages -->
+                <section class="py-4 sibling-tracking-nav">
+                    <h2 class="h5 mb-3">Tracking for other conditions</h2>
+                    <p class="small text-muted mb-0">
+                        <a href="perimenopause-tracker.html">Perimenopause tracking</a> &middot;
+                        <a href="pcos-tracker.html">PCOS tracking</a> &middot;
+                        <a href="endometriosis-tracker.html">Endometriosis tracking</a> &middot;
+                        <a href="cycle-syncing-app.html">Cycle syncing</a> &middot;
+                        <a href="conditions.html">All conditions</a>
+                    </p>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Company</h5>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="conditions.html">Conditions</a></p>
+                    <p><a href="blog/index.html">Blog</a></p>
+                    <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2024 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
