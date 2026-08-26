@@ -171,6 +171,7 @@
 ## Condition tracking (what the app does, per condition)
 
 - [Cycle syncing app](https://www.go-go-gaia.com/cycle-syncing-app.html): Phase detection and phase-tagged logging of workouts, meals, mood, sleep, and energy, with correlations drawn from your own logged history rather than textbook phase prescriptions.
+- [Bring your health history](https://www.go-go-gaia.com/health-patterns.html): Import labs, DEXA scans, spreadsheets, old period tracker screenshots, Oura, and Apple Health, then see long-horizon patterns across months and years, each finding carrying a confidence level and sample size.
 - [PCOS tracker](https://www.go-go-gaia.com/pcos-tracker.html): Irregular-cycle handling, symptom and metabolic tracking, lab and bloodwork import (TSH, AMH, progesterone), and glucose support via Dexcom and Libre.
 - [Endometriosis tracker](https://www.go-go-gaia.com/endometriosis-tracker.html): Pain and flare logging, symptom-to-phase correlations, and doctor-ready records to bring to appointments.
 - [Perimenopause tracker](https://www.go-go-gaia.com/perimenopause-tracker.html): Hot flash and symptom logging, cycle-change monitoring as the pattern shifts, and patterns showing which weeks make symptoms worse.
