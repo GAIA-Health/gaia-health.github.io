@@ -277,6 +277,9 @@
 - [How hormone coaches track client cycles & labs](https://www.go-go-gaia.com/blog/hormone-coach-client-tracking.html): How hormone health coaches see a client's cycle phase, symptoms, and hormone labs in one place, with consent, instead of piecing it together from screenshots.
 - [Client tracking for fertility coaches](https://www.go-go-gaia.com/blog/fertility-coach-client-tracking.html): What a fertility coach sees when a client shares her cycle: phase, predicted fertile window, BBT trend, OPK, and cervical mucus, consent-based.
 - [Client check-ins without the Sunday-night spreadsheet](https://www.go-go-gaia.com/blog/client-check-ins-without-spreadsheets.html): Why weekly spreadsheet check-ins miss half of a client's week, and how to build a leaner check-in around the data her phone already logged.
+- [What app lets a coach see a client's cycle and sleep?](https://www.go-go-gaia.com/blog/app-to-see-clients-cycle-sleep-data.html): TrueCoach and Trainerize don't show cycle or sleep data. A consent-based client portal does. Here's how it works and what a coach actually sees.
+- [How online coaches track client recovery](https://www.go-go-gaia.com/blog/how-online-coaches-track-client-recovery.html): How online coaches read sleep, readiness, training load, and cycle phase together, and where wearable recovery data hits its limits.
+- [How to monitor client progress between sessions](https://www.go-go-gaia.com/blog/how-to-monitor-client-progress-between-sessions.html): What's worth a mid-week look in a client's week, what's just noise, and how coaches see it without asking for a screenshot.
 
 ## Free tools
 

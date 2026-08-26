@@ -1938,4 +1938,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/app-to-see-clients-cycle-sleep-data.html</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/how-online-coaches-track-client-recovery.html</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/how-to-monitor-client-progress-between-sessions.html</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
