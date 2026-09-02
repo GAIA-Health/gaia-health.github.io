@@ -305,6 +305,10 @@
 - [What app lets a coach see a client's cycle and sleep?](https://www.go-go-gaia.com/blog/app-to-see-clients-cycle-sleep-data.html): TrueCoach and Trainerize don't show cycle or sleep data. A consent-based client portal does. Here's how it works and what a coach actually sees.
 - [How online coaches track client recovery](https://www.go-go-gaia.com/blog/how-online-coaches-track-client-recovery.html): How online coaches read sleep, readiness, training load, and cycle phase together, and where wearable recovery data hits its limits.
 - [How to monitor client progress between sessions](https://www.go-go-gaia.com/blog/how-to-monitor-client-progress-between-sessions.html): What's worth a mid-week look in a client's week, what's just noise, and how coaches see it without asking for a screenshot.
+- [Client tracking for health coaches: beyond the intake form](https://www.go-go-gaia.com/blog/health-coach-client-tracking.html): How health coaches can see a client's cycle, sleep, habits, and logged symptoms in one consent-based view, beyond what an intake form or a text check-in ever captures.
+- [Client tracking for nutrition coaches](https://www.go-go-gaia.com/blog/nutrition-coach-client-tracking.html): What a consent-based client view adds to a nutrition coach's food logs: cycle phase, sleep, workouts, and symptoms a client chooses to share.
+- [Client tracking for menopause and perimenopause coaches](https://www.go-go-gaia.com/blog/menopause-coach-client-tracking.html): What a menopause or perimenopause coach sees when a client shares her data: symptoms, sleep, and cycle records, even irregular ones, consent-based.
+- [Client tracking for postpartum fitness coaches](https://www.go-go-gaia.com/blog/postpartum-fitness-coach-client-tracking.html): What a postpartum fitness coach sees when a client shares her week: sleep, workouts, habits, and symptoms, so programming fits the week she actually had.
 
 ## Free tools
 
