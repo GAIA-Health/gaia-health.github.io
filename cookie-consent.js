@@ -23,6 +23,10 @@
  * without ever touching a banner, and the pageview was dropped before they
  * could consent. See docs: GA4 consent gap, 2026-07-13 -> 2026-07-24.
  *
+ * Bots: automation flags (navigator.webdriver / HeadlessChrome) get a no-op
+ * gtag, and everything else waits for a human signal (input event or a short
+ * visible dwell) before gtag.js loads. See the gate below.
+ *
  * Region comes from the IANA timezone (Intl), not an IP lookup: no third-party
  * request, no latency, nothing to block. It over-includes rather than under-
  * includes (Europe/Moscow, Europe/Istanbul and friends get the strict path even
@@ -109,13 +113,48 @@
     wait_for_update: 500
   });
 
-  gtag('js', new Date());
-  gtag('config', GA_ID, { anonymize_ip: true });
+  // Human-signal gate. The Singapore scraper fleet moved to stealth automation
+  // (navigator.webdriver hidden) in late Aug 2026, so the flag check above no
+  // longer catches it. Its visits are single-hit and gone in well under a
+  // second with no input events. gtag.js and the config page_view therefore
+  // wait for the first pointer / touch / scroll / key event, or for the tab to
+  // have been visible for DWELL_MS. Anything pushed to dataLayer before then is
+  // queued by the stub and flushed once gtag.js arrives. Cost: humans who leave
+  // within DWELL_MS without touching anything go uncounted, which is fine.
+  var DWELL_MS = 3000;
+  var SIGNALS = ['pointermove', 'pointerdown', 'touchstart', 'scroll', 'keydown', 'wheel'];
+  var booted = false;
 
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  document.head.appendChild(script);
+  function boot() {
+    if (booted) return;
+    booted = true;
+    SIGNALS.forEach(function (ev) { window.removeEventListener(ev, boot, true); });
+
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(script);
+  }
+
+  SIGNALS.forEach(function (ev) {
+    window.addEventListener(ev, boot, { capture: true, passive: true });
+  });
+
+  function armDwell() {
+    if (document.visibilityState === 'hidden') {
+      document.addEventListener('visibilitychange', function onVisible() {
+        if (document.visibilityState !== 'visible') return;
+        document.removeEventListener('visibilitychange', onVisible);
+        setTimeout(boot, DWELL_MS);
+      });
+      return;
+    }
+    setTimeout(boot, DWELL_MS);
+  }
+  armDwell();
 
   function grant() {
     gtag('consent', 'update', { analytics_storage: 'granted' });
