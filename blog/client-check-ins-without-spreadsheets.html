@@ -37,6 +37,16 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Only what the blog stylesheet doesn't already cover. */
+        .references-list {
+            font-size: 0.9rem;
+        }
+        .references-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
     <!-- BlogPosting Schema -->
     <script type="application/ld+json">
     {
@@ -57,7 +67,7 @@
         }
       },
       "datePublished": "2026-08-26",
-      "dateModified": "2026-08-26",
+      "dateModified": "2026-09-07",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.go-go-gaia.com/blog/client-check-ins-without-spreadsheets.html"
@@ -252,7 +262,7 @@
 
                         <h2>What a Sunday-Night Check-In Actually Misses</h2>
 
-                        <p>Recall bias is well documented in self-report research: the further removed someone is from an event, the more their report of it drifts toward what they generally believe or feel now, rather than what actually happened in the moment. A client who had a genuinely rough Tuesday but a great Saturday might report the week as "fine," because Saturday is what she remembers most clearly by Sunday night.</p>
+                        <p>Recall bias is well documented in self-report research: the further removed someone is from an event, the more their report of it drifts toward what they generally believe or feel now, rather than what actually happened in the moment. The foundational research on real-time self-report, known in the methods literature as Ecological Momentary Assessment, is built around exactly this problem: logging something close to when it happens reduces recall bias compared with reconstructing it from memory later.<sup><a href="#ref1">1</a></sup> A client who had a genuinely rough Tuesday but a great Saturday might report the week as "fine," because Saturday is what she remembers most clearly by Sunday night.</p>
 
                         <p>The averaging problem compounds it. "How was your sleep this week?" collapses seven different nights into one answer, and the answer tends to reflect her general mood about the week more than any specific night. If she's asked to rate energy on a 1 to 10 scale for the whole week, you lose the information that actually matters to programming: which day was low, and what happened around it.</p>
 
@@ -260,11 +270,11 @@
 
                         <h2>What Passive Data Covers, and What Still Needs a Question</h2>
 
-                        <p>A client who's connected her data gives you a running record that doesn't depend on her remembering anything: cycle phase, sleep, logged workouts, habits, and vitals show up as they happen, not as a Sunday-night summary. That's the half of the check-in you can stop asking for entirely.</p>
+                        <p>A client who's connected her data gives you a running record that doesn't depend on her remembering anything: cycle phase, <a href="/encyclopedia/sleep-stages.html">sleep</a>, logged workouts, habits, and <a href="/encyclopedia/resting-heart-rate.html">vitals</a> show up as they happen, not as a Sunday-night summary. That's the half of the check-in you can stop asking for entirely. How much any one client's sleep actually shifts across her cycle varies a lot person to person,<sup><a href="#ref5">5</a></sup> which is one more reason to look at her own running record instead of assuming a pattern that fits everyone.</p>
 
-                        <p>What passive data doesn't cover is context, and context is still the job of a question. Her phone can tell you she slept five hours on Wednesday. It can't tell you that was because of a work deadline, not poor recovery. It can log a lighter training week. It can't tell you she was traveling, or that a change at home has her stressed, or that a session felt harder than the numbers suggest. That's subjective feel and life context, and it only comes from asking her directly, which is exactly why a check-in still matters. It just doesn't need to ask for numbers anymore.</p>
+                        <p>What passive data doesn't cover is context, and context is still the job of a question. Her phone can tell you she slept five hours on Wednesday. It can't tell you that was because of a work deadline, not poor recovery. It can log a lighter training week. It can't tell you she was traveling, or that a change at home has her stressed, or that a session felt harder than the numbers suggest. That's subjective feel and life context, and it only comes from asking her directly, which is exactly why a check-in still matters. Research on monitoring athlete training response backs that up directly: a simple subjective check-in, how a session felt, perceived stress, has been shown to track training-load changes more sensitively than objective measures like resting heart rate on their own.<sup><a href="#ref2">2</a></sup> It just doesn't need to ask for numbers anymore.</p>
 
-                        <p>This is the same split that shows up in <a href="coaching-clients-around-their-cycle.html">coaching around a client's cycle</a>: the phase itself is data you can see, but what a given phase actually feels like for her is something only she can report. Both halves matter. They just don't belong in the same question.</p>
+                        <p>This is the same split that shows up in <a href="coaching-clients-around-their-cycle.html">coaching around a client's cycle</a>: the phase itself is data you can see, but what a given phase actually feels like for her is something only she can report. That gap is well documented among competitive athletes themselves: most report their fitness or performance feeling different across their cycle, but only a minority have ever discussed it with their coach.<sup><a href="#ref4">4</a></sup> Both halves matter. They just don't belong in the same question.</p>
 
                         <h2>A Lean Weekly Check-In</h2>
 
@@ -284,9 +294,9 @@
 
                         <p>The gap between "data exists" and "coach can see it" is usually a screenshot, and screenshots don't scale past a couple of clients before they start slipping through the cracks. A shared view closes that gap directly: once a client opts in, her cycle phase, sleep, logged workouts, habits, and vitals show up in one place, without either of you re-typing anything into a spreadsheet.</p>
 
-                        <p>That's what the <a href="/for-professionals/">Go Go Gaia coach portal</a> is built to do. It's consent-based from the start, a client invites you in and can revoke access anytime, and it shows you her data alongside the notes and flags you add yourself. There's no automatic compliance scoring or missed-check-in alert built in, so a quiet week in her data is still a reason to ask, not a verdict on its own. What it does remove is the retyping: the check-in question can go straight to "how did this week feel," because the numbers are already sitting in front of you.</p>
+                        <p>That's what the <a href="/for-professionals/">Go Go Gaia coach portal</a> is built to do. It's consent-based from the start, a client invites you in and can revoke access anytime, and it shows you her data alongside the notes and flags you add yourself. There's no automatic compliance scoring or missed-check-in alert built in, so a quiet week in her data is still a reason to ask, not a verdict on its own. That combination, passive data plus a short subjective check-in, is also what sport-science monitoring guidance recommends: heart-rate and wearable measures work best interpreted alongside training logs and simple self-report, not read alone.<sup><a href="#ref3">3</a></sup> What it does remove is the retyping: the check-in question can go straight to "how did this week feel," because the numbers are already sitting in front of you.</p>
 
-                        <p>If you're weighing whether a shared portal is worth adding to your current setup, our <a href="best-client-tracking-apps-for-coaches.html">roundup of client tracking apps for coaches</a> compares check-in and data-sharing features across the main options, and <a href="truecoach-vs-trainerize.html">TrueCoach vs Trainerize</a> goes deeper on the two most established platforms if you're deciding between them specifically. The same shift away from Sunday-night reconstruction applies before the check-in cadence even starts; our piece on <a href="health-coach-client-tracking.html">client tracking for health coaches</a> covers what a shared view adds from the intake stage onward.</p>
+                        <p>If you're weighing whether a shared portal is worth adding to your current setup, our <a href="best-client-tracking-apps-for-coaches.html">roundup of client tracking apps for coaches</a> compares check-in and data-sharing features across the main options, and <a href="truecoach-vs-trainerize.html">TrueCoach vs Trainerize</a> goes deeper on the two most established platforms if you're deciding between them specifically. The same shift away from Sunday-night reconstruction applies before the check-in cadence even starts. Our piece on <a href="health-coach-client-tracking.html">client tracking for health coaches</a> covers what a shared view adds from the intake stage onward.</p>
 
                         <h2>Rolling It Out Without Overloading Clients</h2>
 
@@ -310,6 +320,16 @@
 
                         <h3>Is a shared client portal worth it for a small roster?</h3>
                         <p>Whether it's worth it depends on how much of your check-in time currently goes into re-collecting numbers you could see automatically. For two or three clients, a good spreadsheet habit might still work fine. Once you're managing check-ins across a full roster, the time spent chasing screenshots and re-typing numbers adds up fast enough that a shared view usually pays for itself in saved prep time alone.</p>
+
+                        <h2 class="h4 fw-bold mb-3" id="references">References</h2>
+                        <ol class="references-list">
+                            <li id="ref1">Shiffman S, Stone AA, Hufford MR. Ecological Momentary Assessment. <em>Annual Review of Clinical Psychology</em>. 2008;4(1):1-32. <a href="https://doi.org/10.1146/annurev.clinpsy.3.022806.091415" target="_blank" rel="noopener">doi.org/10.1146/annurev.clinpsy.3.022806.091415</a></li>
+                            <li id="ref2">Saw AE, Main LC, Gastin PB. Monitoring the athlete training response: subjective self-reported measures trump commonly used objective measures: a systematic review. <em>British Journal of Sports Medicine</em>. 2016;50(5):281-291. <a href="https://doi.org/10.1136/bjsports-2015-094758" target="_blank" rel="noopener">doi.org/10.1136/bjsports-2015-094758</a></li>
+                            <li id="ref3">Buchheit M. Monitoring training status with HR measures: do all roads lead to Rome? <em>Frontiers in Physiology</em>. 2014;5:73. <a href="https://doi.org/10.3389/fphys.2014.00073" target="_blank" rel="noopener">doi.org/10.3389/fphys.2014.00073</a></li>
+                            <li id="ref4">Solli GS, Sandbakk SB, Noordhof DA, Ihalainen JK, Sandbakk Ø. Changes in Self-Reported Physical Fitness, Performance, and Side Effects Across the Phases of the Menstrual Cycle Among Competitive Endurance Athletes. <em>International Journal of Sports Physiology and Performance</em>. 2020;15(9):1324-1333. <a href="https://doi.org/10.1123/ijspp.2019-0616" target="_blank" rel="noopener">doi.org/10.1123/ijspp.2019-0616</a></li>
+                            <li id="ref5">Van Reen E, Kiesner J. Individual differences in self-reported difficulty sleeping across the menstrual cycle. <em>Archives of Women's Mental Health</em>. 2016;19(4):599-608. <a href="https://pubmed.ncbi.nlm.nih.gov/26973332/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
+                        </ol>
+                        <p class="small text-muted border-top pt-3 mt-3">Sourced from peer-reviewed sport-science and self-report methodology research. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed September 2026.</p>
 
                         <div class="blog-cta-box">
                             <h3 class="mb-3">Spend Check-In Time on the Week, Not the Recap</h3>

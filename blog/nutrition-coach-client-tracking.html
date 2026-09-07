@@ -37,12 +37,22 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Only what the blog stylesheet doesn't already cover. */
+        .references-list {
+            font-size: 0.9rem;
+        }
+        .references-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
     <!-- BlogPosting Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Client Tracking for Nutrition Coaches: Food Logs, Cycles, and Context",
+      "headline": "Client Tracking for Nutrition Coaches",
       "description": "What a consent-based client view adds to a nutrition coach's food logs: cycle phase, sleep, workouts, and symptoms a client chooses to share.",
       "author": {
         "@type": "Organization",
@@ -57,7 +67,7 @@
         }
       },
       "datePublished": "2026-09-02",
-      "dateModified": "2026-09-02",
+      "dateModified": "2026-09-07",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.go-go-gaia.com/blog/nutrition-coach-client-tracking.html"
@@ -248,9 +258,9 @@
 
                         <h2>Why the Same Adherence Number Hides a Different Week</h2>
 
-                        <p>An adherence percentage is a useful number, but it flattens a lot. Two clients can both log 85% adherence to their macros in a given week and be having completely different experiences.</p>
+                        <p>An adherence percentage is a useful number, but it flattens a lot. Two clients can both log 85% adherence to their macros in a given week and be having completely different experiences. It's worth remembering the number itself already carries some looseness: nutrition researchers who study self-reported food logs are candid that measurement error, especially around energy and calorie reporting, is real and well documented, even while the data still holds real value when it's read with that limit in mind.<sup><a href="#ref1">1</a></sup></p>
 
-                        <p>One of them hit that number during a heavy training block, eating more and moving more, with appetite and hunger cues that make sense given the volume. Another hit the same number during a rough sleep stretch, where cravings were harder to manage and portions crept up in the evening. A third might be in the days leading up to her period, when appetite and food noise shift for a lot of people, which is a normal, well-documented part of the cycle and not a discipline problem.</p>
+                        <p>One of them hit that number during a heavy training block, eating more and moving more, with appetite and hunger cues that make sense given the volume. Another hit the same number during a rough sleep stretch, where cravings were harder to manage and portions crept up in the evening. A third might be in the days leading up to her period, when mood and energy commonly shift for a lot of people<sup><a href="#ref2">2</a></sup>, which can carry over into appetite and isn't a discipline problem.</p>
 
                         <p>None of that shows up in the adherence number itself. It shows up in the context around it, and right now that context usually lives in a client's memory, not in your dashboard.</p>
 
@@ -262,14 +272,14 @@
 
                         <div class="alert alert-light border">
                             <p class="mb-2"><strong>Meals and nutrition logging:</strong> what she's logged for food and meals in her own app, on her own schedule.</p>
-                            <p class="mb-2"><strong>Cycle phase:</strong> where she is in her cycle, so an appetite shift or a low-energy day has context instead of reading as random.</p>
+                            <p class="mb-2"><strong>Cycle phase:</strong> where she is in her cycle, so an appetite shift or a low-energy day has context instead of reading as random. That's what current sport-medicine consensus guidance says tracking is actually good for: supporting wellbeing and communication, not predicting performance.<sup><a href="#ref3">3</a></sup></p>
                             <p class="mb-2"><strong>Sleep:</strong> her logged or synced sleep, which matters for reading a rough eating week honestly.</p>
                             <p class="mb-2"><strong>Workouts:</strong> her training load and activity, so an adherence dip during a heavy block reads differently than one during a lighter week.</p>
                             <p class="mb-2"><strong>Habits and symptoms:</strong> whatever habits and symptoms she's chosen to log and share, day to day.</p>
                             <p class="mb-0"><strong>Logged lab values, if she's shared them:</strong> the numbers she's typed in herself, over time, not a live feed from any lab or clinic.</p>
                         </div>
 
-                        <p>One thing worth being precise about: the app itself can generate cycle-phase-aware calorie and macro targets that a client sees inside her own app, based on her logged cycle data. That's something her app calculates for her, not something you set or edit from the coach side. If you're working on macros with a client, you're still doing that work together in whatever system you already use for programming, the portal just gives you more of her week to work from.</p>
+                        <p>One thing worth being precise about: the app itself can generate cycle-phase-aware <a href="/encyclopedia/calories.html">calorie</a> and macro (<a href="/encyclopedia/protein.html">protein</a>, <a href="/encyclopedia/carbohydrates.html">carbohydrate</a>, and <a href="/encyclopedia/dietary-fat.html">fat</a>) targets that a client sees inside her own app, based on her logged cycle data. That's something her app calculates for her, not something you set or edit from the coach side. If you're working on macros with a client, you're still doing that work together in whatever system you already use for programming, the portal just gives you more of her week to work from.</p>
 
                         <p>Sharing is opt-in from a client's side. She sends you an invite link, chooses what to share when she connects, and can adjust or revoke that access at any time without needing to explain why. The portal is free for up to 3 clients, no card needed, so it costs nothing to see whether it's useful before deciding to bring on more of your roster.</p>
 
@@ -289,7 +299,7 @@
 
                         <h2>Where Your Scope Ends</h2>
 
-                        <p>Nutrition and macro coaching covers a lot of ground: habits, portioning, timing, consistency, and the day-to-day behavior change that makes a plan actually stick. What it doesn't cover, unless you're also a registered dietitian or working under one, is medical nutrition therapy: diagnosing a nutrition-related condition, treating a disorder, or making calls that belong to a client's clinical care team.</p>
+                        <p>Nutrition and macro coaching covers a lot of ground: habits, portioning, timing, consistency, and the day-to-day behavior change that makes a plan actually stick. What it doesn't cover, unless you're also a registered dietitian or working under one, is medical nutrition therapy: diagnosing a nutrition-related condition, treating a disorder, or making calls that belong to a client's clinical care team. Coaching certifications draw this line on their own terms too. NBHWC's scope of practice for board-certified health and wellness coaches explicitly excludes providing nutrition consultation or creating meal plans from a generalist coach's role,<sup><a href="#ref4">4</a></sup> and ACE's own scope-of-practice standard for personal trainers is just as direct that prescribing diets or specific supplements sits outside a trainer's lane, referred instead to a dietitian or physician.<sup><a href="#ref5">5</a></sup></p>
 
                         <p>Guide eating habits within the scope of your certification, and when something looks like it needs a clinical answer, that's a referral, not something to work around with more tracking.</p>
 
@@ -313,6 +323,16 @@
 
                         <h3>Does this replace the meal-planning software I already use?</h3>
                         <p>It doesn't. Meal-planning and coaching platforms like Practice Better cover the operational side of a practice, which as of September 2026 means building out plans, invoicing, and program delivery, and this doesn't try to do that job. The coach portal is a shared view of a client's day-to-day data, meant to sit alongside whatever planning software you already run your practice on, not replace it.</p>
+
+                        <h2 class="h4 fw-bold mb-3" id="references">References</h2>
+                        <ol class="references-list">
+                            <li id="ref1">Subar AF, Freedman LS, Tooze JA, Kirkpatrick SI, Boushey C, Neuhouser ML, Thompson FE, Potischman N, Guenther PM, Tarasuk V, Reedy J, Krebs-Smith SM. Addressing Current Criticism Regarding the Value of Self-Report Dietary Data. <em>The Journal of Nutrition</em>. 2015;145(12):2639-2645. <a href="https://doi.org/10.3945/jn.115.219634" target="_blank" rel="noopener">doi.org/10.3945/jn.115.219634</a></li>
+                            <li id="ref2">Bruinvels G, Goldsmith E, Blagrove R, Simpkin A, Lewis N, et al. Prevalence and frequency of menstrual cycle symptoms are associated with availability to train and compete: a study of 6812 exercising women recruited using the Strava exercise app. <em>British Journal of Sports Medicine</em>. 2021;55(8):438-443. <a href="https://doi.org/10.1136/bjsports-2020-102792" target="_blank" rel="noopener">doi.org/10.1136/bjsports-2020-102792</a></li>
+                            <li id="ref3">Verhagen E, Ferrer E, Antero JS, Bahtijarevic Z, Barlow A, Bolling C, et al. UEFA consensus statement on menstrual cycle tracking in women's football. <em>BMJ Open Sport &amp; Exercise Medicine</em>. 2025;11(3):e002769. <a href="https://doi.org/10.1136/bmjsem-2025-002769" target="_blank" rel="noopener">doi.org/10.1136/bmjsem-2025-002769</a></li>
+                            <li id="ref4">NBHWC (National Board for Health &amp; Wellness Coaching). Scope of Practice for NBC-HWCs. <a href="https://nbhwc.org/why-nbc-hwc/scope-of-practice/" target="_blank" rel="noopener">nbhwc.org</a></li>
+                            <li id="ref5">ACE (American Council on Exercise). <em>ACE Certified Personal Trainer Manual</em>, Chapter 1: Role and Scope of Practice for the Personal Trainer. <a href="https://www.acefitness.org/academy/AcademyElitePDFs/ACE_PT5th_Manual_Ch1.pdf" target="_blank" rel="noopener">acefitness.org</a></li>
+                        </ol>
+                        <p class="small text-muted border-top pt-3 mt-3">Sourced from peer-reviewed research and official scope-of-practice guidance from NBHWC and ACE. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed September 2026.</p>
 
                         <div class="blog-cta-box">
                             <h3 class="mb-3">See the Week Behind the Food Log</h3>

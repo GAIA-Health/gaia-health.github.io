@@ -20,15 +20,21 @@ Read these, then report current status + what's next:
 
 **Measurement:** GA4 events `pro_page_view` + `pro_cta_click` (fired by `analytics-events.js` on `a.pro-cta-link`); signup attribution via UTMs (`utm_campaign=for-professionals`, `utm_source=<page slug>`). LinkedIn DM link: `https://www.go-go-gaia.com/for-professionals/?utm_source=linkedin&utm_medium=dm`. Baseline before the cluster: 6 sessions/60d, 1 CTA click.
 
-**Shipped content (waves 1-2, Aug 25 2026, commits 76b8596 + 8f8caf9):**
-- `blog/coaching-clients-around-their-cycle.html` (trainer wedge)
-- `blog/can-my-trainer-see-my-cycle-data.html` (client-side Q&A, answer-first)
-- `blog/truecoach-vs-trainerize.html` (third-party vs-page)
-- `blog/trainerize-alternatives.html` (alternatives page, methodology block)
-- `blog/best-client-tracking-apps-for-coaches.html` (listicle, methodology + disclosure)
-- Pillar upgrades: FAQ + FAQPage/SoftwareApplication schema + blog strip.
-
-**Queued articles** (outlines in the plan doc): client-check-ins-without-spreadsheets, how-coaches-use-wearable-data, health-coach-client-tracking.
+**Shipped content (waves 1-6, Aug 25 – Sep 7 2026):** 19 posts total. Waves 1-2 shipped the
+first five (trainer wedge, client-side Q&A, TrueCoach vs Trainerize, Trainerize alternatives,
+best-client-tracking-apps listicle) plus pillar FAQ/schema/blog-strip upgrades; wave 4 added the
+GEO question posts (app-to-see-clients-cycle-sleep-data, how-online-coaches-track-client-recovery,
+how-to-monitor-client-progress-between-sessions); wave 5 added four persona/long-tail posts
+(health-coach, nutrition-coach, menopause-coach, postpartum-fitness-coach client-tracking). Wave
+6 (2026-09-07) shipped the first citation-rich posts and introduced a cluster-wide citation
+standard (inline `<a href="#refN">` links → numbered References section → methodology note):
+`blog/menstrual-cycle-training-research-for-coaches.html` (the evidence-review/citation hub),
+`blog/everfit-vs-trainerize.html`, `blog/truecoach-alternatives.html`, and
+`blog/how-to-talk-to-clients-about-their-menstrual-cycle.html`. Source-of-truth banks for
+citations: `docs/PRO-CITATIONS.md` (peer-reviewed sport-science + scope-of-practice) and
+`docs/PRO-COMPETITOR-FACTS.md` (official competitor pricing/features, as-of dated) — writers may
+only cite what's in those banks. **Open item:** retrofit the citation standard onto the 15 older
+cluster posts, which currently cite zero external sources.
 
 ## Product-truth gaps (verified in gaia-web-app code 2026-08-25 — recheck before repeating marketing claims)
 

@@ -37,6 +37,16 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Only what the blog stylesheet doesn't already cover. */
+        .references-list {
+            font-size: 0.9rem;
+        }
+        .references-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
     <!-- BlogPosting Schema -->
     <script type="application/ld+json">
     {
@@ -57,7 +67,7 @@
         }
       },
       "datePublished": "2026-08-26",
-      "dateModified": "2026-08-26",
+      "dateModified": "2026-09-07",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.go-go-gaia.com/blog/app-to-see-clients-cycle-sleep-data.html"
@@ -243,7 +253,7 @@
 
                         <h2>Why Coaching Platforms Don't Do This</h2>
 
-                        <p>It's worth being fair to the platforms here, because the gap isn't a failure on their part. TrueCoach and Trainerize were built to solve program delivery: get a workout in front of a client, collect her video or written check-in, track load over time. That's a real job and they do it well. On paid tiers, some sync sleep and recovery data from wearables like Apple Health or WHOOP, but cycle data isn't part of that picture, and the sleep numbers that do come through are never tied to where a client is in her cycle.</p>
+                        <p>It's worth being fair to the platforms here, because the gap isn't a failure on their part. TrueCoach and Trainerize were built to solve program delivery: get a workout in front of a client, collect her video or written check-in, track load over time. That's a real job and they do it well. On paid tiers, Trainerize syncs sleep and activity data from Apple Watch, Garmin, Withings, and Fitbit, and TrueCoach syncs from Apple Health, Garmin, WHOOP, and Oura, as of September 2026.<sup><a href="#ref1">1</a></sup><sup><a href="#ref2">2</a></sup> Cycle data isn't part of either picture, and the sleep numbers that do come through are never tied to where a client is in her cycle.</p>
 
                         <p>So coaches who want that connection end up bridging it manually. A client texts a screenshot from her period app so a coach can see the cycle side at all, then a coach cross-references it by memory against whatever sleep data does come through a wearable integration. It works, sort of, but it's slow and manual, and it depends on her remembering to send something in the first place. Coaching platforms don't build this connection because pairing cycle data with synced sleep is a different product than the one they set out to build.</p>
 
@@ -251,19 +261,19 @@
 
                         <p>A client portal solves this a different way: instead of a coach requesting data, a client grants it. She sends the invite from her own app using a coach's invite code, chooses what to share, whether that's cycle and sleep, workouts and habits, or labs too, and confirms it. Nothing shows up in a coach's view until she's approved it.</p>
 
-                        <p>That permission isn't permanent by default. She can revoke it at any time, for any reason, and the coach's access to her data ends immediately. The mechanics are covered in more detail in <a href="can-my-trainer-see-my-cycle-data.html">how sharing and revoking access actually works</a>, but the short version is that the coach never has a standing pipe into her data. Every bit of visibility traces back to a choice she made and can unmake.</p>
+                        <p>That permission isn't permanent by default. She can revoke it at any time, for any reason, and the coach's access to her data ends immediately. The mechanics are covered in more detail in <a href="can-my-trainer-see-my-cycle-data.html">how sharing and revoking access actually works</a>, but the short version is that the coach never has a standing pipe into her data. Every bit of visibility traces back to a choice she made and can unmake. Our guide on <a href="how-to-talk-to-clients-about-their-menstrual-cycle.html">how to talk to clients about their menstrual cycle</a> covers the conversation side of asking for that invite in the first place.</p>
 
                         <h2>What a Coach Actually Sees</h2>
 
-                        <p>Once a client invites a coach in through <a href="/for-professionals/">Go Go Gaia's coach portal</a>, the view includes her current cycle phase, sleep, logged workouts, habit tracking, and any labs she's chosen to share, all in one place instead of scattered across texts and screenshots. A coach can look at whether her energy dips show up in a particular phase, whether her sleep has been shorter than usual the week she's struggled to hit a session, or how consistent her habit logging has been, all without asking her to reconstruct it from memory on a call.</p>
+                        <p>Once a client invites a coach in through <a href="/for-professionals/">Go Go Gaia's coach portal</a>, the view includes her current cycle phase, <a href="/encyclopedia/sleep-stages.html">sleep</a>, logged workouts, habit tracking, and any labs she's chosen to share, all in one place instead of scattered across texts and screenshots. A coach can look at whether her energy dips show up in a particular phase, whether her sleep has been shorter than usual the week she's struggled to hit a session, or how consistent her habit logging has been, all without asking her to reconstruct it from memory on a call. Consumer wearables are generally reliable at telling sleep from wake, though the deeper sleep-stage detail (light, deep, REM) varies more from device to device, which is worth keeping in mind when comparing one week's sleep data against another's.<sup><a href="#ref3">3</a></sup></p>
 
-                        <p>For coaches working the cycle-and-training angle specifically, <a href="coaching-clients-around-their-cycle.html">coaching clients around their menstrual cycle</a> covers how to actually use phase data in programming decisions once you can see it.</p>
+                        <p>For coaches working the cycle-and-training angle specifically, <a href="coaching-clients-around-their-cycle.html">coaching clients around their menstrual cycle</a> covers how to actually use phase data in programming decisions once you can see it, and our <a href="menstrual-cycle-training-research-for-coaches.html">guide to the research on training around the menstrual cycle</a> covers what the evidence actually supports.</p>
 
                         <h2>What It Deliberately Doesn't Do</h2>
 
                         <p>This is the part worth being honest about, because it matters for how a coach should use the data. The portal doesn't generate a compliance score or flag missed check-ins. It shows what a client logged, not a judgment about whether she logged enough of it. It doesn't diagnose anything. Cycle phase and symptom patterns show up as data, never as a clinical read on what's happening in her body. It also doesn't pull from a clinic's records or connect to any medical system. Everything a coach sees is what the client logged herself, in her own app, and chose to share.</p>
 
-                        <p>That last point matters because it sets the boundary of the coaching relationship. A coach reading cycle and sleep data is supporting how a client trains and recovers, not practicing medicine or standing in for her doctor. Where labs are involved, that line gets even more specific, which <a href="hormone-coach-client-tracking.html">how hormone coaches track client cycles and labs</a> covers in more depth.</p>
+                        <p>That last point matters because it sets the boundary of the coaching relationship. A coach reading cycle and sleep data is supporting how a client trains and recovers, not practicing medicine or standing in for her doctor. Certifying bodies draw this line explicitly: trainers screen, program, and coach, and refer clients out for anything diagnostic.<sup><a href="#ref4">4</a></sup><sup><a href="#ref5">5</a></sup> Where labs are involved, that line gets even more specific, which <a href="hormone-coach-client-tracking.html">how hormone coaches track client cycles and labs</a> covers in more depth.</p>
 
                         <h2>Where This Fits Alongside Other Tools</h2>
 
@@ -285,6 +295,18 @@
 
                         <h3>What does it cost for a coach to try this?</h3>
                         <p>Go Go Gaia for Professionals is free for up to 3 clients, with no card required to start. A paid tier for larger client rosters is planned but not yet self-serve.</p>
+
+                        <section class="mb-5 mt-5">
+                            <h2 class="h4 fw-bold mb-3" id="references">References</h2>
+                            <ol class="references-list">
+                                <li id="ref1">Trainerize (ABC Fitness). Features. <a href="https://www.trainerize.com/features/" target="_blank" rel="noopener">trainerize.com/features</a>. Accessed September 2026.</li>
+                                <li id="ref2">TrueCoach. Features. <a href="https://truecoach.co/features/" target="_blank" rel="noopener">truecoach.co/features</a>. Accessed September 2026.</li>
+                                <li id="ref3">Chinoy ED, Cuellar JA, Huwa KE, Jameson JT, et al. Performance of seven consumer sleep-tracking devices compared with polysomnography. <em>Sleep</em>. 2021;44(5):zsaa291. <a href="https://doi.org/10.1093/sleep/zsaa291" target="_blank" rel="noopener">doi.org/10.1093/sleep/zsaa291</a></li>
+                                <li id="ref4">ACE (American Council on Exercise). <em>ACE Certified Personal Trainer Manual</em>, Chapter 1: Role and Scope of Practice for the Personal Trainer. <a href="https://www.acefitness.org/academy/AcademyElitePDFs/ACE_PT5th_Manual_Ch1.pdf" target="_blank" rel="noopener">acefitness.org</a></li>
+                                <li id="ref5">NASM (National Academy of Sports Medicine). <em>NASM Code of Professional Conduct</em>. <a href="https://www.nasm.org/content/dam/nasm/docs/nasmlibraries/pdf/nasm-code-of-professional-conduct.pdf" target="_blank" rel="noopener">nasm.org</a></li>
+                            </ol>
+                            <p class="small text-muted border-top pt-3 mt-3">Vendor facts sourced directly from official pricing and features pages, and research citations are peer-reviewed. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed September 2026.</p>
+                        </section>
 
                         <div class="blog-cta-box">
                             <h3 class="mb-3">See Cycle, Sleep, Workouts, and Labs in One View</h3>

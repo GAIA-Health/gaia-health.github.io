@@ -37,6 +37,16 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Only what the blog stylesheet doesn't already cover. */
+        .references-list {
+            font-size: 0.9rem;
+        }
+        .references-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -57,7 +67,7 @@
         }
       },
       "datePublished": "2026-08-25",
-      "dateModified": "2026-08-25",
+      "dateModified": "2026-09-07",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.go-go-gaia.com/blog/can-my-trainer-see-my-cycle-data.html"
@@ -252,7 +262,7 @@
 
                         <h2>What Your Coach Actually Sees, When You Share</h2>
 
-                        <p>Once you invite a coach and they accept, the connection opens up a shared view built around your training week rather than your entire private log. That usually means things like your cycle phase, your sleep, and how consistent you've been with the training or habits your coach assigned. It's the context a coach needs to understand why a week looked the way it did, not a raw export of everything you've ever logged. Clients working with a fertility coach instead of a trainer ask the same question, and <a href="fertility-coach-client-tracking.html">client tracking for fertility coaches</a> covers what shows up there: cycle phase, predicted fertile window, BBT trend, OPK, and cervical mucus, scoped the same consent-based way.</p>
+                        <p>Once you invite a coach and they accept, the connection opens up a shared view built around your training week rather than your entire private log. That usually means things like your cycle phase, your sleep, and how consistent you've been with the training or habits your coach assigned. It's the context a coach needs to understand why a week looked the way it did, not a raw export of everything you've ever logged. That lines up with what coaches themselves say they actually want to know: a concept-mapping study of male coaches working with elite female athletes found their information needs cluster around managing training load, understanding performance impact, and knowing when and how to raise the topic.<sup><a href="#ref1">1</a></sup> Clients working with a fertility coach instead of a trainer ask the same question, and <a href="fertility-coach-client-tracking.html">client tracking for fertility coaches</a> covers what shows up there: cycle phase, predicted fertile window, BBT trend, OPK, and cervical mucus, scoped the same consent-based way.</p>
 
                         <p>What ends up visible is still your call. A client-portal connection is meant to be scoped to what you actively choose to include when you set it up, not an all-or-nothing switch that hands over your whole history the moment you accept an invite. Coaches asking the same question from their side of the connection can see <a href="app-to-see-clients-cycle-sleep-data.html">what app lets a coach see a client's cycle and sleep data</a> in the first place.</p>
 
@@ -260,11 +270,11 @@
 
                         <p>Private notes, journal entries, and anything you haven't explicitly chosen to include stay private. A coach connection is built to share what's useful for programming, not to open your entire account to another person. If you've logged something personal that has nothing to do with training, sleep, or cycle phase, sharing your data with a coach doesn't put that in front of them by default.</p>
 
-                        <p>This is the same consent-first model used for sharing cycle data with a partner: the person you connect with sees what you've chosen to share, and nothing else, and you're the one who decides where that line sits.</p>
+                        <p>This is the same consent-first model used for sharing cycle data with a partner: the person you connect with sees what you've chosen to share, and nothing else, and you're the one who decides where that line sits. It's also the model Apple uses for its own Health app: health data is encrypted in transit and at rest, third-party apps have to explain what they're requesting and why, and you can review or revoke what's shared at any time from your own settings.<sup><a href="#ref5">5</a></sup> A well-built coach portal should hold to that same baseline.</p>
 
                         <div class="blog-info-box">
                             <h4><i class="bi bi-info-circle me-2"></i>Coaching Clients Yourself?</h4>
-                            <p class="mb-0">If you're the one reading this from the coach's side, not the client's, our <a href="/for-professionals/">for-professionals page</a> covers how the client portal works, including how consent, encryption, and revocation are handled for the people you train.</p>
+                            <p class="mb-0">If you're the one reading this from the coach's side, not the client's, our <a href="/for-professionals/">for-professionals page</a> covers how the client portal works, including how consent, encryption, and revocation are handled for the people you train, and our guide on <a href="how-to-talk-to-clients-about-their-menstrual-cycle.html">how to talk to clients about their menstrual cycle</a> covers how to raise the topic in the first place.</p>
                         </div>
 
                         <h2>How Inviting (and Revoking) a Coach Works</h2>
@@ -274,6 +284,8 @@
                         <p>Ending it works the same way in reverse. You can revoke a coach's access from your own settings at any time, and it takes effect immediately going forward. You don't need your coach's permission to turn sharing off, and you can always reconnect later if your situation changes.</p>
 
                         <h2>Why Athletes Choose to Share This Data</h2>
+
+                        <p>There's a real communication gap behind why this matters to a lot of people. Elite athletes surveyed directly report the cycle affecting mood and motivation to train, and many say they're not fully comfortable raising it with a coach, especially a male one.<sup><a href="#ref2">2</a></sup> Separate research on elite skiers and their coaches found low knowledge is one of the main barriers standing in the way of that conversation happening at all.<sup><a href="#ref3">3</a></sup> And among competitive endurance athletes, most report their fitness or performance feeling different at certain points in their cycle, but only about a quarter have ever actually discussed it with their coach.<sup><a href="#ref4">4</a></sup> Sharing data doesn't require either person to bring the topic up cold. It's already on the table.</p>
 
                         <p>The appeal for most people isn't the sharing itself, it's what it replaces. Instead of your coach asking "how was your week?" and you trying to reconstruct four or five days from memory, they're looking at what actually happened: the nights sleep was short, the sessions you completed versus the ones you missed, and where your cycle phase might explain some of it.</p>
 
@@ -292,16 +304,26 @@
                         <p>You can revoke a coach's access at any time, and it doesn't require their approval. Once you end the connection, they stop seeing new data going forward. If you're switching coaches or just taking a break from working with one, revoking access first and re-inviting later if you want to is the straightforward way to handle it.</p>
 
                         <h3>Is cycle data shared with a coach encrypted?</h3>
-                        <p>In a well-built client portal, yes, data in transit and at rest should be encrypted, and shared health data should be private rather than visible to anyone outside the specific connection you approved. That's the baseline to expect from any app asking to hold cycle or health data, not something specific to one product.</p>
+                        <p>In a well-built client portal, yes, data in transit and at rest should be encrypted, and shared health data should be private rather than visible to anyone outside the specific connection you approved. That's the baseline you should expect from any app asking to hold cycle or health data, not something specific to one product.</p>
 
                         <h3>Does my coach need special software to see my data?</h3>
                         <p>Usually just an account on the same platform you're using to track. Most client-portal setups work through a single invite link: your coach accepts it, and whatever you've chosen to share shows up on their side. There's no separate hardware or paperwork involved.</p>
 
                         <h3>Will my coach be notified every time I log something?</h3>
-                        <p>That's an app-by-app detail, worth checking in the settings of whatever platform you're using rather than assuming. Broadly, a coach dashboard is built to be checked when they sit down to review clients, not to push a notification for every single entry you make.</p>
+                        <p>That's an app-by-app detail, and it's worth checking the settings of whatever platform you're using rather than assuming. Broadly, a coach dashboard is built to be checked when they sit down to review clients, not to push a notification for every single entry you make.</p>
 
                         <h3>Can I share cycle data with my trainer and my partner at the same time?</h3>
                         <p>You can, in apps that support more than one connection: sharing with a coach and sharing with a partner are separate invitations, and you can set them up independently. What you choose to share with each doesn't have to match. Our <a href="share-cycle-health-with-partner.html">guide to sharing cycle data with a partner</a> covers that side of it in more detail.</p>
+
+                        <h2 class="h4 fw-bold mb-3" id="references">References</h2>
+                        <ol class="references-list">
+                            <li id="ref1">Clarke A, Govus A, Donaldson A. What male coaches want to know about the menstrual cycle in women's team sports: Performance, health, and communication. <em>International Journal of Sports Science &amp; Coaching</em>. 2021;16(3):544-553. <a href="https://doi.org/10.1177/1747954121989237" target="_blank" rel="noopener">doi.org/10.1177/1747954121989237</a></li>
+                            <li id="ref2">Brown N, Knight CJ, Forrest LJ. Elite female athletes' experiences and perceptions of the menstrual cycle on training and sport performance. <em>Scandinavian Journal of Medicine &amp; Science in Sports</em>. 2021;31(1):52-69. <a href="https://doi.org/10.1111/sms.13818" target="_blank" rel="noopener">doi.org/10.1111/sms.13818</a></li>
+                            <li id="ref3">H&ouml;&ouml;k M, Bergstr&ouml;m M, S&aelig;ther SA, McGawley K. "Do Elite Sport First, Get Your Period Back Later." Are Barriers to Communication Hindering Female Athletes? <em>International Journal of Environmental Research and Public Health</em>. 2021;18(22):12075. <a href="https://doi.org/10.3390/ijerph182212075" target="_blank" rel="noopener">doi.org/10.3390/ijerph182212075</a></li>
+                            <li id="ref4">Solli GS, Sandbakk SB, Noordhof DA, Ihalainen JK, Sandbakk Ø. Changes in Self-Reported Physical Fitness, Performance, and Side Effects Across the Phases of the Menstrual Cycle Among Competitive Endurance Athletes. <em>International Journal of Sports Physiology and Performance</em>. 2020;15(9):1324-1333. <a href="https://doi.org/10.1123/ijspp.2019-0616" target="_blank" rel="noopener">doi.org/10.1123/ijspp.2019-0616</a></li>
+                            <li id="ref5">Apple. How Apple protects health data in the Health app. <a href="https://www.apple.com/legal/privacy/data/en/health-app/" target="_blank" rel="noopener">apple.com</a></li>
+                        </ol>
+                        <p class="small text-muted border-top pt-3 mt-3">Sourced from peer-reviewed sport-science research on athlete-coach communication and Apple's own published privacy documentation. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed September 2026.</p>
 
                         <h2>Related Articles</h2>
                         <ul>
