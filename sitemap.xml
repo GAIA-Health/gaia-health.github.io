@@ -2154,4 +2154,40 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/natural-cycles-vs-oura.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/oura-vs-apple-watch-vs-natural-cycles.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/natural-cycles-alternatives.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/clue-vs-stardust.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/flo-vs-clue-vs-glow.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/ovia-vs-babycenter.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
