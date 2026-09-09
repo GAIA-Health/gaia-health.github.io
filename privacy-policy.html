@@ -194,6 +194,15 @@
                         <li><strong>Apple Health Records:</strong> with your permission, we read lab result records (and only lab result records) from Apple Health Records to chart them over time. By default these records are read and displayed on your device only. They are sent to our servers only if you separately opt in to Health Records sync, which is off by default. You can turn sync off at any time, and delete every synced clinical record from our servers, in the app under Settings &rsaquo; Privacy &amp; Consent. Clinical records are never used for advertising, never shared with third parties, and never used to train AI models.</li>
                     </ul>
 
+                    <h3 class="h6 mb-2">Genetic Data (beta)</h3>
+                    <p>Uploading genetic data is an optional beta feature, off unless you use it, and never required to use the app. Before the first upload you are shown a separate genetics notice and must actively agree to it; that consent is logged with its version, can be withdrawn at any time, and only covers your own genetic data, never a partner's or family member's. You can upload:</p>
+                    <ul>
+                        <li><strong>Genetic test reports (PDF):</strong> carrier screening, hereditary cancer panels, and pharmacogenomic reports from a lab. We remove identifying details from the report before sending it to Google Gemini, which reads out the genes tested, the variants found, and what your lab concluded about them. That reading can contain mistakes, so findings are held for your review before they are used anywhere.</li>
+                        <li><strong>Raw DNA data exports:</strong> files from 23andMe, AncestryDNA, and similar services. These are read on our own servers and are never sent to an AI provider.</li>
+                    </ul>
+                    <p>We do not run our own genetic analysis. When the app mentions a gene or a finding, it quotes what your document says or what a named public reference (such as CPIC or ClinVar) says about that variant, and it is never a medical determination. Once you have confirmed a finding, Veya chat can quote it back to you, with its source named, when you ask about a medication, family planning, or a gene on your file.</p>
+                    <p>Your original file and the findings extracted from it are stored encrypted on our EU infrastructure (see Section 4), so you can view or re-download the file later. We never sell genetic data and never share it with employers, insurers, advertisers, or any other third party. Genetic data is not covered by the general &ldquo;Help Improve Gaia's AI Models&rdquo; setting in Section 11: it is used to train our own AI models only if you separately tick the optional training box in the genetics notice when you upload. That choice is off by default, recorded on its own, and can be withdrawn at any time in Settings without affecting anything else. You can delete all of it at any time in the app under Settings &rsaquo; Privacy &amp; Consent; deleting withdraws your consent and permanently removes every uploaded genetic file, including stored versions, together with the data we extracted from it.</p>
+
                     <h3 class="h6 mb-2">Mood &amp; Mental Wellness Data</h3>
                     <ul>
                         <li>Mood logs with intensity ratings</li>
@@ -338,7 +347,7 @@
                     <p>We keep your data only as long as we need it. In general: your data is retained while your account is active; it is deleted once it is no longer needed for the purpose it was collected for; it is deleted when you delete your account; and a small number of records are kept longer only where we have a specific legal obligation to do so, such as the professional-access audit log described below. Within that framework:</p>
                     <ul class="mb-0">
                         <li>All health data is retained until you delete it or delete your account</li>
-                        <li>Lab PDFs are processed in memory only and immediately discarded &mdash; no persistent storage of original documents</li>
+                        <li>Original uploaded documents (lab reports, DEXA scans, genetic reports, and raw DNA exports) are stored encrypted so you can view or re-download them, and are permanently deleted, together with the values extracted from them, when you delete the document or your account</li>
                         <li>Account deletion permanently removes all data within 30 days</li>
                         <li>Professional access audit logs are retained for at least 6 years for security and compliance purposes</li>
                     </ul>
@@ -408,6 +417,7 @@
                         <li>We do not attach your name or email to data used for model training, and we take technical steps &mdash; including de-duplicating training data and testing models before release for whether they can reproduce an individual's information &mdash; to reduce the chance that a trained model could reproduce any individual member's data.</li>
                         <li>You can withdraw at any time in Settings, and we will stop using your data for future training. Because training happens in batches, data already incorporated into a model before you withdraw cannot always be pulled back out of that model; withdrawing stops all future use.</li>
                         <li>Turning this off does not affect your access to any part of the app.</li>
+                        <li>This setting does not cover genetic data. Genetic reports and raw DNA exports are included in training only under the separate, optional choice described in Section 1, &ldquo;Genetic Data (beta).&rdquo;</li>
                     </ul>
                     <p><strong>External research:</strong> We do not currently use your data for external research, clinical studies, or population-level publications. If we ever offer the opportunity to participate in research conducted by us or in partnership with others, we will request your explicit, separate opt-in consent for each specific study &mdash; with full disclosure of the study's purpose, who is conducting it, what data will be used, and how to withdraw. You can decline research participation at any time without losing access to any app features.</p>
                     <p class="mb-0">For more detail on our optional AI features, see our <a href="ai-insights-terms.html">AI Insights Terms</a>.</p>
