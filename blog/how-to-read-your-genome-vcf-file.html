@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How to Read the VCF File From Your Genome Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="A VCF from Nebula, Dante Labs, or Sequencing.com looks nothing like a 23andMe file. What it is, reference builds, and why a missing variant isn't negative.">
+    <meta name="keywords" content="how to read a VCF file, what is a VCF file, VCF vs gVCF, genome sequencing raw data, Nebula Genomics VCF, Dante Labs raw data, Sequencing.com VCF, GRCh37 GRCh38 VCF">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="How to Read the VCF File From Your Genome Test">
+    <meta property="og:description" content="A VCF from Nebula, Dante Labs, or Sequencing.com looks nothing like a 23andMe file. What it is, reference builds, and why a missing variant isn't negative.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+    <meta property="og:site_name" content="Go Go Gaia">
+    <meta property="article:published_time" content="2026-09-19">
+    <meta property="article:author" content="Holland Neurotech Inc.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="How to Read the VCF File From Your Genome Test">
+    <meta name="twitter:description" content="A VCF from Nebula, Dante Labs, or Sequencing.com looks nothing like a 23andMe file. What it is, reference builds, and why a missing variant isn't negative.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Read the VCF File From Your Genome Test",
+      "description": "A VCF from Nebula, Dante Labs, or Sequencing.com looks nothing like a 23andMe file. What it is, reference builds, and why a missing variant isn't negative.",
+      "image": [{
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/images/screens/bit-lab-card.webp",
+        "width": 1200,
+        "height": 800
+      }],
+      "author": { "@type": "Organization", "name": "Holland Neurotech Inc." },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      },
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html" },
+      "keywords": "how to read a VCF file, VCF vs gVCF, genome sequencing raw data, GRCh37 GRCh38 VCF"
+    }
+    </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a VCF file, in plain terms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A VCF, or Variant Call Format file, is a text file that lists the specific positions where your DNA differs from a standard reference genome, one line per variant. It doesn't print your whole genome in order. It only records the spots where you differ from the reference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need special software to open a VCF file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can open a small VCF in a plain text editor, since it's readable text under the hood, though the lines are dense. A compressed .vcf.gz file needs to be unzipped first, or read with a tool built to handle the format, since gzip-compressed text isn't readable as-is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a VCF and a gVCF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A standard variant-only VCF lists only the positions that differ from the reference. A gVCF adds reference blocks, records of positions that were checked and matched the reference, with a quality score. Most consumer whole genome and exome exports are variant-only VCFs, not gVCFs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If a position isn't in my VCF, does that mean I tested negative for it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. A variant-only VCF only records positions that differ from the reference, so an absent position could mean you match the reference there, or it could mean the sequencer simply didn't get enough reliable reads at that spot to call it either way. The file alone can't tell those two apart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between .vcf and .vcf.gz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They're the same content, one compressed and one not. A .vcf file is plain, uncompressed text. A .vcf.gz file is the same text run through gzip (or the closely related bgzip) compression to make it smaller to store and transfer, since a real sequencing VCF can be a large file."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.go-go-gaia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.go-go-gaia.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "How to Read the VCF File From Your Genome Test" }
+      ]
+    }
+    </script>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Social Share Buttons (Top) -->
+    <div class="share-buttons-top d-flex justify-content-center gap-2 my-3 pb-3 border-bottom">
+        <a href="https://twitter.com/intent/tweet?text=How%20to%20Read%20the%20VCF%20File%20From%20Your%20Genome%20Test&url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html&via=holland_neuro" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x me-1"></i> Share</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-facebook me-1"></i> Share</a>
+        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=How%20to%20read%20the%20VCF%20file%20from%20your%20genome%20test" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pinterest me-1"></i> Pin</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin me-1"></i> Share</a>
+        <a href="mailto:?subject=How%20to%20read%20a%20genome%20VCF%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope me-1"></i> Email</a>
+        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html', this)" class="btn btn-outline-secondary btn-sm"><i class="bi bi-link-45deg me-1"></i> Copy Link</button>
+    </div>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Blog</a></li>
+                        <li class="breadcrumb-item active">How to Read the VCF File From Your Genome Test</li>
+                    </ol>
+                </nav>
+
+                <article>
+                    <header class="mb-5">
+                        <h1 class="display-4 fw-bold mb-3">How to Read the VCF File From Your Genome Test</h1>
+                        <p class="lead">If you've done whole genome or exome sequencing through a service like Nebula Genomics, Dante Labs, or Sequencing.com, your download doesn't look like a 23andMe file. This guide covers what a VCF actually contains, why the reference build matters, the difference between a variant-only VCF and a gVCF, and why a missing variant isn't the same as a negative result.</p>
+                        <img src="../images/screens/bit-lab-card.webp" width="700" height="217" class="img-fluid rounded mb-4" loading="eager" alt="Lab-style data card, the kind of attributed summary a tracking app builds from an uploaded VCF file">
+                        <div class="d-flex align-items-center text-muted">
+                            <small>By Go Go Gaia Team</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>Published September 19, 2026</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>8 min read</small>
+                            <span class="mx-2">&bull;</span>
+                            <span class="badge bg-info">Genetics</span>
+                        </div>
+                    </header>
+
+                    <div class="blog-content">
+
+                        <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content about how sequencing files work, not medical or genetic-counseling advice. For anything about your own results, talk to a doctor or a certified genetic counselor.</p>
+
+                        <div class="alert alert-warning border-warning">
+                            <h4><i class="bi bi-info-circle me-2"></i>Medical Disclaimer</h4>
+                            <p class="mb-0"><strong>This article is for educational and informational purposes only and does not constitute medical or genetic-counseling advice.</strong> It explains the VCF file format and what it can and can't show. It is not a substitute for consultation with a doctor or a certified genetic counselor, especially if you're weighing a personal or family health decision. If you have questions about a specific result, please talk to a qualified professional.</p>
+                        </div>
+
+                        <div class="alert alert-light border p-4 mb-4">
+                            <h2 class="h5 fw-bold mb-3">Quick Answer: What Am I Looking At?</h2>
+                            <p class="mb-2">A VCF (Variant Call Format) file is a plain text file, one line per position where your sequence differs from a reference genome.<sup><a href="#ref1" rel="noopener">[1]</a></sup> A few things worth knowing before you open one:</p>
+                            <ul class="mb-0">
+                                <li>It's not your whole genome printed out. Positions that match the reference usually aren't listed at all.</li>
+                                <li>It's tagged to a specific reference build, GRCh37 or GRCh38, which affects how positions are numbered.</li>
+                                <li>A missing position is not automatically a "clear" result. It just means nothing was reported there.</li>
+                            </ul>
+                        </div>
+
+                        <p>A VCF is a different animal from the flat 23andMe or AncestryDNA-style file <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">covered in the first post in this series</a>. Instead of a fixed list of a few hundred thousand array positions, a VCF is built from sequencing, reading your DNA more broadly and reporting the specific spots where it differs from a standard reference. It looks denser and more technical on the page, but the underlying idea is still just: here's what we found, and where.</p>
+
+                        <h2>What a VCF Actually Contains</h2>
+
+                        <p>The Variant Call Format was developed for the 1000 Genomes Project and is now maintained as an open specification by the Global Alliance for Genomics and Health.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Opened as text, a VCF has two parts:</p>
+
+                        <ul>
+                            <li><strong>A header block</strong> of lines starting with ##, describing the file: the VCF version, the reference genome used, and definitions for any codes used further down.</li>
+                            <li><strong>One row per variant</strong>, with columns for chromosome, position, an ID (often an rsID, sometimes blank), the reference base, your alternate base, a quality score, and genotype information.</li>
+                        </ul>
+
+                        <p>The key thing that makes a VCF different from an array file: it's variant-only by convention. A position where your sequence matches the reference usually isn't printed as its own row at all.<sup><a href="#ref1" rel="noopener">[1]</a></sup> That's efficient. A person differs from the reference genome at a small fraction of positions, so listing only the differences keeps the file a manageable size instead of billions of redundant "matches reference" rows. It also means the absence of a row needs to be read carefully, which the last section of this post covers.</p>
+
+                        <h2>Why the ##reference= Line at the Top Matters</h2>
+
+                        <p>Somewhere in a VCF's header, there's usually a ##reference= line naming the genome build the file was aligned to, GRCh37 or GRCh38.<sup><a href="#ref4" rel="noopener">[4]</a></sup> This isn't a technicality to skip past. The same physical DNA position gets a different coordinate number depending on which build was used, so a tool reading two files on different builds without knowing it can compare the wrong positions to each other.<sup><a href="#ref3" rel="noopener">[3]</a><a href="#ref4" rel="noopener">[4]</a></sup></p>
+
+                        <p>Consumer whole genome services (Nebula Genomics, Dante Labs, Sequencing.com) and most clinical exome sequencing report in GRCh38 more often than the older consumer arrays do, though it varies by provider and by when your test was run.<sup><a href="#ref4" rel="noopener">[4]</a></sup> Checking that ##reference= line before assuming anything about your file's coordinates is a small habit that avoids a real source of confusion.</p>
+
+                        <p>One practical wrinkle worth knowing: not every VCF fills in the ID column for every row. Clinical and consumer sequencing exports frequently leave that column blank per-variant, identifying a position only by its chromosome and coordinate instead of a dbSNP rsID.<sup><a href="#ref1" rel="noopener">[1]</a></sup> A tool that matches your file against a curated list of known positions by rsID, which is a build-independent, reliable way to match, simply can't line up a row that never got an ID in the first place. That's a real, current limitation, not a bug hiding somewhere, and it's worth knowing about rather than assuming every row in your file is being read.</p>
+
+                        <h2>Variant-Only VCF vs. gVCF: Why the Difference Matters</h2>
+
+                        <p>A standard, variant-only VCF and a gVCF (Genomic VCF) share the same basic file format, but a gVCF adds something important: reference blocks. These are records covering stretches of positions that were sequenced with enough coverage to confidently call them as matching the reference, along with a quality score for that call.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
+
+                        <p>Most consumer whole genome and exome exports you'll download from Nebula, Dante Labs, or Sequencing.com are variant-only VCFs, not gVCFs. That distinction matters because it's the whole reason a missing variant in your file isn't the same as a "tested negative" result, which the next section covers.</p>
+
+                        <h2>Why "Absent From the File" Doesn't Mean "Negative"</h2>
+
+                        <p>This is the honest core of the whole format, and it's the same idea <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">the first post in this series</a> raised for array files, just for a different reason. A variant-only VCF genuinely cannot tell you, on its own, why a given position isn't listed. There are two very different explanations, and the file doesn't distinguish between them:<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
+
+                        <ul>
+                            <li><strong>The sequencer read that position with good coverage and it matched the reference.</strong> A true negative, correctly omitted per VCF convention.</li>
+                            <li><strong>The sequencer never got adequate, reliable coverage at that position at all.</strong> Not tested, not negative, just not there.</li>
+                        </ul>
+
+                        <p>A gVCF's reference blocks are the only artifact that can tell these two apart, because they record which positions were actually covered and called, not just which ones carried a variant.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Without that information, the only honest reading of an absent position in a variant-only VCF is "unknown," not "clear." Any tool that reads a VCF should treat an absent position exactly that way: never as a reassuring negative.</p>
+
+                        <h2>File Basics: .vcf vs. .vcf.gz</h2>
+
+                        <p>You'll usually get your VCF compressed, as a .vcf.gz file, since an uncompressed sequencing VCF can be sizeable. The .gz means the text has been run through gzip (or bgzip, a block-based variant of gzip built for genomic files so tools can read chunks without decompressing the whole thing). The content is identical either way, just packed smaller for storage and transfer.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Tools built to read genomic files generally take either the .vcf or the .vcf.gz version directly, with no manual unzipping required.</p>
+
+                        <!-- WP9: restore VCF present tense when Phase A deploys -->
+                        <div class="blog-cta-box">
+                            <h4><i class="bi bi-clipboard-data me-2"></i>Start with the file you can upload today</h4>
+                            <p>Go Go Gaia reads 23andMe and AncestryDNA-style raw array exports and shows each finding with the named public source behind it. Sequencing VCFs aren't accepted yet, so if a VCF is all you have, treat this guide as the groundwork for reading it.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your 23andMe or AncestryDNA Export</a>
+                        </div>
+
+                        <h2>The Bottom Line</h2>
+
+                        <p>A VCF is a denser, more technical file than the flat array export most people are used to, but the underlying honesty question is the same. It's a record of specific findings, not a full readout of everything, and an absent position is information about what the file doesn't cover, not a clean bill of health. Read alongside <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">what's actually inside a 23andMe or AncestryDNA raw data file</a>, you've now got the honest version of both formats. If you're ready to see what a tool can responsibly show you from an array export, <a href="upload-raw-dna-file-what-we-show.html">here's what Go Go Gaia does, and deliberately doesn't do, with an uploaded file</a>.</p>
+
+                        <div class="alert alert-light border">
+                            <h4><i class="bi bi-book me-2"></i>Related Reading</h4>
+                            <ul class="mb-0">
+                                <li><a href="whats-inside-your-23andme-ancestrydna-raw-data.html">What's Really in Your 23andMe or AncestryDNA File</a></li>
+                                <li><a href="upload-raw-dna-file-what-we-show.html">You Can Upload Your Raw DNA File: What Go Go Gaia Shows, and What It Doesn't</a></li>
+                                <li><a href="at-home-hormone-tests-explained.html">LH Strips, BBT, Wearable Temp: What Each Measures</a></li>
+                                <li><a href="all-health-data-one-place-app.html">Apps That Pull Wearables, Labs &amp; Cycle Data Together</a></li>
+                            </ul>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <!-- WP9: restore VCF present tense when Phase A deploys -->
+                        <div class="text-center">
+                            <h3 class="mb-4">Also have a 23andMe or AncestryDNA export?</h3>
+                            <p class="lead mb-4">Upload that one in the web app and see what a named public source actually says about the positions it can match.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary btn-lg" target="_blank">
+                                <i class="bi bi-upload me-2"></i>Open the Web Uploader
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Social Share Buttons - Bottom -->
+                <div class="share-buttons text-center my-5 py-4 border-top border-bottom">
+                    <p class="text-muted mb-3"><small>Found this helpful? Share it with others who might benefit:</small></p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://twitter.com/intent/tweet?text=How%20to%20Read%20the%20VCF%20File%20From%20Your%20Genome%20Test&url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-twitter-x me-1"></i> Share
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Share
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=How%20to%20read%20the%20VCF%20file%20from%20your%20genome%20test"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-pinterest me-1"></i> Pin
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-linkedin me-1"></i> Share
+                        </a>
+                        <a href="mailto:?subject=How%20to%20read%20a%20genome%20VCF%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html"
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-envelope me-1"></i> Email
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html', this)" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <nav aria-label="Blog post navigation" class="mt-5">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <a class="page-link" href="whats-inside-your-23andme-ancestrydna-raw-data.html">&larr; Previous: What's Really in Your 23andMe or AncestryDNA File</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="upload-raw-dna-file-what-we-show.html">Next: What Go Go Gaia Shows From an Uploaded File &rarr;</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- References -->
+                <section class="mb-5 mt-5">
+                    <h2 class="h3 fw-bold mb-3" id="references">References</h2>
+                    <ol class="small">
+                        <li id="ref1">Global Alliance for Genomics and Health, Large Scale Genomics work stream. VCFv4.5 Specification. <em>hts-specs</em>. <a href="https://samtools.github.io/hts-specs/VCFv4.5.pdf" target="_blank" rel="noopener">samtools.github.io/hts-specs/VCFv4.5.pdf</a>; Broad Institute. VCF: Variant Call Format. <em>GATK Documentation</em>. <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format" target="_blank" rel="noopener">gatk.broadinstitute.org/hc/en-us/articles/360035531692</a></li>
+                        <li id="ref2">Broad Institute. GVCF: Genomic Variant Call Format. <em>GATK Documentation</em>. <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format" target="_blank" rel="noopener">gatk.broadinstitute.org/hc/en-us/articles/360035531812</a></li>
+                        <li id="ref3">Genome Reference Consortium, National Center for Biotechnology Information (NIH). Human Genome Assembly Overview. <em>NCBI</em>. <a href="https://www.ncbi.nlm.nih.gov/grc/human" target="_blank" rel="noopener">ncbi.nlm.nih.gov/grc/human</a></li>
+                        <li id="ref4">Broad Institute. Human genome reference builds: GRCh38 or hg38, b37, hg19. <em>GATK Documentation</em>. <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035890951-Human-genome-reference-builds-GRCh38-or-hg38-b37-hg19" target="_blank" rel="noopener">gatk.broadinstitute.org/hc/en-us/articles/360035890951</a></li>
+                    </ol>
+                </section>
+
+                <!-- FAQ Section -->
+                <div class="mt-5 mb-5">
+                    <section class="mb-5" id="faq">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="small text-muted mb-4">Educational information about how sequencing files work. Not medical or genetic-counseling advice.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What is a VCF file, in plain terms?</h3>
+                        <p>A VCF, or Variant Call Format file, is a text file that lists the specific positions where your DNA differs from a standard reference genome, one line per variant. It doesn't print your whole genome in order. It only records the spots where you differ from the reference.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Do I need special software to open a VCF file?</h3>
+                        <p>You can open a small VCF in a plain text editor, since it's readable text under the hood, though the lines are dense. A compressed .vcf.gz file needs to be unzipped first, or read with a tool built to handle the format, since gzip-compressed text isn't readable as-is.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What's the difference between a VCF and a gVCF?</h3>
+                        <p>A standard variant-only VCF lists only the positions that differ from the reference. A gVCF adds reference blocks, records of positions that were checked and matched the reference, with a quality score. Most consumer whole genome and exome exports are variant-only VCFs, not gVCFs.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">If a position isn't in my VCF, does that mean I tested negative for it?</h3>
+                        <p>Not necessarily. A variant-only VCF only records positions that differ from the reference, so an absent position could mean you match the reference there, or it could mean the sequencer simply didn't get enough reliable reads at that spot to call it either way. The file alone can't tell those two apart.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What's the difference between .vcf and .vcf.gz?</h3>
+                        <p>They're the same content, one compressed and one not. A .vcf file is plain, uncompressed text. A .vcf.gz file is the same text run through gzip (or the closely related bgzip) compression to make it smaller to store and transfer, since a real sequencing VCF can be a large file.</p>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <!-- Expanded medical disclaimer -->
+        <aside class="container mt-5 mb-5" aria-labelledby="post-medical-disclaimer">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="p-4 small text-muted" style="background-color: var(--secondary); border-left: 4px solid var(--primary); border-radius: 8px;">
+                        <h2 id="post-medical-disclaimer" class="h6 mb-2 text-dark"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Medical disclaimer</h2>
+                        <p class="mb-2">This guide is educational content from Go Go Gaia about how sequencing files work and is not medical or genetic-counseling advice. It is not a substitute for diagnosis, interpretation, or care from a licensed healthcare provider or certified genetic counselor, and reading it does not create a doctor-patient relationship with Holland Neurotech Inc.</p>
+                        <p class="mb-2">If you have questions about your own genetic results, or are weighing a personal or family health decision, talk to a doctor or a certified genetic counselor who can review your full history. Don't delay seeking care because of something you read here.</p>
+                        <p class="mb-0">If you think you're experiencing a medical emergency, call 911 (US), 999 / 111 (UK), or your local emergency number. For mental health crises in the US, call or text 988. For our full policy, see the <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="index.html">Health &amp; Wellness Blog</a></p>
+                    <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2025 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Copy Link Function -->
+    <script>
+    function copyToClipboard(url, button) {
+        navigator.clipboard.writeText(url).then(function() {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check me-1"></i> Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            setTimeout(function() {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy link. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html>

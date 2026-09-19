@@ -2190,4 +2190,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

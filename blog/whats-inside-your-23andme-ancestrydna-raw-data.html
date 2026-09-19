@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What's Really in Your 23andMe or AncestryDNA File</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Your 23andMe or AncestryDNA file is a few hundred thousand data points, not a genome. What it actually shows, and what it honestly can't tell you.">
+    <meta name="keywords" content="23andMe raw data file, AncestryDNA raw data explained, what is a genotyping array, GRCh37 vs GRCh38, raw DNA file format, what does 23andMe raw data show, DNA array vs genome sequencing">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="What's Really in Your 23andMe or AncestryDNA File">
+    <meta property="og:description" content="Your 23andMe or AncestryDNA file is a few hundred thousand data points, not a genome. What it actually shows, and what it honestly can't tell you.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+    <meta property="og:site_name" content="Go Go Gaia">
+    <meta property="article:published_time" content="2026-09-19">
+    <meta property="article:author" content="Holland Neurotech Inc.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="What's Really in Your 23andMe or AncestryDNA File">
+    <meta name="twitter:description" content="Your 23andMe or AncestryDNA file is a few hundred thousand data points, not a genome. What it actually shows, and what it honestly can't tell you.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "What's Really in Your 23andMe or AncestryDNA File",
+      "description": "Your 23andMe or AncestryDNA file is a few hundred thousand data points, not a genome. What it actually shows, and what it honestly can't tell you.",
+      "image": [{
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/images/screens/bit-lab-card.webp",
+        "width": 1200,
+        "height": 800
+      }],
+      "author": { "@type": "Organization", "name": "Holland Neurotech Inc." },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      },
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html" },
+      "keywords": "23andMe raw data file, AncestryDNA raw data explained, what is a genotyping array, GRCh37 vs GRCh38"
+    }
+    </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my 23andMe or AncestryDNA raw data file my whole genome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A raw data file from a genotyping array lists a few hundred thousand specific positions the chip was built to measure, out of roughly 3 billion base pairs in a full genome. It's a curated slice, not a sequence of everything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my raw data file matter if a position isn't listed in it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An array only reports on the positions it was designed to probe. If a position you care about isn't one of them, the file simply has nothing to say about it. That's different from testing the position and finding nothing there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between GRCh37 and GRCh38 in a raw data file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They're two different coordinate systems for the human genome, released years apart. The same physical DNA position can have a different numeric address depending on which build a file uses, so a tool reading the file needs to know which one it's working with to line positions up correctly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a clean 23andMe or AncestryDNA report mean I don't carry any concerning variants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not by itself. An array only checked the specific positions on its list. It says nothing about the thousands of other positions in the same genes that it never looked at, so absence from that report isn't the same as a clinical negative."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do anything else with a raw data file besides ancestry results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because it's a plain text file, you can upload it to other tools built to read the same format, including trait and pharmacogenomic lookups that check your file's positions against public reference databases."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.go-go-gaia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.go-go-gaia.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "What's Really in Your 23andMe or AncestryDNA File" }
+      ]
+    }
+    </script>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Social Share Buttons (Top) -->
+    <div class="share-buttons-top d-flex justify-content-center gap-2 my-3 pb-3 border-bottom">
+        <a href="https://twitter.com/intent/tweet?text=What%27s%20Really%20in%20Your%2023andMe%20or%20AncestryDNA%20File&url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html&via=holland_neuro" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x me-1"></i> Share</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-facebook me-1"></i> Share</a>
+        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=What%27s%20really%20in%20your%2023andMe%20or%20AncestryDNA%20raw%20data%20file%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pinterest me-1"></i> Pin</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin me-1"></i> Share</a>
+        <a href="mailto:?subject=What%27s%20really%20in%20a%2023andMe%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope me-1"></i> Email</a>
+        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html', this)" class="btn btn-outline-secondary btn-sm"><i class="bi bi-link-45deg me-1"></i> Copy Link</button>
+    </div>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Blog</a></li>
+                        <li class="breadcrumb-item active">What's Really in Your 23andMe or AncestryDNA File</li>
+                    </ol>
+                </nav>
+
+                <article>
+                    <header class="mb-5">
+                        <h1 class="display-4 fw-bold mb-3">What's Really in Your 23andMe or AncestryDNA File</h1>
+                        <p class="lead">Downloading your raw data feels like downloading "your DNA." It isn't quite that. This guide covers what a raw genotyping file actually contains, what a chip physically measures versus what full sequencing does, why the file's genome build matters, and the honest limit on what a clean result can tell you.</p>
+                        <img src="../images/screens/bit-lab-card.webp" width="700" height="217" class="img-fluid rounded mb-4" loading="eager" alt="Lab-style data card, the kind of attributed summary a tracking app builds from an uploaded DNA file">
+                        <div class="d-flex align-items-center text-muted">
+                            <small>By Go Go Gaia Team</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>Published September 19, 2026</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>8 min read</small>
+                            <span class="mx-2">&bull;</span>
+                            <span class="badge bg-info">Genetics</span>
+                        </div>
+                    </header>
+
+                    <div class="blog-content">
+
+                        <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content about how consumer DNA files work, not medical or genetic-counseling advice. For anything about your own results, talk to a doctor or a certified genetic counselor.</p>
+
+                        <div class="alert alert-warning border-warning">
+                            <h4><i class="bi bi-info-circle me-2"></i>Medical Disclaimer</h4>
+                            <p class="mb-0"><strong>This article is for educational and informational purposes only and does not constitute medical or genetic-counseling advice.</strong> It explains how consumer DNA files are built and what they can and can't show. It is not a substitute for consultation with a doctor or a certified genetic counselor, especially if you're weighing a personal or family health decision. If you have questions about a specific result, please talk to a qualified professional.</p>
+                        </div>
+
+                        <div class="alert alert-light border p-4 mb-4">
+                            <h2 class="h5 fw-bold mb-3">Quick Answer: What's Actually in the File?</h2>
+                            <p class="mb-2">A 23andMe or AncestryDNA raw data download is a plain text file listing a few hundred thousand specific DNA positions and what you have at each one.<sup><a href="#ref1" rel="noopener">[1]</a></sup> It is not:</p>
+                            <ul class="mb-0">
+                                <li>Your full genome (that's roughly 3 billion positions, not a few hundred thousand)<sup><a href="#ref2" rel="noopener">[2]</a></sup></li>
+                                <li>A medical test result</li>
+                                <li>A complete list of every variant in any one gene</li>
+                            </ul>
+                            <p class="mb-0 mt-2">It's a curated, fixed list of positions a lab chip was built to read. That distinction matters for what a "clean" result can and can't tell you.</p>
+                        </div>
+
+                        <p>If you've ever opened your 23andMe or AncestryDNA download and expected something dramatic, the actual file is a little anticlimactic. It's a text document with a short header, then row after row of the same four things: a position ID, a chromosome, a coordinate, and two letters.<sup><a href="#ref1" rel="noopener">[1]</a></sup> That's it. No sequence of your whole genome, no paragraph of interpretation, just a long spreadsheet of specific spots and what was found there.</p>
+
+                        <p>That's genuinely useful for what it's built for. It's also easy to misread as something bigger than it is. Here's what's actually going on.</p>
+
+                        <h2>An Array Reads a List, Not the Whole Genome</h2>
+
+                        <p>23andMe and AncestryDNA don't sequence your DNA letter by letter. They use a genotyping array: a lab chip pre-loaded with probes for a specific, fixed set of positions, somewhere between about 550,000 and 700,000 of them depending on the chip version.<sup><a href="#ref1" rel="noopener">[1]</a></sup><sup><a href="#ref5" rel="noopener">[5]</a></sup> The chip checks exactly those positions and reports what it finds. It doesn't look anywhere else, because it was never built to.</p>
+
+                        <p>Put that against the size of a full genome, about 3 billion base pairs across 23 chromosome pairs,<sup><a href="#ref2" rel="noopener">[2]</a></sup> and the array is reading well under 1% of it. That's not a flaw in the product. Ancestry estimates and many trait and pharmacogenomic lookups only need specific, well-studied positions, and a fixed probe list is a fast, cheap way to check exactly those. It's just a different tool than full sequencing, which reads the letters in order rather than checking a predetermined list. Post 2 in this series covers what a sequencing file (a VCF) looks like instead.</p>
+
+                        <p>Every row in your file has four parts:<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
+                        <ul>
+                            <li><strong>rsID.</strong> A reference SNP ID, like rs429358, the standard label researchers and databases use for that exact position.</li>
+                            <li><strong>Chromosome.</strong> Which of your 23 chromosome pairs (or your mitochondrial DNA) the position sits on.</li>
+                            <li><strong>Position.</strong> The numeric coordinate on that chromosome.</li>
+                            <li><strong>Genotype.</strong> The two letters you have at that spot, one from each parent, like AG or CT.</li>
+                        </ul>
+
+                        <p>AncestryDNA's export carries the same basic information, sometimes with the two alleles split into their own columns instead of combined into one.<sup><a href="#ref5" rel="noopener">[5]</a></sup> Different company, same underlying idea: a fixed list of positions, checked and reported.</p>
+
+                        <h2>Why the Genome Build Printed at the Top Matters</h2>
+
+                        <p>Near the top of your raw data file, in the header lines that start with #, there's usually a mention of a genome build: GRCh37 or GRCh38. These are two different, versioned coordinate systems for the human genome, maintained by the Genome Reference Consortium and released years apart.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
+
+                        <p>Here's why that matters practically: the same physical spot on your DNA can have a different numeric address depending on which build is being used. Position 41,276,045 on one build might not be the same physical letter as position 41,276,045 on the other. Any tool that reads your file, whether it's a research database, a trait calculator, or an app, needs to know which build your file uses so it can look up the right coordinate rather than a coincidentally similar-looking one on the wrong map.<sup><a href="#ref2" rel="noopener">[2]</a><a href="#ref3" rel="noopener">[3]</a></sup></p>
+
+                        <p>Most consumer arrays still report in GRCh37, an older build from 2009, even though GRCh38 (2013) fixed known gaps and errors in the earlier version.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Neither is wrong, they're just different maps, and a file that doesn't say which one it's using is missing a detail that actually matters for anything reading it downstream.</p>
+
+                        <h2>The Honest Number: How Little of Any One Gene Gets Checked</h2>
+
+                        <p>This is the part that's easy to miss. A "clean" result on an array-based report doesn't mean a gene was thoroughly checked. It means the specific positions on that array's list came back without a flagged variant, and the array's list is short.</p>
+
+                        <p>23andMe's own FDA-authorized BRCA1/BRCA2 report is a clear, well-documented example. It checks for exactly three specific founder mutations most common in people of Ashkenazi Jewish descent. A peer-reviewed cohort study found that limiting evaluation to those three mutations missed more than 90% of pathogenic BRCA1/2 mutations in people without Ashkenazi Jewish ancestry, where a comprehensive panel identified more than 2,400 other distinct variants across the two genes.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
+
+                        <p>That's not a criticism of any one company, and it isn't a statement about anyone's individual risk. It's what a fixed, small probe list is always going to do: it can tell you about the exact positions it checks, and it has nothing to say about the rest of the gene it didn't check. The array simply wasn't built to look there. Reading those genes properly is work for a clinical lab and a certified genetic counselor, not for a consumer file.</p>
+
+                        <h2>What This Means for a "Negative" Result</h2>
+
+                        <p>Because of that gap, absence from a raw data file isn't the same thing as a clinical negative. If a variant of interest isn't listed in your file, it usually means one of two things: either you don't carry it, or the array's probe list never included that position in the first place. The file alone can't tell you which.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
+
+                        <p>This is why a tracking app that reads a raw data file, including Go Go Gaia's, should only ever report what it actually finds with attribution to a named source, and should never present an absent position as a tested-negative result. If your file doesn't include a database-catalogued position, the honest statement is that it wasn't checked, not that it came back clear.</p>
+
+                        <h2>How a VCF File Differs From the Flat File You're Used To</h2>
+
+                        <p>If you've also done a sequencing-based test, through a service like Nebula Genomics, Dante Labs, or Sequencing.com, you'll get a different kind of file: a VCF instead of a flat rsID-chromosome-position-genotype table. A VCF only lists the positions where your DNA differs from a reference genome, rather than reporting every position an array happened to probe.<sup><a href="#ref3" rel="noopener">[3]</a></sup> It looks different on the page, but it runs into some of the same honesty questions this article just walked through: what build it's on, and what an absence in the file does and doesn't mean. The next post in this series walks through how to actually read one.</p>
+
+                        <!-- WP9: restore VCF present tense when Phase A deploys -->
+                        <p>Whichever format you're holding, a tool that reads it can only be as useful as it is honest about what it's not looking at. A tracking app like Go Go Gaia takes the array-style raw export from 23andMe or AncestryDNA and shows you what it can attribute to a named public source like ClinVar or CPIC, without pretending a short probe list adds up to a full picture. Sequencing VCFs aren't accepted yet, so the format guide is there to help you read the one you have.</p>
+
+                        <div class="blog-cta-box">
+                            <h4><i class="bi bi-clipboard-data me-2"></i>See what your own file actually shows</h4>
+                            <p>ClinVar's review-status system grades how much evidence backs a given variant classification, from a single lab's read to an expert-panel consensus. A tool that shows you that grading, rather than a flat yes or no, gives you a more honest picture of your own file.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your Raw Data File</a>
+                        </div>
+
+                        <h2>The Bottom Line</h2>
+
+                        <p>Your 23andMe or AncestryDNA raw data file is real, useful, and much smaller than it feels like it should be: a few hundred thousand curated positions, not a genome. Knowing that changes how you read any report built from it, including your own. A clean result on any one gene means the positions that were checked came back clear, not that the whole gene was ruled out. If you're holding a VCF instead of a flat file, <a href="how-to-read-your-genome-vcf-file.html">our guide to reading a genome VCF file</a> covers the sequencing version of this same question. And if you're wondering what a tracking app can honestly show you from the array export you already have, <a href="upload-raw-dna-file-what-we-show.html">this walkthrough of what Go Go Gaia does and deliberately doesn't do with an uploaded DNA file</a> is the next read.</p>
+
+                        <div class="alert alert-light border">
+                            <h4><i class="bi bi-book me-2"></i>Related Reading</h4>
+                            <ul class="mb-0">
+                                <li><a href="how-to-read-your-genome-vcf-file.html">How to Read the VCF File From Your Genome Test</a></li>
+                                <li><a href="upload-raw-dna-file-what-we-show.html">You Can Upload Your Raw DNA File: What Go Go Gaia Shows, and What It Doesn't</a></li>
+                                <li><a href="at-home-hormone-tests-explained.html">LH Strips, BBT, Wearable Temp: What Each Measures</a></li>
+                                <li><a href="all-health-data-one-place-app.html">Apps That Pull Wearables, Labs &amp; Cycle Data Together</a></li>
+                            </ul>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <div class="text-center">
+                            <h3 class="mb-4">Curious what your own file actually shows?</h3>
+                            <p class="lead mb-4">Upload it once in the web app and see which positions have a named source behind them.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary btn-lg" target="_blank">
+                                <i class="bi bi-upload me-2"></i>Open the Web Uploader
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Social Share Buttons - Bottom -->
+                <div class="share-buttons text-center my-5 py-4 border-top border-bottom">
+                    <p class="text-muted mb-3"><small>Found this helpful? Share it with others who might benefit:</small></p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://twitter.com/intent/tweet?text=What%27s%20Really%20in%20Your%2023andMe%20or%20AncestryDNA%20File&url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-twitter-x me-1"></i> Share
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Share
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=What%27s%20really%20in%20your%2023andMe%20or%20AncestryDNA%20raw%20data%20file%3F"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-pinterest me-1"></i> Pin
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-linkedin me-1"></i> Share
+                        </a>
+                        <a href="mailto:?subject=What%27s%20really%20in%20a%2023andMe%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html"
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-envelope me-1"></i> Email
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html', this)" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <nav aria-label="Blog post navigation" class="mt-5">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <a class="page-link" href="index.html">Back to Blog</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="how-to-read-your-genome-vcf-file.html">Next: How to Read the VCF File From Your Genome Test &rarr;</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- References -->
+                <section class="mb-5 mt-5">
+                    <h2 class="h3 fw-bold mb-3" id="references">References</h2>
+                    <ol class="small">
+                        <li id="ref1">23andMe. Accessing Your Raw Genetic Data. <em>23andMe Support</em>. <a href="https://support.23andme.org/hc/en-us/articles/42965156401687-Accessing-Your-Raw-Genetic-Data" target="_blank" rel="noopener">support.23andme.org/hc/en-us/articles/42965156401687-Accessing-Your-Raw-Genetic-Data</a>; 23andMe. Raw Genotype Data Technical Details. <em>23andMe Customer Care</em>. <a href="https://eu.customercare.23andme.com/hc/en-us/articles/115002090907-Raw-Genotype-Data-Technical-Details" target="_blank" rel="noopener">customercare.23andme.com/hc/en-us/articles/115002090907-Raw-Genotype-Data-Technical-Details</a></li>
+                        <li id="ref2">Genome Reference Consortium, National Center for Biotechnology Information (NIH). Human Genome Assembly Overview. <em>NCBI</em>. <a href="https://www.ncbi.nlm.nih.gov/grc/human" target="_blank" rel="noopener">ncbi.nlm.nih.gov/grc/human</a>; National Human Genome Research Institute. A Brief Guide to Genomics. <em>genome.gov</em>. <a href="https://www.genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics" target="_blank" rel="noopener">genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics</a></li>
+                        <li id="ref3">Broad Institute. Human genome reference builds: GRCh38 or hg38, b37, hg19. <em>GATK Documentation</em>. <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035890951-Human-genome-reference-builds-GRCh38-or-hg38-b37-hg19" target="_blank" rel="noopener">gatk.broadinstitute.org/hc/en-us/articles/360035890951</a></li>
+                        <li id="ref4">Kurian AW, et al. Retrospective Cohort Study on the Limitations of Direct-to-Consumer Genetic Screening in Hereditary Breast and Ovarian Cancer. <em>JCO Precision Oncology</em>, via PubMed Central. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10581610/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10581610</a></li>
+                        <li id="ref5">Ancestry. Downloading DNA Data. <em>Ancestry Support</em>. <a href="https://support.ancestry.com/s/article/Downloading-DNA-Data" target="_blank" rel="noopener">support.ancestry.com/s/article/Downloading-DNA-Data</a>; a survey of direct-to-consumer genotype data across providers. <em>PubMed Central</em>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8267563/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8267563</a></li>
+                    </ol>
+                </section>
+
+                <!-- FAQ Section -->
+                <div class="mt-5 mb-5">
+                    <section class="mb-5" id="faq">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="small text-muted mb-4">Educational information about how consumer DNA files work. Not medical or genetic-counseling advice.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Is my 23andMe or AncestryDNA raw data file my whole genome?</h3>
+                        <p>A raw data file from a genotyping array lists a few hundred thousand specific positions the chip was built to measure, out of roughly 3 billion base pairs in a full genome. It's a curated slice, not a sequence of everything.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Why does my raw data file matter if a position isn't listed in it?</h3>
+                        <p>An array only reports on the positions it was designed to probe. If a position you care about isn't one of them, the file simply has nothing to say about it. That's different from testing the position and finding nothing there.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What's the difference between GRCh37 and GRCh38 in a raw data file?</h3>
+                        <p>They're two different coordinate systems for the human genome, released years apart. The same physical DNA position can have a different numeric address depending on which build a file uses, so a tool reading the file needs to know which one it's working with to line positions up correctly.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Does a clean 23andMe or AncestryDNA report mean I don't carry any concerning variants?</h3>
+                        <p>Not by itself. An array only checked the specific positions on its list. It says nothing about the thousands of other positions in the same genes that it never looked at, so absence from that report isn't the same as a clinical negative.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Can I do anything else with a raw data file besides ancestry results?</h3>
+                        <p>Because it's a plain text file, you can upload it to other tools built to read the same format, including trait and pharmacogenomic lookups that check your file's positions against public reference databases.</p>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <!-- Expanded medical disclaimer -->
+        <aside class="container mt-5 mb-5" aria-labelledby="post-medical-disclaimer">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="p-4 small text-muted" style="background-color: var(--secondary); border-left: 4px solid var(--primary); border-radius: 8px;">
+                        <h2 id="post-medical-disclaimer" class="h6 mb-2 text-dark"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Medical disclaimer</h2>
+                        <p class="mb-2">This guide is educational content from Go Go Gaia about how consumer DNA files work and is not medical or genetic-counseling advice. It is not a substitute for diagnosis, interpretation, or care from a licensed healthcare provider or certified genetic counselor, and reading it does not create a doctor-patient relationship with Holland Neurotech Inc.</p>
+                        <p class="mb-2">If you have questions about your own genetic results, or are weighing a personal or family health decision, talk to a doctor or a certified genetic counselor who can review your full history. Don't delay seeking care because of something you read here.</p>
+                        <p class="mb-0">If you think you're experiencing a medical emergency, call 911 (US), 999 / 111 (UK), or your local emergency number. For mental health crises in the US, call or text 988. For our full policy, see the <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="index.html">Health &amp; Wellness Blog</a></p>
+                    <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2025 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Copy Link Function -->
+    <script>
+    function copyToClipboard(url, button) {
+        navigator.clipboard.writeText(url).then(function() {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check me-1"></i> Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            setTimeout(function() {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy link. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html>

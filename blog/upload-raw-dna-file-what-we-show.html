@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>You Can Upload Your Raw DNA File: What Go Go Gaia Shows</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Upload a 23andMe or AncestryDNA raw file and see cited results. What Go Go Gaia shows, what it purges on request, and what it never claims.">
+    <meta name="keywords" content="upload raw DNA file, upload 23andMe data to app, upload AncestryDNA raw data, ClinVar star rating explained, CPIC pharmacogenomics app, genetic data consent, attribution only genetics">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="You Can Upload Your Raw DNA File: What Go Go Gaia Shows">
+    <meta property="og:description" content="Upload a 23andMe or AncestryDNA raw file and see cited results. What Go Go Gaia shows, what it purges on request, and what it never claims.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+    <meta property="og:site_name" content="Go Go Gaia">
+    <meta property="article:published_time" content="2026-09-19">
+    <meta property="article:author" content="Holland Neurotech Inc.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="You Can Upload Your Raw DNA File: What Go Go Gaia Shows">
+    <meta name="twitter:description" content="Upload a 23andMe or AncestryDNA raw file and see cited results. What Go Go Gaia shows, what it purges on request, and what it never claims.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/bit-lab-card.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "You Can Upload Your Raw DNA File: What Go Go Gaia Shows",
+      "description": "Upload a 23andMe or AncestryDNA raw file and see cited results. What Go Go Gaia shows, what it purges on request, and what it never claims.",
+      "image": [{
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/images/screens/bit-lab-card.webp",
+        "width": 1200,
+        "height": 800
+      }],
+      "author": { "@type": "Organization", "name": "Holland Neurotech Inc." },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      },
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html" },
+      "keywords": "upload raw DNA file, upload AncestryDNA raw data, ClinVar star rating explained, CPIC pharmacogenomics app"
+    }
+    </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What file types can I upload to Go Go Gaia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Go Go Gaia diagnose anything from my DNA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It shows attribution-only findings: what a named public source, like ClinVar, the GWAS Catalog, or CPIC, says about a position it finds in your file. It never makes its own medical determination, and results are not a diagnosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a ClinVar star rating mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ClinVar grades how much review backs a variant's classification, from zero to four stars. More stars means more independent review behind the classification, from a single lab's submission up to an expert panel or practice guideline. The rating is shown next to the finding, including when it's zero stars, so you can see how thin or solid the evidence behind it actually is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I delete my genetic data after uploading it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At any time, in Settings under Privacy & Consent. Deleting removes the uploaded file and everything derived from it, and separately withdraws your consent for that data going forward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Go Go Gaia test for BRCA or other hereditary cancer genes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. BRCA1, BRCA2, and carrier genes like CFTR and FMR1 are deliberately left off the raw-DNA panel, regardless of what's technically present in an uploaded file, because an array can't answer those questions honestly. Findings from a lab's own genetic test report, which you can upload separately as a PDF, are a different path: there the app quotes what your lab already concluded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my raw DNA file used to train AI models?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if you separately opt in. Uploading a file and allowing it to be used for model training are two independent consents, each its own record, and each can be withdrawn on its own without affecting the other."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.go-go-gaia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.go-go-gaia.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "You Can Upload Your Raw DNA File" }
+      ]
+    }
+    </script>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js"></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Go Go Gaia",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Logo1.png" alt="Go Go Gaia Logo" height="30" class="d-inline-block align-top me-2">
+                    Go Go Gaia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.go-go-gaia.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:support@hollandneurotech.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Social Share Buttons (Top) -->
+    <div class="share-buttons-top d-flex justify-content-center gap-2 my-3 pb-3 border-bottom">
+        <a href="https://twitter.com/intent/tweet?text=You%20Can%20Upload%20Your%20Raw%20DNA%20File%3A%20What%20Go%20Go%20Gaia%20Shows&url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html&via=holland_neuro" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x me-1"></i> Share</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-facebook me-1"></i> Share</a>
+        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=You%20can%20now%20upload%20your%20raw%20DNA%20file%20to%20Go%20Go%20Gaia" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pinterest me-1"></i> Pin</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin me-1"></i> Share</a>
+        <a href="mailto:?subject=You%20can%20now%20upload%20your%20raw%20DNA%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope me-1"></i> Email</a>
+        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html', this)" class="btn btn-outline-secondary btn-sm"><i class="bi bi-link-45deg me-1"></i> Copy Link</button>
+    </div>
+
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Blog</a></li>
+                        <li class="breadcrumb-item active">You Can Upload Your Raw DNA File</li>
+                    </ol>
+                </nav>
+
+                <article>
+                    <header class="mb-5">
+                        <h1 class="display-4 fw-bold mb-3">You Can Upload Your Raw DNA File: What Go Go Gaia Shows, and What It Doesn't</h1>
+                        <!-- WP9: restore VCF present tense when Phase A deploys -->
+                        <p class="lead">You can now upload a 23andMe or AncestryDNA raw export and see what's found. This guide covers exactly what the feature shows, why it quotes named public sources instead of making its own calls, what the two separate consents cover, what deletion actually removes, and the honest list of what it deliberately doesn't do.</p>
+                        <img src="../images/screens/bit-lab-card.webp" width="700" height="217" class="img-fluid rounded mb-4" loading="eager" alt="Lab-style attributed data card in the Go Go Gaia app, the same card format used for uploaded DNA file findings">
+                        <div class="d-flex align-items-center text-muted">
+                            <small>By Go Go Gaia Team</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>Published September 19, 2026</small>
+                            <span class="mx-2">&bull;</span>
+                            <small>9 min read</small>
+                            <span class="mx-2">&bull;</span>
+                            <span class="badge bg-info">Genetics</span>
+                        </div>
+                    </header>
+
+                    <div class="blog-content">
+
+                        <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content about an app feature, not medical or genetic-counseling advice. For anything about your own results, talk to a doctor or a certified genetic counselor.</p>
+
+                        <div class="alert alert-warning border-warning">
+                            <h4><i class="bi bi-info-circle me-2"></i>Medical Disclaimer</h4>
+                            <p class="mb-0"><strong>This article is for educational and informational purposes only and does not constitute medical or genetic-counseling advice.</strong> It describes an app feature and what it can and can't show. It is not a substitute for consultation with a doctor or a certified genetic counselor, especially if you're weighing a personal or family health decision. If you have questions about a specific result, please talk to a qualified professional.</p>
+                        </div>
+
+                        <div class="alert alert-light border p-4 mb-4">
+                            <h2 class="h5 fw-bold mb-3">Quick Answer: What Does This Feature Actually Do?</h2>
+                            <p class="mb-2">You can upload a raw DNA file and see what it contains, matched against a curated panel and shown with a named source for every finding. In short:</p>
+                            <ul class="mb-0">
+                                <li><strong>It shows:</strong> hits, positions your file carries a variant at, with an attributed citation (ClinVar, GWAS Catalog, or CPIC)</li>
+                                <li><strong>It never shows:</strong> a "you're negative for X" statement, a diagnosis, or a risk score, and the panel carries no hereditary-cancer or carrier genes at all</li>
+                                <li><strong>Consent and deletion</strong> are separate, explicit, and reversible at any time. Uploading happens in the web app, not the iOS app</li>
+                            </ul>
+                        </div>
+
+                        <p>If you've read the first two posts in this series, on <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">what's actually in a 23andMe or AncestryDNA file</a> and <a href="how-to-read-your-genome-vcf-file.html">how to read a genome VCF</a>, you already know the two honesty problems any tool reading one of these files has to solve: a fixed probe list only covers a fraction of any gene, and an absent position is never the same as a negative result. This feature is built around both of those facts, not around them.</p>
+
+                        <h2>The Feature, Plainly</h2>
+
+                        <!-- WP9: restore VCF present tense when Phase A deploys -->
+                        <p>What you can upload today is a 23andMe or AncestryDNA-style raw array export: a .txt, .csv, .tsv, .zip, or .gz file, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Those are real limits, not hidden ones.</p>
+
+                        <p>This runs in the Go Go Gaia web app at app.go-go-gaia.com, not in the iOS app, since it's a file you almost certainly have sitting on a computer rather than a phone.</p>
+
+                        <p>Your file is matched against a curated panel of 28 markers across 24 genes. Anything found shows up as a card with the trait or pharmacogenomic association named, plus its source, and, where relevant, alongside your other results in the body map.</p>
+
+                        <h2>Attribution-Only: What That Actually Means</h2>
+
+                        <p>"Attribution-only" is the whole design, not a footnote. When a card shows you a finding, it's quoting what a named public source says about that specific position: a ClinVar classification, a GWAS Catalog association, or a CPIC pharmacogenomic guideline.<sup><a href="#ref1" rel="noopener">[1]</a><a href="#ref2" rel="noopener">[2]</a><a href="#ref3" rel="noopener">[3]</a></sup> It's never Go Go Gaia's own medical opinion about your DNA. On the curated panel, if there's no source behind a position, there's no statement.</p>
+
+                        <p>That's a deliberate, narrower stance than a lot of DNA interpretation tools take. It means some things you might expect to see, like a plain-language guess about a trait with weak evidence behind it, simply aren't shown, because there's no citable source to attach to them.</p>
+
+                        <!-- WP9: restore AI-analysis lane disclosure when the atlas backend ships -->
+
+                        <h2>ClinVar Star Ratings: Why Confidence Gets Shown, Not Just a Result</h2>
+
+                        <p>ClinVar assigns each variant classification a review status, shown as zero to four gold stars, based on how much independent review backs it.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Roughly:</p>
+
+                        <ul>
+                            <li><strong>1 star:</strong> a single submitter provided their criteria and evidence</li>
+                            <li><strong>2 stars:</strong> multiple submitters agree, with criteria and no conflicts</li>
+                            <li><strong>3 stars:</strong> reviewed by a recognized expert panel</li>
+                            <li><strong>4 stars:</strong> reflects a practice guideline</li>
+                        </ul>
+
+                        <p>The rating travels with the finding rather than getting filtered out of sight. Several entries on the panel are well-known trait associations that sit at zero stars in ClinVar, meaning no submitter provided assertion criteria, and those are shown with that grade stated plainly rather than quietly dropped or quietly promoted. A 1-star classification and a 3-star one aren't the same level of confidence, and collapsing them into one label would hide that. Seeing the rating lets you judge how much evidence is actually behind a card, the same way <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">the first post in this series</a> covers array coverage gaps: the honest answer includes how much was actually checked, not just a headline result.</p>
+
+                        <!-- WP9: restore AI-analysis lane disclosure when the atlas backend ships -->
+                        <h2>Consent: Two Separate Choices, All Reversible</h2>
+
+                        <p>There are two separate choices here, not one. Uploading requires its own explicit agreement before your first upload, shown as its own notice and logged with its version, and it covers only your own genetic data, never a partner's or a family member's. Letting your genetic data help train our models is a second choice, off by default, and it is not covered by the general model-improvement setting elsewhere in Settings. Each one is recorded on its own and can be withdrawn on its own, at any time, without disturbing the other. See the <a href="../privacy-policy.html">full privacy policy</a> for the exact scope of both.</p>
+
+                        <h2>Purge: What Deleting Actually Removes</h2>
+
+                        <p>You can delete your genetic data at any time in Settings under Privacy &amp; Consent. Your original file is kept encrypted while it's there, so you can view or re-download it, and deleting removes that stored file, every earlier stored version of it, and everything extracted from it, then withdraws your upload consent going forward. It's a removal, not a soft archive.</p>
+
+                        <h2>What It Deliberately Doesn't Do</h2>
+
+                        <p>This is the part worth reading closely, because it's the honest limit on the whole feature:</p>
+
+                        <ul>
+                            <li><strong>No diagnosis, ever.</strong> A finding is a citation, not a medical determination.</li>
+                            <li><strong>No risk score.</strong> Findings aren't combined into a single number meant to represent your overall risk for anything.</li>
+                            <li><strong>No hereditary-cancer or carrier genes on the panel.</strong> BRCA1, BRCA2, CFTR, and FMR1 are deliberately left off it, regardless of what's technically present in your file, because an array can't answer those questions honestly. If you have a lab's own report on any of them, that's a separate PDF upload path where the app quotes what your lab concluded rather than interpreting anything itself.</li>
+                            <li><strong>No "you're negative" statements, ever.</strong> If a position isn't found in your file, the honest state is unknown, not clear. A raw file can't distinguish "you don't carry this" from "this was never checked," and pretending otherwise would be a false reassurance. <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">Post one</a> and <a href="how-to-read-your-genome-vcf-file.html">post two</a> in this series cover exactly why, for arrays and VCFs respectively.<sup><a href="#ref4" rel="noopener">[4]</a></sup></li>
+                        </ul>
+
+                        <p>None of these are technical shortcuts waiting to be lifted later. They're the actual design of an attribution-only feature: it can only ever tell you what a named source says about what it finds, and it's built to stay quiet about everything else.</p>
+
+                        <div class="blog-cta-box">
+                            <h4><i class="bi bi-upload me-2"></i>See what your own file shows</h4>
+                            <p>Upload your 23andMe or AncestryDNA export in the web app and get attributed results with a named source and its confidence level for every finding, never a guess dressed up as an answer.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your Raw DNA File</a>
+                        </div>
+
+                        <h2>The Bottom Line</h2>
+
+                        <p>Uploading a raw DNA file now gets you cited, attributed findings against a curated panel, shown with the source's own confidence level, never a diagnosis or a risk score. What isn't found stays honestly unknown rather than getting dressed up as a clean result. If you haven't yet, <a href="whats-inside-your-23andme-ancestrydna-raw-data.html">start with what's actually in a 23andMe or AncestryDNA file</a> to understand exactly what you're uploading before you do, and <a href="how-to-read-your-genome-vcf-file.html">how to read the VCF from a genome test</a> if sequencing is what you had done.</p>
+
+                        <div class="alert alert-light border">
+                            <h4><i class="bi bi-book me-2"></i>Related Reading</h4>
+                            <ul class="mb-0">
+                                <li><a href="whats-inside-your-23andme-ancestrydna-raw-data.html">What's Really in Your 23andMe or AncestryDNA File</a></li>
+                                <li><a href="how-to-read-your-genome-vcf-file.html">How to Read the VCF File From Your Genome Test</a></li>
+                                <li><a href="../privacy-policy.html">Privacy Policy: Genetic Data (beta)</a></li>
+                                <li><a href="all-health-data-one-place-app.html">Apps That Pull Wearables, Labs &amp; Cycle Data Together</a></li>
+                            </ul>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <div class="text-center">
+                            <h3 class="mb-4">Still deciding whether to upload it?</h3>
+                            <p class="lead mb-4">Read the consent notice first, upload only your own file, and delete the whole thing whenever you want.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary btn-lg" target="_blank">
+                                <i class="bi bi-upload me-2"></i>Open the Web Uploader
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Social Share Buttons - Bottom -->
+                <div class="share-buttons text-center my-5 py-4 border-top border-bottom">
+                    <p class="text-muted mb-3"><small>Found this helpful? Share it with others who might benefit:</small></p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://twitter.com/intent/tweet?text=You%20Can%20Upload%20Your%20Raw%20DNA%20File%3A%20What%20Go%20Go%20Gaia%20Shows&url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html&via=holland_neuro"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-twitter-x me-1"></i> Share
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Share
+                        </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html&media=https://www.go-go-gaia.com/images/screens/bit-lab-card.webp&description=You%20can%20now%20upload%20your%20raw%20DNA%20file%20to%20Go%20Go%20Gaia"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-pinterest me-1"></i> Pin
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html"
+                           target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-linkedin me-1"></i> Share
+                        </a>
+                        <a href="mailto:?subject=You%20can%20now%20upload%20your%20raw%20DNA%20file&body=I%20found%20this%20article%20really%20helpful%3A%20https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html"
+                           class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-envelope me-1"></i> Email
+                        </a>
+                        <button onclick="copyToClipboard('https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html', this)" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-link-45deg me-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <nav aria-label="Blog post navigation" class="mt-5">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <a class="page-link" href="how-to-read-your-genome-vcf-file.html">&larr; Previous: How to Read the VCF File From Your Genome Test</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="index.html">Back to Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- References -->
+                <section class="mb-5 mt-5">
+                    <h2 class="h3 fw-bold mb-3" id="references">References</h2>
+                    <ol class="small">
+                        <li id="ref1">National Center for Biotechnology Information (NIH). Review Status in ClinVar. <em>NCBI</em>. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/review_status/" target="_blank" rel="noopener">ncbi.nlm.nih.gov/clinvar/docs/review_status</a></li>
+                        <li id="ref2">National Human Genome Research Institute &amp; European Bioinformatics Institute. The NHGRI-EBI GWAS Catalog. <em>EBI</em>. <a href="https://www.ebi.ac.uk/gwas/" target="_blank" rel="noopener">ebi.ac.uk/gwas</a></li>
+                        <li id="ref3">Clinical Pharmacogenetics Implementation Consortium (CPIC). <em>ClinPGx</em>. <a href="https://cpicpgx.org/" target="_blank" rel="noopener">cpicpgx.org</a>; Relling MV, Klein TE, et al. CPIC: Clinical Pharmacogenetics Implementation Consortium of the Pharmacogenomics Research Network. <em>PubMed Central</em>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3977533/" target="_blank" rel="noopener">ncbi.nlm.nih.gov/pmc/articles/PMC3977533</a></li>
+                        <li id="ref4">Kurian AW, et al. Retrospective Cohort Study on the Limitations of Direct-to-Consumer Genetic Screening in Hereditary Breast and Ovarian Cancer. <em>JCO Precision Oncology</em>, via PubMed Central. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10581610/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10581610</a></li>
+                    </ol>
+                </section>
+
+                <!-- FAQ Section -->
+                <div class="mt-5 mb-5">
+                    <section class="mb-5" id="faq">
+                        <h2>Frequently Asked Questions</h2>
+                        <p class="small text-muted mb-4">Educational information about an app feature. Not medical or genetic-counseling advice.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What file types can I upload to Go Go Gaia?</h3>
+                        <p>23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Does Go Go Gaia diagnose anything from my DNA?</h3>
+                        <p>It shows attribution-only findings: what a named public source, like ClinVar, the GWAS Catalog, or CPIC, says about a position it finds in your file. It never makes its own medical determination, and results are not a diagnosis.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">What does a ClinVar star rating mean?</h3>
+                        <p>ClinVar grades how much review backs a variant's classification, from zero to four stars. More stars means more independent review behind the classification, from a single lab's submission up to an expert panel or practice guideline. The rating is shown next to the finding, including when it's zero stars, so you can see how thin or solid the evidence behind it actually is.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Can I delete my genetic data after uploading it?</h3>
+                        <p>At any time, in Settings under Privacy &amp; Consent. Deleting removes the uploaded file and everything derived from it, and separately withdraws your consent for that data going forward.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Does Go Go Gaia test for BRCA or other hereditary cancer genes?</h3>
+                        <p>No. BRCA1, BRCA2, and carrier genes like CFTR and FMR1 are deliberately left off the raw-DNA panel, regardless of what's technically present in an uploaded file, because an array can't answer those questions honestly. Findings from a lab's own genetic test report, which you can upload separately as a PDF, are a different path: there the app quotes what your lab already concluded.</p>
+
+                        <h3 class="h5 fw-semibold mt-4">Is my raw DNA file used to train AI models?</h3>
+                        <p>Only if you separately opt in. Uploading a file and allowing it to be used for model training are two independent consents, each its own record, and each can be withdrawn on its own without affecting the other.</p>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <!-- Expanded medical disclaimer -->
+        <aside class="container mt-5 mb-5" aria-labelledby="post-medical-disclaimer">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="p-4 small text-muted" style="background-color: var(--secondary); border-left: 4px solid var(--primary); border-radius: 8px;">
+                        <h2 id="post-medical-disclaimer" class="h6 mb-2 text-dark"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Medical disclaimer</h2>
+                        <p class="mb-2">This guide is educational content from Go Go Gaia about an app feature and is not medical or genetic-counseling advice. It is not a substitute for diagnosis, interpretation, or care from a licensed healthcare provider or certified genetic counselor, and reading it does not create a doctor-patient relationship with Holland Neurotech Inc.</p>
+                        <p class="mb-2">If you have questions about your own genetic results, or are weighing a personal or family health decision, talk to a doctor or a certified genetic counselor who can review your full history. Don't delay seeking care because of something you read here.</p>
+                        <p class="mb-0">If you think you're experiencing a medical emergency, call 911 (US), 999 / 111 (UK), or your local emergency number. For mental health crises in the US, call or text 988. For our full policy, see the <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Go Go Gaia</h5>
+                    <p class="small">Your all-in-one women's health companion</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:support@hollandneurotech.com"><i class="bi bi-envelope me-2"></i>support@hollandneurotech.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="index.html">Health &amp; Wellness Blog</a></p>
+                    <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2025 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Copy Link Function -->
+    <script>
+    function copyToClipboard(url, button) {
+        navigator.clipboard.writeText(url).then(function() {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="bi bi-check me-1"></i> Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            setTimeout(function() {
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy link. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html>
