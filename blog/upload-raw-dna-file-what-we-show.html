@@ -57,7 +57,7 @@
         "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
       },
       "datePublished": "2026-09-19",
-      "dateModified": "2026-09-19",
+      "dateModified": "2026-09-20",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html" },
       "keywords": "upload raw DNA file, upload AncestryDNA raw data, ClinVar star rating explained, CPIC pharmacogenomics app"
     }
@@ -74,7 +74,7 @@
           "name": "What file types can I upload to Go Go Gaia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app."
+            "text": "23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Sequencing VCFs work too, as .vcf or .vcf.gz up to 100 MB, as long as the ID column carries rsIDs. Either reference genome build works, GRCh37 or GRCh38, because matching runs on rsIDs rather than coordinates. Whole-genome-scale files and gVCFs aren't accepted. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app."
           }
         },
         {
@@ -215,8 +215,7 @@
                 <article>
                     <header class="mb-5">
                         <h1 class="display-4 fw-bold mb-3">You Can Upload Your Raw DNA File: What Go Go Gaia Shows, and What It Doesn't</h1>
-                        <!-- WP9: restore VCF present tense when Phase A deploys -->
-                        <p class="lead">You can now upload a 23andMe or AncestryDNA raw export and see what's found. This guide covers exactly what the feature shows, why it quotes named public sources instead of making its own calls, what the two separate consents cover, what deletion actually removes, and the honest list of what it deliberately doesn't do.</p>
+                        <p class="lead">You can now upload a 23andMe or AncestryDNA raw export, or an rsID-annotated VCF from a sequencing test, and see what's found. This guide covers exactly what the feature shows, why it quotes named public sources instead of making its own calls, what the two separate consents cover, what deletion actually removes, and the honest list of what it deliberately doesn't do.</p>
                         <img src="../images/screens/bit-dna-sources.webp" width="700" height="278" class="img-fluid rounded mb-4" loading="eager" alt="Card reading Every finding cites ClinVar, CPIC and GWAS, from the Go Go Gaia app">
                         <div class="d-flex align-items-center text-muted">
                             <small>By Go Go Gaia Team</small>
@@ -252,8 +251,7 @@
 
                         <h2>The Feature, Plainly</h2>
 
-                        <!-- WP9: restore VCF present tense when Phase A deploys -->
-                        <p>What you can upload today is a 23andMe or AncestryDNA-style raw array export: a .txt, .csv, .tsv, .zip, or .gz file, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Those are real limits, not hidden ones.</p>
+                        <p>What you can upload today is a 23andMe or AncestryDNA-style raw array export: a .txt, .csv, .tsv, .zip, or .gz file, up to 64 MB. A sequencing VCF also works, as a .vcf or .vcf.gz file up to 100 MB, as long as its ID column carries rsIDs. Either reference genome build works, GRCh37 or GRCh38, because matching runs on rsIDs rather than on coordinates. Whole-genome-scale files and gVCFs, which record reference blocks rather than variant calls, still aren't accepted. Those are real limits, not hidden ones.</p>
 
                         <p>This runs in the Go Go Gaia web app at app.go-go-gaia.com, not in the iOS app, since it's a file you almost certainly have sitting on a computer rather than a phone.</p>
 
@@ -394,7 +392,7 @@
                         <p class="small text-muted mb-4">Educational information about an app feature. Not medical or genetic-counseling advice.</p>
 
                         <h3 class="h5 fw-semibold mt-4">What file types can I upload to Go Go Gaia?</h3>
-                        <p>23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Either reference genome build works, GRCh37 or GRCh38. Sequencing VCFs from a genome test aren't accepted yet, and neither are whole-genome-scale files or gVCFs. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app.</p>
+                        <p>23andMe and AncestryDNA-style raw array exports: .txt, .csv, .tsv, .zip, or .gz, up to 64 MB. Sequencing VCFs work too, as .vcf or .vcf.gz up to 100 MB, as long as the ID column carries rsIDs. Either reference genome build works, GRCh37 or GRCh38, because matching runs on rsIDs rather than coordinates. Whole-genome-scale files and gVCFs aren't accepted. Uploading happens in the web app at app.go-go-gaia.com, not in the iOS app.</p>
 
                         <h3 class="h5 fw-semibold mt-4">Does Go Go Gaia diagnose anything from my DNA?</h3>
                         <p>It shows attribution-only findings: what a named public source, like ClinVar, the GWAS Catalog, or CPIC, says about a position it finds in your file. It never makes its own medical determination, and results are not a diagnosis.</p>

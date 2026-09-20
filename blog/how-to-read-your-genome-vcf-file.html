@@ -57,7 +57,7 @@
         "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
       },
       "datePublished": "2026-09-19",
-      "dateModified": "2026-09-19",
+      "dateModified": "2026-09-20",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html" },
       "keywords": "how to read a VCF file, VCF vs gVCF, genome sequencing raw data, GRCh37 GRCh38 VCF"
     }
@@ -281,11 +281,10 @@
 
                         <p>You'll usually get your VCF compressed, as a .vcf.gz file, since an uncompressed sequencing VCF can be sizeable. The .gz means the text has been run through gzip (or bgzip, a block-based variant of gzip built for genomic files so tools can read chunks without decompressing the whole thing). The content is identical either way, just packed smaller for storage and transfer.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Tools built to read genomic files generally take either the .vcf or the .vcf.gz version directly, with no manual unzipping required.</p>
 
-                        <!-- WP9: restore VCF present tense when Phase A deploys -->
                         <div class="blog-cta-box">
-                            <h4><i class="bi bi-clipboard-data me-2"></i>Start with the file you can upload today</h4>
-                            <p>Go Go Gaia reads 23andMe and AncestryDNA-style raw array exports and shows each finding with the named public source behind it. Sequencing VCFs aren't accepted yet, so if a VCF is all you have, treat this guide as the groundwork for reading it.</p>
-                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your 23andMe or AncestryDNA Export</a>
+                            <h4><i class="bi bi-clipboard-data me-2"></i>Start with the file you have</h4>
+                            <p>Go Go Gaia reads 23andMe and AncestryDNA-style raw array exports up to 64 MB, and rsID-annotated VCF files up to 100 MB, and shows each finding with the named public source behind it. Matching runs on rsIDs rather than genomic coordinates, so either build works, though a VCF with no rsIDs in its ID column has nothing to match on.</p>
+                            <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your Raw DNA File</a>
                         </div>
 
                         <h2>The Bottom Line</h2>
@@ -304,10 +303,9 @@
 
                         <hr class="my-5">
 
-                        <!-- WP9: restore VCF present tense when Phase A deploys -->
                         <div class="text-center">
-                            <h3 class="mb-4">Also have a 23andMe or AncestryDNA export?</h3>
-                            <p class="lead mb-4">Upload that one in the web app and see what a named public source actually says about the positions it can match.</p>
+                            <h3 class="mb-4">Have a VCF, or a 23andMe or AncestryDNA export?</h3>
+                            <p class="lead mb-4">Upload it in the web app and see what a named public source actually says about the positions it can match.</p>
                             <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary btn-lg" target="_blank">
                                 <i class="bi bi-upload me-2"></i>Open the Web Uploader
                             </a>

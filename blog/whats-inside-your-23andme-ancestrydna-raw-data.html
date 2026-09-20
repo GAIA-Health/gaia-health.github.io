@@ -57,7 +57,7 @@
         "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
       },
       "datePublished": "2026-09-19",
-      "dateModified": "2026-09-19",
+      "dateModified": "2026-09-20",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html" },
       "keywords": "23andMe raw data file, AncestryDNA raw data explained, what is a genotyping array, GRCh37 vs GRCh38"
     }
@@ -286,12 +286,11 @@
 
                         <p>If you've also done a sequencing-based test, through a service like Nebula Genomics, Dante Labs, or Sequencing.com, you'll get a different kind of file: a VCF instead of a flat rsID-chromosome-position-genotype table. A VCF only lists the positions where your DNA differs from a reference genome, rather than reporting every position an array happened to probe.<sup><a href="#ref3" rel="noopener">[3]</a></sup> It looks different on the page, but it runs into some of the same honesty questions this article just walked through: what build it's on, and what an absence in the file does and doesn't mean. The next post in this series walks through how to actually read one.</p>
 
-                        <!-- WP9: restore VCF present tense when Phase A deploys -->
-                        <p>Whichever format you're holding, a tool that reads it can only be as useful as it is honest about what it's not looking at. A tracking app like Go Go Gaia takes the array-style raw export from 23andMe or AncestryDNA and shows you what it can attribute to a named public source like ClinVar or CPIC, without pretending a short probe list adds up to a full picture. Sequencing VCFs aren't accepted yet, so the format guide is there to help you read the one you have.</p>
+                        <p>Whichever format you're holding, a tool that reads it can only be as useful as it is honest about what it's not looking at. A tracking app like Go Go Gaia takes the array-style raw export from 23andMe or AncestryDNA, or an rsID-annotated VCF from a sequencing test, and shows you what it can attribute to a named public source like ClinVar or CPIC, without pretending a short probe list adds up to a full picture. Because it matches on rsIDs rather than remapping coordinates, the build your file is on doesn't change what it can find.</p>
 
                         <div class="blog-cta-box">
                             <h4><i class="bi bi-clipboard-data me-2"></i>See what your own file actually shows</h4>
-                            <p>ClinVar's review-status system grades how much evidence backs a given variant classification, from a single lab's read to an expert-panel consensus. A tool that shows you that grading, rather than a flat yes or no, gives you a more honest picture of your own file.</p>
+                            <p>ClinVar's review-status system grades how much evidence backs a given variant classification, from a single lab's read to an expert-panel consensus. A tool that shows you that grading, rather than a flat yes or no, gives you a more honest picture of your own file. Go Go Gaia shows that grading for the positions in its own panel, and hereditary-cancer and carrier variants aren't part of what it reports.</p>
                             <a href="https://app.go-go-gaia.com/login?utm_source=website&amp;utm_medium=blog&amp;utm_campaign=genetics_upload" class="btn btn-primary mt-3" target="_blank"><i class="bi bi-upload me-2"></i>Upload Your Raw Data File</a>
                         </div>
 
