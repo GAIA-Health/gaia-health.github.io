@@ -313,6 +313,201 @@
             margin-top: 0.25rem;
         }
 
+        /* Result handoff — inline line (quiet, continues the value) */
+        .result-handoff-line {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 0.75rem 0;
+            margin: 1.25rem 0 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .result-handoff-line a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Result handoff — substantive block after upcoming periods */
+        .result-handoff {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .result-handoff h4 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .result-handoff p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+        .result-handoff-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        .btn-handoff-primary {
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.65rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-handoff-primary:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .btn-handoff-secondary {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 600;
+            padding: 0.65rem 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-handoff-secondary:hover {
+            background: var(--primary-subtle);
+            color: var(--primary-dark);
+        }
+
+        /* Refine prediction panel */
+        .refine-panel {
+            margin-top: 1.25rem;
+        }
+        .refine-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .refine-toggle:hover { background: var(--primary-subtle); }
+        .refine-toggle .bi-chevron-down { transition: transform 0.2s; }
+        .refine-toggle[aria-expanded="true"] .bi-chevron-down { transform: rotate(180deg); }
+        .refine-body {
+            background: #fff;
+            border: 2px solid #f0f0f0;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 1.25rem 1.25rem 1.5rem;
+            margin-top: -2px;
+        }
+        .refine-field { margin-bottom: 1rem; }
+        .refine-field label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 0.35rem;
+        }
+        .refine-field input {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            padding: 0.6rem 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .refine-field input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .refine-subhead {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            margin: 1.25rem 0 1rem;
+        }
+        .refine-subhead strong {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        .refine-subhead p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.25rem 0 0;
+        }
+        .refine-message {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .btn-refine-update {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 0.7rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-refine-update:hover { background-color: var(--primary-dark); }
+
+        /* Refine active note + predicted range (addition beneath the headline) */
+        .refine-active-note {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        .refine-active-note i { color: var(--primary-dark); margin-right: 0.35rem; }
+        .predicted-range {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .predicted-range .range-dates {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .predicted-range .range-width {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.15rem;
+        }
+        .predicted-range .range-sentence {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+        }
+
         /* Late note */
         .late-note {
             background: #fde8ef;
@@ -918,9 +1113,9 @@
                a.getDate() === b.getDate();
     }
 
-    function calcCycle(cycleStart, cycleLength) {
+    function calcCycle(cycleStart, cycleLength, periodLength) {
         const nextPeriod = addDays(cycleStart, cycleLength);
-        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, DEFAULT_PERIOD_LENGTH + 1);
+        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, periodLength + 1);
         const ovulationDate = addDays(cycleStart, ovulationDay - 1);
         const fertileStart = addDays(ovulationDate, -5);
         const fertileEnd = addDays(ovulationDate, 1);
@@ -941,14 +1136,14 @@
         return diffDays + 1;
     }
 
-    function getPhaseInfo(cycleDay, cycleLength) {
-        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, DEFAULT_PERIOD_LENGTH + 1);
+    function getPhaseInfo(cycleDay, cycleLength, periodLength) {
+        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, periodLength + 1);
         const fertileStartDay = ovulationDay - 5;
 
-        if (cycleDay <= DEFAULT_PERIOD_LENGTH) {
+        if (cycleDay <= periodLength) {
             return {
                 name: "Menstrual Phase",
-                desc: "Days 1-" + DEFAULT_PERIOD_LENGTH + " — your body is shedding the uterine lining. Energy may be lower, and it's a great time for rest and gentle movement.",
+                desc: "Days 1-" + periodLength + " — your body is shedding the uterine lining. Energy may be lower, and it's a great time for rest and gentle movement.",
                 color: "var(--accent)"
             };
         } else if (cycleDay < fertileStartDay) {
@@ -982,21 +1177,69 @@
         input.min = minDate.toISOString().split('T')[0];
     });
 
-    document.getElementById('periodForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+    /* ── Refine helpers ── */
+    function parseDateInput(value) {
+        if (!value) return null;
+        const parts = value.split('-');
+        if (parts.length !== 3) return null;
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        return isNaN(d.getTime()) ? null : d;
+    }
 
-        const lmpInput = document.getElementById('lmpDate').value;
-        if (!lmpInput) return;
+    function daysBetween(a, b) {
+        return Math.round((a.getTime() - b.getTime()) / (1000 * 60 * 60 * 24));
+    }
 
-        const parts = lmpInput.split('-');
-        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
-        const cycleLength = parseInt(document.getElementById('cycleLength').value);
+    // d1 = most recent period start, d2 = the one before, d3 = the one before that (Date or null)
+    function computeVariability(d1, d2, d3, today) {
+        if (!d1 || !d2) {
+            return { ok: false, insufficient: true };
+        }
+
+        const dates = d3 ? [d1, d2, d3] : [d1, d2];
+        for (let i = 0; i < dates.length; i++) {
+            if (dates[i] > today) {
+                return { ok: false, message: "Those dates need to be in the past — double check for a typo in the year or month." };
+            }
+        }
+
+        if (d1 <= d2) {
+            return { ok: false, message: "The most recent period should go in the first box, with each date after it earlier than the last — check the order." };
+        }
+        if (d3 && d2 <= d3) {
+            return { ok: false, message: "Your three dates should run from most recent to oldest — check the order." };
+        }
+
+        const gaps = [daysBetween(d1, d2)];
+        if (d3) gaps.push(daysBetween(d2, d3));
+
+        for (let i = 0; i < gaps.length; i++) {
+            if (gaps[i] < 20 || gaps[i] > 60) {
+                return { ok: false, message: "The gap between two of those dates works out to " + gaps[i] + " days, which is outside a plausible cycle length (20-60 days) — double check the dates." };
+            }
+        }
+
+        const avg = gaps.reduce((a, b) => a + b, 0) / gaps.length;
+        const shortest = Math.min.apply(null, gaps);
+        const longest = Math.max.apply(null, gaps);
+
+        return { ok: true, avg: avg, shortest: shortest, longest: longest };
+    }
+
+    /* ── Result rendering ── */
+    function buildResultHtml(state) {
+        const lmpDate = state.lmpDate;
+        const periodLength = state.periodLength;
+        const dropdownCycleLength = state.dropdownCycleLength;
+        const avgCycleLength = state.avgCycleLength;
+        const range = state.range;
+        const effectiveCycleLength = avgCycleLength ? Math.round(avgCycleLength) : dropdownCycleLength;
 
         // Calculate current and next 6 cycles
         const cycles = [];
         let nextStart = lmpDate;
         for (let i = 0; i < 7; i++) {
-            cycles.push(calcCycle(nextStart, cycleLength));
+            cycles.push(calcCycle(nextStart, effectiveCycleLength, periodLength));
             nextStart = cycles[cycles.length - 1].nextPeriod;
         }
 
@@ -1014,7 +1257,7 @@
 
         const currentCycle = cycles[currentCycleIndex];
         const cycleDay = getCycleDay(currentCycle.cycleStart, today);
-        const phase = getPhaseInfo(cycleDay, cycleLength);
+        const phase = getPhaseInfo(cycleDay, effectiveCycleLength, periodLength);
 
         // Find the next upcoming period (first one after today)
         let nextPeriodDate = null;
@@ -1048,13 +1291,13 @@
         }
 
         const ovDay = currentCycle.ovulationDay;
-        for (let d = 0; d < cycleLength; d++) {
+        for (let d = 0; d < effectiveCycleLength; d++) {
             const currentDate = addDays(calStart, d);
             const dayNum = d + 1;
             let cls = 'day';
             let label = '';
 
-            if (dayNum <= DEFAULT_PERIOD_LENGTH) {
+            if (dayNum <= periodLength) {
                 cls += ' period';
             } else if (dayNum >= ovDay - 5 && dayNum <= ovDay + 1) {
                 if (dayNum === ovDay) {
@@ -1084,44 +1327,117 @@
             const c = cycles[i];
             if (c.nextPeriod > today) {
                 count++;
-                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                 upcomingHtml += `
                     <div class="next-cycle-row">
                         <div class="next-cycle-label">${count === 1 ? 'Next period' : 'Period ' + count}</div>
                         <div class="next-cycle-dates">
                             <span class="period-date">${formatDateFull(c.nextPeriod)}</span>
-                            &nbsp;&middot;&nbsp; Fertile: <span class="fertile-date">${formatDate(calcCycle(c.nextPeriod, cycleLength).fertileStart)} - ${formatDate(calcCycle(c.nextPeriod, cycleLength).fertileEnd)}</span>
+                            &nbsp;&middot;&nbsp; Fertile: <span class="fertile-date">${formatDate(calcCycle(c.nextPeriod, effectiveCycleLength, periodLength).fertileStart)} - ${formatDate(calcCycle(c.nextPeriod, effectiveCycleLength, periodLength).fertileEnd)}</span>
                         </div>
                     </div>
                 `;
             }
         }
 
-        const html = `
+        // Refined range — an addition beneath the headline date, never a replacement for it
+        let rangeHtml = '';
+        if (range) {
+            if (range.widthDays > 0) {
+                rangeHtml = `
+                    <div class="predicted-range">
+                        Could land anywhere from <span class="range-dates">${formatDateFull(range.earliestDate)}</span> to <span class="range-dates">${formatDateFull(range.latestDate)}</span>
+                        <span class="range-width">a ${range.widthDays}-day window</span>
+                        <span class="range-sentence">That width reflects how much your own cycles varied across the dates you gave, not a general estimate.</span>
+                    </div>
+                `;
+            } else {
+                rangeHtml = `
+                    <div class="predicted-range">
+                        <span class="range-sentence">Your two most recent cycles were ${range.shortest} days apart. Add one more date below and we can show you a range instead of a single point.</span>
+                    </div>
+                `;
+            }
+        }
+
+        const activeNoteHtml = avgCycleLength ? `
+            <div class="refine-active-note">
+                <i class="bi bi-arrow-repeat"></i>Using your actual average cycle length of ${effectiveCycleLength} days, calculated from the dates you gave, instead of the ${dropdownCycleLength}-day dropdown value.
+            </div>
+        ` : '';
+
+        const isRefinedRange = range && range.widthDays > 0;
+        const handoffHeading = isRefinedRange ? "Turn this window into one number" : "Keep these dates accurate as your cycle changes";
+        const handoffParagraph = isRefinedRange
+            ? `You've got a ${range.widthDays}-day window mapped out above instead of one fixed guess &mdash; that's what your own cycle history actually looks like. Log each period in Go Go Gaia and that window narrows over time as it learns your real pattern, instead of you re-entering dates here every time.`
+            : `You've got ${formatDateFull(nextPeriodDate)} and the periods after it mapped out above &mdash; but they all rest on a fixed ${effectiveCycleLength}-day average. Log each period as it happens in Go Go Gaia, and it works from your own pattern instead, so the next date you see comes from what actually happened rather than a textbook number.`;
+
+        const d1 = state.rawDates[0] || '';
+        const d2 = state.rawDates[1] || '';
+        const d3 = state.rawDates[2] || '';
+
+        const refinePanelHtml = `
+            <div class="refine-panel">
+                <button type="button" class="refine-toggle" id="refineToggle" aria-expanded="${state.refineOpen ? 'true' : 'false'}" aria-controls="refineBody">
+                    <i class="bi bi-sliders"></i> Sharpen this prediction <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="refine-body" id="refineBody" ${state.refineOpen ? '' : 'hidden'}>
+                    <div class="refine-field">
+                        <label for="refinePeriodLength">How many days does your period usually last?</label>
+                        <input type="number" id="refinePeriodLength" min="2" max="10" step="1" value="${periodLength}">
+                    </div>
+                    <div class="refine-subhead">
+                        <strong>My cycles vary</strong>
+                        <p>Enter your last 3 period start dates, most recent first, and we'll use your actual pattern instead of the dropdown average.</p>
+                    </div>
+                    <div class="refine-field">
+                        <label for="refineDate1">Most recent period start</label>
+                        <input type="date" id="refineDate1" value="${d1}">
+                    </div>
+                    <div class="refine-field">
+                        <label for="refineDate2">Period before that</label>
+                        <input type="date" id="refineDate2" value="${d2}">
+                    </div>
+                    <div class="refine-field">
+                        <label for="refineDate3">And the one before that</label>
+                        <input type="date" id="refineDate3" value="${d3}">
+                    </div>
+                    ${state.message ? `<div class="refine-message" id="refineMessage">${state.message}</div>` : ''}
+                    <button type="button" class="btn-refine-update" id="refineUpdateBtn">Update my prediction</button>
+                </div>
+            </div>
+        `;
+
+        return `
             <div class="result-card">
                 ${daysLate > 0 ? `
                 <div class="late-note">
                     <i class="bi bi-calendar-x"></i>Based on the dates you entered, your period was expected on ${formatDateFull(immediateNextPeriod)} &mdash; that's <strong>${daysLate} day${daysLate === 1 ? '' : 's'} late</strong> as of today.
                 </div>
                 ` : ''}
+                ${activeNoteHtml}
                 <div class="text-center mb-3">
                     <h2 style="font-weight: 700; font-size: 1.3rem; color: var(--text-dark);">Your Next Period</h2>
                     <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">${formatDateFull(nextPeriodDate)}</div>
                     <div style="font-size: 1rem; color: var(--text-muted);">${daysUntilPeriod === 0 ? "That's today!" : daysUntilPeriod === 1 ? "That's tomorrow!" : daysUntilPeriod + " days from now"}</div>
+                    ${rangeHtml}
                 </div>
 
                 <div class="key-dates">
                     <div class="key-date-box period-box">
                         <div class="date-label">Current Cycle Day</div>
                         <div class="date-value" style="font-size: 1.5rem;">Day ${cycleDay}</div>
-                        <div class="date-label">of ${cycleLength}</div>
+                        <div class="date-label">of ${effectiveCycleLength}</div>
                     </div>
                     <div class="key-date-box phase-box">
                         <div class="date-label">Current Phase</div>
                         <div class="date-value" style="color: ${phase.color};">${phase.name}</div>
-                        <div class="date-label">${cycleDay <= DEFAULT_PERIOD_LENGTH ? 'Days 1-' + DEFAULT_PERIOD_LENGTH : cycleDay <= currentCycle.ovulationDay + 1 ? 'Around day ' + currentCycle.ovulationDay : 'Days ' + (currentCycle.ovulationDay + 1) + '-' + cycleLength}</div>
+                        <div class="date-label">${cycleDay <= periodLength ? 'Days 1-' + periodLength : cycleDay <= currentCycle.ovulationDay + 1 ? 'Around day ' + currentCycle.ovulationDay : 'Days ' + (currentCycle.ovulationDay + 1) + '-' + effectiveCycleLength}</div>
                     </div>
                 </div>
+
+                <div class="result-handoff-line">These dates assume a steady ${effectiveCycleLength}-day cycle. Go Go Gaia learns your real pattern as you log periods, so the date updates as your cycle shifts &mdash; <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">get it on the App Store</a>.</div>
+
+                ${refinePanelHtml}
 
                 <div class="phase-indicator">
                     <div class="phase-name" style="color: ${phase.color};">${phase.name}</div>
@@ -1140,6 +1456,19 @@
 
                 <h3 class="mt-4 mb-0" style="font-weight: 700; font-size: 1.15rem;">Upcoming Periods & Fertile Windows</h3>
                 <div class="next-cycles">${upcomingHtml}</div>
+
+                <div class="result-handoff">
+                    <h4>${handoffHeading}</h4>
+                    <p>${handoffParagraph}</p>
+                    <div class="result-handoff-actions">
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-handoff-primary">
+                            <i class="bi bi-apple me-1"></i>Download on the App Store
+                        </a>
+                        <a href="https://app.go-go-gaia.com/login?mode=signup&utm_source=website&utm_medium=result&utm_campaign=period-calculator" target="_blank" class="btn-handoff-secondary">
+                            Use it in your browser
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="tips-section">
@@ -1152,12 +1481,139 @@
                 </ul>
             </div>
         `;
+    }
 
+    let calcState = null;
+
+    function renderResult(scroll) {
         const resultsEl = document.getElementById('results');
-        resultsEl.innerHTML = html;
+        resultsEl.innerHTML = buildResultHtml(calcState);
         resultsEl.classList.add('show');
-        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (scroll) {
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    document.getElementById('periodForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const lmpInput = document.getElementById('lmpDate').value;
+        if (!lmpInput) return;
+
+        const parts = lmpInput.split('-');
+        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        const dropdownCycleLength = parseInt(document.getElementById('cycleLength').value);
+
+        calcState = {
+            lmpDate: lmpDate,
+            dropdownCycleLength: dropdownCycleLength,
+            periodLength: DEFAULT_PERIOD_LENGTH,
+            avgCycleLength: null,
+            range: null,
+            rawDates: ['', '', ''],
+            refineOpen: false,
+            message: '',
+            refineOpenedLogged: false
+        };
+
+        renderResult(true);
     });
+
+    // Refine panel + update button — delegated so it keeps working after re-renders replace #results' innerHTML
+    document.getElementById('results').addEventListener('click', function(e) {
+        if (!calcState) return;
+
+        const toggle = e.target.closest('#refineToggle');
+        if (toggle) {
+            calcState.refineOpen = !calcState.refineOpen;
+            if (calcState.refineOpen && !calcState.refineOpenedLogged && typeof gtag === 'function') {
+                gtag('event', 'calculator_refine_opened', {
+                    page_path: window.location.pathname
+                });
+                calcState.refineOpenedLogged = true;
+            }
+            renderResult(false);
+            return;
+        }
+
+        const updateBtn = e.target.closest('#refineUpdateBtn');
+        if (updateBtn) {
+            handleRefineUpdate();
+        }
+    });
+
+    function handleRefineUpdate() {
+        const periodLengthInput = document.getElementById('refinePeriodLength');
+        let periodLength = parseInt(periodLengthInput.value, 10);
+        if (isNaN(periodLength) || periodLength < 2 || periodLength > 10) {
+            periodLength = DEFAULT_PERIOD_LENGTH;
+        }
+
+        const raw1 = document.getElementById('refineDate1').value;
+        const raw2 = document.getElementById('refineDate2').value;
+        const raw3 = document.getElementById('refineDate3').value;
+
+        const d1 = parseDateInput(raw1);
+        const d2 = parseDateInput(raw2);
+        const d3 = parseDateInput(raw3);
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const fieldsUsed = [];
+        if (periodLength !== DEFAULT_PERIOD_LENGTH) fieldsUsed.push('period_length');
+
+        let avgCycleLength = null;
+        let range = null;
+        let message = '';
+        let variabilityDays = 0;
+
+        if (raw1 || raw2 || raw3) {
+            const result = computeVariability(d1, d2, d3, today);
+            if (result.insufficient) {
+                message = "Add at least two of your last period start dates to calculate your actual cycle variation.";
+            } else if (!result.ok) {
+                message = result.message;
+            } else {
+                fieldsUsed.push('multi_date');
+                avgCycleLength = result.avg;
+                // The first refine date IS the user's most recent period start, and it
+                // is the more deliberate input, so it becomes the anchor for the
+                // headline and the range. Otherwise entering a date here that differs
+                // from the main form would predict from the wrong day.
+                if (d1) {
+                    calcState.lmpDate = d1;
+                    const lmpField = document.getElementById('lmpDate');
+                    if (lmpField) lmpField.value = raw1;
+                }
+                range = {
+                    shortest: result.shortest,
+                    longest: result.longest,
+                    widthDays: result.longest - result.shortest,
+                    earliestDate: addDays(calcState.lmpDate, result.shortest),
+                    latestDate: addDays(calcState.lmpDate, result.longest)
+                };
+                variabilityDays = range.widthDays;
+            }
+        }
+
+        calcState.periodLength = periodLength;
+        calcState.avgCycleLength = avgCycleLength;
+        calcState.range = range;
+        calcState.rawDates = [raw1, raw2, raw3];
+        calcState.message = message;
+        calcState.refineOpen = true;
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'calculator_refined', {
+                page_path: window.location.pathname,
+                fields_used: fieldsUsed.length ? fieldsUsed.join(',') : '(none)',
+                variability_days: variabilityDays
+            });
+        }
+
+        renderResult(false);
+    }
     </script>
 </body>
 </html>

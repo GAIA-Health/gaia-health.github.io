@@ -18,6 +18,7 @@ document.addEventListener('click', function (e) {
   var location = link.closest('nav') ? 'navbar'
     : link.closest('.hero, .hero-section, #hero') ? 'hero'
     : link.closest('footer') ? 'footer'
+    : link.closest('#results') ? 'calculator_result'
     : 'page_body';
 
   if (href.indexOf('apps.apple.com') !== -1) {
