@@ -127,8 +127,16 @@ async function cmdSales(start, end) {
 }
 
 // ---- App Analytics reports (impressions / page views / downloads BY SOURCE) ----
-// Pulls from the ONE_TIME_SNAPSHOT request in ASC_ANALYTICS_REQUEST. The snapshot
-// generates within ~24-48h of creation; until then instances are empty.
+// Pulls from the request in ASC_ANALYTICS_REQUEST (currently the ONGOING one --
+// the one-time snapshot was deleted 2026-07-27 and never recreated, so only
+// ~37 days of history exist; use `sales` for anything longer).
+//
+// Report picking matters: "App Downloads" is the ONLY download-attribution
+// report (Download Type x Source Type). "Discovery and Engagement" has
+// Impression/Page view/Tap and NO downloads -- its Tap rows only ever carry
+// search/browse, which is not evidence that web referrals do not convert.
+// The Detailed variants are volume-suppressed to a fraction of reality and
+// their Campaign/Source Info columns are blank at our volume.
 
 async function apiGet(path) {
   const r = await fetch(BASE + path, { headers: { Authorization: `Bearer ${token()}` } });
@@ -150,31 +158,81 @@ async function cmdReport(nameSub, gran = 'WEEKLY') {
   console.log(`Report: ${rep.attributes.name} [${rep.attributes.category}] granularity=${gran}\n`);
   const insts = (await apiGet(`/v1/analyticsReports/${rep.id}/instances?filter[granularity]=${gran}&limit=200`)).data;
   if (!insts.length) { console.log('No instances yet — snapshot still generating (~24-48h). Re-run later.'); return; }
-  let header = null; const rows = [];
+  // ── Fetch every instance's rows, tagged with the instance processingDate ──
+  // ONGOING instances RESTATE prior days: each daily Discovery-and-Engagement
+  // instance carries a ~3-day window, and App Downloads re-emits earlier dates.
+  // Concatenating them blindly inflates every total ~3x, so we dedup below.
+  let header = null;
+  const perInstance = [];
   for (const inst of insts) {
+    const pd = inst.attributes.processingDate || inst.id;
+    const rows = [];
     const segs = (await apiGet(`/v1/analyticsReportInstances/${inst.id}/segments?limit=100`)).data;
     for (const s of segs) {
       const buf = Buffer.from(await (await fetch(s.attributes.url)).arrayBuffer());
       const txt = zlib.gunzipSync(buf).toString('utf8');
       const lines = txt.trim().split('\n');
       const delim = lines[0].includes('\t') ? '\t' : ',';
-      if (!header) header = lines[0].split(delim);
+      const h = lines[0].split(delim);
+      if (!header) header = h;
+      else if (h.join('|') !== header.join('|')) {
+        console.warn(`  ! column layout differs in instance ${pd}; skipping that segment`);
+        continue;
+      }
       for (const l of lines.slice(1)) rows.push(l.split(delim));
     }
+    perInstance.push({ pd, rows });
   }
+
+  // ── Dedup: for each Date, keep only rows from the LATEST instance holding it ──
+  const iDate = header ? header.findIndex((h) => /^date$/i.test(h)) : -1;
+  let rows = [];
+  if (iDate >= 0) {
+    const bestPd = new Map();
+    for (const { pd, rows: rs } of perInstance) {
+      for (const r of rs) {
+        const d = r[iDate];
+        if (!bestPd.has(d) || pd > bestPd.get(d)) bestPd.set(d, pd);
+      }
+    }
+    for (const { pd, rows: rs } of perInstance) {
+      for (const r of rs) if (bestPd.get(r[iDate]) === pd) rows.push(r);
+    }
+    const dropped = perInstance.reduce((n, i) => n + i.rows.length, 0) - rows.length;
+    console.log(`Instances: ${perInstance.length}  dates: ${bestPd.size}  restated rows dropped: ${dropped}`);
+  } else {
+    rows = perInstance.flatMap((i) => i.rows);
+    console.warn('! No "Date" column — cannot dedup restated rows; totals may be inflated.');
+  }
+
   console.log(`Columns: ${header.join(' | ')}`);
   console.log(`Rows: ${rows.length}`);
-  // Aggregate by "Source Type" if present (answers the ASO-share question).
+
+  // Aggregate by "Source Type", split by the row-kind column so we never add
+  // together things that are not the same thing. "App Downloads" mixes
+  // First-time download / Redownload / Auto-update; "Discovery and Engagement"
+  // mixes Impression / Page view / Tap. Summing across those is meaningless.
   const iSrc = header.findIndex((h) => /source type/i.test(h));
   const iCnt = header.findIndex((h) => /^(counts|impressions|unique devices|product page views|downloads)$/i.test(h));
+  const iKind = header.findIndex((h) => /^(download type|event)$/i.test(h));
   if (iSrc >= 0 && iCnt >= 0) {
-    const agg = {};
-    for (const r of rows) { const k = r[iSrc] || '(none)'; agg[k] = (agg[k] || 0) + (parseInt(r[iCnt], 10) || 0); }
-    const total = Object.values(agg).reduce((a, b) => a + b, 0) || 1;
-    console.log(`\nBy ${header[iSrc]} (sum of ${header[iCnt]}):`);
-    for (const [k, v] of Object.entries(agg).sort((a, b) => b[1] - a[1])) {
-      console.log(`  ${k.padEnd(28)} ${String(v).padStart(8)}  (${(v / total * 100).toFixed(1)}%)`);
+    const byKind = {};
+    for (const r of rows) {
+      const kind = iKind >= 0 ? (r[iKind] || '(blank)') : 'All rows';
+      const src = r[iSrc] || '(none)';
+      byKind[kind] = byKind[kind] || {};
+      byKind[kind][src] = (byKind[kind][src] || 0) + (parseInt(r[iCnt], 10) || 0);
     }
+    const kinds = Object.entries(byKind)
+      .map(([k, agg]) => [k, agg, Object.values(agg).reduce((a, b) => a + b, 0)])
+      .sort((a, b) => b[2] - a[2]);
+    for (const [kind, agg, total] of kinds) {
+      console.log(`\n${kind} — by ${header[iSrc]} (sum of ${header[iCnt]}), total ${total}:`);
+      for (const [k, v] of Object.entries(agg).sort((a, b) => b[1] - a[1])) {
+        console.log(`  ${k.padEnd(28)} ${String(v).padStart(8)}  (${(v / (total || 1) * 100).toFixed(1)}%)`);
+      }
+    }
+    if (iKind < 0) console.warn('\n! No Download Type/Event column found — rows may mix event kinds.');
   } else {
     console.log('\nFirst 10 rows:'); for (const r of rows.slice(0, 10)) console.log('  ' + r.join(' | '));
   }
