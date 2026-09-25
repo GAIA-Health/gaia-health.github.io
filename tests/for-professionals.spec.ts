@@ -61,7 +61,7 @@ test.describe('/for-professionals/ — desktop', () => {
 
     const hrefs = await ctas.evaluateAll((els) => els.map((el) => (el as HTMLAnchorElement).href));
     for (const href of hrefs) {
-      expect(href).toBe('https://app.go-go-gaia.com/pro/signup?utm_source=for-professionals');
+      expect(href).toBe('https://app.myveya.com/pro/signup?utm_source=for-professionals');
     }
   });
 

@@ -48,7 +48,7 @@ document.addEventListener('click', function (e) {
     }
   }
 
-  if (href.indexOf('app.go-go-gaia.com') !== -1) {
+  if (href.indexOf('app.go-go-gaia.com') !== -1 || href.indexOf('app.myveya.com') !== -1) {
     var webAppIntent = 'login';
     if (href.indexOf('mode=signup') !== -1) {
       webAppIntent = 'signup';
