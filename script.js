@@ -1,5 +1,5 @@
 /**
- * Go Go Gaia - Custom JavaScript
+ * Veya - Custom JavaScript
  * Modern interactive features for the women's health app website
  */
 

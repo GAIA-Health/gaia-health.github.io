@@ -1,5 +1,5 @@
 /**
- * Go Go Gaia — Analytics Event Tracking
+ * Veya — Analytics Event Tracking
  * 1. CTA clicks (download + login)
  * 2. Scroll depth (25%, 50%, 75%, 100%)
  * 3. Engaged reader (30s+ on page)

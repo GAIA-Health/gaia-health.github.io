@@ -1,5 +1,5 @@
 /**
- * Go Go Gaia — GA4 Consent Mode v2, geo-scoped
+ * Veya — GA4 Consent Mode v2, geo-scoped
  *
  * Google Consent Mode v2, not a hard load-gate. gtag.js loads on every page.
  * What differs by region is the DEFAULT consent state:
