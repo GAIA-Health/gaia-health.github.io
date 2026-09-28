@@ -70,7 +70,7 @@
       "@id": "https://www.go-go-gaia.com/privacy-policy.html#webpage",
       "url": "https://www.go-go-gaia.com/privacy-policy.html",
       "name": "Privacy Policy | Go Go Gaia",
-      "dateModified": "2026-08-05",
+      "dateModified": "2026-09-28",
       "publisher": {
         "@id": "https://www.go-go-gaia.com/#organization"
       }
@@ -120,7 +120,7 @@
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bold mb-3">Privacy Policy</h1>
                     <p class="lead">How Go Go Gaia collects, uses, and protects your information.</p>
-                    <p class="small text-muted">Version 1.4 &mdash; effective August 5, 2026</p>
+                    <p class="small text-muted">Version 1.5 &mdash; effective September 28, 2026</p>
                 </div>
 
                 <!-- At-a-glance summary -->
@@ -192,6 +192,7 @@
                         <li>LOINC-coded clinical lab data with reference ranges and interpretations</li>
                         <li>Lab provider name and test dates</li>
                         <li><strong>Apple Health Records:</strong> with your permission, we read lab result records (and only lab result records) from Apple Health Records to chart them over time. By default these records are read and displayed on your device only. They are sent to our servers only if you separately opt in to Health Records sync, which is off by default. You can turn sync off at any time, and delete every synced clinical record from our servers, in the app under Settings &rsaquo; Privacy &amp; Consent. Clinical records are never used for advertising, never shared with third parties, and never used to train AI models.</li>
+                        <li><strong>Sleep study data (optional):</strong> if you choose to upload a sleep study report or a scored sleep-stage file (such as an EDF+ hypnogram, a Compumedics Profusion or NSRR XML annotation file, a Luna/YASA annotation file, a Dreem Open Datasets scoring, or a per-epoch CSV), we extract the study's reported metrics (sleep stages, efficiency, and similar) and the study's own written interpretation, if the report includes one. For sleep-stage files such as EDF, we read only the file's header and stage-annotation data and then discard the file: the underlying brain, eye, muscle, and heart signal data is never stored, only the stages and summary values we extract. Sleep study report PDFs and images are stored the same way as your other uploaded lab documents. This is an optional feature, off unless you use it, and requires its own consent before your first upload. You can share a sleep study with a connected healthcare professional the same way you share other health data (see Section 2, &ldquo;For Treatment/Care Coordination&rdquo;); it is never shown to friends or made public. Deleting your account deletes all of it.</li>
                     </ul>
 
                     <h3 class="h6 mb-2">Genetic Data (beta)</h3>
@@ -254,7 +255,7 @@
                     <ul>
                         <li>Conversations with Veya AI about health topics</li>
                         <li>AI-learned health facts and recurring themes</li>
-                        <li>Vision analysis results (meal photos, lab result photos)</li>
+                        <li>Vision analysis results (meal photos, lab result photos, sleep study report photos)</li>
                     </ul>
 
                     <h3 class="h6 mb-2">Account &amp; Identity Data</h3>
@@ -273,7 +274,7 @@
                         <li>Display your health data on dashboards, charts, and trend analyses</li>
                         <li>Calculate health scores (Whole Health Score, readiness, regularity, adherence)</li>
                         <li>Generate cycle predictions, fertile window estimates, and phase recommendations</li>
-                        <li>Process uploaded lab result PDFs to extract structured health values</li>
+                        <li>Process uploaded lab result PDFs, sleep study reports, and sleep-stage files to extract structured health values</li>
                         <li>Provide AI-powered health insights through Veya</li>
                     </ul>
 
@@ -418,6 +419,7 @@
                         <li>You can withdraw at any time in Settings, and we will stop using your data for future training. Because training happens in batches, data already incorporated into a model before you withdraw cannot always be pulled back out of that model; withdrawing stops all future use.</li>
                         <li>Turning this off does not affect your access to any part of the app.</li>
                         <li>This setting does not cover genetic data. Genetic reports and raw DNA exports are included in training only under the separate, optional choice described in Section 1, &ldquo;Genetic Data (beta).&rdquo;</li>
+                        <li>This setting does not cover sleep study data either. If you upload a sleep study report or a scored sleep-stage file, pseudonymised data from it (never your name, email, upload dates, facility name, or the report's written interpretation) is used to help improve our sleep-staging models only if you separately opt in to that specific, optional research consent, off by default and revocable at any time in Settings.</li>
                     </ul>
                     <p><strong>External research:</strong> We do not currently use your data for external research, clinical studies, or population-level publications. If we ever offer the opportunity to participate in research conducted by us or in partnership with others, we will request your explicit, separate opt-in consent for each specific study &mdash; with full disclosure of the study's purpose, who is conducting it, what data will be used, and how to withdraw. You can decline research participation at any time without losing access to any app features.</p>
                     <p class="mb-0">For more detail on our optional AI features, see our <a href="ai-insights-terms.html">AI Insights Terms</a>.</p>
