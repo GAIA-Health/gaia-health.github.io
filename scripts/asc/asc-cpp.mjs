@@ -23,18 +23,36 @@
 //
 //   node scripts/asc/asc-cpp.mjs screenshots <CPP-NAME> <folder> [--apply] [--replace]
 //       Uploads the PNGs in <folder> (named "1_foo.png", "2_bar.png", ... — the
-//       leading number sets upload/display order) to the CPP's default-locale
-//       (en-US) screenshot set, via the reserve -> upload-bytes -> commit ->
-//       poll flow, then reorders to match the numeric prefixes. Without --apply
-//       it's a DRY RUN that prints exactly what it would do. If the set already
-//       has screenshots, it SKIPS (no duplicate upload) unless --replace is also
-//       given, which deletes the existing screenshots first (only under --apply).
+//       leading number sets upload/display order) to the CPP's screenshot set,
+//       via the reserve -> upload-bytes -> commit -> poll flow, then reorders
+//       to match the numeric prefixes. Without --apply it's a DRY RUN that
+//       prints exactly what it would do. If the set already has screenshots,
+//       it SKIPS (no duplicate upload) unless --replace is also given, which
+//       deletes the existing screenshots first (only under --apply).
+//       Targets the en-US locale by default; set ASC_SS_LOCALE=en-CA (etc) to
+//       target another localization — run once per locale to cover all of them.
 //       Display type is APP_IPHONE_67, confirmed by reading the live app-level
 //       6.9"/6.7" en-US screenshot set (1290x2796 shots are tagged APP_IPHONE_67,
 //       not e.g. APP_IPHONE_65) — don't assume, re-verify if Apple ever changes this.
+//       If the CPP's current version is already APPROVED/live (screenshots on
+//       a submitted version can't be deleted — 409 STATE_ERROR), this command
+//       automatically creates a new editable version first (--apply only;
+//       Apple clones the predecessor's localizations + screenshot sets
+//       forward onto it) and uploads there instead.
+//
+//   node scripts/asc/asc-cpp.mjs submit-cpp <CPP-NAME> [<CPP-NAME> ...] [--apply]
+//       Submits each named CPP's current PREPARE_FOR_SUBMISSION (draft)
+//       version for App Review via Apple's unified reviewSubmissions system.
+//       This is the SAME system used for app-binary review, but an
+//       appCustomProductPageVersion item does not touch or require an app
+//       version — confirmed empirically 2026-08-24. Reuses any existing OPEN
+//       reviewSubmission for the platform (only one may be open at a time)
+//       rather than creating a second one. Without --apply it's a dry run.
+//       Apple's CPP review is typically ~24h.
 //
 // A CPP cannot go live without screenshots. `sync` builds the text/shell;
-// `screenshots` handles the asset upload end-to-end (no more dragging into the ASC UI).
+// `screenshots` handles the asset upload end-to-end (no more dragging into the ASC UI);
+// `submit-cpp` sends a draft version to Apple for review.
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -226,6 +244,85 @@ async function setLocalization(versionId, locale, promotionalText) {
         relationships: {
           appCustomProductPageVersion: { data: { type: 'appCustomProductPageVersions', id: versionId } },
         },
+      },
+    },
+  });
+  return data;
+}
+
+// Create a new editable version for a CPP. Apple clones the predecessor's
+// localizations (promo text) AND screenshot sets (existing screenshot rows)
+// forward onto the new version — confirmed empirically 2026-08-24. Needed
+// because an APPROVED/live version's screenshots can't be deleted (409
+// STATE_ERROR "Can't Delete Screenshot After Submit for review").
+async function createCppVersion(cppId) {
+  const { data } = await api('/v1/appCustomProductPageVersions', {
+    method: 'POST',
+    body: {
+      data: {
+        type: 'appCustomProductPageVersions',
+        relationships: {
+          appCustomProductPage: { data: { type: 'appCustomProductPages', id: cppId } },
+        },
+      },
+    },
+  });
+  return data;
+}
+
+// ---- review submission (unified system, shared with app-binary review) ---
+// Confirmed empirically 2026-08-24: appCustomProductPageVersion is a valid
+// reviewSubmissionItems relationship, independent of any appStoreVersion —
+// submitting a CPP version does NOT touch or require an app binary version.
+// Only one OPEN (non-COMPLETE) reviewSubmission may exist per platform at a
+// time, so reuse an existing open one rather than creating a new one when
+// possible (an empty just-created one with 0 items can't be canceled — it
+// must be given >=1 item and submitted, or left as a pending draft).
+async function findOpenReviewSubmission(appId, platform = 'IOS') {
+  const { data } = await api(
+    `/v1/apps/${appId}/reviewSubmissions?limit=20&fields[reviewSubmissions]=platform,state,submittedDate`
+  );
+  return data.find((s) => s.attributes.platform === platform && s.attributes.state !== 'COMPLETE');
+}
+
+async function createReviewSubmission(appId, platform = 'IOS') {
+  const { data } = await api('/v1/reviewSubmissions', {
+    method: 'POST',
+    body: {
+      data: {
+        type: 'reviewSubmissions',
+        attributes: { platform },
+        relationships: { app: { data: { type: 'apps', id: appId } } },
+      },
+    },
+  });
+  return data;
+}
+
+async function addCppVersionToReviewSubmission(reviewSubmissionId, cppVersionId) {
+  const { data } = await api('/v1/reviewSubmissionItems', {
+    method: 'POST',
+    body: {
+      data: {
+        type: 'reviewSubmissionItems',
+        relationships: {
+          reviewSubmission: { data: { type: 'reviewSubmissions', id: reviewSubmissionId } },
+          appCustomProductPageVersion: { data: { type: 'appCustomProductPageVersions', id: cppVersionId } },
+        },
+      },
+    },
+  });
+  return data;
+}
+
+async function submitReviewSubmission(reviewSubmissionId) {
+  const { data } = await api(`/v1/reviewSubmissions/${reviewSubmissionId}`, {
+    method: 'PATCH',
+    body: {
+      data: {
+        type: 'reviewSubmissions',
+        id: reviewSubmissionId,
+        attributes: { submitted: true },
       },
     },
   });
@@ -454,15 +551,23 @@ async function cmdScreenshots(cppName, folder) {
   if (versions.length === 0) {
     throw new Error(`CPP "${cppName}" has no versions — run \`sync --apply\` first to create one.`);
   }
-  let version = versions[0];
   if (versions.length > 1) {
     console.log(`  ⚠ CPP has ${versions.length} versions:`);
     for (const v of versions) console.log(`      ${v.id}  state=${v.attributes.state}`);
-    const notReplaced = versions.find((v) => v.attributes.state !== 'REPLACED');
-    version = notReplaced || versions[versions.length - 1];
-    console.log(`    Using ${version.id} (state=${version.attributes.state}).`);
+  }
+  // Only a PREPARE_FOR_SUBMISSION version has screenshots that can be
+  // deleted/replaced. APPROVED/REPLACED/WAITING_FOR_REVIEW versions are
+  // read-only (see createCppVersion() comment) — a live/approved CPP needs a
+  // fresh version created before its screenshots can change.
+  let version = versions.find((v) => v.attributes.state === 'PREPARE_FOR_SUBMISSION');
+  if (version) {
+    console.log(`  Using editable version ${version.id} (state=${version.attributes.state}).`);
+  } else if (APPLY) {
+    version = await createCppVersion(cpp.id);
+    console.log(`  No editable version — created new version ${version.id} (state=${version.attributes.state}), cloned from the live version.`);
   } else {
-    console.log(`  Version ${version.id} (state=${version.attributes.state}).`);
+    console.log(`  No editable version exists — would CREATE a new version (dry run, nothing created).`);
+    version = versions[versions.length - 1];
   }
 
   // ---- localization: get or create --------------------------------------
@@ -552,6 +657,57 @@ async function cmdScreenshots(cppName, folder) {
   console.log('\nDone. Verify in the ASC UI before making the CPP visible.');
 }
 
+// Submit one or more CPPs' current editable (PREPARE_FOR_SUBMISSION) version
+// for App Review, via the unified reviewSubmissions system (shared with
+// app-binary review, but an appCustomProductPageVersion item does NOT touch
+// or require an app version — confirmed empirically 2026-08-24). Reuses any
+// existing OPEN reviewSubmission for the platform rather than creating a
+// second one (only one may be open at a time).
+async function cmdSubmitCpp(names) {
+  if (!names.length) {
+    throw new Error('Usage: submit-cpp <CPP-NAME> [<CPP-NAME> ...] [--apply]');
+  }
+  const appId = need('ASC_APP_ID');
+  const items = [];
+  for (const name of names) {
+    const cpp = await findCppByName(appId, name);
+    if (!cpp) throw new Error(`No CPP named "${name}" found for app ${appId}.`);
+    const versions = await listCppVersions(cpp.id);
+    const editable = versions.find((v) => v.attributes.state === 'PREPARE_FOR_SUBMISSION');
+    if (!editable) {
+      console.log(`  = "${name}": no PREPARE_FOR_SUBMISSION version — nothing to submit (already live or no draft exists).`);
+      continue;
+    }
+    console.log(`  "${name}" -> version ${editable.id} (state=${editable.attributes.state}) will be submitted.`);
+    items.push({ name, versionId: editable.id });
+  }
+  if (items.length === 0) {
+    console.log('\nNothing to submit.');
+    return;
+  }
+  if (!APPLY) {
+    console.log(`\nDry run only — would submit ${items.length} CPP version(s) above for review. Re-run with --apply.`);
+    return;
+  }
+
+  let submission = await findOpenReviewSubmission(appId, 'IOS');
+  if (submission) {
+    console.log(`\nReusing existing open reviewSubmission ${submission.id} (state=${submission.attributes.state}).`);
+  } else {
+    submission = await createReviewSubmission(appId, 'IOS');
+    console.log(`\nCreated reviewSubmission ${submission.id} (state=${submission.attributes.state}).`);
+  }
+
+  for (const item of items) {
+    await addCppVersionToReviewSubmission(submission.id, item.versionId);
+    console.log(`  + Added "${item.name}" version ${item.versionId} to the submission.`);
+  }
+
+  const result = await submitReviewSubmission(submission.id);
+  console.log(`\nSubmitted. reviewSubmission ${submission.id} state=${result.attributes.state} submittedDate=${result.attributes.submittedDate}.`);
+  console.log('Apple review for Custom Product Pages is typically ~24h.');
+}
+
 // ---- entry --------------------------------------------------------------
 
 const positional = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -560,12 +716,14 @@ try {
   if (cmd === 'audit') await cmdAudit();
   else if (cmd === 'sync') await cmdSync(rest[0] || 'scripts/asc/verticals.json');
   else if (cmd === 'screenshots') await cmdScreenshots(rest[0], rest[1]);
+  else if (cmd === 'submit-cpp') await cmdSubmitCpp(rest);
   else {
     console.log(
       'Commands:\n' +
       '  audit\n' +
       '  sync <config.json> [--apply]\n' +
       '  screenshots <CPP-NAME> <folder> [--apply] [--replace]\n' +
+      '  submit-cpp <CPP-NAME> [<CPP-NAME> ...] [--apply]\n' +
       'See header of this file for env setup.'
     );
     process.exit(1);

@@ -44,6 +44,16 @@ node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos --apply
 # If the set already has screenshots, `screenshots` SKIPS by default (no
 # duplicate upload). Pass --replace to delete the existing ones first:
 node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos --replace --apply
+
+# Other locales: set ASC_SS_LOCALE (default en-US). Run once per locale.
+ASC_SS_LOCALE=en-CA node scripts/asc/asc-cpp.mjs screenshots "PCOS" frames/out/cpp-pcos --replace --apply
+
+# 7) If the CPP's live version is already APPROVED, `screenshots --apply`
+#    auto-creates a fresh editable version first (Apple clones promo text +
+#    screenshot sets from the live version onto it) — you don't need to do
+#    this by hand. Once all locales/sizes are uploaded on that draft version,
+#    submit it for App Review (~24h, does NOT touch any app-binary version):
+node scripts/asc/asc-cpp.mjs submit-cpp "PCOS" "Perimenopause" --apply
 ```
 
 ## ⚠ CPP creation is currently broken in Apple's API (2026-07-20)
