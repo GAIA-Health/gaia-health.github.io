@@ -109,4 +109,4 @@ Present findings as:
 5. **Opportunities** (CTR improvements, new content ideas from query data, calculator tools to build)
 6. **Maintenance items** (sitemap updates, date fixes)
 
-Reference the previous audit at `seo-audit-march-2026.md` for baseline comparison if it exists.
+Reference the previous audit at `docs-private/seo-audit-march-2026.md` for baseline comparison if it exists.

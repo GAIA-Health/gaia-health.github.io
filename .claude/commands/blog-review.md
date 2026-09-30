@@ -136,7 +136,7 @@ Scan for these AI-sounding constructs:
 - [ ] Post card added to blog/index.html in appropriate category section
 
 ### Query Targeting
-Check `seo-audit-march-2026.md` (if it exists) for:
+Check `docs-private/seo-audit-march-2026.md` (if it exists) for:
 - What queries this topic should target
 - What position/impressions existing content has
 - Whether this post might cannibalize an existing page

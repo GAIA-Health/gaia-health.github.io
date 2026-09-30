@@ -4,11 +4,11 @@ description: Check current performance against the Q3 2026 goals (100k impressio
 
 # Goal Check for Go Go Gaia
 
-You are checking the website's progress against the Q3 2026 goals locked in `comparison-page-conversion-study.md`. The deadline is **2026-08-31**. Run all the steps below and produce one consolidated progress report.
+You are checking the website's progress against the Q3 2026 goals locked in `docs-private/comparison-page-conversion-study.md`. The deadline is **2026-08-31**. Run all the steps below and produce one consolidated progress report.
 
 ## 1. Read the locked goals
 
-Read `comparison-page-conversion-study.md` and locate the "## Goals (locked ...)" section. Extract:
+Read `docs-private/comparison-page-conversion-study.md` and locate the "## Goals (locked ...)" section. Extract:
 - The deadline (currently 2026-08-31)
 - The three target metrics with their numerical goals
 - The "Stop and reassess if" checkpoint date
