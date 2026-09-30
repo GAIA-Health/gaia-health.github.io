@@ -90,3 +90,4 @@ scripts/asc/*.pem
 
 # local working board — never commit (internal strategy)
 TODOS.md
+*.pem
