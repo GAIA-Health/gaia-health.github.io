@@ -92,11 +92,20 @@ article header h1 {
 }
 
 .navbar-brand {
+    display: inline-flex;
+    align-items: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-light) !important;
     letter-spacing: 1px;
+}
+
+/* White transparent mark sits directly on the purple bar; sized to the wordmark cap height */
+.navbar-brand img {
+    height: 1.6rem;
+    width: auto;
+    vertical-align: middle;
 }
 
 .navbar-nav .nav-link {
