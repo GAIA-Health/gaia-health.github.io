@@ -13,6 +13,7 @@
 //   { "descriptionFile": "metadata/description-en-US.txt",
 //     "descriptionLocales": ["en-US", ...],          // locales that get the description
 //     "subtitle": { "en-US": "..." },                 // ≤30 chars each
+//     "whatsNew": { "en-US": "..." },                 // per-locale release notes (≤4000)
 //     "keywords": { "en-US": "..." } }                // ≤100 chars each; missing locales are created
 //
 // Env (scripts/asc/.env): ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH, ASC_APP_ID.
@@ -98,6 +99,7 @@ async function cmdApply(configFile, apply) {
   if (description && description.length > 4000) throw new Error(`Description ${description.length} > 4000`);
   if (cfg.promotionalText && cfg.promotionalText.length > 170) throw new Error(`Promo ${cfg.promotionalText.length} > 170`);
   for (const [loc, s] of Object.entries(cfg.subtitle || {})) if (s.length > 30) throw new Error(`Subtitle ${loc} ${s.length} > 30`);
+  for (const [loc, w] of Object.entries(cfg.whatsNew || {})) if (w.length > 4000) throw new Error(`whatsNew ${loc} ${w.length} > 4000`);
   for (const [loc, k] of Object.entries(cfg.keywords || {})) if (k.length > 100) throw new Error(`Keywords ${loc} ${k.length} > 100`);
 
   const v = await editableVersion();
@@ -109,26 +111,28 @@ async function cmdApply(configFile, apply) {
   console.log(`Editable version ${v.attributes.versionString}${apply ? '' : ' [DRY RUN]'}\n`);
   if (description) console.log(`Description: ${description.length}/4000 chars → locales: ${(cfg.descriptionLocales || []).join(', ')}\n`);
 
-  const targetLocales = [...new Set([...Object.keys(cfg.keywords || {}), ...Object.keys(cfg.subtitle || {}), ...(cfg.descriptionLocales || []), ...(cfg.promoLocales || [])])];
+  const targetLocales = [...new Set([...Object.keys(cfg.keywords || {}), ...Object.keys(cfg.subtitle || {}), ...(cfg.descriptionLocales || []), ...(cfg.promoLocales || []), ...Object.keys(cfg.whatsNew || {})])];
   for (const loc of targetLocales) {
     const wantDesc = description && (cfg.descriptionLocales || []).includes(loc);
     const wantPromo = cfg.promotionalText && (cfg.promoLocales || []).includes(loc);
     const kw = cfg.keywords?.[loc];
+    const wn = cfg.whatsNew?.[loc];
     const sub = cfg.subtitle?.[loc];
 
     // --- version localization (keywords + description + promo) ---
     let vl = vls.find((l) => l.attributes.locale === loc);
-    if (kw || wantDesc || wantPromo) {
+    if (kw || wantDesc || wantPromo || wn) {
       const attrs = {};
       if (kw && kw !== vl?.attributes.keywords) attrs.keywords = kw;
       if (wantDesc && description !== vl?.attributes.description) attrs.description = description;
       if (wantPromo && cfg.promotionalText !== vl?.attributes.promotionalText) attrs.promotionalText = cfg.promotionalText;
+      if (wn && wn !== vl?.attributes.whatsNew) attrs.whatsNew = wn;
       if (!vl) {
         // new locale: copy en-US conversion fields so the localization is submission-complete
         Object.assign(attrs, {
           description: wantDesc ? description : enUSvl.description,
           promotionalText: wantPromo ? cfg.promotionalText : enUSvl.promotionalText,
-          supportUrl: enUSvl.supportUrl, marketingUrl: enUSvl.marketingUrl,
+          whatsNew: wn, supportUrl: enUSvl.supportUrl, marketingUrl: enUSvl.marketingUrl,
         });
         console.log(`[${loc}] CREATE version localization (keywords ${kw ? kw.length : 0}/100, desc ${(attrs.description || '').length}/4000)`);
         if (apply) await api('POST', '/v1/appStoreVersionLocalizations', {
