@@ -4246,3 +4246,11 @@ body::after {
 .how-it-works-section .phone-frame::before {
     display: none;
 }
+
+/* Images carry intrinsic width/height attributes (prevents layout shift);
+   this keeps them responsive. Scoped so height-only attribute images
+   (e.g. 30px logos) are not stretched. */
+img[width][height] {
+    max-width: 100%;
+    height: auto;
+}
