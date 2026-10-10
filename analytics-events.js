@@ -33,6 +33,7 @@ document.addEventListener('click', function (e) {
       gtag('event', 'download_click', {
         link_text: text,
         link_location: location,
+        cta_placement: link.getAttribute('data-cta-placement') || location,
         page_path: window.location.pathname,
         campaign_token: ctMatch ? decodeURIComponent(ctMatch[1]) : '(none)'
       });

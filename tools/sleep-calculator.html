@@ -1032,10 +1032,49 @@
 
         const resultsEl = document.getElementById('results');
         resultsEl.innerHTML = html;
+        showAppHandoff(`Your best ${mode === 'wake' ? 'bedtime' : 'wake time'} is ${heroTime}.`);
         resultsEl.classList.add('show');
         document.getElementById('ctaInline').style.display = 'block';
         resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     </script>
+<script>
+/* App handoff card: shown under the result only after a calculation. Rename the app here. */
+var APP_HANDOFF = {
+    brand: 'Veya',
+    appUrl: 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8',
+    tail: "",
+    explain: "{brand} tracks sleep alongside your cycle and symptoms, and syncs sleep from Apple Watch, Oura Ring and Garmin.",
+    guideUrl: '../blog/period-tracker-that-tracks-sleep.html'
+};
+function showAppHandoff(headline) {
+    var results = document.getElementById('results');
+    var old = document.getElementById('appHandoff');
+    if (old) old.remove();
+    var anchor = results && results.querySelector('.result-card');
+    if (!anchor || !headline) return;
+    var card = document.createElement('div');
+    card.className = 'app-handoff';
+    card.id = 'appHandoff';
+    var h = document.createElement('h3');
+    h.textContent = headline + (APP_HANDOFF.tail ? ' ' + APP_HANDOFF.tail : '');
+    var p = document.createElement('p');
+    p.textContent = APP_HANDOFF.explain.replace('{brand}', APP_HANDOFF.brand);
+    var a = document.createElement('a');
+    a.className = 'app-handoff-btn';
+    a.href = APP_HANDOFF.appUrl;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('data-cta-placement', 'tool_result');
+    a.innerHTML = '<i class="bi bi-apple me-1"></i>';
+    a.appendChild(document.createTextNode('Get ' + APP_HANDOFF.brand + ' on the App Store'));
+    var g = document.createElement('a');
+    g.className = 'app-handoff-guide';
+    g.href = APP_HANDOFF.guideUrl;
+    g.textContent = 'Read the related guide \u2192';
+    card.appendChild(h); card.appendChild(p); card.appendChild(a); card.appendChild(g);
+    anchor.insertAdjacentElement('afterend', card);
+}
+</script>
 </body>
 </html>
