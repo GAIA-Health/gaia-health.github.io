@@ -17,8 +17,7 @@ gaia-health.github.io/
 │   ├── index.html        # Blog landing page
 │   ├── cycle-syncing-guide.html
 │   ├── habit-tracking-success.html
-│   ├── mood-tracking-benefits.html
-│   └── pregnancy-wellness-tips.html
+│   └── mood-tracking-benefits.html
 └── images/               # App screenshots and assets
     └── [various app screenshots]
 ```
