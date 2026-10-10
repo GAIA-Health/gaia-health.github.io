@@ -152,7 +152,7 @@
       "@id": "https://www.go-go-gaia.com/encyclopedia/hrv-rmssd.html#webpage",
       "url": "https://www.go-go-gaia.com/encyclopedia/hrv-rmssd.html",
       "name": "HRV RMSSD: The Beat-to-Beat HRV Measure | Veya Encyclopedia",
-      "dateModified": "2026-08-08",
+      "dateModified": "2026-10-09",
       "publisher": {
         "@id": "https://www.go-go-gaia.com/#organization"
       }
@@ -208,7 +208,7 @@
                 <!-- 1. Term + one-line definition (40-60 words, standalone citable) -->
                 <header class="mb-4">
                     <h1 class="display-5 fw-bold mb-3">HRV RMSSD</h1>
-                    <p class="text-muted small mb-3">Biometrics &amp; Vitals &middot; Reviewed August 2026</p>
+                    <p class="text-muted small mb-3">Biometrics &amp; Vitals &middot; Last reviewed October 9, 2026</p>
                 </header>
 
                 <div class="definition-box mb-4">
@@ -220,8 +220,16 @@
 
                 <!-- 2. What it measures / how it's measured -->
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">What RMSSD Measures</h2>
+                    <h2 class="h3 fw-bold mb-3">What does RMSSD measure?</h2>
                     <p>The name spells out the math. Take the time gap between each pair of consecutive heartbeats, find the differences between successive gaps, square them, average them, and take the square root. That calculation makes RMSSD sensitive to fast beat-to-beat changes, and those fast changes mostly come from the vagus nerve, the main channel of the parasympathetic "rest and digest" system. That's why RMSSD is the primary time-domain measure for estimating vagally mediated HRV.<sup><a href="#ref1" rel="noopener">[1]</a></sup> It's a different calculation from SDNN, the overnight HRV number most wearables report, which is a standard deviation taken over hours and reflects broader autonomic activity. The two use different math on different time windows, and values from recordings of different lengths aren't interchangeable, so an RMSSD spot check and an overnight SDNN number should never be compared directly.<sup><a href="#ref1" rel="noopener">[1]</a></sup> The <a href="hrv.html">HRV entry</a> covers the SDNN side.</p>
+
+                                        <div class="table-responsive mt-4">
+                        <table class="table table-bordered table-sm">
+                            <caption class="small text-muted">RMSSD and SDNN compared</caption>
+                            <thead><tr><th scope="col"></th><th scope="col">RMSSD</th><th scope="col">SDNN</th></tr></thead>
+                            <tbody><tr><th scope="row">Calculation</th><td>Square root of the average squared difference between successive heartbeat intervals<sup><a href="#ref1" rel="noopener">[1]</a></sup></td><td>Standard deviation of the intervals<sup><a href="#ref1" rel="noopener">[1]</a></sup></td></tr><tr><th scope="row">What it reflects</th><td>Fast beat-to-beat changes, mostly vagally mediated<sup><a href="#ref1" rel="noopener">[1]</a></sup></td><td>Broader autonomic activity<sup><a href="#ref1" rel="noopener">[1]</a></sup></td></tr><tr><th scope="row">Typical window</th><td>Short spot check; a 10-second recording produced a valid value in one 3,387-adult study<sup><a href="#ref3" rel="noopener">[3]</a></sup></td><td>Hours, as in the overnight number most wearables report<sup><a href="#ref1" rel="noopener">[1]</a></sup></td></tr><tr><th scope="row">Ultra-short recordings</th><td>Held accuracy better than SDNN<sup><a href="#ref3" rel="noopener">[3]</a></sup></td><td>Less accurate in ultra-short recordings<sup><a href="#ref3" rel="noopener">[3]</a></sup></td></tr></tbody>
+                        </table>
+                    </div>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">How It's Measured</h3>
                     <p>RMSSD comes from a short recording of beat-to-beat intervals, captured by an ECG, a chest strap, or a smartphone camera pressed against a fingertip. The camera method holds up surprisingly well: a 2017 study comparing smartphone photoplethysmography against a Polar chest strap and ECG found near-perfect correlations with the ECG reference and only trivial differences.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Short is genuinely enough for this measure. A validation study in 3,387 adults found a single 10-second recording already produced a valid RMSSD, and RMSSD held its accuracy in ultra-short recordings better than SDNN did.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
@@ -229,7 +237,7 @@
 
                 <!-- 3. Why people track it -->
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">Why People Track RMSSD</h2>
+                    <h2 class="h3 fw-bold mb-3">Why do people track RMSSD?</h2>
                     <p>RMSSD gives you a parasympathetic reading in the moment, without waiting for a night of wearable data. That makes it the natural measure for on-demand spot checks between overnight numbers. A single short reading is noisier than an overnight average, so it's most useful watched as a trend across days rather than judged one reading at a time.</p>
                     <p>Vagally mediated HRV also shifts across the menstrual cycle, dropping from the follicular to the luteal phase. For how that pattern plays out alongside resting heart rate, see <a href="../blog/hrv-resting-heart-rate-cycle.html">HRV and Resting Heart Rate Across Your Cycle</a>.</p>
                 </section>
@@ -329,7 +337,7 @@
                 </section>
 
                 <!-- Methodology / review-date line, per §3 sourcing standard -->
-                <p class="small text-muted border-top pt-3">Sourced from peer-reviewed research and, for basic mechanism claims, established references like NIH and StatPearls. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed August 2026. See our full <a href="index.html">methodology on the Encyclopedia hub</a>.</p>
+                <p class="small text-muted border-top pt-3">Sourced from peer-reviewed research and, for basic mechanism claims, established references like NIH and StatPearls. Every citation above is checked to confirm it resolves to a real source and supports the sentence it's attached to. Last reviewed October 9, 2026. See our full <a href="index.html">methodology on the Encyclopedia hub</a>.</p>
 
             </div>
         </article>
