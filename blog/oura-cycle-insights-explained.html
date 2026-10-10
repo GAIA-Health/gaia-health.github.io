@@ -49,7 +49,7 @@
       "description": "How Oura's Cycle Insights and Readiness Score actually work: finger temperature deviation, cycle phase detection, and what each score can and can't tell you.",
       "image": "https://www.go-go-gaia.com/images/cycle/Biometrics_Throughout_Menstrual_Cycle.png",
       "datePublished": "2026-08-05",
-      "dateModified": "2026-08-05",
+      "dateModified": "2026-10-09",
       "author": {
         "@type": "Organization",
         "name": "Veya Team"
@@ -70,59 +70,67 @@
     <!-- FAQ Schema for Rich Snippets -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does Oura's Cycle Insights feature actually measure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cycle Insights reads your nighttime finger temperature as a deviation from your own personal baseline, not an absolute number. Oura builds that baseline over your first couple of weeks of wear, then watches for the sustained rise that follows ovulation to estimate cycle phase, predict your next period, and flag a fertile window. It does not measure estrogen, progesterone, or LH directly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is my Oura cycle insight late or delayed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cycle Insights needs several nights of ring wear to confirm a sustained temperature shift rather than one warm night. A missed night of wear, a new ring still building its baseline, alcohol, illness, or a disrupted sleep schedule can all delay when the shift is confirmed. Ovulation detection is retrospective by design, so an estimate always lands after the fact, not in real time."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does body temperature raise or lower the Oura Readiness Score?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Body temperature only contributes to Readiness when it's abnormal, meaning it can lower the score but never boost it. That's different from contributors like HRV Balance or Sleep Balance, which move the score in both directions. A luteal-phase temperature rise that's within your normal cyclical pattern usually has a small or no effect."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Oura tell me exactly when I ovulated?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oura estimates a fertile window and flags the post-ovulation temperature shift, but it can't pinpoint the exact day with certainty the way a blood test or urine LH test can. The temperature rise confirms that ovulation likely already happened, usually a day or two earlier, rather than predicting it in advance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What's the difference between Cycle Insights and the Readiness Score?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cycle Insights is specifically about menstrual cycle phase, period prediction, and the fertile window, built mainly from temperature deviation. Readiness is a broader daily score built from sleep, HRV Balance, Activity Balance, Recovery Index, and temperature together, meant to reflect how recovered you are that day. Cycle phase is one input into Readiness, not the other way around."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Oura's cycle tracking accurate enough to use for birth control?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oura's Cycle Insights are informational, not a contraceptive product. Accuracy also depends on consistent overnight wear, since a missed night breaks the continuous temperature stream the algorithm relies on. If you need a cleared method, that's a conversation for your doctor, not a wearable feature."
-          }
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Oura's Cycle Insights feature actually measure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cycle Insights reads your nighttime skin temperature as a deviation from your own baseline, not an absolute number. Oura builds that baseline over your first couple of weeks of wear, and uses the deviations to track the follicular and luteal phases, predict periods and flag a fertile window. It does not measure estrogen, progesterone or LH directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you read body temperature on Oura Ring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oura shows it as a plus or minus figure against your personal baseline. The closer it is to 0.0, the closer your skin temperature is to your long-term average. The daily value is the average of your readings from the previous night, and the Trend view uses a three-day weighted average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my Oura cycle insight late or delayed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oura says confirming ovulation takes around 3-5 days based on temperature patterns, and a new cycle is recognized only after at least 12 days have passed since your last period start. A new or replacement ring also needs time to re-establish your temperature baseline, which Oura says can take a few weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does body temperature raise or lower the Oura Readiness Score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oura says Body Temperature only contributes to your scores when your average is abnormal, so it can lower the Readiness Score but cannot raise it. Other contributors, such as HRV Balance, compare you with your own averages over longer windows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Oura tell me exactly when I ovulated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Oura estimates a fertile window and confirms ovulation from temperature patterns after the fact, which it says takes around 3-5 days. In a pilot study, the best-performing algorithm detected ovulations with a sensitivity of 83.3% within a window from 3 days before to 2 days after the urine-test-verified ovulation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Cycle Insights and the Readiness Score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cycle Insights is about cycle phase, period prediction and the fertile window, built from temperature deviations. Readiness is a broader daily score built from contributors like Resting Heart Rate, HRV Balance, Body Temperature, Recovery Index, sleep and activity. Temperature feeds both, but in Readiness it can only lower the score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Oura's cycle tracking accurate enough to use for birth control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Oura says fertile window predictions should not be used as a form of birth control. If you need a contraceptive method, that's a conversation for your doctor, not a wearable feature."
+      }
     }
+  ]
+}
     </script>
     <script type="application/ld+json">
     {
@@ -227,14 +235,15 @@
                     <div class="d-flex gap-3 text-muted small mb-4">
                         <span>By Veya Team</span>
                         <span><i class="bi bi-calendar-event me-1"></i> August 5, 2026</span>
+                        <span><i class="bi bi-arrow-repeat me-1"></i> Last reviewed October 9, 2026</span>
                         <span><i class="bi bi-clock me-1"></i> 10 min read</span>
                     </div>
                 </header>
 
                 <div class="alert alert-light border p-4 mb-4">
                     <h2 class="h5 fw-bold mb-3">Quick Answer: How Oura's Cycle and Readiness Scores Work</h2>
-                    <p class="mb-3">Cycle Insights is built on finger temperature. Oura's ring samples your skin temperature continuously overnight, averages it, and reports it as a deviation from your own baseline rather than an absolute reading.<sup><a href="#ref1" rel="noopener">[1]</a></sup> After ovulation, that average temperature climbs and stays up, and Oura uses the sustained rise to mark a likely cycle phase shift, refine period predictions, and flag a fertile window.</p>
-                    <p class="mb-0">Readiness is a separate, broader daily score. It combines temperature with sleep, HRV Balance, Activity Balance, and Recovery Index.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Temperature is unusual among Readiness contributors: it can only pull the score down when it's abnormal, never push it up.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Neither score reads a hormone directly. Both are inferences from physical signals.</p>
+                    <p class="mb-3">Oura measures your average skin temperature from the finger while you sleep and shows it as a plus or minus deviation from your own baseline; closer to 0.0 means closer to your long-term average.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Cycle Insights uses those deviations to track the follicular and luteal phases, predict periods and flag a fertile window.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
+                    <p class="mb-0">Readiness is a separate, broader daily score built from several contributors, including Resting Heart Rate, HRV Balance, Body Temperature, Recovery Index, Sleep, Sleep Balance and activity measures.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Temperature only contributes when it is outside your normal range, so it can lower the score but not raise it.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Neither score reads a hormone directly. Both are inferences from physical signals.</p>
                 </div>
 
                 <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content about how the technology works, not medical advice. For personal or fertility concerns, please consult your doctor. Veya is not affiliated with Oura Health Oy.</p>
@@ -245,65 +254,77 @@
                 </div>
 
                 <section class="mb-5">
-                    <p>Open the Oura app during your luteal phase and you'll usually see two things pointing the same direction: a cycle insight noting a temperature shift, and a Readiness Score that's a few points lower than usual. It can look like the ring "knows" you're mid-cycle and adjusts your recovery number for it. What's actually happening is narrower and worth understanding, especially if you're trying to decide how much weight to put on either number.</p>
+                    <p>Open the Oura app during your luteal phase and you may see two things pointing the same direction: a cycle insight noting a temperature shift, and a Readiness Score that's a little lower than usual. It can look like the ring "knows" you're mid-cycle and adjusts your recovery number for it. What's actually happening is narrower and worth understanding, especially if you're trying to decide how much weight to put on either number.</p>
 
                     <p>This page is a companion to our broader <a href="how-wearables-track-your-cycle.html">explainer on how wearables detect your cycle</a>, which covers the same baseline-and-deviation mechanism across Oura, Apple Watch, and Natural Cycles. This one goes deeper on Oura specifically: what Cycle Insights measures, how Readiness is built, and where the two overlap and diverge.</p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">The Sensor: Finger Temperature, Not Core Temperature</h2>
+                    <h2 class="h3 fw-bold mb-3">How do you read body temperature on Oura Ring?</h2>
 
-                    <p>Oura's temperature sensor sits at the finger, inside the ring, which places it closer to a stable reading than a wrist-worn sensor exposed to open air.<sup><a href="#ref1" rel="noopener">[1]</a></sup> It samples continuously while you sleep and rolls that into one nightly average.</p>
+                    <p>In the Oura app, body temperature appears as a plus or minus figure against your personal baseline, not as an absolute reading. Oura says the closer the reading is to 0.0, the closer your current skin temperature is to your long-term average.<sup><a href="#ref3" rel="noopener">[3]</a></sup> The daily value is the average of your skin temperature readings from the previous night. You can find it by opening Readiness from the Today or Vitals tab and selecting Body Temperature under Key Metrics.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
 
-                    <p>Oura doesn't report that average as a raw number in the app. It reports it as a deviation: how far tonight's average sits from your personal baseline.<sup><a href="#ref4" rel="noopener">[4]</a></sup> The company calculates that baseline during your first couple of weeks of wear, then keeps adjusting it as it collects more nights. That's the same baseline-and-deviation logic every temperature-based cycle feature runs on, whatever brand is on the box.</p>
+                    <p>Oura calculates your normal temperature during the first couple of weeks you wear the ring, then adjusts the baseline as needed. In the Trend view, each date shows a weighted average over a three-day window, with recent days weighted more.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Oura says a significant deviation from baseline can indicate a change in your system, such as illness or a change in your menstrual cycle, and it flags readings that fall outside your normal range, above or below 0.0.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
 
-                    <p>The practical result: your app doesn't tell you "98.6°F." It tells you "+0.4°F above your baseline," which is a more useful number for spotting a cyclical shift than an absolute reading would be.</p>
+                    <p>That's the same baseline-and-deviation logic every temperature-based cycle feature runs on. A plus-or-minus number is a more useful way to spot a cyclical shift than an absolute reading would be.</p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">Cycle Insights: How Oura Reads Your Phase</h2>
+                    <h2 class="h3 fw-bold mb-3">How does Oura Cycle Insights read your cycle phase?</h2>
 
-                    <p>Cycle Insights layers cycle-specific logic on top of the temperature deviation stream. The core signal is the same post-ovulation rise covered in our wearables explainer: after the corpus luteum forms, <a href="../encyclopedia/progesterone.html">progesterone</a> raises your resting temperature, and it stays elevated through the luteal phase.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
+                    <p>Oura says Cycle Insights uses temperature deviations to track, predict and visualize your monthly cycle, and that it's available to Gen3 or later members with an active membership.<sup><a href="#ref4" rel="noopener">[4]</a></sup> The underlying signal is the post-ovulation rise: in a pilot study of 22 women wearing the Oura ring, nocturnal skin temperature was higher in the luteal phase than the follicular phase, by 0.30 &deg;C on average.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Progesterone is behind that rise (see our <a href="../encyclopedia/progesterone.html">progesterone entry</a>).</p>
 
-                    <p>Oura uses the timing and shape of that rise to do three things:</p>
+                    <p>Oura describes three things it does with that signal:</p>
                     <ul>
-                        <li><strong>Estimate cycle phase.</strong> A sustained temperature rise suggests you've moved into the luteal phase. A drop back down ahead of bleeding suggests your period is close.</li>
-                        <li><strong>Refine period predictions.</strong> Temperature data supplements the calendar-based prediction built from your logged cycle history, tightening the window over time.</li>
-                        <li><strong>Flag a fertile window.</strong> Because the temperature rise confirms ovulation after it happened, the fertile window itself is estimated from cycle statistics, not from a live hormone reading.</li>
+                        <li><strong>Track the two main phases.</strong> Cycle Insights tracks the follicular and luteal phases.<sup><a href="#ref4" rel="noopener">[4]</a></sup></li>
+                        <li><strong>Predict periods.</strong> You can see period predictions for the next 12 months, using your nightly average body temperature along with other biosignals like HRV.<sup><a href="#ref4" rel="noopener">[4]</a></sup></li>
+                        <li><strong>Flag a fertile window.</strong> Oura's fertile window spans seven days, from five days before ovulation through the day after, and it says confirming ovulation takes around 3-5 days based on temperature patterns.<sup><a href="#ref4" rel="noopener">[4]</a></sup></li>
                     </ul>
 
-                    <p>None of this requires you to log a single symptom. But logging your period start date does help, because it gives the algorithm a fixed point to calibrate predictions against rather than relying on temperature alone.</p>
+                    <p>Setup starts with a short questionnaire about your last period date and typical cycle length.<sup><a href="#ref4" rel="noopener">[4]</a></sup> If you use hormonal contraception, Oura says the phases and fertile window aren't relevant, so you'll only see period predictions.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">Readiness Score: What Actually Feeds It</h2>
+                    <h2 class="h3 fw-bold mb-3">What feeds the Oura Readiness Score?</h2>
 
                     <p>Readiness is a different score with a different job. It's meant to summarize how recovered your body is on a given day, and it draws from several contributors, not just temperature:<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <ul>
-                        <li><strong>Sleep</strong> from the previous night.</li>
-                        <li><strong>Sleep Balance</strong>, your sleep debt over roughly the past two weeks against your baseline.</li>
-                        <li><strong>HRV Balance</strong>, comparing your recent two-week <a href="../encyclopedia/hrv.html">HRV</a> trend to your longer three-month average.</li>
-                        <li><strong>Recovery Index</strong>, how long it took your heart rate to settle to baseline after you fell asleep.</li>
-                        <li><strong>Activity Balance</strong>, whether recent activity has been too much, too little, or about right relative to your pattern.</li>
-                        <li><strong>Body temperature</strong>, but only when it's abnormal.</li>
+                        <li><strong>Resting Heart Rate</strong>, your lowest heart rate from the previous night against your long-term average.</li>
+                        <li><strong>HRV Balance</strong>, your average <a href="../encyclopedia/hrv.html">HRV</a> over the past 14 days against your three-month average, with recent days weighted more.</li>
+                        <li><strong>Body Temperature</strong>, the previous night's temperature against your long-term nighttime average.</li>
+                        <li><strong>Recovery Index</strong>, how long you sleep after your heart rate reaches its lowest point overnight.</li>
+                        <li><strong>Sleep</strong> and <strong>Sleep Balance</strong>, your total sleep against your baseline and your sleep debt over the past two weeks.</li>
+                        <li><strong>Previous Day Activity</strong> and <strong>Activity Balance</strong>, your recent activity against your long-term levels.</li>
                     </ul>
 
-                    <p>That last point is worth sitting with. Oura has said temperature is asymmetric among Readiness contributors: it can lower your score when your average is running high, but it doesn't add points when temperature is simply normal for you.<sup><a href="#ref3" rel="noopener">[3]</a></sup> A luteal-phase rise that fits your typical cyclical pattern often barely moves Readiness at all. A rise that's unusually large, or shows up outside the pattern you'd expect, is more likely to pull the score down, the same way a fever would.</p>
+                    <p>Oura says the temperature contributor only contributes to your scores when your average body temperature is abnormal, so it can lower your Readiness Score but not raise it.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Oura describes "abnormal" as outside your own normal range, not a fixed number. That means a luteal-phase rise that fits your own pattern may barely register, while a rise that falls outside your usual range is more likely to be flagged.</p>
 
-                    <h3 class="h4 fw-semibold mt-4 mb-3">Why Readiness Can Dip Around Ovulation Even Without a "Cycle" Reason</h3>
+                    <h3 class="h4 fw-semibold mt-4 mb-3">Why can Readiness dip in the luteal phase?</h3>
 
-                    <p>HRV tends to run lower in the luteal phase, and <a href="../encyclopedia/resting-heart-rate.html">resting heart rate</a> tends to run a little higher, both linked to rising progesterone.<sup><a href="#ref5" rel="noopener">[5]</a></sup> Since HRV Balance is a direct Readiness contributor, a normal luteal-phase HRV dip can show up as a slightly lower Readiness Score even when nothing is actually wrong. That's the score doing its job correctly. It's registering a real physiological shift, just not necessarily one that means you're under-recovered in the way the score is usually used to flag.</p>
+                    <p>In a study that tracked healthy women with Oura rings across a full cycle, nocturnal heart rate and temperature were higher in the mid- and late-luteal phases than at menses, and HRV (rMSSD) tended to be lower.<sup><a href="#ref6" rel="noopener">[6]</a></sup> Two within-person studies also found that higher-than-usual progesterone predicted lower-than-usual HRV.<sup><a href="#ref5" rel="noopener">[5]</a></sup> Since HRV Balance is a Readiness contributor, a luteal-phase HRV dip can show up as a slightly lower Readiness Score even when nothing is wrong. The score is registering a real physiological shift, just not necessarily under-recovery.</p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">What These Scores Can't Tell You</h2>
+                    <h2 class="h3 fw-bold mb-3">How do Cycle Insights and Readiness differ?</h2>
+                    <p>Cycle Insights is about where you are in your cycle. Readiness is about how recovered you are today. They share the temperature signal but use it differently.</p>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered table-sm">
+                            <caption class="small text-muted">Oura Cycle Insights and Readiness compared</caption>
+                            <thead><tr><th scope="col"></th><th scope="col">Cycle Insights</th><th scope="col">Readiness Score</th></tr></thead>
+                            <tbody><tr><th scope="row">What it is for</th><td>Tracking follicular and luteal phases, period predictions and a fertile window<sup><a href="#ref4" rel="noopener">[4]</a></sup></td><td>A daily summary of how recovered you are<sup><a href="#ref2" rel="noopener">[2]</a></sup></td></tr><tr><th scope="row">How temperature is used</th><td>Deviations from baseline are used to track, predict and visualize the cycle<sup><a href="#ref4" rel="noopener">[4]</a></sup></td><td>Body Temperature is one contributor, and only contributes when abnormal<sup><a href="#ref3" rel="noopener">[3]</a></sup></td></tr><tr><th scope="row">Which direction temperature can move it</th><td>Not a score</td><td>Can lower the score, cannot raise it<sup><a href="#ref3" rel="noopener">[3]</a></sup></td></tr><tr><th scope="row">Other inputs</th><td>Other biosignals like HRV for period prediction windows<sup><a href="#ref4" rel="noopener">[4]</a></sup></td><td>Resting heart rate, HRV Balance, Recovery Index, sleep and activity contributors<sup><a href="#ref2" rel="noopener">[2]</a></sup></td></tr></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="h3 fw-bold mb-3">What can Oura's cycle and Readiness scores not tell you?</h2>
 
                     <p>Being precise about the mechanism means being precise about its limits too.</p>
 
                     <ul>
-                        <li><strong>Neither score reads a hormone.</strong> Oura never measures estrogen, progesterone, or LH. It measures temperature, heart rate signals, and sleep, and infers the rest.</li>
-                        <li><strong>Cycle detection is retrospective.</strong> The temperature rise that confirms ovulation only appears after ovulation happened, usually a day or two later, so it can't tell you it's about to happen.</li>
+                        <li><strong>Neither score reads a hormone.</strong> Oura measures temperature, heart rate signals, and sleep, and infers the rest.</li>
+                        <li><strong>Cycle detection is retrospective.</strong> Oura says confirming ovulation takes around 3-5 days based on temperature patterns, so it can't tell you ovulation is about to happen.<sup><a href="#ref4" rel="noopener">[4]</a></sup></li>
                         <li><strong>Readiness isn't a diagnosis.</strong> A low score reflects a pattern in your biometrics, not a medical explanation for why they shifted. It could be your cycle, poor sleep, travel, or something else entirely.</li>
                         <li><strong>Symptoms and mood aren't in the model.</strong> A ring can see your temperature climb. It can't see that you also feel foggy, sore, or unusually anxious that week, because none of that is a signal the sensor reads.</li>
                     </ul>
@@ -314,12 +335,12 @@
                 <section class="mb-5">
                     <h2 class="h3 fw-bold mb-3">The Short Version</h2>
                     <ul>
-                        <li>Both scores start from the same finger-temperature sensor, sampled overnight and reported as a deviation from your personal baseline.</li>
-                        <li>Cycle Insights uses the post-ovulation temperature rise to estimate cycle phase, refine period predictions, and flag a fertile window, after the fact.</li>
-                        <li>Readiness folds temperature in with sleep, HRV Balance, Recovery Index, and Activity Balance, and temperature can only pull the score down, never up.</li>
+                        <li>Both scores draw on the same overnight skin temperature, reported as a deviation from your personal baseline, where closer to 0.0 means closer to your long-term average.</li>
+                        <li>Cycle Insights uses temperature deviations to track phases, predict periods and flag a fertile window, with ovulation confirmed after the fact.</li>
+                        <li>Readiness folds temperature in with heart rate, HRV Balance, Recovery Index, sleep and activity contributors, and temperature can only pull the score down, never up.</li>
                         <li>Neither score measures a hormone directly, and neither is a substitute for the context you get from logging how you actually feel.</li>
                     </ul>
-                    <p>Once you know what's under each score, the numbers stop being a mystery and start being something you can reason about, the same way you'd read a lab result against a reference range.</p>
+                    <p>Once you know what's under each score, the numbers stop being a mystery and start being something you can reason about.</p>
                 </section>
 
                 <section class="mb-5">
@@ -327,22 +348,25 @@
                     <p class="small text-muted mb-4">Educational information based on published sources. Not medical advice. For personal concerns, please consult your doctor.</p>
 
                     <h3 class="h5 fw-semibold mt-4">What does Oura's Cycle Insights feature actually measure?</h3>
-                    <p>Cycle Insights reads your nighttime finger temperature as a deviation from your own personal baseline, not an absolute number. Oura builds that baseline over your first couple of weeks of wear, then watches for the sustained rise that follows ovulation to estimate cycle phase, predict your next period, and flag a fertile window. It does not measure estrogen, progesterone, or LH directly.</p>
+                    <p>Cycle Insights reads your nighttime skin temperature as a deviation from your own baseline, not an absolute number. Oura builds that baseline over your first couple of weeks of wear, and uses the deviations to track the follicular and luteal phases, predict periods and flag a fertile window.<sup><a href="#ref3" rel="noopener">[3]</a></sup><sup><a href="#ref4" rel="noopener">[4]</a></sup> It does not measure estrogen, progesterone or LH directly.</p>
+
+                    <h3 class="h5 fw-semibold mt-4">How do you read body temperature on Oura Ring?</h3>
+                    <p>Oura shows it as a plus or minus figure against your personal baseline. The closer it is to 0.0, the closer your skin temperature is to your long-term average. The daily value is the average of your readings from the previous night, and the Trend view uses a three-day weighted average.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Why is my Oura cycle insight late or delayed?</h3>
-                    <p>Cycle Insights needs several nights of ring wear to confirm a sustained temperature shift rather than one warm night. A missed night of wear, a new ring still building its baseline, alcohol, illness, or a disrupted sleep schedule can all delay when the shift is confirmed. Ovulation detection is retrospective by design, so an estimate always lands after the fact, not in real time.</p>
+                    <p>Oura says confirming ovulation takes around 3-5 days based on temperature patterns, and a new cycle is recognized only after at least 12 days have passed since your last period start.<sup><a href="#ref4" rel="noopener">[4]</a></sup> A new or replacement ring also needs time to re-establish your temperature baseline, which Oura says can take a few weeks.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Does body temperature raise or lower the Oura Readiness Score?</h3>
-                    <p>Body temperature only contributes to Readiness when it's abnormal, meaning it can lower the score but never boost it. That's different from contributors like HRV Balance or Sleep Balance, which move the score in both directions. A luteal-phase temperature rise that's within your normal cyclical pattern usually has a small or no effect.</p>
+                    <p>Oura says Body Temperature only contributes to your scores when your average is abnormal, so it can lower the Readiness Score but cannot raise it.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Other contributors, such as HRV Balance, compare you with your own averages over longer windows.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Can Oura tell me exactly when I ovulated?</h3>
-                    <p>Oura estimates a fertile window and flags the post-ovulation temperature shift, but it can't pinpoint the exact day with certainty the way a blood test or urine LH test can. The temperature rise confirms that ovulation likely already happened, usually a day or two earlier, rather than predicting it in advance.</p>
+                    <p>No. Oura estimates a fertile window and confirms ovulation from temperature patterns after the fact, which it says takes around 3-5 days.<sup><a href="#ref4" rel="noopener">[4]</a></sup> In a pilot study, the best-performing algorithm detected ovulations with a sensitivity of 83.3% within a window from 3 days before to 2 days after the urine-test-verified ovulation.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">What's the difference between Cycle Insights and the Readiness Score?</h3>
-                    <p>Cycle Insights is specifically about menstrual cycle phase, period prediction, and the fertile window, built mainly from temperature deviation. Readiness is a broader daily score built from sleep, HRV Balance, Activity Balance, Recovery Index, and temperature together, meant to reflect how recovered you are that day. Cycle phase is one input into Readiness, not the other way around.</p>
+                    <p>Cycle Insights is about cycle phase, period prediction and the fertile window, built from temperature deviations. Readiness is a broader daily score built from contributors like Resting Heart Rate, HRV Balance, Body Temperature, Recovery Index, sleep and activity.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref4" rel="noopener">[4]</a></sup> Temperature feeds both, but in Readiness it can only lower the score.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Is Oura's cycle tracking accurate enough to use for birth control?</h3>
-                    <p>Oura's Cycle Insights are informational, not a contraceptive product. Accuracy also depends on consistent overnight wear, since a missed night breaks the continuous temperature stream the algorithm relies on. If you need a cleared method, that's a conversation for your doctor, not a wearable feature.</p>
+                    <p>No. Oura says fertile window predictions should not be used as a form of birth control.<sup><a href="#ref4" rel="noopener">[4]</a></sup> If you need a contraceptive method, that's a conversation for your doctor, not a wearable feature.</p>
                 </section>
 
                 <div class="text-center mt-5 p-4 bg-light rounded">
@@ -356,10 +380,11 @@
                     <h2 class="h3 fw-bold mb-3" id="references">References</h2>
                     <ol class="small">
                         <li id="ref1">Maijala A, Kinnunen H, Koskimäki H, Jämsä T, Kangas M. Nocturnal finger skin temperature in menstrual cycle tracking: ambulatory pilot study using a wearable Oura ring. <em>BMC Womens Health</em>. 2019;19(1):150. <a href="https://doi.org/10.1186/s12905-019-0844-9" target="_blank" rel="noopener">doi:10.1186/s12905-019-0844-9</a></li>
-                        <li id="ref2">Oura Health Oy. Readiness Score. Oura Help Center. <a href="https://support.ouraring.com/hc/en-us/articles/360025589793-Readiness-Score" target="_blank" rel="noopener">support.ouraring.com</a></li>
-                        <li id="ref3">Oura Health Oy. Body Temperature. Oura Help Center. <a href="https://support.ouraring.com/hc/en-us/articles/360025587493-Body-Temperature" target="_blank" rel="noopener">support.ouraring.com</a></li>
-                        <li id="ref4">Oura Health Oy. Cycle Insights. Oura Help Center. <a href="https://support.ouraring.com/hc/en-us/articles/4410663885331-Cycle-Insights" target="_blank" rel="noopener">support.ouraring.com</a></li>
+                        <li id="ref2">Oura Health Oy. Readiness Contributors. Oura Help Center, accessed October 2026. <a href="https://support.ouraring.com/hc/en-us/articles/360057791533-Readiness-Contributors" target="_blank" rel="noopener">support.ouraring.com</a></li>
+                        <li id="ref3">Oura Health Oy. Body Temperature. Oura Help Center, accessed October 2026. <a href="https://support.ouraring.com/hc/en-us/articles/360025587493-Body-Temperature" target="_blank" rel="noopener">support.ouraring.com</a></li>
+                        <li id="ref4">Oura Health Oy. Cycle Insights. Oura Help Center, accessed October 2026. <a href="https://support.ouraring.com/hc/en-us/articles/4410663885331-Cycle-Insights" target="_blank" rel="noopener">support.ouraring.com</a></li>
                         <li id="ref5">Schmalenberger KM, Eisenlohr-Moul TA, Jarczok MN, et al. Menstrual Cycle Changes in Vagally-Mediated Heart Rate Variability are Associated with Progesterone: Evidence from Two Within-Person Studies. <em>J Clin Med</em>. 2020;9(3):617. <a href="https://doi.org/10.3390/jcm9030617" target="_blank" rel="noopener">doi:10.3390/jcm9030617</a></li>
+                        <li id="ref6">Alzueta E, de Zambotti M, Javitz H, et al. Tracking Sleep, Temperature, Heart Rate, and Daily Symptoms Across the Menstrual Cycle with the Oura Ring in Healthy Women. <em>Int J Womens Health</em>. 2022;14:491-503. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9005074/" target="_blank" rel="noopener">PMC9005074</a></li>
                     </ol>
                 </section>
 

@@ -49,7 +49,7 @@
       "description": "How Apple Watch estimates ovulation after the fact: wrist temperature sensors, the 2-cycle setup, and what Cycle Tracking can and can't tell you.",
       "image": "https://www.go-go-gaia.com/images/cycle/Biometrics_Throughout_Menstrual_Cycle.png",
       "datePublished": "2026-08-05",
-      "dateModified": "2026-08-05",
+      "dateModified": "2026-10-09",
       "author": {
         "@type": "Organization",
         "name": "Veya Team"
@@ -70,59 +70,59 @@
     <!-- FAQ Schema for Rich Snippets -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can Apple Watch predict ovulation in advance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Apple Watch estimates ovulation retrospectively, meaning it identifies the likely day ovulation already happened, not a day in the future. The wrist temperature rise that the algorithm looks for is caused by progesterone, which only rises after the egg is released, so the estimate always arrives after the fact, usually appearing a few days later in the Health app."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which Apple Watch models support ovulation estimates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Retrospective ovulation estimates require Apple Watch Series 8 or later, or any Apple Watch Ultra model, because these are the watches with a wrist temperature sensor. Earlier Apple Watch models can still use Cycle Tracking for logging and calendar-based period predictions, but they can't generate a temperature-based ovulation estimate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does Apple Watch need 2 cycles before it gives an ovulation estimate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The watch needs to build a personal wrist-temperature baseline before it can reliably detect a deviation from it. Apple recommends wearing the watch to sleep for at least 2 full cycles, with Sleep Focus and Track Sleep with Apple Watch enabled for at least 4 hours a night across at least 5 nights, so the algorithm has enough nightly data to separate a real hormonal shift from normal night-to-night noise."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Apple Watch cycle tracking a form of birth control?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Apple states plainly that Cycle Tracking, including retrospective ovulation estimates, is not intended to be used as a form of birth control. The feature is informational. Natural Cycles is a separate, FDA-cleared contraceptive app that can pull temperature data from an Apple Watch, but Apple's own Cycle Tracking experience is not cleared for that use."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does Apple's native Cycle Tracking actually do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cycle Tracking lets you log period dates and cycle factors, shows calendar-based period and fertile-window predictions, and, on Series 8 or later and Ultra models, adds a retrospective ovulation estimate from wrist temperature. It syncs with the Health app on iPhone. It does not do symptom correlation, mood tracking, or nutrition logging, which is a different layer than a dedicated tracking app provides."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is my Apple Watch ovulation estimate missing some cycles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An estimate only appears when the watch detects a clear, sustained wrist temperature rise during a cycle where you met the wear requirements. Skipping sleep wear, an anovulatory cycle with no temperature shift to detect, illness, alcohol, or a disrupted sleep schedule can all mean no estimate shows up for that particular cycle. That's expected behavior, not a malfunction."
-          }
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Apple Watch predict ovulation in advance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Apple Watch gives retrospective ovulation estimates: it detects the biphasic shift, a temperature rise that often occurs after ovulation, and estimates the day ovulation likely occurred. Apple says the estimates don't guarantee ovulation has occurred."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Apple Watch models support ovulation estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple Watch Series 8 or later, or any model of Apple Watch Ultra. Ovulation estimates are also only available in certain countries and regions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Apple Watch need 2 cycles before it gives an ovulation estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple says it takes about 2 menstrual cycles of wearing the watch to sleep each night, with Sleep Focus enabled, for ovulation estimates to be available. Sleep Focus needs to be on for at least 4 hours a night for 5 nights to get accurate wrist temperature data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Apple Watch cycle tracking a form of birth control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Apple's instructions for use say not to use the predicted fertile windows or ovulation estimates as a form of birth control. Natural Cycles is a separate app that the FDA granted De Novo classification as a software application for contraception."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Apple Watch cycle tracking show how your period affects sleep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple's support pages describe period and symptom logging, fertile window predictions and the wrist-temperature ovulation estimate, and they don't describe a sleep analysis by cycle phase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my Apple Watch ovulation estimate missing some cycles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple lists several reasons: there may not be enough wrist temperature data for that cycle, wrist temperature can be affected by environmental or physiological factors, ovulation may have happened without a biphasic shift or with a shift too small to use, or ovulation may not have occurred that cycle."
+      }
     }
+  ]
+}
     </script>
     <script type="application/ld+json">
     {
@@ -223,18 +223,19 @@
 
                 <header class="mb-4">
                     <h1 class="display-4 fw-bold mb-3">Apple Watch Ovulation Estimates: How They Work</h1>
-                    <p class="lead text-muted">Apple Watch doesn't tell you when you're about to ovulate. It tells you, a few days later, that you probably already did. Here's how the wrist temperature sensor gets there, what setup it needs, and where the native Cycle Tracking layer stops.</p>
+                    <p class="lead text-muted">Apple Watch doesn't tell you when you're about to ovulate. It tells you, afterward, that you probably already did. Here's how the wrist temperature sensor gets there, what setup it needs, and where the native Cycle Tracking layer stops.</p>
                     <div class="d-flex gap-3 text-muted small mb-4">
                         <span>By Veya Team</span>
                         <span><i class="bi bi-calendar-event me-1"></i> August 5, 2026</span>
+                        <span><i class="bi bi-arrow-repeat me-1"></i> Last reviewed October 9, 2026</span>
                         <span><i class="bi bi-clock me-1"></i> 9 min read</span>
                     </div>
                 </header>
 
                 <div class="alert alert-light border p-4 mb-4">
                     <h2 class="h5 fw-bold mb-3">Quick Answer: How Apple Watch Estimates Ovulation</h2>
-                    <p class="mb-3">Apple Watch Series 8 or later, and every Apple Watch Ultra model, has two <a href="../encyclopedia/wrist-temperature.html">wrist temperature</a> sensors that sample continuously overnight.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Worn to sleep consistently, the watch builds a personal nightly baseline and watches for the biphasic shift, a sustained temperature rise that follows ovulation. When it detects that shift, it places a retrospective ovulation estimate on your fertile window in the Health app.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
-                    <p class="mb-0">The estimate is retrospective by design: <a href="../encyclopedia/progesterone.html">progesterone</a>, the hormone behind the temperature rise, only climbs after the egg is already released, so the watch can only confirm ovulation after it happened, not forecast it. Apple asks for consistent sleep wear across at least 2 full cycles before it will surface an estimate, and states clearly that Cycle Tracking is not intended for use as birth control.<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
+                    <p class="mb-3">Apple Watch estimates ovulation after the fact. Series 8 and later, and every Apple Watch Ultra, read wrist temperature overnight and look for the biphasic shift, a temperature rise that often follows ovulation. After about two cycles of wearing it to sleep, the Health app can mark a retrospective estimate as a light purple oval in your fertile window.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
+                    <p class="mb-0">The estimate is retrospective by design: the temperature rise it looks for comes after the egg is released, so the watch can only confirm, not forecast. Apple says ovulation estimates are estimates only and do not guarantee that ovulation occurred, and that Cycle Tracking should not be used as a form of birth control.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
                 </div>
 
                 <p class="small text-muted border-start border-2 border-secondary ps-3 mb-4"><i class="bi bi-info-circle me-1"></i> Educational content about how the technology works, not medical advice. For personal or fertility concerns, please consult your doctor. Veya is not affiliated with Apple Inc.</p>
@@ -245,73 +246,76 @@
                 </div>
 
                 <section class="mb-5">
-                    <p>A few days after ovulation, some Apple Watch owners see a small purple oval appear on their fertile window in the Health app. It's easy to read that as a live prediction. It isn't. It's a retrospective estimate, built entirely from wrist temperature data collected while you were asleep, and it's telling you about something that already happened.</p>
+                    <p>After ovulation, some Apple Watch owners see a small purple oval appear on their fertile window in the Health app. It's easy to read that as a live prediction. It isn't. It's a retrospective estimate, built from wrist temperature data collected while you were asleep and your logged cycle data, and it's telling you about something that already happened.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <p>This page walks through the mechanism behind that estimate: the sensor, the setup requirements, and the native Cycle Tracking layer it plugs into. For the broader picture of how temperature-based detection works across brands, see our <a href="how-wearables-track-your-cycle.html">explainer on how wearables detect your cycle</a>. And if you're weighing Apple's free, on-device option against a dedicated tracking app, our <a href="flo-vs-apple-health-cycle-tracking.html">Flo vs Apple Health comparison</a> covers what each one adds beyond what's described here.</p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">The Sensor: Two Thermometers at the Wrist</h2>
+                    <h2 class="h3 fw-bold mb-3">How does Apple Watch measure wrist temperature?</h2>
 
-                    <p>Series 8 was the first Apple Watch with a temperature sensor, and it shipped with two of them rather than one.<sup><a href="#ref1" rel="noopener">[1]</a></sup> Apple has said the second sensor exists to help separate your actual skin temperature from noise introduced by the surrounding environment, since a wrist sensor is more exposed to room temperature, bedding, and airflow than a finger sensor tucked inside a ring.</p>
+                    <p>Apple describes two temperature sensors, one on the back crystal near your skin and one just under the display, a layout meant to limit the influence of the surrounding environment.<sup><a href="#ref1" rel="noopener">[1]</a></sup> While you sleep, the watch samples your temperature every five seconds. After about five nights it establishes your baseline wrist temperature and looks for nightly changes relative to it.<sup><a href="#ref1" rel="noopener">[1]</a></sup></p>
 
-                    <p>The watch samples temperature every few seconds overnight while you sleep, and averages those readings into one nightly value.<sup><a href="#ref2" rel="noopener">[2]</a></sup> That's the same baseline-and-deviation approach behind every wearable cycle feature: collect nightly data, learn what's normal for you, then watch for a departure from it that's big enough and sustained enough to mean something.</p>
+                    <p>That's the same baseline-and-deviation approach behind every wearable cycle feature: collect nightly data, learn what your own pattern looks like, then watch for a departure from it that's big enough and sustained enough to mean something.</p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">What It Takes to Get an Estimate</h2>
+                    <h2 class="h3 fw-bold mb-3">What does Apple Watch need before it shows an ovulation estimate?</h2>
 
-                    <p>Apple is specific about the setup required before the watch will surface a retrospective ovulation estimate. According to Apple's own support documentation, you need:<sup><a href="#ref3" rel="noopener">[3]</a></sup></p>
+                    <p>Apple is specific about the setup required before the watch will surface a retrospective ovulation estimate. According to Apple's support documentation, you need:<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <ul>
-                        <li><strong>Cycle Tracking set up</strong> with fertility predictions turned on, and no ongoing cycle factors logged that would interfere with detection (like hormonal birth control, which suppresses the natural temperature pattern).</li>
-                        <li><strong>Sleep tracking enabled</strong>, specifically Track Sleep with Apple Watch, with Sleep Focus active for at least 4 hours a night.</li>
-                        <li><strong>At least 5 nights</strong> of that sleep wear to get usable wrist temperature data for a given stretch.</li>
-                        <li><strong>Roughly 2 full cycles</strong> of consistent overnight wear before the algorithm has enough baseline data to generate its first estimate.</li>
+                        <li><strong>A compatible watch:</strong> Apple Watch Series 8 or later, or any model of Apple Watch Ultra.</li>
+                        <li><strong>Cycle Tracking set up</strong> with fertility predictions enabled and no ongoing cycle factors logged. Apple lists Pregnancy, Lactation and Contraceptive as cycle factors.<sup><a href="#ref5" rel="noopener">[5]</a></sup></li>
+                        <li><strong>Sleep Focus enabled</strong> for at least 4 hours a night for 5 nights, to get accurate wrist temperature data.</li>
+                        <li><strong>About 2 menstrual cycles</strong> of wearing the watch to sleep each night with Sleep Focus enabled before estimates become available.</li>
                     </ul>
 
-                    <p>That 2-cycle runway is the same baseline-building logic every temperature-based system needs. The watch has no idea what your normal wrist temperature looks like until it's watched you sleep, consistently, for a while. Skip nights here and there and the baseline takes longer to settle, or an estimate simply doesn't appear for that cycle.</p>
+                    <p>That 2-cycle runway is the same baseline-building logic every temperature-based system needs. Apple notes that for some cycles there may not be enough wrist temperature data to estimate ovulation, and that you'll need to wear a new or repaired watch for at least 2 cycles before it can give a new estimate.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">Why the Estimate Always Arrives After the Fact</h3>
 
-                    <p>This is the part that trips people up most. The temperature rise Apple Watch is looking for is caused by progesterone, and progesterone only rises in meaningful amounts once the corpus luteum forms, which happens after the egg is released.<sup><a href="#ref2" rel="noopener">[2]</a></sup> So the watch can only confirm that ovulation happened once the temperature has climbed and held for several nights, usually a day or two after the fact.</p>
+                    <p>This is the part that trips people up most. Apple says the watch uses wrist temperature to detect the biphasic shift, an increase in temperature that often occurs after ovulation, and that algorithms combine that data with your logged cycle data to estimate the day ovulation likely occurred.<sup><a href="#ref2" rel="noopener">[2]</a></sup> The rise is tied to progesterone, which climbs once the corpus luteum forms after the egg is released (see our <a href="../encyclopedia/luteal-phase.html">luteal phase entry</a>). So the watch can only place the estimate once the shift has shown up in the data.</p>
 
-                    <p>In the Health app, that shows up as a light purple oval placed retroactively on your fertile window, alongside a note that it's an estimate, not a certainty.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Apple's own language is careful here: an ovulation estimate doesn't guarantee ovulation occurred on that exact day, only that the data made it the most likely day given the pattern the watch saw.</p>
+                    <p>In the Health app, that shows up as a light purple oval in your fertile window.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Apple's own language is careful: ovulation estimates are estimates only and do not guarantee that ovulation has occurred. Ovulation may also happen without a biphasic shift, or the shift may be too small to provide an estimate, and ovulation may not occur every cycle.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">Not for Contraception</h2>
+                    <h2 class="h3 fw-bold mb-3">Can you use Apple Watch ovulation estimates as birth control?</h2>
 
-                    <p>Apple states this plainly in its Cycle Tracking instructions for use: the feature, including retrospective ovulation estimates, is not intended to be used as a form of birth control.<sup><a href="#ref3" rel="noopener">[3]</a></sup> That's worth repeating rather than glossing over, since a fertile-window estimate can look precise enough to lean on.</p>
+                    <p>No. Apple's Cycle Tracking instructions for use say not to use the predicted fertile windows or ovulation estimates as a form of birth control, and its support page says the same.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup> That's worth repeating rather than glossing over, since a fertile-window estimate can look precise enough to lean on.</p>
 
-                    <p>Natural Cycles is a separate product built for that purpose. It's an FDA-cleared contraceptive app that can pull temperature data from an Apple Watch as one of its inputs, but it runs its own validated algorithm on top of that data.<sup><a href="#ref4" rel="noopener">[4]</a></sup> Apple's native Cycle Tracking experience was never built or cleared to do that job on its own.</p>
+                    <p>Natural Cycles is a separate product built for that purpose. The FDA granted it De Novo classification as a software application for contraception, with its own validated algorithm.<sup><a href="#ref4" rel="noopener">[4]</a></sup> Apple's native Cycle Tracking carries no such classification and tells you not to use it that way.</p>
 
                     <div class="alert" style="background-color: #f8f4f0; border-left: 4px solid #46583a; padding: 1rem; margin: 1.5rem 0;">
-                        <p class="mb-0"><strong>Worth knowing:</strong> Apple's own disclaimer applies whether the goal is avoiding or planning a pregnancy. It's informational either way, not a cleared method for either use.</p>
+                        <p class="mb-0"><strong>Worth knowing:</strong> Apple's own disclaimer says ovulation estimates are estimates only and don't guarantee that ovulation occurred, so treat them as informational either way.</p>
                     </div>
                 </section>
 
                 <section class="mb-5">
-                    <h2 class="h3 fw-bold mb-3">What Native Cycle Tracking Does and Doesn't Do</h2>
+                    <h2 class="h3 fw-bold mb-3">Does Apple Watch cycle tracking show how your period affects sleep?</h2>
 
-                    <p>It's easy to conflate "Apple Watch has a temperature sensor" with "Apple Watch has full cycle tracking." The native Cycle Tracking layer, synced between Apple Watch and the Health app on iPhone, covers a specific set of things:</p>
+                    <p>Not directly, based on Apple's support pages. They describe Cycle Tracking as logging periods and symptoms, predicting a fertile window, and using wrist temperature to estimate ovulation, and they don't describe an analysis of sleep by cycle phase.<sup><a href="#ref5" rel="noopener">[5]</a></sup> Sleep and wrist temperature are recorded by the watch, but the cycle features Apple documents don't turn them into a "sleep across your cycle" view.</p>
 
-                    <ul>
-                        <li><strong>Does:</strong> lets you log period start and end dates and cycle factors, shows calendar-based period and fertile-window predictions built from your logged history, and, on supported hardware, adds the retrospective ovulation estimate covered above.</li>
-                        <li><strong>Doesn't:</strong> correlate symptoms with mood, sleep, or nutrition. Track anything outside of the cycle and temperature signal itself. Offer the kind of cross-metric pattern-finding that a dedicated tracking app is built around.</li>
-                    </ul>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered table-sm">
+                            <caption class="small text-muted">What Apple's Cycle Tracking support pages describe</caption>
+                            <thead><tr><th scope="col">Feature</th><th scope="col">Described by Apple?</th></tr></thead>
+                            <tbody><tr><th scope="row">Period and symptom logging</th><td>Yes. You can track symptoms, spotting, basal body temperature and more<sup><a href="#ref5" rel="noopener">[5]</a></sup></td></tr><tr><th scope="row">Fertile window prediction</th><td>Yes. A six-day window based on a calendar method<sup><a href="#ref5" rel="noopener">[5]</a></sup></td></tr><tr><th scope="row">Retrospective ovulation estimate</th><td>Yes, on Series 8 or later and Ultra models, from wrist temperature<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref5" rel="noopener">[5]</a></sup></td></tr><tr><th scope="row">Sleep or mood analysis by cycle phase</th><td>Not described on these pages<sup><a href="#ref5" rel="noopener">[5]</a></sup></td></tr></tbody>
+                        </table>
+                    </div>
 
-                    <p>That gap is where a logging app still earns its place next to a watch that's already doing the temperature math. A tracking app like Veya can pull in Apple Watch data alongside the symptoms and mood you log by hand, so a wrist temperature shift sits next to the fact that you also logged cramps or low energy that week, something the native Health app view doesn't connect on its own.</p>
+                    <p>That gap is where a logging app still earns its place next to a watch that's already doing the temperature math. A tracking app like Veya can pull in Apple Watch data alongside the symptoms and mood you log by hand, so a wrist temperature shift sits next to the fact that you also logged cramps or low energy that week.</p>
                 </section>
 
                 <section class="mb-5">
                     <h2 class="h3 fw-bold mb-3">The Short Version</h2>
                     <ul>
-                        <li>Series 8 and later, and all Ultra models, sample wrist temperature every few seconds overnight through two sensors.</li>
-                        <li>The watch needs roughly 2 cycles of consistent sleep wear to build a personal baseline before it can generate an estimate.</li>
-                        <li>Detection is retrospective: the temperature rise confirms ovulation already happened, usually a day or two earlier, rather than predicting it.</li>
-                        <li>Apple states clearly that Cycle Tracking is not intended for use as birth control. Natural Cycles is the separate, cleared product for that purpose.</li>
-                        <li>Native Cycle Tracking covers logging, predictions, and the temperature estimate. It doesn't correlate symptoms, mood, or nutrition the way a dedicated app does.</li>
+                        <li>Series 8 and later, and all Ultra models, sample wrist temperature every five seconds overnight through two sensors.</li>
+                        <li>The watch needs about 2 cycles of wearing it to sleep, with Sleep Focus enabled, before estimates become available.</li>
+                        <li>Detection is retrospective: the temperature shift is read after ovulation, and Apple says the estimates don't guarantee ovulation occurred.</li>
+                        <li>Apple says Cycle Tracking should not be used as birth control. Natural Cycles is the separate, FDA-cleared product for that purpose.</li>
+                        <li>Apple's support pages describe logging, predictions and the temperature estimate, not a sleep or mood analysis by cycle phase.</li>
                     </ul>
                 </section>
 
@@ -320,22 +324,22 @@
                     <p class="small text-muted mb-4">Educational information based on published sources. Not medical advice. For personal concerns, please consult your doctor.</p>
 
                     <h3 class="h5 fw-semibold mt-4">Can Apple Watch predict ovulation in advance?</h3>
-                    <p>Apple Watch estimates ovulation retrospectively, meaning it identifies the likely day ovulation already happened, not a day in the future. The wrist temperature rise that the algorithm looks for is caused by progesterone, which only rises after the egg is released, so the estimate always arrives after the fact, usually appearing a few days later in the Health app.</p>
+                    <p>No. Apple Watch gives retrospective ovulation estimates: it detects the biphasic shift, a temperature rise that often occurs after ovulation, and estimates the day ovulation likely occurred. Apple says the estimates don't guarantee ovulation has occurred.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Which Apple Watch models support ovulation estimates?</h3>
-                    <p>Retrospective ovulation estimates require Apple Watch Series 8 or later, or any Apple Watch Ultra model, because these are the watches with a wrist temperature sensor. Earlier Apple Watch models can still use Cycle Tracking for logging and calendar-based period predictions, but they can't generate a temperature-based ovulation estimate.</p>
+                    <p>Apple Watch Series 8 or later, or any model of Apple Watch Ultra.<sup><a href="#ref2" rel="noopener">[2]</a></sup> Ovulation estimates are also only available in certain countries and regions.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Why does Apple Watch need 2 cycles before it gives an ovulation estimate?</h3>
-                    <p>The watch needs to build a personal wrist-temperature baseline before it can reliably detect a deviation from it. Apple recommends wearing the watch to sleep for at least 2 full cycles, with Sleep Focus and Track Sleep with Apple Watch enabled for at least 4 hours a night across at least 5 nights, so the algorithm has enough nightly data to separate a real hormonal shift from normal night-to-night noise.</p>
+                    <p>Apple says it takes about 2 menstrual cycles of wearing the watch to sleep each night, with Sleep Focus enabled, for ovulation estimates to be available. Sleep Focus needs to be on for at least 4 hours a night for 5 nights to get accurate wrist temperature data.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Is Apple Watch cycle tracking a form of birth control?</h3>
-                    <p>Apple states plainly that Cycle Tracking, including retrospective ovulation estimates, is not intended to be used as a form of birth control. The feature is informational. Natural Cycles is a separate, FDA-cleared contraceptive app that can pull temperature data from an Apple Watch, but Apple's own Cycle Tracking experience is not cleared for that use.</p>
+                    <p>No. Apple's instructions for use say not to use the predicted fertile windows or ovulation estimates as a form of birth control.<sup><a href="#ref3" rel="noopener">[3]</a></sup> Natural Cycles is a separate app that the FDA granted De Novo classification as a software application for contraception.<sup><a href="#ref4" rel="noopener">[4]</a></sup></p>
 
-                    <h3 class="h5 fw-semibold mt-4">What does Apple's native Cycle Tracking actually do?</h3>
-                    <p>Cycle Tracking lets you log period dates and cycle factors, shows calendar-based period and fertile-window predictions, and, on Series 8 or later and Ultra models, adds a retrospective ovulation estimate from wrist temperature. It syncs with the Health app on iPhone. It does not do symptom correlation, mood tracking, or nutrition logging, which is a different layer than a dedicated tracking app provides.</p>
+                    <h3 class="h5 fw-semibold mt-4">Does Apple Watch cycle tracking show how your period affects sleep?</h3>
+                    <p>Apple's support pages describe period and symptom logging, fertile window predictions and the wrist-temperature ovulation estimate, and they don't describe a sleep analysis by cycle phase.<sup><a href="#ref5" rel="noopener">[5]</a></sup></p>
 
                     <h3 class="h5 fw-semibold mt-4">Why is my Apple Watch ovulation estimate missing some cycles?</h3>
-                    <p>An estimate only appears when the watch detects a clear, sustained wrist temperature rise during a cycle where you met the wear requirements. Skipping sleep wear, an anovulatory cycle with no temperature shift to detect, illness, alcohol, or a disrupted sleep schedule can all mean no estimate shows up for that particular cycle. That's expected behavior, not a malfunction.</p>
+                    <p>Apple lists several reasons: there may not be enough wrist temperature data for that cycle, wrist temperature can be affected by environmental or physiological factors, ovulation may have happened without a biphasic shift or with a shift too small to use, or ovulation may not have occurred that cycle.<sup><a href="#ref2" rel="noopener">[2]</a></sup></p>
                 </section>
 
                 <div class="text-center mt-5 p-4 bg-light rounded">
@@ -348,10 +352,11 @@
                 <section class="mb-5 mt-5">
                     <h2 class="h3 fw-bold mb-3" id="references">References</h2>
                     <ol class="small">
-                        <li id="ref1">Apple Inc. Findings from Apple Women's Health Study advance science around menstrual cycles. Apple Newsroom, March 2023. <a href="https://www.apple.com/newsroom/2023/03/findings-from-apple-womens-health-study-advance-science-around-menstrual-cycles/" target="_blank" rel="noopener">apple.com/newsroom</a></li>
-                        <li id="ref2">Apple Inc. Receive retrospective ovulation estimates on Apple Watch. Apple Support. <a href="https://support.apple.com/en-us/120357" target="_blank" rel="noopener">support.apple.com/en-us/120357</a></li>
+                        <li id="ref1">Apple Inc. Track your nightly wrist temperature changes with Apple Watch. Apple Support, accessed October 2026. <a href="https://support.apple.com/en-us/102674" target="_blank" rel="noopener">support.apple.com/en-us/102674</a></li>
+                        <li id="ref2">Apple Inc. Receive retrospective ovulation estimates on Apple Watch. Apple Support, accessed October 2026. <a href="https://support.apple.com/en-us/120357" target="_blank" rel="noopener">support.apple.com/en-us/120357</a></li>
                         <li id="ref3">Apple Inc. Cycle Tracking Instructions for Use. <a href="https://www.apple.com/legal/ifu/cycle-tracking/ct-ifu-en_US.pdf" target="_blank" rel="noopener">apple.com/legal/ifu/cycle-tracking</a></li>
-                        <li id="ref4">Shilaih M, Goodale BM, Falco L, Kübler F, De Clerck V, Leeners B. Modern fertility awareness methods: wrist wearables capture the changes in temperature associated with the menstrual cycle. <em>Biosci Rep</em>. 2018;38(6):BSR20171279. <a href="https://doi.org/10.1042/BSR20171279" target="_blank" rel="noopener">doi:10.1042/BSR20171279</a></li>
+                        <li id="ref4">U.S. Food and Drug Administration. De Novo Classification Request for Natural Cycles (DEN170052). <a href="https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN170052.pdf" target="_blank" rel="noopener">accessdata.fda.gov/cdrh_docs/reviews/DEN170052.pdf</a></li>
+                        <li id="ref5">Apple Inc. Track your period with Cycle Tracking. Apple Support, accessed October 2026. <a href="https://support.apple.com/en-us/120356" target="_blank" rel="noopener">support.apple.com/en-us/120356</a></li>
                     </ol>
                 </section>
 
