@@ -1368,12 +1368,6 @@
             </div>
         ` : '';
 
-        const isRefinedRange = range && range.widthDays > 0;
-        const handoffHeading = isRefinedRange ? "Turn this window into one number" : "Keep these dates accurate as your cycle changes";
-        const handoffParagraph = isRefinedRange
-            ? `You've got a ${range.widthDays}-day window mapped out above instead of one fixed guess &mdash; that's what your own cycle history actually looks like. Log each period in Veya and that window narrows over time as it learns your real pattern, instead of you re-entering dates here every time.`
-            : `You've got ${formatDateFull(nextPeriodDate)} and the periods after it mapped out above &mdash; but they all rest on a fixed ${effectiveCycleLength}-day average. Log each period as it happens in Veya, and it works from your own pattern instead, so the next date you see comes from what actually happened rather than a textbook number.`;
-
         const d1 = state.rawDates[0] || '';
         const d2 = state.rawDates[1] || '';
         const d3 = state.rawDates[2] || '';
@@ -1461,18 +1455,6 @@
                 <h3 class="mt-4 mb-0" style="font-weight: 700; font-size: 1.15rem;">Upcoming Periods & Fertile Windows</h3>
                 <div class="next-cycles">${upcomingHtml}</div>
 
-                <div class="result-handoff">
-                    <h4>${handoffHeading}</h4>
-                    <p>${handoffParagraph}</p>
-                    <div class="result-handoff-actions">
-                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-handoff-primary">
-                            <i class="bi bi-apple me-1"></i>Download on the App Store
-                        </a>
-                        <a href="https://app.myveya.com/login?mode=signup&utm_source=website&utm_medium=result&utm_campaign=period-calculator" target="_blank" class="btn-handoff-secondary">
-                            Use it in your browser
-                        </a>
-                    </div>
-                </div>
             </div>
 
             <div class="tips-section">
