@@ -4261,3 +4261,11 @@ img[width][height] {
 .persona-card-thumb img[width][height],
 .pro-shot-frame img[width][height] { height: 100%; }
 .surface-chip img[width][height] { height: 132px; }
+
+/* Calculator result: post-result app handoff card (tools/*-calculator.html) */
+.app-handoff { background: var(--secondary); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; text-align: center; }
+.app-handoff h3 { font-weight: 500; font-size: 1.1rem; line-height: 1.4; color: var(--text-dark); margin: 0 0 0.4rem; }
+.app-handoff p { font-weight: 400; font-size: 0.92rem; color: var(--text-muted); margin: 0 0 1rem; }
+.app-handoff-btn { display: inline-block; background: #8E4CE2; color: #fff; font-weight: 500; padding: 0.6rem 1.4rem; border-radius: 12px; text-decoration: none; transition: background-color 0.2s, transform 0.1s; }
+.app-handoff-btn:hover { background: var(--primary-dark); color: #fff; transform: translateY(-1px); }
+.app-handoff-guide { display: block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--primary-dark); text-decoration: underline; }
