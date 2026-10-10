@@ -4269,3 +4269,7 @@ img[width][height] {
 .app-handoff-btn { display: inline-block; background: #8E4CE2; color: #fff; font-weight: 500; padding: 0.6rem 1.4rem; border-radius: 12px; text-decoration: none; transition: background-color 0.2s, transform 0.1s; }
 .app-handoff-btn:hover { background: var(--primary-dark); color: #fff; transform: translateY(-1px); }
 .app-handoff-guide { display: block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--primary-dark); text-decoration: underline; }
+/* The generic `main a:not(.btn)…` link colour (0,4,2) was beating .app-handoff-btn's white
+   text, leaving the App Store button purple-on-purple on every calculator. */
+main a.app-handoff-btn:not(.btn):not(.nav-link):not(.blog-link):not(.social-icon),
+main a.app-handoff-btn:not(.btn):not(.nav-link):not(.blog-link):not(.social-icon):hover { color: #fff; }
