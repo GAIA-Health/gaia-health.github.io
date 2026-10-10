@@ -207,7 +207,7 @@
       "name": "Period Calculator: Next Period & How Late Am I?",
       "url": "https://www.go-go-gaia.com/tools/period-calculator.html",
       "datePublished": "2026-04-06",
-      "dateModified": "2026-07-27",
+      "dateModified": "2026-10-09",
       "inLanguage": "en-US"
     }
     </script>
@@ -263,8 +263,7 @@
 
         /* Results */
         .results-section {
-            display: none;
-            animation: fadeInUp 0.5s ease;
+            display: block;
         }
         .results-section.show { display: block; }
         @keyframes fadeInUp {
@@ -747,6 +746,57 @@
         .breadcrumb-nav a:hover { text-decoration: underline; }
         .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
         .breadcrumb-nav .current { color: var(--text-muted); }
+        /* ── Period calculator v2 (Oct 2026): two-column on desktop, instant results ── */
+        .pc-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1120px; margin: 0 auto; }
+        .pc-grid .calculator-card { max-width: 540px; width: 100%; padding: 1.75rem; }
+        .pc-grid .results-section { max-width: 640px; width: 100%; margin: 0 auto; }
+        @media (min-width: 960px) {
+            .pc-grid { grid-template-columns: minmax(360px, 420px) 1fr; align-items: start; }
+            .pc-grid .calculator-card { position: sticky; top: 84px; margin: 0; }
+            .pc-grid .results-section { max-width: none; margin: 0; }
+        }
+        .pc-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0.75rem; }
+        .pc-optional { font-weight: 400; color: var(--text-muted); font-size: 0.85em; }
+        .calculator-card input[type="number"] { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 12px; }
+        .calculator-card input:focus-visible, .calculator-card select:focus-visible, .pc-more summary:focus-visible { outline: 3px solid #8E4CE2; outline-offset: 2px; }
+        .pc-more { border: 1px solid #e6dcf7; border-radius: 12px; padding: 0.75rem 1rem; margin-bottom: 1rem; background: #faf7ff; }
+        .pc-more summary { cursor: pointer; font-weight: 500; color: #5B23C6; }
+        .pc-more-help { font-size: 0.88rem; color: var(--text-muted); margin: 0.6rem 0; }
+        .pc-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem; }
+        .pc-extra label { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--text-muted); margin: 0; font-weight: 500; }
+        .pc-extra input[type="date"] { font-size: 0.95rem; padding: 0.45rem 0.6rem; border-radius: 10px; }
+        .pc-check { margin-bottom: 1rem; font-size: 0.92rem; }
+        .pc-check .form-check-input:checked { background-color: #8E4CE2; border-color: #8E4CE2; }
+        .pc-grid .btn-calculate { background-color: #8E4CE2; }
+        .pc-grid .btn-calculate:hover { background-color: var(--primary-dark); }
+        .pc-empty { background: #fff; border: 2px dashed #e6dcf7; border-radius: 16px; padding: 2rem; color: var(--text-muted); }
+        .pc-kicker { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); margin: 0 0 0.25rem; letter-spacing: 0.02em; }
+        .pc-headline { text-align: center; }
+        .pc-range { font-size: 2.1rem; font-weight: 600; color: #8E4CE2; line-height: 1.15; }
+        .pc-likely { font-size: 1.05rem; color: var(--text-dark); margin-top: 0.35rem; }
+        .pc-likely strong { font-weight: 600; }
+        .pc-confidence { font-size: 0.92rem; color: var(--text-muted); margin: 0.85rem auto 0; max-width: 34rem; }
+        .pc-details { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 1.5rem 2rem 2rem; }
+        .pc-details .key-dates { margin-top: 0; }
+        .pc-h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin: 1.5rem 0 0.5rem; }
+        .pc-muted { color: var(--text-muted); font-size: 0.9rem; }
+        .pc-refine-cta { font-size: 0.92rem; margin: 0.75rem 0 0; }
+        .pc-link-btn { background: none; border: 0; padding: 0; color: #5B23C6; font-weight: 600; text-decoration: underline; cursor: pointer; }
+        .next-cycles { list-style: none; padding: 0; margin: 0; }
+        .cycle-calendar .day.range { background: rgba(142, 76, 226, 0.12); border: 1px dashed #8E4CE2; }
+        .cycle-calendar .day.next-likely { outline: 2px solid #5B23C6; outline-offset: -2px; }
+        .legend-dot.range { background: rgba(142, 76, 226, 0.12); border: 1px dashed #8E4CE2; }
+        .pc-followups p { font-size: 0.95rem; color: var(--text-dark); }
+        .pc-followups a, .pc-share a { color: #5B23C6; }
+        .pc-share { margin-top: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+        .pc-share-btn { background: #fff; border: 2px solid #8E4CE2; color: #5B23C6; border-radius: 12px; padding: 0.5rem 1rem; font-weight: 600; }
+        .pc-share-btn:hover { background: #faf7ff; }
+        .pc-share-status { font-size: 0.85rem; color: var(--text-muted); word-break: break-all; }
+        @media (max-width: 575px) {
+            .pc-grid .calculator-card, .pc-details { padding: 1.25rem; }
+            .pc-range { font-size: 1.7rem; }
+            .pc-row, .pc-extra { grid-template-columns: 1fr; }
+        }
     </style>
     <!-- Cookie consent + gated GA4 -->
     <script src="/cookie-consent.js" defer></script>
@@ -828,6 +878,7 @@
                 <ul>
                     <li><a href="#calculator">Period calculator</a></li>
                     <li><a href="#how-late">How late is my period?</a></li>
+                    <li><a href="#how-it-works">How this calculator works</a></li>
                     <li><a href="#what-to-track">What to track besides dates</a></li>
                     <li><a href="#faq">Common questions</a></li>
                     <li><a href="#related">Related guides &amp; tools</a></li>
@@ -843,59 +894,85 @@
                     <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Your next period is estimated by adding your average cycle length to the first day of your last period. Most cycles run 21-35 days, with 28 days the commonly cited average, though it's normal to vary a few days month to month. Enter your dates below for a personalized estimate, upcoming periods, and fertile windows for the next 6 months &mdash; or scroll to <a href="#how-late">how late is my period?</a> if that's what brought you here.</p>
                 </div>
 
+                <div class="pc-grid">
                 <div class="calculator-card">
-                    <form id="periodForm">
+                    <form id="periodForm" method="get" action="period-calculator.html" novalidate>
                         <div class="mb-3">
-                            <label for="lmpDate" class="form-label">First day of your last period</label>
-                            <input type="date" class="form-control" id="lmpDate" required>
+                            <label for="lmpDate" class="form-label">first day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" name="lmp" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="cycleLength" class="form-label">Average cycle length</label>
-                            <select class="form-select" id="cycleLength">
-                                <option value="21">21 days</option>
-                                <option value="22">22 days</option>
-                                <option value="23">23 days</option>
-                                <option value="24">24 days</option>
-                                <option value="25">25 days</option>
-                                <option value="26">26 days</option>
-                                <option value="27">27 days</option>
-                                <option value="28" selected>28 days</option>
-                                <option value="29">29 days</option>
-                                <option value="30">30 days</option>
-                                <option value="31">31 days</option>
-                                <option value="32">32 days</option>
-                                <option value="33">33 days</option>
-                                <option value="34">34 days</option>
-                                <option value="35">35 days</option>
-                                <option value="36">36 days</option>
-                                <option value="37">37 days</option>
-                                <option value="38">38 days</option>
-                                <option value="39">39 days</option>
-                                <option value="40">40 days</option>
-                            </select>
-                            <div class="form-text">Not sure? Most cycles are 26-32 days. Count from the first day of one period to the first day of the next.</div>
+                        <div class="pc-row">
+                            <div class="mb-3">
+                                <label for="cycleLength" class="form-label">usual cycle length</label>
+                                <select class="form-select" id="cycleLength" name="len">
+                                    <option value="20">20 days</option>
+                                    <option value="21">21 days</option>
+                                    <option value="22">22 days</option>
+                                    <option value="23">23 days</option>
+                                    <option value="24">24 days</option>
+                                    <option value="25">25 days</option>
+                                    <option value="26">26 days</option>
+                                    <option value="27">27 days</option>
+                                    <option value="28" selected>28 days</option>
+                                    <option value="29">29 days</option>
+                                    <option value="30">30 days</option>
+                                    <option value="31">31 days</option>
+                                    <option value="32">32 days</option>
+                                    <option value="33">33 days</option>
+                                    <option value="34">34 days</option>
+                                    <option value="35">35 days</option>
+                                    <option value="36">36 days</option>
+                                    <option value="37">37 days</option>
+                                    <option value="38">38 days</option>
+                                    <option value="39">39 days</option>
+                                    <option value="40">40 days</option>
+                                    <option value="41">41 days</option>
+                                    <option value="42">42 days</option>
+                                    <option value="43">43 days</option>
+                                    <option value="44">44 days</option>
+                                    <option value="45">45 days</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="periodLength" class="form-label">period length</label>
+                                <input type="number" class="form-control" id="periodLength" name="plen" min="2" max="10" step="1" placeholder="optional" inputmode="numeric" aria-describedby="plenHelp">
+                            </div>
                         </div>
+                        <div class="form-text mb-3" id="plenHelp">Not sure of your cycle length? Count from the first day of one period to the first day of the next. Period length is optional (we assume 5 days).</div>
+
+                        <details class="pc-more" id="moreDates">
+                            <summary>add more period dates <span class="pc-optional">(optional, sharpens the range)</span></summary>
+                            <p class="pc-more-help">Earlier period start dates, any order. With 3 or more, the range comes from your own cycles instead of the setting above.</p>
+                            <div class="pc-extra" id="extraDates">
+                                <label><span>period before that</span><input type="date" class="form-control" name="d" aria-label="earlier period start 1"></label>
+                                <label><span>and before that</span><input type="date" class="form-control" name="d" aria-label="earlier period start 2"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 3"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 4"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 5"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 6"></label>
+                            </div>
+                        </details>
+
+                        <div class="form-check pc-check">
+                            <input class="form-check-input" type="checkbox" id="onBirthControl" name="bc" value="1">
+                            <label class="form-check-label" for="onBirthControl">I'm on hormonal birth control (pill, patch, ring, implant, shot or hormonal IUD)</label>
+                        </div>
+
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-calculate">Calculate My Next Period</button>
+                            <button type="submit" class="btn btn-calculate">Calculate my next period</button>
                         </div>
                     </form>
-                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This is an estimate based on averages. If your period is unexpectedly late, consider a pregnancy test; if cycles are regularly irregular, missing, or unusually heavy, talk to your healthcare provider.</span></p>
+                    <noscript><p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This calculator needs JavaScript to work out your dates. Without it, here's the method: add your usual cycle length to the first day of your last period. That's your most likely next start, and a few days either side is normal.</span></p></noscript>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This is an estimate from your dates, not a diagnosis. If your period is unexpectedly late, consider a pregnancy test; if cycles are regularly irregular, missing, or unusually heavy, talk to your healthcare provider.</span></p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Results -->
-        <section class="container py-4">
-            <div id="results" class="results-section" style="max-width: 640px; margin: 0 auto;"></div>
-
-            <div class="blog-cta-box blog-cta-box-inline" style="max-width: 640px; margin: 2rem auto;">
-                <h4><i class="bi bi-phone me-2"></i>Skip the manual math next time</h4>
-                <p>Veya predicts this for you automatically and adjusts as it learns your cycle.</p>
-                <p class="mb-0">
-                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn btn-primary btn-lg">
-                        <i class="bi bi-apple me-2"></i>Download on the App Store
-                    </a>
-                </p>
+                <div id="results" class="results-section" aria-live="polite">
+                    <div class="pc-empty">
+                        <p class="pc-kicker">your result</p>
+                        <p>Pick the first day of your last period and your next period, its likely range, your fertile window and the next 3 cycles appear here straight away.</p>
+                    </div>
+                </div>
+                </div>
             </div>
         </section>
 
@@ -907,6 +984,15 @@
             <h3>Common reasons a cycle shifts</h3>
             <p>A late period doesn't automatically mean anything is wrong &mdash; cycles shift for a lot of ordinary reasons. Stress, travel across time zones, changes in sleep, a new workout routine or a heavier training block, and shifts in weight or diet can all nudge ovulation later than usual. Since your period date is really set by when you ovulate, anything that delays ovulation delays the whole cycle along with it.</p>
             <p>If you want to go deeper on what a late period can mean and how to read your own pattern, see our <a href="../blog/why-is-my-period-late.html">guide on why your period might be late</a>.</p>
+        </section>
+
+        <!-- Methodology -->
+        <section id="how-it-works" class="tools-educational container" style="max-width: 740px;">
+            <h2>How this calculator works</h2>
+            <p>With one date, the calculator adds the cycle length you picked to the first day of your last period. That date is shown as the most likely start, with a range of three days either side, because most cycles drift a little from month to month.</p>
+            <p>Add earlier period dates and it switches to your own history. It averages your cycle lengths with recent cycles counting more (a cycle from about three and a half months ago counts half as much as one from this month), gives an unusually long or short cycle less pull, and sets the range from how much your cycles actually varied. Steady dates give a tight range, and dates that move around give a wider one.</p>
+            <p>The fertile window is placed by estimating ovulation from your cycle length. Instead of assuming a 14-day luteal phase for everyone, it uses a luteal length that scales with cycle length, from about 11 days for short cycles to 15 for long ones, and for cycles longer than 35 days it places ovulation proportionally later. The window runs from five days before the estimated ovulation day to one day after.</p>
+            <p>This is the same calendar method the <span data-brand>Veya</span> app starts from. The app's prediction uses more signals as you log them, like ovulation tests, temperature and confirmed ovulation, which a web calculator can't see. It is not a contraceptive method and can't tell you which days are safe. Nothing you enter here is saved to an account; the math runs in your browser.</p>
         </section>
 
         <!-- Educational: What to track -->
@@ -933,12 +1019,12 @@
         <section class="container" style="max-width: 640px;">
             <div class="cta-section">
                 <h3>Averages are a guess. Your history is the answer.</h3>
-                <p>Got irregular cycles, post-pill spotting, or post-baby periods that won't settle? Veya learns from your actual cycle history and gets sharper every period you log — so the next-period date you see is yours, not a textbook 28-day average.</p>
-                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta">
-                    <i class="bi bi-apple me-1"></i> Download Veya
+                <p>Got irregular cycles, post-pill spotting, or post-baby periods that won't settle? <span data-brand>Veya</span> learns from your actual cycle history and gets sharper every period you log — so the next-period date you see is yours, not a textbook 28-day average.</p>
+                <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank" class="btn-cta" data-appstore>
+                    <i class="bi bi-apple me-1"></i> Download <span data-brand>Veya</span>
                 </a>
                 <div class="mt-3">
-                    <a href="https://app.myveya.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=period-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use Veya free in your browser &rarr;</a>
+                    <a href="https://app.myveya.com/login?mode=signup&utm_source=website&utm_medium=caption&utm_campaign=period-calculator" target="_blank" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-size: 0.95rem;">Or use <span data-brand>Veya</span> free in your browser &rarr;</a>
                 </div>
             </div>
         </section>
@@ -1047,7 +1133,7 @@
         <section class="container medical-disclaimer" style="max-width: 740px;">
             <p>
                 <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
-                This calculator gives you an estimate, not a diagnosis. Persistent cycle irregularity, missed periods, very heavy bleeding, or severe pain are worth discussing with your healthcare provider — they can indicate conditions like PCOS, thyroid issues, endometriosis, or perimenopause that benefit from proper evaluation. Veya is a tracking tool, not a substitute for professional medical care.
+                This calculator gives you an estimate, not a diagnosis. Persistent cycle irregularity, missed periods, very heavy bleeding, or severe pain are worth discussing with your healthcare provider — they can indicate conditions like PCOS, thyroid issues, endometriosis, or perimenopause that benefit from proper evaluation. <span data-brand>Veya</span> is a tracking tool, not a substitute for professional medical care.
             </p>
         </section>
 
@@ -1086,559 +1172,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="../js/period-calculator.js"></script>
 
-    <script>
-    const LUTEAL_LENGTH = 14;
-    const DEFAULT_PERIOD_LENGTH = 5;
-
-    function formatDate(date) {
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        return `${months[date.getMonth()]} ${date.getDate()}`;
-    }
-
-    function formatDateFull(date) {
-        const months = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"];
-        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-    }
-
-    function addDays(date, days) {
-        const d = new Date(date);
-        d.setDate(d.getDate() + days);
-        return d;
-    }
-
-    function sameDay(a, b) {
-        return a.getFullYear() === b.getFullYear() &&
-               a.getMonth() === b.getMonth() &&
-               a.getDate() === b.getDate();
-    }
-
-    function calcCycle(cycleStart, cycleLength, periodLength) {
-        const nextPeriod = addDays(cycleStart, cycleLength);
-        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, periodLength + 1);
-        const ovulationDate = addDays(cycleStart, ovulationDay - 1);
-        const fertileStart = addDays(ovulationDate, -5);
-        const fertileEnd = addDays(ovulationDate, 1);
-
-        return {
-            cycleStart,
-            nextPeriod,
-            ovulationDate,
-            ovulationDay,
-            fertileStart,
-            fertileEnd,
-        };
-    }
-
-    function getCycleDay(lmpDate, today) {
-        const diffTime = today.getTime() - lmpDate.getTime();
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        return diffDays + 1;
-    }
-
-    function getPhaseInfo(cycleDay, cycleLength, periodLength) {
-        const ovulationDay = Math.max(cycleLength - LUTEAL_LENGTH, periodLength + 1);
-        const fertileStartDay = ovulationDay - 5;
-
-        if (cycleDay <= periodLength) {
-            return {
-                name: "Menstrual Phase",
-                desc: "Days 1-" + periodLength + " — your body is shedding the uterine lining. Energy may be lower, and it's a great time for rest and gentle movement.",
-                color: "var(--accent)"
-            };
-        } else if (cycleDay < fertileStartDay) {
-            return {
-                name: "Follicular Phase",
-                desc: "Your body is preparing to ovulate. Estrogen is rising — many people feel a boost in energy, mood, and motivation during this phase.",
-                color: "var(--primary)"
-            };
-        } else if (cycleDay <= ovulationDay + 1) {
-            return {
-                name: "Ovulation Window",
-                desc: "You're in or near your fertile window. Estrogen peaks and you may notice increased energy, clearer skin, and changes in cervical mucus.",
-                color: "var(--green-deep)"
-            };
-        } else {
-            return {
-                name: "Luteal Phase",
-                desc: "Progesterone rises after ovulation. You may notice PMS symptoms like bloating, mood changes, or cravings in the second half of this phase.",
-                color: "var(--primary-dark)"
-            };
-        }
-    }
-
-    // Set date constraints
-    document.addEventListener('DOMContentLoaded', function() {
-        const input = document.getElementById('lmpDate');
-        const today = new Date();
-        input.max = today.toISOString().split('T')[0];
-        const minDate = new Date(today);
-        minDate.setDate(minDate.getDate() - 90);
-        input.min = minDate.toISOString().split('T')[0];
-    });
-
-    /* ── Refine helpers ── */
-    function parseDateInput(value) {
-        if (!value) return null;
-        const parts = value.split('-');
-        if (parts.length !== 3) return null;
-        const d = new Date(parts[0], parts[1] - 1, parts[2]);
-        return isNaN(d.getTime()) ? null : d;
-    }
-
-    function daysBetween(a, b) {
-        return Math.round((a.getTime() - b.getTime()) / (1000 * 60 * 60 * 24));
-    }
-
-    // d1 = most recent period start, d2 = the one before, d3 = the one before that (Date or null)
-    function computeVariability(d1, d2, d3, today) {
-        if (!d1 || !d2) {
-            return { ok: false, insufficient: true };
-        }
-
-        const dates = d3 ? [d1, d2, d3] : [d1, d2];
-        for (let i = 0; i < dates.length; i++) {
-            if (dates[i] > today) {
-                return { ok: false, message: "Those dates need to be in the past — double check for a typo in the year or month." };
-            }
-        }
-
-        if (d1 <= d2) {
-            return { ok: false, message: "The most recent period should go in the first box, with each date after it earlier than the last — check the order." };
-        }
-        if (d3 && d2 <= d3) {
-            return { ok: false, message: "Your three dates should run from most recent to oldest — check the order." };
-        }
-
-        const gaps = [daysBetween(d1, d2)];
-        if (d3) gaps.push(daysBetween(d2, d3));
-
-        for (let i = 0; i < gaps.length; i++) {
-            if (gaps[i] < 20 || gaps[i] > 60) {
-                return { ok: false, message: "The gap between two of those dates works out to " + gaps[i] + " days, which is outside a plausible cycle length (20-60 days) — double check the dates." };
-            }
-        }
-
-        const avg = gaps.reduce((a, b) => a + b, 0) / gaps.length;
-        const shortest = Math.min.apply(null, gaps);
-        const longest = Math.max.apply(null, gaps);
-
-        return { ok: true, avg: avg, shortest: shortest, longest: longest };
-    }
-
-    /* ── Result rendering ── */
-    function buildResultHtml(state) {
-        const lmpDate = state.lmpDate;
-        const periodLength = state.periodLength;
-        const dropdownCycleLength = state.dropdownCycleLength;
-        const avgCycleLength = state.avgCycleLength;
-        const range = state.range;
-        const effectiveCycleLength = avgCycleLength ? Math.round(avgCycleLength) : dropdownCycleLength;
-
-        // Calculate current and next 6 cycles
-        const cycles = [];
-        let nextStart = lmpDate;
-        for (let i = 0; i < 7; i++) {
-            cycles.push(calcCycle(nextStart, effectiveCycleLength, periodLength));
-            nextStart = cycles[cycles.length - 1].nextPeriod;
-        }
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        // Find which cycle we're currently in
-        let currentCycleIndex = 0;
-        for (let i = 0; i < cycles.length; i++) {
-            if (today >= cycles[i].cycleStart && today < cycles[i].nextPeriod) {
-                currentCycleIndex = i;
-                break;
-            }
-        }
-
-        const currentCycle = cycles[currentCycleIndex];
-        const cycleDay = getCycleDay(currentCycle.cycleStart, today);
-        const phase = getPhaseInfo(cycleDay, effectiveCycleLength, periodLength);
-
-        // Find the next upcoming period (first one after today)
-        let nextPeriodDate = null;
-        for (let i = 0; i < cycles.length; i++) {
-            if (cycles[i].nextPeriod > today) {
-                nextPeriodDate = cycles[i].nextPeriod;
-                break;
-            }
-        }
-        if (!nextPeriodDate) {
-            nextPeriodDate = cycles[cycles.length - 1].nextPeriod;
-        }
-
-        const daysUntilPeriod = Math.ceil((nextPeriodDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
-
-        // How many days late (based on the immediate expected date from the entered last period + cycle length)
-        const immediateNextPeriod = cycles[0].nextPeriod;
-        const daysLate = Math.floor((today.getTime() - immediateNextPeriod.getTime()) / (1000 * 60 * 60 * 24));
-
-        // Build calendar for current cycle
-        let calendarHtml = '';
-        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        dayNames.forEach(d => {
-            calendarHtml += `<div class="day-header">${d}</div>`;
-        });
-
-        const calStart = currentCycle.cycleStart;
-        const startDow = calStart.getDay();
-        for (let i = 0; i < startDow; i++) {
-            calendarHtml += '<div class="day empty"></div>';
-        }
-
-        const ovDay = currentCycle.ovulationDay;
-        for (let d = 0; d < effectiveCycleLength; d++) {
-            const currentDate = addDays(calStart, d);
-            const dayNum = d + 1;
-            let cls = 'day';
-            let label = '';
-
-            if (dayNum <= periodLength) {
-                cls += ' period';
-            } else if (dayNum >= ovDay - 5 && dayNum <= ovDay + 1) {
-                if (dayNum === ovDay) {
-                    cls += ' ovulation';
-                    label = 'Ovulation';
-                } else {
-                    cls += ' fertile';
-                }
-            } else if (dayNum > ovDay + 1) {
-                cls += ' luteal';
-            }
-
-            if (sameDay(currentDate, today)) {
-                cls += ' today-marker';
-            }
-
-            calendarHtml += `<div class="${cls}">
-                <span class="day-num">${currentDate.getDate()}</span>
-                ${label ? `<span class="day-label">${label}</span>` : ''}
-            </div>`;
-        }
-
-        // Build upcoming 6 periods list (skip ones in the past)
-        let upcomingHtml = '';
-        let count = 0;
-        for (let i = 0; i < cycles.length && count < 6; i++) {
-            const c = cycles[i];
-            if (c.nextPeriod > today) {
-                count++;
-                upcomingHtml += `
-                    <div class="next-cycle-row">
-                        <div class="next-cycle-label">${count === 1 ? 'Next period' : 'Period ' + count}</div>
-                        <div class="next-cycle-dates">
-                            <span class="period-date">${formatDateFull(c.nextPeriod)}</span>
-                            &nbsp;&middot;&nbsp; Fertile: <span class="fertile-date">${formatDate(calcCycle(c.nextPeriod, effectiveCycleLength, periodLength).fertileStart)} - ${formatDate(calcCycle(c.nextPeriod, effectiveCycleLength, periodLength).fertileEnd)}</span>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        // Refined range — an addition beneath the headline date, never a replacement for it
-        let rangeHtml = '';
-        if (range) {
-            if (range.widthDays > 0) {
-                rangeHtml = `
-                    <div class="predicted-range">
-                        Could land anywhere from <span class="range-dates">${formatDateFull(range.earliestDate)}</span> to <span class="range-dates">${formatDateFull(range.latestDate)}</span>
-                        <span class="range-width">a ${range.widthDays}-day window</span>
-                        <span class="range-sentence">That width reflects how much your own cycles varied across the dates you gave, not a general estimate.</span>
-                    </div>
-                `;
-            } else {
-                rangeHtml = `
-                    <div class="predicted-range">
-                        <span class="range-sentence">Your two most recent cycles were ${range.shortest} days apart. Add one more date below and we can show you a range instead of a single point.</span>
-                    </div>
-                `;
-            }
-        }
-
-        const activeNoteHtml = avgCycleLength ? `
-            <div class="refine-active-note">
-                <i class="bi bi-arrow-repeat"></i>Using your actual average cycle length of ${effectiveCycleLength} days, calculated from the dates you gave, instead of the ${dropdownCycleLength}-day dropdown value.
-            </div>
-        ` : '';
-
-        const d1 = state.rawDates[0] || '';
-        const d2 = state.rawDates[1] || '';
-        const d3 = state.rawDates[2] || '';
-
-        const refinePanelHtml = `
-            <div class="refine-panel">
-                <button type="button" class="refine-toggle" id="refineToggle" aria-expanded="${state.refineOpen ? 'true' : 'false'}" aria-controls="refineBody">
-                    <i class="bi bi-sliders"></i> Sharpen this prediction <i class="bi bi-chevron-down"></i>
-                </button>
-                <div class="refine-body" id="refineBody" ${state.refineOpen ? '' : 'hidden'}>
-                    <div class="refine-field">
-                        <label for="refinePeriodLength">How many days does your period usually last?</label>
-                        <input type="number" id="refinePeriodLength" min="2" max="10" step="1" value="${periodLength}">
-                    </div>
-                    <div class="refine-subhead">
-                        <strong>My cycles vary</strong>
-                        <p>Enter your last 3 period start dates, most recent first, and we'll use your actual pattern instead of the dropdown average.</p>
-                    </div>
-                    <div class="refine-field">
-                        <label for="refineDate1">Most recent period start</label>
-                        <input type="date" id="refineDate1" value="${d1}">
-                    </div>
-                    <div class="refine-field">
-                        <label for="refineDate2">Period before that</label>
-                        <input type="date" id="refineDate2" value="${d2}">
-                    </div>
-                    <div class="refine-field">
-                        <label for="refineDate3">And the one before that</label>
-                        <input type="date" id="refineDate3" value="${d3}">
-                    </div>
-                    ${state.message ? `<div class="refine-message" id="refineMessage">${state.message}</div>` : ''}
-                    <button type="button" class="btn-refine-update" id="refineUpdateBtn">Update my prediction</button>
-                </div>
-            </div>
-        `;
-
-        lastHandoffHeadline = `Your next period is predicted for ${formatDateFull(nextPeriodDate)}.`;
-        return `
-            <div class="result-card">
-                ${daysLate > 0 ? `
-                <div class="late-note">
-                    <i class="bi bi-calendar-x"></i>Based on the dates you entered, your period was expected on ${formatDateFull(immediateNextPeriod)} &mdash; that's <strong>${daysLate} day${daysLate === 1 ? '' : 's'} late</strong> as of today.
-                </div>
-                ` : ''}
-                ${activeNoteHtml}
-                <div class="text-center mb-3">
-                    <h2 style="font-weight: 700; font-size: 1.3rem; color: var(--text-dark);">Your Next Period</h2>
-                    <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">${formatDateFull(nextPeriodDate)}</div>
-                    <div style="font-size: 1rem; color: var(--text-muted);">${daysUntilPeriod === 0 ? "That's today!" : daysUntilPeriod === 1 ? "That's tomorrow!" : daysUntilPeriod + " days from now"}</div>
-                    ${rangeHtml}
-                </div>
-
-                <div class="key-dates">
-                    <div class="key-date-box period-box">
-                        <div class="date-label">Current Cycle Day</div>
-                        <div class="date-value" style="font-size: 1.5rem;">Day ${cycleDay}</div>
-                        <div class="date-label">of ${effectiveCycleLength}</div>
-                    </div>
-                    <div class="key-date-box phase-box">
-                        <div class="date-label">Current Phase</div>
-                        <div class="date-value" style="color: ${phase.color};">${phase.name}</div>
-                        <div class="date-label">${cycleDay <= periodLength ? 'Days 1-' + periodLength : cycleDay <= currentCycle.ovulationDay + 1 ? 'Around day ' + currentCycle.ovulationDay : 'Days ' + (currentCycle.ovulationDay + 1) + '-' + effectiveCycleLength}</div>
-                    </div>
-                </div>
-
-
-                ${refinePanelHtml}
-
-                <div class="phase-indicator">
-                    <div class="phase-name" style="color: ${phase.color};">${phase.name}</div>
-                    <div class="phase-desc">${phase.desc}</div>
-                </div>
-
-                <h3 class="mt-4 mb-2" style="font-weight: 700; font-size: 1.15rem;">Your Cycle at a Glance</h3>
-                <div class="cycle-calendar">${calendarHtml}</div>
-                <div class="legend">
-                    <div class="legend-item"><div class="legend-dot period"></div> Period</div>
-                    <div class="legend-item"><div class="legend-dot fertile"></div> Fertile window</div>
-                    <div class="legend-item"><div class="legend-dot ovulation"></div> Ovulation</div>
-                    <div class="legend-item"><div class="legend-dot luteal"></div> Luteal</div>
-                    <div class="legend-item"><div class="legend-dot today"></div> Today</div>
-                </div>
-
-                <h3 class="mt-4 mb-0" style="font-weight: 700; font-size: 1.15rem;">Upcoming Periods & Fertile Windows</h3>
-                <div class="next-cycles">${upcomingHtml}</div>
-
-            </div>
-
-            <div class="tips-section">
-                <h3>Make Your Predictions More Accurate</h3>
-                <ul>
-                    <li><strong>Track for at least 3 months</strong> — your average cycle length gets more accurate with more data points. One cycle isn't enough to know your pattern.</li>
-                    <li><strong>Log the first day of full flow</strong> — spotting before your period doesn't count as day 1. Your cycle starts with the first day of real bleeding.</li>
-                    <li><strong>Note any irregularities</strong> — stress, travel, illness, and medication changes can all shift your cycle. Tracking these helps explain why a period comes early or late.</li>
-                    <li><strong>Pay attention to symptoms</strong> — PMS symptoms like bloating, mood swings, or breast tenderness often show up in the same pattern each cycle, giving you a heads-up before your period arrives.</li>
-                </ul>
-            </div>
-        `;
-    }
-
-    let calcState = null;
-    let lastHandoffHeadline = '';
-
-    function renderResult(scroll) {
-        const resultsEl = document.getElementById('results');
-        resultsEl.innerHTML = buildResultHtml(calcState);
-        showAppHandoff(lastHandoffHeadline);
-        resultsEl.classList.add('show');
-        if (scroll) {
-            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    document.getElementById('periodForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const lmpInput = document.getElementById('lmpDate').value;
-        if (!lmpInput) return;
-
-        const parts = lmpInput.split('-');
-        const lmpDate = new Date(parts[0], parts[1] - 1, parts[2]);
-        const dropdownCycleLength = parseInt(document.getElementById('cycleLength').value);
-
-        calcState = {
-            lmpDate: lmpDate,
-            dropdownCycleLength: dropdownCycleLength,
-            periodLength: DEFAULT_PERIOD_LENGTH,
-            avgCycleLength: null,
-            range: null,
-            rawDates: ['', '', ''],
-            refineOpen: false,
-            message: '',
-            refineOpenedLogged: false
-        };
-
-        renderResult(true);
-    });
-
-    // Refine panel + update button — delegated so it keeps working after re-renders replace #results' innerHTML
-    document.getElementById('results').addEventListener('click', function(e) {
-        if (!calcState) return;
-
-        const toggle = e.target.closest('#refineToggle');
-        if (toggle) {
-            calcState.refineOpen = !calcState.refineOpen;
-            if (calcState.refineOpen && !calcState.refineOpenedLogged && typeof gtag === 'function') {
-                gtag('event', 'calculator_refine_opened', {
-                    page_path: window.location.pathname
-                });
-                calcState.refineOpenedLogged = true;
-            }
-            renderResult(false);
-            return;
-        }
-
-        const updateBtn = e.target.closest('#refineUpdateBtn');
-        if (updateBtn) {
-            handleRefineUpdate();
-        }
-    });
-
-    function handleRefineUpdate() {
-        const periodLengthInput = document.getElementById('refinePeriodLength');
-        let periodLength = parseInt(periodLengthInput.value, 10);
-        if (isNaN(periodLength) || periodLength < 2 || periodLength > 10) {
-            periodLength = DEFAULT_PERIOD_LENGTH;
-        }
-
-        const raw1 = document.getElementById('refineDate1').value;
-        const raw2 = document.getElementById('refineDate2').value;
-        const raw3 = document.getElementById('refineDate3').value;
-
-        const d1 = parseDateInput(raw1);
-        const d2 = parseDateInput(raw2);
-        const d3 = parseDateInput(raw3);
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        const fieldsUsed = [];
-        if (periodLength !== DEFAULT_PERIOD_LENGTH) fieldsUsed.push('period_length');
-
-        let avgCycleLength = null;
-        let range = null;
-        let message = '';
-        let variabilityDays = 0;
-
-        if (raw1 || raw2 || raw3) {
-            const result = computeVariability(d1, d2, d3, today);
-            if (result.insufficient) {
-                message = "Add at least two of your last period start dates to calculate your actual cycle variation.";
-            } else if (!result.ok) {
-                message = result.message;
-            } else {
-                fieldsUsed.push('multi_date');
-                avgCycleLength = result.avg;
-                // The first refine date IS the user's most recent period start, and it
-                // is the more deliberate input, so it becomes the anchor for the
-                // headline and the range. Otherwise entering a date here that differs
-                // from the main form would predict from the wrong day.
-                if (d1) {
-                    calcState.lmpDate = d1;
-                    const lmpField = document.getElementById('lmpDate');
-                    if (lmpField) lmpField.value = raw1;
-                }
-                range = {
-                    shortest: result.shortest,
-                    longest: result.longest,
-                    widthDays: result.longest - result.shortest,
-                    earliestDate: addDays(calcState.lmpDate, result.shortest),
-                    latestDate: addDays(calcState.lmpDate, result.longest)
-                };
-                variabilityDays = range.widthDays;
-            }
-        }
-
-        calcState.periodLength = periodLength;
-        calcState.avgCycleLength = avgCycleLength;
-        calcState.range = range;
-        calcState.rawDates = [raw1, raw2, raw3];
-        calcState.message = message;
-        calcState.refineOpen = true;
-
-        if (typeof gtag === 'function') {
-            gtag('event', 'calculator_refined', {
-                page_path: window.location.pathname,
-                fields_used: fieldsUsed.length ? fieldsUsed.join(',') : '(none)',
-                variability_days: variabilityDays
-            });
-        }
-
-        renderResult(false);
-    }
-    </script>
-<script>
-/* App handoff card: shown under the result only after a calculation. Rename the app here. */
-var APP_HANDOFF = {
-    brand: 'Veya',
-    appUrl: 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8',
-    tail: "The app keeps refining this as you log.",
-    explain: "{brand} learns from the periods you log, so dates and ranges adjust to irregular cycles, and your symptoms and sleep sit alongside your cycle.",
-    guideUrl: '../blog/why-is-my-period-late.html'
-};
-function showAppHandoff(headline) {
-    var results = document.getElementById('results');
-    var old = document.getElementById('appHandoff');
-    if (old) old.remove();
-    var anchor = results && results.querySelector('.result-card');
-    if (!anchor || !headline) return;
-    var card = document.createElement('div');
-    card.className = 'app-handoff';
-    card.id = 'appHandoff';
-    var h = document.createElement('h3');
-    h.textContent = headline + (APP_HANDOFF.tail ? ' ' + APP_HANDOFF.tail : '');
-    var p = document.createElement('p');
-    p.textContent = APP_HANDOFF.explain.replace('{brand}', APP_HANDOFF.brand);
-    var a = document.createElement('a');
-    a.className = 'app-handoff-btn';
-    a.href = APP_HANDOFF.appUrl;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.setAttribute('data-cta-placement', 'tool_result');
-    a.innerHTML = '<i class="bi bi-apple me-1"></i>';
-    a.appendChild(document.createTextNode('Get ' + APP_HANDOFF.brand + ' on the App Store'));
-    var g = document.createElement('a');
-    g.className = 'app-handoff-guide';
-    g.href = APP_HANDOFF.guideUrl;
-    g.textContent = 'Read the related guide \u2192';
-    card.appendChild(h); card.appendChild(p); card.appendChild(a); card.appendChild(g);
-    anchor.insertAdjacentElement('afterend', card);
-}
-</script>
 </body>
 </html>
