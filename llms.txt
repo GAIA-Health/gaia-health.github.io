@@ -296,8 +296,8 @@
 - [Habit tracking success](https://www.go-go-gaia.com/blog/habit-tracking-success.html): Building habits that stick with tracking.
 - [Fitness tracker cycle tracking](https://www.go-go-gaia.com/blog/fitness-tracker-cycle-tracking.html): Using wearables for cycle insights.
 - [Cycle syncing app guide](https://www.go-go-gaia.com/blog/cycle-syncing-app-guide.html): How to use apps for cycle syncing.
-- [Pregnancy wellness tips](https://www.go-go-gaia.com/blog/pregnancy-wellness-tips.html): Nutrition, exercise, and self-care during pregnancy.
 - [Creatine for women](https://www.go-go-gaia.com/blog/creatine-for-women.html): What the research protocols use, why the standard advice is male-derived, and what's known about creatine and your cycle.
+- [For Professionals: Veya client portal for coaches](https://www.go-go-gaia.com/for-professionals/): See the week your client actually had, not the spreadsheet they filled in Sunday night. Free client portal for coaches and trainers, up to 3 clients, no card.
 - [Coaching clients around their cycle](https://www.go-go-gaia.com/blog/coaching-clients-around-their-cycle.html): A practical guide for trainers and coaches on programming around a client's cycle, without guesswork, screenshots, or crossing into medical advice.
 - [How hormone coaches track client cycles & labs](https://www.go-go-gaia.com/blog/hormone-coach-client-tracking.html): How hormone health coaches see a client's cycle phase, symptoms, and hormone labs in one place, with consent, instead of piecing it together from screenshots.
 - [Client tracking for fertility coaches](https://www.go-go-gaia.com/blog/fertility-coach-client-tracking.html): What a fertility coach sees when a client shares her cycle: phase, predicted fertile window, BBT trend, OPK, and cervical mucus, consent-based.
@@ -313,6 +313,9 @@
 - [Everfit vs Trainerize: which fits your coaching business?](https://www.go-go-gaia.com/blog/everfit-vs-trainerize.html): Everfit and Trainerize both build and deliver programs well. Here's how they compare on nutrition, wearables, and pricing, so you can pick the right fit.
 - [TrueCoach alternatives for coaches (2026)](https://www.go-go-gaia.com/blog/truecoach-alternatives.html): Looking at TrueCoach alternatives? We compared Trainerize, Everfit, PT Distinction, My PT Hub, and Veya for Professionals on client context and pricing.
 - [How to talk to clients about their menstrual cycle](https://www.go-go-gaia.com/blog/how-to-talk-to-clients-about-their-menstrual-cycle.html): A coach's guide to talking about the menstrual cycle: why the conversation matters, scope of practice, how to open it, and what to do with what you learn.
+- [How to read the VCF file from your genome test](https://www.go-go-gaia.com/blog/how-to-read-your-genome-vcf-file.html): A VCF from Nebula, Dante Labs, or Sequencing.com looks nothing like a 23andMe file. What it is, reference builds, and why a missing variant isn't negative.
+- [What's really in your 23andMe or AncestryDNA file](https://www.go-go-gaia.com/blog/whats-inside-your-23andme-ancestrydna-raw-data.html): Your 23andMe or AncestryDNA file is a few hundred thousand data points, not a genome. What it actually shows, and what it honestly can't tell you.
+- [You can upload your raw DNA file: what Veya shows](https://www.go-go-gaia.com/blog/upload-raw-dna-file-what-we-show.html): Upload a 23andMe or AncestryDNA raw file and see cited results. What Veya shows, what it purges on request, and what it never claims.
 
 ## Free tools
 
