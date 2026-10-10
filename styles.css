@@ -4254,3 +4254,10 @@ img[width][height] {
     max-width: 100%;
     height: auto;
 }
+
+/* img[width][height] (0,2,1) outranks the component rules below (0,1,1);
+   restore their fixed heights so the responsive rule doesn't resize them. */
+.navbar-brand img[width][height] { height: 1.6rem; width: auto; }
+.persona-card-thumb img[width][height],
+.pro-shot-frame img[width][height] { height: 100%; }
+.surface-chip img[width][height] { height: 132px; }
