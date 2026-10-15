@@ -50,6 +50,13 @@
 //       rather than creating a second one. Without --apply it's a dry run.
 //       Apple's CPP review is typically ~24h.
 //
+//   node scripts/asc/asc-cpp.mjs keywords <config.json> [--apply]
+//       config = { "<cpp name>": { "<locale>": ["word", ...] } }. Links app-level
+//       search keywords (appKeywords) to the CPP localization of the LATEST version
+//       via relationships/searchKeywords. Apple only lets you link keywords already
+//       in the app's pool (GET /v1/apps/{id}/searchKeywords, filter by locale),
+//       so words not in the pool are reported and skipped. Dry run without --apply.
+//
 // A CPP cannot go live without screenshots. `sync` builds the text/shell;
 // `screenshots` handles the asset upload end-to-end (no more dragging into the ASC UI);
 // `submit-cpp` sends a draft version to Apple for review.
@@ -708,6 +715,49 @@ async function cmdSubmitCpp(names) {
   console.log('Apple review for Custom Product Pages is typically ~24h.');
 }
 
+// ---- search keywords (appKeywords linked to CPP localizations) -----------
+
+async function appKeywordPool(appId, locale) {
+  const { data } = await api(`/v1/apps/${appId}/searchKeywords?limit=200&filter[platform]=IOS&filter[locale]=${locale}`);
+  return data.map((k) => k.id);
+}
+
+async function locKeywords(locId) {
+  const { data } = await api(`/v1/appCustomProductPageLocalizations/${locId}/relationships/searchKeywords?limit=200`);
+  return data.map((k) => k.id);
+}
+
+async function cmdKeywords(configPath) {
+  if (!configPath) throw new Error('usage: keywords <config.json> [--apply]');
+  const cfg = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  const appId = need('ASC_APP_ID');
+  const pools = {};
+  console.log(APPLY ? 'APPLY mode\n' : 'DRY RUN (add --apply to write)\n');
+  for (const [name, byLocale] of Object.entries(cfg)) {
+    const cpp = await findCppByName(appId, name);
+    if (!cpp) { console.log(`"${name}": NOT FOUND`); continue; }
+    const versions = (await listCppVersions(cpp.id)).sort((a, b) => Number(b.attributes.version) - Number(a.attributes.version));
+    const v = versions[0];
+    const locs = await listLocalizations(v.id);
+    for (const [locale, words] of Object.entries(byLocale)) {
+      const loc = locs.find((l) => l.attributes.locale === locale);
+      if (!loc) { console.log(`"${name}" v${v.attributes.version} [${v.attributes.state}] ${locale}: no localization, skipped`); continue; }
+      pools[locale] ??= await appKeywordPool(appId, locale);
+      const have = await locKeywords(loc.id);
+      const missing = words.filter((w) => !pools[locale].includes(w));
+      const toAdd = words.filter((w) => pools[locale].includes(w) && !have.includes(w));
+      console.log(`"${name}" v${v.attributes.version} [${v.attributes.state}] ${locale}: before=[${have}] add=[${toAdd}]` + (missing.length ? ` NOT-IN-POOL=[${missing}]` : ''));
+      if (APPLY && toAdd.length) {
+        await api(`/v1/appCustomProductPageLocalizations/${loc.id}/relationships/searchKeywords`, {
+          method: 'POST',
+          body: { data: toAdd.map((id) => ({ type: 'appKeywords', id })) },
+        });
+        console.log(`   after=[${await locKeywords(loc.id)}]`);
+      }
+    }
+  }
+}
+
 // ---- entry --------------------------------------------------------------
 
 const positional = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -716,6 +766,7 @@ try {
   if (cmd === 'audit') await cmdAudit();
   else if (cmd === 'sync') await cmdSync(rest[0] || 'scripts/asc/verticals.json');
   else if (cmd === 'screenshots') await cmdScreenshots(rest[0], rest[1]);
+  else if (cmd === 'keywords') await cmdKeywords(rest[0]);
   else if (cmd === 'submit-cpp') await cmdSubmitCpp(rest);
   else {
     console.log(
@@ -723,6 +774,7 @@ try {
       '  audit\n' +
       '  sync <config.json> [--apply]\n' +
       '  screenshots <CPP-NAME> <folder> [--apply] [--replace]\n' +
+      '  keywords <config.json> [--apply]\n' +
       '  submit-cpp <CPP-NAME> [<CPP-NAME> ...] [--apply]\n' +
       'See header of this file for env setup.'
     );
