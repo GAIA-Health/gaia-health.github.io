@@ -105,7 +105,7 @@
       "name": "Can you export your Inito data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup."
+        "text": "We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup. You don't need an export for Veya: a screenshot of the Inito table view is what it reads."
       }
     },
     {
@@ -113,7 +113,7 @@
       "name": "How do you combine Inito with Apple Watch data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "There's no automatic route that Inito lists. A practical approach is to keep the numbers in Inito and log each surge result in an app that reads Apple Health, so it sits next to your watch's temperature and sleep data. Veya, which we make, does this for wearable data and LH results, but it doesn't import Inito charts."
+        "text": "There's no automatic route that Inito lists. A practical approach is to keep the numbers in Inito and log each surge result in an app that reads Apple Health, so it sits next to your watch's temperature and sleep data. Veya, which we make, does this for wearable data and can import your Inito readings from a chart screenshot, so they sit next to your sleep and cycle data. It isn't an Apple Health sync, because Apple Health has no place to store those hormone values."
       }
     }
   ]
@@ -278,7 +278,7 @@
                     <p>Inito's own app is where your four-hormone readings live, so treat it as the source of truth for the numbers. Take a dated screenshot of each cycle's chart so you have your own record.</p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">2. Check for an export or share option in your version</h3>
-                    <p>We couldn't find an export or report feature described on Inito's listing or FAQ.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup> Look in the app's settings, since features change between versions, and contact Inito support if you can't find one.</p>
+                    <p>We couldn't find an export or report feature described on Inito's listing or FAQ.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup> Look in the app's settings, since features change between versions, and contact Inito support if you can't find one. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">3. Log the surge result in an app that writes to Apple Health</h3>
                     <p>Since Apple Health can hold a surge or no-surge result, you can log the result of each test day in an app that reads and writes the Ovulation Test Result category.<sup><a href="#ref4" rel="noopener">[4]</a></sup> You keep the numbers in Inito and the yes/no in Apple Health, which puts the timing of your <a href="../encyclopedia/lh-surge.html">LH surge</a> on the same timeline as your Apple Watch data. For what the watch itself estimates, see <a href="apple-watch-cycle-estimates-explained.html">how Apple Watch ovulation estimates work</a>.</p>
@@ -286,7 +286,9 @@
                     <h3 class="h4 fw-semibold mt-4 mb-3">4. Use an app that reads Apple Health and lets you log LH</h3>
                     <p>This is where Veya fits. It reads sleep, HRV, wrist temperature and cycle data from Apple Health, along with the Ovulation Test Result category, so your watch data and any results other apps write there land on one timeline. You can log a strip result or a urine LH number in mIU/mL yourself, and upload lab results as a PDF or photo. Our <a href="../health-patterns.html">health patterns page</a> shows how those signals line up across a cycle, and <a href="all-health-data-one-place-app.html">apps that pull wearable, lab and cycle data together</a> compares other options.</p>
 
-                    <p>Veya can't import Inito's hormone charts today. Its E3G and PdG fields take the creatinine-adjusted urine unit (µg/g Cr) that lab urine panels report, which isn't how Inito shows its numbers, so there's no place to log Inito's estrogen or PdG readings. Reading monitor screenshots is something we're working on.</p>
+                    <p>You can also bring the numbers in. In the Veya web app (<a href="https://app.myveya.com/import?utm_source=inito-apple-health&amp;utm_medium=body&amp;utm_campaign=hormone-import">app.myveya.com, Import</a>), choose "Inito chart screenshot" and upload a screenshot of your chart, one cycle at a time. Screenshot the table (list) view for exact values; Veya reads line charts approximately, so the table is the safer choice. Veya reads the LH, E3G, PdG and FSH values (where Inito shows them) for each cycle day and shows your screenshot next to the readings, so you can fix anything before saving. Saved readings sit in your hormone history beside your cycle, sleep, mood and symptoms. Our <a href="import-mira-inito-readings-veya.html">step-by-step import guide</a> walks through it.</p>
+
+                    <p>Veya can import your Inito readings from a screenshot. They're stored as monitor readings (ng/mL for E3G, µg/mL for PdG, mIU/mL for LH and FSH), separate from the creatinine-adjusted urine metrics that lab panels report.</p>
                 </section>
 
                 <section class="mb-5">
@@ -311,10 +313,10 @@
                     <p>Apple Health has no data types for those values. It has an Ovulation Test Result category that holds a negative, LH surge, estrogen surge or indeterminate result, so at most a surge flag could be stored. A separate Progesterone Test Result category holds only a positive, negative or indeterminate result.</p>
 
                     <h3 class="h5 fw-semibold mt-4">Can you export your Inito data?</h3>
-                    <p>We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup.</p>
+                    <p>We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
 
                     <h3 class="h5 fw-semibold mt-4">How do you combine Inito with Apple Watch data?</h3>
-                    <p>There's no automatic route that Inito lists. A practical approach is to keep the numbers in Inito and log each surge result in an app that reads Apple Health, so it sits next to your watch's temperature and sleep data. Veya, which we make, does this for wearable data and LH results, but it doesn't import Inito charts.</p>
+                    <p>There's no automatic route that Inito lists. A practical approach is to keep the numbers in Inito and log each surge result in an app that reads Apple Health, so it sits next to your watch's temperature and sleep data. Veya, which we make, does this for wearable data and can import your Inito readings from a chart screenshot, so they sit next to your sleep and cycle data. It isn't an Apple Health sync, because Apple Health has no place to store those hormone values.</p>
                 </section>
 
                 <section class="mb-5 mt-5">
@@ -333,6 +335,14 @@
                 <section class="mb-5">
                     <h2 class="h3 fw-bold mb-3">Related Reading</h2>
                     <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title"><a href="import-mira-inito-readings-veya.html" class="text-decoration-none">How to Import Your Mira or Inito Readings Into Veya</a></h3>
+                                    <p class="card-text small text-muted">Screenshot your chart, upload it in the web app, check the readings and save them.</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">

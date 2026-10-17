@@ -135,7 +135,7 @@
       "name": "Where does Veya fit if I already use a monitor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Veya can read Apple Health wearable data and lets you log LH results by hand, but it doesn't import Mira or Inito charts. Keep the monitor's app for the hormone curves."
+        "text": "Veya can read Apple Health wearable data and can import Mira or Inito readings from a chart screenshot, so they sit beside your sleep and cycle data. Keep the monitor's app for the live curves."
       }
     }
   ]
@@ -395,9 +395,11 @@
 
                         <h2 id="veya">Where Does Veya Fit?</h2>
 
-                        <p>Veya isn't a hormone monitor, and it can't import Mira or Inito charts today. It reads sleep, HRV, wrist temperature and cycle data from Apple Health, along with the Ovulation Test Result category, and lets you log a strip result or a urine LH number in mIU/mL yourself.<sup><a href="#ref10">[10]</a></sup></p>
+                        <p>Veya isn't a hormone monitor, but it can import Mira and Inito readings from a chart screenshot. It reads sleep, HRV, wrist temperature and cycle data from Apple Health, along with the Ovulation Test Result category, and lets you log a strip result or a urine LH number in mIU/mL yourself.<sup><a href="#ref10">[10]</a></sup></p>
 
-                        <p>Its E3G and PdG fields take the creatinine-adjusted urine unit (µg/g Cr) that lab urine panels report, which isn't how Mira or Inito display their numbers, so there's nowhere to log those readings. Reading monitor screenshots is something we're working on. Veya is iOS only, with a web app for other platforms, and Mira, Inito and Premom each have a hormone-reading feature Veya doesn't.</p>
+                        <p>In the Veya web app, choose "Mira chart screenshot" or "Inito chart screenshot", upload a screenshot of your chart and check the readings against it before saving. For Inito, the table view gives exact values. Our <a href="import-mira-inito-readings-veya.html">step-by-step import guide</a> walks through it.</p>
+
+                        <p>Imported readings are stored as monitor readings, separate from lab urine metrics. Premom, Oova, Proov and Clearblue screenshots aren't supported yet, and neither are PDF exports. Veya is iOS only, with a web app for other platforms, and Mira, Inito and Premom each have a hormone-reading feature Veya doesn't.</p>
 
                         <hr class="my-5">
 
@@ -427,7 +429,7 @@
                         <p>None of them can. Mira, Inito and Premom track ovulation-related hormones and don't diagnose conditions such as PCOS.</p>
 
                         <h3>Where does Veya fit if I already use a monitor?</h3>
-                        <p>Veya can read Apple Health wearable data and lets you log LH results by hand, but it doesn't import Mira or Inito charts. Keep the monitor's app for the hormone curves.</p>
+                        <p>Veya can read Apple Health wearable data and can import Mira or Inito readings from a chart screenshot, so they sit beside your sleep and cycle data. Keep the monitor's app for the live curves.</p>
 
                         <hr class="my-5">
 
@@ -443,7 +445,7 @@
                                 <li id="ref7">Apple Developer Documentation. HKCategoryTypeIdentifier.progesteroneTestResult. <a href="https://developer.apple.com/documentation/healthkit/hkcategorytypeidentifier/progesteronetestresult" target="_blank" rel="noopener">developer.apple.com</a>.</li>
                                 <li id="ref8">Federal Trade Commission. Ovulation Tracking App Premom Will Be Barred from Sharing Health Data for Advertising Under Proposed FTC Order, May 17, 2023. <a href="https://www.ftc.gov/news-events/news/press-releases/2023/05/ovulation-tracking-app-premom-will-be-barred-sharing-health-data-advertising-under-proposed-ftc" target="_blank" rel="noopener">ftc.gov</a>.</li>
                                 <li id="ref9">Premom. Site footer listing Privacy Policy and Consumer Health Data Privacy Policy. <a href="https://www.premom.com/" target="_blank" rel="noopener">premom.com</a>. Fetched October 16, 2026.</li>
-                                <li id="ref10">Veya. Does Mira sync with Apple Health? What Veya reads and cannot import. <a href="mira-apple-health.html">mira-apple-health.html</a>, October 14, 2026.</li>
+                                <li id="ref10">Veya. Does Mira sync with Apple Health? What Veya reads and how to import monitor readings. <a href="mira-apple-health.html">mira-apple-health.html</a>, October 14, 2026.</li>
                             </ol>
                         </section>
 
@@ -480,6 +482,14 @@
                 <section class="related-articles mt-5 pt-4 border-top">
                     <h2 class="h4 mb-4">Related Articles</h2>
                     <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title"><a href="import-mira-inito-readings-veya.html" class="text-decoration-none">How to Import Your Mira or Inito Readings Into Veya</a></h3>
+                                    <p class="card-text small text-muted">Screenshot your chart, upload it in the web app, check the readings and save them.</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">

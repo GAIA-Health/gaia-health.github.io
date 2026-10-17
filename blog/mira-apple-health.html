@@ -113,7 +113,7 @@
       "name": "How do you see Mira readings next to Apple Watch or Oura data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "There's no automatic route that either company lists. Options include the Mira Oura integration, saving Mira reports or screenshots by cycle, and logging each surge result in an app that reads Apple Health so it lines up with your wearable data. Veya, which we make, reads Apple Health wearable data and lets you log LH results, but it doesn't import Mira charts."
+        "text": "There's no automatic route that either company lists. Options include the Mira Oura integration, saving Mira reports or screenshots by cycle, and logging each surge result in an app that reads Apple Health so it lines up with your wearable data. Veya, which we make, reads Apple Health wearable data and can import your Mira readings from a chart screenshot, so they sit next to your sleep and cycle data. It isn't an Apple Health sync, because Apple Health has no place to store those hormone values."
       }
     },
     {
@@ -297,7 +297,9 @@
                     <h3 class="h4 fw-semibold mt-4 mb-3">4. Use an app that reads Apple Health and lets you log LH</h3>
                     <p>This is where Veya fits. It reads sleep, HRV, wrist temperature and cycle data from Apple Health, along with the Ovulation Test Result category, so whatever your wearable and other apps write there shows up on one timeline. You can log a strip result or a urine LH number in mIU/mL yourself, and upload lab results as a PDF or photo. Our <a href="../health-patterns.html">health patterns page</a> shows how those signals line up across a cycle, and <a href="all-health-data-one-place-app.html">apps that pull wearable, lab and cycle data together</a> compares other options.</p>
 
-                    <p>Veya can't import Mira's hormone charts today. Its E3G and PdG fields take the creatinine-adjusted urine unit (µg/g Cr) that lab urine panels report, which isn't how Mira shows its numbers, so there's no place to log Mira's E3G or PdG readings. Reading monitor screenshots is something we're working on. If you've also tracked periods in another cycle app, Veya can read period dates from a screenshot of that app's calendar, and Mira is one of the sources you can pick.</p>
+                    <p>You can also bring the numbers in. In the Veya web app (<a href="https://app.myveya.com/import?utm_source=mira-apple-health&amp;utm_medium=body&amp;utm_campaign=hormone-import">app.myveya.com, Import</a>), choose "Mira chart screenshot" and upload a screenshot of your chart with the numbers showing, one cycle at a time. Veya reads the LH, E3G and PdG values for each cycle day and shows your screenshot next to the readings, so you can fix anything before saving. Saved readings sit in your hormone history beside your cycle, sleep, mood and symptoms. Our <a href="import-mira-inito-readings-veya.html">step-by-step import guide</a> walks through it.</p>
+
+                    <p>Veya can import your Mira readings from a screenshot of your chart. They're stored as monitor readings (ng/mL for E3G, µg/mL for PdG, mIU/mL for LH), separate from the creatinine-adjusted urine metrics that lab panels report, so the two never get mixed up. If you've also tracked periods in another cycle app, Veya can read period dates from a screenshot of that app's calendar, and Mira is one of the sources you can pick.</p>
                 </section>
 
                 <section class="mb-5">
@@ -325,7 +327,7 @@
                     <p>Apple Health has no data types for LH, E3G or PdG values. It has an Ovulation Test Result category that holds a negative, LH surge, estrogen surge or indeterminate result, so at most a surge flag could be stored, not the number. A separate Progesterone Test Result category holds only a positive, negative or indeterminate result.</p>
 
                     <h3 class="h5 fw-semibold mt-4">How do you see Mira readings next to Apple Watch or Oura data?</h3>
-                    <p>There's no automatic route that either company lists. Options include the Mira Oura integration, saving Mira reports or screenshots by cycle, and logging each surge result in an app that reads Apple Health so it lines up with your wearable data. Veya, which we make, reads Apple Health wearable data and lets you log LH results, but it doesn't import Mira charts.</p>
+                    <p>There's no automatic route that either company lists. Options include the Mira Oura integration, saving Mira reports or screenshots by cycle, and logging each surge result in an app that reads Apple Health so it lines up with your wearable data. Veya, which we make, reads Apple Health wearable data and can import your Mira readings from a chart screenshot, so they sit next to your sleep and cycle data. It isn't an Apple Health sync, because Apple Health has no place to store those hormone values.</p>
 
                     <h3 class="h5 fw-semibold mt-4">Is it a problem if Mira doesn't sync with Apple Health?</h3>
                     <p>Not for how the monitor works. Mira's readings stay in the Mira app either way. The gap only matters if you want those readings on the same timeline as your sleep or temperature data from other devices.</p>
@@ -347,6 +349,14 @@
                 <section class="mb-5">
                     <h2 class="h3 fw-bold mb-3">Related Reading</h2>
                     <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 card-title"><a href="import-mira-inito-readings-veya.html" class="text-decoration-none">How to Import Your Mira or Inito Readings Into Veya</a></h3>
+                                    <p class="card-text small text-muted">Screenshot your chart, upload it in the web app, check the readings and save them.</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
