@@ -49,7 +49,7 @@ gaia-health.github.io/
 - **App Name**: Go Go Gaia
 - **Platform**: iOS (App Store)
 - **Company**: Holland Neurotech Inc.
-- **Contact**: support@hollandneurotech.com
+- **Contact**: abby@myveya.com
 - **Social Media**: 
   - Twitter: @holland_neuro
   - Instagram: @gogogaia_tracker
