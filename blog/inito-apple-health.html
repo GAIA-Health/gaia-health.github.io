@@ -49,7 +49,7 @@
   "description": "Inito doesn't list an Apple Health integration as of Oct 2026. See what Apple Health can hold from a hormone monitor and how to pair Inito with your watch.",
   "image": "https://www.go-go-gaia.com/images/cycle/Hormone_Levels_Across_Menstrual_Cycle.png",
   "datePublished": "2026-10-14",
-  "dateModified": "2026-10-14",
+  "dateModified": "2026-10-18",
   "author": {
     "@type": "Organization",
     "name": "Veya Team"
@@ -105,7 +105,7 @@
       "name": "Can you export your Inito data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup. You don't need an export for Veya: a screenshot of the Inito table view is what it reads."
+        "text": "Inito's App Store listing and FAQ page don't mention an export, but Inito's own blog describes a PDF chart export from the share icon on the Chart page, once you have at least one complete cycle of testing. We cover the steps in our post on whether Inito exports your data. Keep a dated screenshot of each cycle's chart as a backup too. You don't need an export for Veya: a screenshot of the Inito table view is what it reads."
       }
     },
     {
@@ -278,7 +278,7 @@
                     <p>Inito's own app is where your four-hormone readings live, so treat it as the source of truth for the numbers. Take a dated screenshot of each cycle's chart so you have your own record.</p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">2. Check for an export or share option in your version</h3>
-                    <p>We couldn't find an export or report feature described on Inito's listing or FAQ.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup> Look in the app's settings, since features change between versions, and contact Inito support if you can't find one. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
+                    <p>Inito's listing and FAQ don't mention an export or report feature, but Inito's own blog describes a PDF chart export.<sup><a href="#ref2" rel="noopener">[2]</a></sup><sup><a href="#ref3" rel="noopener">[3]</a></sup><sup><a href="#ref8" rel="noopener">[8]</a></sup> The blog says it starts from the share icon on the Chart page and needs at least one complete cycle of testing.<sup><a href="#ref8" rel="noopener">[8]</a></sup> We cover the steps in <a href="does-inito-export-data.html">our post on whether Inito exports your data</a>. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
 
                     <h3 class="h4 fw-semibold mt-4 mb-3">3. Log the surge result in an app that writes to Apple Health</h3>
                     <p>Since Apple Health can hold a surge or no-surge result, you can log the result of each test day in an app that reads and writes the Ovulation Test Result category.<sup><a href="#ref4" rel="noopener">[4]</a></sup> You keep the numbers in Inito and the yes/no in Apple Health, which puts the timing of your <a href="../encyclopedia/lh-surge.html">LH surge</a> on the same timeline as your Apple Watch data. For what the watch itself estimates, see <a href="apple-watch-cycle-estimates-explained.html">how Apple Watch ovulation estimates work</a>.</p>
@@ -313,7 +313,7 @@
                     <p>Apple Health has no data types for those values. It has an Ovulation Test Result category that holds a negative, LH surge, estrogen surge or indeterminate result, so at most a surge flag could be stored. A separate Progesterone Test Result category holds only a positive, negative or indeterminate result.</p>
 
                     <h3 class="h5 fw-semibold mt-4">Can you export your Inito data?</h3>
-                    <p>We couldn't find an export feature described on Inito's App Store listing or FAQ page. Check the settings in your version of the app, and keep a dated screenshot of each cycle's chart as a backup. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
+                    <p>Inito's App Store listing and FAQ page don't mention an export, but Inito's own blog describes a PDF chart export from the share icon on the Chart page, once you have at least one complete cycle of testing.<sup><a href="#ref8" rel="noopener">[8]</a></sup> We cover the steps in <a href="does-inito-export-data.html">our post on whether Inito exports your data</a>. Keep a dated screenshot of each cycle's chart as a backup too. You don't need an export for Veya: a screenshot of the Inito table view is what it reads.</p>
 
                     <h3 class="h5 fw-semibold mt-4">How do you combine Inito with Apple Watch data?</h3>
                     <p>There's no automatic route that Inito lists. A practical approach is to keep the numbers in Inito and log each surge result in an app that reads Apple Health, so it sits next to your watch's temperature and sleep data. Veya, which we make, does this for wearable data and can import your Inito readings from a chart screenshot, so they sit next to your sleep and cycle data. It isn't an Apple Health sync, because Apple Health has no place to store those hormone values.</p>
@@ -329,6 +329,7 @@
                         <li id="ref5">Apple Developer Documentation. HKCategoryValueOvulationTestResult. <em>HealthKit</em>. <a href="https://developer.apple.com/documentation/healthkit/hkcategoryvalueovulationtestresult" target="_blank" rel="noopener">developer.apple.com/documentation/healthkit/hkcategoryvalueovulationtestresult</a></li>
                         <li id="ref6">Apple Support. Share your data in Health on iPhone. <em>iPhone User Guide</em>. <a href="https://support.apple.com/guide/iphone/share-your-health-data-iph5ede58c3d/ios" target="_blank" rel="noopener">support.apple.com/guide/iphone/share-your-health-data-iph5ede58c3d/ios</a></li>
                         <li id="ref7">Apple Developer Documentation. HKCategoryTypeIdentifier.progesteroneTestResult. <em>HealthKit</em>. <a href="https://developer.apple.com/documentation/healthkit/hkcategorytypeidentifier/progesteronetestresult" target="_blank" rel="noopener">developer.apple.com/documentation/healthkit/hkcategorytypeidentifier/progesteronetestresult</a></li>
+                        <li id="ref8">Inito. How to read your Inito chart: a beginner's guide. <em>Inito blog</em>. Checked Oct 18, 2026. <a href="https://blog.inito.com/how-to-read-your-inito-chart-a-beginners-guide/" target="_blank" rel="noopener">blog.inito.com/how-to-read-your-inito-chart-a-beginners-guide/</a></li>
                     </ol>
                 </section>
 
