@@ -63,6 +63,22 @@ document.addEventListener('click', function (e) {
       web_app_intent: webAppIntent
     });
   }
+
+  // Import-guide funnel: any link into the web app's /import page.
+  if (href.indexOf('https://app.myveya.com/import') === 0) {
+    var importLinks = document.querySelectorAll('a[href^="https://app.myveya.com/import"]');
+    var slug = window.location.pathname;
+    var source = /mira-vs-|-vs-/.test(slug) ? 'vs'
+      : /mira/.test(slug) && !/inito/.test(slug) ? 'mira'
+      : /inito/.test(slug) && !/mira/.test(slug) ? 'inito'
+      : /oova/.test(slug) ? 'oova'
+      : 'guide';
+    gtag('event', 'import_guide_click', {
+      page: window.location.pathname,
+      source: source,
+      link_position: Array.prototype.indexOf.call(importLinks, link)
+    });
+  }
 });
 
 /* ── Scroll depth tracking ── */
