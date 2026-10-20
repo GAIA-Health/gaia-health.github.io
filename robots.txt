@@ -1,6 +1,9 @@
 User-agent: *
 Disallow: /private/
 Disallow: /cdn-cgi/
+Disallow: /.claude/
+Disallow: /scripts/
+Disallow: /.github/
 Disallow: /*?s=
 Allow: /
 
