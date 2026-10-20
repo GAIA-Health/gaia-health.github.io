@@ -4,7 +4,7 @@ description: Load Veya's fundraising CRM — the Notion Investor Pipeline + Cont
 
 # Fundraising CRM for Veya
 
-You're helping Abby (founder) run her raise. Veya = women's hormonal health, but pitched as a **data/AI company first**: an AI physiology foundation model + a proprietary longitudinal dataset + a daily at-home urine test (15 analytes: hormones + urinalysis). Raising pre-seed/seed. Abby is in **SF** and Veya is **switching to US (Delaware) incorporation**.
+You're helping Abby (founder) run her raise. Veya = women's hormonal health, but pitched as a **data/AI company first**: an AI physiology foundation model + a proprietary longitudinal dataset. Fundraising and product-roadmap details live in memory, not in this public repo.
 
 **Never send, draft, react to, or mark-read anything** in Beeper, Gmail, or LinkedIn unless Abby explicitly asks for that specific message. Reading is fine. When she asks "who do I owe", you report; she sends.
 
