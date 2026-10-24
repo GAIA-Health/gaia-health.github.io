@@ -1,0 +1,41 @@
+{
+  "group": {
+    "referenceName": "Basic",
+    "locales": {
+      "en-CA": {
+        "name": "Pro membership"
+      },
+      "en-US": {
+        "name": "Pro membership"
+      }
+    }
+  },
+  "subscriptions": [
+    {
+      "productId": "com.gogogaia.monthly",
+      "locales": {
+        "en-CA": {
+          "name": "Pro: Cycle & Hormone Insights",
+          "description": "Patterns across cycle, sleep, mood and labs"
+        },
+        "en-US": {
+          "name": "Pro: Cycle & Hormone Insights",
+          "description": "Patterns across cycle, sleep, mood and labs"
+        }
+      }
+    },
+    {
+      "productId": "com.gogogaia.yearly",
+      "locales": {
+        "en-CA": {
+          "name": "Pro Yearly: Cycle & Hormones",
+          "description": "Same Pro features, billed once a year"
+        },
+        "en-US": {
+          "name": "Pro Yearly: Cycle & Hormones",
+          "description": "Same Pro features, billed once a year"
+        }
+      }
+    }
+  ]
+}

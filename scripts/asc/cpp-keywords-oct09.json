@@ -1,0 +1,8 @@
+{
+  "Mood": { "en-US": ["pmdd", "pms"], "en-CA": ["pmdd", "pms"] },
+  "Fertility": { "en-US": ["ttc", "ivf", "ovulation", "fertility"], "en-CA": ["ttc", "ivf", "ovulation", "fertility"] },
+  "Pregnancy": { "en-US": ["pregnancy", "postpartum"], "en-CA": ["pregnancy", "postpartum"] },
+  "Perimenopause": { "en-US": ["menopause"], "en-CA": ["menopause"] },
+  "PCOS": { "en-US": ["hormone", "endometriosis"], "en-CA": ["hormone"] },
+  "cycle syncing": { "en-US": ["cycle"], "en-CA": ["cycle"], "en-AU": ["cycle"] }
+}

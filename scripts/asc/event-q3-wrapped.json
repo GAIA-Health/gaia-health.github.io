@@ -1,0 +1,22 @@
+{
+  "referenceName": "Q3 2026 Health Wrapped",
+  "badge": "NEW_SEASON",
+  "purpose": "BRING_BACK_LAPSED_USERS",
+  "priority": "NORMAL",
+  "primaryLocale": "en-US",
+  "deepLink": null,
+  "territories": "ALL",
+  "schedule": {
+    "publishStart": "2026-10-13T09:00:00-04:00",
+    "eventStart": "2026-10-13T09:00:00-04:00",
+    "eventEnd": "2026-10-27T23:59:00-04:00"
+  },
+  "localizations": {
+    "en-US": {
+      "name": "Your Q3 Health Wrapped",
+      "shortDescription": "Three months of cycle, sleep and mood, scored.",
+      "longDescription": "See how your cycle, sleep, mood and workouts moved together this quarter, and what changed since last time."
+    }
+  },
+  "copyLocalizationsTo": ["en-GB", "en-CA", "en-AU"]
+}
