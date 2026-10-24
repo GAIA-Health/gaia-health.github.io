@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fertility Tracker That Reads Your Wearable | Veya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Track ovulation and your fertile window with wearable temperature, LH tests and cervical mucus. No morning thermometer. Not birth control. iOS and web.">
+    <meta name="keywords" content="fertility tracker app, fertility tracking app, ovulation tracker, bbt tracker app, fertile window app, ttc app, ttc tracker">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/fertility-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fertility Tracker That Reads Your Wearable | Veya">
+    <meta property="og:description" content="Track ovulation and your fertile window with wearable temperature, LH tests and cervical mucus. No morning thermometer. Not birth control. iOS and web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/fertility-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/ttc.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Fertility Tracker That Reads Your Wearable | Veya">
+    <meta name="twitter:description" content="Track ovulation and your fertile window with wearable temperature, LH tests and cervical mucus. No morning thermometer. Not birth control. iOS and web.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/ttc.webp">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Veya",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I track fertility without a morning thermometer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Veya pulls your temperature and sleep from your wearable in the background, so you don't have to take a reading each morning. On iPhone, Apple Watch, Oura, WHOOP and Garmin data arrives through Apple Health. In the web app, Oura and Withings connect directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I log in the fertility tracker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can log LH or ovulation tests, cervical mucus, basal body temperature, period dates, symptoms, mood, sleep and nutrition. Labs like TSH, AMH and progesterone can be logged over time too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a wearable to use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You can log basal body temperature by hand, along with LH tests and cervical mucus. A wearable just removes the daily thermometer step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Veya birth control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Veya is a tracker, not a contraceptive, and it can't tell you when it is safe to skip protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the predictions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veya learns from your own cycle history and shows your fertile window as a range, not a single day. Logging LH tests and temperature gives it more to work with. Predictions are estimates, not medical advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Veya only on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The web app at app.myveya.com works in any browser, and that is how Android users use Veya. The iOS app is the full experience, since it reads Apple Health and Apple Watch data in the background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veya has no ads and does not sell your data. You can export or delete what you have logged at any time. The details are on the privacy page and in the MHMDA notice."
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Veya",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/fertility-tracker.html#webpage",
+      "url": "https://www.go-go-gaia.com/fertility-tracker.html",
+      "name": "Fertility Tracker That Reads Your Wearable | Veya",
+      "dateModified": "2026-10-24",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/brand/logo-mark-white.png" alt="VEYA Logo" height="30" class="d-inline-block align-top me-2">
+                    Veya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:abby@myveya.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">Fertility tracking that reads your wearable, so no morning thermometer</h1>
+                        <p class="lead">If you are trying to conceive, Veya pulls temperature and sleep from your wearable in the background, so you can skip the thermometer alarm. You can still log LH tests and cervical mucus, and Veya shows your fertile window as a range next to all of it.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Download Veya
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=fertility-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Try it in the browser</a> on any device.</p>
+                        <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                        <div class="desktop-qr align-items-center gap-3 mt-4">
+                            <img src="images/download-qr.png" alt="QR code linking to Veya on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                            <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/screens/ttc.webp" width="800" height="1330" alt="Trying to conceive today view with fertile window countdown and daily fertility signals" class="img-fluid rounded" style="max-height: 480px; width: auto;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for -->
+                <section class="mb-5 section-card">
+                    <h2 class="mb-4 text-center">Built for trying to conceive</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-watch me-2" style="color: var(--primary);"></i>Temperature from your wearable</h3>
+                                    <p class="mb-0">Temperature and sleep come in automatically. On iPhone, Apple Watch, Oura, WHOOP and Garmin data arrives through Apple Health. In the web app, Oura and Withings connect directly. Veya draws it as a basal body temperature chart over your cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-calendar-heart me-2" style="color: var(--primary);"></i>Fertile window as a range</h3>
+                                    <p class="mb-0">Veya shows a predicted fertile window with a start and end date instead of a single guess, and it updates as you log.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-droplet-half me-2" style="color: var(--primary);"></i>LH tests and cervical mucus</h3>
+                                    <p class="mb-0">Log ovulation test results and cervical mucus each day, and see them next to your temperature and your predicted window.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-clipboard2-data me-2" style="color: var(--primary);"></i>Lab tracking</h3>
+                                    <p class="mb-0">Log labs like TSH, AMH and progesterone over time, so results sit on the same timeline as your cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-moon-stars me-2" style="color: var(--primary);"></i>Sleep, stress and mood</h3>
+                                    <p class="mb-0">See how sleep, mood and symptoms move across your cycle, with patterns surfaced from your own logs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-arrow-repeat me-2" style="color: var(--primary);"></i>History that carries forward</h3>
+                                    <p class="mb-0">If you move on to IVF or pregnancy, your cycle history comes with you instead of starting over.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Not birth control -->
+                <section class="mb-5">
+                    <div class="p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                        <h3 class="h5 mb-2"><i class="bi bi-info-circle me-2" style="color: var(--primary);"></i>This is not birth control</h3>
+                        <p class="mb-0">Veya helps you see your fertility signals. It is not a contraceptive and it does not tell you when it is safe to skip protection. Try our <a href="tools/ovulation-calculator.html">ovulation calculator</a> for a quick estimate, or read about <a href="blog/how-to-tell-if-youre-ovulating.html">how to tell if you're ovulating</a>.</p>
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">See how it all connects</h2>
+                    <p class="mb-0">Fertility signals don't move alone. Veya puts wearable temperature, sleep and heart rate variability next to your LH tests, cervical mucus, mood and symptoms, and looks for patterns across your cycles, like how a poor week of sleep lines up with a shifted temperature curve. Your fertile window is shown as a range that updates as the data comes in. The same record carries into IVF or pregnancy tracking if you get there.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Basal body temperature (from your wearable or by hand)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">LH and ovulation tests</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Cervical mucus</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Period dates and flow</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Intercourse</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Symptoms</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mood</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep (from your wearable)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Heart rate variability</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Nutrition</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Supplements</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Lab results (TSH, AMH, progesterone)</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Fertility tracking means logging sensitive details. Veya has no ads and does not sell your data, and you can export or delete what you have logged at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Can I track fertility without a morning thermometer?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Veya pulls your temperature and sleep from your wearable in the background, so you don't have to take a reading each morning. On iPhone, Apple Watch, Oura, WHOOP and Garmin data arrives through Apple Health. In the web app, Oura and Withings connect directly.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What can I log in the fertility tracker?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">You can log LH or ovulation tests, cervical mucus, basal body temperature, period dates, symptoms, mood, sleep and nutrition. Labs like TSH, AMH and progesterone can be logged over time too.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do I need a wearable to use it?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. You can log basal body temperature by hand, along with LH tests and cervical mucus. A wearable just removes the daily thermometer step.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is Veya birth control?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. Veya is a tracker, not a contraceptive, and it can't tell you when it is safe to skip protection.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    How accurate are the predictions?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya learns from your own cycle history and shows your fertile window as a range, not a single day. Logging LH tests and temperature gives it more to work with. Predictions are estimates, not medical advice.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Is Veya only on iPhone?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. The <a href="web-app.html">web app</a> at app.myveya.com works in any browser, and that is how Android users use Veya. The iOS app is the full experience, since it reads Apple Health and Apple Watch data in the background.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    What happens to my data?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya has no ads and does not sell your data. You can export or delete what you have logged at any time. The details are on the <a href="privacy.html">privacy page</a> and in the <a href="mhmda-notice.html">MHMDA notice</a>.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 mb-0">Still comparing apps? See our <a href="blog/best-fertility-tracking-app.html">fertility app comparison</a>.</p>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Track your fertile window without the thermometer</h2>
+                    <p class="lead mb-4">Let your wearable do the temperature, and log the rest in a minute a day.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Veya
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=fertility-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Try it in the browser</a> on any device.</p>
+                </section>
+
+                <!-- Related tracking pages -->
+                <section class="py-4 sibling-tracking-nav">
+                    <h2 class="h5 mb-3">Tracking for other conditions</h2>
+                    <p class="small text-muted mb-0">
+                        <a href="pregnancy-tracker.html">Pregnancy tracking</a> &middot;
+                        <a href="ivf-tracker.html">IVF tracking</a> &middot;
+                        <a href="pcos-tracker.html">PCOS tracking</a> &middot;
+                        <a href="perimenopause-tracker.html">Perimenopause tracking</a> &middot;
+                        <a href="cycle-syncing-app.html">Cycle syncing</a> &middot;
+                        <a href="conditions.html">All conditions</a>
+                    </p>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>Veya</h5>
+          <p class="small">Your health, connected. Built by women, for women.</p>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <h5>Connect With Us</h5>
+          <p><a href="mailto:abby@myveya.com"><i class="bi bi-envelope me-2"></i>abby@myveya.com</a></p>
+          <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+          <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+          <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Company</h5>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="https://myveya.com/" target="_blank" rel="noopener">Veya company site</a></p>
+          <p><a href="blog/index.html">Blog</a></p>
+          <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+          <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+          <p><a href="wellness-type.html">What's Your Wellness Type?</a></p>
+          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+          <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+          <p class="small text-muted mb-0">Educational content only. Not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+        </div>
+      </div>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

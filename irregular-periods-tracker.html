@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Irregular Period Tracker That Learns From You | Veya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="A period tracker for irregular cycles. Veya learns from your own history and shows a range instead of a 28-day guess. On iPhone and web.">
+    <meta name="keywords" content="irregular period tracker, period tracker irregular cycles, app for irregular periods, irregular cycle tracking app">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/irregular-periods-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Irregular Period Tracker That Learns From You | Veya">
+    <meta property="og:description" content="A period tracker for irregular cycles. Veya learns from your own history and shows a range instead of a 28-day guess. On iPhone and web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/irregular-periods-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/bofu-pcos.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Irregular Period Tracker That Learns From You | Veya">
+    <meta name="twitter:description" content="A period tracker for irregular cycles. Veya learns from your own history and shows a range instead of a 28-day guess. On iPhone and web.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/bofu-pcos.webp">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Veya",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to tell the app my cycle is irregular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. There's no regularity setting. Veya learns from the cycles you log, so the more history you add, the better it reflects how your cycle actually runs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when my period is late?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veya shows predictions as a range, so a late period often still falls inside it. When it doesn't, the app uses soft catch-up wording and keeps tracking, with no reset and no scolding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Veya if I have PCOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Veya is built to keep tracking through irregular or missing periods and has symptom and lab logging, covered on the PCOS tracker page. It doesn't diagnose anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring my cycle history to a doctor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can export an organized record of your cycles, symptoms, and logged labs to bring to an appointment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Veya only on iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The web app at app.myveya.com works in any browser, including on Android and on a computer. The iOS app is the full experience, with Apple Health and the wearables that sync to it. In the web app, Oura and Withings connect directly. More on the web app page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veya doesn't run ads and doesn't sell your data. You can export or delete what you've logged at any time. The details are on our privacy page, and the MHMDA notice covers Washington state health data rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the predictions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veya learns from your own history and shows a range instead of a single guaranteed date. For irregular cycles, that range is wider, and it narrows as you log more. Veya makes no medical claims and isn't birth control. More on how predictions work."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Veya",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/irregular-periods-tracker.html#webpage",
+      "url": "https://www.go-go-gaia.com/irregular-periods-tracker.html",
+      "name": "Irregular Period Tracker That Learns From You | Veya",
+      "dateModified": "2026-10-24",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/brand/logo-mark-white.png" alt="VEYA Logo" height="30" class="d-inline-block align-top me-2">
+                    Veya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:abby@myveya.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">Predictions that learn from your own irregular history instead of a 28-day template</h1>
+                        <p class="lead">If your cycles run 24 days one month and 45 the next, a template can't keep up. Veya learns from the cycles you've actually logged, shows a range instead of one confident date, and keeps tracking through late or missing periods.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Download Veya
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=irregular-periods-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Use the web app</a> in any browser.</p>
+                        <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                        <div class="desktop-qr align-items-center gap-3 mt-4">
+                            <img src="images/download-qr.png" alt="QR code linking to Veya on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                            <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/screens/bofu-pcos.webp" width="800" height="1739" alt="Veya cycle screen showing the current cycle day, average cycle length, symptoms logged today, sleep, activity, and glucose cards" class="img-fluid rounded" style="max-height: 480px; width: auto;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for -->
+                <section class="mb-5 section-card">
+                    <h2 class="mb-4 text-center">Built for irregular cycles</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-arrow-repeat me-2" style="color: var(--primary);"></i>It learns from your history</h3>
+                                    <p class="mb-0">There's no regularity setting to pick. Veya reads the cycles you've logged and adjusts as you add more, instead of assuming a standard 28-day cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-calendar-range me-2" style="color: var(--primary);"></i>A range instead of a single date</h3>
+                                    <p class="mb-0">Predictions show up as a window with a most likely day, so a cycle that runs long doesn't make the whole calendar wrong.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-chat-heart me-2" style="color: var(--primary);"></i>Gentle when it guesses wrong</h3>
+                                    <p class="mb-0">When your period doesn't show up on the predicted day, Veya uses soft catch-up wording and keeps tracking instead of making you feel like you broke something.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-graph-up me-2" style="color: var(--primary);"></i>Patterns that don't need a regular calendar</h3>
+                                    <p class="mb-0">Symptoms, mood, sleep, and habits are correlated by what you log, so the insights keep working when your cycle length doesn't.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-clipboard2-pulse me-2" style="color: var(--primary);"></i>Labs over time</h3>
+                                    <p class="mb-0">Log labs like TSH, AMH, and progesterone and see them alongside your cycle history.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>A record for your appointments</h3>
+                                    <p class="mb-0">Export an organized record of your cycles, symptoms, and labs to bring to your care team.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">See how it all connects</h2>
+                    <p class="mb-0">Irregular cycles are hard to read from dates alone. Veya keeps your cycle history next to your symptoms, mood, sleep, and nutrition, with wearable data flowing in automatically, and looks for patterns across all of it, like how a short night of sleep tends to line up with a harder day. For PCOS-specific tracking, see the <a href="pcos-tracker.html">PCOS tracker</a>.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Period start and end</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Flow</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Symptoms</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mood</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep (from your wearable)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Temperature (from your wearable)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Cervical mucus</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">LH test results</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Lab results (TSH, AMH, progesterone)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Medications and supplements</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Nutrition</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Cycle history is personal, and Veya treats it that way. Your data is encrypted and stored securely, and Veya doesn't run ads or sell your data. You can export or delete what you've logged at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do I need to tell the app my cycle is irregular?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. There's no regularity setting. Veya learns from the cycles you log, so the more history you add, the better it reflects how your cycle actually runs.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What happens when my period is late?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya shows predictions as a range, so a late period often still falls inside it. When it doesn't, the app uses soft catch-up wording and keeps tracking, with no reset and no scolding.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I use Veya if I have PCOS?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. Veya is built to keep tracking through irregular or missing periods and has symptom and lab logging, covered on the PCOS tracker page. It doesn't diagnose anything.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can I bring my cycle history to a doctor?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. You can export an organized record of your cycles, symptoms, and logged labs to bring to an appointment.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Is Veya only on iPhone?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. The web app at <a href="https://app.myveya.com/start?utm_source=irregular-periods-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">app.myveya.com</a> works in any browser, including on Android and on a computer. The iOS app is the full experience, with Apple Health and the wearables that sync to it. In the web app, Oura and Withings connect directly. More on the <a href="web-app.html">web app page</a>.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    What happens to my data?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya doesn't run ads and doesn't sell your data. You can export or delete what you've logged at any time. The details are on our <a href="privacy.html">privacy page</a>, and the <a href="/mhmda-notice.html">MHMDA notice</a> covers Washington state health data rules.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    How accurate are the predictions?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya learns from your own history and shows a range instead of a single guaranteed date. For irregular cycles, that range is wider, and it narrows as you log more. Veya makes no medical claims and isn't birth control. More on <a href="prediction-accuracy.html">how predictions work</a>.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-center mt-4 mb-0">Comparing options? See our <a href="blog/best-period-tracker-irregular-cycles.html">irregular cycle app comparison</a>.</p>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Track a cycle that doesn't follow the calendar</h2>
+                    <p class="lead mb-4">Log today's symptoms or your last period, and let the predictions learn from there.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Veya
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=irregular-periods-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Use the web app</a> in any browser.</p>
+                </section>
+
+                <!-- Related tracking pages -->
+                <section class="py-4 sibling-tracking-nav">
+                    <h2 class="h5 mb-3">Tracking for other conditions</h2>
+                    <p class="small text-muted mb-0">
+                        <a href="pcos-tracker.html">PCOS tracking</a> &middot;
+                        <a href="perimenopause-tracker.html">Perimenopause tracking</a> &middot;
+                        <a href="ivf-tracker.html">IVF tracking</a> &middot;
+                        <a href="cycle-syncing-app.html">Cycle syncing</a> &middot;
+                        <a href="iud-cycle-tracking.html">Cycle tracking with an IUD</a> &middot;
+                        <a href="partner-sharing.html">Partner sharing</a> &middot;
+                        <a href="hormone-monitor-import.html">Mira and Inito import</a> &middot;
+                        <a href="conditions.html">All conditions</a>
+                    </p>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>Veya</h5>
+          <p class="small">Your health, connected. Built by women, for women.</p>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <h5>Connect With Us</h5>
+          <p><a href="mailto:abby@myveya.com"><i class="bi bi-envelope me-2"></i>abby@myveya.com</a></p>
+          <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+          <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+          <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Company</h5>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="https://myveya.com/" target="_blank" rel="noopener">Veya company site</a></p>
+          <p><a href="blog/index.html">Blog</a></p>
+          <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+          <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+          <p><a href="wellness-type.html">What's Your Wellness Type?</a></p>
+          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+          <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+          <p class="small text-muted mb-0">Educational content only. Not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+        </div>
+      </div>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

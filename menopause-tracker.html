@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menopause Tracker for After Your Periods Stop | Veya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Track hot flashes, sleep, HRV, bone density records, and lab results after your periods stop. Veya shows how they connect. On iPhone and the web.">
+    <meta name="keywords" content="menopause tracker, menopause tracker app, postmenopause tracker, postmenopause symptom tracker, hot flash tracker, menopause app">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/menopause-tracker.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Menopause Tracker for After Your Periods Stop | Veya">
+    <meta property="og:description" content="Track hot flashes, sleep, HRV, bone density records, and lab results after your periods stop. Veya shows how they connect. On iPhone and the web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/menopause-tracker.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/insights.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Menopause Tracker for After Your Periods Stop | Veya">
+    <meta name="twitter:description" content="Track hot flashes, sleep, HRV, bone density records, and lab results after your periods stop. Veya shows how they connect. On iPhone and the web.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/insights.webp">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Veya",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is this different from the perimenopause tracker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The perimenopause tracker is for the transition, while cycles are still changing. This page is for after your periods stop. Veya's menopause view counts the days since your last period and focuses on symptoms, sleep, heart, bone, and mood instead of cycle prediction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I track after my periods stop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hot flashes and other symptoms, mood, sleep, HRV, resting heart rate, blood pressure, lab results, bone density records, and HRT or supplements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upload lab results and bone density records?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can upload lab results and add bone density records, or enter a T-score by hand. They sit on the same timeline as your symptoms and wearable data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Veya only on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The web app at app.myveya.com works in any browser, including on Android. The iOS app is the full experience, and it is where Apple Health and Apple Watch data come in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No ads and no data selling. You can export or delete your data anytime. The details are on our privacy page and in the MHMDA notice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the predictions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veya doesn't predict periods after menopause. It shows patterns that line up in your own logs and wearable data. It makes no medical claims. The predictions page explains how forecasts work for earlier stages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Veya track HRT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can log HRT and supplements next to your symptoms, so you can see how things change over time."
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Veya",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/menopause-tracker.html#webpage",
+      "url": "https://www.go-go-gaia.com/menopause-tracker.html",
+      "name": "Menopause Tracker for After Your Periods Stop | Veya",
+      "dateModified": "2026-10-24",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/brand/logo-mark-white.png" alt="VEYA Logo" height="30" class="d-inline-block align-top me-2">
+                    Veya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:abby@myveya.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">Tracking after periods stop: sleep, hot flashes, heart, bone and mood.</h1>
+                        <p class="lead">Once your periods have stopped, there is no cycle left to predict. What is left is how you sleep, how you feel, and how your heart and bones are doing over the years. Veya's menopause view follows all of it and shows how it connects. Still in the transition? See the <a href="perimenopause-tracker.html">perimenopause tracker</a>.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Download Veya
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">Prefer a browser? <a href="https://app.myveya.com/start?utm_source=menopause-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Try it in the browser</a> at app.myveya.com, on any device.</p>
+                        <div class="desktop-qr align-items-center gap-3 mt-4">
+                            <img src="images/download-qr.png" alt="QR code linking to Veya on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                            <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/screens/insights.webp" width="800" height="1330" alt="Veya trends screen showing resting heart rate, sleep, and hydration over 13 weeks" class="img-fluid rounded" style="max-height: 480px; width: auto;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for -->
+                <section class="mb-5 section-card">
+                    <h2 class="mb-4 text-center">Built for tracking after menopause</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-thermometer-sun me-2" style="color: var(--primary);"></i>Hot flashes and symptom log</h3>
+                                    <p class="mb-0">Log hot flashes and other symptoms, then see hot flashes by month and the patterns in your symptoms. If hot flash or mood data is already in Apple Health, you can import it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-moon-stars me-2" style="color: var(--primary);"></i>Sleep and HRV from your wearable</h3>
+                                    <p class="mb-0">Sleep, HRV, and resting heart rate flow in with no manual logging. On iPhone, Apple Watch, Oura, WHOOP and Garmin data arrives through Apple Health. In the web app, Oura and Withings connect directly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-heart-pulse me-2" style="color: var(--primary);"></i>Heart</h3>
+                                    <p class="mb-0">Keep blood pressure readings and your LDL, HDL, and A1C lab results with the rest of your data.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-activity me-2" style="color: var(--primary);"></i>Bone</h3>
+                                    <p class="mb-0">Add your bone density records, or enter a T-score by hand, and keep the result with your other health data.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-file-earmark-medical me-2" style="color: var(--primary);"></i>Labs upload</h3>
+                                    <p class="mb-0">Upload lab results so they sit on the same timeline as your sleep, symptoms, and mood.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-book me-2" style="color: var(--primary);"></i>Postmenopause library</h3>
+                                    <p class="mb-0">Reading on HRT, bone health, heart health, genitourinary changes, and more, next to your own data.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">See how it all connects</h2>
+                    <p class="mb-0">After menopause, sleep, hot flashes, mood, heart, and bone health all matter, and they usually live in different places. Veya connects your symptom log, wearable sleep and HRV, and lab results, then looks for patterns in your own data. Your history carries over from earlier stages, so you don't start from scratch. Read the <a href="blog/menopause-guide.html">menopause guide</a> for background, or <a href="blog/hormone-curve-across-your-cycle.html">how hormones move across a cycle</a> to see what changes when cycles end.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Hot flashes</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Night sweats</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Brain fog</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mood</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Joint pain</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Vaginal dryness</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Blood pressure</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">HRV and resting heart rate</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">LDL, HDL, and A1C results</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Bone density records</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">HRT and supplements</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Nutrition</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Fitness and activity</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Menopause tracking can include labs and bone density records, which are sensitive. Your data is encrypted and stored securely, and Veya doesn't run ads or sell your data to third parties. You can export or delete what you've logged at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How is this different from the perimenopause tracker?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">The perimenopause tracker is for the transition, while cycles are still changing. This page is for after your periods stop. Veya's menopause view counts the days since your last period and focuses on symptoms, sleep, heart, bone, and mood instead of cycle prediction.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What can I track after my periods stop?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Hot flashes and other symptoms, mood, sleep, HRV, resting heart rate, blood pressure, lab results, bone density records, and HRT or supplements.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I upload lab results and bone density records?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. You can upload lab results and add bone density records, or enter a T-score by hand. They sit on the same timeline as your symptoms and wearable data.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is Veya only on iPhone?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. The web app at <a href="web-app.html">app.myveya.com</a> works in any browser, including on Android. The iOS app is the full experience, and it is where Apple Health and Apple Watch data come in.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What happens to my data?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No ads and no data selling. You can export or delete your data anytime. The details are on our <a href="privacy.html">privacy page</a> and in the <a href="mhmda-notice.html">MHMDA notice</a>.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    How accurate are the predictions?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya doesn't predict periods after menopause. It shows patterns that line up in your own logs and wearable data. It makes no medical claims. The <a href="prediction-accuracy.html">predictions page</a> explains how forecasts work for earlier stages.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Does Veya track HRT?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Yes. You can log HRT and supplements next to your symptoms, so you can see how things change over time.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Follow your sleep, symptoms, heart, and bone health together</h2>
+                    <p class="lead mb-4">Log a hot flash, add a lab result, or let your wearable fill in the sleep.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Veya
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">Prefer a browser? <a href="https://app.myveya.com/start?utm_source=menopause-tracker&utm_medium=lander&utm_campaign=lander" target="_blank">Try it in the browser</a> at app.myveya.com.</p>
+                </section>
+
+                <!-- Related tracking pages -->
+                <section class="py-4 sibling-tracking-nav">
+                    <h2 class="h5 mb-3">Tracking for other conditions</h2>
+                    <p class="small text-muted mb-0">
+                        <a href="pcos-tracker.html">PCOS tracking</a> &middot;
+                        <a href="endometriosis-tracker.html">Endometriosis tracking</a> &middot;
+                        <a href="perimenopause-tracker.html">Perimenopause tracking</a> &middot;
+                        <a href="ivf-tracker.html">IVF tracking</a> &middot;
+                        <a href="apple-watch-cycle-tracking.html">Apple Watch cycle tracking</a> &middot;
+                        <a href="mood-tracker.html">Mood tracking</a> &middot;
+                        <a href="cycle-syncing-app.html">Cycle syncing</a> &middot;
+                        <a href="conditions.html">All conditions</a>
+                    </p>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>Veya</h5>
+          <p class="small">Your health, connected. Built by women, for women.</p>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <h5>Connect With Us</h5>
+          <p><a href="mailto:abby@myveya.com"><i class="bi bi-envelope me-2"></i>abby@myveya.com</a></p>
+          <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+          <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+          <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Company</h5>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="https://myveya.com/" target="_blank" rel="noopener">Veya company site</a></p>
+          <p><a href="blog/index.html">Blog</a></p>
+          <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+          <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+          <p><a href="wellness-type.html">What's Your Wellness Type?</a></p>
+          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+          <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+          <p class="small text-muted mb-0">Educational content only. Not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+        </div>
+      </div>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

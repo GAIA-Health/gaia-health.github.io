@@ -276,6 +276,19 @@
 - [PMDD tracker](https://www.go-go-gaia.com/pmdd-tracker.html): Daily charting of PMDD mood and physical symptoms against the cycle across two cycles, producing the pattern record a diagnosis conversation needs.
 - [Postpartum tracker](https://www.go-go-gaia.com/postpartum-tracker.html): Bleeding, mood, sleep, and pain tracking through the fourth trimester, transitioning into cycle tracking when the period returns.
 - [What's your wellness type?](https://www.go-go-gaia.com/wellness-type.html): Six wellness types read from your own last 30 days of sleep, movement, mood, and cycle data. Not a questionnaire; it is computed from logged data.
+- [Switch from Flo](https://www.go-go-gaia.com/switch-from-flo.html): Moving your Flo history and cycle data into Veya, step by step.
+- [Fertility tracker](https://www.go-go-gaia.com/fertility-tracker.html): Fertile window, LH results, temperature, and cervical mucus logging alongside the rest of your cycle.
+- [Pregnancy tracker](https://www.go-go-gaia.com/pregnancy-tracker.html): Week-by-week tracking, symptom logging, and prenatal appointment notes.
+- [Apple Watch cycle tracking](https://www.go-go-gaia.com/apple-watch-cycle-tracking.html): What Veya reads from Apple Watch and how it lines up with cycle phase.
+- [Mood tracker](https://www.go-go-gaia.com/mood-tracker.html): Daily mood logging mapped to cycle phase so patterns show up across months.
+- [Menopause tracker](https://www.go-go-gaia.com/menopause-tracker.html): Symptom tracking after periods stop, including hot flashes, sleep, and HRT effects.
+- [Partner sharing](https://www.go-go-gaia.com/partner-sharing.html): Share selected cycle and health information with a partner on your terms.
+- [Irregular periods tracker](https://www.go-go-gaia.com/irregular-periods-tracker.html): Predictions that learn from your own history instead of assuming a 28-day cycle.
+- [IUD cycle tracking](https://www.go-go-gaia.com/iud-cycle-tracking.html): Tracking symptoms and cycle patterns with an IUD, including when periods stop.
+- [Hormone monitor import](https://www.go-go-gaia.com/hormone-monitor-import.html): Bringing Mira, Inito, and Oova readings into Veya.
+- [Web app](https://www.go-go-gaia.com/web-app.html): Using Veya in a browser at app.myveya.com.
+- [Privacy](https://www.go-go-gaia.com/privacy.html): How Veya handles your health data.
+- [Prediction accuracy](https://www.go-go-gaia.com/prediction-accuracy.html): How Veya's cycle predictions are checked against logged data.
 
 ## Educational guides (women's health)
 

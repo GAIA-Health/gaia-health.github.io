@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Import Mira and Inito Readings | Veya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Upload a Mira or Inito chart screenshot in the Veya web app, check the readings, and save them next to your cycle, sleep and mood.">
+    <meta name="keywords" content="import mira readings, import inito readings, mira chart screenshot, inito chart screenshot, hormone monitor data in veya">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/hormone-monitor-import.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Import Mira and Inito Readings | Veya">
+    <meta property="og:description" content="Upload a Mira or Inito chart screenshot in the Veya web app, check the readings, and save them next to your cycle, sleep and mood.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/hormone-monitor-import.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/images/screens/bit-hormone-wave.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Import Mira and Inito Readings | Veya">
+    <meta name="twitter:description" content="Upload a Mira or Inito chart screenshot in the Veya web app, check the readings, and save them next to your cycle, sleep and mood.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/images/screens/bit-hormone-wave.webp">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Veya",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Holland Neurotech Inc.",
+        "logo": { "@type": "ImageObject", "url": "https://www.go-go-gaia.com/Logo1.png" }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which Inito view should I screenshot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The table (list) view, because it shows exact values. Line charts are read approximately, so expect to correct more of them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if a value is wrong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fix it on the review screen, where your screenshot sits next to the readings. Nothing is saved until you confirm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this go through Apple Health?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Apple Health has no place to store LH, E3G, or PdG concentrations, so nothing is read from or written to it for these values. You upload a screenshot and Veya reads the image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with other monitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Mira and Inito are the two supported today. PDF exports and photos of ovulation test strips aren't supported yet either, and you can still log a result by hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Veya only on iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The web app at app.myveya.com works in any browser, including on Android and on a computer. The iOS app is the full experience, with Apple Health and the wearables that sync to it. In the web app, Oura and Withings connect directly. For now the import runs in the web app. More on the web app page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veya doesn't run ads and doesn't sell your data. You can export or delete what you've logged at any time. Your screenshot is kept until you delete it, so crop out your name or account details first. The details are on our privacy page, and the MHMDA notice covers Washington state health data rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the predictions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veya reads the numbers from your image and you check them against it before saving, so the readings are as accurate as the screenshot and your review. Cycle predictions learn from your own history and show a range. Veya makes no medical claims and isn't birth control. More on how predictions work."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Veya",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.go-go-gaia.com/hormone-monitor-import.html#webpage",
+      "url": "https://www.go-go-gaia.com/hormone-monitor-import.html",
+      "name": "Import Mira and Inito Readings | Veya",
+      "dateModified": "2026-10-24",
+      "publisher": {
+        "@id": "https://www.go-go-gaia.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/brand/logo-mark-white.png" alt="VEYA Logo" height="30" class="d-inline-block align-top me-2">
+                    Veya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conditions.html">Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:abby@myveya.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+
+                <!-- Hero -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">Bring your Mira or Inito readings into Veya</h1>
+                        <p class="lead">Your hormone numbers live in the monitor's own app. Upload a screenshot of your chart in the Veya web app, check what Veya read against the image, and save the readings next to your cycle, sleep, and mood.</p>
+                        <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="bi bi-apple me-2"></i>Download Veya
+                        </a>
+                        <p class="small text-muted mt-3 mb-0">The import runs in the web app: <a href="https://app.myveya.com/import?utm_source=hormone-monitor-import&utm_medium=lander&utm_campaign=lander" target="_blank">open the import page</a> in any browser.</p>
+                        <!-- Desktop-only: the app is iOS, so a desktop App Store click can't install. Show a QR to scan with a phone. Hidden on touch devices via CSS. -->
+                        <div class="desktop-qr align-items-center gap-3 mt-4">
+                            <img src="images/download-qr.png" alt="QR code linking to Veya on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
+                            <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <img src="images/screens/bit-hormone-wave.webp" width="700" height="503" alt="Illustration of estrogen and progesterone curves across a cycle" class="img-fluid rounded" style="max-height: 480px; width: auto;" loading="eager">
+                    </div>
+                </div>
+
+                <!-- Built for -->
+                <section class="mb-5 section-card">
+                    <h2 class="mb-4 text-center">Built for Mira and Inito readings</h2>
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-image me-2" style="color: var(--primary);"></i>Import from a screenshot</h3>
+                                    <p class="mb-0">Choose Mira chart screenshot or Inito chart screenshot and upload an image of your monitor app. Veya reads LH, E3G, and PdG for each cycle day, plus FSH where your app shows it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-check2-circle me-2" style="color: var(--primary);"></i>Check it before it saves</h3>
+                                    <p class="mb-0">A review screen puts your screenshot beside the readings Veya found, one row per cycle day. Fix any value you like. Nothing is saved until you confirm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-camera me-2" style="color: var(--primary);"></i>Which screenshot to take</h3>
+                                    <p class="mb-0">For Inito, use the table (list) view, which shows exact values. Line charts are read approximately. For Mira, screenshot one cycle at a time with the numbers showing, and import two screenshots one after the other if a cycle runs past one screen.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-graph-up me-2" style="color: var(--primary);"></i>Next to everything else</h3>
+                                    <p class="mb-0">Saved readings go into your hormone history beside your cycle, sleep, mood, and symptoms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-layers me-2" style="color: var(--primary);"></i>Kept separate from lab panels</h3>
+                                    <p class="mb-0">Monitor readings are stored apart from the urine metrics that come from lab panels. The two are measured differently, and Veya doesn't blend them.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0" style="background-color: var(--secondary);">
+                                <div class="card-body">
+                                    <h3 class="h5 mb-2"><i class="bi bi-phone me-2" style="color: var(--primary);"></i>Not through Apple Health</h3>
+                                    <p class="mb-0">This doesn't go through Apple Health. Apple Health has no field for LH, E3G, or PdG concentrations, so you upload an image and Veya reads it.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- How it fits together -->
+                <section class="mb-5 p-4" style="background-color: var(--green-bg); border-radius: 15px;">
+                    <h2 class="mb-3">See how it all connects</h2>
+                    <p class="mb-0">Once your readings are saved, they sit in your hormone history beside your logged cycle, sleep, mood, and symptoms, with your wearable data on the same timeline. On iPhone, Apple Watch, Oura, WHOOP and Garmin data arrives through Apple Health. In the web app, Oura and Withings connect directly. You can look at a surge day and see how you slept before it and how you felt after. See <a href="health-patterns.html">how those signals line up across a cycle</a>. What the numbers mean for you is a question for you and your clinician. Veya shows you the record.</p>
+                </section>
+
+                <!-- What you can log -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">What you can log</h2>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">LH</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">E3G</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">PdG</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">FSH (where your app shows it)</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mira chart screenshots</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Inito chart screenshots</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Results by hand, if your monitor isn&#39;t supported yet</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Cycle days</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Symptoms</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Mood</span>
+                        <span class="badge rounded-pill p-2 px-3" style="background-color: var(--secondary); color: var(--primary-dark); font-weight: 500;">Sleep (from your wearable)</span>
+                    </div>
+                </section>
+
+                <!-- Privacy & trust -->
+                <section class="mb-5 p-4" style="background-color: var(--secondary); border-radius: 15px;">
+                    <h2 class="mb-3"><i class="bi bi-shield-check me-2" style="color: var(--primary);"></i>Private by default</h2>
+                    <p class="mb-0">Veya keeps your screenshot until you delete it, so crop out your name, email, or account details before you upload. Your data is encrypted and stored securely, and Veya doesn't run ads or sell your data. You can export or delete what you've logged at any time.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="mb-5">
+                    <h2 class="mb-4 text-center">Frequently asked questions</h2>
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Which Inito view should I screenshot?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">The table (list) view, because it shows exact values. Line charts are read approximately, so expect to correct more of them.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What if a value is wrong?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Fix it on the review screen, where your screenshot sits next to the readings. Nothing is saved until you confirm.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Does this go through Apple Health?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. Apple Health has no place to store LH, E3G, or PdG concentrations, so nothing is read from or written to it for these values. You upload a screenshot and Veya reads the image.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Does it work with other monitors?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Not yet. Mira and Inito are the two supported today. PDF exports and photos of ovulation test strips aren't supported yet either, and you can still log a result by hand.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Is Veya only on iPhone?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">No. The web app at <a href="https://app.myveya.com/start?utm_source=hormone-monitor-import&utm_medium=lander&utm_campaign=lander" target="_blank">app.myveya.com</a> works in any browser, including on Android and on a computer. The iOS app is the full experience, with Apple Health and the wearables that sync to it. In the web app, Oura and Withings connect directly. For now the import runs in the web app. More on the <a href="web-app.html">web app page</a>.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    What happens to my data?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya doesn't run ads and doesn't sell your data. You can export or delete what you've logged at any time. Your screenshot is kept until you delete it, so crop out your name or account details first. The details are on our <a href="privacy.html">privacy page</a>, and the <a href="/mhmda-notice.html">MHMDA notice</a> covers Washington state health data rules.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    How accurate are the predictions?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Veya reads the numbers from your image and you check them against it before saving, so the readings are as accurate as the screenshot and your review. Cycle predictions learn from your own history and show a range. Veya makes no medical claims and isn't birth control. More on <a href="prediction-accuracy.html">how predictions work</a>.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-center mt-4 mb-0">Want the step-by-step? Read <a href="blog/import-mira-inito-readings-veya.html">how to import your Mira or Inito readings into Veya</a>.</p>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="text-center py-5" style="background-color: var(--cream); border-radius: 15px;">
+                    <h2 class="mb-3">Put your monitor readings next to the rest of your data</h2>
+                    <p class="lead mb-4">Take a screenshot of your chart, upload it, check the rows, and save.</p>
+                    <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="bi bi-apple me-2"></i>Download Veya
+                    </a>
+                    <p class="small text-muted mt-3 mb-0">The import runs in the web app: <a href="https://app.myveya.com/import?utm_source=hormone-monitor-import&utm_medium=lander&utm_campaign=lander" target="_blank">open the import page</a> in any browser.</p>
+                </section>
+
+                <!-- Related tracking pages -->
+                <section class="py-4 sibling-tracking-nav">
+                    <h2 class="h5 mb-3">Tracking for other conditions</h2>
+                    <p class="small text-muted mb-0">
+                        <a href="pcos-tracker.html">PCOS tracking</a> &middot;
+                        <a href="perimenopause-tracker.html">Perimenopause tracking</a> &middot;
+                        <a href="ivf-tracker.html">IVF tracking</a> &middot;
+                        <a href="cycle-syncing-app.html">Cycle syncing</a> &middot;
+                        <a href="irregular-periods-tracker.html">Irregular cycle tracking</a> &middot;
+                        <a href="iud-cycle-tracking.html">Cycle tracking with an IUD</a> &middot;
+                        <a href="partner-sharing.html">Partner sharing</a> &middot;
+                        <a href="conditions.html">All conditions</a>
+                    </p>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>Veya</h5>
+          <p class="small">Your health, connected. Built by women, for women.</p>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <h5>Connect With Us</h5>
+          <p><a href="mailto:abby@myveya.com"><i class="bi bi-envelope me-2"></i>abby@myveya.com</a></p>
+          <p><a href="https://x.com/holland_neuro" target="_blank"><i class="bi bi-twitter-x me-2"></i>@holland_neuro</a></p>
+          <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+          <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Company</h5>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="https://myveya.com/" target="_blank" rel="noopener">Veya company site</a></p>
+          <p><a href="blog/index.html">Blog</a></p>
+          <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+          <p><a href="wrapped.html">Health Wrapped 2025</a></p>
+          <p><a href="wellness-type.html">What's Your Wellness Type?</a></p>
+          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+          <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+          <p class="small text-muted mb-0">Educational content only. Not medical advice. See our <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+        </div>
+      </div>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
