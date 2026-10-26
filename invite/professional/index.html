@@ -212,6 +212,13 @@
         if (downloadBtn) {
             downloadBtn.addEventListener('click', function() {
                 copyInviteUrlToClipboard();
+                if (typeof trackWithCode === 'function') {
+                    var ctm = downloadBtn.href.match(/[?&]ct=([^&]+)/);
+                    trackWithCode('invite_landing_download_click', {
+                        invite_type: 'professional',
+                        campaign_token: ctm ? decodeURIComponent(ctm[1]) : '(none)'
+                    }, code);
+                }
             });
         }
 

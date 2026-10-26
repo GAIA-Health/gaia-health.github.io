@@ -8,6 +8,47 @@
  * 6. Calculator usage (/tools/ form submits)
  */
 
+/* ── track(): GA4 + PostHog mirror ──
+   Every mirrored event goes through here. PostHog is loaded by cookie-consent.js
+   only after analytics consent; events fired before that wait in window.__phQueue
+   (max 20) and are flushed on load. Raw invite/creator codes NEVER leave the page:
+   use trackWithCode(), which sends code_hash (first 12 hex of SHA-256 of the
+   uppercased code) and omits it when crypto.subtle is unavailable. */
+var PH_QUEUE_MAX = 20;
+
+function track(name, props) {
+  props = props || {};
+  if (typeof gtag === 'function') gtag('event', name, props);
+  if (window.__phReady && window.posthog) {
+    window.posthog.capture(name, props);
+  } else {
+    var q = window.__phQueue = window.__phQueue || [];
+    if (q.length < PH_QUEUE_MAX) q.push([name, props]);
+  }
+}
+window.track = track;
+
+function trackWithCode(name, props, code) {
+  props = props || {};
+  function send(hash) {
+    if (hash) props.code_hash = hash;
+    track(name, props);
+  }
+  if (!code || !window.crypto || !window.crypto.subtle || typeof TextEncoder === 'undefined') {
+    send(null);
+    return;
+  }
+  window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(code).toUpperCase()))
+    .then(function (buf) {
+      var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) {
+        return ('0' + b.toString(16)).slice(-2);
+      }).join('');
+      send(hex.slice(0, 12));
+    })
+    .catch(function () { send(null); });
+}
+window.trackWithCode = trackWithCode;
+
 /* ── CTA click tracking ── */
 document.addEventListener('click', function (e) {
   var link = e.target.closest('a');
@@ -30,7 +71,7 @@ document.addEventListener('click', function (e) {
       // funnel by surface (gogogaia.com, wrapped, invite-*, tools, comparison…)
       // even when ASC only surfaces the one campaign you registered.
       var ctMatch = href.match(/[?&]ct=([^&]+)/);
-      gtag('event', 'download_click', {
+      track('download_click', {
         link_text: text,
         link_location: location,
         cta_placement: link.getAttribute('data-cta-placement') || location,

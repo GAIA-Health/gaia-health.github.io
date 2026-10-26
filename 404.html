@@ -337,9 +337,10 @@
             paint(NOT_FOUND);
             document.getElementById('open-app').href = '/';
             document.getElementById('open-app').textContent = 'Go to homepage';
-            if (typeof gtag === 'function') {
-                gtag('event', 'page_not_found', { page_path: window.location.pathname });
-            }
+            // DOMContentLoaded: the deferred analytics-events.js (track) has run by then.
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof track === 'function') track('page_not_found', { page_path: window.location.pathname });
+            });
             return;
         }
 
@@ -358,14 +359,22 @@
         document.getElementById('open-app').href = deepLink;
         document.getElementById('download-app').addEventListener('click', function () {
             copyCanonical(matched.canonical);
+            if (typeof trackWithCode === 'function') {
+                trackWithCode('invite_landing_download_click', {
+                    invite_type: matched.key,
+                    campaign_token: cfg.ct
+                }, code);
+            }
         });
 
-        if (typeof gtag === 'function') {
-            gtag('event', 'invite_landing_view', {
-                invite_type: matched.key,
-                page_path: window.location.pathname
-            });
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof track === 'function') {
+                track('invite_landing_view', {
+                    invite_type: matched.key,
+                    page_path: window.location.pathname
+                });
+            }
+        });
 
         // Try the app first. If it opens, the page is backgrounded and the
         // timer is cancelled; if nothing handles the scheme we fall through to

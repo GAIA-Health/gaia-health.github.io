@@ -299,12 +299,13 @@
         }
 
         document.getElementById('download-btn').addEventListener('click', function () {
-            if (typeof gtag === 'function') {
-                gtag('event', 'creator_landing_download_click', {
+            // code_hash only (first 12 hex of SHA-256 of the uppercased code);
+            // the raw creator code never goes to GA4 or PostHog.
+            if (typeof trackWithCode === 'function') {
+                trackWithCode('creator_landing_download_click', {
                     invite_type: 'referral',
-                    invite_subtype: 'creator',
-                    code: code || null
-                });
+                    invite_subtype: 'creator'
+                }, code);
             }
 
             if (!code) {
