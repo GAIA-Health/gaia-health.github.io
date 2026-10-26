@@ -226,7 +226,7 @@
                 accent: '#f4511e', light: '#ff7043', wash: '#fff4f0',
                 ct: 'invite-referral',
                 stepsTitle: 'How to Redeem',
-                steps: ['Download or open the Veya app', 'Go to Settings', 'Tap "Enter Referral Code"', 'Enter the code above']
+                steps: ['Download or open the Veya app', 'Open the app → Profile → Have an invite or referral code?', 'Enter the code above']
             },
             'share-with': {
                 icon: '🔒',
@@ -252,10 +252,20 @@
         // `/invite/{type}/{code}` shape the iOS cold-start pasteboard probe
         // parses, even when the user arrived via a legacy `/challenge/join/`
         // link, so a fresh install can still recover the code.
-        function route(path) {
+        function route(path, search) {
             var m = path.match(/^\/invite\/([^\/]+)\/([^\/?#]+)/);
             if (m && TYPES[m[1]]) {
                 return { key: m[1], code: m[2], canonical: ORIGIN + '/invite/' + m[1] + '/' + m[2] };
+            }
+
+            // Query form `/invite/{type}/?c=CODE` (no path segment) for types
+            // with no static page of their own.
+            m = path.match(/^\/invite\/([^\/]+)\/?$/);
+            if (m && TYPES[m[1]]) {
+                var qc = new URLSearchParams(search || '').get('c');
+                if (qc) {
+                    return { key: m[1], code: qc, canonical: ORIGIN + '/invite/' + m[1] + '/' + encodeURIComponent(qc) };
+                }
             }
 
             m = path.match(/^\/challenge\/join\/([^\/?#]+)/);
@@ -321,7 +331,7 @@
         }
 
         // ---- Go -------------------------------------------------------------
-        var matched = route(window.location.pathname);
+        var matched = route(window.location.pathname, window.location.search);
 
         if (!matched) {
             paint(NOT_FOUND);
