@@ -101,7 +101,8 @@ document.addEventListener('click', function (e) {
       link_text: text,
       link_location: location,
       page_path: window.location.pathname,
-      web_app_intent: webAppIntent
+      web_app_intent: webAppIntent,
+      link_url: href
     });
   }
 
