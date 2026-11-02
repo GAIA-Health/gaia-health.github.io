@@ -227,6 +227,7 @@ document.addEventListener('click', function (e) {
   gtag('event', 'blog_internal_click', {
     from_page: window.location.pathname,
     to_page: link.pathname,
+    link_url: link.href,
     link_text: link.textContent.trim().substring(0, 60),
     surface: isBlog ? 'blog' : 'tools'
   });
