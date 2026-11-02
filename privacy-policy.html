@@ -72,7 +72,7 @@
       "@id": "https://www.go-go-gaia.com/privacy-policy.html#webpage",
       "url": "https://www.go-go-gaia.com/privacy-policy.html",
       "name": "Privacy Policy | Veya",
-      "dateModified": "2026-09-28",
+      "dateModified": "2026-11-01",
       "publisher": {
         "@id": "https://www.go-go-gaia.com/#organization"
       }
@@ -122,7 +122,7 @@
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bold mb-3">Privacy Policy</h1>
                     <p class="lead">How Veya collects, uses, and protects your information.</p>
-                    <p class="small text-muted">Version 1.5 &mdash; effective September 28, 2026</p>
+                    <p class="small text-muted">Version 1.6 &mdash; effective November 1, 2026</p>
                 </div>
 
                 <!-- At-a-glance summary -->
@@ -166,7 +166,7 @@
 
                 <section id="information-we-collect" class="mb-5">
                     <h2 class="h4 mb-3">1. Information We Collect</h2>
-                    <p>Veya collects the following categories of information based on the features you choose to use. Some of this information you enter manually. Other information &mdash; particularly biometric, vital sign, fitness, sleep, and cycle data &mdash; is read from your device's Apple HealthKit with your permission, including data your wearables (Apple Watch, Oura, Whoop, Garmin, Eight Sleep, and similar) have written to HealthKit. You control which categories you grant access to in iOS, and you can revoke access at any time in Settings &rsaquo; Privacy &rsaquo; Health. Data is transmitted to our servers so we can power your insights, dashboards, AI coaching, and longitudinal tracking across devices.</p>
+                    <p>Veya collects the following categories of information based on the features you choose to use. Some of this information you enter manually. Other information &mdash; particularly biometric, vital sign, fitness, sleep, and cycle data &mdash; is read from your device's Apple HealthKit with your permission, including data your wearables (Apple Watch, Oura, Whoop, Garmin, Eight Sleep, and similar) have written to HealthKit. You control which categories you grant access to in iOS, and you can revoke access at any time in Settings &rsaquo; Privacy &rsaquo; Health. Phone motion and sensor data (described below) is controlled separately, by the Motion &amp; Fitness permission. Data is transmitted to our servers so we can power your insights, dashboards, AI coaching, and longitudinal tracking across devices.</p>
 
                     <h3 class="h6 mb-2">Cycle &amp; Reproductive Data</h3>
                     <ul>
@@ -234,6 +234,16 @@
                         <li>Sleep sessions, sleep stages, sleep efficiency and quality</li>
                     </ul>
 
+                    <h3 class="h6 mb-2">Phone Motion &amp; Sensor Data</h3>
+                    <ul>
+                        <li>If you grant Motion &amp; Fitness permission in iOS, Veya reads your iPhone's motion activity (still, walking, running, cycling, or driving) and measures how much the phone moves using its accelerometer, overnight and through the day</li>
+                        <li>Per-minute summaries are sent to our servers: how much the phone moved and for how many seconds, the minutes spent in each activity, and, for each minute, the seconds you spent using Veya itself. We do not collect the content of what you do in Veya, and we do not collect your use of any other app</li>
+                        <li>Raw accelerometer readings stay on your device. Timestamped motion activity samples (the phone's activity labels over time) are sent to our servers only if you have turned on &ldquo;Help Improve Veya's AI Models&rdquo; and are 18 or older (see Section 11)</li>
+                        <li>We use this to estimate when you went to bed and woke up and how active you have been, and to show those estimates in the app. They are estimates, not measurements, and not medical advice</li>
+                        <li>When you unlock your phone or turn on its screen is used on your device to improve those estimates and is never sent to our servers</li>
+                        <li>You can turn this off at any time in iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Motion &amp; Fitness. Summaries already sent remain part of your health record until you delete them or your account</li>
+                    </ul>
+
                     <h3 class="h6 mb-2">Wearable Account Connections (Oura)</h3>
                     <ul>
                         <li>If you connect your Oura account directly (rather than through Apple HealthKit), we access your Oura data on a read-only basis, including readiness, sleep, activity, heart rate, heart rate variability, and temperature-trend metrics</li>
@@ -282,6 +292,7 @@
                         <li>Generate cycle predictions, fertile window estimates, and phase recommendations</li>
                         <li>Process uploaded lab result PDFs, sleep study reports, and sleep-stage files to extract structured health values</li>
                         <li>Provide AI-powered health insights through Veya</li>
+                        <li>Estimate your sleep times and activity from phone motion and sensor data, if you have granted Motion &amp; Fitness permission, and show them in the app</li>
                     </ul>
 
                     <h3 class="h6 mb-2">For Treatment/Care Coordination (Professional Platform)</h3>
@@ -353,7 +364,7 @@
                     <h2 class="h4 mb-3">5. Data Retention</h2>
                     <p>We keep your data only as long as we need it. In general: your data is retained while your account is active; it is deleted once it is no longer needed for the purpose it was collected for; it is deleted when you delete your account; and a small number of records are kept longer only where we have a specific legal obligation to do so, such as the professional-access audit log described below. Within that framework:</p>
                     <ul class="mb-0">
-                        <li>All health data is retained until you delete it or delete your account</li>
+                        <li>All health data, including phone motion and sensor summaries, is retained until you delete it or delete your account</li>
                         <li>Original uploaded documents (lab reports, DEXA scans, genetic reports, and raw DNA exports) are stored encrypted so you can view or re-download them, and are permanently deleted, together with the values extracted from them, when you delete the document or your account</li>
                         <li>Account deletion permanently removes all data within 30 days</li>
                         <li>Professional access audit logs are retained for at least 6 years for security and compliance purposes</li>
@@ -367,7 +378,7 @@
                         <li><strong>Right to Access:</strong> You can export all your data in JSON format through Settings &gt; Download My Data. We will respond to access requests within 30 days.</li>
                         <li><strong>Right to Correction:</strong> You can edit most data directly within the app. For data you cannot edit directly, contact our Privacy Contact.</li>
                         <li><strong>Right to Know Who Accessed Your Data:</strong> The professional access log (Settings &gt; Sharing &gt; Access Log) shows every time a connected professional accessed your data.</li>
-                        <li><strong>Right to Restrict Processing:</strong> You can manage per-category sharing controls for each connected professional, and can revoke HealthKit access at any time in iOS Settings &gt; Privacy &gt; Health.</li>
+                        <li><strong>Right to Restrict Processing:</strong> You can manage per-category sharing controls for each connected professional, and can revoke HealthKit access at any time in iOS Settings &gt; Privacy &gt; Health, and Motion &amp; Fitness access at any time in iOS Settings &gt; Privacy &amp; Security &gt; Motion &amp; Fitness.</li>
                         <li><strong>Right to Delete:</strong> You can request deletion of all your data. Account deletion is irreversible.</li>
                         <li><strong>Right to Data Portability:</strong> You can export all your data at any time in machine-readable JSON format.</li>
                     </ul>
@@ -424,6 +435,7 @@
                         <li>We do not attach your name or email to data used for model training, and we take technical steps &mdash; including de-duplicating training data and testing models before release for whether they can reproduce an individual's information &mdash; to reduce the chance that a trained model could reproduce any individual member's data.</li>
                         <li>You can withdraw at any time in Settings, and we will stop using your data for future training. Because training happens in batches, data already incorporated into a model before you withdraw cannot always be pulled back out of that model; withdrawing stops all future use.</li>
                         <li>Turning this off does not affect your access to any part of the app.</li>
+                        <li>Phone motion and sensor data falls under these same terms: the aggregate use above applies to it, and individual-level use to train Veya's own AI models happens only if you have turned this setting on and are 18 or older. Timestamped motion activity samples are sent to our servers only under this setting.</li>
                         <li>This setting does not cover genetic data. Genetic reports and raw DNA exports are included in training only under the separate, optional choice described in Section 1, &ldquo;Genetic Data (beta).&rdquo;</li>
                         <li>This setting does not cover sleep study data either. If you upload a sleep study report or a scored sleep-stage file, pseudonymised data from it (never your name, email, upload dates, facility name, or the report's written interpretation) is used to help improve our sleep-staging models only if you separately opt in to that specific, optional research consent, off by default and revocable at any time in Settings.</li>
                     </ul>
@@ -458,7 +470,7 @@
                     <p>If you are located in the European Economic Area or the United Kingdom, the GDPR (and UK GDPR) gives you additional rights and requires us to identify our legal basis for processing your data:</p>
                     <ul>
                         <li><strong>Performing our contract with you</strong> (Art. 6(1)(b)) &mdash; for the core functionality of the app: storing your logs, generating dashboards and scores, and the account itself</li>
-                        <li><strong>Your explicit consent</strong> (Art. 9(2)(a)) &mdash; for processing special-category health data through optional features, including AI-powered insights and, separately, helping improve Veya's own AI models</li>
+                        <li><strong>Your explicit consent</strong> (Art. 9(2)(a)) &mdash; for processing special-category health data through optional features, including AI-powered insights, phone motion and sensor data you allow through the iOS Motion &amp; Fitness permission, and, separately, helping improve Veya's own AI models</li>
                         <li><strong>Legal obligation</strong> (Art. 6(1)(c)) &mdash; for the narrow set of disclosures described in Section 3, &ldquo;As Required by Law&rdquo;</li>
                     </ul>
                     <p>Your data is hosted on AWS infrastructure in Stockholm, Sweden (eu-north-1), within the EU. When you opt in to help improve Veya's own AI models, the training itself is also carried out on infrastructure inside the EU &mdash; your data does not leave the EU for that purpose, so no international transfer mechanism is required for it.</p>
