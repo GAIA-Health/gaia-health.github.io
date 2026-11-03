@@ -20,7 +20,35 @@ async function setup(page: Page) {
 }
 const firstParty = (errs: string[]) => errs.filter(e => !/net::ERR|Failed to load resource/.test(e));
 
+
+function decodeCalc(href: string) {
+  const u = new globalThis.URL(href);
+  const raw = u.hash.replace(/^#calc=/, '');
+  return JSON.parse(Buffer.from(raw.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8'));
+}
+
 test.describe('period calculator', () => {
+  test('save link carries dates in the hash only', async ({ page }) => {
+    const errors = await setup(page);
+    await page.goto(URL);
+    await page.fill('#lmpDate', '2026-09-28');
+    await page.selectOption('#cycleLength', '30');
+    await page.fill('#periodLength', '5');
+    await page.click('#moreDates summary');
+    const inputs = page.locator('#extraDates input');
+    await inputs.nth(0).fill('2026-08-29');
+    await inputs.nth(1).fill('2026-07-30');
+    const link = page.locator('#results a#saveDatesLink');
+    await expect(link).toHaveText('Save my dates and keep tracking');
+    const href = (await link.getAttribute('href'))!;
+    expect(href).toContain('mode=signup');
+    expect(href).toContain('utm_campaign=period-calculator');
+    expect(new globalThis.URL(href).search).not.toMatch(/2026/);
+    expect(await link.getAttribute('target')).toBe('_blank');
+    expect(decodeCalc(href)).toEqual({ v: 1, src: 'period-calculator', starts: ['2026-09-28', '2026-08-29', '2026-07-30'], cl: 30, pl: 5, bc: 0 });
+    expect(firstParty(errors)).toEqual([]);
+  });
+
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('page basics: one title, JSON-LD parses, no App Store link in results before a result', async ({ page }) => {
