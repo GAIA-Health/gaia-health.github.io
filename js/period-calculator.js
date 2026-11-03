@@ -9,6 +9,9 @@ const MAX_EXTRA_DATES = 6;
 const STATE_IN_HASH = true;
 
 const $ = id => document.getElementById(id);
+// Late-period landing page (tools/late-period-calculator.html) sets data-mode="late" on <body>.
+// Same engine and math; only the framing differs. Absent on period-calculator.html.
+const LATE_MODE = document.body.dataset.mode === 'late';
 const form = $('periodForm');
 const results = $('results');
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -139,6 +142,14 @@ function lateNote(r, bc) {
   return `<div class="late-note"><i class="bi bi-calendar-x" aria-hidden="true"></i>From your dates, your period was most likely due on ${fmtFull(due)}, which makes it <strong>${plural(r.daysPastDue, 'day')} late</strong> as of today. ${inside ? "That's still inside the range your dates give." : 'That is past the range your dates give.'} <a href="../blog/why-is-my-period-late.html">Common reasons a cycle shifts</a></div>`;
 }
 
+// Late mode only: say plainly when the period is not (yet) late, so the answer comes first either way.
+function notLateNote(r, bc) {
+  if (r.daysPastDue > 0 || bc) return '';
+  const until = parseISO(r.nextPeriod.date) - parseISO(today);
+  const when = until === 0 ? 'today' : until === 1 ? 'tomorrow' : until > 0 ? `in ${until} days` : 'on its expected date';
+  return `<div class="late-note late-note-ok"><i class="bi bi-calendar-check" aria-hidden="true"></i>From your dates, your period isn't late. It's most likely due <strong>${fmtFull(r.nextPeriod.date)}</strong> (${when}), and the range runs ${fmtRange(r.nextPeriod.earliest, r.nextPeriod.latest)}.</div>`;
+}
+
 function calendarHtml(r) {
   // Current cycle: from the cycle start that precedes the next predicted period.
   const next = parseISO(r.nextPeriod.date);
@@ -193,7 +204,7 @@ function renderResult(r, f, message) {
   results.innerHTML = `
     <div class="result-card pc-headline">
       ${message ? `<div class="refine-message" role="status">${esc(message)}</div>` : ''}
-      ${lateNote(r, f.bc)}
+      ${lateNote(r, f.bc)}${LATE_MODE ? notLateNote(r, f.bc) : ''}
       <h2 class="pc-kicker">your next period</h2>
       <div class="pc-range">${range}</div>
       <div class="pc-likely">most likely <strong>${fmtFull(np.date)}</strong> &middot; ${untilText}</div>
@@ -241,7 +252,7 @@ function renderResult(r, f, message) {
         <span class="pc-share-status" id="copyStatus" role="status" aria-live="polite"></span>
       </div>
     </div>`;
-  showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`, r, f);
+  if (!LATE_MODE) showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`, r, f);
 }
 
 /* App handoff card: the only App Store prompt after a result (download_click, cta_placement=tool_result).

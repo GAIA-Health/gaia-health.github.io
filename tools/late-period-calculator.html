@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Is My Period Late? Late Period Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="apple-itunes-app" content="app-id=6608432371">
+    <meta name="description" content="Find out if your period is late and by how many days. Enter your last period date and cycle length to see if you're still inside your own range.">
+    <meta name="keywords" content="is my period late calculator, late period calculator, how late is my period, how many days late is my period, am i late calculator, period late calculator, how many days late am i">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.go-go-gaia.com/tools/late-period-calculator.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Is My Period Late? Late Period Calculator">
+    <meta property="og:description" content="Find out if your period is late and by how many days. Enter your last period date and cycle length to see if you're still inside your own range.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.go-go-gaia.com/tools/late-period-calculator.html">
+    <meta property="og:image" content="https://www.go-go-gaia.com/Logo1.png">
+    <meta property="og:site_name" content="Veya">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@holland_neuro">
+    <meta name="twitter:title" content="Is My Period Late? Late Period Calculator">
+    <meta name="twitter:description" content="Find out if your period is late and by how many days. Enter your last period date and cycle length to see if you're still inside your own range.">
+    <meta name="twitter:image" content="https://www.go-go-gaia.com/Logo1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo1.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.go-go-gaia.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://www.go-go-gaia.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Late Period Calculator"
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if my period is late?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your period is late when today is past the date it was expected. Take the first day of your last period and add your usual cycle length to get the expected date. The calculator does that for you and counts the days between that date and today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a period that is a day or two past the date actually late?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically yes, but cycles move around a few days from month to month, so a day or two past the date often still sits inside your own range. The calculator tells you whether the number of days late is still inside the range your dates give or past it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the late period calculator work if I'm on birth control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tick the birth control box and it changes what it says. On hormonal birth control, bleeding usually follows your method's schedule rather than ovulation, so the calculator doesn't call a bleed late."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my cycles are irregular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One cycle length can't capture that. Open the add more period dates box and enter the first days of your last few periods. The calculator then uses your own cycles, so the range stretches or shrinks to match how much they move."
+      }
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Late Period Calculator",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any (web browser)",
+  "url": "https://www.go-go-gaia.com/tools/late-period-calculator.html",
+  "description": "Find out if your period is late and by how many days. Enter your last period date and cycle length to see if you're still inside your own range.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Veya",
+    "url": "https://www.go-go-gaia.com/"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Is My Period Late? Late Period Calculator",
+  "url": "https://www.go-go-gaia.com/tools/late-period-calculator.html",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "inLanguage": "en-US"
+}
+    </script>
+
+<style>
+        .calculator-hero {
+            background: var(--secondary);
+            padding: 3rem 0 2rem;
+        }
+        .calculator-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .calculator-card label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .calculator-card input[type="date"],
+        .calculator-card select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .calculator-card input[type="date"]:focus,
+        .calculator-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .btn-calculate {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-calculate:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Results */
+        .results-section {
+            display: block;
+        }
+        .results-section.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+
+        /* Key dates */
+        .key-dates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 480px) {
+            .key-dates { grid-template-columns: 1fr; }
+        }
+        .key-date-box {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .key-date-box.period-box {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+        }
+        .key-date-box.phase-box {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+        }
+        .key-date-box .date-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .key-date-box.phase-box .date-value {
+            color: var(--primary-dark);
+        }
+        .key-date-box .date-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Result handoff — inline line (quiet, continues the value) */
+        .result-handoff-line {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 0.75rem 0;
+            margin: 1.25rem 0 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .result-handoff-line a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Result handoff — substantive block after upcoming periods */
+        .result-handoff {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .result-handoff h4 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .result-handoff p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+        .result-handoff-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        .btn-handoff-primary {
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.65rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn-handoff-primary:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .btn-handoff-secondary {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 600;
+            padding: 0.65rem 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-handoff-secondary:hover {
+            background: var(--primary-subtle);
+            color: var(--primary-dark);
+        }
+
+        /* Refine prediction panel */
+        .refine-panel {
+            margin-top: 1.25rem;
+        }
+        .refine-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .refine-toggle:hover { background: var(--primary-subtle); }
+        .refine-toggle .bi-chevron-down { transition: transform 0.2s; }
+        .refine-toggle[aria-expanded="true"] .bi-chevron-down { transform: rotate(180deg); }
+        .refine-body {
+            background: #fff;
+            border: 2px solid #f0f0f0;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 1.25rem 1.25rem 1.5rem;
+            margin-top: -2px;
+        }
+        .refine-field { margin-bottom: 1rem; }
+        .refine-field label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 0.35rem;
+        }
+        .refine-field input {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            padding: 0.6rem 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .refine-field input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+            outline: none;
+        }
+        .refine-subhead {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            margin: 1.25rem 0 1rem;
+        }
+        .refine-subhead strong {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        .refine-subhead p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.25rem 0 0;
+        }
+        .refine-message {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .btn-refine-update {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 0.7rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-refine-update:hover { background-color: var(--primary-dark); }
+
+        /* Refine active note + predicted range (addition beneath the headline) */
+        .refine-active-note {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        .refine-active-note i { color: var(--primary-dark); margin-right: 0.35rem; }
+        .predicted-range {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .predicted-range .range-dates {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .predicted-range .range-width {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.15rem;
+        }
+        .predicted-range .range-sentence {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Late note */
+        .late-note {
+            background: #fde8ef;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        .late-note i { color: var(--accent); margin-right: 0.4rem; }
+
+        /* Phase indicator */
+        .phase-indicator {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .phase-indicator .phase-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .phase-indicator .phase-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Upcoming periods */
+        .next-cycles { margin-top: 1.5rem; }
+        .next-cycle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .next-cycle-row:last-child { border-bottom: none; }
+        .next-cycle-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        .next-cycle-dates {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .next-cycle-dates .period-date {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .next-cycle-dates .fertile-date {
+            color: var(--green-deep);
+            font-weight: 500;
+        }
+
+        /* Calendar view */
+        .cycle-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-top: 1rem;
+        }
+        .cycle-calendar .day-header {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 0.25rem;
+        }
+        .cycle-calendar .day {
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            position: relative;
+        }
+        .cycle-calendar .day.empty { visibility: hidden; }
+        .cycle-calendar .day.period {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .cycle-calendar .day.fertile {
+            background: rgba(232, 67, 147, 0.15);
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.ovulation {
+            background: var(--green-deep);
+            color: #fff;
+            font-weight: 700;
+        }
+        .cycle-calendar .day.luteal {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        .cycle-calendar .day.today-marker {
+            outline: 3px solid var(--primary);
+            outline-offset: -1px;
+        }
+        .cycle-calendar .day .day-num {
+            font-size: 0.8rem;
+        }
+        .cycle-calendar .day .day-label {
+            font-size: 0.6rem;
+            display: block;
+            line-height: 1;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .legend-dot.period { background: var(--accent); }
+        .legend-dot.follicular { background: rgba(130, 89, 220, 0.15); border: 1px solid var(--primary); }
+        .legend-dot.fertile { background: rgba(232, 67, 147, 0.18); }
+        .legend-dot.ovulation { background: var(--green-deep); }
+        .legend-dot.luteal { background: var(--secondary); border: 1px solid var(--primary); }
+        .legend-dot.today { outline: 2px solid var(--primary); outline-offset: -1px; background: #fff; }
+
+        /* Tips section */
+        .tips-section {
+            background: var(--secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .tips-section h3 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+        .tips-section ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .tips-section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .cta-section h3 { font-weight: 700; margin-bottom: 0.5rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .btn-cta {
+            background: #fff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-cta:hover {
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq-section-page { margin-top: 3rem; }
+        .faq-section-page .accordion-button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .faq-section-page .accordion-button:not(.collapsed) {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+        .faq-section-page .accordion-button:focus {
+            box-shadow: 0 0 0 3px var(--primary-subtle);
+        }
+        .faq-section-page .accordion-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Related */
+        .related-articles { margin-top: 2.5rem; }
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .related-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+        .related-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .related-card a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .related-card a:hover { text-decoration: underline; }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 0.75rem 0; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav .separator { color: var(--text-muted); margin: 0 0.4rem; }
+        .breadcrumb-nav .current { color: var(--text-muted); }
+        /* ── Period calculator v2 (Oct 2026): two-column on desktop, instant results ── */
+        .pc-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1120px; margin: 0 auto; }
+        .pc-grid .calculator-card { max-width: 540px; width: 100%; padding: 1.75rem; }
+        .pc-grid .results-section { max-width: 640px; width: 100%; margin: 0 auto; }
+        @media (min-width: 960px) {
+            .pc-grid { grid-template-columns: minmax(360px, 420px) 1fr; align-items: start; }
+            .pc-grid .calculator-card { position: sticky; top: 84px; margin: 0; }
+            .pc-grid .results-section { max-width: none; margin: 0; }
+        }
+        .pc-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0.75rem; }
+        .pc-optional { font-weight: 400; color: var(--text-muted); font-size: 0.85em; }
+        .calculator-card input[type="number"] { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; padding: 0.75rem 1rem; border: 2px solid #e0e0e0; border-radius: 12px; }
+        .calculator-card input:focus-visible, .calculator-card select:focus-visible, .pc-more summary:focus-visible { outline: 3px solid #8E4CE2; outline-offset: 2px; }
+        .pc-more { border: 1px solid #e6dcf7; border-radius: 12px; padding: 0.75rem 1rem; margin-bottom: 1rem; background: #faf7ff; }
+        .pc-more summary { cursor: pointer; font-weight: 500; color: #5B23C6; }
+        .pc-more-help { font-size: 0.88rem; color: var(--text-muted); margin: 0.6rem 0; }
+        .pc-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem; }
+        .pc-extra label { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--text-muted); margin: 0; font-weight: 500; }
+        .pc-extra input[type="date"] { font-size: 0.95rem; padding: 0.45rem 0.6rem; border-radius: 10px; }
+        .pc-check { margin-bottom: 1rem; font-size: 0.92rem; }
+        .pc-check .form-check-input:checked { background-color: #8E4CE2; border-color: #8E4CE2; }
+        .pc-grid .btn-calculate { background-color: #8E4CE2; }
+        .pc-grid .btn-calculate:hover { background-color: var(--primary-dark); }
+        .pc-empty { background: #fff; border: 2px dashed #e6dcf7; border-radius: 16px; padding: 2rem; color: var(--text-muted); }
+        .pc-kicker { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); margin: 0 0 0.25rem; letter-spacing: 0.02em; }
+        .pc-headline { text-align: center; }
+        .pc-range { font-size: 2.1rem; font-weight: 600; color: #8E4CE2; line-height: 1.15; }
+        .pc-likely { font-size: 1.05rem; color: var(--text-dark); margin-top: 0.35rem; }
+        .pc-likely strong { font-weight: 600; }
+        .pc-confidence { font-size: 0.92rem; color: var(--text-muted); margin: 0.85rem auto 0; max-width: 34rem; }
+        .pc-details { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 1.5rem 2rem 2rem; }
+        .pc-details .key-dates { margin-top: 0; }
+        .pc-h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin: 1.5rem 0 0.5rem; }
+        .pc-muted { color: var(--text-muted); font-size: 0.9rem; }
+        .pc-refine-cta { font-size: 0.92rem; margin: 0.75rem 0 0; }
+        .pc-link-btn { background: none; border: 0; padding: 0; color: #5B23C6; font-weight: 600; text-decoration: underline; cursor: pointer; }
+        .next-cycles { list-style: none; padding: 0; margin: 0; }
+        .cycle-calendar .day.range { background: rgba(142, 76, 226, 0.12); border: 1px dashed #8E4CE2; }
+        .cycle-calendar .day.next-likely { outline: 2px solid #5B23C6; outline-offset: -2px; }
+        .legend-dot.range { background: rgba(142, 76, 226, 0.12); border: 1px dashed #8E4CE2; }
+        .pc-followups p { font-size: 0.95rem; color: var(--text-dark); }
+        .pc-followups a, .pc-share a { color: #5B23C6; }
+        .pc-share { margin-top: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+        .pc-share-btn { background: #fff; border: 2px solid #8E4CE2; color: #5B23C6; border-radius: 12px; padding: 0.5rem 1rem; font-weight: 600; }
+        .pc-share-btn:hover { background: #faf7ff; }
+        .pc-share-status { font-size: 0.85rem; color: var(--text-muted); word-break: break-all; }
+        @media (max-width: 575px) {
+            .pc-grid .calculator-card, .pc-details { padding: 1.25rem; }
+            .pc-range { font-size: 1.7rem; }
+            .pc-row, .pc-extra { grid-template-columns: 1fr; }
+        }
+            .late-note-ok { background: var(--secondary, #f3ecfb); border-color: var(--primary, #8E4CE2); }
+        .late-note-ok i { color: var(--primary, #8E4CE2); }
+        body[data-mode="late"] .late-note { font-size: 1.1rem; }
+    </style>
+    <!-- Cookie consent + gated GA4 -->
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/analytics-events.js" defer></script>
+<script type="application/ld+json" data-schema="gg-entity-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.go-go-gaia.com/#organization",
+      "name": "Holland Neurotech Inc.",
+      "alternateName": "Veya",
+      "url": "https://www.go-go-gaia.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.go-go-gaia.com/Logo1.png"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6608432371",
+        "https://x.com/holland_neuro",
+        "https://www.instagram.com/gogogaia_tracker",
+        "https://www.tiktok.com/@gogogaia_tracker",
+        "https://hollandneurotech.com"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-mode="late">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg custom-navbar-bg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/brand/logo-mark-white.png" alt="Veya Logo" height="30" class="d-inline-block align-top me-2">
+                    Veya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
+                    </ul>
+                    <div class="social-icons ms-md-3 d-none d-md-flex">
+                        <a href="https://x.com/holland_neuro" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@gogogaia_tracker" target="_blank" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="mailto:abby@myveya.com" class="social-icon"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="./">Tools</a>
+                <span class="separator">/</span>
+                <span class="current">Late Period Calculator</span>
+            </nav>
+        </div>
+
+        <section id="calculator" class="calculator-hero">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 style="font-weight: 700; color: var(--text-dark);">Is My Period Late? Late Period Calculator</h1>
+                    <p class="lead" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Enter the first day of your last period and your usual cycle length. You'll see the date your period was expected, how many days past it you are today, and whether that's still inside the range your own dates give.</p>
+                </div>
+
+                <div class="pc-grid">
+                <div class="calculator-card">
+                    <form id="periodForm" method="get" action="late-period-calculator.html" novalidate>
+                        <div class="mb-3">
+                            <label for="lmpDate" class="form-label">first day of your last period</label>
+                            <input type="date" class="form-control" id="lmpDate" name="lmp" required>
+                        </div>
+                        <div class="pc-row">
+                            <div class="mb-3">
+                                <label for="cycleLength" class="form-label">usual cycle length</label>
+                                <select class="form-select" id="cycleLength" name="len">
+                                    <option value="20">20 days</option>
+                                    <option value="21">21 days</option>
+                                    <option value="22">22 days</option>
+                                    <option value="23">23 days</option>
+                                    <option value="24">24 days</option>
+                                    <option value="25">25 days</option>
+                                    <option value="26">26 days</option>
+                                    <option value="27">27 days</option>
+                                    <option value="28" selected>28 days</option>
+                                    <option value="29">29 days</option>
+                                    <option value="30">30 days</option>
+                                    <option value="31">31 days</option>
+                                    <option value="32">32 days</option>
+                                    <option value="33">33 days</option>
+                                    <option value="34">34 days</option>
+                                    <option value="35">35 days</option>
+                                    <option value="36">36 days</option>
+                                    <option value="37">37 days</option>
+                                    <option value="38">38 days</option>
+                                    <option value="39">39 days</option>
+                                    <option value="40">40 days</option>
+                                    <option value="41">41 days</option>
+                                    <option value="42">42 days</option>
+                                    <option value="43">43 days</option>
+                                    <option value="44">44 days</option>
+                                    <option value="45">45 days</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="periodLength" class="form-label">period length</label>
+                                <input type="number" class="form-control" id="periodLength" name="plen" min="2" max="10" step="1" placeholder="optional" inputmode="numeric" aria-describedby="plenHelp">
+                            </div>
+                        </div>
+                        <div class="form-text mb-3" id="plenHelp">Not sure of your cycle length? Count from the first day of one period to the first day of the next. Period length is optional (we assume 5 days).</div>
+
+                        <details class="pc-more" id="moreDates">
+                            <summary>add more period dates <span class="pc-optional">(optional, sharpens the range)</span></summary>
+                            <p class="pc-more-help">Earlier period start dates, any order. With 3 or more, the range comes from your own cycles instead of the setting above.</p>
+                            <div class="pc-extra" id="extraDates">
+                                <label><span>period before that</span><input type="date" class="form-control" name="d" aria-label="earlier period start 1"></label>
+                                <label><span>and before that</span><input type="date" class="form-control" name="d" aria-label="earlier period start 2"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 3"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 4"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 5"></label>
+                                <label><span>earlier</span><input type="date" class="form-control" name="d" aria-label="earlier period start 6"></label>
+                            </div>
+                        </details>
+
+                        <div class="form-check pc-check">
+                            <input class="form-check-input" type="checkbox" id="onBirthControl" name="bc" value="1">
+                            <label class="form-check-label" for="onBirthControl">I'm on hormonal birth control (pill, patch, ring, implant, shot or hormonal IUD)</label>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-calculate">Check if my period is late</button>
+                        </div>
+                    </form>
+                    <noscript><p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This calculator needs JavaScript to work out your dates. Without it, here's the method: add your usual cycle length to the first day of your last period. That's your most likely next start, and a few days either side is normal.</span></p></noscript>
+                    <p class="calculator-inline-note"><i class="bi bi-info-circle"></i><span>This is an estimate from your dates, not a diagnosis. If you're worried, talk to a clinician.</span></p>
+                </div>
+
+                <div id="results" class="results-section" aria-live="polite">
+                    <div class="pc-empty">
+                        <p class="pc-kicker">is it late?</p>
+                        <p>Pick the first day of your last period and you'll see straight away whether your period is late, by how many days, and whether that's still inside your range.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="how-late-is-worked-out" class="tools-educational container" style="max-width: 740px;">
+            <h2>How is a late period worked out?</h2>
+            <p>Your period is late when today is past the date it was expected. The expected date is the first day of your last period plus your cycle length, and the days between that date and today are how late you are. If your last period started on March 1 and your cycle is 28 days, the expected date is March 29, so on April 2 you're 4 days late.</p>
+            <p>A single date can look more exact than it is, so the calculator also gives a range. With one date it allows a few days either side, and with several period dates it uses how much your own cycles have moved. That's how it tells you whether you're late but still inside your range, or past it.</p>
+        </section>
+
+        <section id="why-cycles-shift" class="tools-educational container" style="max-width: 740px;">
+            <h2>Why do cycles shift?</h2>
+            <p>Your period follows ovulation, so when ovulation moves, the period moves with it. Stress, illness, travel, changes in sleep or exercise, and coming off hormonal birth control can all nudge that timing. Read <a href="../blog/why-is-my-period-late.html">why a period can be late</a> for the full picture.</p>
+        </section>
+
+        <section id="pregnancy-test-timing" class="tools-educational container" style="max-width: 740px;">
+            <h2>When is a pregnancy test designed to be used?</h2>
+            <p>Most home pregnancy tests are designed to be used from the day your period is due, <a href="https://www.nhs.uk/conditions/pregnancy-and-baby/pregnancy-test/" target="_blank" rel="noopener">according to the NHS</a>. The calculator shows that date from your dates. If you're worried about anything, talk to a clinician.</p>
+        </section>
+
+        <section id="faq" class="tools-educational container" style="max-width: 740px;">
+            <h2>Common questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I know if my period is late?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Your period is late when today is past the date it was expected. Take the first day of your last period and add your usual cycle length to get the expected date. The calculator does that for you and counts the days between that date and today.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Is a period that is a day or two past the date actually late?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Technically yes, but cycles move around a few days from month to month, so a day or two past the date often still sits inside your own range. The calculator tells you whether the number of days late is still inside the range your dates give or past it.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Does the late period calculator work if I'm on birth control?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Tick the birth control box and it changes what it says. On hormonal birth control, bleeding usually follows your method's schedule rather than ovulation, so the calculator doesn't call a bleed late.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What if my cycles are irregular?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">One cycle length can't capture that. Open the add more period dates box and enter the first days of your last few periods. The calculator then uses your own cycles, so the range stretches or shrinks to match how much they move.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container medical-disclaimer" style="max-width: 740px;">
+            <p>
+                <i class="bi bi-info-circle"></i><strong>Educational content, not medical advice.</strong>
+                This calculator gives you an estimate from your dates, not a diagnosis. <span data-brand>Veya</span> is a tracking tool, not a substitute for professional medical care. Want predictions beyond lateness? Try the <a href="period-calculator.html">period calculator</a>.
+            </p>
+        </section>
+
+        <div style="height: 1rem;"></div>
+    </main>
+
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Veya</h5>
+                    <p class="small">The women's health tracker that investigates</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5>Connect With Us</h5>
+                    <p><a href="mailto:abby@myveya.com"><i class="bi bi-envelope me-2"></i>abby@myveya.com</a></p>
+                    <p><a href="https://twitter.com/holland_neuro" target="_blank"><i class="bi bi-twitter me-2"></i>@holland_neuro</a></p>
+                    <p><a href="https://instagram.com/gogogaia_tracker" target="_blank"><i class="bi bi-instagram me-2"></i>@gogogaia_tracker</a></p>
+                    <p><a href="https://tiktok.com/@gogogaia_tracker" target="_blank"><i class="bi bi-tiktok me-2"></i>@gogogaia_tracker</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Legal</h5>
+                    <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="/terms-and-conditions.html">Terms of Service</a></p>
+                    <p><a href="../blog/index.html">Health & Wellness Blog</a></p>
+                    <p><a href="/encyclopedia/">Health Encyclopedia</a></p>
+                    <p><a href="https://myveya.com/" target="_blank" rel="noopener">Veya company site</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="small">&copy; 2026 Holland Neurotech Inc. All rights reserved.</p>
+                    <p class="small text-muted mb-0">Educational content only &mdash; not medical advice. See our <a href="../medical-disclaimer.html">Medical Disclaimer</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="../js/period-calculator.js"></script>
+
+</body>
+</html>
