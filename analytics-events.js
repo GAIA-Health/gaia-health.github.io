@@ -101,7 +101,8 @@ document.addEventListener('click', function (e) {
       link_text: text,
       link_location: location,
       page_path: window.location.pathname,
-      web_app_intent: webAppIntent
+      web_app_intent: webAppIntent,
+      link_url: href
     });
   }
 
@@ -226,6 +227,7 @@ document.addEventListener('click', function (e) {
   gtag('event', 'blog_internal_click', {
     from_page: window.location.pathname,
     to_page: link.pathname,
+    link_url: link.href,
     link_text: link.textContent.trim().substring(0, 60),
     surface: isBlog ? 'blog' : 'tools'
   });

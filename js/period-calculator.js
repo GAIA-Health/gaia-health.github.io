@@ -241,25 +241,55 @@ function renderResult(r, f, message) {
         <span class="pc-share-status" id="copyStatus" role="status" aria-live="polite"></span>
       </div>
     </div>`;
-  showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`);
+  showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`, r, f);
 }
 
-/* App handoff card: the only App Store prompt after a result (download_click, cta_placement=tool_result). */
+/* App handoff card: the only App Store prompt after a result (download_click, cta_placement=tool_result).
+   The lander link is picked from values the engine already computed; wording stays neutral. */
 const APP_HANDOFF = {
   tail: 'Log your next one in the app and the range tightens.',
   explain: `${BRAND} learns from the periods you log, so dates and ranges adjust to irregular cycles, and your symptoms and sleep sit alongside your cycle.`,
-  guideUrl: '../blog/why-is-my-period-late.html',
 };
-function showAppHandoff(headline) {
+function handoffContext(r, f) {
+  const s = r.cycleStats;
+  if (r.engine === 'data' && r.confidence === 'wide_range' && s.shortest !== s.longest) {
+    return {
+      headline: `Your cycles have ranged ${s.shortest}\u2013${s.longest} days, and the range above follows that. ${APP_HANDOFF.tail}`,
+      linkPre: 'See how predictions work when ', linkText: 'cycles vary', linkPost: '.',
+      href: '../irregular-periods-tracker.html', key: 'irregular-periods-tracker',
+    };
+  }
+  if (f.bc) {
+    return {
+      headline: null,
+      linkPre: 'No regular bleed to anchor to? See ', linkText: 'how to track a cycle without a period', linkPost: '.',
+      href: '../iud-cycle-tracking.html', key: 'iud-cycle-tracking',
+    };
+  }
+  if (r.fertileWindow && r.engine === 'data') {
+    return {
+      headline: null,
+      linkPre: "Want the fertile window to use your wearable's temperature too? See the ", linkText: 'fertility tracker', linkPost: '.',
+      href: '../fertility-tracker.html', key: 'fertility-tracker',
+    };
+  }
+  return {
+    headline: null,
+    linkPre: 'Curious how the range is worked out? Read ', linkText: 'how predictions work', linkPost: '.',
+    href: '../prediction-accuracy.html', key: 'prediction-accuracy',
+  };
+}
+function showAppHandoff(headline, r, f) {
   const old = $('appHandoff');
   if (old) old.remove();
   const anchor = results.querySelector('.result-card');
   if (!anchor || !headline) return;
+  const ctx = handoffContext(r, f);
   const card = document.createElement('div');
   card.className = 'app-handoff';
   card.id = 'appHandoff';
   const h = document.createElement('h3');
-  h.textContent = `${headline} ${APP_HANDOFF.tail}`;
+  h.textContent = ctx.headline || `${headline} ${APP_HANDOFF.tail}`;
   const p = document.createElement('p');
   p.textContent = APP_HANDOFF.explain;
   const a = document.createElement('a');
@@ -276,7 +306,15 @@ function showAppHandoff(headline) {
   web.target = '_blank';
   web.rel = 'noopener';
   web.textContent = 'Or use it in your browser →';
-  card.append(h, p, a, web);
+  /* Same-host link: analytics-events.js counts it as blog_internal_click (surface=tools). */
+  const lander = document.createElement('p');
+  lander.className = 'pc-muted mt-3 mb-0';
+  const la = document.createElement('a');
+  la.href = ctx.href;
+  la.setAttribute('data-handoff-lander', ctx.key);
+  la.textContent = ctx.linkText;
+  lander.append(document.createTextNode(ctx.linkPre), la, document.createTextNode(ctx.linkPost));
+  card.append(h, p, a, web, lander);
   anchor.insertAdjacentElement('afterend', card);
 }
 
@@ -314,8 +352,19 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   e.stopPropagation(); // calculator_use is fired once per page view by update(), not per submit
   update('button');
-  if (window.matchMedia('(max-width: 959px)').matches) results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (window.matchMedia('(max-width: 960px)').matches) results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
+/* Once per page view: after the first auto-render, when the date field loses focus, bring the result into view.
+   Never on keystrokes, so typing does not jump the page. */
+let blurScrolled = false;
+$('lmpDate').addEventListener('blur', () => {
+  if (blurScrolled || !used || !results.classList.contains('show')) return;
+  if (!window.matchMedia('(max-width: 960px)').matches) return;
+  blurScrolled = true;
+  setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+});
+form.addEventListener('submit', () => { blurScrolled = true; });
 
 let refineOpenedLogged = false;
 $('moreDates').addEventListener('toggle', e => {
