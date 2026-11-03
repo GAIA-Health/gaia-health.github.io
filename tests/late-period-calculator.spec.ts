@@ -17,5 +17,18 @@ test('late period calculator: renders and flags a late period', async ({ page })
   await page.fill('#lmpDate', '2026-08-30');
   await expect(page.locator('.late-note').first()).toContainText('12 days late');
   await expect(page.locator('#results a[href*="apps.apple.com"]')).toHaveCount(0);
+  // save link: compact, hash-only dates, newest first
+  await page.click('#moreDates summary');
+  const inputs = page.locator('#extraDates input');
+  await inputs.nth(0).fill('2026-08-02');
+  await inputs.nth(1).fill('2026-07-05');
+  const link = page.locator('#lateSave a#saveDatesLink');
+  await expect(link).toHaveText('Save my dates and keep tracking');
+  const href = (await link.getAttribute('href'))!;
+  expect(href).toContain('mode=signup');
+  expect(new globalThis.URL(href).search).not.toMatch(/2026/);
+  const payload = JSON.parse(Buffer.from(new globalThis.URL(href).hash.slice(6).replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8'));
+  expect(payload.src).toBe('late-period-calculator');
+  expect(payload.starts).toEqual(['2026-08-30', '2026-08-02', '2026-07-05']);
   expect(errors).toEqual([]);
 });

@@ -1,8 +1,8 @@
 /* Period calculator page logic. Engine: ./cycle-predict.js. Brand strings: ./brand.js. */
 import { predict, parseISO, toISO } from './cycle-predict.js';
-import { BRAND, APP_STORE_URL, webAppSignupUrl } from './brand.js';
+import { BRAND, APP_STORE_URL, WEB_APP_URL } from './brand.js';
 
-const TOOL = 'period-calculator';
+const TOOL = document.body.dataset.mode === 'late' ? 'late-period-calculator' : 'period-calculator';
 const MAX_EXTRA_DATES = 6;
 // URL state lives in the query string (?lmp=…). Flip to true to keep dates in the
 // #fragment instead, which keeps them out of analytics page_location and server logs.
@@ -110,6 +110,28 @@ function shareUrl(f) {
   const base = location.origin + location.pathname;
   return STATE_IN_HASH ? `${base}#${stateQuery(f)}` : `${base}?${stateQuery(f)}`;
 }
+/* Save-my-dates link: web-app signup, dates carried in the hash only (never the query string). */
+function saveHref(f) {
+  const starts = vetDates(f.lmp, f.extra).starts.slice(0, 7);
+  const payload = { v: 1, src: TOOL, starts, cl: f.len || null, pl: f.plenSet ? f.plen : null, bc: f.bc ? 1 : 0 };
+  const bytes = new TextEncoder().encode(JSON.stringify(payload));
+  let bin = '';
+  bytes.forEach(b => { bin += String.fromCharCode(b); });
+  const b64 = btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const q = `mode=signup&utm_source=website&utm_medium=tool_result&utm_campaign=${encodeURIComponent(TOOL)}`;
+  return `${WEB_APP_URL}/login?${q}#calc=${b64}`;
+}
+function saveLink(f, cls) {
+  const a = document.createElement('a');
+  a.className = cls;
+  a.id = 'saveDatesLink';
+  a.href = saveHref(f);
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.textContent = 'Save my dates and keep tracking';
+  return a;
+}
+const SAVE_NOTE = "Free. Your dates come with you, so you don't have to enter them again.";
 let writeTimer = null;
 function writeState(f) {
   clearTimeout(writeTimer);
@@ -252,7 +274,8 @@ function renderResult(r, f, message) {
         <span class="pc-share-status" id="copyStatus" role="status" aria-live="polite"></span>
       </div>
     </div>`;
-  if (!LATE_MODE) showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`, r, f);
+  if (LATE_MODE) showLateSave(f);
+  else showAppHandoff(`Your next period looks like ${range}, most likely ${fmt(np.date)}.`, r, f);
 }
 
 /* App handoff card: the only App Store prompt after a result (download_click, cta_placement=tool_result).
@@ -290,6 +313,20 @@ function handoffContext(r, f) {
     href: '../prediction-accuracy.html', key: 'prediction-accuracy',
   };
 }
+function showLateSave(f) {
+  const old = $('lateSave');
+  if (old) old.remove();
+  const anchor = results.querySelector('.result-card');
+  if (!anchor) return;
+  const box = document.createElement('div');
+  box.className = 'late-save';
+  box.id = 'lateSave';
+  const note = document.createElement('p');
+  note.className = 'pc-muted mt-2 mb-0';
+  note.textContent = SAVE_NOTE;
+  box.append(saveLink(f, 'app-handoff-btn'), note);
+  anchor.insertAdjacentElement('afterend', box);
+}
 function showAppHandoff(headline, r, f) {
   const old = $('appHandoff');
   if (old) old.remove();
@@ -311,12 +348,11 @@ function showAppHandoff(headline, r, f) {
   a.setAttribute('data-cta-placement', 'tool_result');
   a.innerHTML = '<i class="bi bi-apple me-1" aria-hidden="true"></i>';
   a.appendChild(document.createTextNode(`Get ${BRAND} on the App Store`));
-  const web = document.createElement('a');
-  web.className = 'app-handoff-guide';
-  web.href = webAppSignupUrl(TOOL);
-  web.target = '_blank';
-  web.rel = 'noopener';
-  web.textContent = 'Or use it in your browser →';
+  a.classList.add('app-handoff-btn-secondary');
+  const save = saveLink(f, 'app-handoff-btn');
+  const saveNote = document.createElement('p');
+  saveNote.className = 'pc-muted app-handoff-save-note';
+  saveNote.textContent = SAVE_NOTE;
   /* Same-host link: analytics-events.js counts it as blog_internal_click (surface=tools). */
   const lander = document.createElement('p');
   lander.className = 'pc-muted mt-3 mb-0';
@@ -325,7 +361,7 @@ function showAppHandoff(headline, r, f) {
   la.setAttribute('data-handoff-lander', ctx.key);
   la.textContent = ctx.linkText;
   lander.append(document.createTextNode(ctx.linkPre), la, document.createTextNode(ctx.linkPost));
-  card.append(h, p, a, web, lander);
+  card.append(h, p, save, saveNote, a, lander);
   anchor.insertAdjacentElement('afterend', card);
 }
 

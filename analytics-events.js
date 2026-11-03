@@ -102,7 +102,7 @@ document.addEventListener('click', function (e) {
       link_location: location,
       page_path: window.location.pathname,
       web_app_intent: webAppIntent,
-      link_url: href
+      link_url: href.split('#')[0]
     });
   }
 
