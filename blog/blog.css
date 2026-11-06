@@ -245,7 +245,6 @@ main a:not(.btn):not(.nav-link):not(.blog-link):not(.social-icon):hover { color:
   font-weight: 500;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  text-transform: lowercase;
   border-bottom: 1px solid var(--b-hairline-strong) !important;
 }
 .table-responsive { border: 1px solid var(--b-hairline-strong); border-radius: 16px; background: #fff; }
