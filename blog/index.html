@@ -20,7 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -44,31 +45,30 @@
     <style>
         .featured-post {
             background: #fff;
-            border: 3px solid #46583a;
-            border-radius: 12px;
+            border: 1px solid rgba(142, 76, 226, 0.14);
+            border-radius: 20px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .featured-post:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(70, 88, 58, 0.3) !important;
-            border-color: #FF6B98;
+            box-shadow: 0 8px 20px rgba(142, 76, 226, 0.15) !important;
+            border-color: #7A3BCB;
         }
         .featured-post .card-body {
             padding: 2rem;
         }
         .featured-post a {
-            color: #333;
-            font-weight: 600;
+            color: #1B1430;
+            font-weight: 500;
         }
         .featured-post a:hover {
-            color: #FF6B98;
+            color: #7A3BCB;
         }
         .featured-post .badge {
-            background-color: #46583a !important;
-            color: white;
-            font-weight: 600;
-            padding: 0.5rem 0.75rem;
+            background-color: #EEE4FB !important;
+            color: #7A3BCB;
+            font-weight: 500;
         }
         .featured-post .card-text {
             color: #555;
@@ -77,14 +77,13 @@
             color: #666;
         }
         .category-header {
-            border-left: 4px solid #46583a;
-            padding-left: 1rem;
+            padding-left: 0;
             margin-top: 3rem;
             margin-bottom: 2rem;
         }
         .category-header h2 {
-            font-weight: 700;
-            color: #333;
+            font-weight: 400;
+            color: #1B1430;
             margin-bottom: 0.5rem;
         }
         .category-header p {
@@ -99,17 +98,16 @@
         }
         .blog-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 6px 14px rgba(142, 76, 226, 0.08) !important;
         }
 
         /* Filter Bar */
         .filter-bar {
-            background: #f8f9fa;
+            background: #F5F1FE;
             border: 1px solid #e0e0e0;
-            border-radius: 12px;
+            border-radius: 20px;
             padding: 1.5rem;
             margin-bottom: 3rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .filter-pills {
@@ -122,7 +120,7 @@
         .filter-pill {
             padding: 0.5rem 1rem;
             border: 2px solid #e0e0e0;
-            border-radius: 25px;
+            border-radius: 999px;
             background: #fff;
             color: #666;
             font-weight: 500;
@@ -133,15 +131,15 @@
         }
 
         .filter-pill:hover {
-            border-color: #FF6B98;
-            color: #FF6B98;
+            border-color: #7A3BCB;
+            color: #7A3BCB;
             transform: translateY(-2px);
         }
 
         .filter-pill.active {
-            background: #46583a;
-            border-color: #46583a;
-            color: white;
+            background: #EEE4FB;
+            border-color: #EEE4FB;
+            color: #7A3BCB;
         }
 
         .search-box {
@@ -151,8 +149,8 @@
 
         .search-box input {
             padding: 0.5rem 1rem 0.5rem 2.5rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 999px;
             width: 100%;
             font-size: 0.9rem;
             transition: border-color 0.3s ease;
@@ -160,7 +158,7 @@
 
         .search-box input:focus {
             outline: none;
-            border-color: #46583a;
+            border-color: #8E4CE2;
         }
 
         .search-box i {
@@ -178,13 +176,13 @@
             right: 2rem;
             width: 50px;
             height: 50px;
-            background: #FF6B98;
+            background: #7A3BCB;
             color: white;
             border: none;
             border-radius: 50%;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(255, 107, 152, 0.3);
+            box-shadow: 0 4px 12px rgba(142, 76, 226, 0.15);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -197,7 +195,7 @@
         }
 
         .back-to-top:hover {
-            background: #46583a;
+            background: #8E4CE2;
             transform: translateY(-5px);
         }
 
@@ -224,7 +222,7 @@
             }
 
             .filter-pills::-webkit-scrollbar-thumb {
-                background: #46583a;
+                background: #8E4CE2;
                 border-radius: 4px;
             }
         }
@@ -983,7 +981,7 @@
         <nav class="navbar navbar-expand-lg custom-navbar-bg">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../images/brand/logo-mark-white.png" alt="VEYA Logo" height="30" class="d-inline-block align-top me-2">
+                    <img src="../images/brand/logo-mark.png" alt="Veya Logo" height="30" class="d-inline-block align-top me-2">
                     Veya
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
