@@ -1,0 +1,88 @@
+name: Scheduled publish
+
+# Merges open PRs labelled publish:YYYY-MM-DD once that date (UTC) has arrived.
+# See docs/SCHEDULED-PUBLISHING.md.
+#
+# Merges made with GITHUB_TOKEN do not trigger other workflows, so the
+# push-triggered indexnow.yml will NOT fire for them. This workflow therefore
+# waits for the Pages deploy and runs scripts/indexnow.py itself.
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge due PRs
+        id: merge
+        run: |
+          set -u
+          git fetch origin main -q
+          BEFORE=$(git rev-parse origin/main)
+          gh pr list --state open --limit 200 \
+            --json number,isDraft,labels,statusCheckRollup > prs.json
+          python3 scripts/scheduled_publish_select.py < prs.json > due.txt
+          cat due.txt
+          merged=0
+          while read -r date num; do
+            [ -z "$num" ] && continue
+            # Re-check mergeability live; GitHub computes it lazily, so retry on UNKNOWN.
+            state=UNKNOWN
+            for i in 1 2 3 4 5 6; do
+              state=$(gh pr view "$num" --json mergeable --jq .mergeable)
+              [ "$state" != "UNKNOWN" ] && break
+              sleep 10
+            done
+            if [ "$state" = "CONFLICTING" ]; then
+              gh pr comment "$num" --body "Scheduled publish ($date) skipped: this PR conflicts with main (likely sitemap.xml or the blog index after an earlier post merged). Rebase or merge main into the branch and resolve; the next daily run will pick it up."
+              echo "::warning::#$num conflicting, skipped"
+              continue
+            fi
+            if [ "$state" != "MERGEABLE" ]; then
+              echo "::warning::#$num mergeable=$state, skipped"
+              continue
+            fi
+            if gh pr merge "$num" --merge; then
+              merged=$((merged + 1))
+            else
+              gh pr comment "$num" --body "Scheduled publish ($date) failed to merge; see the workflow run log." || true
+              echo "::warning::#$num merge failed"
+            fi
+          done < due.txt
+          git fetch origin main -q
+          AFTER=$(git rev-parse origin/main)
+          echo "merged=$merged" >> "$GITHUB_OUTPUT"
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
+          echo "after=$AFTER" >> "$GITHUB_OUTPUT"
+
+      # GitHub Pages (branch-based) rebuilds on the push; give it time to deploy.
+      - name: Wait for Pages deploy
+        if: steps.merge.outputs.merged != '0'
+        run: sleep 90
+
+      - name: Submit changed URLs to IndexNow
+        if: steps.merge.outputs.merged != '0'
+        env:
+          BEFORE: ${{ steps.merge.outputs.before }}
+          AFTER: ${{ steps.merge.outputs.after }}
+        run: |
+          git checkout -q "$AFTER"
+          python3 scripts/indexnow.py --changed "$BEFORE..$AFTER" || echo "::warning::IndexNow submission failed"
