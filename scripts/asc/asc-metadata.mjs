@@ -12,6 +12,8 @@
 // Config shape (paths relative to scripts/asc/):
 //   { "descriptionFile": "metadata/description-en-US.txt",
 //     "descriptionLocales": ["en-US", ...],          // locales that get the description
+//     "name": { "en-US": "..." },                     // app name (appInfoLocalizations), ≤30 chars each
+//     "descriptions": { "en-US": "..." },             // per-locale description (≤4000), alongside/instead of descriptionFile
 //     "subtitle": { "en-US": "..." },                 // ≤30 chars each
 //     "whatsNew": { "en-US": "..." },                 // per-locale release notes (≤4000)
 //     "keywords": { "en-US": "..." } }                // ≤100 chars each; missing locales are created
@@ -99,6 +101,10 @@ async function cmdApply(configFile, apply) {
   if (description && description.length > 4000) throw new Error(`Description ${description.length} > 4000`);
   if (cfg.promotionalText && cfg.promotionalText.length > 170) throw new Error(`Promo ${cfg.promotionalText.length} > 170`);
   for (const [loc, s] of Object.entries(cfg.subtitle || {})) if (s.length > 30) throw new Error(`Subtitle ${loc} ${s.length} > 30`);
+  const problems = [];
+  for (const [loc, n] of Object.entries(cfg.name || {})) if (!n || n.length > 30) problems.push(`Name ${loc} ${n ? n.length : 0} (must be 1-30)`);
+  for (const [loc, d] of Object.entries(cfg.descriptions || {})) if (!d || d.length > 4000) problems.push(`Description ${loc} ${d ? d.length : 0} (must be 1-4000)`);
+  if (problems.length) throw new Error(`Validation failed:\n  ${problems.join('\n  ')}`);
   for (const [loc, w] of Object.entries(cfg.whatsNew || {})) if (w.length > 4000) throw new Error(`whatsNew ${loc} ${w.length} > 4000`);
   for (const [loc, k] of Object.entries(cfg.keywords || {})) if (k.length > 100) throw new Error(`Keywords ${loc} ${k.length} > 100`);
 
@@ -111,9 +117,11 @@ async function cmdApply(configFile, apply) {
   console.log(`Editable version ${v.attributes.versionString}${apply ? '' : ' [DRY RUN]'}\n`);
   if (description) console.log(`Description: ${description.length}/4000 chars → locales: ${(cfg.descriptionLocales || []).join(', ')}\n`);
 
-  const targetLocales = [...new Set([...Object.keys(cfg.keywords || {}), ...Object.keys(cfg.subtitle || {}), ...(cfg.descriptionLocales || []), ...(cfg.promoLocales || []), ...Object.keys(cfg.whatsNew || {})])];
+  const targetLocales = [...new Set([...Object.keys(cfg.keywords || {}), ...Object.keys(cfg.subtitle || {}), ...(cfg.descriptionLocales || []), ...Object.keys(cfg.name || {}), ...Object.keys(cfg.descriptions || {}), ...(cfg.promoLocales || []), ...Object.keys(cfg.whatsNew || {})])];
   for (const loc of targetLocales) {
-    const wantDesc = description && (cfg.descriptionLocales || []).includes(loc);
+    const locDesc = cfg.descriptions?.[loc] ?? (description && (cfg.descriptionLocales || []).includes(loc) ? description : null);
+    const wantDesc = !!locDesc;
+    const nm = cfg.name?.[loc];
     const wantPromo = cfg.promotionalText && (cfg.promoLocales || []).includes(loc);
     const kw = cfg.keywords?.[loc];
     const wn = cfg.whatsNew?.[loc];
@@ -124,13 +132,13 @@ async function cmdApply(configFile, apply) {
     if (kw || wantDesc || wantPromo || wn) {
       const attrs = {};
       if (kw && kw !== vl?.attributes.keywords) attrs.keywords = kw;
-      if (wantDesc && description !== vl?.attributes.description) attrs.description = description;
+      if (wantDesc && locDesc !== vl?.attributes.description) attrs.description = locDesc;
       if (wantPromo && cfg.promotionalText !== vl?.attributes.promotionalText) attrs.promotionalText = cfg.promotionalText;
       if (wn && wn !== vl?.attributes.whatsNew) attrs.whatsNew = wn;
       if (!vl) {
         // new locale: copy en-US conversion fields so the localization is submission-complete
         Object.assign(attrs, {
-          description: wantDesc ? description : enUSvl.description,
+          description: wantDesc ? locDesc : enUSvl.description,
           promotionalText: wantPromo ? cfg.promotionalText : enUSvl.promotionalText,
           whatsNew: wn, supportUrl: enUSvl.supportUrl, marketingUrl: enUSvl.marketingUrl,
         });
@@ -140,7 +148,7 @@ async function cmdApply(configFile, apply) {
             relationships: { appStoreVersion: { data: { type: 'appStoreVersions', id: v.id } } } },
         });
       } else if (Object.keys(attrs).length) {
-        console.log(`[${loc}] UPDATE version localization: ${Object.keys(attrs).join(' + ')}${attrs.keywords ? `\n    keywords: ${attrs.keywords}` : ''}`);
+        console.log(`[${loc}] UPDATE version localization: ${Object.keys(attrs).join(' + ')}${attrs.keywords ? `\n    keywords: ${attrs.keywords}` : ''}${attrs.description ? `\n    description: ${(vl.attributes.description || '').length} → ${attrs.description.length} chars\n      was: ${(vl.attributes.description || '').slice(0, 70).replace(/\n/g, ' ')}…\n      now: ${attrs.description.slice(0, 70).replace(/\n/g, ' ')}…` : ''}`);
         if (apply) await api('PATCH', `/v1/appStoreVersionLocalizations/${vl.id}`, {
           data: { type: 'appStoreVersionLocalizations', id: vl.id, attributes: attrs },
         });
@@ -150,15 +158,15 @@ async function cmdApply(configFile, apply) {
     // --- app info localization (subtitle; name copied for new locales) ---
     // NOTE: creating an appStoreVersionLocalization makes ASC auto-create the matching
     // appInfoLocalization, so a POST here can 409 — fall back to PATCHing the auto-created one.
-    if (sub) {
+    if (sub || nm) {
       const il = ils.find((l) => l.attributes.locale === loc);
       if (!il) {
-        console.log(`[${loc}] CREATE app info localization (name "${enUSil.name}", subtitle "${sub}")`);
+        console.log(`[${loc}] CREATE app info localization (name "${nm || enUSil.name}", subtitle "${sub || ''}")`);
         if (apply) {
           try {
             await api('POST', '/v1/appInfoLocalizations', {
               data: { type: 'appInfoLocalizations',
-                attributes: { locale: loc, name: enUSil.name, subtitle: sub, privacyPolicyUrl: enUSil.privacyPolicyUrl },
+                attributes: { locale: loc, name: nm || enUSil.name, ...(sub ? { subtitle: sub } : {}), privacyPolicyUrl: enUSil.privacyPolicyUrl },
                 relationships: { appInfo: { data: { type: 'appInfos', id: info.id } } } },
             });
           } catch (e) {
@@ -166,20 +174,28 @@ async function cmdApply(configFile, apply) {
             const fresh = await infoLocs(info.id);
             const auto = fresh.find((l) => l.attributes.locale === loc);
             if (!auto) throw e;
-            const attrs = { subtitle: sub };
-            if (!auto.attributes.name) attrs.name = enUSil.name;
+            const attrs = {};
+            if (sub) attrs.subtitle = sub;
+            if (nm) attrs.name = nm; else if (!auto.attributes.name) attrs.name = enUSil.name;
             await api('PATCH', `/v1/appInfoLocalizations/${auto.id}`, {
               data: { type: 'appInfoLocalizations', id: auto.id, attributes: attrs },
             });
             console.log(`[${loc}]   (auto-created by ASC — PATCHed it instead)`);
           }
         }
-      } else if (il.attributes.subtitle !== sub) {
-        console.log(`[${loc}] UPDATE subtitle: "${il.attributes.subtitle}" → "${sub}"`);
-        if (apply) await api('PATCH', `/v1/appInfoLocalizations/${il.id}`, {
-          data: { type: 'appInfoLocalizations', id: il.id, attributes: { subtitle: sub } },
-        });
-      } else console.log(`[${loc}] subtitle unchanged`);
+      } else {
+        const attrs = {};
+        if (sub && il.attributes.subtitle !== sub) attrs.subtitle = sub;
+        if (nm && il.attributes.name !== nm) attrs.name = nm;
+        if (Object.keys(attrs).length) {
+          const nameLine = attrs.name ? `\n    name: "${il.attributes.name}" → "${attrs.name}"` : '';
+          const subLine = attrs.subtitle ? `\n    subtitle: "${il.attributes.subtitle}" → "${attrs.subtitle}"` : '';
+          console.log(`[${loc}] UPDATE app info localization: ${Object.keys(attrs).join(' + ')}${nameLine}${subLine}`);
+          if (apply) await api('PATCH', `/v1/appInfoLocalizations/${il.id}`, {
+            data: { type: 'appInfoLocalizations', id: il.id, attributes: attrs },
+          });
+        } else console.log(`[${loc}] app info (name/subtitle) unchanged`);
+      }
     }
   }
   console.log(apply ? '\nStaged ✓ — review in App Store Connect; goes live only when the version is submitted + released.' : '\nDry run only. Re-run with --apply to stage.');
