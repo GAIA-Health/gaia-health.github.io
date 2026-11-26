@@ -9,7 +9,7 @@ export const BRAND = 'Veya';
 export const FORMER_NAME = 'Go Go Gaia';
 export const FORMERLY = `${BRAND} (formerly ${FORMER_NAME})`;
 export const APP_STORE_URL = 'https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8';
-export const WEB_APP_URL = 'https://app.wove.care';
+export const WEB_APP_URL = 'https://app.myveya.com';
 
 /** Web-app sign-up link with the same UTM shape the tool pages already use. */
 export function webAppSignupUrl(campaign) {
