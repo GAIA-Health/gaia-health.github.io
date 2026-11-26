@@ -12,7 +12,7 @@ Read these, then report current status + what's next:
 
 ## Standing facts (verified 2026-08-25 — re-verify in code before repeating publicly)
 
-**The funnel:** `/for-professionals/` (pillar) → `https://app.go-go-gaia.com/pro/signup` (UTM'd per page). Web app repo: `~/Desktop/abby/webdev/gaia-web-app`.
+**The funnel:** `/for-professionals/` (pillar) → `https://app.wove.care/pro/signup` (UTM'd per page). Web app repo: `~/Desktop/abby/webdev/gaia-web-app`.
 
 **Pro signup is a dedicated flow** (`src/app/pro/signup/page.tsx`): two-step wizard (professional type, display name, specialty, HIPAA/BAA consent → email/Google SSO), skips consumer onboarding, lands at `/coaching`. Empty-state dashboard (`GettingStartedCard`) shows the coach's `PRO-XXXXXX` invite code + email/SMS/WhatsApp share links; clients join via `/join/<code>`.
 
