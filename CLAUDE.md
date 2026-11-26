@@ -70,6 +70,9 @@ gaia-health.github.io/
 - All external links open in new tabs for better user experience
 - The site includes both free and premium app features messaging
 
+## Web app link
+Every link or mention of the web app is `<a href="https://app.myveya.com/..." data-app-link>` (mentions add `data-app-link-text`). `js/app-link.js` holds `WOVE_APP_ORIGIN` and rewrites the origin at load; to move the app, change that one line. New app links must carry `data-app-link` and the page must include `/js/app-link.js` before `analytics-events.js`.
+
 ## Deployment
 - Hosted on GitHub Pages
 - Custom domain: www.go-go-gaia.com

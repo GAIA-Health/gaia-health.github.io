@@ -96,6 +96,7 @@
 
     <!-- Cookie consent + gated GA4 -->
     <script src="/cookie-consent.js" defer></script>
+    <script src="/js/app-link.js" defer></script>
     <script src="/analytics-events.js" defer></script>
 <script type="application/ld+json" data-schema="gg-entity-graph">
 {
@@ -152,7 +153,7 @@
                         <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="tools/index.html">Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link nav-login" href="https://app.myveya.com/login?utm_source=website&utm_medium=nav&utm_campaign=login" target="_blank" data-app-link>Log In</a></li>
                         <li class="nav-item"><a class="nav-link nav-download" href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" target="_blank">Download</a></li>
                     </ul>
                     <div class="social-icons ms-md-3 d-none d-md-flex">
@@ -174,11 +175,11 @@
                 <div class="row align-items-center mb-5">
                     <div class="col-lg-7">
                         <h1 class="display-4 fw-bold mb-3">Veya works in your browser too</h1>
-                        <p class="lead">You don't need an iPhone to use Veya. The web app at app.myveya.com runs in any browser, on a laptop, a tablet or an Android phone. The iPhone app is still the full experience, and this page shows where the two differ.</p>
+                        <p class="lead">You don't need an iPhone to use Veya. The web app at <a href="https://app.myveya.com" data-app-link data-app-link-text>app.myveya.com</a> runs in any browser, on a laptop, a tablet or an Android phone. The iPhone app is still the full experience, and this page shows where the two differ.</p>
                         <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
                             <i class="bi bi-apple me-2"></i>Download Veya
                         </a>
-                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=web-app&utm_medium=lander&utm_campaign=lander" target="_blank">Try it in the browser</a> at app.myveya.com.</p>
+                        <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=web-app&utm_medium=lander&utm_campaign=lander" target="_blank" data-app-link>Try it in the browser</a> at <a href="https://app.myveya.com" data-app-link data-app-link-text>app.myveya.com</a>.</p>
                         <div class="desktop-qr align-items-center gap-3 mt-4">
                             <img src="images/download-qr.png" alt="QR code linking to Veya on the App Store" width="92" height="92" class="desktop-qr-img" loading="lazy">
                             <p class="desktop-qr-label mb-0">On a computer?<br>Scan to download on your phone.</p>
@@ -191,7 +192,7 @@
 
                 <section class="mb-5 section-card">
                     <h2 class="mb-3">What the web app does</h2>
-                    <p>Sign in at app.myveya.com and you get a dashboard for today, a calendar, and trends and insights that look across your logs. From the sidebar you can open cycle and hormones, mind and wellness, nutrition, fitness, lab results, medications, symptoms, a body map, goals, habits and partner sharing.</p>
+                    <p>Sign in at <a href="https://app.myveya.com" data-app-link data-app-link-text>app.myveya.com</a> and you get a dashboard for today, a calendar, and trends and insights that look across your logs. From the sidebar you can open cycle and hormones, mind and wellness, nutrition, fitness, lab results, medications, symptoms, a body map, goals, habits and partner sharing.</p>
                     <p>A quick log button covers the daily basics: mood, symptoms, water and meals. You can do all of it from a desktop browser or a phone browser.</p>
                 </section>
 
@@ -224,7 +225,7 @@
                                 </button>
                             </h3>
                             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">No. The iPhone app is the full experience, and the web app at app.myveya.com works in any browser, including on Android phones, tablets and computers.</div>
+                                <div class="accordion-body">No. The iPhone app is the full experience, and the web app at <a href="https://app.myveya.com" data-app-link data-app-link-text>app.myveya.com</a> works in any browser, including on Android phones, tablets and computers.</div>
                             </div>
                         </div>
 
@@ -235,7 +236,7 @@
                                 </button>
                             </h3>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">Through the browser, yes. Open app.myveya.com on your Android phone to log, import your history and see your patterns. There is no Android app from Veya at the moment.</div>
+                                <div class="accordion-body">Through the browser, yes. Open <a href="https://app.myveya.com" data-app-link data-app-link-text>app.myveya.com</a> on your Android phone to log, import your history and see your patterns. There is no Android app from Veya at the moment.</div>
                             </div>
                         </div>
 
@@ -270,7 +271,7 @@
                     <a href="https://apps.apple.com/app/apple-store/id6608432371?pt=127249655&ct=gogogaia.com&mt=8" class="btn btn-primary btn-lg" target="_blank">
                         <i class="bi bi-apple me-2"></i>Download Veya
                     </a>
-                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=web-app&utm_medium=lander&utm_campaign=lander" target="_blank">Use the web app</a> in any browser.</p>
+                    <p class="small text-muted mt-3 mb-0">Not on iPhone? <a href="https://app.myveya.com/start?utm_source=web-app&utm_medium=lander&utm_campaign=lander" target="_blank" data-app-link>Use the web app</a> in any browser.</p>
                 </section>
 
 

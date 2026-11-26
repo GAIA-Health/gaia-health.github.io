@@ -90,7 +90,8 @@ document.addEventListener('click', function (e) {
     }
   }
 
-  if (href.indexOf('app.go-go-gaia.com') !== -1 || href.indexOf('app.myveya.com') !== -1) {
+  var appOrigin = window.WOVE_APP_ORIGIN || 'https://app.myveya.com';
+  if (href.indexOf(appOrigin) === 0 || href.indexOf('app.go-go-gaia.com') !== -1 || href.indexOf('app.myveya.com') !== -1) {
     var webAppIntent = 'login';
     if (href.indexOf('mode=signup') !== -1) {
       webAppIntent = 'signup';
@@ -107,8 +108,8 @@ document.addEventListener('click', function (e) {
   }
 
   // Import-guide funnel: any link into the web app's /import page.
-  if (href.indexOf('https://app.myveya.com/import') === 0) {
-    var importLinks = document.querySelectorAll('a[href^="https://app.myveya.com/import"]');
+  if (href.indexOf(appOrigin + '/import') === 0) {
+    var importLinks = document.querySelectorAll('a[href^="' + appOrigin + '/import"]');
     var slug = window.location.pathname;
     var source = /mira-vs-|-vs-/.test(slug) ? 'vs'
       : /mira/.test(slug) && !/inito/.test(slug) ? 'mira'
